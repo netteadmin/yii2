@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>授权（Authorization） - 安全（Security） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1004" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1004-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1004-collapse" class="collapse navbar-collapse"><ul id="w1005" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1006" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-988" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-988" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-989" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-989" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-990" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-990" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-991" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-991" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-992" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-992" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-993" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-993" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-994" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-994" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-995" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-995" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item active" href="#navigation-996" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-996" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item active" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-997" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-997" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-998" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-998" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-999" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-999" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1000" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1000" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1001" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1001" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1002" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1002" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1003" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1003" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>&#25480;&#26435; <span id="shou-quan"></span><a href="#shou-quan" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#access-control-filter">&#23384;&#21462;&#25511;&#21046;&#36807;&#28388;&#22120;</a></li>
+<li><a href="#rbac">&#22522;&#20110;&#35282;&#33394;&#30340;&#23384;&#21462;&#25511;&#21046; &#65288;RBAC&#65289;</a></li>
+<li><a href="#wei-yong-hu-fen-pei-jiao-se-assigning-roles-to-users">&#20026;&#29992;&#25143;&#20998;&#37197;&#35282;&#33394;&#65288;Assigning roles to users&#65289;</a></li></ol></div>
+<p>&#25480;&#26435;&#26159;&#25351;&#39564;&#35777;&#29992;&#25143;&#26159;&#21542;&#20801;&#35768;&#20570;&#26576;&#20214;&#20107;&#30340;&#36807;&#31243;&#12290;Yii&#25552;&#20379;&#20004;&#31181;&#25480;&#26435;&#26041;&#27861;&#65306;
+&#23384;&#21462;&#25511;&#21046;&#36807;&#28388;&#22120;&#65288;ACF&#65289;&#21644;&#22522;&#20110;&#35282;&#33394;&#30340;&#23384;&#21462;&#25511;&#21046;&#65288;RBAC&#65289;&#12290;</p>
+<h2>&#23384;&#21462;&#25511;&#21046;&#36807;&#28388;&#22120;  <span id="access-control-filter"></span><a href="#access-control-filter" class="hashlink">&para;</a></h2><p>&#23384;&#21462;&#25511;&#21046;&#36807;&#28388;&#22120;&#65288;ACF&#65289;&#26159;&#19968;&#31181;&#36890;&#36807; <a href="./yii-filters-accesscontrol.html">yii\filters\AccessControl</a> &#31867;&#26469;&#23454;&#29616;&#30340;&#31616;&#21333;&#25480;&#26435;&#26041;&#27861;&#65292;
+&#38750;&#24120;&#36866;&#29992;&#20110;&#20165;&#38656;&#35201;&#31616;&#21333;&#30340;&#23384;&#21462;&#25511;&#21046;&#30340;&#24212;&#29992;&#12290;&#27491;&#22914;&#20854;&#21517;&#31216;&#25152;&#25351;&#65292;ACF &#26159;&#19968;&#31181;&#21160;&#20316;&#36807;&#28388;&#22120;
+<a href="guide-structure-filters.html">filter</a>&#65292;&#21487;&#22312;&#25511;&#21046;&#22120;&#25110;&#32773;&#27169;&#22359;&#20013;&#20351;&#29992;&#12290;&#24403;&#19968;&#20010;&#29992;&#25143;&#35831;&#27714;&#19968;&#20010;&#21160;&#20316;&#26102;&#65292;
+ACF&#20250;&#26816;&#26597; <a href="./yii-filters-accesscontrol.html#%24rules-detail">access rules</a> &#21015;&#34920;&#65292;&#21028;&#26029;&#35813;&#29992;&#25143;&#26159;&#21542;&#20801;&#35768;&#25191;
+&#34892;&#25152;&#35831;&#27714;&#30340;&#21160;&#20316;&#12290;</p>
+<p>&#19979;&#36848;&#20195;&#30721;&#23637;&#31034;&#22914;&#20309;&#22312; <code>site</code> &#25511;&#21046;&#22120;&#20013;&#20351;&#29992; ACF&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">AccessControl</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'access'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; AccessControl::class,
+                <span class="hljs-string">'only'</span> =&gt; [<span class="hljs-string">'login'</span>, <span class="hljs-string">'logout'</span>, <span class="hljs-string">'signup'</span>],
+                <span class="hljs-string">'rules'</span> =&gt; [
+                    [
+                        <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                        <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'login'</span>, <span class="hljs-string">'signup'</span>],
+                        <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'?'</span>],
+                    ],
+                    [
+                        <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                        <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'logout'</span>],
+                        <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'@'</span>],
+                    ],
+                ],
+            ],
+        ];
+    }
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#19978;&#38754;&#30340;&#20195;&#30721;&#20013; ACF &#20197;&#34892;&#20026; (behavior) &#30340;&#24418;&#24335;&#38468;&#21152;&#21040; <code>site</code> &#25511;&#21046;&#22120;&#12290;
+&#36825;&#23601;&#26159;&#24456;&#20856;&#22411;&#30340;&#20351;&#29992;&#34892;&#21160;&#36807;&#28388;&#22120;&#30340;&#26041;&#27861;&#12290; <code>only</code> &#36873;&#39033;&#25351;&#26126; ACF &#24212;&#24403;&#21482;
+&#23545; <code>login</code>&#65292; <code>logout</code> &#21644; <code>signup</code> &#26041;&#27861;&#36215;&#20316;&#29992;&#12290;&#25152;&#26377;&#20854;&#23427;&#30340; <code>site</code> 
+&#25511;&#21046;&#22120;&#20013;&#30340;&#26041;&#27861;&#19981;&#21463;&#23384;&#21462;&#25511;&#21046;&#30340;&#38480;&#21046;&#12290; <code>rules</code> &#36873;&#39033;&#21015;&#20986;&#20102; <a href="./yii-filters-accessrule.html">&#23384;&#21462;&#35268;&#21017; (access rules)</a>&#65292;&#35299;&#35835;&#22914;&#19979;&#65306;</p>
+<ul>
+<li>&#20801;&#35768;&#25152;&#26377;&#35775;&#23458;&#65288;&#36824;&#26410;&#32463;&#35748;&#35777;&#30340;&#29992;&#25143;&#65289;&#25191;&#34892; <code>login</code> &#21644; <code>signup</code> &#21160;&#20316;&#12290; 
+<code>roles</code> &#36873;&#39033;&#21253;&#21547;&#30340;&#38382;&#21495; <code>?</code> &#26159;&#19968;&#20010;&#29305;&#27530;&#30340;&#26631;&#35782;&#65292;&#20195;&#34920;&rdquo;&#35775;&#23458;&#29992;&#25143;&rdquo;&#12290;</li>
+<li>&#20801;&#35768;&#24050;&#35748;&#35777;&#29992;&#25143;&#25191;&#34892; <code>logout</code> &#21160;&#20316;&#12290;<code>@</code>&#26159;&#21478;&#19968;&#20010;&#29305;&#27530;&#26631;&#35782;&#65292;
+&#20195;&#34920;&rdquo;&#24050;&#35748;&#35777;&#29992;&#25143;&rdquo;&#12290;</li>
+</ul>
+<p>ACF &#33258;&#39030;&#21521;&#19979;&#36880;&#19968;&#26816;&#26597;&#23384;&#21462;&#35268;&#21017;&#65292;&#30452;&#21040;&#25214;&#21040;&#19968;&#20010;&#19982;&#24403;&#21069;
+&#27442;&#25191;&#34892;&#30340;&#21160;&#20316;&#30456;&#31526;&#30340;&#35268;&#21017;&#12290; &#28982;&#21518;&#35813;&#21305;&#37197;&#35268;&#21017;&#20013;&#30340; <code>allow</code> 
+&#36873;&#39033;&#30340;&#20540;&#29992;&#20110;&#21028;&#23450;&#35813;&#29992;&#25143;&#26159;&#21542;&#33719;&#24471;&#25480;&#26435;&#12290;&#22914;&#26524;&#27809;&#26377;&#25214;&#21040;&#21305;&#37197;&#30340;&#35268;&#21017;&#65292;
+&#24847;&#21619;&#30528;&#35813;&#29992;&#25143;&#27809;&#26377;&#33719;&#24471;&#25480;&#26435;&#12290;&#65288;&#35793;&#32773;&#27880;&#65306; <code>only</code> &#20013;&#27809;&#26377;&#21015;&#20986;&#30340;&#21160;&#20316;&#65292;&#23558;&#26080;&#26465;&#20214;&#33719;&#24471;&#25480;&#26435;&#65289;</p>
+<p>&#24403; ACF &#21028;&#23450;&#19968;&#20010;&#29992;&#25143;&#27809;&#26377;&#33719;&#24471;&#25191;&#34892;&#24403;&#21069;&#21160;&#20316;&#30340;&#25480;&#26435;&#26102;&#65292;&#23427;&#30340;&#40664;&#35748;&#22788;&#29702;&#26159;&#65306;</p>
+<ul>
+<li>&#22914;&#26524;&#35813;&#29992;&#25143;&#26159;&#35775;&#23458;&#65292;&#23558;&#35843;&#29992; <a href="./yii-web-user.html#loginRequired()-detail">yii\web\User::loginRequired()</a> &#23558;&#29992;&#25143;&#30340;&#27983;&#35272;&#22120;&#37325;&#23450;&#21521;&#21040;&#30331;&#24405;&#39029;&#38754;&#12290;</li>
+<li>&#22914;&#26524;&#35813;&#29992;&#25143;&#26159;&#24050;&#35748;&#35777;&#29992;&#25143;&#65292;&#23558;&#25243;&#20986;&#19968;&#20010; <a href="./yii-web-forbiddenhttpexception.html">yii\web\ForbiddenHttpException</a> &#24322;&#24120;&#12290;</li>
+</ul>
+<p>&#20320;&#21487;&#20197;&#36890;&#36807;&#37197;&#32622; <a href="./yii-filters-accesscontrol.html#%24denyCallback-detail">yii\filters\AccessControl::$denyCallback</a> &#23646;&#24615;&#23450;&#21046;&#35813;&#34892;&#20026;&#65306;</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; AccessControl::class,
+    ...
+    <span class="hljs-string">'denyCallback'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($rule, $action)</span> </span>{
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> \<span class="hljs-keyword">Exception</span>(<span class="hljs-string">'You are not allowed to access this page'</span>);
+    }
+]
+</code></pre>
+<p><a href="./yii-filters-accessrule.html">Access rules</a> &#25903;&#25345;&#24456;&#22810;&#30340;&#36873;&#39033;&#12290;&#19979;&#21015;&#26159;&#25152;&#25903;&#25345;&#36873;&#39033;&#30340;&#24635;&#35272;&#12290;
+&#20320;&#21487;&#20197;&#27966;&#29983; <a href="./yii-filters-accessrule.html">yii\filters\AccessRule</a> &#26469;&#21019;&#24314;&#33258;&#23450;&#20041;&#30340;&#23384;&#21462;&#35268;&#21017;&#31867;&#12290;</p>
+<ul>
+<li><p><a href="./yii-filters-accessrule.html#%24allow-detail">allow</a>&#65306; &#25351;&#23450;&#35813;&#35268;&#21017;&#26159; "&#20801;&#35768;" &#36824;&#26159; "&#25298;&#32477;" &#12290;&#65288;&#35793;&#32773;&#27880;&#65306;true&#26159;&#20801;&#35768;&#65292;false&#26159;&#25298;&#32477;&#65289;</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#%24actions-detail">actions</a>&#65306;&#25351;&#23450;&#35813;&#35268;&#21017;&#29992;&#20110;&#21305;&#37197;&#21738;&#20123;&#21160;&#20316;&#12290;
+&#23427;&#30340;&#20540;&#24212;&#35813;&#26159;&#21160;&#20316;&#26041;&#27861;&#30340;ID&#25968;&#32452;&#12290;&#21305;&#37197;&#27604;&#36739;&#26159;&#22823;&#23567;&#20889;&#25935;&#24863;&#30340;&#12290;&#22914;&#26524;&#35813;&#36873;&#39033;&#20026;&#31354;&#65292;&#25110;&#32773;&#19981;&#20351;&#29992;&#35813;&#36873;&#39033;&#65292;
+&#24847;&#21619;&#30528;&#24403;&#21069;&#35268;&#21017;&#36866;&#29992;&#20110;&#25152;&#26377;&#30340;&#21160;&#20316;&#12290;</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#%24controllers-detail">controllers</a>&#65306;&#25351;&#23450;&#35813;&#35268;&#21017;&#29992;&#20110;&#21305;&#37197;&#21738;&#20123;&#25511;&#21046;&#22120;&#12290;
+&#23427;&#30340;&#20540;&#24212;&#20026;&#25511;&#21046;&#22120;ID&#25968;&#32452;&#12290;&#21305;&#37197;&#27604;&#36739;&#26159;&#22823;&#23567;&#20889;&#25935;&#24863;&#30340;&#12290;&#22914;&#26524;&#35813;&#36873;&#39033;&#20026;&#31354;&#65292;&#25110;&#32773;&#19981;&#20351;&#29992;&#35813;&#36873;&#39033;&#65292;
+&#21017;&#24847;&#21619;&#30528;&#24403;&#21069;&#35268;&#21017;&#36866;&#29992;&#20110;&#25152;&#26377;&#30340;&#21160;&#20316;&#12290;&#65288;&#35793;&#32773;&#27880;&#65306;&#36825;&#20010;&#36873;&#39033;&#19968;&#33324;&#26159;&#22312;&#25511;&#21046;&#22120;&#30340;&#33258;&#23450;&#20041;&#29238;&#31867;&#20013;&#20351;&#29992;&#25165;&#26377;&#24847;&#20041;&#65289;</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#%24roles-detail">roles</a>&#65306;&#25351;&#23450;&#35813;&#35268;&#21017;&#29992;&#20110;&#21305;&#37197;&#21738;&#20123;&#29992;&#25143;&#35282;&#33394;&#12290;
+&#31995;&#32479;&#33258;&#24102;&#20004;&#20010;&#29305;&#27530;&#30340;&#35282;&#33394;&#65292;&#36890;&#36807; <a href="./yii-web-user.html#%24isGuest-detail">yii\web\User::$isGuest</a> &#26469;&#21028;&#26029;&#65306;</p>
+<ul>
+<li><code>?</code>&#65306; &#29992;&#20110;&#21305;&#37197;&#35775;&#23458;&#29992;&#25143; &#65288;&#26410;&#32463;&#35748;&#35777;&#65289;</li>
+<li><code>@</code>&#65306; &#29992;&#20110;&#21305;&#37197;&#24050;&#35748;&#35777;&#29992;&#25143;</li>
+</ul>
+<p>&#20351;&#29992;&#20854;&#20182;&#35282;&#33394;&#21517;&#26102;&#65292;&#23558;&#35302;&#21457;&#35843;&#29992; <a href="./yii-web-user.html#can()-detail">yii\web\User::can()</a>&#65292;&#36825;&#26102;&#35201;&#27714; RBAC &#30340;&#25903;&#25345; &#65288;&#22312;&#19979;&#19968;&#33410;&#20013;&#38416;&#36848;&#65289;&#12290;
+&#22914;&#26524;&#35813;&#36873;&#39033;&#20026;&#31354;&#25110;&#32773;&#19981;&#20351;&#29992;&#35813;&#36873;&#39033;&#65292;&#24847;&#21619;&#30528;&#35813;&#35268;&#21017;&#36866;&#29992;&#20110;&#25152;&#26377;&#35282;&#33394;&#12290;</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#%24roleParams-detail">roleParams</a>&#65306;&#25351;&#23450;&#23558;&#20256;&#36882;&#32473; <a href="./yii-web-user.html#can()-detail">yii\web\User::can()</a> &#30340;&#21442;&#25968;&#12290;
+&#35831;&#21442;&#38405;&#19979;&#38754;&#25551;&#36848;RBAC&#35268;&#21017;&#30340;&#37096;&#20998;&#65292;&#20102;&#35299;&#22914;&#20309;&#20351;&#29992;&#23427;&#12290; &#22914;&#26524;&#27492;&#36873;&#39033;&#20026;&#31354;&#25110;&#26410;&#35774;&#32622;&#65292;&#21017;&#19981;&#20256;&#36882;&#20219;&#20309;&#21442;&#25968;&#12290;</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#%24ips-detail">ips</a>&#65306;&#25351;&#23450;&#35813;&#35268;&#21017;&#29992;&#20110;&#21305;&#37197;&#21738;&#20123; <a href="./yii-web-request.html#%24userIP-detail">&#23458;&#25143;&#31471;IP&#22320;&#22336;</a> &#12290;
+IP &#22320;&#22336;&#21487;&#22312;&#20854;&#26411;&#23614;&#21253;&#21547;&#36890;&#37197;&#31526; <code>*</code> &#20197;&#21305;&#37197;&#19968;&#25209;&#21069;&#32512;&#30456;&#21516;&#30340;IP&#22320;&#22336;&#12290;
+&#20363;&#22914;&#65292;<code>192.168.*</code> &#21305;&#37197;&#25152;&#26377; <code>192.168.</code> &#27573;&#30340;IP&#22320;&#22336;&#12290;
+&#22914;&#26524;&#35813;&#36873;&#39033;&#20026;&#31354;&#25110;&#32773;&#19981;&#20351;&#29992;&#35813;&#36873;&#39033;&#65292;&#24847;&#21619;&#30528;&#35813;&#35268;&#21017;&#36866;&#29992;&#20110;&#25152;&#26377;&#35282;&#33394;&#12290;</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#%24verbs-detail">verbs</a>&#65306;&#25351;&#23450;&#35813;&#35268;&#21017;&#29992;&#20110;&#21305;&#37197;&#21738;&#31181;&#35831;&#27714;&#26041;&#27861;&#65288;&#20363;&#22914;<code>GET</code>&#65292;<code>POST</code>&#65289;&#12290;
+&#36825;&#37324;&#30340;&#21305;&#37197;&#22823;&#23567;&#20889;&#19981;&#25935;&#24863;&#12290;</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#%24matchCallback-detail">matchCallback</a>&#65306;&#25351;&#23450;&#19968;&#20010;PHP&#22238;&#35843;&#20989;&#25968;&#29992;&#20110;
+&#21028;&#23450;&#35813;&#35268;&#21017;&#26159;&#21542;&#28385;&#36275;&#26465;&#20214;&#12290;&#65288;&#35793;&#32773;&#27880;&#65306;&#27492;&#22788;&#30340;&#22238;&#35843;&#20989;&#25968;&#26159;&#21311;&#21517;&#20989;&#25968;&#65289;</p>
+</li>
+<li><p><a href="./yii-filters-accessrule.html#%24denyCallback-detail">denyCallback</a>: &#25351;&#23450;&#19968;&#20010;PHP&#22238;&#35843;&#20989;&#25968;&#65292;
+&#24403;&#36825;&#20010;&#35268;&#21017;&#19981;&#28385;&#36275;&#26465;&#20214;&#26102;&#35813;&#20989;&#25968;&#20250;&#34987;&#35843;&#29992;&#12290;&#65288;&#35793;&#32773;&#27880;&#65306;&#27492;&#22788;&#30340;&#22238;&#35843;&#20989;&#25968;&#26159;&#21311;&#21517;&#20989;&#25968;&#65289;</p>
+</li>
+</ul>
+<p>&#20197;&#19979;&#20363;&#23376;&#23637;&#31034;&#20102;&#22914;&#20309;&#20351;&#29992; <code>matchCallback</code> &#36873;&#39033;&#65292;
+&#21487;&#20351;&#20320;&#35774;&#35745;&#20219;&#24847;&#30340;&#35775;&#38382;&#26435;&#38480;&#26816;&#26597;&#36923;&#36753;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">AccessControl</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'access'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; AccessControl::class,
+                <span class="hljs-string">'only'</span> =&gt; [<span class="hljs-string">'special-callback'</span>],
+                <span class="hljs-string">'rules'</span> =&gt; [
+                    [
+                        <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'special-callback'</span>],
+                        <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                        <span class="hljs-string">'matchCallback'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($rule, $action)</span> </span>{
+                            <span class="hljs-keyword">return</span> date(<span class="hljs-string">'d-m'</span>) === <span class="hljs-string">'31-10'</span>;
+                        }
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    <span class="hljs-comment">// &#21305;&#37197;&#30340;&#22238;&#35843;&#20989;&#25968;&#34987;&#35843;&#29992;&#20102;&#65281;&#36825;&#20010;&#39029;&#38754;&#21482;&#26377;&#27599;&#24180;&#30340;10&#26376;31&#21495;&#33021;&#35775;&#38382;&#65288;&#35793;&#32773;&#27880;&#65306;&#21407;&#25991;&#22312;&#36825;&#37324;&#35828;&#35813;&#26041;&#27861;&#26159;&#22238;&#35843;&#20989;&#25968;&#19981;&#30830;&#20999;&#65292;&#35835;&#32773;&#19981;&#35201;&#21644; `matchCallback` &#30340;&#20540;&#21363;&#21311;&#21517;&#30340;&#22238;&#35843;&#20989;&#25968;&#28151;&#28102;&#29702;&#35299;&#65289;&#12290;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionSpecialCallback</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'happy-halloween'</span>);
+    }
+}
+</code></pre>
+<h2>&#22522;&#20110;&#35282;&#33394;&#30340;&#23384;&#21462;&#25511;&#21046; &#65288;RBAC&#65289;  <span id="rbac"></span><a href="#rbac" class="hashlink">&para;</a></h2><p>&#22522;&#20110;&#35282;&#33394;&#30340;&#23384;&#21462;&#25511;&#21046; &#65288;RBAC&#65289; &#25552;&#20379;&#20102;&#19968;&#20010;&#31616;&#21333;&#32780;&#24378;&#22823;&#30340;&#38598;&#20013;&#24335;&#23384;&#21462;&#25511;&#21046;&#26426;&#21046;&#12290;
+&#35814;&#32454;&#30340;&#20851;&#20110; RBAC &#21644;&#35832;&#22810;&#20256;&#32479;&#30340;&#23384;&#21462;&#25511;&#21046;&#26041;&#26696;&#23545;&#27604;&#30340;&#35814;&#24773;&#65292;&#35831;&#21442;&#38405;
+<a href="https://zh.wikipedia.org/wiki/%E4%BB%A5%E8%A7%92%E8%89%B2%E7%82%BA%E5%9F%BA%E7%A4%8E%E7%9A%84%E5%AD%98%E5%8F%96%E6%8E%A7%E5%88%B6">Wikipedia</a>&#12290;</p>
+<p>Yii &#23454;&#29616;&#20102;&#36890;&#29992;&#30340;&#20998;&#23618;&#30340; RBAC&#65292;&#36981;&#24490;&#30340;&#27169;&#22411;&#26159; <a href="https://csrc.nist.gov/CSRC/media/Publications/conference-paper/1992/10/13/role-based-access-controls/documents/ferraiolo-kuhn-92.pdf">NIST RBAC model</a>.
+&#23427;&#36890;&#36807; <a href="./yii-rbac-managerinterface.html">authManager</a> <a href="guide-structure-application-components.html">application component</a> &#25552;&#20379; RBAC &#21151;&#33021;&#12290;</p>
+<p>&#20351;&#29992; RBAC &#28041;&#21450;&#21040;&#20004;&#37096;&#20998;&#24037;&#20316;&#12290;&#31532;&#19968;&#37096;&#20998;&#26159;&#24314;&#31435;&#25480;&#26435;&#25968;&#25454;&#65292;
+&#32780;&#31532;&#20108;&#37096;&#20998;&#26159;&#20351;&#29992;&#36825;&#20123;&#25480;&#26435;&#25968;&#25454;&#22312;&#38656;&#35201;&#30340;&#22320;&#26041;&#25191;&#34892;&#26816;&#26597;&#12290;</p>
+<p>&#20026;&#26041;&#20415;&#21518;&#38754;&#30340;&#35762;&#36848;&#65292;&#36825;&#37324;&#20808;&#20171;&#32461;&#19968;&#20123; RBAC &#30340;&#22522;&#26412;&#27010;&#24565;&#12290;</p>
+<h3>&#22522;&#26412;&#27010;&#24565;  <span id="basic-concepts"></span><a href="#basic-concepts" class="hashlink">&para;</a></h3><p>&#35282;&#33394;&#26159; <em>&#26435;&#38480;</em> &#30340;&#38598;&#21512; &#65288;&#20363;&#22914;&#65306;&#24314;&#36148;&#12289;&#25913;&#36148;&#65289;&#12290;&#19968;&#20010;&#35282;&#33394;
+&#21487;&#20197;&#25351;&#27966;&#32473;&#19968;&#20010;&#25110;&#32773;&#22810;&#20010;&#29992;&#25143;&#12290;&#35201;&#26816;&#26597;&#26576;&#29992;&#25143;&#26159;&#21542;&#26377;&#19968;&#20010;&#29305;&#23450;&#30340;&#26435;&#38480;&#65292;
+&#31995;&#32479;&#20250;&#26816;&#26597;&#35813;&#21253;&#21547;&#35813;&#26435;&#38480;&#30340;&#35282;&#33394;&#26159;&#21542;&#25351;&#27966;&#32473;&#20102;&#35813;&#29992;&#25143;&#12290;</p>
+<p>&#21487;&#20197;&#29992;&#19968;&#20010;&#35268;&#21017; <em>rule</em> &#19982;&#19968;&#20010;&#35282;&#33394;&#25110;&#32773;&#26435;&#38480;&#20851;&#32852;&#12290;&#19968;&#20010;&#35268;&#21017;&#29992;&#19968;&#27573;&#20195;&#30721;&#20195;&#34920;&#65292;
+&#35268;&#21017;&#30340;&#25191;&#34892;&#26159;&#22312;&#26816;&#26597;&#19968;&#20010;&#29992;&#25143;&#26159;&#21542;&#28385;&#36275;&#36825;&#20010;&#35282;&#33394;&#25110;&#32773;&#26435;&#38480;&#26102;&#36827;&#34892;&#30340;&#12290;&#20363;&#22914;&#65292;"&#25913;&#24086;" &#30340;&#26435;&#38480;
+&#21487;&#20197;&#20351;&#29992;&#19968;&#20010;&#26816;&#26597;&#35813;&#29992;&#25143;&#26159;&#21542;&#26159;&#24086;&#23376;&#30340;&#21019;&#24314;&#32773;&#30340;&#35268;&#21017;&#12290;&#26435;&#38480;&#26816;&#26597;&#20013;&#65292;&#22914;&#26524;&#35813;&#29992;&#25143;
+&#19981;&#26159;&#24086;&#23376;&#21019;&#24314;&#32773;&#65292;&#37027;&#20040;&#20182;&#65288;&#22905;&#65289;&#23558;&#34987;&#35748;&#20026;&#19981;&#20855;&#26377; "&#25913;&#24086;"&#30340;&#26435;&#38480;&#12290;</p>
+<p>&#35282;&#33394;&#21644;&#26435;&#38480;&#37117;&#21487;&#20197;&#25353;&#23618;&#27425;&#32452;&#32455;&#12290;&#29305;&#23450;&#24773;&#20917;&#19979;&#65292;&#19968;&#20010;&#35282;&#33394;&#21487;&#33021;&#30001;&#20854;&#20182;&#35282;&#33394;&#25110;&#26435;&#38480;&#26500;&#25104;&#65292;
+&#32780;&#26435;&#38480;&#21448;&#30001;&#20854;&#20182;&#30340;&#26435;&#38480;&#26500;&#25104;&#12290;Yii &#23454;&#29616;&#20102;&#25152;&#35859;&#30340; <em>&#23616;&#37096;&#39034;&#24207;</em> &#30340;&#23618;&#27425;&#32467;&#26500;&#65292;&#21253;&#21547;&#26356;&#22810;&#30340;&#29305;&#23450;&#30340; <em>&#26641;</em> &#30340;&#23618;&#27425;&#12290;
+&#19968;&#20010;&#35282;&#33394;&#21487;&#20197;&#21253;&#21547;&#19968;&#20010;&#26435;&#38480;&#65292;&#21453;&#20043;&#21017;&#19981;&#34892;&#12290;&#65288;&#35793;&#32773;&#27880;&#65306;&#21487;&#29702;&#35299;&#20026;&#35282;&#33394;&#22312;&#19978;&#26041;&#65292;&#26435;&#38480;&#22312;&#19979;&#26041;&#65292;&#20174;&#19978;&#21040;&#19979;&#22914;&#26524;&#30896;&#21040;&#26435;&#38480;&#37027;&#20040;&#20877;&#24448;&#19979;&#19981;&#33021;&#20986;&#29616;&#35282;&#33394;&#65289;</p>
+<h3>&#37197;&#32622; RBAC  <span id="configuring-rbac"></span><a href="#configuring-rbac" class="hashlink">&para;</a></h3><p>&#22312;&#24320;&#22987;&#23450;&#20041;&#25480;&#26435;&#25968;&#25454;&#21644;&#25191;&#34892;&#23384;&#21462;&#26816;&#26597;&#20043;&#21069;&#65292;&#38656;&#35201;&#20808;&#37197;&#32622;&#24212;&#29992;&#32452;&#20214; <a href="./yii-base-application.html#%24authManager-detail">authManager</a> &#12290; 
+Yii &#25552;&#20379;&#20102;&#20004;&#22871;&#25480;&#26435;&#31649;&#29702;&#22120;&#65306; <a href="./yii-rbac-phpmanager.html">yii\rbac\PhpManager</a> 
+&#21644; <a href="./yii-rbac-dbmanager.html">yii\rbac\DbManager</a>&#12290;&#21069;&#32773;&#20351;&#29992; PHP &#33050;&#26412;&#23384;&#25918;&#25480;&#26435;&#25968;&#25454;&#65292;
+&#32780;&#21518;&#32773;&#20351;&#29992;&#25968;&#25454;&#24211;&#23384;&#25918;&#25480;&#26435;&#25968;&#25454;&#12290; &#22914;&#26524;&#20320;&#30340;&#24212;&#29992;&#19981;&#35201;&#27714;&#22823;&#37327;&#30340;&#21160;&#24577;&#35282;&#33394;&#21644;&#26435;&#38480;&#31649;&#29702;&#65292;
+&#20320;&#21487;&#20197;&#32771;&#34385;&#20351;&#29992;&#21069;&#32773;&#12290;</p>
+<h4>&#20351;&#29992; <code>PhpManager</code>  <span id="using-php-manager"></span><a href="#using-php-manager" class="hashlink">&para;</a></h4><p>&#20197;&#19979;&#20195;&#30721;&#23637;&#31034;&#20351;&#29992; <a href="./yii-rbac-phpmanager.html">yii\rbac\PhpManager</a> &#26102;&#22914;&#20309;&#22312;&#24212;&#29992;&#37197;&#32622;&#25991;&#20214;&#20013;&#37197;&#32622; <code>authManager</code>&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'authManager'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\rbac\PhpManager'</span>,
+        ],
+        <span class="hljs-comment">// ...</span>
+    ],
+];
+</code></pre>
+<p>&#29616;&#22312;&#21487;&#20197;&#36890;&#36807; <code>\Yii::$app-&gt;authManager</code> &#35775;&#38382; <code>authManager</code> &#12290;</p>
+<p><a href="./yii-rbac-phpmanager.html">yii\rbac\PhpManager</a> &#40664;&#35748;&#23558; RBAC &#25968;&#25454;&#20445;&#23384;&#22312; <code>@app/rbac</code> &#30446;&#24405;&#19979;&#30340;&#25991;&#20214;&#20013;&#12290;
+&#22914;&#26524;&#26435;&#38480;&#23618;&#27425;&#25968;&#25454;&#22312;&#36816;&#34892;&#26102;&#20250;&#34987;&#20462;&#25913;&#65292;&#38656;&#30830;&#20445;WEB&#26381;&#21153;&#22120;&#36827;&#31243;&#23545;&#35813;&#30446;&#24405;&#21644;&#20854;&#20013;&#30340;&#25991;&#20214;&#26377;&#20889;&#26435;&#38480;&#12290;</p>
+<h4>&#20351;&#29992; <code>DbManager</code>  <span id="using-db-manager"></span><a href="#using-db-manager" class="hashlink">&para;</a></h4><p>&#20197;&#19979;&#20195;&#30721;&#23637;&#31034;&#20351;&#29992; <a href="./yii-rbac-dbmanager.html">yii\rbac\DbManager</a> &#26102;&#22914;&#20309;&#22312;&#24212;&#29992;&#37197;&#32622;&#25991;&#20214;&#20013;&#37197;&#32622; <code>authManager</code>&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'authManager'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\rbac\DbManager'</span>,
+            <span class="hljs-comment">// uncomment if you want to cache RBAC items hierarchy</span>
+            <span class="hljs-comment">// 'cache' =&gt; 'cache',</span>
+        ],
+        <span class="hljs-comment">// ...</span>
+    ],
+];
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22914;&#26524;&#24744;&#20351;&#29992;&#30340;&#26159; yii2-basic-app &#27169;&#26495;&#65292;&#21017;&#26377;&#19968;&#20010; <code>config/console.php</code> &#37197;&#32622;&#25991;&#20214;&#65292;&#20854;&#20013;
+ &nbsp;<code>authManager</code> &#38656;&#35201;&#21478;&#22806;&#22768;&#26126;&#22312; <code>config/web.php</code>&#12290;
+&#22312; yii2-advanced-app &#30340;&#24773;&#20917;&#19979;&#65292;<code>authManager</code> &#21482;&#33021;&#22312; <code>common/config/main.php</code> &#20013;&#22768;&#26126;&#19968;&#27425;&#12290;</p>
+</blockquote>
+<p><code>DbManager</code> &#20351;&#29992;4&#20010;&#25968;&#25454;&#24211;&#34920;&#23384;&#25918;&#23427;&#30340;&#25968;&#25454;&#65306;</p>
+<ul>
+<li><a href="./yii-rbac-dbmanager.html#%24itemTable-detail">itemTable</a>&#65306; &#35813;&#34920;&#23384;&#25918;&#25480;&#26435;&#26465;&#30446;&#65288;&#35793;&#32773;&#27880;&#65306;&#21363;&#35282;&#33394;&#21644;&#26435;&#38480;&#65289;&#12290;&#40664;&#35748;&#34920;&#21517;&#20026; "auth_item" &#12290;</li>
+<li><a href="./yii-rbac-dbmanager.html#%24itemChildTable-detail">itemChildTable</a>&#65306; &#35813;&#34920;&#23384;&#25918;&#25480;&#26435;&#26465;&#30446;&#30340;&#23618;&#27425;&#20851;&#31995;&#12290;&#40664;&#35748;&#34920;&#21517;&#20026; "auth_item_child"&#12290;</li>
+<li><a href="./yii-rbac-dbmanager.html#%24assignmentTable-detail">assignmentTable</a>&#65306; &#35813;&#34920;&#23384;&#25918;&#25480;&#26435;&#26465;&#30446;&#23545;&#29992;&#25143;&#30340;&#25351;&#27966;&#24773;&#20917;&#12290;&#40664;&#35748;&#34920;&#21517;&#20026; "auth_assignment"&#12290;</li>
+<li><a href="./yii-rbac-dbmanager.html#%24ruleTable-detail">ruleTable</a>&#65306; &#35813;&#34920;&#23384;&#25918;&#35268;&#21017;&#12290;&#40664;&#35748;&#34920;&#21517;&#20026; "auth_rule"&#12290;</li>
+</ul>
+<p>&#32487;&#32493;&#20043;&#21069;&#65292;&#20320;&#38656;&#35201;&#22312;&#25968;&#25454;&#24211;&#20013;&#21019;&#24314;&#36825;&#20123;&#34920;&#12290;&#20320;&#21487;&#20197;&#20351;&#29992;&#23384;&#25918;&#22312; <code>@yii/rbac/migrations</code> &#30446;&#24405;&#20013;&#30340;&#25968;&#25454;&#24211;&#36801;&#31227;&#25991;&#20214;&#26469;&#20570;&#36825;&#20214;&#20107;&#65288;&#35793;&#32773;&#27880;&#65306;&#26681;&#25454;&#26412;&#20154;&#32463;&#39564;&#65292;&#26368;&#22909;&#26159;&#23558;&#25480;&#26435;&#25968;&#25454;&#21021;&#22987;&#21270;&#21629;&#20196;&#20063;&#20889;&#21040;&#36825;&#20010; RBAC &#25968;&#25454;&#24211;&#36801;&#31227;&#25991;&#20214;&#20013;&#65289;&#65306;</p>
+<p><code>yii migrate --migrationPath=@yii/rbac/migrations</code></p>
+<p>&#38405;&#35835; <a href="guide-db-migrations.html#separated-migrations">Separated Migrations</a>
+&#37096;&#20998;&#20013;&#26377;&#20851;&#22788;&#29702;&#26469;&#33258;&#19981;&#21516;&#21517;&#31216;&#31354;&#38388;&#30340;&#36801;&#31227;&#30340;&#26356;&#22810;&#20449;&#24687;&#12290;</p>
+<p>&#29616;&#22312;&#21487;&#20197;&#36890;&#36807; <code>\Yii::$app-&gt;authManager</code> &#35775;&#38382; <code>authManager</code> &#12290;</p>
+<h3>&#24314;&#31435;&#25480;&#26435;&#25968;&#25454;  <span id="generating-rbac-data"></span><a href="#generating-rbac-data" class="hashlink">&para;</a></h3><p>&#25152;&#26377;&#25480;&#26435;&#25968;&#25454;&#30456;&#20851;&#30340;&#20219;&#21153;&#22914;&#19979;&#65306;</p>
+<ul>
+<li>&#23450;&#20041;&#35282;&#33394;&#21644;&#26435;&#38480;&#65307;</li>
+<li>&#24314;&#31435;&#35282;&#33394;&#21644;&#26435;&#38480;&#30340;&#20851;&#31995;&#65307;</li>
+<li>&#23450;&#20041;&#35268;&#21017;&#65307;</li>
+<li>&#23558;&#35268;&#21017;&#19982;&#35282;&#33394;&#21644;&#26435;&#38480;&#20316;&#20851;&#32852;&#65307;</li>
+<li>&#25351;&#27966;&#35282;&#33394;&#32473;&#29992;&#25143;&#12290;</li>
+</ul>
+<p>&#26681;&#25454;&#25480;&#26435;&#28789;&#27963;&#24615;&#35201;&#27714;&#65292;&#19978;&#36848;&#20219;&#21153;&#21487;&#20197;&#36890;&#36807;&#19981;&#21516;&#30340;&#26041;&#24335;&#23436;&#25104;&#12290;
+&#22914;&#26524;&#24744;&#30340;&#26435;&#38480;&#23618;&#27425;&#32467;&#26500;&#20165;&#30001;&#24320;&#21457;&#20154;&#21592;&#26356;&#25913;&#65292;&#21017;&#21487;&#20197;&#20351;&#29992;&#36801;&#31227;&#25110;&#25511;&#21046;&#21488;&#21629;&#20196;&#12290;
+Migration pro &#26159;&#21487;&#20197;&#19982;&#20854;&#20182;&#36801;&#31227;&#19968;&#36215;&#25191;&#34892;&#30340;&#12290;
+&#25511;&#21046;&#21488;&#21629;&#20196; pro &#26159;&#24744;&#21487;&#20197;&#24456;&#22909;&#22320;&#20102;&#35299;&#20195;&#30721;&#20013;&#30340;&#23618;&#27425;&#32467;&#26500;&#65292;
+&#32780;&#19981;&#26159;&#20998;&#25955;&#22312;&#22810;&#20010;&#36801;&#31227;&#20013;&#12290;</p>
+<p>&#26080;&#35770;&#21738;&#31181;&#26041;&#24335;&#65292;&#26368;&#32456;&#37117;&#20250;&#24471;&#21040;&#20197;&#19979; RBAC &#23618;&#27425;&#32467;&#26500;&#65306;</p>
+<p><img src="images/rbac-hierarchy-1.png" alt="Simple RBAC hierarchy" title="&#31616;&#21333;&#30340; RBAC &#23618;&#27425;&#32467;&#26500;&#31034;&#24847;&#22270;"></p>
+<p>&#22914;&#26524;&#24744;&#38656;&#35201;&#21160;&#24577;&#24418;&#25104;&#26435;&#38480;&#23618;&#27425;&#32467;&#26500;&#65292;&#21017;&#38656;&#35201; UI &#25110;&#25511;&#21046;&#21488;&#21629;&#20196;&#12290; &#29992;&#20110;&#26500;&#24314;&#23618;&#27425;&#32467;&#26500;&#30340;
+API &#26412;&#36523;&#19981;&#20250;&#26377;&#25152;&#19981;&#21516;&#12290;</p>
+<h4>&#20351;&#29992;&#36801;&#31227;&#65288;Using migrations&#65289; <span id="shi-yong-qian-yi-using-migrations"></span><a href="#shi-yong-qian-yi-using-migrations" class="hashlink">&para;</a></h4><p>&#24744;&#21487;&#20197;&#20351;&#29992; <a href="guide-db-migrations.html">migrations</a>
+&#36890;&#36807; <code>authManager</code> &#25552;&#20379;&#30340; API &#21021;&#22987;&#21270;&#21644;&#20462;&#25913;&#23618;&#27425;&#32467;&#26500;&#12290;</p>
+<p>&#20351;&#29992; <code>./yii migrate/create init_rbac</code> &#21019;&#24314;&#26032;&#36801;&#31227;&#65292;&#28982;&#21518;&#23454;&#29616;&#21019;&#24314;&#23618;&#27425;&#32467;&#26500;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m170124_084304_init_rbac</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        $auth = Yii::$app-&gt;authManager;
+
+        <span class="hljs-comment">// &#28155;&#21152; "createPost" &#26435;&#38480;</span>
+        $createPost = $auth-&gt;createPermission(<span class="hljs-string">'createPost'</span>);
+        $createPost-&gt;description = <span class="hljs-string">'Create a post'</span>;
+        $auth-&gt;add($createPost);
+
+        <span class="hljs-comment">// &#28155;&#21152; "updatePost" &#26435;&#38480;</span>
+        $updatePost = $auth-&gt;createPermission(<span class="hljs-string">'updatePost'</span>);
+        $updatePost-&gt;description = <span class="hljs-string">'Update post'</span>;
+        $auth-&gt;add($updatePost);
+
+        <span class="hljs-comment">// &#28155;&#21152; "author" &#35282;&#33394;&#24182;&#36171;&#20104; "createPost" &#26435;&#38480;</span>
+        $author = $auth-&gt;createRole(<span class="hljs-string">'author'</span>);
+        $auth-&gt;add($author);
+        $auth-&gt;addChild($author, $createPost);
+
+        <span class="hljs-comment">// &#28155;&#21152; "admin" &#35282;&#33394;&#24182;&#36171;&#20104; "updatePost" </span>
+		<span class="hljs-comment">// &#21644; "author" &#26435;&#38480;</span>
+        $admin = $auth-&gt;createRole(<span class="hljs-string">'admin'</span>);
+        $auth-&gt;add($admin);
+        $auth-&gt;addChild($admin, $updatePost);
+        $auth-&gt;addChild($admin, $author);
+
+        <span class="hljs-comment">// &#20026;&#29992;&#25143;&#25351;&#27966;&#35282;&#33394;&#12290;&#20854;&#20013; 1 &#21644; 2 &#26159;&#30001; IdentityInterface::getId() &#36820;&#22238;&#30340;id</span>
+        <span class="hljs-comment">// &#36890;&#24120;&#22312;&#20320;&#30340; User &#27169;&#22411;&#20013;&#23454;&#29616;&#36825;&#20010;&#20989;&#25968;&#12290;</span>
+        $auth-&gt;assign($author, <span class="hljs-number">2</span>);
+        $auth-&gt;assign($admin, <span class="hljs-number">1</span>);
+    }
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        $auth = Yii::$app-&gt;authManager;
+
+        $auth-&gt;removeAll();
+    }
+}
+</code></pre>
+<blockquote><p>&#22914;&#26524;&#24744;&#19981;&#24819;&#30828;&#32534;&#30721;&#21738;&#20123;&#29992;&#25143;&#20855;&#26377;&#26576;&#20123;&#35282;&#33394;&#65292;&#35831;&#19981;&#35201;&#22312;&#36801;&#31227;&#20013;&#20351;&#29992; <code>-&gt;assign()</code> &#35843;&#29992;&#12290;
+  &#30456;&#21453;&#65292;&#35831;&#21019;&#24314;UI&#25110;&#25511;&#21046;&#21488;&#21629;&#20196;&#26469;&#31649;&#29702;&#20998;&#37197;&#12290;</p>
+</blockquote>
+<p>&#36801;&#31227;&#21487;&#20197;&#36890;&#36807; <code>yii migrate</code> &#20351;&#29992;&#12290;</p>
+<h3>&#20351;&#29992;&#25511;&#21046;&#21488;&#21629;&#20196;&#65288;Using console command&#65289; <span id="shi-yong-kong-zhi-tai-ming-ling-using-console-command"></span><a href="#shi-yong-kong-zhi-tai-ming-ling-using-console-command" class="hashlink">&para;</a></h3><p>&#22914;&#26524;&#24744;&#30340;&#26435;&#38480;&#23618;&#27425;&#26681;&#26412;&#27809;&#26377;&#25913;&#21464;&#65292;&#24182;&#19988;&#24744;&#25317;&#26377;&#22266;&#23450;&#25968;&#37327;&#30340;&#29992;&#25143;&#65292;
+&#21017;&#21487;&#20197;&#21019;&#24314;&#19968;&#20010;<a href="guide-tutorial-console.html#create-command">&#25511;&#21046;&#21488;&#21629;&#20196;</a>&#65292;&#23427;&#23558;&#36890;&#36807;
+<code>authManager</code> &#25552;&#20379;&#30340; API &#21021;&#22987;&#21270;&#25480;&#26435;&#25968;&#25454;&#19968;&#27425;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">commands</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">console</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RbacController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionInit</span><span class="hljs-params">()</span>
+    </span>{
+        $auth = Yii::$app-&gt;authManager;
+        $auth-&gt;removeAll();
+
+        <span class="hljs-comment">// &#28155;&#21152; "createPost" &#26435;&#38480;</span>
+        $createPost = $auth-&gt;createPermission(<span class="hljs-string">'createPost'</span>);
+        $createPost-&gt;description = <span class="hljs-string">'Create a post'</span>;
+        $auth-&gt;add($createPost);
+
+        <span class="hljs-comment">// &#28155;&#21152; "updatePost" &#26435;&#38480;</span>
+        $updatePost = $auth-&gt;createPermission(<span class="hljs-string">'updatePost'</span>);
+        $updatePost-&gt;description = <span class="hljs-string">'Update post'</span>;
+        $auth-&gt;add($updatePost);
+
+        <span class="hljs-comment">// &#28155;&#21152; "author" &#35282;&#33394;&#24182;&#36171;&#20104; "createPost" &#26435;&#38480;</span>
+        $author = $auth-&gt;createRole(<span class="hljs-string">'author'</span>);
+        $auth-&gt;add($author);
+        $auth-&gt;addChild($author, $createPost);
+
+        <span class="hljs-comment">// &#28155;&#21152; "admin" &#35282;&#33394;&#24182;&#36171;&#20104; "updatePost" </span>
+		<span class="hljs-comment">// &#21644; "author" &#26435;&#38480;</span>
+        $admin = $auth-&gt;createRole(<span class="hljs-string">'admin'</span>);
+        $auth-&gt;add($admin);
+        $auth-&gt;addChild($admin, $updatePost);
+        $auth-&gt;addChild($admin, $author);
+
+        <span class="hljs-comment">// &#20026;&#29992;&#25143;&#25351;&#27966;&#35282;&#33394;&#12290;&#20854;&#20013; 1 &#21644; 2 &#26159;&#30001; IdentityInterface::getId() &#36820;&#22238;&#30340;id</span>
+        <span class="hljs-comment">// &#36890;&#24120;&#22312;&#20320;&#30340; User &#27169;&#22411;&#20013;&#23454;&#29616;&#36825;&#20010;&#20989;&#25968;&#12290;</span>
+        $auth-&gt;assign($author, <span class="hljs-number">2</span>);
+        $auth-&gt;assign($admin, <span class="hljs-number">1</span>);
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22914;&#26524;&#24744;&#20351;&#29992;&#39640;&#32423;&#27169;&#26495;&#65292;&#21017;&#38656;&#35201;&#23558; <code>RbacController</code> &#25918;&#22312; <code>console/controllers</code> &#30446;&#24405;&#20013;&#65292;
+  &#24182;&#23558;&#21629;&#21517;&#31354;&#38388;&#26356;&#25913;&#20026; <code>console/controllers</code>&#12290;</p>
+</blockquote>
+<p>&#19978;&#38754;&#30340;&#21629;&#20196;&#21487;&#20197;&#36890;&#36807;&#20197;&#19979;&#26041;&#24335;&#20174;&#25511;&#21046;&#21488;&#25191;&#34892;&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> rbac/init
+</code></pre>
+<blockquote><p>&#22914;&#26524;&#24744;&#19981;&#24819;&#30828;&#32534;&#30721;&#29992;&#25143;&#20855;&#26377;&#26576;&#20123;&#35282;&#33394;&#65292;&#35831;&#19981;&#35201;&#23558; <code>-&gt;assign()</code> &#35843;&#29992;&#25918;&#20837;&#21629;&#20196;&#20013;&#12290;
+  &#30456;&#21453;&#65292;&#35831;&#21019;&#24314;UI&#25110;&#25511;&#21046;&#21488;&#21629;&#20196;&#26469;&#31649;&#29702;&#20998;&#37197;&#12290;</p>
+</blockquote>
+<h2>&#20026;&#29992;&#25143;&#20998;&#37197;&#35282;&#33394;&#65288;Assigning roles to users&#65289; <span id="wei-yong-hu-fen-pei-jiao-se-assigning-roles-to-users"></span><a href="#wei-yong-hu-fen-pei-jiao-se-assigning-roles-to-users" class="hashlink">&para;</a></h2><p>&#20316;&#32773;&#21487;&#20197;&#21019;&#24314;&#24086;&#23376;&#65292;&#31649;&#29702;&#21592;&#21487;&#20197;&#26356;&#26032;&#24086;&#23376;&#24182;&#21487;&#20197;&#20570;&#19968;&#20999;&#20316;&#32773;&#37117;&#33021;&#20570;&#30340;&#12290;</p>
+<p>&#22914;&#26524;&#24744;&#30340;&#24212;&#29992;&#31243;&#24207;&#20801;&#35768;&#29992;&#25143;&#27880;&#20876;&#65292;&#21017;&#38656;&#35201;&#20026;&#36825;&#20123;&#26032;&#29992;&#25143;&#20998;&#37197;&#19968;&#27425;&#35282;&#33394;&#12290;
+&#20363;&#22914;&#65292;&#20026;&#20102;&#35753;&#25152;&#26377;&#27880;&#20876;&#29992;&#25143;&#25104;&#20026;&#39640;&#32423;&#39033;&#30446;&#27169;&#26495;&#20013;&#30340;&#20316;&#32773;&#65292;&#24744;&#38656;&#35201;&#20462;&#25913; <code>frontend\models\SignupForm::signup()</code>&#65292;
+&#22914;&#19979;&#25152;&#31034;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;validate()) {
+        $user = <span class="hljs-keyword">new</span> User();
+        $user-&gt;username = <span class="hljs-keyword">$this</span>-&gt;username;
+        $user-&gt;email = <span class="hljs-keyword">$this</span>-&gt;email;
+        $user-&gt;setPassword(<span class="hljs-keyword">$this</span>-&gt;password);
+        $user-&gt;generateAuthKey();
+        $user-&gt;save(<span class="hljs-keyword">false</span>);
+
+        <span class="hljs-comment">// &#22686;&#21152;&#20102;&#20197;&#19979;&#19977;&#34892;&#65306;</span>
+        $auth = \Yii::$app-&gt;authManager;
+        $authorRole = $auth-&gt;getRole(<span class="hljs-string">'author'</span>);
+        $auth-&gt;assign($authorRole, $user-&gt;getId());
+
+        <span class="hljs-keyword">return</span> $user;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+}
+</code></pre>
+<p>&#23545;&#20110;&#38656;&#35201;&#21160;&#24577;&#26356;&#26032;&#25480;&#26435;&#25968;&#25454;&#30340;&#22797;&#26434;&#35775;&#38382;&#25511;&#21046;&#30340;&#24212;&#29992;&#31243;&#24207;&#65292;&#21487;&#33021;&#38656;&#35201;&#20351;&#29992;
+<code>authManager</code> &#25552;&#20379;&#30340; API &#26469;&#24320;&#21457;&#29305;&#27530;&#30340;&#29992;&#25143;&#30028;&#38754;&#65288;&#21363;&#31649;&#29702;&#38754;&#26495;&#65289;&#12290;</p>
+<h3>&#20351;&#29992;&#35268;&#21017; (Rules)  <span id="using-rules"></span><a href="#using-rules" class="hashlink">&para;</a></h3><p>&#22914;&#21069;&#25152;&#36848;&#65292;&#35268;&#21017;&#32473;&#35282;&#33394;&#21644;&#26435;&#38480;&#22686;&#21152;&#39069;&#22806;&#30340;&#32422;&#26463;&#26465;&#20214;&#12290;&#35268;&#21017;&#26159; <a href="./yii-rbac-rule.html">yii\rbac\Rule</a> &#30340;&#27966;&#29983;&#31867;&#12290;
+&#23427;&#38656;&#35201;&#23454;&#29616; <a href="./yii-rbac-rule.html#execute()-detail">execute()</a> &#26041;&#27861;&#12290;&#22312;&#20043;&#21069;&#25105;&#20204;&#21019;&#24314;&#30340;&#23618;&#27425;&#32467;&#26500;&#20013;&#65292;&#20316;&#32773;&#19981;&#33021;&#32534;&#36753;&#33258;&#24049;&#30340;&#24086;&#23376;&#65292;&#25105;&#20204;&#26469;&#20462;&#27491;&#36825;&#20010;&#38382;&#39064;&#12290;
+&#39318;&#20808;&#25105;&#20204;&#38656;&#35201;&#19968;&#20010;&#35268;&#21017;&#26469;&#35748;&#35777;&#24403;&#21069;&#29992;&#25143;&#26159;&#24086;&#23376;&#30340;&#20316;&#32773;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">rbac</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">rbac</span>\<span class="hljs-title">Rule</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Post</span>;
+
+<span class="hljs-comment">/**
+ * &#26816;&#26597; authorID &#26159;&#21542;&#21644;&#36890;&#36807;&#21442;&#25968;&#20256;&#36827;&#26469;&#30340; user &#21442;&#25968;&#30456;&#31526;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AuthorRule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Rule</span>
+</span>{
+    <span class="hljs-keyword">public</span> $name = <span class="hljs-string">'isAuthor'</span>;
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> string|integer $user &#29992;&#25143; ID.
+     * <span class="hljs-doctag">@param</span> Item $item &#35813;&#35268;&#21017;&#30456;&#20851;&#30340;&#35282;&#33394;&#25110;&#32773;&#26435;&#38480;
+     * <span class="hljs-doctag">@param</span> array $params &#20256;&#32473; ManagerInterface::checkAccess() &#30340;&#21442;&#25968;
+     * <span class="hljs-doctag">@return</span> boolean &#20195;&#34920;&#35813;&#35268;&#21017;&#30456;&#20851;&#30340;&#35282;&#33394;&#25110;&#32773;&#26435;&#38480;&#26159;&#21542;&#34987;&#20801;&#35768;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execute</span><span class="hljs-params">($user, $item, $params)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">isset</span>($params[<span class="hljs-string">'post'</span>]) ? $params[<span class="hljs-string">'post'</span>]-&gt;createdBy == $user : <span class="hljs-keyword">false</span>;
+    }
+}
+</code></pre>
+<p>&#19978;&#36848;&#35268;&#21017;&#26816;&#26597; <code>post</code> &#26159;&#21542;&#26159; <code>$user</code> &#21019;&#24314;&#30340;&#12290;&#25105;&#20204;&#36824;&#35201;&#22312;&#20043;&#21069;&#30340;&#21629;&#20196;&#20013;
+&#21019;&#24314;&#19968;&#20010;&#29305;&#21035;&#30340;&#26435;&#38480; <code>updateOwnPost</code> &#65306;</p>
+<pre><code class="hljs php language-php">$auth = Yii::$app-&gt;authManager;
+
+<span class="hljs-comment">// &#28155;&#21152;&#35268;&#21017;</span>
+$rule = <span class="hljs-keyword">new</span> \app\rbac\AuthorRule;
+$auth-&gt;add($rule);
+
+<span class="hljs-comment">// &#28155;&#21152; "updateOwnPost" &#26435;&#38480;&#24182;&#19982;&#35268;&#21017;&#20851;&#32852;</span>
+$updateOwnPost = $auth-&gt;createPermission(<span class="hljs-string">'updateOwnPost'</span>);
+$updateOwnPost-&gt;description = <span class="hljs-string">'Update own post'</span>;
+$updateOwnPost-&gt;ruleName = $rule-&gt;name;
+$auth-&gt;add($updateOwnPost);
+
+<span class="hljs-comment">// "updateOwnPost" &#26435;&#38480;&#23558;&#30001; "updatePost" &#26435;&#38480;&#20351;&#29992;</span>
+$auth-&gt;addChild($updateOwnPost, $updatePost);
+
+<span class="hljs-comment">// &#20801;&#35768; "author" &#26356;&#26032;&#33258;&#24049;&#30340;&#24086;&#23376;</span>
+$auth-&gt;addChild($author, $updateOwnPost);
+</code></pre>
+<p>&#29616;&#22312;&#25105;&#20204;&#24471;&#21040;&#22914;&#19979;&#23618;&#27425;&#32467;&#26500;:</p>
+<p><img src="images/rbac-hierarchy-2.png" alt="RBAC hierarchy with a rule" title="&#26377;&#19968;&#20010;&#35268;&#21017;&#30340; RBAC &#23618;&#27425;&#32467;&#26500;"></p>
+<h3>&#23384;&#21462;&#26816;&#26597;  <span id="access-check"></span><a href="#access-check" class="hashlink">&para;</a></h3><p>&#25480;&#26435;&#25968;&#25454;&#20934;&#22791;&#22909;&#21518;&#65292;&#23384;&#21462;&#26816;&#26597;&#31616;&#21333;&#21040;&#21482;&#38656;&#35201;&#19968;&#20010;&#26041;&#27861;&#35843;&#29992; <a href="./yii-rbac-checkaccessinterface.html#checkAccess()-detail">yii\rbac\ManagerInterface::checkAccess()</a>&#12290;
+&#22240;&#20026;&#22823;&#22810;&#25968;&#23384;&#21462;&#26816;&#26597;&#37117;&#26159;&#38024;&#23545;&#24403;&#21069;&#29992;&#25143;&#32780;&#35328;&#65292;&#20026;&#26041;&#20415;&#36215;&#35265;&#65292; Yii &#25552;&#20379;&#20102;&#19968;&#20010;&#24555;&#25463;&#26041;&#27861;
+<a href="./yii-web-user.html#can()-detail">yii\web\User::can()</a>&#65292;&#21487;&#20197;&#22914;&#19979;&#20363;&#25152;&#31034;&#26469;&#20351;&#29992;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (\Yii::$app-&gt;user-&gt;can(<span class="hljs-string">'createPost'</span>)) {
+    <span class="hljs-comment">// &#24314;&#36148;</span>
+}
+</code></pre>
+<p>&#22914;&#26524;&#24403;&#21069;&#29992;&#25143;&#26159; <code>ID=1</code> &#30340; Jane &#65292;&#25105;&#20204;&#20174;&#22270;&#20013;&#30340; <code>createPost</code> &#24320;&#22987;&#65292;&#24182;&#35797;&#22270;&#21040;&#36798; <code>Jane</code> &#12290; &#65288;&#35793;&#32773;&#27880;&#65306;&#21442;&#29031;&#22270;&#20013;&#32418;&#33394;&#36335;&#32447;&#25152;&#31034;&#30340;&#24314;&#36148;&#25480;&#26435;&#27969;&#31243;&#65289;</p>
+<p><img src="images/rbac-access-check-1.png" alt="Access check" title="Access check"></p>
+<p>&#20026;&#20102;&#26816;&#26597;&#26576;&#29992;&#25143;&#26159;&#21542;&#33021;&#26356;&#26032;&#24086;&#23376;&#65292;&#25105;&#20204;&#38656;&#35201;&#20256;&#36882;&#19968;&#20010;&#39069;&#22806;&#30340;&#21442;&#25968;&#65292;&#35813;&#21442;&#25968;&#26159; <code>AuthorRule</code> &#35201;&#29992;&#30340;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (\Yii::$app-&gt;user-&gt;can(<span class="hljs-string">'updatePost'</span>, [<span class="hljs-string">'post'</span> =&gt; $post])) {
+    <span class="hljs-comment">// &#26356;&#26032;&#24086;&#23376;</span>
+}
+</code></pre>
+<p>&#19979;&#22270;&#25152;&#31034;&#20026;&#24403;&#21069;&#29992;&#25143;&#26159; John &#26102;&#25152;&#21457;&#29983;&#30340;&#20107;&#24773;&#65306;</p>
+<p><img src="images/rbac-access-check-2.png" alt="Access check" title="&#23384;&#21462;&#26435;&#38480;&#26816;&#26597;"></p>
+<p>&#25105;&#20204;&#20174;&#22270;&#20013;&#30340; <code>updatePost</code> &#24320;&#22987;&#65292;&#32463;&#36807; <code>updateOwnPost</code>&#12290;&#20026;&#36890;&#36807;&#26816;&#26597;&#65292;<code>Authorrule</code> 
+&#35268;&#21017;&#30340; <code>execute()</code> &#26041;&#27861;&#24212;&#24403;&#36820;&#22238; <code>true</code> &#12290;&#35813;&#26041;&#27861;&#20174; <code>can()</code> &#26041;&#27861;&#35843;&#29992;&#25509;&#25910;&#21040; <code>$params</code> &#21442;&#25968;&#65292;
+&#22240;&#27492;&#23427;&#30340;&#20540;&#26159; <code>['post' =&gt; $post]</code> &#12290;&#22914;&#26524;&#19968;&#20999;&#39034;&#21033;&#65292;&#25105;&#20204;&#20250;&#36798;&#21040;&#25351;&#27966;&#32473; John &#30340; <code>author</code> &#35282;&#33394;&#12290;</p>
+<p>&#23545;&#20110; Jane &#26469;&#35828;&#21017;&#26356;&#31616;&#21333;&#65292;&#22240;&#20026;&#22905;&#26159;&#31649;&#29702;&#21592;&#65306;</p>
+<p><img src="images/rbac-access-check-3.png" alt="Access check" title="Access check"></p>
+<p>&#22312;&#24744;&#30340;&#25511;&#21046;&#22120;&#20869;&#37096;&#26377;&#20960;&#31181;&#23454;&#29616;&#25480;&#26435;&#30340;&#26041;&#24335;&#12290;
+&#22914;&#26524;&#24744;&#24076;&#26395;&#32454;&#21270;&#26435;&#38480;&#26469;&#20998;&#24320;&#28155;&#21152;&#21644;&#21024;&#38500;&#30340;&#35775;&#38382;&#26435;&#38480;&#65292;&#37027;&#20040;&#24744;&#38656;&#35201;&#26816;&#26597;&#27599;&#20010;&#25805;&#20316;&#30340;&#35775;&#38382;&#26435;&#38480;&#12290;
+&#24744;&#21487;&#20197;&#22312;&#27599;&#20010;&#25805;&#20316;&#26041;&#27861;&#20013;&#20351;&#29992;&#19978;&#36848;&#26465;&#20214;&#65292;&#25110;&#20351;&#29992; <a href="./yii-filters-accesscontrol.html">yii\filters\AccessControl</a>&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'access'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; AccessControl::class,
+            <span class="hljs-string">'rules'</span> =&gt; [
+                [
+                    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'index'</span>],
+                    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'managePost'</span>],
+                ],
+                [
+                    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'view'</span>],
+                    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'viewPost'</span>],
+                ],
+                [
+                    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'create'</span>],
+                    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'createPost'</span>],
+                ],
+                [
+                    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'update'</span>],
+                    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'updatePost'</span>],
+                ],
+                [
+                    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'delete'</span>],
+                    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'deletePost'</span>],
+                ],
+            ],
+        ],
+    ];
+}
+</code></pre>
+<p>&#22914;&#26524;&#25152;&#26377;&#30340;CRUD&#25805;&#20316;&#37117;&#26159;&#19968;&#36215;&#31649;&#29702;&#30340;&#65292;&#37027;&#20040;&#20351;&#29992; <code>managePost</code> &#36825;&#26679;&#30340;&#21333;&#19968;&#26435;&#38480;&#24182;&#19988;&#22312;
+<a href="./yii-web-controller.html#beforeAction()-detail">yii\web\Controller::beforeAction()</a> &#20013;&#26816;&#26597;&#23427;&#26159;&#20010;&#22909;&#20027;&#24847;&#12290;</p>
+<p>&#22312;&#19978;&#38754;&#30340;&#20363;&#23376;&#20013;&#65292;&#27809;&#26377;&#21442;&#25968;&#19982;&#25351;&#23450;&#30340;&#35775;&#38382;&#21160;&#20316;&#30340;&#35282;&#33394;&#19968;&#36215;&#20256;&#36882;&#65292;&#20294;&#26159;&#22312;
+<code>updatePost</code> &#26435;&#38480;&#30340;&#24773;&#20917;&#19979;&#65292;&#25105;&#20204;&#38656;&#35201;&#20256;&#36882; <code>post</code> &#21442;&#25968;&#25165;&#33021;&#27491;&#24120;&#24037;&#20316;&#12290;
+&#24744;&#21487;&#20197;&#36890;&#36807;&#22312;&#35775;&#38382;&#35268;&#21017;&#20013;&#25351;&#23450; <a href="./yii-filters-accessrule.html#%24roleParams-detail">roleParams</a> &#23558;&#21442;&#25968;&#20256;&#36882;&#32473;
+<a href="./yii-web-user.html#can()-detail">yii\web\User::can()</a>&#65306;</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'update'</span>],
+    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'updatePost'</span>],
+    <span class="hljs-string">'roleParams'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> [<span class="hljs-string">'post'</span> =&gt; Post::findOne([<span class="hljs-string">'id'</span> =&gt; Yii::$app-&gt;request-&gt;get(<span class="hljs-string">'id'</span>)])];
+    },
+],
+</code></pre>
+<p>&#22312;&#19978;&#38754;&#30340;&#20363;&#23376;&#20013;&#65292;<a href="./yii-filters-accessrule.html#%24roleParams-detail">roleParams</a> &#26159;&#19968;&#20010; Closure&#65292;
+&#23558;&#22312;&#26816;&#26597;&#35775;&#38382;&#35268;&#21017;&#26102;&#36827;&#34892;&#35780;&#20272;&#65292;&#22240;&#27492;&#27169;&#22411;&#21482;&#20250;&#22312;&#38656;&#35201;&#26102;&#21152;&#36733;&#12290;
+&#22914;&#26524;&#21019;&#24314;&#35282;&#33394;&#21442;&#25968;&#26159;&#19968;&#20010;&#31616;&#21333;&#30340;&#25805;&#20316;&#65292;&#37027;&#20040;&#24744;&#21487;&#20197;&#25351;&#23450;&#19968;&#20010;&#25968;&#32452;&#65292;&#22914;&#19979;&#25152;&#31034;&#65306;</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+    <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'update'</span>],
+    <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'updatePost'</span>],
+    <span class="hljs-string">'roleParams'</span> =&gt; [<span class="hljs-string">'postId'</span> =&gt; Yii::$app-&gt;request-&gt;get(<span class="hljs-string">'id'</span>)];
+],
+</code></pre>
+<h3>&#20351;&#29992;&#40664;&#35748;&#35282;&#33394;  <span id="using-default-roles"></span><a href="#using-default-roles" class="hashlink">&para;</a></h3><p>&#25152;&#35859;&#40664;&#35748;&#35282;&#33394;&#23601;&#26159; <em>&#38544;&#24335;</em> &#22320;&#25351;&#27966;&#32473; <em>&#25152;&#26377;</em> &#29992;&#25143;&#30340;&#35282;&#33394;&#12290;&#19981;&#38656;&#35201;&#35843;&#29992; 
+<a href="./yii-rbac-managerinterface.html#assign()-detail">yii\rbac\ManagerInterface::assign()</a> &#26041;&#27861;&#20570;&#26174;&#31034;&#25351;&#27966;&#65292;&#24182;&#19988;&#25480;&#26435;&#25968;&#25454;&#20013;&#19981;&#21253;&#21547;&#25351;&#27966;&#20449;&#24687;&#12290;</p>
+<p>&#40664;&#35748;&#35282;&#33394;&#36890;&#24120;&#19982;&#19968;&#20010;&#35268;&#21017;&#20851;&#32852;&#65292;&#29992;&#20197;&#26816;&#26597;&#35813;&#35282;&#33394;&#26159;&#21542;&#31526;&#21512;&#34987;&#26816;&#26597;&#30340;&#29992;&#25143;&#12290;</p>
+<p>&#40664;&#35748;&#35282;&#33394;&#24120;&#24120;&#29992;&#20110;&#24050;&#32463;&#30830;&#31435;&#20102;&#19968;&#20123;&#35282;&#33394;&#30340;&#25351;&#27966;&#20851;&#31995;&#30340;&#24212;&#29992;&#65288;&#35793;&#32773;&#27880;&#65306;&#25351;&#27966;&#20851;&#31995;&#25351;&#30340;&#26159;&#24212;&#29992;&#19994;&#21153;&#36923;&#36753;&#23618;&#38754;&#65292;
+&#24182;&#38750;&#25351;&#25480;&#26435;&#25968;&#25454;&#30340;&#32467;&#26500;&#65289;&#12290;&#27604;&#22914;&#65292;&#19968;&#20010;&#24212;&#29992;&#30340; user &#34920;&#20013;&#26377;&#19968;&#20010; <code>group</code> &#23383;&#27573;&#65292;&#20195;&#34920;&#29992;&#25143;&#23646;&#20110;&#21738;&#20010;&#29305;&#26435;&#32452;&#12290;
+&#22914;&#26524;&#27599;&#20010;&#29305;&#26435;&#32452;&#21487;&#20197;&#26144;&#23556;&#21040; RBAC &#30340;&#35282;&#33394;&#65292;&#20320;&#23601;&#21487;&#20197;&#37319;&#29992;&#40664;&#35748;&#35282;&#33394;&#33258;&#21160;&#22320;&#20026;&#27599;&#20010;&#29992;&#25143;&#25351;&#27966;&#19968;&#20010; RBAC &#35282;&#33394;&#12290;
+&#35753;&#25105;&#20204;&#29992;&#19968;&#20010;&#20363;&#23376;&#23637;&#31034;&#22914;&#20309;&#20570;&#21040;&#36825;&#19968;&#28857;&#12290;</p>
+<p>&#20551;&#35774;&#22312; user &#34920;&#20013;&#65292;&#20320;&#26377;&#19968;&#20010; <code>group</code> &#23383;&#27573;&#65292;&#29992; 1 &#20195;&#34920;&#31649;&#29702;&#21592;&#32452;&#65292;&#29992; 2 &#34920;&#31034;&#20316;&#32773;&#32452;&#12290;
+&#20320;&#35268;&#21010;&#20004;&#20010; RBAC &#35282;&#33394; <code>admin</code> &#21644; <code>author</code> &#20998;&#21035;&#23545;&#24212;&#36825;&#20004;&#20010;&#32452;&#30340;&#26435;&#38480;&#12290;
+&#20320;&#21487;&#20197;&#36825;&#26679;&#35774;&#32622; RBAC &#25968;&#25454;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">rbac</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">rbac</span>\<span class="hljs-title">Rule</span>;
+
+<span class="hljs-comment">/**
+ * &#26816;&#26597;&#26159;&#21542;&#21305;&#37197;&#29992;&#25143;&#30340;&#32452;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserGroupRule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Rule</span>
+</span>{
+    <span class="hljs-keyword">public</span> $name = <span class="hljs-string">'userGroup'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execute</span><span class="hljs-params">($user, $item, $params)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (!Yii::$app-&gt;user-&gt;isGuest) {
+            $group = Yii::$app-&gt;user-&gt;identity-&gt;group;
+            <span class="hljs-keyword">if</span> ($item-&gt;name === <span class="hljs-string">'admin'</span>) {
+                <span class="hljs-keyword">return</span> $group == <span class="hljs-number">1</span>;
+            } <span class="hljs-keyword">elseif</span> ($item-&gt;name === <span class="hljs-string">'author'</span>) {
+                <span class="hljs-keyword">return</span> $group == <span class="hljs-number">1</span> || $group == <span class="hljs-number">2</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+}
+</code></pre>
+<p>&#28982;&#21518;&#25353; <a href="#generating-rbac-data">in the previous section</a> &#20013;&#30340;&#35828;&#26126;&#21019;&#24314;&#33258;&#24049;&#30340; command/migration&#65306;</p>
+<pre><code class="hljs php language-php">$auth = Yii::$app-&gt;authManager;
+
+$rule = <span class="hljs-keyword">new</span> \app\rbac\UserGroupRule;
+$auth-&gt;add($rule);
+
+$author = $auth-&gt;createRole(<span class="hljs-string">'author'</span>);
+$author-&gt;ruleName = $rule-&gt;name;
+$auth-&gt;add($author);
+<span class="hljs-comment">// ... &#28155;&#21152;$author&#35282;&#33394;&#30340;&#23376;&#39033;&#37096;&#20998;&#20195;&#30721; ... &#65288;&#35793;&#32773;&#27880;&#65306;&#30465;&#30053;&#37096;&#20998;&#21442;&#29031;&#20043;&#21069;&#30340;&#25511;&#21046;&#21488;&#21629;&#20196;&#65289;</span>
+
+$admin = $auth-&gt;createRole(<span class="hljs-string">'admin'</span>);
+$admin-&gt;ruleName = $rule-&gt;name;
+$auth-&gt;add($admin);
+$auth-&gt;addChild($admin, $author);
+<span class="hljs-comment">// ... &#28155;&#21152;$admin&#35282;&#33394;&#30340;&#23376;&#39033;&#37096;&#20998;&#20195;&#30721; ... &#65288;&#35793;&#32773;&#27880;&#65306;&#30465;&#30053;&#37096;&#20998;&#21442;&#29031;&#20043;&#21069;&#30340;&#25511;&#21046;&#21488;&#21629;&#20196;&#65289;</span>
+</code></pre>
+<p>&#27880;&#24847;&#65292;&#22312;&#19978;&#36848;&#20195;&#30721;&#20013;&#65292;&#22240;&#20026; "author" &#20316;&#20026; "admin" &#30340;&#23376;&#35282;&#33394;&#65292;&#24403;&#20320;&#23454;&#29616;&#36825;&#20010;&#35268;&#21017;&#30340; <code>execute()</code> &#26041;&#27861;&#26102;&#65292; 
+&#20320;&#20063;&#38656;&#35201;&#36981;&#20174;&#36825;&#20010;&#23618;&#27425;&#32467;&#26500;&#12290;&#36825;&#23601;&#26159;&#20026;&#20309;&#24403;&#35282;&#33394;&#21517;&#20026; "author" &#30340;&#24773;&#20917;&#19979;&#65288;&#35793;&#32773;&#27880;&#65306;<code>$item-&gt;name</code>&#23601;&#26159;&#35282;&#33394;&#21517;&#65289;&#65292; 
+<code>execute()</code> &#26041;&#27861;&#22312;&#32452;&#20026; 1 &#25110;&#32773; 2 &#26102;&#22343;&#35201;&#36820;&#22238; true 
+&#65288;&#24847;&#24605;&#26159;&#29992;&#25143;&#23646;&#20110; "admin" &#25110;&#32773; "author" &#32452; &#65289;&#12290;</p>
+<p>&#25509;&#19979;&#26469;&#65292;&#22312;&#37197;&#32622; <code>authManager</code> &#26102;&#25351;&#23450; <a href="./yii-rbac-basemanager.html#%24defaultRoles-detail">yii\rbac\BaseManager::$defaultRoles</a> &#36873;&#39033;&#65288;&#35793;&#32773;&#27880;&#65306;&#22312;&#24212;&#29992;&#37197;&#32622;&#25991;&#20214;&#20013;&#30340;&#32452;&#20214;&#37096;&#20998;&#37197;&#32622;&#65289;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'authManager'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\rbac\PhpManager'</span>,
+            <span class="hljs-string">'defaultRoles'</span> =&gt; [<span class="hljs-string">'admin'</span>, <span class="hljs-string">'author'</span>],
+        ],
+        <span class="hljs-comment">// ...</span>
+    ],
+];
+</code></pre>
+<p>&#29616;&#22312;&#22914;&#26524;&#20320;&#25191;&#34892;&#19968;&#20010;&#23384;&#21462;&#26435;&#38480;&#26816;&#26597;&#65292; &#21028;&#23450;&#35813;&#35268;&#21017;&#26102;&#65292; <code>admin</code> &#21644; <code>author</code> 
+&#20004;&#20010;&#35282;&#33394;&#37117;&#23558;&#20250;&#26816;&#26597;&#12290;&#22914;&#26524;&#35268;&#21017;&#36820;&#22238; true &#65292;&#24847;&#24605;&#26159;&#35282;&#33394;&#31526;&#21512;&#24403;&#21069;&#29992;&#25143;&#12290;&#22522;&#20110;&#19978;&#36848;&#35268;&#21017;
+&#30340;&#23454;&#29616;&#65292;&#24847;&#21619;&#30528;&#22914;&#26524;&#26576;&#29992;&#25143;&#30340; <code>group</code> &#20540;&#20026; 1 &#65292; <code>admin</code> &#35282;&#33394;&#23558;&#36171;&#20104;&#35813;&#29992;&#25143;&#65292;
+&#22914;&#26524; <code>group</code> &#20540;&#26159; 2 &#21017;&#23558;&#36171;&#20104; <code>author</code> &#35282;&#33394;&#12290;</p>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:20 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>AuthChoiceAsset, yii\authclient\widgets\AuthChoiceAsset - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w17957" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w17957-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w17957-collapse" class="collapse navbar-collapse"><ul id="w17958" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w17959" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-17953" data-toggle="collapse" data-parent="#navigation">yii\authclient <b class="caret"></b></a><div id="navigation-17953" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-authclient-authaction.html">AuthAction</a>
+<a class="list-group-item" href="./yii-authclient-baseclient.html">BaseClient</a>
+<a class="list-group-item" href="./yii-authclient-baseoauth.html">BaseOAuth</a>
+<a class="list-group-item" href="./yii-authclient-cachestatestorage.html">CacheStateStorage</a>
+<a class="list-group-item" href="./yii-authclient-clienterrorresponseexception.html">ClientErrorResponseException</a>
+<a class="list-group-item" href="./yii-authclient-clientinterface.html">ClientInterface</a>
+<a class="list-group-item" href="./yii-authclient-collection.html">Collection</a>
+<a class="list-group-item" href="./yii-authclient-invalidresponseexception.html">InvalidResponseException</a>
+<a class="list-group-item" href="./yii-authclient-oauth1.html">OAuth1</a>
+<a class="list-group-item" href="./yii-authclient-oauth2.html">OAuth2</a>
+<a class="list-group-item" href="./yii-authclient-oauthtoken.html">OAuthToken</a>
+<a class="list-group-item" href="./yii-authclient-openid.html">OpenId</a>
+<a class="list-group-item" href="./yii-authclient-openidconnect.html">OpenIdConnect</a>
+<a class="list-group-item" href="./yii-authclient-sessionstatestorage.html">SessionStateStorage</a>
+<a class="list-group-item" href="./yii-authclient-statestorageinterface.html">StateStorageInterface</a></div>
+<a class="list-group-item" href="#navigation-17954" data-toggle="collapse" data-parent="#navigation">yii\authclient\clients <b class="caret"></b></a><div id="navigation-17954" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-authclient-clients-facebook.html">Facebook</a>
+<a class="list-group-item" href="./yii-authclient-clients-github.html">GitHub</a>
+<a class="list-group-item" href="./yii-authclient-clients-google.html">Google</a>
+<a class="list-group-item" href="./yii-authclient-clients-googlehybrid.html">GoogleHybrid</a>
+<a class="list-group-item" href="./yii-authclient-clients-linkedin.html">LinkedIn</a>
+<a class="list-group-item" href="./yii-authclient-clients-live.html">Live</a>
+<a class="list-group-item" href="./yii-authclient-clients-twitter.html">Twitter</a>
+<a class="list-group-item" href="./yii-authclient-clients-twitteroauth2.html">TwitterOAuth2</a>
+<a class="list-group-item" href="./yii-authclient-clients-vkontakte.html">VKontakte</a>
+<a class="list-group-item" href="./yii-authclient-clients-yandex.html">Yandex</a></div>
+<a class="list-group-item" href="#navigation-17955" data-toggle="collapse" data-parent="#navigation">yii\authclient\signature <b class="caret"></b></a><div id="navigation-17955" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-authclient-signature-basemethod.html">BaseMethod</a>
+<a class="list-group-item" href="./yii-authclient-signature-hmacsha.html">HmacSha</a>
+<a class="list-group-item" href="./yii-authclient-signature-hmacsha1.html">HmacSha1</a>
+<a class="list-group-item" href="./yii-authclient-signature-plaintext.html">PlainText</a>
+<a class="list-group-item" href="./yii-authclient-signature-rsasha.html">RsaSha</a>
+<a class="list-group-item" href="./yii-authclient-signature-rsasha1.html">RsaSha1</a></div>
+<a class="list-group-item active" href="#navigation-17956" data-toggle="collapse" data-parent="#navigation">yii\authclient\widgets <b class="caret"></b></a><div id="navigation-17956" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./yii-authclient-widgets-authchoice.html">AuthChoice</a>
+<a class="list-group-item active" href="./yii-authclient-widgets-authchoiceasset.html">AuthChoiceAsset</a>
+<a class="list-group-item" href="./yii-authclient-widgets-authchoiceitem.html">AuthChoiceItem</a>
+<a class="list-group-item" href="./yii-authclient-widgets-authchoicestyleasset.html">AuthChoiceStyleAsset</a>
+<a class="list-group-item" href="./yii-authclient-widgets-googleplusbutton.html">GooglePlusButton</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main"><h1>Class yii\authclient\widgets\AuthChoiceAsset</h1>
+<div class="top-nav">
+    <a href="index">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="yii-authclient-widgets-authchoiceasset.html">yii\authclient\widgets\AuthChoiceAsset</a> &raquo;
+<a href="yii-web-assetbundle.html">yii\web\AssetBundle</a> &raquo;
+<a href="yii-base-baseobject.html">yii\base\BaseObject</a></td></tr>
+                <tr><th>Implements</th><td><a href="yii-base-configurable.html">yii\base\Configurable</a></td></tr>
+                                    <tr><th>Available since version</th><td>2.0</td></tr>
+                    <tr>
+          <th>Source Code</th>
+          <td><a href="https://github.com/yiisoft/yii2-authclient/blob/master/widgets/AuthChoiceAsset.php">https://github.com/yiisoft/yii2-authclient/blob/master/widgets/AuthChoiceAsset.php</a></td>
+        </tr>
+    </table>
+
+<div class="class-description">
+    <p><strong>AuthChoiceAsset is an asset bundle for <a href="yii-authclient-widgets-authchoice.html">yii\authclient\widgets\AuthChoice</a> widget.</strong></p>
+    
+    <p>See also <a href="yii-authclient-widgets-authchoicestyleasset.html">yii\authclient\widgets\AuthChoiceStyleAsset</a>.</p></div>
+
+
+
+<a id="properties"></a>
+
+<div class="doc-property summary toggle-target-container">
+    <h2>Public Properties</h2>
+
+    <p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+        <colgroup>
+            <col class="col-property" />
+            <col class="col-type" />
+            <col class="col-description" />
+            <col class="col-defined" />
+        </colgroup>
+        <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Defined By</th>
+        </tr>
+
+                                    <tr id="$basePath" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#$basePath-detail">$basePath</a></td>
+                    <td><a href="https://www.php.net/language.types.string">string</a></td>
+                    <td>The Web-accessible directory that contains the asset files in this bundle.</td>
+                    <td><a href="yii-web-assetbundle.html">yii\web\AssetBundle</a></td>
+                </tr>
+                                                <tr id="$baseUrl" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#$baseUrl-detail">$baseUrl</a></td>
+                    <td><a href="https://www.php.net/language.types.string">string</a></td>
+                    <td>The base URL for the relative asset files listed in <a href="yii-web-assetbundle.html#$js-detail">$js</a> and <a href="yii-web-assetbundle.html#$css-detail">$css</a>.</td>
+                    <td><a href="yii-web-assetbundle.html">yii\web\AssetBundle</a></td>
+                </tr>
+                                                <tr id="$css" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#$css-detail">$css</a></td>
+                    <td><a href="https://www.php.net/language.types.array">array</a></td>
+                    <td>List of CSS files that this bundle contains.</td>
+                    <td><a href="yii-web-assetbundle.html">yii\web\AssetBundle</a></td>
+                </tr>
+                                                <tr id="$cssOptions" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#$cssOptions-detail">$cssOptions</a></td>
+                    <td><a href="https://www.php.net/language.types.array">array</a></td>
+                    <td>The options that will be passed to <a href="yii-web-view.html#registerCssFile()-detail">yii\web\View::registerCssFile()</a> when registering the CSS files in this bundle.</td>
+                    <td><a href="yii-web-assetbundle.html">yii\web\AssetBundle</a></td>
+                </tr>
+                                                <tr id="$depends" class="">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#$depends-detail">$depends</a></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html">yii\authclient\widgets\AuthChoiceAsset</a></td>
+                </tr>
+                                                <tr id="$js" class="">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#$js-detail">$js</a></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html">yii\authclient\widgets\AuthChoiceAsset</a></td>
+                </tr>
+                                                <tr id="$jsOptions" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#$jsOptions-detail">$jsOptions</a></td>
+                    <td><a href="https://www.php.net/language.types.array">array</a></td>
+                    <td>The options that will be passed to <a href="yii-web-view.html#registerJsFile()-detail">yii\web\View::registerJsFile()</a> when registering the JS files in this bundle.</td>
+                    <td><a href="yii-web-assetbundle.html">yii\web\AssetBundle</a></td>
+                </tr>
+                                                <tr id="$publishOptions" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#$publishOptions-detail">$publishOptions</a></td>
+                    <td><a href="https://www.php.net/language.types.array">array</a></td>
+                    <td>The options to be passed to <a href="yii-web-assetmanager.html#publish()-detail">yii\web\AssetManager::publish()</a> when the asset bundle is being published.</td>
+                    <td><a href="yii-web-assetbundle.html">yii\web\AssetBundle</a></td>
+                </tr>
+                                                <tr id="$sourcePath" class="">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#$sourcePath-detail">$sourcePath</a></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html">yii\authclient\widgets\AuthChoiceAsset</a></td>
+                </tr>
+                        </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="doc-method summary toggle-target-container">
+    <h2>Public Methods</h2>
+
+    <p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+        <colgroup>
+            <col class="col-method" />
+            <col class="col-description" />
+            <col class="col-defined" />
+        </colgroup>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+            <th>Defined By</th>
+        </tr>
+
+                                    <tr id="__call()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#__call()-detail">__call()</a></td>
+                    <td>Calls the named method which is not a class method.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="__construct()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#__construct()-detail">__construct()</a></td>
+                    <td>Constructor.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="__get()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#__get()-detail">__get()</a></td>
+                    <td>Returns the value of an object property.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="__isset()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#__isset()-detail">__isset()</a></td>
+                    <td>Checks if a property is set, i.e. defined and not null.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="__set()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#__set()-detail">__set()</a></td>
+                    <td>Sets value of an object property.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="__unset()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#__unset()-detail">__unset()</a></td>
+                    <td>Sets an object property to null.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="canGetProperty()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#canGetProperty()-detail">canGetProperty()</a></td>
+                    <td>Returns a value indicating whether a property can be read.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="canSetProperty()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#canSetProperty()-detail">canSetProperty()</a></td>
+                    <td>Returns a value indicating whether a property can be set.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="className()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#className()-detail">className()</a></td>
+                    <td>Returns the fully qualified name of this class.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="hasMethod()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#hasMethod()-detail">hasMethod()</a></td>
+                    <td>Returns a value indicating whether a method is defined.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="hasProperty()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#hasProperty()-detail">hasProperty()</a></td>
+                    <td>Returns a value indicating whether a property is defined.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="init()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#init()-detail">init()</a></td>
+                    <td>Initializes the bundle.</td>
+                    <td><a href="yii-web-assetbundle.html">yii\web\AssetBundle</a></td>
+                </tr>
+                                                <tr id="publish()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#publish()-detail">publish()</a></td>
+                    <td>Publishes the asset bundle if its source code is not under Web-accessible directory.</td>
+                    <td><a href="yii-web-assetbundle.html">yii\web\AssetBundle</a></td>
+                </tr>
+                                                <tr id="register()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#register()-detail">register()</a></td>
+                    <td>Registers this asset bundle with a view.</td>
+                    <td><a href="yii-web-assetbundle.html">yii\web\AssetBundle</a></td>
+                </tr>
+                                                <tr id="registerAssetFiles()" class="inherited">
+                    <td><a href="yii-authclient-widgets-authchoiceasset.html#registerAssetFiles()-detail">registerAssetFiles()</a></td>
+                    <td>Registers the CSS and JS files with the given view.</td>
+                    <td><a href="yii-web-assetbundle.html">yii\web\AssetBundle</a></td>
+                </tr>
+                        </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+
+<h2>Property Details</h2>
+
+<div class="property-doc toggle-target-container">
+    <p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+            <div id="$depends-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#$depends-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-authclient/edit/master/widgets/AuthChoiceAsset.php#L26" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-authclient/blob/master/widgets/AuthChoiceAsset.php#L26" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $depends
+                <span class="detail-header-tag small">
+                    public                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                                            </div>
+
+            <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"></span> <a href="yii-authclient-widgets-authchoiceasset.html#$depends-detail">$depends</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'yii\authclient\widgets\AuthChoiceStyleAsset'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'yii\web\YiiAsset'</span><span style="color: #007700">,<br />]</span></div>
+            
+            
+        </div>
+            <div id="$js-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#$js-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-authclient/edit/master/widgets/AuthChoiceAsset.php#L23" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-authclient/blob/master/widgets/AuthChoiceAsset.php#L23" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $js
+                <span class="detail-header-tag small">
+                    public                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                                            </div>
+
+            <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"></span> <a href="yii-authclient-widgets-authchoiceasset.html#$js-detail">$js</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'authchoice.js'</span><span style="color: #007700">,<br />]</span></div>
+            
+            
+        </div>
+            <div id="$sourcePath-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#$sourcePath-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-authclient/edit/master/widgets/AuthChoiceAsset.php#L22" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-authclient/blob/master/widgets/AuthChoiceAsset.php#L22" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $sourcePath
+                <span class="detail-header-tag small">
+                    public                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                                            </div>
+
+            <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"></span> <a href="yii-authclient-widgets-authchoiceasset.html#$sourcePath-detail">$sourcePath</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'@yii/authclient/assets'</span></div>
+            
+            
+        </div>
+    </div>
+
+<h2>Method Details</h2>
+
+<div class="method-doc toggle-target-container">
+    <p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+            <div id="__call()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#__call()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L221" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L221" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                __call()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#__call()-detail">yii\base\BaseObject::__call()</a>                    </p>
+                
+                <p><strong>Calls the named method which is not a class method.</strong></p>
+                <p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when an unknown method is being invoked.</p>
+                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="yii-base-baseobject.html#__call()-detail">__call</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$params</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The method name</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.array">array</a></td>
+                            <td class="param-desc-col">
+                               <p>Method parameters</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col">mixed</td>
+                            <td class="param-desc-col">
+                                <p>The method return value</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-unknownmethodexception.html">yii\base\UnknownMethodException</a></td>
+                            <td class="param-desc-col">
+                                <p>when calling unknown method</p>
+                            </td>
+                        </tr>
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapse__call" role="button"
+           aria-expanded="false" aria-controls="collapse__call">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapse__call">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__call</span><span class="hljs-params">($name, $params)</span>
+</span>{
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UnknownMethodException(<span class="hljs-string">'Calling unknown method: '</span> . get_class(<span class="hljs-keyword">$this</span>) . <span class="hljs-string">"::$name()"</span>);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="__construct()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#__construct()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L105" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L105" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                __construct()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#__construct()-detail">yii\base\BaseObject::__construct()</a>                    </p>
+                
+                <p><strong>Constructor.</strong></p>
+                <p>The default implementation does two things:</p>
+<ul>
+<li>Initializes the object with the given configuration <code>$config</code>.</li>
+<li>Call <a href="yii-base-baseobject.html#init()-detail">init()</a>.</li>
+</ul>
+<p>If this method is overridden in a child class, it is recommended that</p>
+<ul>
+<li>the last parameter of the constructor is a configuration array, like <code>$config</code> here.</li>
+<li>call the parent implementation at the end of the constructor.</li>
+</ul>
+                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-base-baseobject.html#__construct()-detail">__construct</a></strong> ( <span style="color: #0000BB">$config&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$config</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.array">array</a></td>
+                            <td class="param-desc-col">
+                               <p>Name-value pairs that will be used to initialize the object properties</p>
+                            </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapse__construct" role="button"
+           aria-expanded="false" aria-controls="collapse__construct">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapse__construct">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($config = [])</span>
+</span>{
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">empty</span>($config)) {
+        Yii::configure(<span class="hljs-keyword">$this</span>, $config);
+    }
+    <span class="hljs-keyword">$this</span>-&gt;init();
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="__get()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#__get()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L133" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L133" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                __get()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#__get()-detail">yii\base\BaseObject::__get()</a>                    </p>
+                
+                <p><strong>Returns the value of an object property.</strong></p>
+                <p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>$value = $object-&gt;property;</code>.</p>
+                <p>See also <a href="yii-base-baseobject.html#__set()-detail">__set()</a>.</p>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="yii-base-baseobject.html#__get()-detail">__get</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col">mixed</td>
+                            <td class="param-desc-col">
+                                <p>The property value</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-unknownpropertyexception.html">yii\base\UnknownPropertyException</a></td>
+                            <td class="param-desc-col">
+                                <p>if the property is not defined</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-invalidcallexception.html">yii\base\InvalidCallException</a></td>
+                            <td class="param-desc-col">
+                                <p>if the property is write-only</p>
+                            </td>
+                        </tr>
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapse__get" role="button"
+           aria-expanded="false" aria-controls="collapse__get">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapse__get">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__get</span><span class="hljs-params">($name)</span>
+</span>{
+    $getter = <span class="hljs-string">'get'</span> . $name;
+    <span class="hljs-keyword">if</span> (method_exists(<span class="hljs-keyword">$this</span>, $getter)) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;$getter();
+    } <span class="hljs-keyword">elseif</span> (method_exists(<span class="hljs-keyword">$this</span>, <span class="hljs-string">'set'</span> . $name)) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InvalidCallException(<span class="hljs-string">'Getting write-only property: '</span> . get_class(<span class="hljs-keyword">$this</span>) . <span class="hljs-string">'::'</span> . $name);
+    }
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UnknownPropertyException(<span class="hljs-string">'Getting unknown property: '</span> . get_class(<span class="hljs-keyword">$this</span>) . <span class="hljs-string">'::'</span> . $name);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="__isset()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#__isset()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L179" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L179" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                __isset()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#__isset()-detail">yii\base\BaseObject::__isset()</a>                    </p>
+                
+                <p><strong>Checks if a property is set, i.e. defined and not null.</strong></p>
+                <p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>isset($object-&gt;property)</code>.</p>
+<p>Note that if the property is not defined, false will be returned.</p>
+                <p>See also <a href="https://www.php.net/manual/en/function.isset.php">https://www.php.net/manual/en/function.isset.php</a>.</p>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-base-baseobject.html#__isset()-detail">__isset</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name or the event name</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                                <p>Whether the named property is set (not null).</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapse__isset" role="button"
+           aria-expanded="false" aria-controls="collapse__isset">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapse__isset">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__isset</span><span class="hljs-params">($name)</span>
+</span>{
+    $getter = <span class="hljs-string">'get'</span> . $name;
+    <span class="hljs-keyword">if</span> (method_exists(<span class="hljs-keyword">$this</span>, $getter)) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;$getter() !== <span class="hljs-keyword">null</span>;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="__set()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#__set()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L156" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L156" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                __set()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#__set()-detail">yii\base\BaseObject::__set()</a>                    </p>
+                
+                <p><strong>Sets value of an object property.</strong></p>
+                <p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>$object-&gt;property = $value;</code>.</p>
+                <p>See also <a href="yii-base-baseobject.html#__get()-detail">__get()</a>.</p>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-base-baseobject.html#__set()-detail">__set</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$value</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name or the event name</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$value</span></td>
+                            <td class="param-type-col">mixed</td>
+                            <td class="param-desc-col">
+                               <p>The property value</p>
+                            </td>
+                        </tr>
+                    
+                    
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-unknownpropertyexception.html">yii\base\UnknownPropertyException</a></td>
+                            <td class="param-desc-col">
+                                <p>if the property is not defined</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-invalidcallexception.html">yii\base\InvalidCallException</a></td>
+                            <td class="param-desc-col">
+                                <p>if the property is read-only</p>
+                            </td>
+                        </tr>
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapse__set" role="button"
+           aria-expanded="false" aria-controls="collapse__set">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapse__set">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__set</span><span class="hljs-params">($name, $value)</span>
+</span>{
+    $setter = <span class="hljs-string">'set'</span> . $name;
+    <span class="hljs-keyword">if</span> (method_exists(<span class="hljs-keyword">$this</span>, $setter)) {
+        <span class="hljs-keyword">$this</span>-&gt;$setter($value);
+    } <span class="hljs-keyword">elseif</span> (method_exists(<span class="hljs-keyword">$this</span>, <span class="hljs-string">'get'</span> . $name)) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InvalidCallException(<span class="hljs-string">'Setting read-only property: '</span> . get_class(<span class="hljs-keyword">$this</span>) . <span class="hljs-string">'::'</span> . $name);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UnknownPropertyException(<span class="hljs-string">'Setting unknown property: '</span> . get_class(<span class="hljs-keyword">$this</span>) . <span class="hljs-string">'::'</span> . $name);
+    }
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="__unset()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#__unset()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L201" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L201" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                __unset()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#__unset()-detail">yii\base\BaseObject::__unset()</a>                    </p>
+                
+                <p><strong>Sets an object property to null.</strong></p>
+                <p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>unset($object-&gt;property)</code>.</p>
+<p>Note that if the property is not defined, this method will do nothing.
+If the property is read-only, it will throw an exception.</p>
+                <p>See also <a href="https://www.php.net/manual/en/function.unset.php">https://www.php.net/manual/en/function.unset.php</a>.</p>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-base-baseobject.html#__unset()-detail">__unset</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name</p>
+                            </td>
+                        </tr>
+                    
+                    
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-invalidcallexception.html">yii\base\InvalidCallException</a></td>
+                            <td class="param-desc-col">
+                                <p>if the property is read only.</p>
+                            </td>
+                        </tr>
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapse__unset" role="button"
+           aria-expanded="false" aria-controls="collapse__unset">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapse__unset">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__unset</span><span class="hljs-params">($name)</span>
+</span>{
+    $setter = <span class="hljs-string">'set'</span> . $name;
+    <span class="hljs-keyword">if</span> (method_exists(<span class="hljs-keyword">$this</span>, $setter)) {
+        <span class="hljs-keyword">$this</span>-&gt;$setter(<span class="hljs-keyword">null</span>);
+    } <span class="hljs-keyword">elseif</span> (method_exists(<span class="hljs-keyword">$this</span>, <span class="hljs-string">'get'</span> . $name)) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InvalidCallException(<span class="hljs-string">'Unsetting read-only property: '</span> . get_class(<span class="hljs-keyword">$this</span>) . <span class="hljs-string">'::'</span> . $name);
+    }
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="canGetProperty()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#canGetProperty()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L260" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L260" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                canGetProperty()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#canGetProperty()-detail">yii\base\BaseObject::canGetProperty()</a>                    </p>
+                
+                <p><strong>Returns a value indicating whether a property can be read.</strong></p>
+                <p>A property is readable if:</p>
+<ul>
+<li>the class has a getter method associated with the specified name
+(in this case, property name is case-insensitive);</li>
+<li>the class has a member variable with the specified name (when <code>$checkVars</code> is true);</li>
+</ul>
+                <p>See also <a href="yii-base-baseobject.html#canSetProperty()-detail">canSetProperty()</a>.</p>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-base-baseobject.html#canGetProperty()-detail">canGetProperty</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$checkVars&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$checkVars</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                               <p>Whether to treat member variables as properties</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                                <p>Whether the property can be read</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseCanGetProperty" role="button"
+           aria-expanded="false" aria-controls="collapseCanGetProperty">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseCanGetProperty">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">canGetProperty</span><span class="hljs-params">($name, $checkVars = true)</span>
+</span>{
+    <span class="hljs-keyword">return</span> method_exists(<span class="hljs-keyword">$this</span>, <span class="hljs-string">'get'</span> . $name) || $checkVars &amp;&amp; property_exists(<span class="hljs-keyword">$this</span>, $name);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="canSetProperty()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#canSetProperty()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L279" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L279" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                canSetProperty()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#canSetProperty()-detail">yii\base\BaseObject::canSetProperty()</a>                    </p>
+                
+                <p><strong>Returns a value indicating whether a property can be set.</strong></p>
+                <p>A property is writable if:</p>
+<ul>
+<li>the class has a setter method associated with the specified name
+(in this case, property name is case-insensitive);</li>
+<li>the class has a member variable with the specified name (when <code>$checkVars</code> is true);</li>
+</ul>
+                <p>See also <a href="yii-base-baseobject.html#canGetProperty()-detail">canGetProperty()</a>.</p>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-base-baseobject.html#canSetProperty()-detail">canSetProperty</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$checkVars&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$checkVars</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                               <p>Whether to treat member variables as properties</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                                <p>Whether the property can be written</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseCanSetProperty" role="button"
+           aria-expanded="false" aria-controls="collapseCanSetProperty">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseCanSetProperty">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">canSetProperty</span><span class="hljs-params">($name, $checkVars = true)</span>
+</span>{
+    <span class="hljs-keyword">return</span> method_exists(<span class="hljs-keyword">$this</span>, <span class="hljs-string">'set'</span> . $name) || $checkVars &amp;&amp; property_exists(<span class="hljs-keyword">$this</span>, $name);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="className()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#className()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L85" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L85" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                className()
+
+                <span class="detail-header-tag small">
+                    public                                        static                    method
+                                    </span>
+            </div>
+
+                            <div class="doc-description deprecated">
+                    <strong>
+                        Deprecated
+
+                        since 2.0.14. On PHP &gt;=5.5, use <code>::class</code> instead.                    </strong>
+                </div>
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#className()-detail">yii\base\BaseObject::className()</a>                    </p>
+                
+                <p><strong>Returns the fully qualified name of this class.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a></span> <strong><a href="yii-base-baseobject.html#className()-detail">className</a></strong> ( )</td></tr>
+
+                                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                                <p>The fully qualified name of this class.</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseClassName" role="button"
+           aria-expanded="false" aria-controls="collapseClassName">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseClassName">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">className</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> get_called_class();
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="hasMethod()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#hasMethod()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L292" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L292" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                hasMethod()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#hasMethod()-detail">yii\base\BaseObject::hasMethod()</a>                    </p>
+                
+                <p><strong>Returns a value indicating whether a method is defined.</strong></p>
+                <p>The default implementation is a call to php function <code>method_exists()</code>.
+You may override this method when you implemented the php magic method <code>__call()</code>.</p>
+                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-base-baseobject.html#hasMethod()-detail">hasMethod</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The method name</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                                <p>Whether the method is defined</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseHasMethod" role="button"
+           aria-expanded="false" aria-controls="collapseHasMethod">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseHasMethod">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasMethod</span><span class="hljs-params">($name)</span>
+</span>{
+    <span class="hljs-keyword">return</span> method_exists(<span class="hljs-keyword">$this</span>, $name);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="hasProperty()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#hasProperty()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L241" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L241" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                hasProperty()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#hasProperty()-detail">yii\base\BaseObject::hasProperty()</a>                    </p>
+                
+                <p><strong>Returns a value indicating whether a property is defined.</strong></p>
+                <p>A property is defined if:</p>
+<ul>
+<li>the class has a getter or setter method associated with the specified name
+(in this case, property name is case-insensitive);</li>
+<li>the class has a member variable with the specified name (when <code>$checkVars</code> is true);</li>
+</ul>
+                <p>See also:</p><ul><li><a href="yii-base-baseobject.html#canGetProperty()-detail">canGetProperty()</a></li><li><a href="yii-base-baseobject.html#canSetProperty()-detail">canSetProperty()</a></li></ul>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-base-baseobject.html#hasProperty()-detail">hasProperty</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$checkVars&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$checkVars</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                               <p>Whether to treat member variables as properties</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                                <p>Whether the property is defined</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseHasProperty" role="button"
+           aria-expanded="false" aria-controls="collapseHasProperty">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseHasProperty">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasProperty</span><span class="hljs-params">($name, $checkVars = true)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;canGetProperty($name, $checkVars) || <span class="hljs-keyword">$this</span>-&gt;canSetProperty($name, <span class="hljs-keyword">false</span>);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="init()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#init()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/web/AssetBundle.php#L133" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/web/AssetBundle.php#L133" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                init()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-web-assetbundle.html#init()-detail">yii\web\AssetBundle::init()</a>                    </p>
+                
+                <p><strong>Initializes the bundle.</strong></p>
+                <p>If you override this method, make sure you call the parent implementation in the last.</p>
+                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-web-assetbundle.html#init()-detail">init</a></strong> ( )</td></tr>
+
+                            </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseInit" role="button"
+           aria-expanded="false" aria-controls="collapseInit">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseInit">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;sourcePath !== <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">$this</span>-&gt;sourcePath = rtrim(Yii::getAlias(<span class="hljs-keyword">$this</span>-&gt;sourcePath), <span class="hljs-string">'/\\'</span>);
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;basePath !== <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">$this</span>-&gt;basePath = rtrim(Yii::getAlias(<span class="hljs-keyword">$this</span>-&gt;basePath), <span class="hljs-string">'/\\'</span>);
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;baseUrl !== <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">$this</span>-&gt;baseUrl = rtrim(Yii::getAlias(<span class="hljs-keyword">$this</span>-&gt;baseUrl), <span class="hljs-string">'/'</span>);
+    }
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="publish()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#publish()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/web/AssetBundle.php#L179" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/web/AssetBundle.php#L179" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                publish()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-web-assetbundle.html#publish()-detail">yii\web\AssetBundle::publish()</a>                    </p>
+                
+                <p><strong>Publishes the asset bundle if its source code is not under Web-accessible directory.</strong></p>
+                <p>It will also try to convert non-CSS or JS files (e.g. LESS, Sass) into the corresponding
+CSS or JS files using <a href="yii-web-assetmanager.html#$converter-detail">asset converter</a>.</p>
+                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-web-assetbundle.html#publish()-detail">publish</a></strong> ( <span style="color: #0000BB">$am</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$am</span></td>
+                            <td class="param-type-col"><a href="yii-web-assetmanager.html">yii\web\AssetManager</a></td>
+                            <td class="param-desc-col">
+                               <p>The asset manager to perform the asset publishing</p>
+                            </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapsePublish" role="button"
+           aria-expanded="false" aria-controls="collapsePublish">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapsePublish">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">publish</span><span class="hljs-params">($am)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;sourcePath !== <span class="hljs-keyword">null</span> &amp;&amp; !<span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;basePath, <span class="hljs-keyword">$this</span>-&gt;baseUrl)) {
+        <span class="hljs-keyword">list</span>(<span class="hljs-keyword">$this</span>-&gt;basePath, <span class="hljs-keyword">$this</span>-&gt;baseUrl) = $am-&gt;publish(<span class="hljs-keyword">$this</span>-&gt;sourcePath, <span class="hljs-keyword">$this</span>-&gt;publishOptions);
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;basePath, <span class="hljs-keyword">$this</span>-&gt;baseUrl) &amp;&amp; ($converter = $am-&gt;getConverter()) !== <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">$this</span>-&gt;js <span class="hljs-keyword">as</span> $i =&gt; $js) {
+            <span class="hljs-keyword">if</span> (is_array($js)) {
+                $file = array_shift($js);
+                <span class="hljs-keyword">if</span> (Url::isRelative($file)) {
+                    $js = ArrayHelper::merge(<span class="hljs-keyword">$this</span>-&gt;jsOptions, $js);
+                    array_unshift($js, $converter-&gt;convert($file, <span class="hljs-keyword">$this</span>-&gt;basePath));
+                    <span class="hljs-keyword">$this</span>-&gt;js[$i] = $js;
+                }
+            } <span class="hljs-keyword">elseif</span> (Url::isRelative($js)) {
+                <span class="hljs-keyword">$this</span>-&gt;js[$i] = $converter-&gt;convert($js, <span class="hljs-keyword">$this</span>-&gt;basePath);
+            }
+        }
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">$this</span>-&gt;css <span class="hljs-keyword">as</span> $i =&gt; $css) {
+            <span class="hljs-keyword">if</span> (is_array($css)) {
+                $file = array_shift($css);
+                <span class="hljs-keyword">if</span> (Url::isRelative($file)) {
+                    $css = ArrayHelper::merge(<span class="hljs-keyword">$this</span>-&gt;cssOptions, $css);
+                    array_unshift($css, $converter-&gt;convert($file, <span class="hljs-keyword">$this</span>-&gt;basePath));
+                    <span class="hljs-keyword">$this</span>-&gt;css[$i] = $css;
+                }
+            } <span class="hljs-keyword">elseif</span> (Url::isRelative($css)) {
+                <span class="hljs-keyword">$this</span>-&gt;css[$i] = $converter-&gt;convert($css, <span class="hljs-keyword">$this</span>-&gt;basePath);
+            }
+        }
+    }
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="register()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#register()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/web/AssetBundle.php#L124" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/web/AssetBundle.php#L124" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                register()
+
+                <span class="detail-header-tag small">
+                    public                                        static                    method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-web-assetbundle.html#register()-detail">yii\web\AssetBundle::register()</a>                    </p>
+                
+                <p><strong>Registers this asset bundle with a view.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type">static</span> <strong><a href="yii-web-assetbundle.html#register()-detail">register</a></strong> ( <span style="color: #0000BB">$view</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$view</span></td>
+                            <td class="param-type-col"><a href="yii-web-view.html">yii\web\View</a></td>
+                            <td class="param-desc-col">
+                               <p>The view to be registered with</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="yii-web-assetbundle.html">yii\web\AssetBundle</a></td>
+                            <td class="param-desc-col">
+                                <p>The registered asset bundle instance</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseRegister" role="button"
+           aria-expanded="false" aria-controls="collapseRegister">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseRegister">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span><span class="hljs-params">($view)</span>
+</span>{
+    <span class="hljs-keyword">return</span> $view-&gt;registerAssetBundle(get_called_class());
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="registerAssetFiles()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-authclient-widgets-authchoiceasset.html#registerAssetFiles()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/web/AssetBundle.php#L150" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/web/AssetBundle.php#L150" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                registerAssetFiles()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-web-assetbundle.html#registerAssetFiles()-detail">yii\web\AssetBundle::registerAssetFiles()</a>                    </p>
+                
+                <p><strong>Registers the CSS and JS files with the given view.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-web-assetbundle.html#registerAssetFiles()-detail">registerAssetFiles</a></strong> ( <span style="color: #0000BB">$view</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$view</span></td>
+                            <td class="param-type-col"><a href="yii-web-view.html">yii\web\View</a></td>
+                            <td class="param-desc-col">
+                               <p>The view that the asset files are to be registered with.</p>
+                            </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseRegisterAssetFiles" role="button"
+           aria-expanded="false" aria-controls="collapseRegisterAssetFiles">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseRegisterAssetFiles">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">registerAssetFiles</span><span class="hljs-params">($view)</span>
+</span>{
+    $manager = $view-&gt;getAssetManager();
+    <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">$this</span>-&gt;js <span class="hljs-keyword">as</span> $js) {
+        <span class="hljs-keyword">if</span> (is_array($js)) {
+            $file = array_shift($js);
+            $options = ArrayHelper::merge(<span class="hljs-keyword">$this</span>-&gt;jsOptions, $js);
+            $view-&gt;registerJsFile($manager-&gt;getAssetUrl(<span class="hljs-keyword">$this</span>, $file, ArrayHelper::getValue($options, <span class="hljs-string">'appendTimestamp'</span>)), $options);
+        } <span class="hljs-keyword">elseif</span> ($js !== <span class="hljs-keyword">null</span>) {
+            $view-&gt;registerJsFile($manager-&gt;getAssetUrl(<span class="hljs-keyword">$this</span>, $js), <span class="hljs-keyword">$this</span>-&gt;jsOptions);
+        }
+    }
+    <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">$this</span>-&gt;css <span class="hljs-keyword">as</span> $css) {
+        <span class="hljs-keyword">if</span> (is_array($css)) {
+            $file = array_shift($css);
+            $options = ArrayHelper::merge(<span class="hljs-keyword">$this</span>-&gt;cssOptions, $css);
+            $view-&gt;registerCssFile($manager-&gt;getAssetUrl(<span class="hljs-keyword">$this</span>, $file, ArrayHelper::getValue($options, <span class="hljs-string">'appendTimestamp'</span>)), $options);
+        } <span class="hljs-keyword">elseif</span> ($css !== <span class="hljs-keyword">null</span>) {
+            $view-&gt;registerCssFile($manager-&gt;getAssetUrl(<span class="hljs-keyword">$this</span>, $css), <span class="hljs-keyword">$this</span>-&gt;cssOptions);
+        }
+    }
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+    </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $('a.toggle').on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents('.toggle-target-container').find('.inherited').show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents('.toggle-target-container').find('.inherited').hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:51 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>查询生成器（Query Builder） - 配合数据库工作（Working with Databases） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1764" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1764-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1764-collapse" class="collapse navbar-collapse"><ul id="w1765" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1766" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1748" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1748" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1749" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1749" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1750" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1750" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1751" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1751" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1752" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1752" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item active" href="#navigation-1753" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1753" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item active" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1754" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1754" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1755" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1755" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1756" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1756" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1757" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1757" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1758" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1758" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1759" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1759" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1760" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1760" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1761" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1761" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1762" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1762" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1763" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1763" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>&#26597;&#35810;&#26500;&#24314;&#22120; <span id="cha-xun-gou-jian-qi"></span><a href="#cha-xun-gou-jian-qi" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#building-queries">&#21019;&#24314;&#26597;&#35810;</a></li>
+<li><a href="#query-methods">&#26597;&#35810;&#26041;&#27861;</a></li></ol></div>
+<p>&#26597;&#35810;&#26500;&#24314;&#22120;&#24314;&#31435;&#22312; <a href="guide-db-dao.html">Database Access Objects</a> &#22522;&#30784;&#20043;&#19978;&#65292;&#21487;&#35753;&#20320;&#21019;&#24314;
+&#31243;&#24207;&#21270;&#30340;&#12289;DBMS&#26080;&#20851;&#30340;SQL&#35821;&#21477;&#12290;&#30456;&#27604;&#20110;&#21407;&#29983;&#30340;SQL&#35821;&#21477;&#65292;&#26597;&#35810;&#26500;&#24314;&#22120;&#21487;&#20197;&#24110;&#20320;
+&#20889;&#20986;&#21487;&#35835;&#24615;&#26356;&#24378;&#30340;SQL&#30456;&#20851;&#30340;&#20195;&#30721;&#65292;&#24182;&#29983;&#25104;&#23433;&#20840;&#24615;&#26356;&#24378;&#30340;SQL&#35821;&#21477;&#12290;</p>
+<p>&#20351;&#29992;&#26597;&#35810;&#26500;&#24314;&#22120;&#36890;&#24120;&#21253;&#21547;&#20197;&#19979;&#20004;&#20010;&#27493;&#39588;&#65306;</p>
+<ol>
+<li>&#21019;&#24314;&#19968;&#20010; <a href="./yii-db-query.html">yii\db\Query</a> &#23545;&#35937;&#26469;&#20195;&#34920;&#19968;&#26465; SELECT SQL &#35821;&#21477;&#30340;&#19981;&#21516;&#23376;&#21477;&#65288;&#20363;&#22914; <code>SELECT</code>, <code>FROM</code>&#65289;&#12290;</li>
+<li>&#25191;&#34892; <a href="./yii-db-query.html">yii\db\Query</a> &#30340;&#19968;&#20010;&#26597;&#35810;&#26041;&#27861;&#65288;&#20363;&#22914;&#65306;<code>all()</code>&#65289;&#20174;&#25968;&#25454;&#24211;&#24403;&#20013;&#26816;&#32034;&#25968;&#25454;&#12290;</li>
+</ol>
+<p>&#22914;&#19979;&#25152;&#31034;&#20195;&#30721;&#26159;&#26597;&#35810;&#26500;&#36896;&#22120;&#30340;&#19968;&#20010;&#20856;&#22411;&#29992;&#27861;&#65306;</p>
+<pre><code class="hljs php language-php">$rows = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'email'</span>])
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;where([<span class="hljs-string">'last_name'</span> =&gt; <span class="hljs-string">'Smith'</span>])
+    -&gt;limit(<span class="hljs-number">10</span>)
+    -&gt;all();
+</code></pre>
+<p>&#19978;&#38754;&#30340;&#20195;&#30721;&#23558;&#20250;&#29983;&#25104;&#24182;&#25191;&#34892;&#22914;&#19979;&#30340;SQL&#35821;&#21477;&#65292;&#20854;&#20013; <code>:last_name</code> &#21442;&#25968;&#32465;&#23450;&#20102;
+&#23383;&#31526;&#20018; <code>'Smith'</code>&#12290;</p>
+<pre><code class="hljs sql language-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-string">`id`</span>, <span class="hljs-string">`email`</span> 
+<span class="hljs-keyword">FROM</span> <span class="hljs-string">`user`</span>
+<span class="hljs-keyword">WHERE</span> <span class="hljs-string">`last_name`</span> = :last_name
+<span class="hljs-keyword">LIMIT</span> <span class="hljs-number">10</span>
+</code></pre>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#20320;&#24179;&#26102;&#26356;&#22810;&#30340;&#26102;&#20505;&#20250;&#20351;&#29992; <a href="./yii-db-query.html">yii\db\Query</a> &#32780;&#19981;&#26159; <a href="./yii-db-querybuilder.html">yii\db\QueryBuilder</a>&#12290;
+  &#24403;&#20320;&#35843;&#29992;&#20854;&#20013;&#19968;&#20010;&#26597;&#35810;&#26041;&#27861;&#26102;&#65292;&#21518;&#32773;&#23558;&#20250;&#34987;&#21069;&#32773;&#38544;&#24335;&#30340;&#35843;&#29992;&#12290;<a href="./yii-db-querybuilder.html">yii\db\QueryBuilder</a>&#20027;&#35201;&#36127;&#36131;&#23558;
+  DBMS &#19981;&#30456;&#20851;&#30340; <a href="./yii-db-query.html">yii\db\Query</a> &#23545;&#35937;&#36716;&#25442;&#25104; DBMS &#30456;&#20851;&#30340; SQL &#35821;&#21477;&#65288;&#20363;&#22914;&#65292;
+  &#20197;&#19981;&#21516;&#30340;&#26041;&#24335;&#24341;&#29992;&#34920;&#25110;&#23383;&#27573;&#21517;&#31216;&#65289;&#12290;</p>
+</blockquote>
+<h2>&#21019;&#24314;&#26597;&#35810;  <span id="building-queries"></span><a href="#building-queries" class="hashlink">&para;</a></h2><p>&#20026;&#20102;&#21019;&#24314;&#19968;&#20010; <a href="./yii-db-query.html">yii\db\Query</a> &#23545;&#35937;&#65292;&#20320;&#38656;&#35201;&#35843;&#29992;&#19981;&#21516;&#30340;&#26597;&#35810;&#26500;&#24314;&#26041;&#27861;&#26469;&#20195;&#34920;SQL&#35821;&#21477;&#30340;&#19981;&#21516;&#23376;&#21477;&#12290;
+&#36825;&#20123;&#26041;&#27861;&#30340;&#21517;&#31216;&#38598;&#25104;&#20102;&#22312;SQL&#35821;&#21477;&#30456;&#24212;&#23376;&#21477;&#20013;&#20351;&#29992;&#30340;&#20851;&#38190;&#23383;&#12290;&#20363;&#22914;&#65292;&#20026;&#20102;&#25351;&#23450; SQL &#35821;&#21477;&#24403;&#20013;&#30340;
+<code>FROM</code> &#23376;&#21477;&#65292;&#20320;&#24212;&#35813;&#35843;&#29992; <code>from()</code> &#26041;&#27861;&#12290;&#25152;&#26377;&#30340;&#26597;&#35810;&#26500;&#24314;&#22120;&#26041;&#27861;&#36820;&#22238;&#30340;&#26159;&#26597;&#35810;&#23545;&#35937;&#26412;&#36523;&#65292;
+&#20063;&#23601;&#26159;&#35828;&#65292;&#20320;&#21487;&#20197;&#25226;&#22810;&#20010;&#26041;&#27861;&#30340;&#35843;&#29992;&#20018;&#32852;&#36215;&#26469;&#12290;</p>
+<p>&#25509;&#19979;&#26469;&#65292;&#25105;&#20204;&#20250;&#23545;&#36825;&#20123;&#26597;&#35810;&#26500;&#24314;&#22120;&#26041;&#27861;&#36827;&#34892;&#19968;&#19968;&#35762;&#35299;&#65306;</p>
+<h3><a href="./yii-db-query.html#select()-detail">select()</a>  <span id="select"></span><a href="#select" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#select()-detail">select()</a> &#26041;&#27861;&#29992;&#26469;&#25351;&#23450; SQL &#35821;&#21477;&#24403;&#20013;&#30340; <code>SELECT</code> &#23376;&#21477;&#12290;
+&#20320;&#21487;&#20197;&#20687;&#19979;&#38754;&#30340;&#20363;&#23376;&#19968;&#26679;&#20351;&#29992;&#19968;&#20010;&#25968;&#32452;&#25110;&#32773;&#23383;&#31526;&#20018;&#26469;&#23450;&#20041;&#38656;&#35201;&#26597;&#35810;&#30340;&#23383;&#27573;&#12290;&#24403; SQL &#35821;&#21477;
+&#26159;&#30001;&#26597;&#35810;&#23545;&#35937;&#29983;&#25104;&#30340;&#26102;&#20505;&#65292;&#34987;&#26597;&#35810;&#30340;&#23383;&#27573;&#21517;&#31216;&#23558;&#20250;&#33258;&#21160;&#30340;&#34987;&#24341;&#21495;&#25324;&#36215;&#26469;&#12290;</p>
+<pre><code class="hljs php language-php">$query-&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'email'</span>]);
+
+<span class="hljs-comment">// &#31561;&#21516;&#20110;&#65306;</span>
+
+$query-&gt;select(<span class="hljs-string">'id, email'</span>);
+</code></pre>
+<p>&#23601;&#20687;&#20889;&#21407;&#29983; SQL &#35821;&#21477;&#19968;&#26679;&#65292;&#34987;&#36873;&#21462;&#30340;&#23383;&#27573;&#21487;&#20197;&#21253;&#21547;&#34920;&#21069;&#32512;&#65292;&#20197;&#21450;/&#25110;&#32773;&#23383;&#27573;&#21035;&#21517;&#12290;
+&#20363;&#22914;&#65306; </p>
+<pre><code class="hljs php language-php">$query-&gt;select([<span class="hljs-string">'user.id AS user_id'</span>, <span class="hljs-string">'email'</span>]);
+
+<span class="hljs-comment">// &#31561;&#21516;&#20110;&#65306;</span>
+
+$query-&gt;select(<span class="hljs-string">'user.id AS user_id, email'</span>);
+</code></pre>
+<p>&#22914;&#26524;&#20351;&#29992;&#25968;&#32452;&#26684;&#24335;&#26469;&#25351;&#23450;&#23383;&#27573;&#65292;&#20320;&#21487;&#20197;&#20351;&#29992;&#25968;&#32452;&#30340;&#38190;&#20540;&#26469;&#34920;&#31034;&#23383;&#27573;&#30340;&#21035;&#21517;&#12290;
+&#20363;&#22914;&#65292;&#19978;&#38754;&#30340;&#20195;&#30721;&#21487;&#20197;&#34987;&#37325;&#20889;&#20026;&#22914;&#19979;&#24418;&#24335;&#65306;</p>
+<pre><code class="hljs php language-php">$query-&gt;select([<span class="hljs-string">'user_id'</span> =&gt; <span class="hljs-string">'user.id'</span>, <span class="hljs-string">'email'</span>]);
+</code></pre>
+<p>&#22914;&#26524;&#20320;&#22312;&#32452;&#24314;&#26597;&#35810;&#26102;&#27809;&#26377;&#35843;&#29992; <a href="./yii-db-query.html#select()-detail">select()</a> &#26041;&#27861;&#65292;&#37027;&#20040;&#36873;&#25321;&#30340;&#23558;&#26159; <code>'*'</code> &#65292;
+&#20063;&#21363;&#36873;&#21462;&#30340;&#26159;&#25152;&#26377;&#30340;&#23383;&#27573;&#12290;</p>
+<p>&#38500;&#20102;&#23383;&#27573;&#21517;&#31216;&#20197;&#22806;&#65292;&#20320;&#36824;&#21487;&#20197;&#36873;&#25321;&#25968;&#25454;&#24211;&#30340;&#34920;&#36798;&#24335;&#12290;&#24403;&#20320;&#20351;&#29992;&#21040;&#21253;&#21547;&#36887;&#21495;&#30340;&#25968;&#25454;&#24211;&#34920;&#36798;&#24335;&#30340;&#26102;&#20505;&#65292;
+&#20320;&#24517;&#39035;&#20351;&#29992;&#25968;&#32452;&#30340;&#26684;&#24335;&#65292;&#20197;&#36991;&#20813;&#33258;&#21160;&#30340;&#38169;&#35823;&#30340;&#24341;&#21495;&#28155;&#21152;&#12290;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php">$query-&gt;select([<span class="hljs-string">"CONCAT(first_name, ' ', last_name) AS full_name"</span>, <span class="hljs-string">'email'</span>]); 
+</code></pre>
+<p>&#19982;&#25152;&#26377;&#28041;&#21450;&#21407;&#22987; SQL &#30340;&#22320;&#26041;&#19968;&#26679;&#65292;&#24403;&#22312; select &#20013;&#32534;&#20889; DB &#34920;&#36798;&#24335;&#26102;&#65292;&#21487;&#20197;&#23545;&#34920;&#21517;&#21644;&#21015;&#21517;&#20351;&#29992;
+<a href="guide-db-dao.html#quoting-table-and-column-names">&#19982; DBMS &#26080;&#20851;&#30340;&#24341;&#29992;&#35821;&#27861;</a>&#12290;</p>
+<p>&#20174; 2.0.1 &#30340;&#29256;&#26412;&#24320;&#22987;&#20320;&#23601;&#21487;&#20197;&#20351;&#29992;&#23376;&#26597;&#35810;&#20102;&#12290;&#22312;&#23450;&#20041;&#27599;&#19968;&#20010;&#23376;&#26597;&#35810;&#30340;&#26102;&#20505;&#65292;
+&#20320;&#24212;&#35813;&#20351;&#29992; <a href="./yii-db-query.html">yii\db\Query</a> &#23545;&#35937;&#12290;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php">$subQuery = (<span class="hljs-keyword">new</span> Query())-&gt;select(<span class="hljs-string">'COUNT(*)'</span>)-&gt;from(<span class="hljs-string">'user'</span>);
+
+<span class="hljs-comment">// SELECT `id`, (SELECT COUNT(*) FROM `user`) AS `count` FROM `post`</span>
+$query = (<span class="hljs-keyword">new</span> Query())-&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'count'</span> =&gt; $subQuery])-&gt;from(<span class="hljs-string">'post'</span>);
+</code></pre>
+<p>&#20320;&#24212;&#35813;&#35843;&#29992; <a href="./yii-db-query.html#distinct()-detail">distinct()</a> &#26041;&#27861;&#26469;&#21435;&#38500;&#37325;&#22797;&#34892;&#65292;&#22914;&#19979;&#25152;&#31034;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT DISTINCT `user_id` ...</span>
+$query-&gt;select(<span class="hljs-string">'user_id'</span>)-&gt;distinct();
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#35843;&#29992; <a href="./yii-db-query.html#addSelect()-detail">addSelect()</a> &#26041;&#27861;&#26469;&#36873;&#21462;&#38468;&#21152;&#23383;&#27573;&#65292;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php">$query-&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'username'</span>])
+    -&gt;addSelect([<span class="hljs-string">'email'</span>]);
+</code></pre>
+<h3><a href="./yii-db-query.html#from()-detail">from()</a>  <span id="from"></span><a href="#from" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#from()-detail">from()</a> &#26041;&#27861;&#25351;&#23450;&#20102; SQL &#35821;&#21477;&#24403;&#20013;&#30340; <code>FROM</code> &#23376;&#21477;&#12290;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT * FROM `user`</span>
+$query-&gt;from(<span class="hljs-string">'user'</span>);
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#36890;&#36807;&#23383;&#31526;&#20018;&#25110;&#32773;&#25968;&#32452;&#30340;&#24418;&#24335;&#26469;&#23450;&#20041;&#34987;&#26597;&#35810;&#30340;&#34920;&#21517;&#31216;&#12290;&#23601;&#20687;&#20320;&#20889;&#21407;&#29983;&#30340; SQL &#35821;&#21477;&#19968;&#26679;&#65292;
+&#34920;&#21517;&#31216;&#37324;&#38754;&#21487;&#21253;&#21547;&#25968;&#25454;&#24211;&#21069;&#32512;&#65292;&#20197;&#21450;/&#25110;&#32773;&#34920;&#21035;&#21517;&#12290;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php">$query-&gt;from([<span class="hljs-string">'public.user u'</span>, <span class="hljs-string">'public.post p'</span>]);
+
+<span class="hljs-comment">// &#31561;&#21516;&#20110;&#65306;</span>
+
+$query-&gt;from(<span class="hljs-string">'public.user u, public.post p'</span>);
+</code></pre>
+<p>&#22914;&#26524;&#20320;&#20351;&#29992;&#30340;&#26159;&#25968;&#32452;&#30340;&#26684;&#24335;&#65292;&#37027;&#20040;&#20320;&#21516;&#26679;&#21487;&#20197;&#29992;&#25968;&#32452;&#30340;&#38190;&#20540;&#26469;&#23450;&#20041;&#34920;&#21035;&#21517;&#65292;&#22914;&#19979;&#25152;&#31034;&#65306;</p>
+<pre><code class="hljs php language-php">$query-&gt;from([<span class="hljs-string">'u'</span> =&gt; <span class="hljs-string">'public.user'</span>, <span class="hljs-string">'p'</span> =&gt; <span class="hljs-string">'public.post'</span>]);
+</code></pre>
+<p>&#38500;&#20102;&#34920;&#21517;&#20197;&#22806;&#65292;&#20320;&#36824;&#21487;&#20197;&#20174;&#23376;&#26597;&#35810;&#20013;&#20877;&#27425;&#26597;&#35810;&#65292;&#36825;&#37324;&#30340;&#23376;&#26597;&#35810;&#26159;&#30001; <a href="./yii-db-query.html">yii\db\Query</a> &#21019;&#24314;&#30340;&#23545;&#35937;&#12290;
+&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php">$subQuery = (<span class="hljs-keyword">new</span> Query())-&gt;select(<span class="hljs-string">'id'</span>)-&gt;from(<span class="hljs-string">'user'</span>)-&gt;where(<span class="hljs-string">'status=1'</span>);
+
+<span class="hljs-comment">// SELECT * FROM (SELECT `id` FROM `user` WHERE status=1) u </span>
+$query-&gt;from([<span class="hljs-string">'u'</span> =&gt; $subQuery]);
+</code></pre>
+<h4>&#21069;&#32512; <span id="qian-zhui"></span><a href="#qian-zhui" class="hashlink">&para;</a></h4><p><code>from</code> &#36824;&#21487;&#20197;&#24212;&#29992;&#40664;&#35748;&#30340; <a href="./yii-db-connection.html#%24tablePrefix-detail">tablePrefix</a> &#21069;&#32512;&#65292;&#23454;&#29616;&#32454;&#33410;&#35831;&#21442;&#32771;
+<a href="guide-db-dao.html#quoting-table-and-column-names">&ldquo;&#25968;&#25454;&#24211;&#35775;&#38382;&#23545;&#35937;&#25351;&#21335;&rdquo;&#30340;&ldquo;Quoting Tables&rdquo;&#31456;&#33410;</a>.</p>
+<h3><a href="./yii-db-query.html#where()-detail">where()</a>  <span id="where"></span><a href="#where" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#where()-detail">where()</a> &#26041;&#27861;&#23450;&#20041;&#20102; SQL &#35821;&#21477;&#24403;&#20013;&#30340; <code>WHERE</code> &#23376;&#21477;&#12290;
+&#20320;&#21487;&#20197;&#20351;&#29992;&#22914;&#19979;&#22235;&#31181;&#26684;&#24335;&#26469;&#23450;&#20041; <code>WHERE</code> &#26465;&#20214;&#65306;</p>
+<ul>
+<li>&#23383;&#31526;&#20018;&#26684;&#24335;&#65292;&#20363;&#22914;&#65306;<code>'status=1'</code></li>
+<li>&#21704;&#24076;&#26684;&#24335;&#65292;&#20363;&#22914;&#65306; <code>['status' =&gt; 1, 'type' =&gt; 2]</code></li>
+<li>&#25805;&#20316;&#31526;&#26684;&#24335;&#65292;&#20363;&#22914;&#65306;<code>['like', 'name', 'test']</code></li>
+<li>&#23545;&#35937;&#26684;&#24335;&#65292;&#20363;&#22914;&#65306;<code>new LikeCondition('name', 'LIKE', 'test')</code></li>
+</ul>
+<h4>&#23383;&#31526;&#20018;&#26684;&#24335;  <span id="string-format"></span><a href="#string-format" class="hashlink">&para;</a></h4><p>&#22312;&#23450;&#20041;&#38750;&#24120;&#31616;&#21333;&#30340;&#26597;&#35810;&#26465;&#20214;&#30340;&#26102;&#20505;&#65292;&#23383;&#31526;&#20018;&#26684;&#24335;&#26159;&#26368;&#21512;&#36866;&#30340;&#12290;
+&#23427;&#30475;&#36215;&#26469;&#21644;&#21407;&#29983; SQL &#35821;&#21477;&#24046;&#19981;&#22810;&#12290;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php">$query-&gt;where(<span class="hljs-string">'status=1'</span>);
+
+<span class="hljs-comment">// &#25110;&#20351;&#29992;&#21442;&#25968;&#32465;&#23450;&#26469;&#32465;&#23450;&#21160;&#24577;&#21442;&#25968;&#20540;</span>
+$query-&gt;where(<span class="hljs-string">'status=:status'</span>, [<span class="hljs-string">':status'</span> =&gt; $status]);
+
+<span class="hljs-comment">// &#21407;&#29983; SQL &#22312;&#26085;&#26399;&#23383;&#27573;&#19978;&#20351;&#29992; MySQL YEAR() &#20989;&#25968;</span>
+$query-&gt;where(<span class="hljs-string">'YEAR(somedate) = 2015'</span>);
+</code></pre>
+<p>&#21315;&#19975;&#19981;&#35201;&#20687;&#22914;&#19979;&#30340;&#20363;&#23376;&#19968;&#26679;&#30452;&#25509;&#22312;&#26465;&#20214;&#35821;&#21477;&#24403;&#20013;&#23884;&#20837;&#21464;&#37327;&#65292;&#29305;&#21035;&#26159;&#24403;&#36825;&#20123;&#21464;&#37327;&#26469;&#28304;&#20110;&#32456;&#31471;&#29992;&#25143;&#36755;&#20837;&#30340;&#26102;&#20505;&#65292;
+&#22240;&#20026;&#36825;&#26679;&#25105;&#20204;&#30340;&#36719;&#20214;&#23558;&#24456;&#23481;&#26131;&#21463;&#21040; SQL &#27880;&#20837;&#30340;&#25915;&#20987;&#12290;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#21361;&#38505;&#65281;&#21315;&#19975;&#21035;&#36825;&#26679;&#24178;&#65292;&#38500;&#38750;&#20320;&#38750;&#24120;&#30340;&#30830;&#23450; $status &#26159;&#19968;&#20010;&#25972;&#22411;&#25968;&#20540;&#12290;</span>
+$query-&gt;where(<span class="hljs-string">"status=$status"</span>);
+</code></pre>
+<p>&#24403;&#20351;&#29992; <code>&#21442;&#25968;&#32465;&#23450;</code> &#30340;&#26102;&#20505;&#65292;&#20320;&#21487;&#20197;&#35843;&#29992; <a href="./yii-db-query.html#params()-detail">params()</a> &#25110;&#32773; <a href="./yii-db-query.html#addParams()-detail">addParams()</a> &#26041;&#27861;
+&#26469;&#20998;&#21035;&#32465;&#23450;&#19981;&#21516;&#30340;&#21442;&#25968;&#12290;</p>
+<pre><code class="hljs php language-php">$query-&gt;where(<span class="hljs-string">'status=:status'</span>)
+    -&gt;addParams([<span class="hljs-string">':status'</span> =&gt; $status]);
+</code></pre>
+<p>&#19982;&#28041;&#21450;&#21407;&#29983; SQL &#30340;&#25152;&#26377;&#22320;&#26041;&#19968;&#26679;&#65292;&#22312;&#20197;&#23383;&#31526;&#20018;&#26684;&#24335;&#20889;&#20837;&#26465;&#20214;&#26102;&#65292;&#21487;&#20197;&#23545;&#34920;&#21517;&#21644;&#21015;&#21517;&#20351;&#29992; 
+<a href="guide-db-dao.html#quoting-table-and-column-names">&#19982; DBMS &#26080;&#20851;&#30340;&#24341;&#29992;&#35821;&#27861;</a>&#12290;</p>
+<h4>&#21704;&#24076;&#26684;&#24335;  <span id="hash-format"></span><a href="#hash-format" class="hashlink">&para;</a></h4><p>&#21704;&#24076;&#26684;&#24335;&#26368;&#36866;&#21512;&#29992;&#26469;&#25351;&#23450;&#22810;&#20010; <code>AND</code> &#20018;&#32852;&#36215;&#26469;&#30340;&#31616;&#21333;&#30340;"&#31561;&#20110;&#26029;&#35328;"&#23376;&#26465;&#20214;&#12290;
+&#23427;&#26159;&#20197;&#25968;&#32452;&#30340;&#24418;&#24335;&#26469;&#20070;&#20889;&#30340;&#65292;&#25968;&#32452;&#30340;&#38190;&#34920;&#31034;&#23383;&#27573;&#30340;&#21517;&#31216;&#65292;&#32780;&#25968;&#32452;&#30340;&#20540;&#21017;&#34920;&#31034;
+&#36825;&#20010;&#23383;&#27573;&#38656;&#35201;&#21305;&#37197;&#30340;&#20540;&#12290;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ...WHERE (`status` = 10) AND (`type` IS NULL) AND (`id` IN (4, 8, 15))</span>
+$query-&gt;where([
+    <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">10</span>,
+    <span class="hljs-string">'type'</span> =&gt; <span class="hljs-keyword">null</span>,
+    <span class="hljs-string">'id'</span> =&gt; [<span class="hljs-number">4</span>, <span class="hljs-number">8</span>, <span class="hljs-number">15</span>],
+]);
+</code></pre>
+<p>&#23601;&#20687;&#20320;&#25152;&#30475;&#21040;&#30340;&#19968;&#26679;&#65292;&#26597;&#35810;&#26500;&#24314;&#22120;&#38750;&#24120;&#30340;&#26234;&#33021;&#65292;&#33021;&#24688;&#24403;&#22320;&#22788;&#29702;&#25968;&#20540;&#24403;&#20013;&#30340;&#31354;&#20540;&#21644;&#25968;&#32452;&#12290;</p>
+<p>&#20320;&#20063;&#21487;&#20197;&#20687;&#19979;&#38754;&#37027;&#26679;&#22312;&#23376;&#26597;&#35810;&#24403;&#20013;&#20351;&#29992;&#21704;&#24076;&#26684;&#24335;&#65306; </p>
+<pre><code class="hljs php language-php">$userQuery = (<span class="hljs-keyword">new</span> Query())-&gt;select(<span class="hljs-string">'id'</span>)-&gt;from(<span class="hljs-string">'user'</span>);
+
+<span class="hljs-comment">// ...WHERE `id` IN (SELECT `id` FROM `user`)</span>
+$query-&gt;where([<span class="hljs-string">'id'</span> =&gt; $userQuery]);
+</code></pre>
+<p>&#20351;&#29992;&#21704;&#24076;&#26684;&#24335;&#65292;Yii &#22312;&#20869;&#37096;&#23545;&#30456;&#24212;&#30340;&#20540;&#36827;&#34892;&#21442;&#25968;&#32465;&#23450;&#65292;&#19982; <a href="#string-format">&#23383;&#31526;&#20018;&#26684;&#24335;</a> &#30456;&#27604;&#65292;
+&#27492;&#22788;&#20320;&#19981;&#38656;&#35201;&#25163;&#21160;&#28155;&#21152;&#21442;&#25968;&#32465;&#23450;&#12290;&#20294;&#35831;&#27880;&#24847;&#65292;Yii &#19981;&#20250;&#24110;&#20320;&#36716;&#20041;&#21015;&#21517;&#65292;&#25152;&#20197;&#22914;&#26524;&#20320;
+&#20174;&#29992;&#25143;&#31471;&#33719;&#24471;&#30340;&#21464;&#37327;&#20316;&#20026;&#21015;&#21517;&#32780;&#27809;&#26377;&#36827;&#34892;&#20219;&#20309;&#39069;&#22806;&#30340;&#26816;&#26597;&#65292;&#23545;&#20110; SQL &#27880;&#20837;&#25915;&#20987;&#65292;
+&#20320;&#30340;&#31243;&#24207;&#23558;&#21464;&#24471;&#24456;&#33030;&#24369;&#12290;&#20026;&#20102;&#20445;&#35777;&#24212;&#29992;&#31243;&#24207;&#30340;&#23433;&#20840;&#65292;&#35831;&#19981;&#35201;&#23558;&#21464;&#37327;&#29992;&#20316;&#21015;&#21517;
+&#25110;&#32773;&#20320;&#24517;&#39035;&#29992;&#30333;&#21517;&#21333;&#36807;&#28388;&#21464;&#37327;&#12290;&#22914;&#26524;&#20320;&#23454;&#22312;&#38656;&#35201;&#20174;&#29992;&#25143;&#33719;&#21462;&#21015;&#21517;&#65292;&#35831;&#38405;&#35835; <a href="guide-output-data-widgets.html#filtering-data">&#36807;&#28388;&#25968;&#25454;</a>
+&#31456;&#33410;&#12290;&#20363;&#22914;&#65292;&#20197;&#19979;&#20195;&#30721;&#26131;&#21463;&#25915;&#20987;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#26131;&#21463;&#25915;&#20987;&#30340;&#20195;&#30721;&#65306;</span>
+$column = $request-&gt;get(<span class="hljs-string">'column'</span>);
+$value = $request-&gt;get(<span class="hljs-string">'value'</span>);
+$query-&gt;where([$column =&gt; $value]);
+<span class="hljs-comment">// $value &#26159;&#23433;&#20840;&#30340;&#65292;&#20294;&#26159; $column &#21517;&#19981;&#20250;&#34987;&#36716;&#20041;&#22788;&#29702;&#65281;</span>
+</code></pre>
+<h4>&#25805;&#20316;&#31526;&#26684;&#24335;  <span id="operator-format"></span><a href="#operator-format" class="hashlink">&para;</a></h4><p>&#25805;&#20316;&#31526;&#26684;&#24335;&#20801;&#35768;&#20320;&#25351;&#23450;&#31867;&#31243;&#24207;&#39118;&#26684;&#30340;&#20219;&#24847;&#26465;&#20214;&#35821;&#21477;&#65292;&#22914;&#19979;&#25152;&#31034;&#65306;</p>
+<pre><code class="hljs php language-php">[&#25805;&#20316;&#31526;, &#25805;&#20316;&#25968;1, &#25805;&#20316;&#25968;2, ...]
+</code></pre>
+<p>&#20854;&#20013;&#27599;&#20010;&#25805;&#20316;&#25968;&#21487;&#20197;&#26159;&#23383;&#31526;&#20018;&#26684;&#24335;&#12289;&#21704;&#24076;&#26684;&#24335;&#25110;&#32773;&#23884;&#22871;&#30340;&#25805;&#20316;&#31526;&#26684;&#24335;&#65292;
+&#32780;&#25805;&#20316;&#31526;&#21487;&#20197;&#26159;&#22914;&#19979;&#21015;&#34920;&#20013;&#30340;&#19968;&#20010;&#65306;</p>
+<ul>
+<li><p><code>and</code>&#65306;&#25805;&#20316;&#25968;&#20250;&#34987; <code>AND</code> &#20851;&#38190;&#23383;&#20018;&#32852;&#36215;&#26469;&#12290;&#20363;&#22914;&#65292;<code>['and', 'id=1', 'id=2']</code> 
+&#23558;&#20250;&#29983;&#25104; <code>id=1 AND id=2</code>&#12290;&#22914;&#26524;&#25805;&#20316;&#25968;&#26159;&#19968;&#20010;&#25968;&#32452;&#65292;&#23427;&#20063;&#20250;&#25353;&#19978;&#36848;&#35268;&#21017;&#36716;&#25442;&#25104;
+&#23383;&#31526;&#20018;&#12290;&#20363;&#22914;&#65292;<code>['and', 'type=1', ['or', 'id=1', 'id=2']]</code> 
+&#23558;&#20250;&#29983;&#25104; <code>type=1 AND (id=1 OR id=2)</code>&#12290;
+&#36825;&#20010;&#26041;&#27861;&#19981;&#20250;&#33258;&#21160;&#21152;&#24341;&#21495;&#25110;&#32773;&#36716;&#20041;&#12290;</p>
+</li>
+<li><p><code>or</code>&#65306;&#29992;&#27861;&#21644; <code>and</code> &#25805;&#20316;&#31526;&#31867;&#20284;&#65292;&#36825;&#37324;&#23601;&#19981;&#20877;&#36184;&#36848;&#12290;</p>
+</li>
+<li><p><code>not</code>&#65306;&#21482;&#38656;&#35201;&#25805;&#20316;&#25968; 1&#65292;&#23427;&#23558;&#21253;&#21547;&#22312; <code>NOT()</code> &#20013;&#12290;&#20363;&#22914;&#65292;<code>['not'&#65292;'id = 1']</code> &#23558;&#29983;&#25104; <code>['not', 'id=1']</code>&#12290;&#25805;&#20316;&#25968; 1 &#20063;&#21487;&#20197;&#26159;&#20010;&#25551;&#36848;&#22810;&#20010;&#34920;&#36798;&#24335;&#30340;&#25968;&#32452;&#12290;&#20363;&#22914; <code>['not', ['status' =&gt; 'draft', 'name' =&gt; 'example']]</code> &#23558;&#29983;&#25104; <code>NOT ((status='draft') AND (name='example'))</code>&#12290;</p>
+</li>
+<li><p><code>between</code>&#65306;&#31532;&#19968;&#20010;&#25805;&#20316;&#25968;&#20026;&#23383;&#27573;&#21517;&#31216;&#65292;&#31532;&#20108;&#20010;&#21644;&#31532;&#19977;&#20010;&#25805;&#20316;&#25968;&#20195;&#34920;&#30340;&#26159;&#36825;&#20010;&#23383;&#27573;
+&#30340;&#21462;&#20540;&#33539;&#22260;&#12290;&#20363;&#22914;&#65292;<code>['between', 'id', 1, 10]</code> &#23558;&#20250;&#29983;&#25104;
+<code>id BETWEEN 1 AND 10</code>&#12290;
+&#22914;&#26524;&#20320;&#38656;&#35201;&#24314;&#31435;&#19968;&#20010;&#20540;&#22312;&#20004;&#21015;&#20043;&#38388;&#30340;&#26597;&#35810;&#26465;&#20214;&#65288;&#27604;&#22914; <code>11 BETWEEN min_id AND max_id</code>&#65289;&#65292;
+&#20320;&#24212;&#35813;&#20351;&#29992; <a href="./yii-db-conditions-betweencolumnscondition.html">BetweenColumnsCondition</a>&#12290;
+&#35831;&#21442;&#38405; <a href="#object-format">&#26465;&#20214;-&#23545;&#35937;&#26684;&#24335;</a> &#19968;&#31456;&#20197;&#20102;&#35299;&#26377;&#20851;&#26465;&#20214;&#30340;&#23545;&#35937;&#23450;&#20041;&#30340;&#26356;&#22810;&#20449;&#24687;&#12290;</p>
+</li>
+<li><p><code>not between</code>&#65306;&#19982; <code>between</code> &#31867;&#20284;&#65292;&#38500;&#20102; <code>BETWEEN</code> &#34987; <code>NOT BETWEEN</code> &#26367;&#25442;
+&#22312;&#29983;&#25104;&#26465;&#20214;&#26102;&#12290;</p>
+</li>
+<li><p><code>in</code>&#65306;&#31532;&#19968;&#20010;&#25805;&#20316;&#25968;&#24212;&#20026;&#23383;&#27573;&#21517;&#31216;&#25110;&#32773; DB &#34920;&#36798;&#24335;&#12290;&#31532;&#20108;&#20010;&#25805;&#20316;&#31526;&#26082;&#21487;&#20197;&#26159;&#19968;&#20010;&#25968;&#32452;&#65292;
+&#20063;&#21487;&#20197;&#26159;&#19968;&#20010;  <code>Query</code> &#23545;&#35937;&#12290;&#23427;&#20250;&#36716;&#25442;&#25104;<code>IN</code> &#26465;&#20214;&#35821;&#21477;&#12290;&#22914;&#26524;&#31532;&#20108;&#20010;&#25805;&#20316;&#25968;&#26159;&#19968;&#20010;
+&#25968;&#32452;&#65292;&#37027;&#20040;&#23427;&#20195;&#34920;&#30340;&#26159;&#23383;&#27573;&#25110; DB &#34920;&#36798;&#24335;&#30340;&#21462;&#20540;&#33539;&#22260;&#12290;&#22914;&#26524;&#31532;&#20108;&#20010;&#25805;&#20316;&#25968;&#26159; <code>Query</code> 
+&#23545;&#35937;&#65292;&#37027;&#20040;&#36825;&#20010;&#23376;&#26597;&#35810;&#30340;&#32467;&#26524;&#38598;&#23558;&#20250;&#20316;&#20026;&#31532;&#19968;&#20010;&#25805;&#20316;&#31526;&#30340;&#23383;&#27573;&#25110;&#32773; DB &#34920;&#36798;&#24335;&#30340;&#21462;&#20540;&#33539;&#22260;&#12290;
+&#20363;&#22914;&#65292; <code>['in', 'id', [1, 2, 3]]</code> &#23558;&#29983;&#25104; <code>id IN (1, 2, 3)</code>&#12290;
+&#35813;&#26041;&#27861;&#23558;&#27491;&#30830;&#22320;&#20026;&#23383;&#27573;&#21517;&#21152;&#24341;&#21495;&#20197;&#21450;&#20026;&#21462;&#20540;&#33539;&#22260;&#36716;&#20041;&#12290;<code>in</code> &#25805;&#20316;&#31526;&#36824;&#25903;&#25345;&#32452;&#21512;&#23383;&#27573;&#65292;&#27492;&#26102;&#65292;
+&#25805;&#20316;&#25968;1&#24212;&#35813;&#26159;&#19968;&#20010;&#23383;&#27573;&#21517;&#25968;&#32452;&#65292;&#32780;&#25805;&#20316;&#25968;2&#24212;&#35813;&#26159;&#19968;&#20010;&#25968;&#32452;&#25110;&#32773; <code>Query</code> &#23545;&#35937;&#65292;
+&#20195;&#34920;&#36825;&#20123;&#23383;&#27573;&#30340;&#21462;&#20540;&#33539;&#22260;&#12290;</p>
+</li>
+<li><p><code>not in</code>&#65306;&#29992;&#27861;&#21644; <code>in</code> &#25805;&#20316;&#31526;&#31867;&#20284;&#65292;&#36825;&#37324;&#23601;&#19981;&#20877;&#36184;&#36848;&#12290;</p>
+</li>
+<li><p><code>like</code>&#65306;&#31532;&#19968;&#20010;&#25805;&#20316;&#25968;&#24212;&#20026;&#19968;&#20010;&#23383;&#27573;&#21517;&#31216;&#25110; DB &#34920;&#36798;&#24335;&#65292;
+&#31532;&#20108;&#20010;&#25805;&#20316;&#25968;&#21487;&#20197;&#20351;&#23383;&#31526;&#20018;&#25110;&#25968;&#32452;&#65292;
+&#20195;&#34920;&#31532;&#19968;&#20010;&#25805;&#20316;&#25968;&#38656;&#35201;&#27169;&#31946;&#26597;&#35810;&#30340;&#20540;&#12290;&#27604;&#22914;&#65292;<code>['like', 'name', 'tester']</code> &#20250;&#29983;&#25104;
+<code>name LIKE '%tester%'</code>&#12290; &#22914;&#26524;&#33539;&#22260;&#20540;&#26159;&#19968;&#20010;&#25968;&#32452;&#65292;&#37027;&#20040;&#23558;&#20250;&#29983;&#25104;&#29992; <code>AND</code> &#20018;&#32852;&#36215;&#26469;&#30340;
+&#22810;&#20010; <code>like</code> &#35821;&#21477;&#12290;&#20363;&#22914;&#65292;<code>['like', 'name', ['test', 'sample']]</code> &#23558;&#20250;&#29983;&#25104;
+<code>name LIKE '%test%' AND name LIKE '%sample%'</code>&#12290;
+&#20320;&#20063;&#21487;&#20197;&#25552;&#20379;&#31532;&#19977;&#20010;&#21487;&#36873;&#30340;&#25805;&#20316;&#25968;&#26469;&#25351;&#23450;&#24212;&#35813;&#22914;&#20309;&#36716;&#20041;&#25968;&#20540;&#24403;&#20013;&#30340;&#29305;&#27530;&#23383;&#31526;&#12290;
+&#35813;&#25805;&#20316;&#25968;&#26159;&#19968;&#20010;&#20174;&#38656;&#35201;&#34987;&#36716;&#20041;&#30340;&#29305;&#27530;&#23383;&#31526;&#21040;&#36716;&#20041;&#21103;&#26412;&#30340;&#25968;&#32452;&#26144;&#23556;&#12290;
+&#22914;&#26524;&#27809;&#26377;&#25552;&#20379;&#36825;&#20010;&#25805;&#20316;&#25968;&#65292;&#23558;&#20250;&#20351;&#29992;&#40664;&#35748;&#30340;&#36716;&#20041;&#26144;&#23556;&#12290;&#22914;&#26524;&#38656;&#35201;&#31105;&#29992;&#36716;&#20041;&#30340;&#21151;&#33021;&#65292;
+&#21482;&#38656;&#35201;&#23558;&#21442;&#25968;&#35774;&#32622;&#20026; <code>false</code> &#25110;&#32773;&#20256;&#20837;&#19968;&#20010;&#31354;&#25968;&#32452;&#21363;&#21487;&#12290;&#38656;&#35201;&#27880;&#24847;&#30340;&#26159;&#65292;
+&#24403;&#20351;&#29992;&#36716;&#20041;&#26144;&#23556;&#65288;&#21448;&#25110;&#32773;&#27809;&#26377;&#25552;&#20379;&#31532;&#19977;&#20010;&#25805;&#20316;&#25968;&#30340;&#26102;&#20505;&#65289;&#65292;&#31532;&#20108;&#20010;&#25805;&#20316;&#25968;&#30340;&#20540;&#30340;&#21069;&#21518;
+&#23558;&#20250;&#34987;&#21152;&#19978;&#30334;&#20998;&#21495;&#12290;</p>
+</li>
+</ul>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#24403;&#20351;&#29992; PostgreSQL &#30340;&#26102;&#20505;&#20320;&#36824;&#21487;&#20197;&#20351;&#29992; <a href="https://www.postgresql.org/docs/8.3/functions-matching.html#FUNCTIONS-LIKE"><code>ilike</code></a>&#65292;
+&#35813;&#26041;&#27861;&#23545;&#22823;&#23567;&#20889;&#19981;&#25935;&#24863;&#12290;</p>
+</blockquote>
+<ul>
+<li><p><code>or like</code>&#65306;&#29992;&#27861;&#21644; <code>like</code> &#25805;&#20316;&#31526;&#31867;&#20284;&#65292;&#21306;&#21035;&#22312;&#20110;&#24403;&#31532;&#20108;&#20010;&#25805;&#20316;&#25968;&#20026;&#25968;&#32452;&#26102;&#65292;
+&#20250;&#20351;&#29992; <code>OR</code> &#26469;&#20018;&#32852;&#22810;&#20010; <code>LIKE</code> &#26465;&#20214;&#35821;&#21477;&#12290;</p>
+</li>
+<li><p><code>not like</code>&#65306;&#29992;&#27861;&#21644; <code>like</code> &#25805;&#20316;&#31526;&#31867;&#20284;&#65292;&#21306;&#21035;&#22312;&#20110;&#20250;&#20351;&#29992; <code>NOT LIKE</code>
+&#26469;&#29983;&#25104;&#26465;&#20214;&#35821;&#21477;&#12290;</p>
+</li>
+<li><p><code>or not like</code>&#65306;&#29992;&#27861;&#21644; <code>not like</code> &#25805;&#20316;&#31526;&#31867;&#20284;&#65292;&#21306;&#21035;&#22312;&#20110;&#20250;&#20351;&#29992; <code>OR</code> 
+&#26469;&#20018;&#32852;&#22810;&#20010; <code>NOT LIKE</code> &#26465;&#20214;&#35821;&#21477;&#12290;</p>
+</li>
+<li><p><code>exists</code>&#65306;&#38656;&#35201;&#19968;&#20010;&#25805;&#20316;&#25968;&#65292;&#35813;&#25805;&#20316;&#25968;&#24517;&#39035;&#26159;&#20195;&#34920;&#23376;&#26597;&#35810; <a href="./yii-db-query.html">yii\db\Query</a> &#30340;&#19968;&#20010;&#23454;&#20363;&#65292;
+&#23427;&#23558;&#20250;&#26500;&#24314;&#19968;&#20010; <code>EXISTS (sub-query)</code> &#34920;&#36798;&#24335;&#12290;</p>
+</li>
+<li><p><code>not exists</code>&#65306;&#29992;&#27861;&#21644; <code>exists</code> &#25805;&#20316;&#31526;&#31867;&#20284;&#65292;&#23427;&#23558;&#21019;&#24314;&#19968;&#20010; <code>NOT EXISTS (sub-query)</code> &#34920;&#36798;&#24335;&#12290;</p>
+</li>
+<li><p><code>&gt;</code>&#65292;<code>&lt;=</code> &#25110;&#32773;&#20854;&#20182;&#21253;&#21547;&#20004;&#20010;&#25805;&#20316;&#25968;&#30340;&#21512;&#27861; DB &#25805;&#20316;&#31526;&#65306;&#31532;&#19968;&#20010;&#25805;&#20316;&#25968;&#24517;&#39035;&#20026;&#23383;&#27573;&#30340;&#21517;&#31216;&#65292;
+&#32780;&#31532;&#20108;&#20010;&#25805;&#20316;&#25968;&#21017;&#24212;&#20026;&#19968;&#20010;&#20540;&#12290;&#20363;&#22914;&#65292;<code>['&gt;', 'age', 10]</code> &#23558;&#20250;&#29983;&#25104; <code>age&gt;10</code>&#12290;</p>
+</li>
+</ul>
+<p>&#20351;&#29992;&#25805;&#20316;&#31526;&#26684;&#24335;&#65292;Yii &#22312;&#20869;&#37096;&#23545;&#30456;&#24212;&#30340;&#20540;&#36827;&#34892;&#21442;&#25968;&#32465;&#23450;&#65292;&#22240;&#27492;&#19982; <a href="#string-format">&#23383;&#31526;&#20018;&#26684;&#24335;</a> &#30456;&#27604;&#65292;
+&#27492;&#22788;&#20320;&#19981;&#38656;&#35201;&#25163;&#21160;&#28155;&#21152;&#21442;&#25968;&#12290;&#20294;&#35831;&#27880;&#24847;&#65292;Yii &#19981;&#20250;&#24110;&#20320;&#36716;&#20041;&#21015;&#21517;&#65292;&#25152;&#20197;&#22914;&#26524;&#20320;
+&#20174;&#29992;&#25143;&#31471;&#33719;&#24471;&#30340;&#21464;&#37327;&#20316;&#20026;&#21015;&#21517;&#32780;&#27809;&#26377;&#36827;&#34892;&#20219;&#20309;&#39069;&#22806;&#30340;&#26816;&#26597;&#65292;&#23545;&#20110; SQL &#27880;&#20837;&#25915;&#20987;&#65292;
+&#20320;&#30340;&#31243;&#24207;&#23558;&#21464;&#24471;&#24456;&#33030;&#24369;&#12290;&#20026;&#20102;&#20445;&#35777;&#24212;&#29992;&#31243;&#24207;&#30340;&#23433;&#20840;&#65292;&#35831;&#19981;&#35201;&#23558;&#21464;&#37327;&#29992;&#20316;&#21015;&#21517;
+&#25110;&#32773;&#20320;&#24517;&#39035;&#29992;&#30333;&#21517;&#21333;&#36807;&#28388;&#21464;&#37327;&#12290;&#22914;&#26524;&#20320;&#23454;&#22312;&#38656;&#35201;&#20174;&#29992;&#25143;&#33719;&#21462;&#21015;&#21517;&#65292;&#35831;&#38405;&#35835; <a href="guide-output-data-widgets.html#filtering-data">&#36807;&#28388;&#25968;&#25454;</a>
+&#31456;&#33410;&#12290;&#20363;&#22914;&#65292;&#20197;&#19979;&#20195;&#30721;&#26131;&#21463;&#25915;&#20987;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#26131;&#21463;&#25915;&#20987;&#30340;&#20195;&#30721;&#65306;</span>
+$column = $request-&gt;get(<span class="hljs-string">'column'</span>);
+$value = $request-&gt;get(<span class="hljs-string">'value'</span>);
+$query-&gt;where([<span class="hljs-string">'='</span>, $column, $value]);
+<span class="hljs-comment">// $value &#26159;&#23433;&#20840;&#30340;&#65292;&#20294;&#26159; $column &#21517;&#19981;&#20250;&#34987;&#36716;&#20041;&#22788;&#29702;&#65281;</span>
+</code></pre>
+<h4>&#23545;&#35937;&#26684;&#24335;&#65288;Object Form&#65289;  <span id="object-format"></span><a href="#object-format" class="hashlink">&para;</a></h4><p>&#23545;&#35937;&#26684;&#24335;&#33258; 2.0.14 &#24320;&#22987;&#25552;&#20379;&#65292;&#26159;&#23450;&#20041;&#26465;&#20214;&#30340;&#26368;&#24378;&#22823;&#21644;&#26368;&#22797;&#26434;&#30340;&#26041;&#27861;&#12290;
+&#22914;&#26524;&#20320;&#35201;&#22312;&#26597;&#35810;&#26500;&#24314;&#22120;&#19978;&#26500;&#24314;&#33258;&#24049;&#30340;&#25277;&#35937;&#26041;&#27861;&#25110;&#32773;&#22914;&#26524;&#20320;&#35201;&#23454;&#29616;&#33258;&#24049;&#30340;&#22797;&#26434;&#26465;&#20214;&#65292;
+&#20320;&#38656;&#35201;&#23427;&#65288;Object Form&#65289;</p>
+<p>&#26465;&#20214;&#31867;&#30340;&#23454;&#20363;&#26159;&#19981;&#21487;&#21464;&#30340;&#12290;&#20182;&#20204;&#21807;&#19968;&#30340;&#29992;&#36884;&#26159;&#23384;&#20648;&#26465;&#20214;&#25968;&#25454;
+&#24182;&#20026;&#26465;&#20214;&#26500;&#24314;&#22120;&#25552;&#20379; getters &#23646;&#24615;&#12290;&#26465;&#20214;&#26500;&#24314;&#22120;&#26159;&#19968;&#20010;&#21253;&#21547;&#36716;&#25442;&#36923;&#36753;&#30340;&#31867;&#65292;
+&#23427;&#23558;&#23384;&#20648;&#30340;&#26465;&#20214;&#25968;&#25454;&#36716;&#25442;&#20026; SQL &#34920;&#36798;&#24335;&#12290;</p>
+<p>&#22312;&#20869;&#37096;&#65292;&#19978;&#38754;&#25551;&#36848;&#30340;&#26684;&#24335;&#22312;&#26500;&#24314; SQL &#20043;&#21069;&#34987;&#38544;&#24335;&#36716;&#25442;&#20026;&#23545;&#35937;&#26684;&#24335;&#65292;
+&#22240;&#27492;&#21487;&#20197;&#22312;&#21333;&#19968;&#26465;&#20214;&#35821;&#21477;&#19979;&#32452;&#21512;&#36866;&#21512;&#30340;&#26684;&#24335;&#65306;</p>
+<pre><code class="hljs php language-php">$query-&gt;andWhere(<span class="hljs-keyword">new</span> OrCondition([
+    <span class="hljs-keyword">new</span> InCondition(<span class="hljs-string">'type'</span>, <span class="hljs-string">'in'</span>, $types),
+    [<span class="hljs-string">'like'</span>, <span class="hljs-string">'name'</span>, <span class="hljs-string">'%good%'</span>],
+    <span class="hljs-string">'disabled=false'</span>
+]))
+</code></pre>
+<p>&#25805;&#20316;&#31526;&#26684;&#24335;&#19982;&#23545;&#35937;&#26684;&#24335;&#30340;&#23545;&#24212;&#20851;&#31995;&#26159;&#22312;
+<a href="./yii-db-querybuilder.html#%24conditionClasses-detail">QueryBuilder::conditionClasses</a> &#23646;&#24615;&#20013;&#23450;&#20041;&#65292;
+&#36825;&#37324;&#21015;&#20030;&#19968;&#20123;&#27604;&#36739;&#26377;&#20195;&#34920;&#24615;&#30340;&#26144;&#23556;&#20851;&#31995;&#65306;</p>
+<ul>
+<li><code>AND</code>, <code>OR</code> -&gt; <code>yii\db\conditions\ConjunctionCondition</code></li>
+<li><code>NOT</code> -&gt; <code>yii\db\conditions\NotCondition</code></li>
+<li><code>IN</code>, <code>NOT IN</code> -&gt; <code>yii\db\conditions\InCondition</code></li>
+<li><code>BETWEEN</code>, <code>NOT BETWEEN</code> -&gt; <code>yii\db\conditions\BetweenCondition</code></li>
+</ul>
+<p>&#31561;&#31561;</p>
+<p>&#20351;&#29992;&#23545;&#35937;&#26684;&#24335;&#21487;&#20197;&#23450;&#20041;&#33258;&#24049;&#30340;&#26465;&#20214;&#38598;&#65292;&#24182;&#19988;&#21487;&#20197;&#26356;&#23481;&#26131;&#32500;&#25252;&#21035;&#20154;&#23450;&#20041;&#30340;&#26465;&#20214;&#38598;&#12290;&#65288;&#27880;&#65306;&#36825;&#37324;&#26159;&#35828;&#23545;&#35937;&#27604;&#25968;&#32452;&#26356;&#21487;&#38752;&#65289;
+&#26356;&#22810;&#32454;&#33410;&#35831;&#21442;&#32771; <a href="#adding-custom-conditions-and-expressions">Adding Custom Conditions and Expressions</a> &#31456;&#33410;&#12290;</p>
+<h4>&#38468;&#21152;&#26465;&#20214;  <span id="appending-conditions"></span><a href="#appending-conditions" class="hashlink">&para;</a></h4><p>&#20320;&#21487;&#20197;&#20351;&#29992; <a href="./yii-db-query.html#andWhere()-detail">andWhere()</a> &#25110;&#32773; <a href="./yii-db-query.html#orWhere()-detail">orWhere()</a> &#22312;&#21407;&#26377;&#26465;&#20214;&#30340;&#22522;&#30784;&#19978;
+&#38468;&#21152;&#39069;&#22806;&#30340;&#26465;&#20214;&#12290;&#20320;&#21487;&#20197;&#22810;&#27425;&#35843;&#29992;&#36825;&#20123;&#26041;&#27861;&#26469;&#20998;&#21035;&#36861;&#21152;&#19981;&#21516;&#30340;&#26465;&#20214;&#12290;
+&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$status = <span class="hljs-number">10</span>;
+$search = <span class="hljs-string">'yii'</span>;
+
+$query-&gt;where([<span class="hljs-string">'status'</span> =&gt; $status]);
+
+<span class="hljs-keyword">if</span> (!<span class="hljs-keyword">empty</span>($search)) {
+    $query-&gt;andWhere([<span class="hljs-string">'like'</span>, <span class="hljs-string">'title'</span>, $search]);
+}
+</code></pre>
+<p>&#22914;&#26524; <code>$search</code> &#19981;&#20026;&#31354;&#65292;&#37027;&#20040;&#23558;&#20250;&#29983;&#25104;&#22914;&#19979; SQL &#35821;&#21477;&#65306;</p>
+<pre><code class="hljs sql language-sql">... WHERE (`status` = 10) AND (`title` LIKE '%yii%')
+</code></pre>
+<h4>&#36807;&#28388;&#26465;&#20214;  <span id="filter-conditions"></span><a href="#filter-conditions" class="hashlink">&para;</a></h4><p>&#24403; <code>WHERE</code> &#26465;&#20214;&#26469;&#33258;&#20110;&#29992;&#25143;&#30340;&#36755;&#20837;&#26102;&#65292;&#20320;&#36890;&#24120;&#38656;&#35201;&#24573;&#30053;&#29992;&#25143;&#36755;&#20837;&#30340;&#31354;&#20540;&#12290;
+&#20363;&#22914;&#65292;&#22312;&#19968;&#20010;&#21487;&#20197;&#36890;&#36807;&#29992;&#25143;&#21517;&#25110;&#32773;&#37038;&#31665;&#25628;&#32034;&#30340;&#34920;&#21333;&#24403;&#20013;&#65292;&#29992;&#25143;&#21517;&#25110;&#32773;&#37038;&#31665;
+&#36755;&#20837;&#26694;&#27809;&#26377;&#36755;&#20837;&#20219;&#20309;&#19996;&#35199;&#65292;&#36825;&#31181;&#24773;&#20917;&#19979;&#20320;&#24819;&#35201;&#24573;&#30053;&#25481;&#23545;&#24212;&#30340;&#25628;&#32034;&#26465;&#20214;&#65292;
+&#37027;&#20040;&#20320;&#23601;&#21487;&#20197;&#20351;&#29992; <a href="./yii-db-querytrait.html#filterWhere()-detail">filterWhere()</a> &#26041;&#27861;&#26469;&#23454;&#29616;&#36825;&#20010;&#30446;&#30340;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// $username &#21644; $email &#26469;&#33258;&#20110;&#29992;&#25143;&#30340;&#36755;&#20837;</span>
+$query-&gt;filterWhere([
+    <span class="hljs-string">'username'</span> =&gt; $username,
+    <span class="hljs-string">'email'</span> =&gt; $email,		
+]);
+</code></pre>
+<p><a href="./yii-db-querytrait.html#filterWhere()-detail">filterWhere()</a> &#21644; <a href="./yii-db-query.html#where()-detail">where()</a> &#21807;&#19968;&#30340;&#19981;&#21516;&#23601;&#22312;&#20110;&#65292;&#21069;&#32773;
+&#23558;&#24573;&#30053;&#22312;&#26465;&#20214;&#24403;&#20013;&#30340;<a href="#hash-format">hash format</a>&#30340;&#31354;&#20540;&#12290;&#25152;&#20197;&#22914;&#26524; <code>$email</code> &#20026;&#31354;&#32780; <code>$username</code> 
+&#19981;&#20026;&#31354;&#65292;&#37027;&#20040;&#19978;&#38754;&#30340;&#20195;&#30721;&#26368;&#32456;&#23558;&#29983;&#20135;&#22914;&#19979; SQL <code>...WHERE username=:username</code>&#12290; </p>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#24403;&#19968;&#20010;&#20540;&#20026; <code>null</code>&#12289;&#31354;&#25968;&#32452;&#12289;&#31354;&#23383;&#31526;&#20018;&#25110;&#32773;&#19968;&#20010;&#21482;&#21253;&#21547;&#31354;&#26684;&#30340;&#23383;&#31526;&#20018;&#26102;&#65292;&#37027;&#20040;&#23427;&#23558;&#34987;&#21028;&#23450;&#20026;&#31354;&#20540;&#12290;</p>
+</blockquote>
+<p>&#31867;&#20284;&#20110; <a href="./yii-db-query.html#andWhere()-detail">andWhere()</a> &#21644; <a href="./yii-db-query.html#orWhere()-detail">orWhere()</a>&#65292;
+&#20320;&#21487;&#20197;&#20351;&#29992; <a href="./yii-db-querytrait.html#andFilterWhere()-detail">andFilterWhere()</a> &#21644; <a href="./yii-db-querytrait.html#orFilterWhere()-detail">orFilterWhere()</a> &#26041;&#27861;
+&#26469;&#36861;&#21152;&#39069;&#22806;&#30340;&#36807;&#28388;&#26465;&#20214;&#12290;</p>
+<p>&#27492;&#22806;&#65292;<a href="./yii-db-query.html#andFilterCompare()-detail">yii\db\Query::andFilterCompare()</a>
+&#21487;&#20197;&#26681;&#25454;&#20540;&#20013;&#30340;&#20869;&#23481;&#26234;&#33021;&#22320;&#30830;&#23450;&#36816;&#31639;&#31526;&#65306;</p>
+<pre><code class="hljs php language-php">$query-&gt;andFilterCompare(<span class="hljs-string">'name'</span>, <span class="hljs-string">'John Doe'</span>);
+$query-&gt;andFilterCompare(<span class="hljs-string">'rating'</span>, <span class="hljs-string">'&gt;9'</span>);
+$query-&gt;andFilterCompare(<span class="hljs-string">'value'</span>, <span class="hljs-string">'&lt;=100'</span>);
+</code></pre>
+<p>&#24744;&#36824;&#21487;&#20197;&#26174;&#24335;&#25351;&#23450;&#36816;&#31639;&#31526;&#65306;</p>
+<pre><code class="hljs php language-php">$query-&gt;andFilterCompare(<span class="hljs-string">'name'</span>, <span class="hljs-string">'Doe'</span>, <span class="hljs-string">'like'</span>);
+</code></pre>
+<p>Yii &#33258; 2.0.11 &#29256;&#36215; &#65292;&#25552;&#20379;&#20102; <code>HAVING</code> &#26465;&#20214;&#30340;&#19968;&#20123;&#26500;&#24314;&#26041;&#27861;&#65306;</p>
+<ul>
+<li><a href="./yii-db-query.html#filterHaving()-detail">filterHaving()</a></li>
+<li><a href="./yii-db-query.html#andFilterHaving()-detail">andFilterHaving()</a></li>
+<li><a href="./yii-db-query.html#orFilterHaving()-detail">orFilterHaving()</a></li>
+</ul>
+<h3><a href="./yii-db-querytrait.html#orderBy()-detail">orderBy()</a>  <span id="order-by"></span><a href="#order-by" class="hashlink">&para;</a></h3><p><a href="./yii-db-querytrait.html#orderBy()-detail">orderBy()</a> &#26041;&#27861;&#26159;&#29992;&#26469;&#25351;&#23450; SQL &#35821;&#21477;&#24403;&#20013;&#30340; <code>ORDER BY</code> &#23376;&#21477;&#30340;&#12290;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ... ORDER BY `id` ASC, `name` DESC</span>
+$query-&gt;orderBy([
+    <span class="hljs-string">'id'</span> =&gt; SORT_ASC,
+    <span class="hljs-string">'name'</span> =&gt; SORT_DESC,
+]);
+</code></pre>
+<p>&#22914;&#19978;&#25152;&#31034;&#65292;&#25968;&#32452;&#24403;&#20013;&#30340;&#38190;&#25351;&#20195;&#30340;&#26159;&#23383;&#27573;&#21517;&#31216;&#65292;&#32780;&#25968;&#32452;&#24403;&#20013;&#30340;&#20540;&#21017;&#34920;&#31034;&#30340;&#26159;&#25490;&#24207;&#30340;&#26041;&#24335;&#12290;
+PHP &#30340;&#24120;&#37327; <code>SORT_ASC</code> &#25351;&#30340;&#26159;&#21319;&#24207;&#25490;&#21015;&#65292;<code>SORT_DESC</code> &#25351;&#30340;&#21017;&#26159;&#38477;&#24207;&#25490;&#21015;&#12290;</p>
+<p>&#22914;&#26524; <code>ORDER BY</code> &#20165;&#20165;&#21253;&#21547;&#31616;&#21333;&#30340;&#23383;&#27573;&#21517;&#31216;&#65292;&#20320;&#21487;&#20197;&#20351;&#29992;&#23383;&#31526;&#20018;&#26469;&#22768;&#26126;&#23427;&#65292;
+&#23601;&#20687;&#20889;&#21407;&#29983;&#30340; SQL &#35821;&#21477;&#19968;&#26679;&#12290;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$query-&gt;orderBy(<span class="hljs-string">'id ASC, name DESC'</span>);
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#24403; <code>ORDER BY</code> &#35821;&#21477;&#21253;&#21547;&#19968;&#20123; DB &#34920;&#36798;&#24335;&#30340;&#26102;&#20505;&#65292;&#20320;&#24212;&#35813;&#20351;&#29992;&#25968;&#32452;&#30340;&#26684;&#24335;&#12290;</p>
+</blockquote>
+<p>&#20320;&#21487;&#20197;&#35843;&#29992; <a href="./yii-db-querytrait.html#addOrderBy()-detail">addOrderBy()</a> &#26469;&#20026; <code>ORDER BY</code> &#29255;&#26029;&#28155;&#21152;&#39069;&#22806;&#30340;&#23376;&#21477;&#12290;
+&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$query-&gt;orderBy(<span class="hljs-string">'id ASC'</span>)
+    -&gt;addOrderBy(<span class="hljs-string">'name DESC'</span>);
+</code></pre>
+<h3><a href="./yii-db-query.html#groupBy()-detail">groupBy()</a>  <span id="group-by"></span><a href="#group-by" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#groupBy()-detail">groupBy()</a> &#26041;&#27861;&#26159;&#29992;&#26469;&#25351;&#23450; SQL &#35821;&#21477;&#24403;&#20013;&#30340; <code>GROUP BY</code> &#29255;&#26029;&#30340;&#12290;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ... GROUP BY `id`, `status`</span>
+$query-&gt;groupBy([<span class="hljs-string">'id'</span>, <span class="hljs-string">'status'</span>]);
+</code></pre>
+<p>&#22914;&#26524; <code>GROUP BY</code> &#20165;&#20165;&#21253;&#21547;&#31616;&#21333;&#30340;&#23383;&#27573;&#21517;&#31216;&#65292;&#20320;&#21487;&#20197;&#20351;&#29992;&#23383;&#31526;&#20018;&#26469;&#22768;&#26126;&#23427;&#65292;
+&#23601;&#20687;&#20889;&#21407;&#29983;&#30340; SQL &#35821;&#21477;&#19968;&#26679;&#12290;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$query-&gt;groupBy(<span class="hljs-string">'id, status'</span>);
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#24403; <code>GROUP BY</code> &#35821;&#21477;&#21253;&#21547;&#19968;&#20123; DB &#34920;&#36798;&#24335;&#30340;&#26102;&#20505;&#65292;&#20320;&#24212;&#35813;&#20351;&#29992;&#25968;&#32452;&#30340;&#26684;&#24335;&#12290;</p>
+</blockquote>
+<p>&#20320;&#21487;&#20197;&#35843;&#29992; <a href="./yii-db-querytrait.html#addOrderBy()-detail">addOrderBy()</a> &#26469;&#20026; <code>GROUP BY</code> 
+&#23376;&#21477;&#28155;&#21152;&#39069;&#22806;&#30340;&#23383;&#27573;&#12290;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$query-&gt;groupBy([<span class="hljs-string">'id'</span>, <span class="hljs-string">'status'</span>])
+    -&gt;addGroupBy(<span class="hljs-string">'age'</span>);
+</code></pre>
+<h3><a href="./yii-db-query.html#having()-detail">having()</a>  <span id="having"></span><a href="#having" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#having()-detail">having()</a> &#26041;&#27861;&#26159;&#29992;&#26469;&#25351;&#23450; SQL &#35821;&#21477;&#24403;&#20013;&#30340; <code>HAVING</code> &#23376;&#21477;&#12290;&#23427;&#24102;&#26377;&#19968;&#20010;&#26465;&#20214;&#65292;
+&#21644; <a href="#where">where()</a> &#20013;&#25351;&#23450;&#26465;&#20214;&#30340;&#26041;&#27861;&#19968;&#26679;&#12290;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ... HAVING `status` = 1</span>
+$query-&gt;having([<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>]);
+</code></pre>
+<p>&#35831;&#26597;&#38405; <a href="#where">where()</a> &#30340;&#25991;&#26723;&#26469;&#33719;&#21462;&#26356;&#22810;&#26377;&#20851;&#20110;&#22914;&#20309;&#25351;&#23450;&#19968;&#20010;&#26465;&#20214;&#30340;&#32454;&#33410;&#12290;</p>
+<p>&#20320;&#21487;&#20197;&#35843;&#29992; <a href="./yii-db-query.html#andHaving()-detail">andHaving()</a> &#25110;&#32773; <a href="./yii-db-query.html#orHaving()-detail">orHaving()</a> 
+&#26041;&#27861;&#26469;&#20026; <code>HAVING</code> &#23376;&#21477;&#36861;&#21152;&#39069;&#22806;&#30340;&#26465;&#20214;&#65292;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ... HAVING (`status` = 1) AND (`age` &gt; 30)</span>
+$query-&gt;having([<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>])
+    -&gt;andHaving([<span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'age'</span>, <span class="hljs-number">30</span>]);
+</code></pre>
+<h3><a href="./yii-db-querytrait.html#limit()-detail">limit()</a> &#21644; <a href="./yii-db-querytrait.html#offset()-detail">offset()</a>  <span id="limit-offset"></span><a href="#limit-offset" class="hashlink">&para;</a></h3><p><a href="./yii-db-querytrait.html#limit()-detail">limit()</a> &#21644; <a href="./yii-db-querytrait.html#offset()-detail">offset()</a> &#26159;&#29992;&#26469;&#25351;&#23450; SQL &#35821;&#21477;&#24403;&#20013;
+&#30340; <code>LIMIT</code> &#21644; <code>OFFSET</code> &#23376;&#21477;&#30340;&#12290;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ... LIMIT 10 OFFSET 20</span>
+$query-&gt;limit(<span class="hljs-number">10</span>)-&gt;offset(<span class="hljs-number">20</span>);
+</code></pre>
+<p>&#22914;&#26524;&#20320;&#25351;&#23450;&#20102;&#19968;&#20010;&#26080;&#25928;&#30340; limit &#25110;&#32773; offset&#65288;&#20363;&#22914;&#65292;&#19968;&#20010;&#36127;&#25968;&#65289;&#65292;&#37027;&#20040;&#23427;&#23558;&#20250;&#34987;&#24573;&#30053;&#25481;&#12290;</p>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#22312;&#19981;&#25903;&#25345; <code>LIMIT</code> &#21644; <code>OFFSET</code> &#30340; DBMS &#20013;&#65288;&#20363;&#22914;&#65292;MSSQL&#65289;&#65292;
+  &#26597;&#35810;&#26500;&#24314;&#22120;&#23558;&#29983;&#25104;&#19968;&#26465;&#27169;&#25311; <code>LIMIT</code>/<code>OFFSET</code> &#34892;&#20026;&#30340; SQL &#35821;&#21477;&#12290;</p>
+</blockquote>
+<h3><a href="./yii-db-query.html#join()-detail">join()</a>  <span id="join"></span><a href="#join" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#join()-detail">join()</a> &#26159;&#29992;&#26469;&#25351;&#23450; SQL &#35821;&#21477;&#24403;&#20013;&#30340; <code>JOIN</code> &#23376;&#21477;&#30340;&#12290;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ... LEFT JOIN `post` ON `post`.`user_id` = `user`.`id`</span>
+$query-&gt;join(<span class="hljs-string">'LEFT JOIN'</span>, <span class="hljs-string">'post'</span>, <span class="hljs-string">'post.user_id = user.id'</span>);
+</code></pre>
+<p><a href="./yii-db-query.html#join()-detail">join()</a> &#24102;&#26377;&#22235;&#20010;&#21442;&#25968;&#65306;</p>
+<ul>
+<li><code>$type</code>&#65306;&#36830;&#25509;&#31867;&#22411;&#65292;&#20363;&#22914;&#65292;<code>'INNER JOIN'</code>&#65292;<code>'LEFT JOIN'</code>&#12290;</li>
+<li><code>$table</code>&#65306;&#23558;&#35201;&#36830;&#25509;&#30340;&#34920;&#21517;&#31216;&#12290;</li>
+<li><code>$on</code>&#65306;&#21487;&#36873;&#30340;&#65292;&#36830;&#25509;&#26465;&#20214;&#65292;&#21363; <code>ON</code> &#29255;&#27573;&#12290;&#26377;&#20851;&#25351;&#23450;&#26465;&#20214;&#30340;&#35814;&#32454;&#20449;&#24687;&#65292;&#35831;&#21442;&#38405; <a href="#where">where()</a>&#12290;
+ &#35831;&#27880;&#24847;&#65292;&#25968;&#32452;&#35821;&#27861; <strong>&#19981;&#33021;</strong> &#29992;&#20110;&#25351;&#23450;&#22522;&#20110;&#21015;&#30340;&#26465;&#20214;&#65292;
+ &#20363;&#22914;&#65292;<code>['user.id' =&gt; 'comment.userId']</code> &#23558;&#23548;&#33268;&#29992;&#25143; id &#24517;&#39035;&#31561;&#20110;&#23383;&#31526;&#20018;
+ <code>'comment.userId'</code> &#30340;&#24773;&#20917;&#12290;&#24744;&#24212;&#35813;&#20351;&#29992;&#23383;&#31526;&#20018;&#35821;&#27861;&#65292;&#24182;&#23558;&#26465;&#20214;&#25351;&#23450;&#20026;
+ <code>'user.id = comment.userId'</code>&#12290;</li>
+<li><code>$params</code>&#65306;&#21487;&#36873;&#21442;&#25968;&#65292;&#19982;&#36830;&#25509;&#26465;&#20214;&#32465;&#23450;&#30340;&#21442;&#25968;&#12290;</li>
+</ul>
+<p>&#20320;&#21487;&#20197;&#20998;&#21035;&#35843;&#29992;&#22914;&#19979;&#30340;&#24555;&#25463;&#26041;&#27861;&#26469;&#25351;&#23450; <code>INNER JOIN</code>, <code>LEFT JOIN</code> &#21644; <code>RIGHT JOIN</code>&#12290;</p>
+<ul>
+<li><a href="./yii-db-query.html#innerJoin()-detail">innerJoin()</a></li>
+<li><a href="./yii-db-query.html#leftJoin()-detail">leftJoin()</a></li>
+<li><a href="./yii-db-query.html#rightJoin()-detail">rightJoin()</a></li>
+</ul>
+<p>&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$query-&gt;leftJoin(<span class="hljs-string">'post'</span>, <span class="hljs-string">'post.user_id = user.id'</span>);
+</code></pre>
+<p>&#21487;&#20197;&#36890;&#36807;&#22810;&#27425;&#35843;&#29992;&#22914;&#19978;&#25152;&#36848;&#30340;&#36830;&#25509;&#26041;&#27861;&#26469;&#36830;&#25509;&#22810;&#24352;&#34920;&#65292;&#27599;&#36830;&#25509;&#19968;&#24352;&#34920;&#35843;&#29992;&#19968;&#27425;&#12290;</p>
+<p>&#38500;&#20102;&#36830;&#25509;&#34920;&#20197;&#22806;&#65292;&#20320;&#36824;&#21487;&#20197;&#36830;&#25509;&#23376;&#26597;&#35810;&#12290;&#26041;&#27861;&#22914;&#19979;&#65292;&#23558;&#38656;&#35201;&#34987;&#36830;&#25509;&#30340;&#23376;&#26597;&#35810;&#25351;&#23450;
+&#20026;&#19968;&#20010; <a href="./yii-db-query.html">yii\db\Query</a> &#23545;&#35937;&#65292;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$subQuery = (<span class="hljs-keyword">new</span> \yii\db\Query())-&gt;from(<span class="hljs-string">'post'</span>);
+$query-&gt;leftJoin([<span class="hljs-string">'u'</span> =&gt; $subQuery], <span class="hljs-string">'u.id = author_id'</span>);
+</code></pre>
+<p>&#22312;&#36825;&#20010;&#20363;&#23376;&#24403;&#20013;&#65292;&#20320;&#24212;&#35813;&#23558;&#23376;&#26597;&#35810;&#25918;&#21040;&#19968;&#20010;&#25968;&#32452;&#24403;&#20013;&#65292;&#32780;&#25968;&#32452;&#24403;&#20013;&#30340;&#38190;&#65292;&#21017;&#20026;&#36825;&#20010;&#23376;&#26597;&#35810;&#30340;&#21035;&#21517;&#12290;</p>
+<h3><a href="./yii-db-query.html#union()-detail">union()</a>  <span id="union"></span><a href="#union" class="hashlink">&para;</a></h3><p><a href="./yii-db-query.html#union()-detail">union()</a> &#26041;&#27861;&#26159;&#29992;&#26469;&#25351;&#23450; SQL &#35821;&#21477;&#24403;&#20013;&#30340; <code>UNION</code> &#23376;&#21477;&#30340;&#12290;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$query1 = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;select(<span class="hljs-string">"id, category_id AS type, name"</span>)
+    -&gt;from(<span class="hljs-string">'post'</span>)
+    -&gt;limit(<span class="hljs-number">10</span>);
+
+$query2 = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;select(<span class="hljs-string">'id, type, name'</span>)
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;limit(<span class="hljs-number">10</span>);
+
+$query1-&gt;union($query2);
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#36890;&#36807;&#22810;&#27425;&#35843;&#29992; <a href="./yii-db-query.html#union()-detail">union()</a> &#26041;&#27861;&#26469;&#36861;&#21152;&#26356;&#22810;&#30340; <code>UNION</code> &#23376;&#21477;&#12290;</p>
+<h2>&#26597;&#35810;&#26041;&#27861;  <span id="query-methods"></span><a href="#query-methods" class="hashlink">&para;</a></h2><p><a href="./yii-db-query.html">yii\db\Query</a> &#25552;&#20379;&#20102;&#19968;&#25972;&#22871;&#30340;&#29992;&#20110;&#19981;&#21516;&#26597;&#35810;&#30446;&#30340;&#30340;&#26041;&#27861;&#12290;</p>
+<ul>
+<li><a href="./yii-db-query.html#all()-detail">all()</a>&#65306;&#23558;&#36820;&#22238;&#19968;&#20010;&#30001;&#34892;&#32452;&#25104;&#30340;&#25968;&#32452;&#65292;&#27599;&#19968;&#34892;&#26159;&#19968;&#20010;&#30001;&#21517;&#31216;&#21644;&#20540;&#26500;&#25104;&#30340;&#20851;&#32852;&#25968;&#32452;&#65288;&#35793;&#32773;&#27880;&#65306;&#30465;&#30053;&#38190;&#30340;&#25968;&#32452;&#31216;&#20026;&#32034;&#24341;&#25968;&#32452;&#65289;&#12290;</li>
+<li><a href="./yii-db-query.html#one()-detail">one()</a>&#65306;&#36820;&#22238;&#32467;&#26524;&#38598;&#30340;&#31532;&#19968;&#34892;&#12290;</li>
+<li><a href="./yii-db-query.html#column()-detail">column()</a>&#65306;&#36820;&#22238;&#32467;&#26524;&#38598;&#30340;&#31532;&#19968;&#21015;&#12290;</li>
+<li><a href="./yii-db-query.html#scalar()-detail">scalar()</a>&#65306;&#36820;&#22238;&#32467;&#26524;&#38598;&#30340;&#31532;&#19968;&#34892;&#31532;&#19968;&#21015;&#30340;&#26631;&#37327;&#20540;&#12290;</li>
+<li><a href="./yii-db-query.html#exists()-detail">exists()</a>&#65306;&#36820;&#22238;&#19968;&#20010;&#34920;&#31034;&#35813;&#26597;&#35810;&#26159;&#21542;&#21253;&#32467;&#26524;&#38598;&#30340;&#20540;&#12290;</li>
+<li><a href="./yii-db-query.html#count()-detail">count()</a>&#65306;&#36820;&#22238; <code>COUNT</code> &#26597;&#35810;&#30340;&#32467;&#26524;&#12290;</li>
+<li>&#20854;&#23427;&#38598;&#21512;&#26597;&#35810;&#26041;&#27861;&#65306;&#21253;&#25324; <a href="./yii-db-query.html#sum()-detail">sum($q)</a>, <a href="./yii-db-query.html#average()-detail">average($q)</a>,
+<a href="./yii-db-query.html#max()-detail">max($q)</a>, <a href="./yii-db-query.html#min()-detail">min($q)</a> &#31561;&#12290;<code>$q</code> &#26159;&#19968;&#20010;&#24517;&#36873;&#21442;&#25968;&#65292;
+&#26082;&#21487;&#20197;&#26159;&#19968;&#20010;&#23383;&#27573;&#21517;&#31216;&#65292;&#21448;&#21487;&#20197;&#26159;&#19968;&#20010; DB &#34920;&#36798;&#24335;&#12290;</li>
+</ul>
+<p>&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// SELECT `id`, `email` FROM `user`</span>
+$rows = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'email'</span>])
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;all();
+    
+<span class="hljs-comment">// SELECT * FROM `user` WHERE `username` LIKE `%test%`</span>
+$row = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;where([<span class="hljs-string">'like'</span>, <span class="hljs-string">'username'</span>, <span class="hljs-string">'test'</span>])
+    -&gt;one();
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong><a href="./yii-db-query.html#one()-detail">one()</a> &#26041;&#27861;&#21482;&#36820;&#22238;&#26597;&#35810;&#32467;&#26524;&#24403;&#20013;&#30340;&#31532;&#19968;&#26465;&#25968;&#25454;&#65292;
+  &#26465;&#20214;&#35821;&#21477;&#20013;&#19981;&#20250;&#21152;&#19978; <code>LIMIT 1</code> &#26465;&#20214;&#12290;&#22914;&#26524;&#20320;&#28165;&#26970;&#30340;&#30693;&#36947;&#26597;&#35810;&#23558;&#20250;&#21482;&#36820;&#22238;&#19968;&#34892;&#25110;&#20960;&#34892;&#25968;&#25454;
+  &#65288;&#20363;&#22914;&#65292; &#22914;&#26524;&#20320;&#26159;&#36890;&#36807;&#26576;&#20123;&#20027;&#38190;&#26469;&#26597;&#35810;&#30340;&#65289;&#65292;&#36825;&#24456;&#22909;&#20063;&#25552;&#20513;&#36825;&#26679;&#20570;&#12290;&#20294;&#26159;&#65292;&#22914;&#26524;&#26597;&#35810;&#32467;&#26524;
+  &#26377;&#26426;&#20250;&#36820;&#22238;&#22823;&#37327;&#30340;&#25968;&#25454;&#26102;&#65292;&#37027;&#20040;&#20320;&#24212;&#35813;&#26174;&#31034;&#35843;&#29992; <code>limit(1)</code> &#26041;&#27861;&#65292;&#20197;&#25913;&#21892;&#24615;&#33021;&#12290;
+  &#20363;&#22914;&#65292;<code>(new \yii\db\Query())-&gt;from('user')-&gt;limit(1)-&gt;one()</code>&#12290;</p>
+</blockquote>
+<p>&#25152;&#26377;&#30340;&#36825;&#20123;&#26597;&#35810;&#26041;&#27861;&#37117;&#26377;&#19968;&#20010;&#21487;&#36873;&#30340;&#21442;&#25968; <code>$db</code>, &#35813;&#21442;&#25968;&#25351;&#20195;&#30340;&#26159; <a href="./yii-db-connection.html">DB connection</a>&#65292;
+&#25191;&#34892;&#19968;&#20010; DB &#26597;&#35810;&#26102;&#20250;&#29992;&#21040;&#12290;&#22914;&#26524;&#20320;&#30465;&#30053;&#20102;&#36825;&#20010;&#21442;&#25968;&#65292;&#37027;&#20040; <code>db</code> <a href="guide-structure-application-components.html">application component</a> &#23558;&#20250;&#34987;&#29992;&#20316;
+&#40664;&#35748;&#30340; DB &#36830;&#25509;&#12290; &#22914;&#19979;&#26159;&#21478;&#22806;&#19968;&#20010;&#20351;&#29992; <code>count()</code> &#26597;&#35810;&#30340;&#20363;&#23376;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#25191;&#34892; SQL: SELECT COUNT(*) FROM `user` WHERE `last_name`=:last_name</span>
+$count = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;where([<span class="hljs-string">'last_name'</span> =&gt; <span class="hljs-string">'Smith'</span>])
+    -&gt;count();
+</code></pre>
+<p>&#24403;&#20320;&#35843;&#29992; <a href="./yii-db-query.html">yii\db\Query</a> &#24403;&#20013;&#30340;&#19968;&#20010;&#26597;&#35810;&#26041;&#27861;&#30340;&#26102;&#20505;&#65292;&#23454;&#38469;&#19978;&#20869;&#22312;&#30340;&#36816;&#20316;&#26426;&#21046;&#22914;&#19979;&#65306; </p>
+<ul>
+<li>&#22312;&#24403;&#21069; <a href="./yii-db-query.html">yii\db\Query</a> &#30340;&#26500;&#36896;&#22522;&#30784;&#20043;&#19978;&#65292;&#35843;&#29992; <a href="./yii-db-querybuilder.html">yii\db\QueryBuilder</a> &#26469;&#29983;&#25104;&#19968;&#26465; SQL &#35821;&#21477;&#65307;</li>
+<li>&#21033;&#29992;&#29983;&#25104;&#30340; SQL &#35821;&#21477;&#21019;&#24314;&#19968;&#20010; <a href="./yii-db-command.html">yii\db\Command</a> &#23545;&#35937;&#65307; </li>
+<li>&#35843;&#29992; <a href="./yii-db-command.html">yii\db\Command</a> &#30340;&#26597;&#35810;&#26041;&#27861;&#65288;&#20363;&#22914;&#65292;<code>queryAll()</code>&#65289;&#26469;&#25191;&#34892;&#36825;&#26465; SQL &#35821;&#21477;&#65292;&#24182;&#26816;&#32034;&#25968;&#25454;&#12290;</li>
+</ul>
+<p>&#26377;&#26102;&#20505;&#65292;&#20320;&#20063;&#35768;&#24819;&#35201;&#27979;&#35797;&#25110;&#32773;&#20351;&#29992;&#19968;&#20010;&#30001; <a href="./yii-db-query.html">yii\db\Query</a> &#23545;&#35937;&#21019;&#24314;&#30340; SQL &#35821;&#21477;&#12290;
+&#20320;&#21487;&#20197;&#20351;&#29992;&#20197;&#19979;&#30340;&#20195;&#30721;&#26469;&#36798;&#21040;&#30446;&#30340;&#65306;</p>
+<pre><code class="hljs php language-php">$command = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;select([<span class="hljs-string">'id'</span>, <span class="hljs-string">'email'</span>])
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;where([<span class="hljs-string">'last_name'</span> =&gt; <span class="hljs-string">'Smith'</span>])
+    -&gt;limit(<span class="hljs-number">10</span>)
+    -&gt;createCommand();
+    
+<span class="hljs-comment">// &#25171;&#21360; SQL &#35821;&#21477;</span>
+<span class="hljs-keyword">echo</span> $command-&gt;sql;
+<span class="hljs-comment">// &#25171;&#21360;&#34987;&#32465;&#23450;&#30340;&#21442;&#25968;</span>
+print_r($command-&gt;params);
+
+<span class="hljs-comment">// &#36820;&#22238;&#26597;&#35810;&#32467;&#26524;&#30340;&#25152;&#26377;&#34892;</span>
+$rows = $command-&gt;queryAll();
+</code></pre>
+<h3>&#32034;&#24341;&#26597;&#35810;&#32467;&#26524;  <span id="indexing-query-results"></span><a href="#indexing-query-results" class="hashlink">&para;</a></h3><p>&#24403;&#20320;&#22312;&#35843;&#29992; <a href="./yii-db-query.html#all()-detail">all()</a> &#26041;&#27861;&#26102;&#65292;&#23427;&#23558;&#36820;&#22238;&#19968;&#20010;&#20197;&#36830;&#32493;&#30340;&#25972;&#22411;&#25968;&#20540;&#20026;&#32034;&#24341;&#30340;&#25968;&#32452;&#12290;
+&#32780;&#26377;&#26102;&#20505;&#20320;&#21487;&#33021;&#24076;&#26395;&#20351;&#29992;&#19968;&#20010;&#29305;&#23450;&#30340;&#23383;&#27573;&#25110;&#32773;&#34920;&#36798;&#24335;&#30340;&#20540;&#26469;&#20316;&#20026;&#32034;&#24341;&#32467;&#26524;&#38598;&#25968;&#32452;&#12290;&#37027;&#20040;&#20320;&#21487;&#20197;&#22312;&#35843;&#29992; <a href="./yii-db-query.html#all()-detail">all()</a> 
+&#20043;&#21069;&#20351;&#29992; <a href="./yii-db-querytrait.html#indexBy()-detail">indexBy()</a> &#26041;&#27861;&#26469;&#36798;&#21040;&#36825;&#20010;&#30446;&#30340;&#12290;
+&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#36820;&#22238; [100 =&gt; ['id' =&gt; 100, 'username' =&gt; '...', ...], 101 =&gt; [...], 103 =&gt; [...], ...]</span>
+$query = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;limit(<span class="hljs-number">10</span>)
+    -&gt;indexBy(<span class="hljs-string">'id'</span>)
+    -&gt;all();
+</code></pre>
+<p>&#22914;&#38656;&#20351;&#29992;&#34920;&#36798;&#24335;&#30340;&#20540;&#20570;&#20026;&#32034;&#24341;&#65292;&#37027;&#20040;&#21482;&#38656;&#35201;&#20256;&#36882;&#19968;&#20010;&#21311;&#21517;&#20989;&#25968;&#32473; <a href="./yii-db-querytrait.html#indexBy()-detail">indexBy()</a> &#26041;&#27861;&#21363;&#21487;&#65306;</p>
+<pre><code class="hljs php language-php">$query = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;indexBy(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($row)</span> </span>{
+        <span class="hljs-keyword">return</span> $row[<span class="hljs-string">'id'</span>] . $row[<span class="hljs-string">'username'</span>];
+    })-&gt;all();
+</code></pre>
+<p>&#35813;&#21311;&#21517;&#20989;&#25968;&#23558;&#24102;&#26377;&#19968;&#20010;&#21253;&#21547;&#20102;&#24403;&#21069;&#34892;&#30340;&#25968;&#25454;&#30340; <code>$row</code> &#21442;&#25968;&#65292;&#24182;&#19988;&#36820;&#22238;&#29992;&#20316;&#24403;&#21069;&#34892;&#32034;&#24341;&#30340;
+&#26631;&#37327;&#20540;&#65288;&#35793;&#32773;&#27880;&#65306;&#23601;&#26159;&#31616;&#21333;&#30340;&#25968;&#20540;&#25110;&#32773;&#23383;&#31526;&#20018;&#65292;&#32780;&#19981;&#26159;&#20854;&#20182;&#22797;&#26434;&#32467;&#26500;&#65292;&#20363;&#22914;&#25968;&#32452;&#65289;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#19982; <a href="./yii-db-query.html#groupBy()-detail">groupBy()</a> &#25110;&#32773; <a href="./yii-db-querytrait.html#orderBy()-detail">orderBy()</a> &#31561;&#26597;&#35810;&#26041;&#27861;&#19981;&#21516;&#65292;
+&#20182;&#20204;&#23558;&#36716;&#25442;&#20026; SQL &#26597;&#35810;&#35821;&#21477;&#30340;&#19968;&#37096;&#20998;&#65292;&#32780;&#36825;&#20010;&#26041;&#27861;&#65288;indexBy&#65289;&#22312;&#20174;&#25968;&#25454;&#24211;&#21462;&#22238;&#25968;&#25454;&#21518;&#25165;&#29983;&#25928;&#25191;&#34892;&#30340;&#12290;
+&#36825;&#24847;&#21619;&#30528;&#21482;&#33021;&#20351;&#29992;&#37027;&#20123;&#22312;&#20320;&#30340; SELECT &#26597;&#35810;&#20013;&#30340;&#21015;&#21517;&#12290;
+&#27492;&#22806;&#65292;&#20320;&#29992;&#34920;&#21517;&#36830;&#25509;&#21462;&#21015;&#21517;&#30340;&#26102;&#20505;&#65292;&#27604;&#22914; <code>customer.id</code>&#65292;&#32467;&#26524;&#20013;&#23558;&#21482;&#21253;&#21547; <code>id</code> &#21015;&#65292;&#22240;&#27492;&#20320;&#24517;&#39035;&#35843;&#29992;
+<code>-&gt;indexBy('id')</code> &#19981;&#35201;&#24102;&#34920;&#21517;&#21069;&#32512;&#12290;</p>
+</blockquote>
+<h3>&#25209;&#22788;&#29702;&#26597;&#35810;  <span id="batch-query"></span><a href="#batch-query" class="hashlink">&para;</a></h3><p>&#24403;&#38656;&#35201;&#22788;&#29702;&#22823;&#25968;&#25454;&#30340;&#26102;&#20505;&#65292;&#20687; <a href="./yii-db-query.html#all()-detail">yii\db\Query::all()</a> &#36825;&#26679;&#30340;&#26041;&#27861;&#23601;&#19981;&#22826;&#21512;&#36866;&#20102;&#65292;
+&#22240;&#20026;&#23427;&#20204;&#20250;&#25226;&#25152;&#26377;&#26597;&#35810;&#30340;&#25968;&#25454;&#37117;&#35835;&#21462;&#21040;&#23458;&#25143;&#31471;&#20869;&#23384;&#19978;&#12290;&#20026;&#20102;&#35299;&#20915;&#36825;&#20010;&#38382;&#39064;&#65292;
+Yii &#25552;&#20379;&#20102;&#25209;&#22788;&#29702;&#26597;&#35810;&#30340;&#25903;&#25345;&#12290;&#26381;&#21153;&#31471;&#20808;&#20445;&#23384;&#26597;&#35810;&#32467;&#26524;&#65292;&#28982;&#21518;&#23458;&#25143;&#31471;&#20351;&#29992;&#28216;&#26631;&#65288;cursor&#65289;
+&#27599;&#27425;&#36845;&#20195;&#20986;&#22266;&#23450;&#30340;&#19968;&#25209;&#32467;&#26524;&#38598;&#22238;&#26469;&#12290;</p>
+<blockquote class="warning"><p><strong>&#35686;&#21578;&#65306; </strong>MySQL &#25209;&#22788;&#29702;&#26597;&#35810;&#30340;&#23454;&#29616;&#23384;&#22312;&#24050;&#30693;&#30340;&#23616;&#38480;&#24615;&#21644;&#21464;&#36890;&#26041;&#27861;&#12290;&#35265;&#19979;&#25991;&#12290;</p>
+</blockquote>
+<p>&#25209;&#22788;&#29702;&#26597;&#35810;&#30340;&#29992;&#27861;&#22914;&#19979;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Query</span>;
+
+$query = (<span class="hljs-keyword">new</span> Query())
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;orderBy(<span class="hljs-string">'id'</span>);
+
+<span class="hljs-keyword">foreach</span> ($query-&gt;batch() <span class="hljs-keyword">as</span> $users) {
+    <span class="hljs-comment">// $users &#26159;&#19968;&#20010;&#21253;&#21547;100&#26465;&#25110;&#23567;&#20110;100&#26465;&#29992;&#25143;&#34920;&#25968;&#25454;&#30340;&#25968;&#32452;</span>
+}
+
+<span class="hljs-comment">// or to iterate the row one by one</span>
+<span class="hljs-keyword">foreach</span> ($query-&gt;each() <span class="hljs-keyword">as</span> $user) {
+    <span class="hljs-comment">// &#25968;&#25454;&#20174;&#26381;&#21153;&#31471;&#20013;&#20197; 100 &#20010;&#20026;&#19968;&#32452;&#25209;&#37327;&#33719;&#21462;&#65292;</span>
+    <span class="hljs-comment">// &#20294;&#26159; $user &#20195;&#34920; user &#34920;&#37324;&#30340;&#19968;&#34892;&#25968;&#25454;</span>
+}
+</code></pre>
+<p><a href="./yii-db-query.html#batch()-detail">yii\db\Query::batch()</a> &#21644; <a href="./yii-db-query.html#each()-detail">yii\db\Query::each()</a> &#26041;&#27861;&#23558;&#20250;&#36820;&#22238;&#19968;&#20010;&#23454;&#29616;&#20102;<code>Iterator</code> 
+&#25509;&#21475; <a href="./yii-db-batchqueryresult.html">yii\db\BatchQueryResult</a>  &#30340;&#23545;&#35937;&#65292;&#21487;&#20197;&#29992;&#22312; <code>foreach</code> &#32467;&#26500;&#24403;&#20013;&#20351;&#29992;&#12290;&#22312;&#31532;&#19968;&#27425;&#36845;&#20195;&#21462;&#25968;&#25454;&#30340;&#26102;&#20505;&#65292;
+&#25968;&#25454;&#24211;&#20250;&#25191;&#34892;&#19968;&#27425; SQL &#26597;&#35810;&#65292;&#28982;&#21518;&#22312;&#21097;&#19979;&#30340;&#36845;&#20195;&#20013;&#65292;&#23558;&#30452;&#25509;&#20174;&#32467;&#26524;&#38598;&#20013;&#25209;&#37327;&#33719;&#21462;&#25968;&#25454;&#12290;&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;
+&#19968;&#25209;&#30340;&#22823;&#23567;&#20026; 100&#65292;&#20063;&#23601;&#24847;&#21619;&#30528;&#19968;&#25209;&#33719;&#21462;&#30340;&#25968;&#25454;&#26159; 100 &#34892;&#12290;&#20320;&#21487;&#20197;&#36890;&#36807;&#32473; <code>batch()</code> 
+&#25110;&#32773; <code>each()</code> &#26041;&#27861;&#30340;&#31532;&#19968;&#20010;&#21442;&#25968;&#20256;&#20540;&#26469;&#25913;&#21464;&#27599;&#25209;&#34892;&#25968;&#30340;&#22823;&#23567;&#12290;</p>
+<p>&#30456;&#23545;&#20110; <a href="./yii-db-query.html#all()-detail">yii\db\Query::all()</a> &#26041;&#27861;&#65292;&#25209;&#22788;&#29702;&#26597;&#35810;&#27599;&#27425;&#21482;&#35835;&#21462; 100 &#34892;&#30340;&#25968;&#25454;&#21040;&#20869;&#23384;&#12290;</p>
+<p>&#22914;&#26524;&#20320;&#36890;&#36807; <a href="./yii-db-querytrait.html#indexBy()-detail">yii\db\Query::indexBy()</a> &#26041;&#27861;&#20026;&#26597;&#35810;&#32467;&#26524;&#25351;&#23450;&#20102;&#32034;&#24341;&#23383;&#27573;&#65292;
+&#37027;&#20040;&#25209;&#22788;&#29702;&#26597;&#35810;&#23558;&#20173;&#28982;&#20445;&#25345;&#30456;&#23545;&#24212;&#30340;&#32034;&#24341;&#26041;&#26696;&#65292;
+&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$query = (<span class="hljs-keyword">new</span> \yii\db\Query())
+    -&gt;from(<span class="hljs-string">'user'</span>)
+    -&gt;indexBy(<span class="hljs-string">'username'</span>);
+
+<span class="hljs-keyword">foreach</span> ($query-&gt;batch() <span class="hljs-keyword">as</span> $users) {
+    <span class="hljs-comment">// $users &#30340; &ldquo;username&rdquo; &#23383;&#27573;&#23558;&#20250;&#25104;&#20026;&#32034;&#24341;</span>
+}
+
+<span class="hljs-keyword">foreach</span> ($query-&gt;each() <span class="hljs-keyword">as</span> $username =&gt; $user) {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<h4>MySQL&#20013;&#25209;&#37327;&#26597;&#35810;&#30340;&#23616;&#38480;&#24615;&#65288;Limitations of batch query in MySQL&#65289;  <span id="batch-query-mysql"></span><a href="#batch-query-mysql" class="hashlink">&para;</a></h4><p>MySQL &#26159;&#36890;&#36807; PDO &#39537;&#21160;&#24211;&#23454;&#29616;&#25209;&#37327;&#26597;&#35810;&#30340;&#12290;&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;MySQL &#26597;&#35810;&#26159; <a href="https://www.php.net/manual/zh/mysqlinfo.concepts.buffering.php"><code>&#24102;&#32531;&#23384;&#30340;</code></a>&#65292;
+&#36825;&#36829;&#32972;&#20102;&#20351;&#29992;&#28216;&#26631;&#65288;cursor&#65289;&#33719;&#21462;&#25968;&#25454;&#30340;&#30446;&#30340;&#65292;
+&#22240;&#20026;&#23427;&#19981;&#38459;&#27490;&#39537;&#21160;&#31243;&#24207;&#23558;&#25972;&#20010;&#32467;&#26524;&#38598;&#21152;&#36733;&#21040;&#23458;&#25143;&#31471;&#30340;&#20869;&#23384;&#20013;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#24403;&#20351;&#29992; <code>libmysqlclient</code> &#26102;&#65288;PHP5 &#30340;&#26631;&#37197;&#65289;&#65292;&#35745;&#31639; PHP &#30340;&#20869;&#23384;&#38480;&#21046;&#26102;&#65292;&#29992;&#20110;&#25968;&#25454;&#32467;&#26524;&#38598;&#30340;&#20869;&#23384;&#19981;&#20250;&#35745;&#31639;&#22312;&#20869;&#12290;
+  &#30475;&#19978;&#21435;&#25209;&#37327;&#26597;&#35810;&#26159;&#27491;&#30830;&#36816;&#34892;&#30340;&#65292;&#23454;&#38469;&#19978;&#25972;&#20010;&#25968;&#25454;&#38598;&#37117;&#34987;&#21152;&#36733;&#21040;&#20102;&#23458;&#25143;&#31471;&#30340;&#20869;&#23384;&#20013;&#65292;
+  &#32780;&#19988;&#36825;&#20010;&#20351;&#29992;&#37327;&#21487;&#33021;&#36824;&#20250;&#20877;&#22686;&#38271;&#12290;</p>
+</blockquote>
+<p>&#35201;&#31105;&#29992;&#32531;&#23384;&#24182;&#20943;&#23569;&#23458;&#25143;&#31471;&#20869;&#23384;&#30340;&#38656;&#27714;&#37327;&#65292;PDO &#36830;&#25509;&#23646;&#24615; <code>PDO::MYSQL_ATTR_USE_BUFFERED_QUERY</code> &#24517;&#39035;&#35774;&#32622;&#20026; <code>false</code>&#12290;
+&#36825;&#26679;&#65292;&#30452;&#21040;&#25972;&#20010;&#25968;&#25454;&#38598;&#34987;&#22788;&#29702;&#23436;&#27605;&#21069;&#65292;&#36890;&#36807;&#27492;&#36830;&#25509;&#26159;&#26080;&#27861;&#21019;&#24314;&#20854;&#20182;&#26597;&#35810;&#30340;&#12290;
+&#36825;&#26679;&#30340;&#25805;&#20316;&#21487;&#33021;&#20250;&#38459;&#30861; <code>ActiveRecord</code> &#25191;&#34892;&#34920;&#32467;&#26500;&#26597;&#35810;&#12290;
+&#22914;&#26524;&#36825;&#19981;&#26500;&#25104;&#38382;&#39064;&#65288;&#34920;&#32467;&#26500;&#24050;&#34987;&#32531;&#23384;&#36807;&#20102;&#65289;&#65292;
+&#25105;&#20204;&#21487;&#20197;&#36890;&#36807;&#20999;&#25442;&#21407;&#26412;&#30340;&#36830;&#25509;&#21040;&#38750;&#32531;&#23384;&#27169;&#24335;&#65292;&#28982;&#21518;&#22312;&#25209;&#37327;&#26597;&#35810;&#23436;&#25104;&#21518;&#20877;&#20999;&#25442;&#22238;&#26469;&#12290;</p>
+<pre><code class="hljs php language-php">Yii::$app-&gt;db-&gt;pdo-&gt;setAttribute(\PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, <span class="hljs-keyword">false</span>);
+
+<span class="hljs-comment">// &#25191;&#34892;&#25209;&#37327;&#26597;&#35810;</span>
+
+Yii::$app-&gt;db-&gt;pdo-&gt;setAttribute(\PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, <span class="hljs-keyword">true</span>);
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#23545;&#20110; MyISAM&#65292;&#22312;&#25191;&#34892;&#25209;&#37327;&#26597;&#35810;&#30340;&#36807;&#31243;&#20013;&#65292;&#34920;&#21487;&#33021;&#23558;&#34987;&#38145;&#65292;
+  &#23558;&#24310;&#36831;&#25110;&#25298;&#32477;&#20854;&#20182;&#36830;&#25509;&#30340;&#20889;&#20837;&#25805;&#20316;&#12290;
+  &#24403;&#20351;&#29992;&#38750;&#32531;&#23384;&#26597;&#35810;&#26102;&#65292;&#23613;&#37327;&#32553;&#30701;&#28216;&#26631;&#25171;&#24320;&#30340;&#26102;&#38388;&#12290;</p>
+</blockquote>
+<p>&#22914;&#26524;&#34920;&#32467;&#26500;&#27809;&#26377;&#34987;&#32531;&#23384;&#65292;&#25110;&#22312;&#25209;&#37327;&#26597;&#35810;&#34987;&#22788;&#29702;&#36807;&#31243;&#20013;&#38656;&#35201;&#25191;&#34892;&#20854;&#20182;&#26597;&#35810;&#65292;
+&#20320;&#21487;&#20197;&#21019;&#24314;&#19968;&#20010;&#21333;&#29420;&#30340;&#38750;&#32531;&#23384;&#38142;&#25509;&#21040;&#25968;&#25454;&#24211;&#65306;</p>
+<pre><code class="hljs php language-php">$unbufferedDb = <span class="hljs-keyword">new</span> \yii\db\Connection([
+    <span class="hljs-string">'dsn'</span> =&gt; Yii::$app-&gt;db-&gt;dsn,
+    <span class="hljs-string">'username'</span> =&gt; Yii::$app-&gt;db-&gt;username,
+    <span class="hljs-string">'password'</span> =&gt; Yii::$app-&gt;db-&gt;password,
+    <span class="hljs-string">'charset'</span> =&gt; Yii::$app-&gt;db-&gt;charset,
+]);
+$unbufferedDb-&gt;open();
+$unbufferedDb-&gt;pdo-&gt;setAttribute(\PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, <span class="hljs-keyword">false</span>);
+</code></pre>
+<p>&#22914;&#26524;&#20320;&#38500;&#20102; <code>PDO::MYSQL_ATTR_USE_BUFFERED_QUERY</code> &#26159; <code>false</code> &#20043;&#22806;&#65292;
+&#35201;&#30830;&#20445; <code>$unbufferedDb</code> &#25317;&#26377;&#21644;&#21407;&#26469;&#32531;&#23384; <code>$db</code> &#23436;&#20840;&#19968;&#26679;&#30340;&#23646;&#24615;&#65292;
+&#35831;&#21442;&#38405;<a href="https://github.com/yiisoft/yii2/issues/8420#issuecomment-301423833">&#23454;&#29616; <code>$db</code> &#30340;&#28145;&#24230;&#25335;&#36125;</a>&#65292;
+&#25163;&#21160;&#26041;&#27861;&#23558;&#23427;&#35774;&#32622;&#20026; false &#21363;&#21487;&#12290;</p>
+<p>&#28982;&#21518;&#20351;&#29992;&#27492;&#36830;&#25509;&#27491;&#24120;&#21019;&#24314;&#26597;&#35810;&#65292;&#26032;&#36830;&#25509;&#29992;&#20110;&#36816;&#34892;&#25209;&#37327;&#26597;&#35810;&#65292;
+&#36880;&#26465;&#25110;&#25209;&#37327;&#36827;&#34892;&#32467;&#26524;&#22788;&#29702;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#33719;&#21462; 1000 &#20026;&#19968;&#32452;&#30340;&#25209;&#37327;&#25968;&#25454;</span>
+<span class="hljs-keyword">foreach</span> ($query-&gt;batch(<span class="hljs-number">1000</span>, $unbufferedDb) <span class="hljs-keyword">as</span> $users) {
+    <span class="hljs-comment">// ...</span>
+}
+
+
+<span class="hljs-comment">// &#27599;&#27425;&#20174;&#26381;&#21153;&#31471;&#25209;&#37327;&#33719;&#21462;1000&#20010;&#25968;&#25454;&#65292;&#20294;&#26159;&#36880;&#20010;&#36941;&#21382;&#36827;&#34892;&#22788;&#29702;</span>
+<span class="hljs-keyword">foreach</span> ($query-&gt;each(<span class="hljs-number">1000</span>, $unbufferedDb) <span class="hljs-keyword">as</span> $user) {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#24403;&#32467;&#26524;&#38598;&#24050;&#22788;&#29702;&#23436;&#27605;&#19981;&#20877;&#38656;&#35201;&#36830;&#25509;&#26102;&#65292;&#21487;&#20197;&#20851;&#38381;&#23427;&#65306;</p>
+<pre><code class="hljs php language-php">$unbufferedDb-&gt;close();
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#38750;&#32531;&#23384;&#26597;&#35810;&#22312; PHP &#31471;&#20351;&#29992;&#26356;&#23569;&#30340;&#32531;&#23384;&#65292;&#20294;&#20250;&#22686;&#21152; MySQL &#26381;&#21153;&#22120;&#31471;&#30340;&#36127;&#36733;&#12290;
+  &#24314;&#35758;&#24744;&#20351;&#29992;&#29983;&#20135;&#23454;&#36341;&#35774;&#35745;&#33258;&#24049;&#30340;&#20195;&#30721;&#20197;&#33719;&#21462;&#39069;&#22806;&#30340;&#28023;&#37327;&#25968;&#25454;&#65292;<a href="https://github.com/yiisoft/yii2/issues/8420#issuecomment-296109257">&#20363;&#22914;&#65292;&#23558;&#25968;&#23383;&#38190;&#20998;&#27573;&#65292;&#20351;&#29992;&#38750;&#32531;&#23384;&#30340;&#26597;&#35810;&#36941;&#21382;</a>&#12290;</p>
+</blockquote>
+<h3>&#28155;&#21152;&#33258;&#23450;&#20041;&#26597;&#35810;&#26465;&#20214;&#21644;&#34920;&#36798;&#24335;&#65288;Adding custom Conditions and Expressions&#65289;  <span id="adding-custom-conditions-and-expressions"></span><a href="#adding-custom-conditions-and-expressions" class="hashlink">&para;</a></h3><p>&#25105;&#20204;&#22312; <a href="#object-format">&#26597;&#35810;&#26465;&#20214;-&#23545;&#35937;&#26684;&#24335;</a> &#31456;&#33410;&#20013;&#25552;&#21040;&#36807;&#65292;&#21487;&#20197;&#21019;&#24314;&#33258;&#23450;&#20041;&#30340;&#26597;&#35810;&#26465;&#20214;&#31867;&#12290;
+&#20030;&#20010;&#26647;&#23376;&#65292;&#25105;&#20204;&#38656;&#35201;&#21019;&#24314;&#19968;&#20010;&#26597;&#35810;&#26465;&#20214;&#65292;&#23427;&#21487;&#20197;&#26816;&#26597;&#26576;&#20123;&#23383;&#27573;&#23567;&#20110;&#29305;&#23450;&#20540;&#30340;&#24773;&#20917;&#12290;
+&#24403;&#20351;&#29992;&#25805;&#20316;&#31526;&#26684;&#24335;&#26102;&#65292;&#20195;&#30721;&#22914;&#19979;&#65306;</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'and'</span>,
+    <span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'posts'</span>, $minLimit,
+    <span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'comments'</span>, $minLimit,
+    <span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'reactions'</span>, $minLimit,
+    <span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'subscriptions'</span>, $minLimit
+]
+</code></pre>
+<p>&#24403;&#36825;&#26679;&#30340;&#26597;&#35810;&#26465;&#20214;&#20165;&#34987;&#24212;&#29992;&#19968;&#27425;&#65292;&#27809;&#20160;&#20040;&#38382;&#39064;&#12290;&#24403;&#23427;&#22312;&#19968;&#20010;&#26597;&#35810;&#35821;&#21477;&#20013;&#34987;&#22810;&#27425;&#20351;&#29992;&#26102;&#65292;&#23601;&#26377;&#24456;&#22810;&#20248;&#21270;&#28857;&#20102;&#12290;
+&#25105;&#20204;&#21019;&#24314;&#19968;&#20010;&#33258;&#23450;&#20041;&#26597;&#35810;&#26465;&#20214;&#23545;&#35937;&#26469;&#35777;&#23454;&#23427;&#12290;</p>
+<p>Yii &#26377; <a href="./yii-db-conditions-conditioninterface.html">ConditionInterface</a> &#25509;&#21475;&#31867;&#65292;&#24517;&#39035;&#29992;&#23427;&#26469;&#26631;&#35782;&#36825;&#26159;&#19968;&#20010;&#34920;&#31034;&#26597;&#35810;&#26465;&#20214;&#30340;&#31867;&#12290;
+&#23427;&#38656;&#35201;&#23454;&#29616; <code>fromArrayDefinition()</code> &#26041;&#27861;&#65292;&#29992;&#26469;&#20174;&#25968;&#32452;&#26684;&#24335;&#21019;&#24314;&#26597;&#35810;&#26465;&#20214;&#12290;
+&#22914;&#26524;&#25105;&#20204;&#19981;&#38656;&#35201;&#23427;&#65292;&#25243;&#20986;&#19968;&#20010;&#24322;&#24120;&#26469;&#23436;&#25104;&#27492;&#26041;&#27861;&#21363;&#21487;&#12290;</p>
+<p>&#21019;&#24314;&#33258;&#23450;&#20041;&#26597;&#35810;&#26465;&#20214;&#31867;&#65292;&#25105;&#20204;&#23601;&#21487;&#20197;&#26500;&#24314;&#26368;&#36866;&#21512;&#24403;&#21069;&#38656;&#27714;&#30340; API&#12290;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">db</span>\<span class="hljs-title">conditions</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AllGreaterCondition</span> <span class="hljs-keyword">implements</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">conditions</span>\<span class="hljs-title">ConditionInterface</span>
+</span>{
+    <span class="hljs-keyword">private</span> $columns;
+    <span class="hljs-keyword">private</span> $value;
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> string[] $columns &#35201;&#22823;&#20110; $value &#30340;&#23383;&#27573;&#21517;&#25968;&#32452;
+     * <span class="hljs-doctag">@param</span> mixed $value &#27599;&#20010; $column &#35201;&#27604;&#36739;&#30340;&#25968;&#20540;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(array $columns, $value)</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;columns = $columns;
+        <span class="hljs-keyword">$this</span>-&gt;value = $value;
+    }
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fromArrayDefinition</span><span class="hljs-params">($operator, $operands)</span>
+    </span>{
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InvalidArgumentException(<span class="hljs-string">'Not implemented yet, but we will do it later'</span>);
+    }
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getColumns</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;columns; }
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getValue</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;vaule; }
+}
+</code></pre>
+<p>&#25105;&#20204;&#29616;&#22312;&#21019;&#24314;&#20102;&#19968;&#20010;&#26597;&#35810;&#26465;&#20214;&#23545;&#35937;&#65306;</p>
+<pre><code class="hljs php language-php">$conditon = <span class="hljs-keyword">new</span> AllGreaterCondition([<span class="hljs-string">'col1'</span>, <span class="hljs-string">'col2'</span>], <span class="hljs-number">42</span>);
+</code></pre>
+<p>&#20294;&#26159; <code>QueryBuilder</code> &#36824;&#19981;&#30693;&#36947;&#24590;&#26679;&#20174;&#27492;&#23545;&#35937;&#29983;&#25104; SQL &#26597;&#35810;&#26465;&#20214;&#12290;
+&#22240;&#27492;&#25105;&#20204;&#36824;&#38656;&#35201;&#20026;&#36825;&#20010;&#26465;&#20214;&#23545;&#35937;&#21019;&#24314;&#19968;&#20010;&#26500;&#24314;&#22120;&#65288;Builder&#65289;&#12290;
+&#36825;&#20010;&#26500;&#24314;&#22120;&#24517;&#39035;&#23454;&#29616; <a href="./yii-db-expressionbuilderinterface.html">yii\db\ExpressionBuilderInterface</a> &#25509;&#21475;&#21644; <code>build()</code> &#26041;&#27861;&#12290;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">db</span>\<span class="hljs-title">conditions</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AllGreaterConditionBuilder</span> <span class="hljs-keyword">implements</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ExpressionBuilderInterface</span>
+</span>{
+    <span class="hljs-keyword">use</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ExpressionBuilderTrait</span>; <span class="hljs-comment">// Contains constructor and `queryBuilder` property.</span>
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> ExpressionInterface $condition &#35201;&#26500;&#24314;&#30340;&#26597;&#35810;&#26465;&#20214;&#23545;&#35937;
+     * <span class="hljs-doctag">@param</span> array $params &#32465;&#23450;&#30340;&#21442;&#25968;
+     * <span class="hljs-doctag">@return</span> AllGreaterCondition
+     */</span> 
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span><span class="hljs-params">(ExpressionInterface $expression, array &amp;$params = [])</span>
+    </span>{
+        $value = $condition-&gt;getValue();
+        
+        $conditions = [];
+        <span class="hljs-keyword">foreach</span> ($expression-&gt;getColumns() <span class="hljs-keyword">as</span> $column) {
+            $conditions[] = <span class="hljs-keyword">new</span> SimpleCondition($column, <span class="hljs-string">'&gt;'</span>, $value);
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;queryBuilder-&gt;buildCondition(<span class="hljs-keyword">new</span> AndCondition($conditions), $params);
+    }
+}
+</code></pre>
+<p>&#25509;&#19979;&#26469;&#65292;&#35753; <a href="./yii-db-querybuilder.html">QueryBuilder</a> ]&#30693;&#36947;&#25105;&#20204;&#30340;&#26032;&#26597;&#35810;&#26465;&#20214;&#23545;&#35937; &ndash;&nbsp;&#28155;&#21152;&#19968;&#20010;&#26144;&#23556;&#21040;
+<code>expressionBuilders</code> &#25968;&#32452;&#20013;&#65292;&#22312;&#24212;&#29992;&#37197;&#32622;&#65288;application config&#65289;&#20013;&#23436;&#25104;&#21363;&#21487;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'db'</span> =&gt; [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\mysql\Connection'</span>,
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'queryBuilder'</span> =&gt; [
+        <span class="hljs-string">'expressionBuilders'</span> =&gt; [
+            <span class="hljs-string">'app\db\conditions\AllGreaterCondition'</span> =&gt; <span class="hljs-string">'app\db\conditions\AllGreaterConditionBuilder'</span>,
+        ],
+    ],
+],
+</code></pre>
+<p>&#29616;&#22312;&#25105;&#20204;&#21487;&#20197;&#22312; <code>where()</code> &#20013;&#20351;&#29992;&#27492;&#26597;&#35810;&#26465;&#20214;&#23545;&#35937;&#20102;&#65306;</p>
+<pre><code class="hljs php language-php">$query-&gt;andWhere(<span class="hljs-keyword">new</span> AllGreaterCondition([<span class="hljs-string">'posts'</span>, <span class="hljs-string">'comments'</span>, <span class="hljs-string">'reactions'</span>, <span class="hljs-string">'subscriptions'</span>], $minValue));
+</code></pre>
+<p>&#22914;&#26524;&#25105;&#20204;&#24819;&#35201;&#33258;&#23450;&#20041;&#25805;&#20316;&#31526;&#26597;&#35810;&#26465;&#20214;&#65292;&#21487;&#20197;&#22312; <a href="./yii-db-querybuilder.html#%24conditionClasses-detail">QueryBuilder::conditionClasses</a> &#20013;
+&#36825;&#26679;&#22768;&#26126;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'db'</span> =&gt; [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\mysql\Connection'</span>,
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'queryBuilder'</span> =&gt; [
+        <span class="hljs-string">'expressionBuilders'</span> =&gt; [
+            <span class="hljs-string">'app\db\conditions\AllGreaterCondition'</span> =&gt; <span class="hljs-string">'app\db\conditions\AllGreaterConditionBuilder'</span>,
+        ],
+        <span class="hljs-string">'conditionClasses'</span> =&gt; [
+            <span class="hljs-string">'ALL&gt;'</span> =&gt; <span class="hljs-string">'app\db\conditions\AllGreaterCondition'</span>,
+        ],
+    ],
+],
+</code></pre>
+<p>&#24182;&#22312; <code>app\db\conditions\AllGreaterCondition</code> &#23545;&#35937;&#20013;&#23454;&#29616; <code>AllGreaterCondition::fromArrayDefinition()</code>&#26041;&#27861;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">db</span>\<span class="hljs-title">conditions</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AllGreaterCondition</span> <span class="hljs-keyword">implements</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">conditions</span>\<span class="hljs-title">ConditionInterface</span>
+</span>{
+    <span class="hljs-comment">// ... &#36825;&#37324;&#30465;&#30053;&#20854;&#20182;&#26041;&#27861;&#30340;&#23454;&#29616;</span>
+     
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fromArrayDefinition</span><span class="hljs-params">($operator, $operands)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">static</span>($operands[<span class="hljs-number">0</span>], $operands[<span class="hljs-number">1</span>]);
+    }
+}
+</code></pre>
+<p>&#28982;&#21518;&#21602;&#65292;&#25105;&#20204;&#23601;&#21487;&#20197;&#20351;&#29992;&#26356;&#31616;&#30701;&#30340;&#25805;&#20316;&#31526;&#26684;&#24335;&#26469;&#21019;&#24314;&#33258;&#23450;&#20041;&#26597;&#35810;&#26465;&#20214;&#20102;&#65306;</p>
+<pre><code class="hljs php language-php">$query-&gt;andWhere([<span class="hljs-string">'ALL&gt;'</span>, [<span class="hljs-string">'posts'</span>, <span class="hljs-string">'comments'</span>, <span class="hljs-string">'reactions'</span>, <span class="hljs-string">'subscriptions'</span>], $minValue]);
+</code></pre>
+<p>&#20320;&#21487;&#33021;&#27880;&#24847;&#21040;&#20102;&#65292;&#36825;&#37324;&#20351;&#29992;&#21040;&#20102;&#20004;&#20010;&#27010;&#24565;&#65306;&#34920;&#36798;&#24335;&#23545;&#35937;&#21644;&#26465;&#20214;&#23545;&#35937;&#12290;&#34920;&#36798;&#24335;&#23545;&#35937;&#23454;&#29616;&#20102; <a href="./yii-db-expressioninterface.html">yii\db\ExpressionInterface</a> &#25509;&#21475;&#65292;
+&#23427;&#36824;&#20381;&#36182;&#20110;&#19968;&#20010;&#34920;&#36798;&#24335;&#26500;&#24314;&#22120;&#65288;Expression Builder&#65289;&#26469;&#25191;&#34892;&#26500;&#24314;&#36923;&#36753;&#65292;&#32780;&#34920;&#36798;&#24335;&#26500;&#24314;&#22120;&#23454;&#29616;&#20102; <a href="./yii-db-expressionbuilderinterface.html">yii\db\ExpressionBuilderInterface</a> &#25509;&#21475;&#12290;
+&#32780;&#26465;&#20214;&#23545;&#35937;&#23454;&#29616;&#20102; <span class="broken-link">yii\db\condition\ConditionInterface</span> &#25509;&#21475;&#65292;&#23427;&#26159;&#32487;&#25215;&#20102; <a href="./yii-db-expressioninterface.html">ExpressionInterface</a> &#25509;&#21475;&#65292;
+&#22914;&#19978;&#38754;&#30340;&#26647;&#23376;&#25152;&#20889;&#30340;&#65292;&#23427;&#29992;&#20110;&#25968;&#32452;&#23450;&#20041;&#30340;&#26465;&#20214;&#30340;&#22330;&#26223;&#65292;&#24403;&#28982;&#26465;&#20214;&#23545;&#35937;&#20063;&#38656;&#35201;&#26500;&#24314;&#22120;&#12290;</p>
+<p>&#24635;&#32467;&#36215;&#26469;&#23601;&#26159;:</p>
+<ul>
+<li><p>Expression &ndash; &#34920;&#36798;&#24335;&#23545;&#35937;&#65292;&#26159;&#25968;&#25454;&#38598;&#30340;&#25968;&#25454;&#36716;&#25442;&#23545;&#35937;&#65288;DTO&#65289;&#65292;&#23427;&#21487;&#20197;&#34987;&#32534;&#35793;&#20026;&#19968;&#20123;&#29305;&#23450; SQL &#35821;&#21477; &#65288;&#25805;&#20316;&#31526;&#12289;&#23383;&#31526;&#20018;&#12289;&#25968;&#32452;&#12289;JSON&#31561;&#31561;&#65289;&#12290;</p>
+</li>
+<li><p>Condition &ndash; &#26465;&#20214;&#23545;&#35937;&#65292;&#26159;&#34920;&#36798;&#24335;&#23545;&#35937;&#36229;&#38598;&#65292;&#23427;&#21487;&#20197;&#32858;&#21512;&#22810;&#20010;&#34920;&#36798;&#24335;&#23545;&#35937;&#65288;&#25110;&#26631;&#37327;&#20540;&#65289;&#65292;&#28982;&#21518;&#32534;&#35793;&#25104;&#19968;&#26465; SQL &#26597;&#35810;&#26465;&#20214;&#12290;</p>
+</li>
+</ul>
+<p>&#20320;&#21487;&#20197;&#21019;&#24314;&#33258;&#24049;&#30340;&#31867;&#26469;&#23454;&#29616; <a href="./yii-db-expressioninterface.html">ExpressionInterface</a> &#25509;&#21475;&#65292;&#36798;&#21040;&#23553;&#35013;&#30340;&#30446;&#30340;&#65306;&#38544;&#34255;&#22797;&#26434;&#30340; SQL &#35821;&#21477;&#25340;&#35013;&#36807;&#31243;&#12290;
+&#24819;&#23398;&#20064;&#21040;&#26356;&#22810;&#20851;&#20110;&#34920;&#36798;&#24335;&#23545;&#35937;&#30340;&#23454;&#36341;
+&#35831;&#21548; <a href="guide-db-active-record.html">&#19979;&#22238;&#20998;&#35299;</a>&#65307;</p>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:21 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

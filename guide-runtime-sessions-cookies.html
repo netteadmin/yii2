@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>Sessions and Cookies - 请求处理（Handling Requests） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w415" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w415-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w415-collapse" class="collapse navbar-collapse"><ul id="w416" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w417" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-399" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-399" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-400" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-400" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-401" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-401" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item active" href="#navigation-402" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-402" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item active" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-403" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-403" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-404" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-404" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-405" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-405" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-406" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-406" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-407" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-407" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-408" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-408" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-409" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-409" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-410" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-410" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-411" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-411" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-412" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-412" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-413" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-413" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-414" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-414" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>Sessions &#21644; Cookies <span id="sessions-he-cookies"></span><a href="#sessions-he-cookies" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#sessions">Sessions</a></li>
+<li><a href="#cookies">Cookies</a></li></ol></div>
+<p>Sessions &#21644; cookies &#20801;&#35768;&#25968;&#25454;&#22312;&#22810;&#27425;&#35831;&#27714;&#20013;&#20445;&#25345;&#65292;
+&#22312;&#32431; PHP &#20013;&#65292;&#21487;&#20197;&#20998;&#21035;&#20351;&#29992;&#20840;&#23616;&#21464;&#37327; <code>$_SESSION</code> &#21644; <code>$_COOKIE</code> &#26469;&#35775;&#38382;&#65292;Yii &#23558; session &#21644; cookie &#23553;&#35013;&#25104;&#23545;&#35937;&#24182;&#22686;&#21152;&#19968;&#20123;&#21151;&#33021;&#65292;
+&#21487;&#36890;&#36807;&#38754;&#21521;&#23545;&#35937;&#26041;&#24335;&#35775;&#38382;&#23427;&#20204;&#12290;</p>
+<h2>Sessions  <span id="sessions"></span><a href="#sessions" class="hashlink">&para;</a></h2><p>&#21644; <a href="guide-runtime-requests.html">&#35831;&#27714;</a> &#21644; <a href="guide-runtime-responses.html">&#21709;&#24212;</a>&#31867;&#20284;&#65292;
+&#40664;&#35748;&#21487;&#36890;&#36807;&#20026; <a href="./yii-web-session.html">yii\web\Session</a> &#23454;&#20363;&#30340; <code>session</code> 
+<a href="guide-structure-application-components.html">&#24212;&#29992;&#32452;&#20214;</a> &#26469;&#35775;&#38382; sessions&#12290;</p>
+<h3>&#24320;&#21551;&#21644;&#20851;&#38381; Sessions  <span id="opening-closing-sessions"></span><a href="#opening-closing-sessions" class="hashlink">&para;</a></h3><p>&#21487;&#20351;&#29992;&#20197;&#19979;&#20195;&#30721;&#26469;&#24320;&#21551;&#21644;&#20851;&#38381; session&#12290;</p>
+<pre><code class="hljs php language-php">$session = Yii::$app-&gt;session;
+
+<span class="hljs-comment">// &#26816;&#26597;session&#26159;&#21542;&#24320;&#21551; </span>
+<span class="hljs-keyword">if</span> ($session-&gt;isActive) ...
+
+<span class="hljs-comment">// &#24320;&#21551;session</span>
+$session-&gt;open();
+
+<span class="hljs-comment">// &#20851;&#38381;session</span>
+$session-&gt;close();
+
+<span class="hljs-comment">// &#38144;&#27585;session&#20013;&#25152;&#26377;&#24050;&#27880;&#20876;&#30340;&#25968;&#25454;</span>
+$session-&gt;destroy();
+</code></pre>
+<p>&#22810;&#27425;&#35843;&#29992;<a href="./yii-web-session.html#open()-detail">open()</a> &#21644;<a href="./yii-web-session.html#close()-detail">close()</a> &#26041;&#27861;&#24182;&#19981;&#20250;&#20135;&#29983;&#38169;&#35823;&#65292;
+&#22240;&#20026;&#26041;&#27861;&#20869;&#37096;&#20250;&#20808;&#26816;&#26597;session&#26159;&#21542;&#24050;&#32463;&#24320;&#21551;&#12290;</p>
+<h3>&#35775;&#38382; Session &#25968;&#25454;  <span id="access-session-data"></span><a href="#access-session-data" class="hashlink">&para;</a></h3><p>&#21487;&#20351;&#29992;&#22914;&#19979;&#26041;&#24335;&#35775;&#38382;session&#20013;&#30340;&#25968;&#25454;&#65306;</p>
+<pre><code class="hljs php language-php">$session = Yii::$app-&gt;session;
+
+<span class="hljs-comment">// &#33719;&#21462;session&#20013;&#30340;&#21464;&#37327;&#20540;&#65292;&#20197;&#19979;&#29992;&#27861;&#26159;&#30456;&#21516;&#30340;&#65306;</span>
+$language = $session-&gt;get(<span class="hljs-string">'language'</span>);
+$language = $session[<span class="hljs-string">'language'</span>];
+$language = <span class="hljs-keyword">isset</span>($_SESSION[<span class="hljs-string">'language'</span>]) ? $_SESSION[<span class="hljs-string">'language'</span>] : <span class="hljs-keyword">null</span>;
+
+<span class="hljs-comment">// &#35774;&#32622;&#19968;&#20010;session&#21464;&#37327;&#65292;&#20197;&#19979;&#29992;&#27861;&#26159;&#30456;&#21516;&#30340;&#65306;</span>
+$session-&gt;set(<span class="hljs-string">'language'</span>, <span class="hljs-string">'en-US'</span>);
+$session[<span class="hljs-string">'language'</span>] = <span class="hljs-string">'en-US'</span>;
+$_SESSION[<span class="hljs-string">'language'</span>] = <span class="hljs-string">'en-US'</span>;
+
+<span class="hljs-comment">// &#21024;&#38500;&#19968;&#20010;session&#21464;&#37327;&#65292;&#20197;&#19979;&#29992;&#27861;&#26159;&#30456;&#21516;&#30340;&#65306;</span>
+$session-&gt;remove(<span class="hljs-string">'language'</span>);
+<span class="hljs-keyword">unset</span>($session[<span class="hljs-string">'language'</span>]);
+<span class="hljs-keyword">unset</span>($_SESSION[<span class="hljs-string">'language'</span>]);
+
+<span class="hljs-comment">// &#26816;&#26597;session&#21464;&#37327;&#26159;&#21542;&#24050;&#23384;&#22312;&#65292;&#20197;&#19979;&#29992;&#27861;&#26159;&#30456;&#21516;&#30340;&#65306;</span>
+<span class="hljs-keyword">if</span> ($session-&gt;has(<span class="hljs-string">'language'</span>)) ...
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($session[<span class="hljs-string">'language'</span>])) ...
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($_SESSION[<span class="hljs-string">'language'</span>])) ...
+
+<span class="hljs-comment">// &#36941;&#21382;&#25152;&#26377;session&#21464;&#37327;&#65292;&#20197;&#19979;&#29992;&#27861;&#26159;&#30456;&#21516;&#30340;&#65306;</span>
+<span class="hljs-keyword">foreach</span> ($session <span class="hljs-keyword">as</span> $name =&gt; $value) ...
+<span class="hljs-keyword">foreach</span> ($_SESSION <span class="hljs-keyword">as</span> $name =&gt; $value) ...
+</code></pre>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#24403;&#20351;&#29992; <code>session</code> &#32452;&#20214;&#35775;&#38382; session &#25968;&#25454;&#26102;&#20505;&#65292;
+  &#22914;&#26524; session &#27809;&#26377;&#24320;&#21551;&#20250;&#33258;&#21160;&#24320;&#21551;&#65292;
+  &#36825;&#21644;&#36890;&#36807; <code>$_SESSION</code> &#19981;&#21516;&#65292;<code>$_SESSION</code> &#35201;&#27714;&#20808;&#25191;&#34892; <code>session_start()</code>&#12290;</p>
+</blockquote>
+<p>&#24403; session &#25968;&#25454;&#20026;&#25968;&#32452;&#26102;&#65292;<code>session</code> &#32452;&#20214;&#20250;&#38480;&#21046;&#20320;&#30452;&#25509;&#20462;&#25913;&#25968;&#25454;&#20013;&#30340;&#21333;&#20803;&#39033;&#65292;
+&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php">$session = Yii::$app-&gt;session;
+
+<span class="hljs-comment">// &#22914;&#19979;&#20195;&#30721;&#19981;&#20250;&#29983;&#25928;</span>
+$session[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'number'</span>] = <span class="hljs-number">5</span>;
+$session[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'lifetime'</span>] = <span class="hljs-number">3600</span>;
+
+<span class="hljs-comment">// &#22914;&#19979;&#20195;&#30721;&#20250;&#29983;&#25928;&#65306;</span>
+$session[<span class="hljs-string">'captcha'</span>] = [
+    <span class="hljs-string">'number'</span> =&gt; <span class="hljs-number">5</span>,
+    <span class="hljs-string">'lifetime'</span> =&gt; <span class="hljs-number">3600</span>,
+];
+
+<span class="hljs-comment">// &#22914;&#19979;&#20195;&#30721;&#20063;&#20250;&#29983;&#25928;&#65306;</span>
+<span class="hljs-keyword">echo</span> $session[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'lifetime'</span>];
+</code></pre>
+<p>&#21487;&#20351;&#29992;&#20197;&#19979;&#20219;&#24847;&#19968;&#20010;&#21464;&#36890;&#26041;&#27861;&#26469;&#35299;&#20915;&#36825;&#20010;&#38382;&#39064;&#65306;</p>
+<pre><code class="hljs php language-php">$session = Yii::$app-&gt;session;
+
+<span class="hljs-comment">// &#30452;&#25509;&#20351;&#29992;$_SESSION (&#30830;&#20445;Yii::$app-&gt;session-&gt;open() &#24050;&#32463;&#35843;&#29992;)</span>
+$_SESSION[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'number'</span>] = <span class="hljs-number">5</span>;
+$_SESSION[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'lifetime'</span>] = <span class="hljs-number">3600</span>;
+
+<span class="hljs-comment">// &#20808;&#33719;&#21462;session&#25968;&#25454;&#21040;&#19968;&#20010;&#25968;&#32452;&#65292;&#20462;&#25913;&#25968;&#32452;&#30340;&#20540;&#65292;&#28982;&#21518;&#20445;&#23384;&#25968;&#32452;&#21040;session&#20013;</span>
+$captcha = $session[<span class="hljs-string">'captcha'</span>];
+$captcha[<span class="hljs-string">'number'</span>] = <span class="hljs-number">5</span>;
+$captcha[<span class="hljs-string">'lifetime'</span>] = <span class="hljs-number">3600</span>;
+$session[<span class="hljs-string">'captcha'</span>] = $captcha;
+
+<span class="hljs-comment">// &#20351;&#29992;ArrayObject &#25968;&#32452;&#23545;&#35937;&#20195;&#26367;&#25968;&#32452;</span>
+$session[<span class="hljs-string">'captcha'</span>] = <span class="hljs-keyword">new</span> \ArrayObject;
+...
+$session[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'number'</span>] = <span class="hljs-number">5</span>;
+$session[<span class="hljs-string">'captcha'</span>][<span class="hljs-string">'lifetime'</span>] = <span class="hljs-number">3600</span>;
+
+<span class="hljs-comment">// &#20351;&#29992;&#24102;&#36890;&#29992;&#21069;&#32512;&#30340;&#38190;&#26469;&#23384;&#20648;&#25968;&#32452;</span>
+$session[<span class="hljs-string">'captcha.number'</span>] = <span class="hljs-number">5</span>;
+$session[<span class="hljs-string">'captcha.lifetime'</span>] = <span class="hljs-number">3600</span>;
+</code></pre>
+<p>&#20026;&#26356;&#22909;&#30340;&#24615;&#33021;&#21644;&#21487;&#35835;&#24615;&#65292;&#25512;&#33616;&#26368;&#21518;&#19968;&#31181;&#26041;&#26696;&#65292;
+&#20063;&#23601;&#26159;&#19981;&#29992;&#23384;&#20648; session &#21464;&#37327;&#20026;&#25968;&#32452;&#65292;
+&#32780;&#26159;&#23558;&#27599;&#20010;&#25968;&#32452;&#39033;&#21464;&#25104;&#26377;&#30456;&#21516;&#38190;&#21069;&#32512;&#30340; session &#21464;&#37327;&#12290;</p>
+<h3>&#33258;&#23450;&#20041; Session &#23384;&#20648;  <span id="custom-session-storage"></span><a href="#custom-session-storage" class="hashlink">&para;</a></h3><p><a href="./yii-web-session.html">yii\web\Session</a> &#31867;&#40664;&#35748;&#23384;&#20648; session &#25968;&#25454;&#20026;&#25991;&#20214;&#21040;&#26381;&#21153;&#22120;&#19978;&#65292;
+Yii &#25552;&#20379;&#20197;&#19979; session &#31867;&#23454;&#29616;&#19981;&#21516;&#30340; session &#23384;&#20648;&#26041;&#24335;&#65306;</p>
+<ul>
+<li><a href="./yii-web-dbsession.html">yii\web\DbSession</a>&#65306;&#23384;&#20648; session &#25968;&#25454;&#22312;&#25968;&#25454;&#34920;&#20013;</li>
+<li><a href="./yii-web-cachesession.html">yii\web\CacheSession</a>&#65306;&#23384;&#20648; session &#25968;&#25454;&#21040;&#32531;&#23384;&#20013;&#65292;&#32531;&#23384;&#21644;&#37197;&#32622;&#20013;&#30340;<a href="guide-caching-data.html#cache-components">&#32531;&#23384;&#32452;&#20214;</a>&#30456;&#20851;</li>
+<li><a href="./yii-redis-session.html">yii\redis\Session</a>&#65306;&#23384;&#20648; session &#25968;&#25454;&#21040;&#20197; <a href="https://redis.io/">redis</a> &#20316;&#20026;&#23384;&#20648;&#23186;&#20171;&#20013;</li>
+<li><a href="./yii-mongodb-session.html">yii\mongodb\Session</a>&#65306;&#23384;&#20648; session &#25968;&#25454;&#21040; <a href="https://www.mongodb.com/">MongoDB</a>&#12290;</li>
+</ul>
+<p>&#25152;&#26377;&#36825;&#20123; session &#31867;&#25903;&#25345;&#30456;&#21516;&#30340; API &#26041;&#27861;&#38598;&#65292;&#22240;&#27492;&#65292;
+&#20999;&#25442;&#21040;&#19981;&#21516;&#30340; session &#23384;&#20648;&#20171;&#36136;&#19981;&#38656;&#35201;&#20462;&#25913;&#39033;&#30446;&#20351;&#29992; session &#30340;&#20195;&#30721;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22914;&#26524;&#36890;&#36807;<code>$_SESSION</code>&#35775;&#38382;&#20351;&#29992;&#33258;&#23450;&#20041;&#23384;&#20648;&#20171;&#36136;&#30340;session&#65292;
+  &#38656;&#35201;&#30830;&#20445;session&#24050;&#32463;&#29992;<a href="./yii-web-session.html#open()-detail">yii\web\Session::open()</a> &#24320;&#21551;&#65292;
+  &#36825;&#26159;&#22240;&#20026;&#22312;&#35813;&#26041;&#27861;&#20013;&#27880;&#20876;&#33258;&#23450;&#20041;session&#23384;&#20648;&#22788;&#29702;&#22120;&#12290;</p>
+</blockquote>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22914;&#26524;&#20351;&#29992;&#33258;&#23450;&#20041;&#20250;&#35805;&#23384;&#20648;&#65292;&#21017;&#21487;&#33021;&#38656;&#35201;&#26174;&#24335;&#37197;&#32622;&#20250;&#35805;&#22403;&#22334;&#25910;&#38598;&#22120;&#12290;
+  &#19968;&#20123;&#23433;&#35013;&#30340; PHP&#65288;&#20363;&#22914; Debian&#65289;&#20351;&#29992;&#22403;&#22334;&#25910;&#38598;&#22120;&#27010;&#29575;&#20026; 0&#65292;&#24182;&#22312;&#35745;&#21010;&#20219;&#21153;&#20013;&#31163;&#32447;&#28165;&#29702;&#20250;&#35805;&#25991;&#20214;&#12290;
+  &#27492;&#36807;&#31243;&#19981;&#36866;&#29992;&#20110;&#24744;&#30340;&#33258;&#23450;&#20041;&#23384;&#20648;&#65292;
+  &#22240;&#27492;&#24744;&#38656;&#35201;&#37197;&#32622; <span class="broken-link">yii\web\Session::$GCProbability</span> &#20197;&#20351;&#29992;&#38750;&#38646;&#20540;&#12290;</p>
+</blockquote>
+<p>&#23398;&#20064;&#22914;&#20309;&#37197;&#32622;&#21644;&#20351;&#29992;&#36825;&#20123;&#32452;&#20214;&#31867;&#35831;&#21442;&#32771;&#23427;&#20204;&#30340; API &#25991;&#26723;&#65292;&#22914;&#19979;&#20026;&#19968;&#20010;&#31034;&#20363;
+&#26174;&#31034;&#22914;&#20309;&#22312;&#24212;&#29992;&#37197;&#32622;&#20013;&#37197;&#32622; <a href="./yii-web-dbsession.html">yii\web\DbSession</a>
+&#23558;&#25968;&#25454;&#34920;&#20316;&#20026; session &#23384;&#20648;&#20171;&#36136;&#12290;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'session'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\DbSession'</span>,
+            <span class="hljs-comment">// 'db' =&gt; 'mydb',  // &#25968;&#25454;&#24211;&#36830;&#25509;&#30340;&#24212;&#29992;&#32452;&#20214;ID&#65292;&#40664;&#35748;&#20026;'db'.</span>
+            <span class="hljs-comment">// 'sessionTable' =&gt; 'my_session', // session &#25968;&#25454;&#34920;&#21517;&#65292;&#40664;&#35748;&#20026;'session'.</span>
+        ],
+    ],
+];
+</code></pre>
+<p>&#20063;&#38656;&#35201;&#21019;&#24314;&#22914;&#19979;&#25968;&#25454;&#24211;&#34920;&#26469;&#23384;&#20648; session &#25968;&#25454;&#65306;</p>
+<pre><code class="hljs sql language-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">session</span>
+(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">40</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    <span class="hljs-keyword">expire</span> <span class="hljs-built_in">INTEGER</span>,
+    <span class="hljs-keyword">data</span> <span class="hljs-built_in">BLOB</span>
+)
+</code></pre>
+<p>&#20854;&#20013; 'BLOB' &#23545;&#24212;&#20320;&#36873;&#25321;&#30340;&#25968;&#25454;&#24211;&#31649;&#29702;&#31995;&#32479;&#30340; BLOB-type &#31867;&#22411;&#65292;&#20197;&#19979;&#19968;&#20123;&#24120;&#29992;&#25968;&#25454;&#24211;&#31649;&#29702;&#31995;&#32479;&#30340; BLOB &#31867;&#22411;&#65306;</p>
+<ul>
+<li>MySQL: LONGBLOB</li>
+<li>PostgreSQL: BYTEA</li>
+<li>MSSQL: BLOB</li>
+</ul>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#26681;&#25454; php.ini &#35774;&#32622;&#30340; <code>session.hash_function</code>&#65292;&#20320;&#38656;&#35201;&#35843;&#25972; <code>id</code> &#21015;&#30340;&#38271;&#24230;&#65292;
+  &#20363;&#22914;&#65292;&#22914;&#26524; <code>session.hash_function=sha256</code>&#65292;
+  &#24212;&#20351;&#29992;&#38271;&#24230;&#20026; 64 &#32780;&#19981;&#26159; 40 &#30340; char &#31867;&#22411;&#12290;</p>
+</blockquote>
+<p>&#25110;&#32773;&#65292;&#21487;&#20197;&#36890;&#36807;&#20197;&#19979;&#36801;&#31227;&#23436;&#25104;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m170529_050554_create_table_session</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'{{%session}}'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;char(<span class="hljs-number">64</span>)-&gt;notNull(),
+            <span class="hljs-string">'expire'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;integer(),
+            <span class="hljs-string">'data'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;binary()
+        ]);
+        <span class="hljs-keyword">$this</span>-&gt;addPrimaryKey(<span class="hljs-string">'pk-id'</span>, <span class="hljs-string">'{{%session}}'</span>, <span class="hljs-string">'id'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'{{%session}}'</span>);
+    }
+}
+</code></pre>
+<h3>Flash &#25968;&#25454;  <span id="flash-data"></span><a href="#flash-data" class="hashlink">&para;</a></h3><p>Flash &#25968;&#25454;&#26159;&#19968;&#31181;&#29305;&#21035;&#30340; session &#25968;&#25454;&#65292;&#23427;&#19968;&#26086;&#22312;&#26576;&#20010;&#35831;&#27714;&#20013;&#35774;&#32622;&#21518;&#65292;
+&#21482;&#20250;&#22312;&#19979;&#27425;&#35831;&#27714;&#20013;&#26377;&#25928;&#65292;&#28982;&#21518;&#35813;&#25968;&#25454;&#23601;&#20250;&#33258;&#21160;&#34987;&#21024;&#38500;&#12290;
+&#24120;&#29992;&#20110;&#23454;&#29616;&#21482;&#38656;&#26174;&#31034;&#32473;&#32456;&#31471;&#29992;&#25143;&#19968;&#27425;&#30340;&#20449;&#24687;&#65292;
+&#22914;&#29992;&#25143;&#25552;&#20132;&#19968;&#20010;&#34920;&#21333;&#21518;&#26174;&#31034;&#30830;&#35748;&#20449;&#24687;&#12290;</p>
+<p>&#21487;&#36890;&#36807; <code>session</code> &#24212;&#29992;&#32452;&#20214;&#35774;&#32622;&#25110;&#35775;&#38382; <code>session</code>&#65292;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php">$session = Yii::$app-&gt;session;
+
+<span class="hljs-comment">// &#35831;&#27714; #1</span>
+<span class="hljs-comment">// &#35774;&#32622;&#19968;&#20010;&#21517;&#20026;"postDeleted" flash &#20449;&#24687;</span>
+$session-&gt;setFlash(<span class="hljs-string">'postDeleted'</span>, <span class="hljs-string">'You have successfully deleted your post.'</span>);
+
+<span class="hljs-comment">// &#35831;&#27714; #2</span>
+<span class="hljs-comment">// &#26174;&#31034;&#21517;&#20026;"postDeleted" flash &#20449;&#24687;</span>
+<span class="hljs-keyword">echo</span> $session-&gt;getFlash(<span class="hljs-string">'postDeleted'</span>);
+
+<span class="hljs-comment">// &#35831;&#27714; #3</span>
+<span class="hljs-comment">// $result &#20026; false&#65292;&#22240;&#20026;flash&#20449;&#24687;&#24050;&#34987;&#33258;&#21160;&#21024;&#38500;</span>
+$result = $session-&gt;hasFlash(<span class="hljs-string">'postDeleted'</span>);
+</code></pre>
+<p>&#21644;&#26222;&#36890; session &#25968;&#25454;&#31867;&#20284;&#65292;&#21487;&#23558;&#20219;&#24847;&#25968;&#25454;&#23384;&#20648;&#20026; flash &#25968;&#25454;&#12290;</p>
+<p>&#24403;&#35843;&#29992; <a href="./yii-web-session.html#setFlash()-detail">yii\web\Session::setFlash()</a> &#26102;, &#20250;&#33258;&#21160;&#35206;&#30422;&#30456;&#21516;&#21517;&#30340;&#24050;&#23384;&#22312;&#30340;&#20219;&#20309;&#25968;&#25454;&#65292;
+&#20026;&#23558;&#25968;&#25454;&#36861;&#21152;&#21040;&#24050;&#23384;&#22312;&#30340;&#30456;&#21516;&#21517; flash &#20013;&#65292;&#21487;&#25913;&#20026;&#35843;&#29992; <a href="./yii-web-session.html#addFlash()-detail">yii\web\Session::addFlash()</a>&#12290;
+&#20363;&#22914;:</p>
+<pre><code class="hljs php language-php">$session = Yii::$app-&gt;session;
+
+<span class="hljs-comment">// &#35831;&#27714; #1</span>
+<span class="hljs-comment">// &#22312;&#21517;&#31216;&#20026;"alerts"&#30340;flash&#20449;&#24687;&#22686;&#21152;&#25968;&#25454;</span>
+$session-&gt;addFlash(<span class="hljs-string">'alerts'</span>, <span class="hljs-string">'You have successfully deleted your post.'</span>);
+$session-&gt;addFlash(<span class="hljs-string">'alerts'</span>, <span class="hljs-string">'You have successfully added a new friend.'</span>);
+$session-&gt;addFlash(<span class="hljs-string">'alerts'</span>, <span class="hljs-string">'You are promoted.'</span>);
+
+<span class="hljs-comment">// &#35831;&#27714; #2</span>
+<span class="hljs-comment">// $alerts &#20026;&#21517;&#20026;'alerts'&#30340;flash&#20449;&#24687;&#65292;&#20026;&#25968;&#32452;&#26684;&#24335;</span>
+$alerts = $session-&gt;getFlash(<span class="hljs-string">'alerts'</span>);
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#19981;&#35201;&#22312;&#30456;&#21516;&#21517;&#31216;&#30340; flash &#25968;&#25454;&#20013;&#20351;&#29992; <a href="./yii-web-session.html#setFlash()-detail">yii\web\Session::setFlash()</a> &#30340;&#21516;&#26102;&#20063;&#20351;&#29992; <a href="./yii-web-session.html#addFlash()-detail">yii\web\Session::addFlash()</a>&#65292;
+  &#22240;&#20026;&#21518;&#19968;&#20010;&#38450;&#33539;&#20250;&#33258;&#21160;&#23558; flash &#20449;&#24687;&#36716;&#25442;&#20026;&#25968;&#32452;&#20197;&#20351;&#26032;&#30340; flash &#25968;&#25454;&#21487;&#36861;&#21152;&#36827;&#26469;&#65292;&#22240;&#27492;&#65292;
+  &#24403;&#20320;&#35843;&#29992; <a href="./yii-web-session.html#getFlash()-detail">yii\web\Session::getFlash()</a> &#26102;&#65292;
+  &#20250;&#21457;&#29616;&#26377;&#26102;&#33719;&#21462;&#21040;&#19968;&#20010;&#25968;&#32452;&#65292;&#26377;&#26102;&#33719;&#21462;&#21040;&#19968;&#20010;&#23383;&#31526;&#20018;&#65292;
+  &#21462;&#20915;&#20110;&#20320;&#35843;&#29992;&#36825;&#20004;&#20010;&#26041;&#27861;&#30340;&#39034;&#24207;&#12290;</p>
+</blockquote>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#35201;&#26174;&#31034; Flash &#28040;&#24687;&#65292;&#24744;&#21487;&#20197;&#36890;&#36807;&#20197;&#19979;&#26041;&#24335;&#20351;&#29992; <a href="./yii-bootstrap-alert.html">bootstrap Alert</a> &#23567;&#37096;&#20214;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> Alert::widget([
+   <span class="hljs-string">'options'</span> =&gt; [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'alert-info'</span>],
+   <span class="hljs-string">'body'</span> =&gt; Yii::$app-&gt;session-&gt;getFlash(<span class="hljs-string">'postDeleted'</span>),
+]);
+</code></pre>
+</blockquote>
+<h2>Cookies  <span id="cookies"></span><a href="#cookies" class="hashlink">&para;</a></h2><p>Yii &#20351;&#29992; <a href="./yii-web-cookie.html">yii\web\Cookie</a> &#23545;&#35937;&#26469;&#20195;&#34920;&#27599;&#20010; cookie&#65292;
+<a href="./yii-web-request.html">yii\web\Request</a> &#21644; <a href="./yii-web-response.html">yii\web\Response</a>
+&#36890;&#36807;&#21517;&#20026; 'cookies' &#30340;&#23646;&#24615;&#32500;&#25252;&#19968;&#20010; cookie &#38598;&#21512;&#65292;&#21069;&#32773;&#30340; cookie &#38598;&#21512;&#20195;&#34920;&#35831;&#27714;&#25552;&#20132;&#30340; cookies&#65292;
+&#21518;&#32773;&#30340; cookie &#38598;&#21512;&#34920;&#31034;&#21457;&#36865;&#32473;&#29992;&#25143;&#30340; cookies&#12290;</p>
+<p>&#25511;&#21046;&#22120;&#26159;&#30452;&#25509;&#22788;&#29702;&#35831;&#27714;&#21644;&#21709;&#24212;&#30340;&#37096;&#20998;&#12290; &#22240;&#27492;, &#24212;&#24403;&#22312;&#25511;&#21046;&#22120;&#20013;&#35835;&#21462;&#21644;&#21457;&#36865; cookie &#12290;
+(&#35793;&#32773;&#27880;&#65306;&#24847;&#24605;&#22312;&#25511;&#21046;&#22120;&#20013;&#22788;&#29702; cookie &#26159;&#23433;&#20840;&#30340;&#12290;)</p>
+<h3>&#35835;&#21462; Cookies  <span id="reading-cookies"></span><a href="#reading-cookies" class="hashlink">&para;</a></h3><p>&#24403;&#21069;&#35831;&#27714;&#30340; cookie &#20449;&#24687;&#21487;&#36890;&#36807;&#22914;&#19979;&#20195;&#30721;&#33719;&#21462;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#20174; "request" &#32452;&#20214;&#20013;&#33719;&#21462; cookie &#38598;&#21512;(yii\web\CookieCollection)</span>
+$cookies = Yii::$app-&gt;request-&gt;cookies;
+
+<span class="hljs-comment">// &#33719;&#21462;&#21517;&#20026; "language" cookie &#30340;&#20540;&#65292;&#22914;&#26524;&#19981;&#23384;&#22312;&#65292;&#36820;&#22238;&#40664;&#35748;&#20540; "en"</span>
+$language = $cookies-&gt;getValue(<span class="hljs-string">'language'</span>, <span class="hljs-string">'en'</span>);
+
+<span class="hljs-comment">// &#21478;&#19968;&#31181;&#26041;&#24335;&#33719;&#21462;&#21517;&#20026; "language" cookie &#30340;&#20540;</span>
+<span class="hljs-keyword">if</span> (($cookie = $cookies-&gt;get(<span class="hljs-string">'language'</span>)) !== <span class="hljs-keyword">null</span>) {
+    $language = $cookie-&gt;value;
+}
+
+<span class="hljs-comment">// &#21487;&#23558; $cookies &#24403;&#20316;&#25968;&#32452;&#20351;&#29992;</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($cookies[<span class="hljs-string">'language'</span>])) {
+    $language = $cookies[<span class="hljs-string">'language'</span>]-&gt;value;
+}
+
+<span class="hljs-comment">// &#21028;&#26029;&#26159;&#21542;&#23384;&#22312;&#21517;&#20026; "language" &#30340; cookie</span>
+<span class="hljs-keyword">if</span> ($cookies-&gt;has(<span class="hljs-string">'language'</span>)) ...
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($cookies[<span class="hljs-string">'language'</span>])) ...
+</code></pre>
+<h3>&#21457;&#36865; Cookies  <span id="sending-cookies"></span><a href="#sending-cookies" class="hashlink">&para;</a></h3><p>&#21487;&#20351;&#29992;&#22914;&#19979;&#20195;&#30721;&#21457;&#36865; cookie &#21040;&#32456;&#31471;&#29992;&#25143;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#20174; "response" &#32452;&#20214;&#20013;&#33719;&#21462; cookie &#38598;&#21512;(yii\web\CookieCollection)</span>
+$cookies = Yii::$app-&gt;response-&gt;cookies;
+
+<span class="hljs-comment">// &#22312;&#35201;&#21457;&#36865;&#30340;&#21709;&#24212;&#20013;&#28155;&#21152;&#19968;&#20010;&#26032;&#30340; cookie</span>
+$cookies-&gt;add(<span class="hljs-keyword">new</span> \yii\web\Cookie([
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'language'</span>,
+    <span class="hljs-string">'value'</span> =&gt; <span class="hljs-string">'zh-CN'</span>,
+]));
+
+<span class="hljs-comment">// &#21024;&#38500;&#19968;&#20010; cookie</span>
+$cookies-&gt;remove(<span class="hljs-string">'language'</span>);
+<span class="hljs-comment">// &#31561;&#21516;&#20110;&#20197;&#19979;&#21024;&#38500;&#20195;&#30721;</span>
+<span class="hljs-keyword">unset</span>($cookies[<span class="hljs-string">'language'</span>]);
+</code></pre>
+<p>&#38500;&#20102;&#19978;&#36848;&#20363;&#23376;&#23450;&#20041;&#30340; <a href="./yii-web-cookie.html#%24name-detail">name</a> &#21644; <a href="./yii-web-cookie.html#%24value-detail">value</a> &#23646;&#24615;
+<a href="./yii-web-cookie.html">yii\web\Cookie</a> &#31867;&#20063;&#23450;&#20041;&#20102;&#20854;&#20182;&#23646;&#24615;&#26469;&#23454;&#29616; cookie &#30340;&#21508;&#31181;&#20449;&#24687;&#65292;&#22914;
+<a href="./yii-web-cookie.html#%24domain-detail">domain</a>&#65292;<a href="./yii-web-cookie.html#%24expire-detail">expire</a>
+&#21487;&#37197;&#32622;&#36825;&#20123;&#23646;&#24615;&#21040; cookie &#20013;&#24182;&#28155;&#21152;&#21040;&#21709;&#24212;&#30340; cookie &#38598;&#21512;&#20013;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#20026;&#23433;&#20840;&#36215;&#35265; <a href="./yii-web-cookie.html#%24httpOnly-detail">yii\web\Cookie::$httpOnly</a> &#34987;&#35774;&#32622;&#20026; true&#65292;
+  &#36825;&#21487;&#20943;&#23569;&#23458;&#25143;&#31471;&#33050;&#26412;&#35775;&#38382;&#21463;&#20445;&#25252; cookie&#65288;&#22914;&#26524;&#27983;&#35272;&#22120;&#25903;&#25345;&#65289;&#30340;&#39118;&#38505;&#65292;
+  &#26356;&#22810;&#35814;&#24773;&#21487;&#38405;&#35835; <a href="https://owasp.org/www-community/HttpOnly">httpOnly wiki article</a>&#12290;</p>
+</blockquote>
+<h3>Cookie &#39564;&#35777;  <span id="cookie-validation"></span><a href="#cookie-validation" class="hashlink">&para;</a></h3><p>&#22312;&#19978;&#20004;&#33410;&#20013;&#65292;&#24403;&#36890;&#36807; <code>request</code> &#21644; <code>response</code> &#32452;&#20214;&#35835;&#21462;&#21644;&#21457;&#36865; cookie &#26102;&#65292;
+&#20320;&#20250;&#21916;&#27426;&#25193;&#23637;&#30340; cookie &#39564;&#35777;&#30340;&#20445;&#38556;&#23433;&#20840;&#21151;&#33021;&#65292;&#23427;&#33021;
+&#20351; cookie &#19981;&#34987;&#23458;&#25143;&#31471;&#20462;&#25913;&#12290;&#35813;&#21151;&#33021;&#36890;&#36807;&#32473;&#27599;&#20010; cookie &#31614;&#21457;&#19968;&#20010;&#21704;&#24076;&#23383;&#31526;&#20018;&#26469;&#21578;&#30693;&#26381;&#21153;&#31471; cookie &#26159;&#21542;&#22312;&#23458;&#25143;&#31471;&#34987;&#20462;&#25913;&#65292;
+&#22914;&#26524;&#34987;&#20462;&#25913;&#65292;&#36890;&#36807; <code>request</code> &#32452;&#20214;&#30340;
+<a href="./yii-web-request.html#%24cookies-detail">cookie collection</a> cookie &#38598;&#21512;&#35775;&#38382;&#19981;&#21040;&#35813; cookie&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>Cookie &#39564;&#35777;&#21482;&#20445;&#25252; cookie &#20540;&#34987;&#20462;&#25913;&#65292;&#22914;&#26524;&#19968;&#20010; cookie &#39564;&#35777;&#22833;&#36133;&#65292;
+  &#20173;&#28982;&#21487;&#20197;&#36890;&#36807; <code>$_COOKIE</code> &#26469;&#35775;&#38382;&#35813; cookie&#65292;
+  &#22240;&#20026;&#36825;&#26159;&#31532;&#19977;&#26041;&#24211;&#23545;&#26410;&#36890;&#36807; cookie &#39564;&#35777;&#33258;&#23450;&#20041;&#30340;&#25805;&#20316;&#26041;&#24335;&#12290;</p>
+</blockquote>
+<p>Cookie &#39564;&#35777;&#40664;&#35748;&#21551;&#29992;&#65292;&#21487;&#20197;&#35774;&#32622; <a href="./yii-web-request.html#%24enableCookieValidation-detail">yii\web\Request::$enableCookieValidation</a> &#23646;&#24615;&#20026; false &#26469;&#31105;&#29992;&#23427;&#65292;
+&#23613;&#31649;&#22914;&#27492;&#65292;&#25105;&#20204;&#24378;&#28872;&#24314;&#35758;&#21551;&#29992;&#23427;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#30452;&#25509;&#36890;&#36807; <code>$_COOKIE</code> &#21644; <code>setcookie()</code> &#35835;&#21462;&#21644;&#21457;&#36865;&#30340; Cookie &#19981;&#20250;&#34987;&#39564;&#35777;&#12290;</p>
+</blockquote>
+<p>&#24403;&#20351;&#29992; cookie &#39564;&#35777;&#26102;&#65292;&#24517;&#39035;&#25351;&#23450; <a href="./yii-web-request.html#%24cookieValidationKey-detail">yii\web\Request::$cookieValidationKey</a>&#65292;&#23427;&#26159;&#29992;&#26469;&#29983;&#25104;&#19978;&#36848;&#30340;&#21704;&#24076;&#20540;&#65292;
+&#21487;&#36890;&#36807;&#22312;&#24212;&#29992;&#37197;&#32622;&#20013;&#37197;&#32622; <code>request</code> &#32452;&#20214;&#12290;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'request'</span> =&gt; [
+            <span class="hljs-string">'cookieValidationKey'</span> =&gt; <span class="hljs-string">'fill in a secret key here'</span>,
+        ],
+    ],
+];
+</code></pre>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong><a href="./yii-web-request.html#%24cookieValidationKey-detail">cookieValidationKey</a> &#23545;&#20320;&#30340;&#24212;&#29992;&#23433;&#20840;&#24456;&#37325;&#35201;&#65292;
+  &#24212;&#21482;&#34987;&#20320;&#20449;&#20219;&#30340;&#20154;&#30693;&#26195;&#65292;&#35831;&#19981;&#35201;&#23558;&#23427;&#25918;&#20837;&#29256;&#26412;&#25511;&#21046;&#20013;&#12290;</p>
+</blockquote>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:20 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

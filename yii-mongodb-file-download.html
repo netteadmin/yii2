@@ -1,0 +1,2699 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>Download, yii\mongodb\file\Download - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w16601" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w16601-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w16601-collapse" class="collapse navbar-collapse"><ul id="w16602" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w16603" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-16592" data-toggle="collapse" data-parent="#navigation">yii\mongodb <b class="caret"></b></a><div id="navigation-16592" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-activefixture.html">ActiveFixture</a>
+<a class="list-group-item" href="./yii-mongodb-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-mongodb-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-mongodb-batchqueryresult.html">BatchQueryResult</a>
+<a class="list-group-item" href="./yii-mongodb-cache.html">Cache</a>
+<a class="list-group-item" href="./yii-mongodb-clientsession.html">ClientSession</a>
+<a class="list-group-item" href="./yii-mongodb-collection.html">Collection</a>
+<a class="list-group-item" href="./yii-mongodb-command.html">Command</a>
+<a class="list-group-item" href="./yii-mongodb-connection.html">Connection</a>
+<a class="list-group-item" href="./yii-mongodb-database.html">Database</a>
+<a class="list-group-item" href="./yii-mongodb-exception.html">Exception</a>
+<a class="list-group-item" href="./yii-mongodb-logbuilder.html">LogBuilder</a>
+<a class="list-group-item" href="./yii-mongodb-migration.html">Migration</a>
+<a class="list-group-item" href="./yii-mongodb-query.html">Query</a>
+<a class="list-group-item" href="./yii-mongodb-querybuilder.html">QueryBuilder</a>
+<a class="list-group-item" href="./yii-mongodb-session.html">Session</a>
+<a class="list-group-item" href="./yii-mongodb-transaction.html">Transaction</a></div>
+<a class="list-group-item" href="#navigation-16593" data-toggle="collapse" data-parent="#navigation">yii\mongodb\console\controllers <b class="caret"></b></a><div id="navigation-16593" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-console-controllers-migratecontroller.html">MigrateController</a></div>
+<a class="list-group-item" href="#navigation-16594" data-toggle="collapse" data-parent="#navigation">yii\mongodb\debug <b class="caret"></b></a><div id="navigation-16594" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-debug-explainaction.html">ExplainAction</a>
+<a class="list-group-item" href="./yii-mongodb-debug-mongodbpanel.html">MongoDbPanel</a></div>
+<a class="list-group-item active" href="#navigation-16595" data-toggle="collapse" data-parent="#navigation">yii\mongodb\file <b class="caret"></b></a><div id="navigation-16595" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./yii-mongodb-file-activequery.html">ActiveQuery</a>
+<a class="list-group-item" href="./yii-mongodb-file-activerecord.html">ActiveRecord</a>
+<a class="list-group-item" href="./yii-mongodb-file-collection.html">Collection</a>
+<a class="list-group-item" href="./yii-mongodb-file-cursor.html">Cursor</a>
+<a class="list-group-item active" href="./yii-mongodb-file-download.html">Download</a>
+<a class="list-group-item" href="./yii-mongodb-file-query.html">Query</a>
+<a class="list-group-item" href="./yii-mongodb-file-streamwrapper.html">StreamWrapper</a>
+<a class="list-group-item" href="./yii-mongodb-file-upload.html">Upload</a></div>
+<a class="list-group-item" href="#navigation-16596" data-toggle="collapse" data-parent="#navigation">yii\mongodb\gii\model <b class="caret"></b></a><div id="navigation-16596" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-gii-model-generator.html">Generator</a></div>
+<a class="list-group-item" href="#navigation-16597" data-toggle="collapse" data-parent="#navigation">yii\mongodb\i18n <b class="caret"></b></a><div id="navigation-16597" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-i18n-mongodbmessagesource.html">MongoDbMessageSource</a></div>
+<a class="list-group-item" href="#navigation-16598" data-toggle="collapse" data-parent="#navigation">yii\mongodb\log <b class="caret"></b></a><div id="navigation-16598" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-log-mongodbtarget.html">MongoDbTarget</a></div>
+<a class="list-group-item" href="#navigation-16599" data-toggle="collapse" data-parent="#navigation">yii\mongodb\rbac <b class="caret"></b></a><div id="navigation-16599" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-rbac-mongodbmanager.html">MongoDbManager</a>
+<a class="list-group-item" href="./yii-mongodb-rbac-permission.html">Permission</a>
+<a class="list-group-item" href="./yii-mongodb-rbac-role.html">Role</a></div>
+<a class="list-group-item" href="#navigation-16600" data-toggle="collapse" data-parent="#navigation">yii\mongodb\validators <b class="caret"></b></a><div id="navigation-16600" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-mongodb-validators-mongodatevalidator.html">MongoDateValidator</a>
+<a class="list-group-item" href="./yii-mongodb-validators-mongoidvalidator.html">MongoIdValidator</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main"><h1>Class yii\mongodb\file\Download</h1>
+<div class="top-nav">
+    <a href="index">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a> &raquo;
+<a href="yii-base-baseobject.html">yii\base\BaseObject</a></td></tr>
+                <tr><th>Implements</th><td><a href="yii-base-configurable.html">yii\base\Configurable</a></td></tr>
+                                    <tr><th>Available since version</th><td>2.1</td></tr>
+                    <tr>
+          <th>Source Code</th>
+          <td><a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php">https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php</a></td>
+        </tr>
+    </table>
+
+<div class="class-description">
+    <p><strong>Download represents the GridFS download operation.</strong></p>
+    <p>A <code>Download</code> object is usually created by calling <a href="yii-mongodb-file-collection.html#get()-detail">yii\mongodb\file\Collection::get()</a> or <a href="yii-mongodb-file-collection.html#createDownload()-detail">yii\mongodb\file\Collection::createDownload()</a>.</p>
+<p>Usage example:</p>
+<pre><code class="hljs php language-php">Yii::$app-&gt;mongodb-&gt;getFileCollection()-&gt;createDownload($document[<span class="hljs-string">'_id'</span>])-&gt;toFile(<span class="hljs-string">'/path/to/file.dat'</span>);
+</code></pre>
+<p>You can use <code>Download::substr()</code> to read a specific part of the file:</p>
+<pre><code class="hljs php language-php">$filePart = Yii::$app-&gt;mongodb-&gt;getFileCollection()-&gt;createDownload($document[<span class="hljs-string">'_id'</span>])-&gt;substr(<span class="hljs-number">256</span>, <span class="hljs-number">1024</span>);
+</code></pre>
+
+    </div>
+
+
+
+<a id="properties"></a>
+
+<div class="doc-property summary toggle-target-container">
+    <h2>Public Properties</h2>
+
+    <p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+        <colgroup>
+            <col class="col-property" />
+            <col class="col-type" />
+            <col class="col-description" />
+            <col class="col-defined" />
+        </colgroup>
+        <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Defined By</th>
+        </tr>
+
+                                    <tr id="$bytes" class="">
+                    <td><a href="yii-mongodb-file-download.html#$bytes-detail">$bytes</a></td>
+                    <td><a href="https://www.php.net/language.types.string">string</a></td>
+                    <td>File content.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="$chunkCursor" class="">
+                    <td><a href="yii-mongodb-file-download.html#$chunkCursor-detail">$chunkCursor</a></td>
+                    <td>\MongoDB\Driver\Cursor</td>
+                    <td>Chuck list cursor.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="$chunkIterator" class="">
+                    <td><a href="yii-mongodb-file-download.html#$chunkIterator-detail">$chunkIterator</a></td>
+                    <td><a href="https://www.php.net/class.iterator">Iterator</a></td>
+                    <td>Chuck cursor iterator.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="$collection" class="">
+                    <td><a href="yii-mongodb-file-download.html#$collection-detail">$collection</a></td>
+                    <td><a href="yii-mongodb-file-collection.html">yii\mongodb\file\Collection</a></td>
+                    <td>File collection to be used.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="$document" class="">
+                    <td><a href="yii-mongodb-file-download.html#$document-detail">$document</a></td>
+                    <td><a href="https://www.php.net/language.types.array">array</a></td>
+                    <td>Document to be downloaded.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="$filename" class="">
+                    <td><a href="yii-mongodb-file-download.html#$filename-detail">$filename</a></td>
+                    <td><a href="https://www.php.net/language.types.string">string</a>|<a href="https://www.php.net/language.types.null">null</a></td>
+                    <td>File name.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="$resource" class="">
+                    <td><a href="yii-mongodb-file-download.html#$resource-detail">$resource</a></td>
+                    <td><a href="https://www.php.net/language.types.resource">resource</a></td>
+                    <td>File stream resource.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="$size" class="">
+                    <td><a href="yii-mongodb-file-download.html#$size-detail">$size</a></td>
+                    <td><a href="https://www.php.net/language.types.integer">integer</a></td>
+                    <td>File size.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                        </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="doc-method summary toggle-target-container">
+    <h2>Public Methods</h2>
+
+    <p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+        <colgroup>
+            <col class="col-method" />
+            <col class="col-description" />
+            <col class="col-defined" />
+        </colgroup>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+            <th>Defined By</th>
+        </tr>
+
+                                    <tr id="__call()" class="inherited">
+                    <td><a href="yii-mongodb-file-download.html#__call()-detail">__call()</a></td>
+                    <td>Calls the named method which is not a class method.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="__construct()" class="inherited">
+                    <td><a href="yii-mongodb-file-download.html#__construct()-detail">__construct()</a></td>
+                    <td>Constructor.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="__get()" class="inherited">
+                    <td><a href="yii-mongodb-file-download.html#__get()-detail">__get()</a></td>
+                    <td>Returns the value of an object property.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="__isset()" class="inherited">
+                    <td><a href="yii-mongodb-file-download.html#__isset()-detail">__isset()</a></td>
+                    <td>Checks if a property is set, i.e. defined and not null.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="__set()" class="inherited">
+                    <td><a href="yii-mongodb-file-download.html#__set()-detail">__set()</a></td>
+                    <td>Sets value of an object property.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="__unset()" class="inherited">
+                    <td><a href="yii-mongodb-file-download.html#__unset()-detail">__unset()</a></td>
+                    <td>Sets an object property to null.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="canGetProperty()" class="inherited">
+                    <td><a href="yii-mongodb-file-download.html#canGetProperty()-detail">canGetProperty()</a></td>
+                    <td>Returns a value indicating whether a property can be read.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="canSetProperty()" class="inherited">
+                    <td><a href="yii-mongodb-file-download.html#canSetProperty()-detail">canSetProperty()</a></td>
+                    <td>Returns a value indicating whether a property can be set.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="className()" class="inherited">
+                    <td><a href="yii-mongodb-file-download.html#className()-detail">className()</a></td>
+                    <td>Returns the fully qualified name of this class.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="getBytes()" class="">
+                    <td><a href="yii-mongodb-file-download.html#getBytes()-detail">getBytes()</a></td>
+                    <td>Alias of <a href="yii-mongodb-file-download.html#toString()-detail">toString()</a> method.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="getChunkCursor()" class="">
+                    <td><a href="yii-mongodb-file-download.html#getChunkCursor()-detail">getChunkCursor()</a></td>
+                    <td>Returns file chunks read cursor.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="getChunkIterator()" class="">
+                    <td><a href="yii-mongodb-file-download.html#getChunkIterator()-detail">getChunkIterator()</a></td>
+                    <td>Returns iterator for the file chunks cursor.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="getDocument()" class="">
+                    <td><a href="yii-mongodb-file-download.html#getDocument()-detail">getDocument()</a></td>
+                    <td></td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="getFilename()" class="">
+                    <td><a href="yii-mongodb-file-download.html#getFilename()-detail">getFilename()</a></td>
+                    <td>Returns associated file's filename.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="getResource()" class="">
+                    <td><a href="yii-mongodb-file-download.html#getResource()-detail">getResource()</a></td>
+                    <td>Returns persistent stream resource, which can be used to read file.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="getSize()" class="">
+                    <td><a href="yii-mongodb-file-download.html#getSize()-detail">getSize()</a></td>
+                    <td>Returns the size of the associated file.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="hasMethod()" class="inherited">
+                    <td><a href="yii-mongodb-file-download.html#hasMethod()-detail">hasMethod()</a></td>
+                    <td>Returns a value indicating whether a method is defined.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="hasProperty()" class="inherited">
+                    <td><a href="yii-mongodb-file-download.html#hasProperty()-detail">hasProperty()</a></td>
+                    <td>Returns a value indicating whether a property is defined.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="init()" class="inherited">
+                    <td><a href="yii-mongodb-file-download.html#init()-detail">init()</a></td>
+                    <td>Initializes the object.</td>
+                    <td><a href="yii-base-baseobject.html">yii\base\BaseObject</a></td>
+                </tr>
+                                                <tr id="setDocument()" class="">
+                    <td><a href="yii-mongodb-file-download.html#setDocument()-detail">setDocument()</a></td>
+                    <td>Sets data of the document to be downloaded.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="substr()" class="">
+                    <td><a href="yii-mongodb-file-download.html#substr()-detail">substr()</a></td>
+                    <td>Return part of a file.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="toFile()" class="">
+                    <td><a href="yii-mongodb-file-download.html#toFile()-detail">toFile()</a></td>
+                    <td>Saves download to the physical file.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="toResource()" class="">
+                    <td><a href="yii-mongodb-file-download.html#toResource()-detail">toResource()</a></td>
+                    <td>Returns an opened stream resource, which can be used to read file.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="toStream()" class="">
+                    <td><a href="yii-mongodb-file-download.html#toStream()-detail">toStream()</a></td>
+                    <td>Saves file into the given stream.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="toString()" class="">
+                    <td><a href="yii-mongodb-file-download.html#toString()-detail">toString()</a></td>
+                    <td>Returns a string of the bytes in the associated file.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                                                <tr id="write()" class="">
+                    <td><a href="yii-mongodb-file-download.html#write()-detail">write()</a></td>
+                    <td>Alias of <a href="yii-mongodb-file-download.html#toFile()-detail">toFile()</a> method.</td>
+                    <td><a href="yii-mongodb-file-download.html">yii\mongodb\file\Download</a></td>
+                </tr>
+                        </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+
+<h2>Property Details</h2>
+
+<div class="property-doc toggle-target-container">
+    <p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+            <div id="$bytes-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#$bytes-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $bytes
+                <span class="detail-header-tag small">
+                    public                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p>File content.</p>
+                            </div>
+
+            <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a></span> <a href="yii-mongodb-file-download.html#$bytes-detail">$bytes</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+            
+            
+        </div>
+            <div id="$chunkCursor-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#$chunkCursor-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $chunkCursor
+                <span class="detail-header-tag small">
+                    public                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p>Chuck list cursor.</p>
+                            </div>
+
+            <div class="signature"><span class="signature-defs">public</span> <span class="signature-type">\MongoDB\Driver\Cursor</span> <a href="yii-mongodb-file-download.html#$chunkCursor-detail">$chunkCursor</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+            
+            
+        </div>
+            <div id="$chunkIterator-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#$chunkIterator-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $chunkIterator
+                <span class="detail-header-tag small">
+                    public                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p>Chuck cursor iterator.</p>
+                            </div>
+
+            <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/class.iterator">Iterator</a></span> <a href="yii-mongodb-file-download.html#$chunkIterator-detail">$chunkIterator</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+            
+            
+        </div>
+            <div id="$collection-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#$collection-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L51" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L51" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $collection
+                <span class="detail-header-tag small">
+                    public                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p>File collection to be used.</p>
+                            </div>
+
+            <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="yii-mongodb-file-collection.html">yii\mongodb\file\Collection</a></span> <a href="yii-mongodb-file-download.html#$collection-detail">$collection</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+            
+            
+        </div>
+            <div id="$document-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#$document-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $document
+                <span class="detail-header-tag small">
+                    public                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p>Document to be downloaded. Note that the type of this property differs in getter
+and setter. See <a href="yii-mongodb-file-download.html#getDocument()-detail">getDocument()</a> and <a href="yii-mongodb-file-download.html#setDocument()-detail">setDocument()</a> for details.</p>
+                            </div>
+
+            <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.array">array</a></span> <a href="yii-mongodb-file-download.html#$document-detail">$document</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+            
+            
+        </div>
+            <div id="$filename-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#$filename-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $filename
+                <span class="detail-header-tag small">
+                    public                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p>File name.</p>
+                            </div>
+
+            <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a>|<a href="https://www.php.net/language.types.null">null</a></span> <a href="yii-mongodb-file-download.html#$filename-detail">$filename</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+            
+            
+        </div>
+            <div id="$resource-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#$resource-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $resource
+                <span class="detail-header-tag small">
+                    public                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p>File stream resource.</p>
+                            </div>
+
+            <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.resource">resource</a></span> <a href="yii-mongodb-file-download.html#$resource-detail">$resource</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+            
+            
+        </div>
+            <div id="$size-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#$size-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $size
+                <span class="detail-header-tag small">
+                    public                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p>File size.</p>
+                            </div>
+
+            <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.integer">integer</a></span> <a href="yii-mongodb-file-download.html#$size-detail">$size</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+            
+            
+        </div>
+    </div>
+
+<h2>Method Details</h2>
+
+<div class="method-doc toggle-target-container">
+    <p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+            <div id="__call()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#__call()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L221" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L221" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                __call()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#__call()-detail">yii\base\BaseObject::__call()</a>                    </p>
+                
+                <p><strong>Calls the named method which is not a class method.</strong></p>
+                <p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when an unknown method is being invoked.</p>
+                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="yii-base-baseobject.html#__call()-detail">__call</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$params</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The method name</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.array">array</a></td>
+                            <td class="param-desc-col">
+                               <p>Method parameters</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col">mixed</td>
+                            <td class="param-desc-col">
+                                <p>The method return value</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-unknownmethodexception.html">yii\base\UnknownMethodException</a></td>
+                            <td class="param-desc-col">
+                                <p>when calling unknown method</p>
+                            </td>
+                        </tr>
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapse__call" role="button"
+           aria-expanded="false" aria-controls="collapse__call">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapse__call">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__call</span><span class="hljs-params">($name, $params)</span>
+</span>{
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UnknownMethodException(<span class="hljs-string">'Calling unknown method: '</span> . get_class(<span class="hljs-keyword">$this</span>) . <span class="hljs-string">"::$name()"</span>);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="__construct()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#__construct()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L105" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L105" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                __construct()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#__construct()-detail">yii\base\BaseObject::__construct()</a>                    </p>
+                
+                <p><strong>Constructor.</strong></p>
+                <p>The default implementation does two things:</p>
+<ul>
+<li>Initializes the object with the given configuration <code>$config</code>.</li>
+<li>Call <a href="yii-base-baseobject.html#init()-detail">init()</a>.</li>
+</ul>
+<p>If this method is overridden in a child class, it is recommended that</p>
+<ul>
+<li>the last parameter of the constructor is a configuration array, like <code>$config</code> here.</li>
+<li>call the parent implementation at the end of the constructor.</li>
+</ul>
+                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-base-baseobject.html#__construct()-detail">__construct</a></strong> ( <span style="color: #0000BB">$config&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$config</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.array">array</a></td>
+                            <td class="param-desc-col">
+                               <p>Name-value pairs that will be used to initialize the object properties</p>
+                            </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapse__construct" role="button"
+           aria-expanded="false" aria-controls="collapse__construct">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapse__construct">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($config = [])</span>
+</span>{
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">empty</span>($config)) {
+        Yii::configure(<span class="hljs-keyword">$this</span>, $config);
+    }
+    <span class="hljs-keyword">$this</span>-&gt;init();
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="__get()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#__get()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L133" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L133" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                __get()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#__get()-detail">yii\base\BaseObject::__get()</a>                    </p>
+                
+                <p><strong>Returns the value of an object property.</strong></p>
+                <p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>$value = $object-&gt;property;</code>.</p>
+                <p>See also <a href="yii-base-baseobject.html#__set()-detail">__set()</a>.</p>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="yii-base-baseobject.html#__get()-detail">__get</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col">mixed</td>
+                            <td class="param-desc-col">
+                                <p>The property value</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-unknownpropertyexception.html">yii\base\UnknownPropertyException</a></td>
+                            <td class="param-desc-col">
+                                <p>if the property is not defined</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-invalidcallexception.html">yii\base\InvalidCallException</a></td>
+                            <td class="param-desc-col">
+                                <p>if the property is write-only</p>
+                            </td>
+                        </tr>
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapse__get" role="button"
+           aria-expanded="false" aria-controls="collapse__get">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapse__get">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__get</span><span class="hljs-params">($name)</span>
+</span>{
+    $getter = <span class="hljs-string">'get'</span> . $name;
+    <span class="hljs-keyword">if</span> (method_exists(<span class="hljs-keyword">$this</span>, $getter)) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;$getter();
+    } <span class="hljs-keyword">elseif</span> (method_exists(<span class="hljs-keyword">$this</span>, <span class="hljs-string">'set'</span> . $name)) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InvalidCallException(<span class="hljs-string">'Getting write-only property: '</span> . get_class(<span class="hljs-keyword">$this</span>) . <span class="hljs-string">'::'</span> . $name);
+    }
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UnknownPropertyException(<span class="hljs-string">'Getting unknown property: '</span> . get_class(<span class="hljs-keyword">$this</span>) . <span class="hljs-string">'::'</span> . $name);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="__isset()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#__isset()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L179" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L179" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                __isset()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#__isset()-detail">yii\base\BaseObject::__isset()</a>                    </p>
+                
+                <p><strong>Checks if a property is set, i.e. defined and not null.</strong></p>
+                <p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>isset($object-&gt;property)</code>.</p>
+<p>Note that if the property is not defined, false will be returned.</p>
+                <p>See also <a href="https://www.php.net/manual/en/function.isset.php">https://www.php.net/manual/en/function.isset.php</a>.</p>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-base-baseobject.html#__isset()-detail">__isset</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name or the event name</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                                <p>Whether the named property is set (not null).</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapse__isset" role="button"
+           aria-expanded="false" aria-controls="collapse__isset">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapse__isset">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__isset</span><span class="hljs-params">($name)</span>
+</span>{
+    $getter = <span class="hljs-string">'get'</span> . $name;
+    <span class="hljs-keyword">if</span> (method_exists(<span class="hljs-keyword">$this</span>, $getter)) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;$getter() !== <span class="hljs-keyword">null</span>;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="__set()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#__set()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L156" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L156" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                __set()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#__set()-detail">yii\base\BaseObject::__set()</a>                    </p>
+                
+                <p><strong>Sets value of an object property.</strong></p>
+                <p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>$object-&gt;property = $value;</code>.</p>
+                <p>See also <a href="yii-base-baseobject.html#__get()-detail">__get()</a>.</p>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-base-baseobject.html#__set()-detail">__set</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$value</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name or the event name</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$value</span></td>
+                            <td class="param-type-col">mixed</td>
+                            <td class="param-desc-col">
+                               <p>The property value</p>
+                            </td>
+                        </tr>
+                    
+                    
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-unknownpropertyexception.html">yii\base\UnknownPropertyException</a></td>
+                            <td class="param-desc-col">
+                                <p>if the property is not defined</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-invalidcallexception.html">yii\base\InvalidCallException</a></td>
+                            <td class="param-desc-col">
+                                <p>if the property is read-only</p>
+                            </td>
+                        </tr>
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapse__set" role="button"
+           aria-expanded="false" aria-controls="collapse__set">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapse__set">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__set</span><span class="hljs-params">($name, $value)</span>
+</span>{
+    $setter = <span class="hljs-string">'set'</span> . $name;
+    <span class="hljs-keyword">if</span> (method_exists(<span class="hljs-keyword">$this</span>, $setter)) {
+        <span class="hljs-keyword">$this</span>-&gt;$setter($value);
+    } <span class="hljs-keyword">elseif</span> (method_exists(<span class="hljs-keyword">$this</span>, <span class="hljs-string">'get'</span> . $name)) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InvalidCallException(<span class="hljs-string">'Setting read-only property: '</span> . get_class(<span class="hljs-keyword">$this</span>) . <span class="hljs-string">'::'</span> . $name);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UnknownPropertyException(<span class="hljs-string">'Setting unknown property: '</span> . get_class(<span class="hljs-keyword">$this</span>) . <span class="hljs-string">'::'</span> . $name);
+    }
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="__unset()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#__unset()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L201" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L201" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                __unset()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#__unset()-detail">yii\base\BaseObject::__unset()</a>                    </p>
+                
+                <p><strong>Sets an object property to null.</strong></p>
+                <p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>unset($object-&gt;property)</code>.</p>
+<p>Note that if the property is not defined, this method will do nothing.
+If the property is read-only, it will throw an exception.</p>
+                <p>See also <a href="https://www.php.net/manual/en/function.unset.php">https://www.php.net/manual/en/function.unset.php</a>.</p>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-base-baseobject.html#__unset()-detail">__unset</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name</p>
+                            </td>
+                        </tr>
+                    
+                    
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-invalidcallexception.html">yii\base\InvalidCallException</a></td>
+                            <td class="param-desc-col">
+                                <p>if the property is read only.</p>
+                            </td>
+                        </tr>
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapse__unset" role="button"
+           aria-expanded="false" aria-controls="collapse__unset">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapse__unset">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__unset</span><span class="hljs-params">($name)</span>
+</span>{
+    $setter = <span class="hljs-string">'set'</span> . $name;
+    <span class="hljs-keyword">if</span> (method_exists(<span class="hljs-keyword">$this</span>, $setter)) {
+        <span class="hljs-keyword">$this</span>-&gt;$setter(<span class="hljs-keyword">null</span>);
+    } <span class="hljs-keyword">elseif</span> (method_exists(<span class="hljs-keyword">$this</span>, <span class="hljs-string">'get'</span> . $name)) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InvalidCallException(<span class="hljs-string">'Unsetting read-only property: '</span> . get_class(<span class="hljs-keyword">$this</span>) . <span class="hljs-string">'::'</span> . $name);
+    }
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="canGetProperty()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#canGetProperty()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L260" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L260" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                canGetProperty()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#canGetProperty()-detail">yii\base\BaseObject::canGetProperty()</a>                    </p>
+                
+                <p><strong>Returns a value indicating whether a property can be read.</strong></p>
+                <p>A property is readable if:</p>
+<ul>
+<li>the class has a getter method associated with the specified name
+(in this case, property name is case-insensitive);</li>
+<li>the class has a member variable with the specified name (when <code>$checkVars</code> is true);</li>
+</ul>
+                <p>See also <a href="yii-base-baseobject.html#canSetProperty()-detail">canSetProperty()</a>.</p>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-base-baseobject.html#canGetProperty()-detail">canGetProperty</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$checkVars&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$checkVars</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                               <p>Whether to treat member variables as properties</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                                <p>Whether the property can be read</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseCanGetProperty" role="button"
+           aria-expanded="false" aria-controls="collapseCanGetProperty">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseCanGetProperty">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">canGetProperty</span><span class="hljs-params">($name, $checkVars = true)</span>
+</span>{
+    <span class="hljs-keyword">return</span> method_exists(<span class="hljs-keyword">$this</span>, <span class="hljs-string">'get'</span> . $name) || $checkVars &amp;&amp; property_exists(<span class="hljs-keyword">$this</span>, $name);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="canSetProperty()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#canSetProperty()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L279" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L279" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                canSetProperty()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#canSetProperty()-detail">yii\base\BaseObject::canSetProperty()</a>                    </p>
+                
+                <p><strong>Returns a value indicating whether a property can be set.</strong></p>
+                <p>A property is writable if:</p>
+<ul>
+<li>the class has a setter method associated with the specified name
+(in this case, property name is case-insensitive);</li>
+<li>the class has a member variable with the specified name (when <code>$checkVars</code> is true);</li>
+</ul>
+                <p>See also <a href="yii-base-baseobject.html#canGetProperty()-detail">canGetProperty()</a>.</p>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-base-baseobject.html#canSetProperty()-detail">canSetProperty</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$checkVars&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$checkVars</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                               <p>Whether to treat member variables as properties</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                                <p>Whether the property can be written</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseCanSetProperty" role="button"
+           aria-expanded="false" aria-controls="collapseCanSetProperty">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseCanSetProperty">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">canSetProperty</span><span class="hljs-params">($name, $checkVars = true)</span>
+</span>{
+    <span class="hljs-keyword">return</span> method_exists(<span class="hljs-keyword">$this</span>, <span class="hljs-string">'set'</span> . $name) || $checkVars &amp;&amp; property_exists(<span class="hljs-keyword">$this</span>, $name);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="className()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#className()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L85" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L85" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                className()
+
+                <span class="detail-header-tag small">
+                    public                                        static                    method
+                                    </span>
+            </div>
+
+                            <div class="doc-description deprecated">
+                    <strong>
+                        Deprecated
+
+                        since 2.0.14. On PHP &gt;=5.5, use <code>::class</code> instead.                    </strong>
+                </div>
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#className()-detail">yii\base\BaseObject::className()</a>                    </p>
+                
+                <p><strong>Returns the fully qualified name of this class.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a></span> <strong><a href="yii-base-baseobject.html#className()-detail">className</a></strong> ( )</td></tr>
+
+                                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                                <p>The fully qualified name of this class.</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseClassName" role="button"
+           aria-expanded="false" aria-controls="collapseClassName">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseClassName">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">className</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> get_called_class();
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="getBytes()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#getBytes()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L293" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L293" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                getBytes()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Alias of <a href="yii-mongodb-file-download.html#toString()-detail">toString()</a> method.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a></span> <strong><a href="yii-mongodb-file-download.html#getBytes()-detail">getBytes</a></strong> ( )</td></tr>
+
+                                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                                <p>File content.</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseGetBytes" role="button"
+           aria-expanded="false" aria-controls="collapseGetBytes">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseGetBytes">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBytes</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;toString();
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="getChunkCursor()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#getChunkCursor()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L128" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L128" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                getChunkCursor()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Returns file chunks read cursor.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">\MongoDB\Driver\Cursor</span> <strong><a href="yii-mongodb-file-download.html#getChunkCursor()-detail">getChunkCursor</a></strong> ( <span style="color: #0000BB">$refresh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$refresh</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                               <p>Whether to recreate cursor, if it is already exist.</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col">\MongoDB\Driver\Cursor</td>
+                            <td class="param-desc-col">
+                                <p>Chuck list cursor.</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+                            <td class="param-desc-col">
+                                                            </td>
+                        </tr>
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseGetChunkCursor" role="button"
+           aria-expanded="false" aria-controls="collapseGetChunkCursor">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseGetChunkCursor">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getChunkCursor</span><span class="hljs-params">($refresh = false)</span>
+</span>{
+    <span class="hljs-keyword">if</span> ($refresh || <span class="hljs-keyword">$this</span>-&gt;_chunkCursor === <span class="hljs-keyword">null</span>) {
+        $file = <span class="hljs-keyword">$this</span>-&gt;getDocument();
+        <span class="hljs-keyword">$this</span>-&gt;_chunkCursor = <span class="hljs-keyword">$this</span>-&gt;collection-&gt;getChunkCollection()-&gt;find(
+            [<span class="hljs-string">'files_id'</span> =&gt; $file[<span class="hljs-string">'_id'</span>]],
+            [],
+            [<span class="hljs-string">'sort'</span> =&gt; [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">1</span>]]
+        );
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;_chunkCursor;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="getChunkIterator()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#getChunkIterator()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L146" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L146" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                getChunkIterator()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Returns iterator for the file chunks cursor.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/class.iterator">Iterator</a></span> <strong><a href="yii-mongodb-file-download.html#getChunkIterator()-detail">getChunkIterator</a></strong> ( <span style="color: #0000BB">$refresh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$refresh</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                               <p>Whether to recreate iterator, if it is already exist.</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/class.iterator">Iterator</a></td>
+                            <td class="param-desc-col">
+                                <p>Chuck cursor iterator.</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseGetChunkIterator" role="button"
+           aria-expanded="false" aria-controls="collapseGetChunkIterator">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseGetChunkIterator">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getChunkIterator</span><span class="hljs-params">($refresh = false)</span>
+</span>{
+    <span class="hljs-keyword">if</span> ($refresh || <span class="hljs-keyword">$this</span>-&gt;_chunkIterator === <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">$this</span>-&gt;_chunkIterator = <span class="hljs-keyword">new</span> \IteratorIterator(<span class="hljs-keyword">$this</span>-&gt;getChunkCursor($refresh));
+        <span class="hljs-keyword">$this</span>-&gt;_chunkIterator-&gt;rewind();
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;_chunkIterator;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="getDocument()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#getDocument()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L75" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L75" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                getDocument()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong></strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.array">array</a></span> <strong><a href="yii-mongodb-file-download.html#getDocument()-detail">getDocument</a></strong> ( )</td></tr>
+
+                                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.array">array</a></td>
+                            <td class="param-desc-col">
+                                <p>Document to be downloaded.</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-base-invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+                            <td class="param-desc-col">
+                                <p>on invalid document configuration.</p>
+                            </td>
+                        </tr>
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseGetDocument" role="button"
+           aria-expanded="false" aria-controls="collapseGetDocument">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseGetDocument">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDocument</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">if</span> (!is_array(<span class="hljs-keyword">$this</span>-&gt;_document)) {
+        <span class="hljs-keyword">if</span> (is_scalar(<span class="hljs-keyword">$this</span>-&gt;_document) || <span class="hljs-keyword">$this</span>-&gt;_document <span class="hljs-keyword">instanceof</span> ObjectID) {
+            $document = <span class="hljs-keyword">$this</span>-&gt;collection-&gt;findOne([<span class="hljs-string">'_id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;_document]);
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">empty</span>($document)) {
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InvalidConfigException(<span class="hljs-string">'Document id='</span> . <span class="hljs-keyword">$this</span>-&gt;_document . <span class="hljs-string">' does not exist at collection "'</span> . <span class="hljs-keyword">$this</span>-&gt;collection-&gt;getFullName() . <span class="hljs-string">'"'</span>);
+            }
+            <span class="hljs-keyword">$this</span>-&gt;_document = $document;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">$this</span>-&gt;_document = (<span class="hljs-keyword">array</span>)<span class="hljs-keyword">$this</span>-&gt;_document;
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;_document;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="getFilename()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#getFilename()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L116" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L116" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                getFilename()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Returns associated file's filename.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a>|<a href="https://www.php.net/language.types.null">null</a></span> <strong><a href="yii-mongodb-file-download.html#getFilename()-detail">getFilename</a></strong> ( )</td></tr>
+
+                                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a>|<a href="https://www.php.net/language.types.null">null</a></td>
+                            <td class="param-desc-col">
+                                <p>File name.</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseGetFilename" role="button"
+           aria-expanded="false" aria-controls="collapseGetFilename">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseGetFilename">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFilename</span><span class="hljs-params">()</span>
+</span>{
+    $document = <span class="hljs-keyword">$this</span>-&gt;getDocument();
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">isset</span>($document[<span class="hljs-string">'filename'</span>]) ? $document[<span class="hljs-string">'filename'</span>] : <span class="hljs-keyword">null</span>;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="getResource()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#getResource()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L312" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L312" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                getResource()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Returns persistent stream resource, which can be used to read file.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.resource">resource</a></span> <strong><a href="yii-mongodb-file-download.html#getResource()-detail">getResource</a></strong> ( )</td></tr>
+
+                                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.resource">resource</a></td>
+                            <td class="param-desc-col">
+                                <p>File stream resource.</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseGetResource" role="button"
+           aria-expanded="false" aria-controls="collapseGetResource">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseGetResource">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getResource</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;_resource === <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">$this</span>-&gt;_resource = <span class="hljs-keyword">$this</span>-&gt;toResource();
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;_resource;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="getSize()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#getSize()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L106" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L106" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                getSize()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Returns the size of the associated file.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.integer">integer</a></span> <strong><a href="yii-mongodb-file-download.html#getSize()-detail">getSize</a></strong> ( )</td></tr>
+
+                                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.integer">integer</a></td>
+                            <td class="param-desc-col">
+                                <p>File size.</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseGetSize" role="button"
+           aria-expanded="false" aria-controls="collapseGetSize">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseGetSize">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSize</span><span class="hljs-params">()</span>
+</span>{
+    $document = <span class="hljs-keyword">$this</span>-&gt;getDocument();
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">isset</span>($document[<span class="hljs-string">'length'</span>]) ? $document[<span class="hljs-string">'length'</span>] : <span class="hljs-number">0</span>;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="hasMethod()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#hasMethod()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L292" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L292" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                hasMethod()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#hasMethod()-detail">yii\base\BaseObject::hasMethod()</a>                    </p>
+                
+                <p><strong>Returns a value indicating whether a method is defined.</strong></p>
+                <p>The default implementation is a call to php function <code>method_exists()</code>.
+You may override this method when you implemented the php magic method <code>__call()</code>.</p>
+                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-base-baseobject.html#hasMethod()-detail">hasMethod</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The method name</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                                <p>Whether the method is defined</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseHasMethod" role="button"
+           aria-expanded="false" aria-controls="collapseHasMethod">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseHasMethod">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasMethod</span><span class="hljs-params">($name)</span>
+</span>{
+    <span class="hljs-keyword">return</span> method_exists(<span class="hljs-keyword">$this</span>, $name);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="hasProperty()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#hasProperty()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L241" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L241" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                hasProperty()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#hasProperty()-detail">yii\base\BaseObject::hasProperty()</a>                    </p>
+                
+                <p><strong>Returns a value indicating whether a property is defined.</strong></p>
+                <p>A property is defined if:</p>
+<ul>
+<li>the class has a getter or setter method associated with the specified name
+(in this case, property name is case-insensitive);</li>
+<li>the class has a member variable with the specified name (when <code>$checkVars</code> is true);</li>
+</ul>
+                <p>See also:</p><ul><li><a href="yii-base-baseobject.html#canGetProperty()-detail">canGetProperty()</a></li><li><a href="yii-base-baseobject.html#canSetProperty()-detail">canSetProperty()</a></li></ul>            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="yii-base-baseobject.html#hasProperty()-detail">hasProperty</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$checkVars&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>The property name</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$checkVars</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                               <p>Whether to treat member variables as properties</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                                <p>Whether the property is defined</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseHasProperty" role="button"
+           aria-expanded="false" aria-controls="collapseHasProperty">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseHasProperty">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasProperty</span><span class="hljs-params">($name, $checkVars = true)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;canGetProperty($name, $checkVars) || <span class="hljs-keyword">$this</span>-&gt;canSetProperty($name, <span class="hljs-keyword">false</span>);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="init()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#init()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2/edit/master/framework/base/BaseObject.php#L118" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2/blob/master/framework/base/BaseObject.php#L118" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                init()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-base-baseobject.html#init()-detail">yii\base\BaseObject::init()</a>                    </p>
+                
+                <p><strong>Initializes the object.</strong></p>
+                <p>This method is invoked at the end of the constructor after the object is initialized with the
+given configuration.</p>
+                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-base-baseobject.html#init()-detail">init</a></strong> ( )</td></tr>
+
+                            </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseInit" role="button"
+           aria-expanded="false" aria-controls="collapseInit">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseInit">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+</span>{
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="setDocument()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#setDocument()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L97" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L97" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                setDocument()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Sets data of the document to be downloaded.</strong></p>
+                <p>Document can be specified by its ID, in this case its data will be fetched automatically
+via extra query.</p>
+                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-mongodb-file-download.html#setDocument()-detail">setDocument</a></strong> ( <span style="color: #0000BB">$document</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$document</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.array">array</a>|\MongoDB\BSON\ObjectID</td>
+                            <td class="param-desc-col">
+                               <p>Document raw data or document ID.</p>
+                            </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseSetDocument" role="button"
+           aria-expanded="false" aria-controls="collapseSetDocument">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseSetDocument">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setDocument</span><span class="hljs-params">($document)</span>
+</span>{
+    <span class="hljs-keyword">$this</span>-&gt;_document = $document;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="substr()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#substr()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L224" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L224" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                substr()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Return part of a file.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a>|<a href="https://www.php.net/language.types.boolean">false</a></span> <strong><a href="yii-mongodb-file-download.html#substr()-detail">substr</a></strong> ( <span style="color: #0000BB">$start</span>, <span style="color: #0000BB">$length</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$start</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.integer">integer</a></td>
+                            <td class="param-desc-col">
+                               <p>Reading start position.
+If non-negative, the returned string will start at the start'th position in file, counting from zero.
+If negative, the returned string will start at the start'th character from the end of file.</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$length</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.integer">integer</a></td>
+                            <td class="param-desc-col">
+                               <p>Number of bytes to read.
+If given and is positive, the string returned will contain at most length characters beginning from start (depending on the length of file).
+If given and is negative, then that many characters will be omitted from the end of file (after the start position has been calculated when a start is negative).</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a>|<a href="https://www.php.net/language.types.boolean">false</a></td>
+                            <td class="param-desc-col">
+                                <p>The extracted part of file or <code>false</code> on failure</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseSubstr" role="button"
+           aria-expanded="false" aria-controls="collapseSubstr">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseSubstr">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">substr</span><span class="hljs-params">($start, $length)</span>
+</span>{
+    $document = <span class="hljs-keyword">$this</span>-&gt;getDocument();
+    <span class="hljs-keyword">if</span> ($start &lt; <span class="hljs-number">0</span>) {
+        $start = max($document[<span class="hljs-string">'length'</span>] + $start, <span class="hljs-number">0</span>);
+    }
+    <span class="hljs-keyword">if</span> ($start &gt; $document[<span class="hljs-string">'length'</span>]) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+    <span class="hljs-keyword">if</span> ($length &lt; <span class="hljs-number">0</span>) {
+        $length = $document[<span class="hljs-string">'length'</span>] - $start + $length;
+        <span class="hljs-keyword">if</span> ($length &lt; <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        }
+    }
+    $chunkSize = $document[<span class="hljs-string">'chunkSize'</span>];
+    $startChunkNumber = floor($start / $chunkSize);
+    $chunkIterator = <span class="hljs-keyword">$this</span>-&gt;getChunkIterator();
+    <span class="hljs-keyword">if</span> (!$chunkIterator-&gt;valid()) {
+        <span class="hljs-comment">// invalid iterator state - recreate iterator</span>
+        <span class="hljs-comment">// unable to use `rewind` due to error "Cursors cannot rewind after starting iteration"</span>
+        $chunkIterator = <span class="hljs-keyword">$this</span>-&gt;getChunkIterator(<span class="hljs-keyword">true</span>);
+    }
+    <span class="hljs-keyword">if</span> ($chunkIterator-&gt;key() &gt; $startChunkNumber) {
+        <span class="hljs-comment">// unable to go back by iterator</span>
+        <span class="hljs-comment">// unable to use `rewind` due to error "Cursors cannot rewind after starting iteration"</span>
+        $chunkIterator = <span class="hljs-keyword">$this</span>-&gt;getChunkIterator(<span class="hljs-keyword">true</span>);
+    }
+    $result = <span class="hljs-string">''</span>;
+    $chunkDataOffset = $start - $startChunkNumber * $chunkSize;
+    <span class="hljs-keyword">while</span> ($chunkIterator-&gt;valid()) {
+        <span class="hljs-keyword">if</span> ($chunkIterator-&gt;key() &gt;= $startChunkNumber) {
+            $chunk = $chunkIterator-&gt;current();
+            $data = $chunk[<span class="hljs-string">'data'</span>]-&gt;getData();
+            $readLength = min($chunkSize - $chunkDataOffset, $length);
+            $result .= StringHelper::byteSubstr($data, $chunkDataOffset, $readLength);
+            $length -= $readLength;
+            <span class="hljs-keyword">if</span> ($length &lt;= <span class="hljs-number">0</span>) {
+                <span class="hljs-keyword">break</span>;
+            }
+            $chunkDataOffset = <span class="hljs-number">0</span>;
+        }
+        $chunkIterator-&gt;next();
+    }
+    <span class="hljs-keyword">return</span> $result;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="toFile()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#toFile()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L174" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L174" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                toFile()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Saves download to the physical file.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.integer">integer</a></span> <strong><a href="yii-mongodb-file-download.html#toFile()-detail">toFile</a></strong> ( <span style="color: #0000BB">$filename</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$filename</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>Name of the physical file.</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.integer">integer</a></td>
+                            <td class="param-desc-col">
+                                <p>Number of written bytes.</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseToFile" role="button"
+           aria-expanded="false" aria-controls="collapseToFile">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseToFile">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toFile</span><span class="hljs-params">($filename)</span>
+</span>{
+    $filename = Yii::getAlias($filename);
+    FileHelper::createDirectory(dirname($filename));
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;toStream(fopen($filename, <span class="hljs-string">'w+'</span>));
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="toResource()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#toResource()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L199" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L199" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                toResource()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Returns an opened stream resource, which can be used to read file.</strong></p>
+                <p>Note: each invocation of this method will create new file resource.</p>
+                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.resource">resource</a></span> <strong><a href="yii-mongodb-file-download.html#toResource()-detail">toResource</a></strong> ( )</td></tr>
+
+                                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.resource">resource</a></td>
+                            <td class="param-desc-col">
+                                <p>Stream resource.</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseToResource" role="button"
+           aria-expanded="false" aria-controls="collapseToResource">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseToResource">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toResource</span><span class="hljs-params">()</span>
+</span>{
+    $protocol = <span class="hljs-keyword">$this</span>-&gt;collection-&gt;database-&gt;connection-&gt;registerFileStreamWrapper();
+    $context = stream_context_create([
+        $protocol =&gt; [
+            <span class="hljs-string">'download'</span> =&gt; <span class="hljs-keyword">$this</span>,
+        ]
+    ]);
+    $document = <span class="hljs-keyword">$this</span>-&gt;getDocument();
+    $url = <span class="hljs-string">"{$protocol}://{$this-&gt;collection-&gt;database-&gt;name}.{$this-&gt;collection-&gt;prefix}?_id={$document['_id']}"</span>;
+    <span class="hljs-keyword">return</span> fopen($url, <span class="hljs-string">'r'</span>, <span class="hljs-keyword">false</span>, $context);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="toStream()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#toStream()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L160" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L160" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                toStream()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Saves file into the given stream.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.integer">integer</a></span> <strong><a href="yii-mongodb-file-download.html#toStream()-detail">toStream</a></strong> ( <span style="color: #0000BB">$stream</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$stream</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.resource">resource</a></td>
+                            <td class="param-desc-col">
+                               <p>Stream, which file should be saved to.</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.integer">integer</a></td>
+                            <td class="param-desc-col">
+                                <p>Number of written bytes.</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseToStream" role="button"
+           aria-expanded="false" aria-controls="collapseToStream">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseToStream">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toStream</span><span class="hljs-params">($stream)</span>
+</span>{
+    $bytesWritten = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">$this</span>-&gt;getChunkCursor() <span class="hljs-keyword">as</span> $chunk) {
+        $bytesWritten += fwrite($stream, $chunk[<span class="hljs-string">'data'</span>]-&gt;getData());
+    }
+    <span class="hljs-keyword">return</span> $bytesWritten;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="toString()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#toString()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L185" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L185" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                toString()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Returns a string of the bytes in the associated file.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a></span> <strong><a href="yii-mongodb-file-download.html#toString()-detail">toString</a></strong> ( )</td></tr>
+
+                                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                                <p>File content.</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseToString" role="button"
+           aria-expanded="false" aria-controls="collapseToString">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseToString">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toString</span><span class="hljs-params">()</span>
+</span>{
+    $result = <span class="hljs-string">''</span>;
+    <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">$this</span>-&gt;getChunkCursor() <span class="hljs-keyword">as</span> $chunk) {
+        $result .= $chunk[<span class="hljs-string">'data'</span>]-&gt;getData();
+    }
+    <span class="hljs-keyword">return</span> $result;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="write()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-mongodb-file-download.html#write()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-mongodb/edit/master/file/Download.php#L303" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-mongodb/blob/master/file/Download.php#L303" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                write()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Alias of <a href="yii-mongodb-file-download.html#toFile()-detail">toFile()</a> method.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.integer">integer</a></span> <strong><a href="yii-mongodb-file-download.html#write()-detail">write</a></strong> ( <span style="color: #0000BB">$filename</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$filename</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>Name of the physical file.</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.integer">integer</a></td>
+                            <td class="param-desc-col">
+                                <p>Number of written bytes.</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseWrite" role="button"
+           aria-expanded="false" aria-controls="collapseWrite">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseWrite">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">write</span><span class="hljs-params">($filename)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;toFile($filename);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+    </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $('a.toggle').on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents('.toggle-target-container').find('.inherited').show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents('.toggle-target-container').find('.inherited').hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:45 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

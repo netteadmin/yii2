@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>数据库迁移（Migrations） - 配合数据库工作（Working with Databases） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1821" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1821-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1821-collapse" class="collapse navbar-collapse"><ul id="w1822" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1823" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1805" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1805" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1806" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1806" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1807" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1807" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1808" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1808" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1809" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1809" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item active" href="#navigation-1810" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1810" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item active" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1811" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1811" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1812" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1812" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1813" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1813" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1814" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1814" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1815" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1815" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1816" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1816" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1817" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1817" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1818" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1818" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1819" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1819" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1820" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1820" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>&#25968;&#25454;&#24211;&#36801;&#31227; <span id="shu-ju-ku-qian-yi"></span><a href="#shu-ju-ku-qian-yi" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#creating-migrations">&#21019;&#24314;&#36801;&#31227;</a></li>
+<li><a href="#generating-migrations">&#29983;&#25104;&#36801;&#31227;</a></li>
+<li><a href="#applying-migrations">&#25552;&#20132;&#36801;&#31227;</a></li>
+<li><a href="#reverting-migrations">&#36824;&#21407;&#36801;&#31227;</a></li>
+<li><a href="#redoing-migrations">&#37325;&#20570;&#36801;&#31227;</a></li>
+<li><a href="#refreshing-migrations">&#21047;&#26032;&#36801;&#31227;</a></li>
+<li><a href="#listing-migrations">&#21015;&#20986;&#36801;&#31227;</a></li>
+<li><a href="#modifying-migration-history">&#20462;&#25913;&#36801;&#31227;&#21382;&#21490;</a></li>
+<li><a href="#customizing-migrations">&#33258;&#23450;&#20041;&#36801;&#31227;</a></li>
+<li><a href="#migrating-multiple-databases">&#36801;&#31227;&#22810;&#20010;&#25968;&#25454;&#24211;</a></li></ol></div>
+<p>&#22312;&#24320;&#21457;&#21644;&#32500;&#25252;&#19968;&#20010;&#25968;&#25454;&#24211;&#39537;&#21160;&#30340;&#24212;&#29992;&#31243;&#24207;&#26102;&#65292;
+&#25968;&#25454;&#24211;&#30340;&#32467;&#26500;&#20250;&#20687;&#20195;&#30721;&#19968;&#26679;&#19981;&#26029;&#28436;&#21464;&#12290;
+&#20363;&#22914;&#65292;&#22312;&#24320;&#21457;&#24212;&#29992;&#31243;&#24207;&#30340;&#36807;&#31243;&#20013;&#65292;&#20250;&#22686;&#21152;&#19968;&#24352;&#26032;&#34920;&#19988;&#24517;&#39035;&#24471;&#21152;&#36827;&#26469;&#65307;
+&#22312;&#24212;&#29992;&#31243;&#24207;&#34987;&#37096;&#32626;&#21040;&#29983;&#20135;&#29615;&#22659;&#21518;&#65292;&#38656;&#35201;&#24314;&#31435;&#19968;&#20010;&#32034;&#24341;&#26469;&#25552;&#39640;&#26597;&#35810;&#30340;&#24615;&#33021;&#31561;&#31561;&#12290;
+&#22240;&#20026;&#19968;&#20010;&#25968;&#25454;&#24211;&#32467;&#26500;&#21457;&#29983;&#25913;&#21464;&#30340;&#26102;&#20505;&#28304;&#20195;&#30721;&#20063;&#32463;&#24120;&#20250;&#38656;&#35201;&#20570;&#20986;&#25913;&#21464;&#65292;
+Yii &#25552;&#20379;&#20102;&#19968;&#20010; <em>&#25968;&#25454;&#24211;&#36801;&#31227;</em> &#21151;&#33021;&#65292;&#35813;&#21151;&#33021;&#21487;&#20197;&#35760;&#24405;&#25968;&#25454;&#24211;&#30340;&#21464;&#21270;&#65292;
+&#20197;&#20415;&#20351;&#25968;&#25454;&#24211;&#21644;&#28304;&#20195;&#30721;&#19968;&#36215;&#21463;&#29256;&#26412;&#25511;&#21046;&#12290;</p>
+<p>&#22914;&#19979;&#30340;&#27493;&#39588;&#21521;&#25105;&#20204;&#23637;&#31034;&#20102;&#25968;&#25454;&#24211;&#36801;&#31227;&#24037;&#20855;&#26159;&#22914;&#20309;&#20026;&#24320;&#21457;&#22242;&#38431;&#25152;&#20351;&#29992;&#30340;&#65306;</p>
+<ol>
+<li>Tim &#21019;&#24314;&#20102;&#19968;&#20010;&#26032;&#30340;&#36801;&#31227;&#23545;&#35937;&#65288;&#20363;&#22914;&#65292;&#21019;&#24314;&#19968;&#24352;&#26032;&#34920;&#65292;&#25913;&#21464;&#23383;&#27573;&#30340;&#23450;&#20041;&#31561;&#65289;&#12290;</li>
+<li>Tim &#23558;&#36825;&#20010;&#26032;&#30340;&#36801;&#31227;&#23545;&#35937;&#25552;&#20132;&#21040;&#20195;&#30721;&#31649;&#29702;&#31995;&#32479;&#65288;&#20363;&#22914;&#65292;Git&#65292;Mercurial&#65289;&#12290;</li>
+<li>Doug &#20174;&#20195;&#30721;&#31649;&#29702;&#31995;&#32479;&#24403;&#20013;&#26356;&#26032;&#29256;&#26412;&#24182;&#33719;&#21462;&#21040;&#36825;&#20010;&#26032;&#30340;&#36801;&#31227;&#23545;&#35937;&#12290;</li>
+<li>Doug &#25226;&#36825;&#20010;&#36801;&#31227;&#23545;&#35937;&#25552;&#20132;&#21040;&#26412;&#22320;&#30340;&#24320;&#21457;&#25968;&#25454;&#24211;&#24403;&#20013;&#65292;
+&#36825;&#26679;&#19968;&#26469;&#65292;Doug &#21516;&#27493;&#20102; Tim &#25152;&#20570;&#30340;&#20462;&#25913;&#12290;</li>
+</ol>
+<p>&#22914;&#19979;&#30340;&#27493;&#39588;&#21521;&#25105;&#20204;&#23637;&#31034;&#20102;&#22914;&#20309;&#21457;&#24067;&#19968;&#20010;&#38468;&#24102;&#25968;&#25454;&#24211;&#36801;&#31227;&#30340;&#26032;&#29256;&#26412;&#21040;&#29983;&#20135;&#29615;&#22659;&#24403;&#20013;&#65306;</p>
+<ol>
+<li>Scott &#20026;&#19968;&#20010;&#21253;&#21547;&#25968;&#25454;&#24211;&#36801;&#31227;&#30340;&#39033;&#30446;&#29256;&#26412;&#21019;&#24314;&#20102;&#19968;&#20010;&#21457;&#24067;&#26631;&#31614;&#12290;</li>
+<li>Scott &#25226;&#21457;&#24067;&#26631;&#31614;&#30340;&#28304;&#20195;&#30721;&#26356;&#26032;&#21040;&#29983;&#20135;&#29615;&#22659;&#30340;&#26381;&#21153;&#22120;&#19978;&#12290;</li>
+<li>Scott &#25226;&#25152;&#26377;&#30340;&#22686;&#37327;&#25968;&#25454;&#24211;&#36801;&#31227;&#25552;&#20132;&#21040;&#29983;&#20135;&#29615;&#22659;&#25968;&#25454;&#24211;&#24403;&#20013;&#12290;</li>
+</ol>
+<p>Yii &#25552;&#20379;&#20102;&#19968;&#25972;&#22871;&#30340;&#36801;&#31227;&#21629;&#20196;&#34892;&#24037;&#20855;&#65292;&#36890;&#36807;&#36825;&#20123;&#24037;&#20855;&#20320;&#21487;&#20197;&#65306;</p>
+<ul>
+<li>&#21019;&#24314;&#26032;&#30340;&#36801;&#31227;&#65307;</li>
+<li>&#25552;&#20132;&#36801;&#31227;&#65307;</li>
+<li>&#24674;&#22797;&#36801;&#31227;&#65307;</li>
+<li>&#37325;&#26032;&#25552;&#20132;&#36801;&#31227;&#65307;</li>
+<li>&#23637;&#31034;&#36801;&#31227;&#21382;&#21490;&#21644;&#29366;&#24577;&#12290;</li>
+</ul>
+<p>&#25152;&#26377;&#30340;&#36825;&#20123;&#24037;&#20855;&#37117;&#21487;&#20197;&#36890;&#36807; <code>yii migrate</code> &#21629;&#20196;&#26469;&#36827;&#34892;&#25805;&#20316;&#12290;
+&#22312;&#36825;&#19968;&#31456;&#33410;&#65292;&#25105;&#20204;&#23558;&#35814;&#32454;&#30340;&#20171;&#32461;&#22914;&#20309;&#20351;&#29992;&#36825;&#20123;&#24037;&#20855;&#26469;&#23436;&#25104;&#21508;&#31181;&#21508;&#26679;&#30340;&#20219;&#21153;&#12290;
+&#20320;&#20063;&#21487;&#20197;&#36890;&#36807; <code>yii help migrate</code> &#21629;&#20196;&#26469;&#33719;&#21462;&#27599;&#19968;&#31181;&#24037;&#20855;&#30340;&#20855;&#20307;&#20351;&#29992;&#26041;&#27861;&#12290;</p>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#36801;&#31227;&#19981;&#20165;&#20165;&#21482;&#20316;&#29992;&#20110;&#25968;&#25454;&#24211;&#34920;&#65292;
+  &#23427;&#21516;&#26679;&#20250;&#35843;&#25972;&#29616;&#26377;&#30340;&#25968;&#25454;&#26469;&#36866;&#24212;&#26032;&#30340;&#34920;&#21333;&#12289;&#21019;&#24314; RBAC &#20998;&#23618;&#12289;&#21448;&#25110;&#32773;&#26159;&#28165;&#38500;&#32531;&#23384;&#12290;</p>
+</blockquote>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#24403;&#20320;&#20351;&#29992;&#36801;&#31227;&#26469;&#25805;&#20316;&#25968;&#25454;&#26102;&#65292;&#20320;&#20250;&#21457;&#29616;&#20351;&#29992; <a href="guide-db-active-record.html">&#27963;&#21160;&#35760;&#24405;</a> &#31867;
+&#24456;&#26377;&#24110;&#21161;&#65292;&#22240;&#20026;&#19968;&#20123;&#36923;&#36753;&#24050;&#32463;&#22312;&#37027;&#37324;&#23454;&#29616;&#20102;&#12290;
+&#28982;&#32780;&#21035;&#24536;&#20102;&#65292;&#30456;&#27604;&#20110;&#22825;&#29983;&#20445;&#25345;&#24658;&#23450;&#19981;&#21464;&#30340;&#36801;&#31227;&#31867;&#20013;&#30340;&#20195;&#30721;&#65292;&#31243;&#24207;&#36923;&#36753;&#26159;&#38543;&#26102;&#21464;&#21270;&#30340;&#12290;
+&#25152;&#20197;&#24403;&#20320;&#22312;&#36801;&#31227;&#20013;&#20351;&#29992;&#27963;&#21160;&#35760;&#24405;&#31867;&#26102;&#65292;&#27963;&#21160;&#35760;&#24405;&#23618;&#20013;&#36923;&#36753;&#30340;&#21464;&#21270;&#21487;&#33021;&#20250;&#24847;&#22806;&#25171;&#26029;&#29616;&#26377;&#30340;&#36801;&#31227;&#12290;
+&#22522;&#20110;&#36825;&#20010;&#21407;&#22240;&#65292;
+&#36801;&#31227;&#20195;&#30721;&#24212;&#35813;&#20445;&#25345;&#29420;&#31435;&#20110;&#20854;&#20182;&#31243;&#24207;&#36923;&#36753;&#65292;&#27604;&#22914;&#27963;&#21160;&#35760;&#24405;&#31867;&#12290;</p>
+</blockquote>
+<h2>&#21019;&#24314;&#36801;&#31227;  <span id="creating-migrations"></span><a href="#creating-migrations" class="hashlink">&para;</a></h2><p>&#20351;&#29992;&#22914;&#19979;&#21629;&#20196;&#26469;&#21019;&#24314;&#19968;&#20010;&#26032;&#30340;&#36801;&#31227;&#65306;</p>
+<pre><code class="hljs sql">yii migrate/<span class="hljs-keyword">create</span> &lt;<span class="hljs-keyword">name</span>&gt;
+</code></pre>
+<p>&#24517;&#22635;&#21442;&#25968; <code>name</code> &#30340;&#20316;&#29992;&#26159;&#23545;&#26032;&#30340;&#36801;&#31227;&#20570;&#19968;&#20010;&#31616;&#35201;&#30340;&#25551;&#36848;&#12290;
+&#20363;&#22914;&#65292;&#22914;&#26524;&#36825;&#20010;&#36801;&#31227;&#26159;&#29992;&#26469;&#21019;&#24314;&#19968;&#20010;&#21483;&#20570; <em>news</em> &#30340;&#34920;&#65292;
+&#37027;&#20040;&#20320;&#21487;&#20197;&#20351;&#29992; <code>create_news_table</code> &#36825;&#20010;&#21517;&#31216;&#24182;&#36816;&#34892;&#22914;&#19979;&#21629;&#20196;&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/create create_news_table
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22240;&#20026; <code>name</code> &#21442;&#25968;&#20250;&#34987;&#29992;&#26469;&#29983;&#25104;&#36801;&#31227;&#30340;&#31867;&#21517;&#30340;&#19968;&#37096;&#20998;&#65292;
+  &#25152;&#20197;&#35813;&#21442;&#25968;&#24212;&#24403;&#21482;&#21253;&#21547;&#23383;&#27597;&#12289;&#25968;&#23383;&#21644;&#19979;&#21010;&#32447;&#12290;</p>
+</blockquote>
+<p>&#22914;&#19978;&#21629;&#20196;&#23558;&#20250;&#22312; <code>@app/migrations</code> &#30446;&#24405;&#19979;&#21019;&#24314;&#19968;&#20010;&#26032;&#30340;&#21517;&#20026; <code>m150101_185401_create_news_table.php</code> &#30340; PHP &#31867;&#25991;&#20214;&#12290;
+&#35813;&#25991;&#20214;&#21253;&#21547;&#22914;&#19979;&#30340;&#20195;&#30721;&#65292;&#23427;&#20204;&#29992;&#26469;&#22768;&#26126;&#19968;&#20010;&#36801;&#31227;&#31867; <code>m150101_185401_create_news_table</code>&#65292;
+&#24182;&#38468;&#26377;&#20195;&#30721;&#26694;&#26550;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"m101129_185401_create_news_table cannot be reverted.\n"</span>;
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+
+    <span class="hljs-comment">/*
+    // Use safeUp/safeDown to run migration code within a transaction
+    public function safeUp()
+    {
+    }
+
+    public function safeDown()
+    {
+    }
+    */</span>
+}
+</code></pre>
+<p>&#27599;&#20010;&#25968;&#25454;&#24211;&#36801;&#31227;&#37117;&#20250;&#34987;&#23450;&#20041;&#20026;&#19968;&#20010;&#32487;&#25215;&#33258; <a href="./yii-db-migration.html">yii\db\Migration</a> &#30340; PHP &#31867;&#12290;
+&#31867;&#30340;&#21517;&#31216;&#25353;&#29031; <code>m&lt;YYMMDD_HHMMSS&gt;_&lt;Name&gt;</code> &#30340;&#26684;&#24335;&#33258;&#21160;&#29983;&#25104;&#65292;&#20854;&#20013;</p>
+<ul>
+<li><code>&lt;YYMMDD_HHMMSS&gt;</code> &#25351;&#25191;&#34892;&#21019;&#24314;&#36801;&#31227;&#21629;&#20196;&#30340; UTC &#26102;&#38388;&#12290;</li>
+<li><code>&lt;Name&gt;</code> &#21644;&#20320;&#25191;&#34892;&#21629;&#20196;&#26102;&#25152;&#24102;&#30340; <code>name</code> &#21442;&#25968;&#20540;&#30456;&#21516;&#12290;</li>
+</ul>
+<p>&#22312;&#36801;&#31227;&#31867;&#24403;&#20013;&#65292;&#20320;&#24212;&#24403;&#22312; <code>up()</code> &#26041;&#27861;&#20013;&#32534;&#20889;&#25913;&#21464;&#25968;&#25454;&#24211;&#32467;&#26500;&#30340;&#20195;&#30721;&#12290;
+&#20320;&#21487;&#33021;&#36824;&#38656;&#35201;&#22312; <code>down()</code> &#26041;&#27861;&#20013;&#32534;&#20889;&#20195;&#30721;&#26469;&#24674;&#22797;&#30001; <code>up()</code> &#26041;&#27861;&#25152;&#20570;&#30340;&#25913;&#21464;&#12290;
+&#24403;&#20320;&#36890;&#36807; migration &#21319;&#32423;&#25968;&#25454;&#24211;&#26102;&#65292; <code>up()</code> &#26041;&#27861;&#23558;&#20250;&#34987;&#35843;&#29992;&#65292;&#21453;&#20043;&#65292; <code>down()</code> &#23558;&#20250;&#34987;&#35843;&#29992;&#12290;
+&#22914;&#19979;&#20195;&#30721;&#23637;&#31034;&#20102;&#22914;&#20309;&#36890;&#36807;&#36801;&#31227;&#31867;&#26469;&#21019;&#24314;&#19968;&#24352; <code>news</code> &#34920;&#65306;</p>
+<pre><code class="hljs php language-php">
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Schema</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'news'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; Schema::TYPE_PK,
+            <span class="hljs-string">'title'</span> =&gt; Schema::TYPE_STRING . <span class="hljs-string">' NOT NULL'</span>,
+            <span class="hljs-string">'content'</span> =&gt; Schema::TYPE_TEXT,
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'news'</span>);
+    }
+
+}
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#24182;&#19981;&#26159;&#25152;&#26377;&#36801;&#31227;&#37117;&#26159;&#21487;&#24674;&#22797;&#30340;&#12290;&#20363;&#22914;&#65292;&#22914;&#26524; <code>up()</code> &#26041;&#27861;&#21024;&#38500;&#20102;&#34920;&#20013;&#30340;&#19968;&#34892;&#25968;&#25454;&#65292;
+  &#36825;&#23558;&#26080;&#27861;&#36890;&#36807; <code>down()</code>  &#26041;&#27861;&#26469;&#24674;&#22797;&#36825;&#26465;&#25968;&#25454;&#12290;&#26377;&#26102;&#20505;&#65292;&#20320;&#20063;&#35768;&#21482;&#26159;&#25042;&#24471;&#21435;&#25191;&#34892; <code>down()</code> &#26041;&#27861;&#20102;&#65292;
+  &#22240;&#20026;&#23427;&#22312;&#24674;&#22797;&#25968;&#25454;&#24211;&#36801;&#31227;&#26041;&#38754;&#24182;&#19981;&#26159;&#37027;&#20040;&#30340;&#36890;&#29992;&#12290;&#22312;&#36825;&#31181;&#24773;&#20917;&#19979;&#65292;
+  &#20320;&#24212;&#24403;&#22312; <code>down()</code> &#26041;&#27861;&#20013;&#36820;&#22238; <code>false</code> &#26469;&#34920;&#26126;&#36825;&#20010; migration &#26159;&#26080;&#27861;&#24674;&#22797;&#30340;&#12290;</p>
+</blockquote>
+<p>migration &#30340;&#22522;&#31867; <a href="./yii-db-migration.html">yii\db\Migration</a> &#36890;&#36807; <a href="./yii-db-migration.html#%24db-detail">db</a> &#23646;&#24615;&#26469;&#36830;&#25509;&#25968;&#25454;&#24211;&#12290;
+&#20320;&#21487;&#20197;&#36890;&#36807; <a href="guide-db-dao.html#database-schema">&#25805;&#20316;&#25968;&#25454;&#24211;&#27169;&#24335;&#65288;schema&#65289;</a>
+&#31456;&#33410;&#20013;&#25152;&#25551;&#36848;&#30340;&#37027;&#20123;&#26041;&#27861;&#26469;&#25805;&#20316;&#25968;&#25454;&#24211;&#27169;&#24335;&#65288;schema&#65289;&#12290;</p>
+<p>&#24403;&#20320;&#21019;&#24314;&#19968;&#24352;&#34920;&#25110;&#32773;&#19968;&#20010;&#23383;&#27573;&#30340;&#26102;&#20505;&#65292;&#20320;&#24212;&#35813;&#20351;&#29992; <em>&#25277;&#35937;&#31867;&#22411;</em> &#32780;&#19981;&#26159; <em>&#23454;&#20307;&#31867;&#22411;</em>&#65292;
+&#36825;&#26679;&#19968;&#26469;&#20320;&#30340;&#36801;&#31227;&#23545;&#35937;&#23601;&#21487;&#20197;&#20174;&#29305;&#23450;&#30340; DBMS &#24403;&#20013;&#25277;&#31163;&#20986;&#26469;&#12290;
+<a href="./yii-db-schema.html">yii\db\Schema</a> &#31867;&#23450;&#20041;&#20102;&#19968;&#25972;&#22871;&#21487;&#29992;&#30340;&#25277;&#35937;&#31867;&#22411;&#24120;&#37327;&#12290;&#36825;&#20123;&#24120;&#37327;&#30340;&#26684;&#24335;&#20026; <code>TYPE_&lt;Name&gt;</code>&#12290;
+&#20363;&#22914;&#65292;<code>TYPE_PK</code> &#25351;&#20195;&#33258;&#22686;&#20027;&#38190;&#31867;&#22411;&#65307;<code>TYPE_STRING</code> &#25351;&#20195;&#23383;&#31526;&#20018;&#31867;&#22411;&#12290;
+&#24403;&#36801;&#31227;&#23545;&#35937;&#34987;&#25552;&#20132;&#21040;&#26576;&#20010;&#29305;&#23450;&#30340;&#25968;&#25454;&#24211;&#30340;&#26102;&#20505;&#65292;&#36825;&#20123;&#25277;&#35937;&#31867;&#22411;&#23558;&#20250;&#34987;&#36716;&#25442;&#25104;&#30456;&#23545;&#24212;&#30340;&#23454;&#20307;&#31867;&#22411;&#12290;
+&#20197; MySQL &#20026;&#20363;&#65292;<code>TYPE_PK</code> &#23558;&#20250;&#21464;&#25104; <code>int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY</code>&#65292;
+&#32780; <code>TYPE_STRING</code> &#21017;&#21464;&#25104; <code>varchar(255)</code>&#12290;</p>
+<p>&#22312;&#20351;&#29992;&#25277;&#35937;&#31867;&#22411;&#30340;&#26102;&#20505;&#65292;&#20320;&#21487;&#20197;&#28155;&#21152;&#39069;&#22806;&#30340;&#32422;&#26463;&#26465;&#20214;&#12290;&#22312;&#19978;&#38754;&#30340;&#20363;&#23376;&#24403;&#20013;&#65292;
+<code>NOT NULL</code> &#34987;&#28155;&#21152;&#21040; <code>Schema::TYPE_STRING</code> &#24403;&#20013;&#26469;&#25351;&#23450;&#35813;&#23383;&#27573;&#19981;&#33021;&#20026;&#31354;&#12290;</p>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#25277;&#35937;&#31867;&#22411;&#21644;&#23454;&#20307;&#31867;&#22411;&#20043;&#38388;&#30340;&#26144;&#23556;&#20851;&#31995;&#26159;&#30001;&#27599;&#20010;&#20855;&#20307;&#30340; <code>QueryBuilder</code> 
+  &#31867;&#24403;&#20013;&#30340; <a href="./yii-db-querybuilder.html#%24typeMap-detail">$typeMap</a> &#23646;&#24615;&#25152;&#25351;&#23450;&#30340;&#12290;</p>
+</blockquote>
+<p>&#20174; 2.0.6 &#29256;&#26412;&#24320;&#22987;&#65292;&#20320;&#21487;&#20197;&#20351;&#29992;&#33021;&#25552;&#20379;&#26356;&#20415;&#25463;&#30340;&#26041;&#27861;&#23450;&#20041;&#23383;&#27573;&#27169;&#24335;&#65288;schema&#65289;&#30340;&#26032;&#27169;&#24335;&#65288;schema&#65289;&#26500;&#24314;&#22120;&#12290;
+&#36825;&#26679;&#19978;&#38754;&#30340;&#36801;&#31227;&#23601;&#21487;&#20197;&#20889;&#25104;&#36825;&#26679;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'news'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;string()-&gt;notNull(),
+            <span class="hljs-string">'content'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;text(),
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'news'</span>);
+    }
+}
+</code></pre>
+<p>&#25152;&#26377;&#29992;&#26469;&#23450;&#20041;&#23383;&#27573;&#31867;&#22411;&#30340;&#26041;&#27861;&#37117;&#21487;&#20197;&#21040; <a href="./yii-db-schemabuildertrait.html">yii\db\SchemaBuilderTrait</a> &#30340; API &#25991;&#26723;&#20013;&#26597;&#21040;&#12290;</p>
+<h2>&#29983;&#25104;&#36801;&#31227;  <span id="generating-migrations"></span><a href="#generating-migrations" class="hashlink">&para;</a></h2><p>&#20174; 2.0.7 &#29256;&#26412;&#24320;&#22987;&#65292;&#36801;&#31227;&#32456;&#31471;&#25552;&#20379;&#20102;&#19968;&#31181;&#21019;&#24314;&#36801;&#31227;&#30340;&#20415;&#25463;&#26041;&#27861;&#12290;</p>
+<p>&#22914;&#26524;&#36801;&#31227;&#23545;&#35937;&#30340;&#21517;&#31216;&#36981;&#24490;&#26576;&#31181;&#29305;&#23450;&#30340;&#26684;&#24335;&#65292;&#27604;&#22914; <code>create_xxx</code> &#25110;&#32773; <code>drop_xxx</code>&#65292;
+&#37027;&#20040;&#29983;&#25104;&#30340;&#36801;&#31227;&#20195;&#30721;&#20013;&#23558;&#21253;&#21547;&#21019;&#24314;/&#21024;&#38500;&#34920;&#30340;&#39069;&#22806;&#20195;&#30721;&#12290;
+&#22312;&#19979;&#25991;&#20013;&#23558;&#25551;&#36848;&#35813;&#29305;&#22411;&#30340;&#25152;&#26377;&#21464;&#22411;&#12290;</p>
+<h3>&#21019;&#24314;&#34920; <span id="chuang-jian-biao"></span><a href="#chuang-jian-biao" class="hashlink">&para;</a></h3><pre><code class="hljs php language-php">yii migrate/create create_post
+</code></pre>
+<p>&#29983;&#25104;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Handles the creation for table `post`.
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_create_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey()
+        ]);
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+}
+</code></pre>
+<p>&#21033;&#29992; <code>--fields</code> &#36873;&#39033;&#25351;&#23450;&#23383;&#27573;&#21442;&#25968;&#65292;&#21487;&#20197;&#31435;&#21363;&#21019;&#24314;&#23383;&#27573;&#12290;</p>
+<pre><code class="hljs php language-php">yii migrate/create create_post --fields=<span class="hljs-string">"title:string,body:text"</span>
+</code></pre>
+<p>&#29983;&#25104;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Handles the creation for table `post`.
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_create_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;string(),
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;text(),
+        ]);
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+}
+
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#25351;&#23450;&#26356;&#22810;&#30340;&#23383;&#27573;&#21442;&#25968;&#12290;</p>
+<pre><code class="hljs php language-php">yii migrate/create create_post --fields=<span class="hljs-string">"title:string(12):notNull:unique,body:text"</span>
+</code></pre>
+<p>&#29983;&#25104;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Handles the creation for table `post`.
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_create_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;string(<span class="hljs-number">12</span>)-&gt;notNull()-&gt;unique(),
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;text()
+        ]);
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#20027;&#38190;&#20250;&#34987;&#33258;&#21160;&#28155;&#21152;&#21516;&#26102;&#40664;&#35748;&#21517;&#31216;&#20026; <code>id</code>&#12290;
+&#22914;&#26524;&#20320;&#24819;&#20351;&#29992;&#20854;&#20182;&#21517;&#31216;&#21487;&#20197;&#20351;&#29992; <code>--fields="name:primaryKey"</code> &#26469;&#25351;&#23450;&#21517;&#31216;&#12290;</p>
+</blockquote>
+<h4>&#22806;&#38190; <span id="wai-jian"></span><a href="#wai-jian" class="hashlink">&para;</a></h4><p>&#20174; 2.0.8 &#29256;&#26412;&#24320;&#22987;&#65292;&#29983;&#25104;&#22120;&#36890;&#36807;&#20351;&#29992; <code>foreignKey</code> &#20851;&#38190;&#23383;&#25903;&#25345;&#22806;&#38190;&#12290;</p>
+<pre><code class="hljs php language-php">yii migrate/create create_post --fields=<span class="hljs-string">"author_id:integer:notNull:foreignKey(user),category_id:integer:defaultValue(1):foreignKey,title:string,body:text"</span>
+</code></pre>
+<p>&#29983;&#25104;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Handles the creation for table `post`.
+ * Has foreign keys to the tables:
+ *
+ * - `user`
+ * - `category`
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m160328_040430_create_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'author_id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;integer()-&gt;notNull(),
+            <span class="hljs-string">'category_id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;integer()-&gt;defaultValue(<span class="hljs-number">1</span>),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;string(),
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;text(),
+        ]);
+
+        <span class="hljs-comment">// creates index for column `author_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;createIndex(
+            <span class="hljs-string">'idx-post-author_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'author_id'</span>
+        );
+
+        <span class="hljs-comment">// add foreign key for table `user`</span>
+        <span class="hljs-keyword">$this</span>-&gt;addForeignKey(
+            <span class="hljs-string">'fk-post-author_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'author_id'</span>,
+            <span class="hljs-string">'user'</span>,
+            <span class="hljs-string">'id'</span>,
+            <span class="hljs-string">'CASCADE'</span>
+        );
+
+        <span class="hljs-comment">// creates index for column `category_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;createIndex(
+            <span class="hljs-string">'idx-post-category_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'category_id'</span>
+        );
+
+        <span class="hljs-comment">// add foreign key for table `category`</span>
+        <span class="hljs-keyword">$this</span>-&gt;addForeignKey(
+            <span class="hljs-string">'fk-post-category_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'category_id'</span>,
+            <span class="hljs-string">'category'</span>,
+            <span class="hljs-string">'id'</span>,
+            <span class="hljs-string">'CASCADE'</span>
+        );
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// drops foreign key for table `user`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropForeignKey(
+            <span class="hljs-string">'fk-post-author_id'</span>,
+            <span class="hljs-string">'post'</span>
+        );
+
+        <span class="hljs-comment">// drops index for column `author_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropIndex(
+            <span class="hljs-string">'idx-post-author_id'</span>,
+            <span class="hljs-string">'post'</span>
+        );
+
+        <span class="hljs-comment">// drops foreign key for table `category`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropForeignKey(
+            <span class="hljs-string">'fk-post-category_id'</span>,
+            <span class="hljs-string">'post'</span>
+        );
+
+        <span class="hljs-comment">// drops index for column `category_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropIndex(
+            <span class="hljs-string">'idx-post-category_id'</span>,
+            <span class="hljs-string">'post'</span>
+        );
+
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+}
+</code></pre>
+<p><code>foreignKey</code> &#20851;&#38190;&#23383;&#22312;&#23383;&#27573;&#25551;&#36848;&#20013;&#30340;&#20301;&#32622;&#19981;&#20250;&#24433;&#21709;&#29983;&#25104;&#30340;&#20195;&#30721;&#12290;
+&#37027;&#24847;&#21619;&#30528;&#65306;</p>
+<ul>
+<li><code>author_id:integer:notNull:foreignKey(user)</code></li>
+<li><code>author_id:integer:foreignKey(user):notNull</code></li>
+<li><code>author_id:foreignKey(user):integer:notNull</code></li>
+</ul>
+<p>&#20197;&#19978;&#37117;&#20250;&#29983;&#25104;&#30456;&#21516;&#30340;&#20195;&#30721;&#12290;</p>
+<p><code>foreignKey</code> &#20851;&#38190;&#23383;&#21487;&#20197;&#22312;&#22278;&#25324;&#21495;&#20013;&#38388;&#25509;&#25910;&#19968;&#20010;&#21442;&#25968;&#65292;
+&#36825;&#20010;&#21442;&#25968;&#23558;&#20250;&#25104;&#20026;&#29983;&#25104;&#22806;&#38190;&#25152;&#38656;&#30340;&#20851;&#32852;&#34920;&#30340;&#21517;&#31216;&#12290;
+&#22914;&#26524;&#19981;&#20256;&#20837;&#20219;&#20309;&#21442;&#25968;&#65292;&#37027;&#20040;&#34920;&#21517;&#23558;&#20250;&#26681;&#25454;&#23383;&#27573;&#21517;&#26469;&#29983;&#25104;&#12290;</p>
+<p>&#22312;&#19978;&#38754;&#30340;&#20363;&#23376;&#20013;&#65292;<code>author_id:integer:notNull:foreignKey(user)</code> &#20250;&#29983;&#25104;&#19968;&#20010;
+&#24102;&#26377;&#20851;&#32852; <code>user</code> &#34920;&#30340;&#22806;&#38190;&#65292;&#21517;&#31216;&#20026; <code>author_id</code> &#30340;&#23383;&#27573;&#65292;
+<code>category_id:integer:defaultValue(1):foreignKey</code> &#20250;&#29983;&#25104;&#19968;&#20010;
+&#24102;&#26377;&#20851;&#32852; <code>category</code> &#34920;&#30340;&#22806;&#38190;&#65292;&#21517;&#31216;&#20026; <code>category_id</code> &#30340;&#23383;&#27573;&#12290;</p>
+<p>&#20174; 2.0.11 &#29256;&#26412;&#24320;&#22987;&#65292;<code>foreignKey</code> &#25509;&#25910;&#31532;&#20108;&#20010;&#21442;&#25968;&#65292;&#36319;&#31532;&#19968;&#20010;&#21442;&#25968;&#29992;&#31354;&#26684;&#20998;&#24320;&#12290;
+&#36825;&#20010;&#21442;&#25968;&#34920;&#31034;&#29983;&#25104;&#30340;&#22806;&#38190;&#25152;&#20851;&#32852;&#23383;&#27573;&#30340;&#21517;&#31216;&#12290;
+&#22914;&#26524;&#19981;&#20256;&#20837;&#31532;&#20108;&#20010;&#21442;&#25968;&#65292;&#23383;&#27573;&#21517;&#23558;&#20174;&#34920;&#27169;&#24335;&#65288;schema&#65289;&#20013;&#33719;&#24471;&#12290;
+&#22914;&#26524;&#27169;&#24335;&#65288;schema&#65289;&#19981;&#23384;&#22312;&#65292;&#25110;&#32773;&#26410;&#35774;&#32622;&#20027;&#38190;&#65292;&#21448;&#25110;&#32773;&#26159;&#32852;&#21512;&#20027;&#38190;&#65292;&#23383;&#27573;&#23558;&#20351;&#29992; <code>id</code> &#20316;&#20026;&#40664;&#35748;&#21517;&#31216;&#12290;</p>
+<h3>&#21024;&#38500;&#34920; <span id="shan-chu-biao"></span><a href="#shan-chu-biao" class="hashlink">&para;</a></h3><pre><code class="hljs php language-php">yii migrate/create drop_post --fields=<span class="hljs-string">"title:string(12):notNull:unique,body:text"</span>
+</code></pre>
+<p>&#29983;&#25104;</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_drop_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'post'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'post'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey(),
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;string(<span class="hljs-number">12</span>)-&gt;notNull()-&gt;unique(),
+            <span class="hljs-string">'body'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;text()
+        ]);
+    }
+}
+</code></pre>
+<h3>&#28155;&#21152;&#23383;&#27573; <span id="tian-jia-zi-duan"></span><a href="#tian-jia-zi-duan" class="hashlink">&para;</a></h3><p>&#22914;&#26524;&#36801;&#31227;&#30340;&#21517;&#31216;&#36981;&#24490; <code>add_xxx_to_yyy</code> &#36825;&#26679;&#30340;&#26684;&#24335;&#65292;
+&#29983;&#25104;&#30340;&#31867;&#25991;&#20214;&#23558;&#20250;&#21253;&#21547;&#24517;&#35201;&#30340; <code>addColumn</code> &#21644; <code>dropColumn</code>&#12290;</p>
+<p>&#28155;&#21152;&#23383;&#27573;&#65306;</p>
+<pre><code class="hljs php language-php">yii migrate/create add_position_to_post --fields=<span class="hljs-string">"position:integer"</span>
+</code></pre>
+<p>&#29983;&#25104;</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_add_position_to_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;addColumn(<span class="hljs-string">'post'</span>, <span class="hljs-string">'position'</span>, <span class="hljs-keyword">$this</span>-&gt;integer());
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropColumn(<span class="hljs-string">'post'</span>, <span class="hljs-string">'position'</span>);
+    }
+}
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#20687;&#22914;&#19979;&#36825;&#26679;&#25351;&#23450;&#22810;&#20010;&#23383;&#27573;&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/create add_xxx_column_yyy_column_to_zzz_table --fields=<span class="hljs-string">"xxx:integer,yyy:text"</span>
+</code></pre>
+<h3>&#21024;&#38500;&#23383;&#27573; <span id="shan-chu-zi-duan"></span><a href="#shan-chu-zi-duan" class="hashlink">&para;</a></h3><p>&#22914;&#26524;&#36801;&#31227;&#30340;&#21517;&#31216;&#36981;&#24490; <code>drop_xxx_from_yyy</code> &#36825;&#26679;&#30340;&#26684;&#24335;&#65292;
+&#29983;&#25104;&#30340;&#31867;&#25991;&#20214;&#23558;&#20250;&#21253;&#21547;&#24517;&#35201;&#30340; <code>addColumn</code> &#21644; <code>dropColumn</code>&#12290;</p>
+<pre><code class="hljs php language-php">yii migrate/create drop_position_from_post --fields=<span class="hljs-string">"position:integer"</span>
+</code></pre>
+<p>&#29983;&#25104;</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150811_220037_drop_position_from_post</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dropColumn(<span class="hljs-string">'post'</span>, <span class="hljs-string">'position'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;addColumn(<span class="hljs-string">'post'</span>, <span class="hljs-string">'position'</span>, <span class="hljs-keyword">$this</span>-&gt;integer());
+    }
+}
+</code></pre>
+<h3>&#28155;&#21152;&#36830;&#25509;&#34920; <span id="tian-jia-lian-jie-biao"></span><a href="#tian-jia-lian-jie-biao" class="hashlink">&para;</a></h3><p>&#22914;&#26524;&#36801;&#31227;&#30340;&#21517;&#31216;&#36981;&#24490; <code>create_junction_xxx_and_yyy</code> &#36825;&#26679;&#30340;&#26684;&#24335;&#65292;
+&#21019;&#24314;&#36830;&#25509;&#34920;&#30340;&#24517;&#35201;&#20195;&#30721;&#23558;&#20250;&#34987;&#29983;&#25104;&#12290;</p>
+<pre><code class="hljs php language-php">yii migrate/create create_junction_post_and_tag --fields=<span class="hljs-string">"created_at:dateTime"</span>
+</code></pre>
+<p>&#29983;&#25104;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Handles the creation for table `post_tag`.
+ * Has foreign keys to the tables:
+ *
+ * - `post`
+ * - `tag`
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m160328_041642_create_junction_post_and_tag</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'post_tag'</span>, [
+            <span class="hljs-string">'post_id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;integer(),
+            <span class="hljs-string">'tag_id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;integer(),
+            <span class="hljs-string">'created_at'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;dateTime(),
+            <span class="hljs-string">'PRIMARY KEY(post_id, tag_id)'</span>,
+        ]);
+
+        <span class="hljs-comment">// creates index for column `post_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;createIndex(
+            <span class="hljs-string">'idx-post_tag-post_id'</span>,
+            <span class="hljs-string">'post_tag'</span>,
+            <span class="hljs-string">'post_id'</span>
+        );
+
+        <span class="hljs-comment">// add foreign key for table `post`</span>
+        <span class="hljs-keyword">$this</span>-&gt;addForeignKey(
+            <span class="hljs-string">'fk-post_tag-post_id'</span>,
+            <span class="hljs-string">'post_tag'</span>,
+            <span class="hljs-string">'post_id'</span>,
+            <span class="hljs-string">'post'</span>,
+            <span class="hljs-string">'id'</span>,
+            <span class="hljs-string">'CASCADE'</span>
+        );
+
+        <span class="hljs-comment">// creates index for column `tag_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;createIndex(
+            <span class="hljs-string">'idx-post_tag-tag_id'</span>,
+            <span class="hljs-string">'post_tag'</span>,
+            <span class="hljs-string">'tag_id'</span>
+        );
+
+        <span class="hljs-comment">// add foreign key for table `tag`</span>
+        <span class="hljs-keyword">$this</span>-&gt;addForeignKey(
+            <span class="hljs-string">'fk-post_tag-tag_id'</span>,
+            <span class="hljs-string">'post_tag'</span>,
+            <span class="hljs-string">'tag_id'</span>,
+            <span class="hljs-string">'tag'</span>,
+            <span class="hljs-string">'id'</span>,
+            <span class="hljs-string">'CASCADE'</span>
+        );
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// drops foreign key for table `post`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropForeignKey(
+            <span class="hljs-string">'fk-post_tag-post_id'</span>,
+            <span class="hljs-string">'post_tag'</span>
+        );
+
+        <span class="hljs-comment">// drops index for column `post_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropIndex(
+            <span class="hljs-string">'idx-post_tag-post_id'</span>,
+            <span class="hljs-string">'post_tag'</span>
+        );
+
+        <span class="hljs-comment">// drops foreign key for table `tag`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropForeignKey(
+            <span class="hljs-string">'fk-post_tag-tag_id'</span>,
+            <span class="hljs-string">'post_tag'</span>
+        );
+
+        <span class="hljs-comment">// drops index for column `tag_id`</span>
+        <span class="hljs-keyword">$this</span>-&gt;dropIndex(
+            <span class="hljs-string">'idx-post_tag-tag_id'</span>,
+            <span class="hljs-string">'post_tag'</span>
+        );
+
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'post_tag'</span>);
+    }
+}
+</code></pre>
+<p>&#20174; 2.0.11 &#29256;&#26412;&#24320;&#22987;&#65292;&#36830;&#25509;&#34920;&#30340;&#22806;&#38190;&#23383;&#27573;&#21517;&#23558;&#20174;&#34920;&#27169;&#24335;&#65288;schema&#65289;&#20013;&#33719;&#24471;&#12290;
+&#22914;&#26524;&#27169;&#24335;&#65288;schema&#65289;&#19981;&#23384;&#22312;&#65292;&#25110;&#32773;&#26410;&#35774;&#32622;&#20027;&#38190;&#65292;&#21448;&#25110;&#32773;&#26159;&#32852;&#21512;&#20027;&#38190;&#65292;&#23383;&#27573;&#23558;&#20351;&#29992; <code>id</code> &#20316;&#20026;&#40664;&#35748;&#21517;&#31216;&#12290;</p>
+<h3>&#20107;&#21153;&#36801;&#31227;  <span id="transactional-migrations"></span><a href="#transactional-migrations" class="hashlink">&para;</a></h3><p>&#24403;&#38656;&#35201;&#23454;&#29616;&#22797;&#26434;&#30340;&#25968;&#25454;&#24211;&#36801;&#31227;&#30340;&#26102;&#20505;&#65292;&#30830;&#23450;&#27599;&#19968;&#20010;&#36801;&#31227;&#30340;&#25191;&#34892;&#26159;&#21542;&#25104;&#21151;&#25110;&#22833;&#36133;&#23601;&#21464;&#24471;&#30456;&#24403;&#37325;&#35201;&#20102;&#65292;
+&#22240;&#20026;&#36825;&#23558;&#24433;&#21709;&#21040;&#25968;&#25454;&#24211;&#30340;&#23436;&#25972;&#24615;&#21644;&#19968;&#33268;&#24615;&#12290;&#20026;&#20102;&#36798;&#21040;&#36825;&#20010;&#30446;&#26631;&#65292;&#25105;&#20204;&#24314;&#35758;&#20320;&#25226;&#27599;&#20010;&#36801;&#31227;&#37324;&#38754;&#30340;
+&#25968;&#25454;&#24211;&#25805;&#20316;&#37117;&#23553;&#35013;&#21040;&#19968;&#20010; <a href="guide-db-dao.html#performing-transactions">transaction</a> &#37324;&#38754;&#12290;</p>
+<p>&#23454;&#29616;&#20107;&#21153;&#36801;&#31227;&#30340;&#19968;&#20010;&#26356;&#20026;&#31616;&#20415;&#30340;&#26041;&#27861;&#26159;&#25226;&#36801;&#31227;&#30340;&#20195;&#30721;&#37117;&#25918;&#21040; <code>safeUp()</code> &#21644; <code>safeDown()</code> &#26041;&#27861;&#37324;&#38754;&#12290;
+&#23427;&#20204;&#19982; <code>up()</code> &#21644; <code>down()</code> &#30340;&#19981;&#21516;&#28857;&#23601;&#22312;&#20110;&#23427;&#20204;&#26159;&#34987;&#38544;&#24335;&#30340;&#23553;&#35013;&#21040;&#20107;&#21153;&#24403;&#20013;&#30340;&#12290;
+&#22914;&#27492;&#19968;&#26469;&#65292;&#21482;&#35201;&#36825;&#20123;&#26041;&#27861;&#37324;&#38754;&#30340;&#20219;&#20309;&#19968;&#20010;&#25805;&#20316;&#22833;&#36133;&#20102;&#65292;&#37027;&#20040;&#25152;&#26377;&#20043;&#21069;&#30340;&#25805;&#20316;&#37117;&#20250;&#34987;&#33258;&#21160;&#30340;&#22238;&#28378;&#12290;</p>
+<p>&#22312;&#22914;&#19979;&#30340;&#20363;&#23376;&#24403;&#20013;&#65292;&#38500;&#20102;&#21019;&#24314; <code>news</code> &#34920;&#20197;&#22806;&#65292;&#25105;&#20204;&#36824;&#25554;&#20837;&#20102;&#19968;&#34892;&#21021;&#22987;&#21270;&#25968;&#25454;&#21040;&#34920;&#37324;&#38754;&#12290;</p>
+<pre><code class="hljs php language-php">
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Schema</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">safeUp</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;createTable(<span class="hljs-string">'news'</span>, [
+            <span class="hljs-string">'id'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;primaryKey(),,
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;string()-&gt;notNull(),
+            <span class="hljs-string">'content'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;text(),
+        ]);
+        
+        <span class="hljs-keyword">$this</span>-&gt;insert(<span class="hljs-string">'news'</span>, [
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'test 1'</span>,
+            <span class="hljs-string">'content'</span> =&gt; <span class="hljs-string">'content 1'</span>,
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">safeDown</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;delete(<span class="hljs-string">'news'</span>, [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>]);
+        <span class="hljs-keyword">$this</span>-&gt;dropTable(<span class="hljs-string">'news'</span>);
+    }
+}
+</code></pre>
+<p>&#38656;&#35201;&#27880;&#24847;&#30340;&#26159;&#65292;&#24403;&#20320;&#22312; <code>safeUp()</code> &#24403;&#20013;&#25191;&#34892;&#22810;&#20010;&#25968;&#25454;&#24211;&#25805;&#20316;&#30340;&#26102;&#20505;&#65292;&#20320;&#24212;&#35813;&#22312; <code>safeDown()</code> &#26041;&#27861;&#24403;&#20013;&#21453;&#36716;&#23427;&#20204;&#30340;&#25191;&#34892;&#39034;&#24207;&#12290;
+&#22312;&#19978;&#38754;&#30340;&#20363;&#23376;&#24403;&#20013;&#65292;&#25105;&#20204;&#22312; <code>safeUp()</code> &#26041;&#27861;&#24403;&#20013;&#39318;&#20808;&#21019;&#24314;&#20102;&#19968;&#24352;&#34920;&#65292;&#28982;&#21518;&#25554;&#20837;&#20102;&#19968;&#26465;&#25968;&#25454;&#65307;&#32780;&#22312; <code>safeDown()</code> &#26041;&#27861;&#24403;&#20013;&#65292;
+&#25105;&#20204;&#39318;&#20808;&#21024;&#38500;&#37027;&#19968;&#34892;&#25968;&#25454;&#65292;&#28982;&#21518;&#25165;&#21024;&#38500;&#37027;&#24352;&#34920;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#24182;&#19981;&#26159;&#25152;&#26377;&#30340;&#25968;&#25454;&#24211;&#37117;&#25903;&#25345;&#20107;&#21153;&#12290;&#26377;&#20123;&#25968;&#25454;&#24211;&#26597;&#35810;&#20063;&#26159;&#19981;&#33021;&#34987;&#25918;&#21040;&#20107;&#21153;&#37324;&#38754;&#30340;&#12290;
+  &#22312; <a href="https://dev.mysql.com/doc/refman/5.7/en/implicit-commit.html">implicit commit</a> &#31456;&#33410;&#24403;&#20013;&#26377;&#30456;&#20851;&#30340;&#20363;&#23376;&#21487;&#20197;&#21442;&#32771;&#12290;
+  &#22914;&#26524;&#36935;&#21040;&#36825;&#31181;&#24773;&#20917;&#30340;&#35805;&#65292;&#37027;&#20040;&#20320;&#24212;&#35813;&#20351;&#29992; <code>up()</code> &#21644; <code>down()</code> &#26041;&#27861;&#36827;&#34892;&#26367;&#20195;&#12290;</p>
+</blockquote>
+<h3>&#35775;&#38382;&#25968;&#25454;&#24211;&#30340;&#26041;&#27861;  <span id="db-accessing-methods"></span><a href="#db-accessing-methods" class="hashlink">&para;</a></h3><p>&#36801;&#31227;&#30340;&#22522;&#31867; <a href="./yii-db-migration.html">yii\db\Migration</a> &#25552;&#20379;&#20102;&#19968;&#25972;&#22871;&#35775;&#38382;&#21644;&#25805;&#20316;&#25968;&#25454;&#24211;&#30340;&#26041;&#27861;&#12290;
+&#20320;&#21487;&#33021;&#20250;&#21457;&#29616;&#36825;&#20123;&#26041;&#27861;&#30340;&#21629;&#21517;&#21644; <a href="./yii-db-command.html">yii\db\Command</a> &#31867;&#25552;&#20379;&#30340; <a href="guide-db-dao.html">DAO &#26041;&#27861;</a> &#24456;&#31867;&#20284;&#12290;
+&#20363;&#22914;&#65292;<a href="./yii-db-migration.html#createTable()-detail">yii\db\Migration::createTable()</a> &#26041;&#27861;&#21487;&#20197;&#21019;&#24314;&#19968;&#24352;&#26032;&#30340;&#34920;&#65292;
+&#36825;&#21644; <a href="./yii-db-command.html#createTable()-detail">yii\db\Command::createTable()</a> &#30340;&#21151;&#33021;&#26159;&#19968;&#27169;&#19968;&#26679;&#30340;&#12290;</p>
+<p>&#20351;&#29992; <a href="./yii-db-migration.html">yii\db\Migration</a> &#25152;&#25552;&#20379;&#30340;&#26041;&#27861;&#30340;&#22909;&#22788;&#22312;&#20110;&#20320;&#19981;&#38656;&#35201;&#20877;&#26174;&#24335;&#30340;&#21019;&#24314; <a href="./yii-db-command.html">yii\db\Command</a> &#23454;&#20363;&#65292;
+&#32780;&#19988;&#22312;&#25191;&#34892;&#27599;&#20010;&#26041;&#27861;&#30340;&#26102;&#20505;&#37117;&#20250;&#26174;&#31034;&#19968;&#20123;&#26377;&#29992;&#30340;&#20449;&#24687;&#26469;&#21578;&#35785;&#25105;&#20204;&#25968;&#25454;&#24211;&#25805;&#20316;&#26159;&#19981;&#26159;&#37117;&#24050;&#32463;&#23436;&#25104;&#65292;
+&#36824;&#26377;&#23427;&#20204;&#23436;&#25104;&#36825;&#20123;&#25805;&#20316;&#33457;&#20102;&#22810;&#38271;&#26102;&#38388;&#31561;&#31561;&#12290;</p>
+<p>&#22914;&#19979;&#26159;&#25152;&#26377;&#36825;&#20123;&#25968;&#25454;&#24211;&#35775;&#38382;&#26041;&#27861;&#30340;&#21015;&#34920;&#65306;</p>
+<ul>
+<li><a href="./yii-db-migration.html#execute()-detail">execute()</a>&#65306;&#25191;&#34892;&#19968;&#26465; SQL &#35821;&#21477;</li>
+<li><a href="./yii-db-migration.html#insert()-detail">insert()</a>&#65306;&#25554;&#20837;&#21333;&#34892;&#25968;&#25454;</li>
+<li><a href="./yii-db-migration.html#batchInsert()-detail">batchInsert()</a>&#65306;&#25554;&#20837;&#22810;&#34892;&#25968;&#25454;</li>
+<li><a href="./yii-db-migration.html#update()-detail">update()</a>&#65306;&#26356;&#26032;&#25968;&#25454;</li>
+<li><a href="./yii-db-migration.html#delete()-detail">delete()</a>&#65306;&#21024;&#38500;&#25968;&#25454;</li>
+<li><a href="./yii-db-migration.html#createTable()-detail">createTable()</a>&#65306;&#21019;&#24314;&#34920;</li>
+<li><a href="./yii-db-migration.html#renameTable()-detail">renameTable()</a>&#65306;&#37325;&#21629;&#21517;&#34920;&#21517;</li>
+<li><a href="./yii-db-migration.html#dropTable()-detail">dropTable()</a>&#65306;&#21024;&#38500;&#19968;&#24352;&#34920;</li>
+<li><a href="./yii-db-migration.html#truncateTable()-detail">truncateTable()</a>&#65306;&#28165;&#31354;&#34920;&#20013;&#30340;&#25152;&#26377;&#25968;&#25454;</li>
+<li><a href="./yii-db-migration.html#addColumn()-detail">addColumn()</a>&#65306;&#21152;&#19968;&#20010;&#23383;&#27573;</li>
+<li><a href="./yii-db-migration.html#renameColumn()-detail">renameColumn()</a>&#65306;&#37325;&#21629;&#21517;&#23383;&#27573;&#21517;&#31216;</li>
+<li><a href="./yii-db-migration.html#dropColumn()-detail">dropColumn()</a>&#65306;&#21024;&#38500;&#19968;&#20010;&#23383;&#27573;</li>
+<li><a href="./yii-db-migration.html#alterColumn()-detail">alterColumn()</a>&#65306;&#20462;&#25913;&#23383;&#27573;</li>
+<li><a href="./yii-db-migration.html#addPrimaryKey()-detail">addPrimaryKey()</a>&#65306;&#28155;&#21152;&#19968;&#20010;&#20027;&#38190;</li>
+<li><a href="./yii-db-migration.html#dropPrimaryKey()-detail">dropPrimaryKey()</a>&#65306;&#21024;&#38500;&#19968;&#20010;&#20027;&#38190;</li>
+<li><a href="./yii-db-migration.html#addForeignKey()-detail">addForeignKey()</a>&#65306;&#28155;&#21152;&#19968;&#20010;&#22806;&#38190;</li>
+<li><a href="./yii-db-migration.html#dropForeignKey()-detail">dropForeignKey()</a>&#65306;&#21024;&#38500;&#19968;&#20010;&#22806;&#38190;</li>
+<li><a href="./yii-db-migration.html#createIndex()-detail">createIndex()</a>&#65306;&#21019;&#24314;&#19968;&#20010;&#32034;&#24341;</li>
+<li><a href="./yii-db-migration.html#dropIndex()-detail">dropIndex()</a>&#65306;&#21024;&#38500;&#19968;&#20010;&#32034;&#24341;</li>
+<li><a href="./yii-db-migration.html#addCommentOnColumn()-detail">addCommentOnColumn()</a>&#65306;&#28155;&#21152;&#23383;&#27573;&#30340;&#27880;&#37322;</li>
+<li><a href="./yii-db-migration.html#dropCommentFromColumn()-detail">dropCommentFromColumn()</a>&#65306;&#21024;&#38500;&#23383;&#27573;&#30340;&#27880;&#37322;</li>
+<li><a href="./yii-db-migration.html#addCommentOnTable()-detail">addCommentOnTable()</a>&#65306;&#28155;&#21152;&#34920;&#30340;&#27880;&#37322;</li>
+<li><a href="./yii-db-migration.html#dropCommentFromTable()-detail">dropCommentFromTable()</a>&#65306;&#21024;&#38500;&#34920;&#30340;&#27880;&#37322;</li>
+</ul>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong><a href="./yii-db-migration.html">yii\db\Migration</a> &#24182;&#27809;&#26377;&#25552;&#20379;&#25968;&#25454;&#24211;&#30340;&#26597;&#35810;&#26041;&#27861;&#12290;
+&#36825;&#26159;&#22240;&#20026;&#36890;&#24120;&#20320;&#26159;&#19981;&#38656;&#35201;&#21435;&#25968;&#25454;&#24211;&#25226;&#25968;&#25454;&#19968;&#34892;&#19968;&#34892;&#26597;&#20986;&#26469;&#20877;&#26174;&#31034;&#20986;&#26469;&#30340;&#12290;
+&#21478;&#22806;&#19968;&#20010;&#21407;&#22240;&#26159;&#20320;&#23436;&#20840;&#21487;&#20197;&#20351;&#29992;&#24378;&#22823;&#30340; <a href="guide-db-query-builder.html">Query Builder &#26597;&#35810;&#26500;&#24314;&#22120;</a> &#26469;&#26500;&#24314;&#21644;&#26597;&#35810;&#12290;<br>
+&#20320;&#21487;&#20197;&#20687;&#36825;&#26679;&#22312;&#36801;&#31227;&#20013;&#20351;&#29992;&#26597;&#35810;&#26500;&#24314;&#22120;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#26356;&#26032;&#25152;&#26377;&#29992;&#25143;&#30340; status &#23383;&#27573;</span>
+<span class="hljs-keyword">foreach</span>((<span class="hljs-keyword">new</span> Query)-&gt;from(<span class="hljs-string">'users'</span>)-&gt;each() <span class="hljs-keyword">as</span> $user) {
+    <span class="hljs-keyword">$this</span>-&gt;update(<span class="hljs-string">'users'</span>, [<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>], [<span class="hljs-string">'id'</span> =&gt; $user[<span class="hljs-string">'id'</span>]]);
+}
+</code></pre>
+</blockquote>
+<h2>&#25552;&#20132;&#36801;&#31227;  <span id="applying-migrations"></span><a href="#applying-migrations" class="hashlink">&para;</a></h2><p>&#20026;&#20102;&#23558;&#25968;&#25454;&#24211;&#21319;&#32423;&#21040;&#26368;&#26032;&#30340;&#32467;&#26500;&#65292;&#20320;&#24212;&#35813;&#20351;&#29992;&#22914;&#19979;&#21629;&#20196;&#26469;&#25552;&#20132;&#25152;&#26377;&#26032;&#30340;&#36801;&#31227;&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate
+</code></pre>
+<p>&#36825;&#26465;&#21629;&#20196;&#20250;&#21015;&#20986;&#36804;&#20170;&#20026;&#27490;&#25152;&#26377;&#26410;&#25552;&#20132;&#30340;&#36801;&#31227;&#12290;&#22914;&#26524;&#20320;&#30830;&#23450;&#20320;&#38656;&#35201;&#25552;&#20132;&#36825;&#20123;&#36801;&#31227;&#65292;
+&#23427;&#23558;&#20250;&#25353;&#29031;&#31867;&#21517;&#24403;&#20013;&#30340;&#26102;&#38388;&#25139;&#30340;&#39034;&#24207;&#65292;&#19968;&#20010;&#25509;&#30528;&#19968;&#20010;&#30340;&#36816;&#34892;&#27599;&#20010;&#26032;&#30340;&#36801;&#31227;&#31867;&#37324;&#38754;&#30340; <code>up()</code> &#25110;&#32773;&#26159; <code>safeUp()</code> &#26041;&#27861;&#12290;
+&#22914;&#26524;&#20854;&#20013;&#20219;&#24847;&#19968;&#20010;&#36801;&#31227;&#25552;&#20132;&#22833;&#36133;&#20102;&#65292;
+&#37027;&#20040;&#36825;&#26465;&#21629;&#20196;&#23558;&#20250;&#36864;&#20986;&#24182;&#20572;&#27490;&#21097;&#19979;&#30340;&#37027;&#20123;&#36824;&#26410;&#25191;&#34892;&#30340;&#36801;&#31227;&#12290;</p>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#22914;&#26524;&#20320;&#30340;&#26381;&#21153;&#22120;&#27809;&#26377;&#21629;&#20196;&#34892;&#65292;
+&#20320;&#21487;&#20197;&#23581;&#35797; <a href="https://github.com/samdark/yii2-webshell">web shell</a> &#36825;&#20010;&#25193;&#23637;&#12290;</p>
+</blockquote>
+<p>&#23545;&#20110;&#27599;&#19968;&#20010;&#25104;&#21151;&#25552;&#20132;&#30340;&#36801;&#31227;&#65292;&#36825;&#26465;&#21629;&#20196;&#37117;&#20250;&#22312;&#19968;&#20010;&#21483;&#20570; <code>migration</code> 
+&#30340;&#25968;&#25454;&#24211;&#34920;&#20013;&#25554;&#20837;&#19968;&#26465;&#21253;&#21547;&#24212;&#29992;&#31243;&#24207;&#25104;&#21151;&#25552;&#20132;&#36801;&#31227;&#30340;&#35760;&#24405;&#65292;
+&#35813;&#35760;&#24405;&#23558;&#24110;&#21161;&#36801;&#31227;&#24037;&#20855;&#21028;&#26029;&#21738;&#20123;&#36801;&#31227;&#24050;&#32463;&#25552;&#20132;&#65292;&#21738;&#20123;&#36824;&#27809;&#26377;&#25552;&#20132;&#12290;</p>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#36801;&#31227;&#24037;&#20855;&#23558;&#20250;&#33258;&#21160;&#22312;&#25968;&#25454;&#24211;&#24403;&#20013;&#21019;&#24314; <code>migration</code> &#34920;&#65292;
+  &#35813;&#25968;&#25454;&#24211;&#26159;&#22312;&#35813;&#21629;&#20196;&#30340; <a href="./yii-console-controllers-migratecontroller.html#%24db-detail">db</a> &#36873;&#39033;&#24403;&#20013;&#25351;&#23450;&#30340;&#12290;
+  &#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#26159;&#30001; <code>db</code> <a href="guide-structure-application-components.html">application component</a> &#25351;&#23450;&#30340;&#12290;</p>
+</blockquote>
+<p>&#26377;&#26102;&#65292;&#20320;&#21487;&#33021;&#21482;&#38656;&#35201;&#25552;&#20132;&#19968;&#20010;&#25110;&#32773;&#23569;&#25968;&#30340;&#20960;&#20010;&#36801;&#31227;&#65292;
+&#20320;&#21487;&#20197;&#20351;&#29992;&#35813;&#21629;&#20196;&#25351;&#23450;&#38656;&#35201;&#25191;&#34892;&#30340;&#26465;&#25968;&#65292;&#32780;&#19981;&#26159;&#25191;&#34892;&#25152;&#26377;&#30340;&#21487;&#29992;&#36801;&#31227;&#12290;
+&#20363;&#22914;&#65292;&#22914;&#19979;&#21629;&#20196;&#23558;&#20250;&#23581;&#35797;&#25552;&#20132;&#21069;&#19977;&#20010;&#21487;&#29992;&#30340;&#36801;&#31227;&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate <span class="hljs-number">3</span>
+</code></pre>
+<p>&#20320;&#20063;&#21487;&#20197;&#25351;&#23450;&#19968;&#20010;&#29305;&#23450;&#30340;&#36801;&#31227;&#65292;&#25353;&#29031;&#22914;&#19979;&#26684;&#24335;&#20351;&#29992; <code>migrate/to</code> &#21629;&#20196;
+&#26469;&#25351;&#23450;&#25968;&#25454;&#24211;&#24212;&#35813;&#25552;&#20132;&#21738;&#19968;&#20010;&#36801;&#31227;&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/to 150101_185401                      <span class="hljs-comment"># using timestamp to specify the migration &#20351;&#29992;&#26102;&#38388;&#25139;&#26469;&#25351;&#23450;&#36801;&#31227;</span>
+yii migrate/to <span class="hljs-string">"2015-01-01 18:54:01"</span>              <span class="hljs-comment"># using a string that can be parsed by strtotime() &#20351;&#29992;&#19968;&#20010;&#21487;&#20197;&#34987; strtotime() &#35299;&#26512;&#30340;&#23383;&#31526;&#20018;</span>
+yii migrate/to m150101_185401_create_news_table   <span class="hljs-comment"># using full name &#20351;&#29992;&#20840;&#21517;</span>
+yii migrate/to <span class="hljs-number">1392853618</span>                         <span class="hljs-comment"># using UNIX timestamp &#20351;&#29992; UNIX &#26102;&#38388;&#25139;</span>
+</code></pre>
+<p>&#22914;&#26524;&#22312;&#25351;&#23450;&#35201;&#25552;&#20132;&#30340;&#36801;&#31227;&#21069;&#38754;&#36824;&#26377;&#26410;&#25552;&#20132;&#30340;&#36801;&#31227;&#65292;&#37027;&#20040;&#22312;&#25191;&#34892;&#36825;&#20010;&#34987;&#25351;&#23450;&#30340;&#36801;&#31227;&#20043;&#21069;&#65292;
+&#36825;&#20123;&#36824;&#26410;&#25552;&#20132;&#30340;&#36801;&#31227;&#20250;&#20808;&#34987;&#25552;&#20132;&#12290;</p>
+<p>&#22914;&#26524;&#34987;&#25351;&#23450;&#25552;&#20132;&#30340;&#36801;&#31227;&#22312;&#20043;&#21069;&#24050;&#32463;&#34987;&#25552;&#20132;&#36807;&#65292;&#37027;&#20040;&#22312;&#20854;&#20043;&#21518;&#30340;&#37027;&#20123;&#36801;&#31227;&#23558;&#20250;&#34987;&#36824;&#21407;&#12290;</p>
+<h2>&#36824;&#21407;&#36801;&#31227;  <span id="reverting-migrations"></span><a href="#reverting-migrations" class="hashlink">&para;</a></h2><p>&#20320;&#21487;&#20197;&#20351;&#29992;&#22914;&#19979;&#21629;&#20196;&#26469;&#36824;&#21407;&#20854;&#20013;&#19968;&#20010;&#25110;&#22810;&#20010;&#24847;&#35265;&#34987;&#25552;&#20132;&#36807;&#30340;&#36801;&#31227;&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/down     <span class="hljs-comment"># revert the most recently applied migration &#36824;&#21407;&#26368;&#36817;&#19968;&#27425;&#25552;&#20132;&#30340;&#36801;&#31227;</span>
+yii migrate/down <span class="hljs-number">3</span>   <span class="hljs-comment"># revert the most 3 recently applied migrations &#36824;&#21407;&#26368;&#36817;&#19977;&#27425;&#25552;&#20132;&#30340;&#36801;&#31227;</span>
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#24182;&#19981;&#26159;&#25152;&#26377;&#30340;&#36801;&#31227;&#37117;&#33021;&#34987;&#36824;&#21407;&#12290;
+  &#23581;&#35797;&#36824;&#21407;&#36825;&#31867;&#36801;&#31227;&#23558;&#21487;&#33021;&#23548;&#33268;&#25253;&#38169;&#29978;&#33267;&#26159;&#32456;&#27490;&#25152;&#26377;&#30340;&#36824;&#21407;&#36827;&#31243;&#12290;</p>
+</blockquote>
+<h2>&#37325;&#20570;&#36801;&#31227;  <span id="redoing-migrations"></span><a href="#redoing-migrations" class="hashlink">&para;</a></h2><p>&#37325;&#20570;&#36801;&#31227;&#30340;&#24847;&#24605;&#26159;&#20808;&#36824;&#21407;&#25351;&#23450;&#30340;&#36801;&#31227;&#65292;&#28982;&#21518;&#20877;&#27425;&#25552;&#20132;&#12290;
+&#22914;&#19979;&#25152;&#31034;&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/redo        <span class="hljs-comment"># &#37325;&#20570;&#26368;&#36817;&#19968;&#27425;&#25552;&#20132;&#30340;&#36801;&#31227;</span>
+yii migrate/redo <span class="hljs-number">3</span>      <span class="hljs-comment"># &#37325;&#20570;&#26368;&#36817;&#19977;&#27425;&#25552;&#20132;&#30340;&#36801;&#31227;</span>
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22914;&#26524;&#19968;&#20010;&#36801;&#31227;&#26159;&#19981;&#33021;&#34987;&#36824;&#21407;&#30340;&#65292;&#37027;&#20040;&#20320;&#23558;&#26080;&#27861;&#23545;&#23427;&#36827;&#34892;&#37325;&#20570;&#12290;</p>
+</blockquote>
+<h2>&#21047;&#26032;&#36801;&#31227;  <span id="refreshing-migrations"></span><a href="#refreshing-migrations" class="hashlink">&para;</a></h2><p>&#20174; 2.0.13 &#29256;&#26412;&#24320;&#22987;&#65292;&#20320;&#21487;&#20197;&#20174;&#25968;&#25454;&#24211;&#20013;&#21024;&#38500;&#25152;&#26377;&#30340;&#34920;&#21644;&#22806;&#38190;&#65292;&#20174;&#22836;&#24320;&#22987;&#37325;&#26032;&#25552;&#20132;&#25152;&#26377;&#36801;&#31227;&#12290;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/fresh       <span class="hljs-comment"># &#28165;&#31354;&#25968;&#25454;&#24211;&#24182;&#20174;&#22836;&#24320;&#22987;&#24212;&#29992;&#25152;&#26377;&#36801;&#31227;&#12290;</span>
+</code></pre>
+<h2>&#21015;&#20986;&#36801;&#31227;  <span id="listing-migrations"></span><a href="#listing-migrations" class="hashlink">&para;</a></h2><p>&#20320;&#21487;&#20197;&#20351;&#29992;&#22914;&#19979;&#21629;&#20196;&#21015;&#20986;&#37027;&#20123;&#25552;&#20132;&#20102;&#30340;&#25110;&#32773;&#26159;&#36824;&#26410;&#25552;&#20132;&#30340;&#36801;&#31227;&#65306;</p>
+<pre><code class="hljs bash">yii migrate/<span class="hljs-built_in">history</span>     <span class="hljs-comment"># &#26174;&#31034;&#26368;&#36817;10&#27425;&#25552;&#20132;&#30340;&#36801;&#31227;</span>
+yii migrate/<span class="hljs-built_in">history</span> 5   <span class="hljs-comment"># &#26174;&#31034;&#26368;&#36817;5&#27425;&#25552;&#20132;&#30340;&#36801;&#31227;</span>
+yii migrate/<span class="hljs-built_in">history</span> all <span class="hljs-comment"># &#26174;&#31034;&#25152;&#26377;&#24050;&#32463;&#25552;&#20132;&#36807;&#30340;&#36801;&#31227;</span>
+
+yii migrate/new         <span class="hljs-comment"># &#26174;&#31034;&#21069;10&#20010;&#36824;&#26410;&#25552;&#20132;&#30340;&#36801;&#31227;</span>
+yii migrate/new 5       <span class="hljs-comment"># &#26174;&#31034;&#21069;5&#20010;&#36824;&#26410;&#25552;&#20132;&#30340;&#36801;&#31227;</span>
+yii migrate/new all     <span class="hljs-comment"># &#26174;&#31034;&#25152;&#26377;&#36824;&#26410;&#25552;&#20132;&#30340;&#36801;&#31227;</span>
+</code></pre>
+<h2>&#20462;&#25913;&#36801;&#31227;&#21382;&#21490;  <span id="modifying-migration-history"></span><a href="#modifying-migration-history" class="hashlink">&para;</a></h2><p>&#26377;&#26102;&#20505;&#20320;&#20063;&#35768;&#38656;&#35201;&#31616;&#21333;&#30340;&#26631;&#35760;&#19968;&#19979;&#20320;&#30340;&#25968;&#25454;&#24211;&#24050;&#32463;&#21319;&#32423;&#21040;&#19968;&#20010;&#29305;&#23450;&#30340;&#36801;&#31227;&#65292;
+&#32780;&#19981;&#26159;&#23454;&#38469;&#25552;&#20132;&#25110;&#32773;&#26159;&#36824;&#21407;&#36801;&#31227;&#12290;
+&#36825;&#20010;&#32463;&#24120;&#20250;&#21457;&#29983;&#22312;&#20320;&#25163;&#21160;&#30340;&#25913;&#21464;&#25968;&#25454;&#24211;&#30340;&#19968;&#20010;&#29305;&#23450;&#29366;&#24577;&#65292;&#32780;&#21448;&#19981;&#24819;&#30456;&#24212;&#30340;&#36801;&#31227;&#34987;&#37325;&#22797;&#25552;&#20132;&#12290;
+&#37027;&#20040;&#20320;&#21487;&#20197;&#20351;&#29992;&#22914;&#19979;&#21629;&#20196;&#26469;&#36798;&#21040;&#30446;&#30340;&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/mark 150101_185401                      <span class="hljs-comment"># &#20351;&#29992;&#26102;&#38388;&#25139;&#26469;&#25351;&#23450;&#36801;&#31227;</span>
+yii migrate/mark <span class="hljs-string">"2015-01-01 18:54:01"</span>              <span class="hljs-comment"># &#20351;&#29992;&#19968;&#20010;&#21487;&#20197;&#34987; strtotime() &#35299;&#26512;&#30340;&#23383;&#31526;&#20018;</span>
+yii migrate/mark m150101_185401_create_news_table   <span class="hljs-comment"># &#20351;&#29992;&#20840;&#21517;</span>
+yii migrate/mark <span class="hljs-number">1392853618</span>                         <span class="hljs-comment"># &#20351;&#29992; UNIX &#26102;&#38388;&#25139;</span>
+</code></pre>
+<p>&#35813;&#21629;&#20196;&#23558;&#20250;&#28155;&#21152;&#25110;&#32773;&#21024;&#38500; <code>migration</code> &#34920;&#24403;&#20013;&#30340;&#26576;&#20960;&#34892;&#25968;&#25454;&#26469;&#34920;&#26126;&#25968;&#25454;&#24211;&#24050;&#32463;&#25552;&#20132;&#21040;&#20102;&#25351;&#23450;&#30340;&#26576;&#20010;&#36801;&#31227;&#19978;&#12290;
+&#25191;&#34892;&#36825;&#26465;&#21629;&#20196;&#26399;&#38388;&#19981;&#20250;&#26377;&#20219;&#20309;&#30340;&#36801;&#31227;&#20250;&#34987;&#25552;&#20132;&#25110;&#36824;&#21407;&#12290;</p>
+<h2>&#33258;&#23450;&#20041;&#36801;&#31227;  <span id="customizing-migrations"></span><a href="#customizing-migrations" class="hashlink">&para;</a></h2><p>&#26377;&#24456;&#22810;&#26041;&#27861;&#21487;&#20197;&#33258;&#23450;&#20041;&#36801;&#31227;&#21629;&#20196;&#12290;</p>
+<h3>&#20351;&#29992;&#21629;&#20196;&#34892;&#36873;&#39033;  <span id="using-command-line-options"></span><a href="#using-command-line-options" class="hashlink">&para;</a></h3><p>&#36801;&#31227;&#21629;&#20196;&#38468;&#24102;&#20102;&#20960;&#20010;&#21629;&#20196;&#34892;&#36873;&#39033;&#65292;&#21487;&#20197;&#29992;&#26469;&#33258;&#23450;&#20041;&#23427;&#30340;&#34892;&#20026;&#65306;</p>
+<ul>
+<li><p><code>interactive</code>&#65306;boolean (&#40664;&#35748;&#20540;&#20026; true)&#65292;&#25351;&#23450;&#26159;&#21542;&#20197;&#20132;&#20114;&#27169;&#24335;&#26469;&#36816;&#34892;&#36801;&#31227;&#12290;
+&#24403;&#34987;&#35774;&#32622;&#20026; true &#26102;&#65292;&#22312;&#21629;&#20196;&#25191;&#34892;&#26576;&#20123;&#25805;&#20316;&#21069;&#65292;&#20250;&#25552;&#31034;&#29992;&#25143;&#12290;&#22914;&#26524;&#20320;&#24076;&#26395;&#22312;&#21518;&#21488;&#25191;&#34892;&#35813;&#21629;&#20196;&#65292;
+&#37027;&#20040;&#20320;&#24212;&#35813;&#25226;&#23427;&#35774;&#32622;&#25104; false&#12290;</p>
+</li>
+<li><p><code>migrationPath</code>&#65306;string|array (&#40664;&#35748;&#20540;&#20026; <code>@app/migrations</code>)&#65292;&#25351;&#23450;&#23384;&#25918;&#25152;&#26377;&#36801;&#31227;&#31867;&#25991;&#20214;&#30340;&#30446;&#24405;&#12290;&#35813;&#36873;&#39033;&#21487;&#20197;&#26159;&#19968;&#20010;&#30446;&#24405;&#30340;&#36335;&#24452;&#65292;
+&#20063;&#21487;&#20197;&#26159; <a href="guide-concept-aliases.html">&#36335;&#24452;&#21035;&#21517;</a>&#12290;&#38656;&#35201;&#27880;&#24847;&#30340;&#26159;&#25351;&#23450;&#30340;&#30446;&#24405;&#24517;&#36873;&#23384;&#22312;&#65292;
+&#21542;&#21017;&#23558;&#20250;&#35302;&#21457;&#19968;&#20010;&#38169;&#35823;&#12290;
+&#20174; 2.0.12 &#29256;&#26412;&#24320;&#22987;&#65292;&#21487;&#20197;&#29992;&#19968;&#20010;&#25968;&#32452;&#26469;&#25351;&#23450;&#20174;&#22810;&#20010;&#26469;&#28304;&#35835;&#21462;&#36801;&#31227;&#31867;&#25991;&#20214;&#12290;</p>
+</li>
+<li><p><code>migrationTable</code>&#65306;string (&#40664;&#35748;&#20540;&#20026; <code>migration</code>)&#65292;&#25351;&#23450;&#29992;&#20110;&#23384;&#20648;&#36801;&#31227;&#21382;&#21490;&#20449;&#24687;&#30340;&#25968;&#25454;&#24211;&#34920;&#21517;&#31216;&#12290;
+&#22914;&#26524;&#36825;&#24352;&#34920;&#19981;&#23384;&#22312;&#65292;&#37027;&#20040;&#36801;&#31227;&#21629;&#20196;&#23558;&#33258;&#21160;&#21019;&#24314;&#36825;&#24352;&#34920;&#12290;&#24403;&#28982;&#20320;&#20063;&#21487;&#20197;&#20351;&#29992;&#36825;&#26679;&#30340;&#23383;&#27573;&#32467;&#26500;&#65306;
+<code>version varchar(255) primary key, apply_time integer</code> &#26469;&#25163;&#21160;&#21019;&#24314;&#36825;&#24352;&#34920;&#12290;</p>
+</li>
+<li><p><code>db</code>&#65306;string (&#40664;&#35748;&#20540;&#20026; <code>db</code>)&#65292;&#25351;&#23450;&#25968;&#25454;&#24211; <a href="guide-structure-application-components.html">application component</a> &#30340; ID&#12290;
+&#23427;&#25351;&#30340;&#26159;&#23558;&#20250;&#34987;&#35813;&#21629;&#20196;&#36801;&#31227;&#30340;&#25968;&#25454;&#24211;&#12290;</p>
+</li>
+<li><p><code>templateFile</code>&#65306;string (&#40664;&#35748;&#20540;&#20026; <code>@yii/views/migration.php</code>)&#65292;
+&#25351;&#23450;&#29983;&#20135;&#36801;&#31227;&#26694;&#26550;&#20195;&#30721;&#31867;&#25991;&#20214;&#30340;&#27169;&#29256;&#25991;&#20214;&#36335;&#24452;&#12290;
+&#35813;&#36873;&#39033;&#21363;&#21487;&#20197;&#20351;&#29992;&#25991;&#20214;&#36335;&#24452;&#26469;&#25351;&#23450;&#65292;&#20063;&#21487;&#20197;&#20351;&#29992;&#36335;&#24452; <a href="guide-concept-aliases.html">&#21035;&#21517;</a> &#26469;&#25351;&#23450;&#12290;
+&#35813;&#27169;&#29256;&#25991;&#20214;&#26159;&#19968;&#20010;&#21487;&#20197;&#20351;&#29992;&#39044;&#23450;&#20041;&#21464;&#37327; <code>$className</code> &#26469;&#33719;&#21462;&#36801;&#31227;&#31867;&#21517;&#31216;&#30340; PHP &#33050;&#26412;&#12290;</p>
+</li>
+<li><p><code>generatorTemplateFiles</code>&#65306;array (defaults to `[</p>
+<pre><code class="hljs php">  <span class="hljs-string">'create_table'</span> =&gt; <span class="hljs-string">'@yii/views/createTableMigration.php'</span>,
+  <span class="hljs-string">'drop_table'</span> =&gt; <span class="hljs-string">'@yii/views/dropTableMigration.php'</span>,
+  <span class="hljs-string">'add_column'</span> =&gt; <span class="hljs-string">'@yii/views/addColumnMigration.php'</span>,
+  <span class="hljs-string">'drop_column'</span> =&gt; <span class="hljs-string">'@yii/views/dropColumnMigration.php'</span>,
+  <span class="hljs-string">'create_junction'</span> =&gt; <span class="hljs-string">'@yii/views/createJunctionMigration.php'</span>
+</code></pre>
+<p>]`)&#65292;&#25351;&#23450;&#29983;&#25104;&#36801;&#31227;&#20195;&#30721;&#30340;&#27169;&#29256;&#25991;&#20214;&#65292;&#26597;&#30475; "<a href="#generating-migrations">Generating Migrations</a>"
+&#20102;&#35299;&#26356;&#22810;&#32454;&#33410;&#12290;</p>
+</li>
+<li><p><code>fields</code>&#65306;&#30001;&#29992;&#26469;&#21019;&#24314;&#36801;&#31227;&#20195;&#30721;&#30340;&#22810;&#20010;&#23383;&#27573;&#23450;&#20041;&#23383;&#31526;&#20018;&#25152;&#32452;&#25104;&#30340;&#25968;&#32452;&#12290;&#40664;&#35748;&#26159; <code>[]</code>&#12290;
+&#23383;&#27573;&#23450;&#20041;&#30340;&#26684;&#24335;&#26159; <code>COLUMN_NAME:COLUMN_TYPE:COLUMN_DECORATOR</code>&#12290;&#20363;&#22914;&#65292;<code>--fields=name:string(12):notNull</code> &#20250;&#21019;&#24314;
+&#19968;&#20010;&#38271;&#24230;&#20026; 12 &#30340;&#65292;&#38750;&#31354;&#30340;&#65292;&#23383;&#31526;&#20018;&#31867;&#22411;&#30340;&#23383;&#27573;&#12290;</p>
+</li>
+</ul>
+<p>&#22914;&#19979;&#20363;&#23376;&#21521;&#25105;&#20204;&#23637;&#31034;&#20102;&#22914;&#20309;&#20351;&#29992;&#36825;&#20123;&#36873;&#39033;&#65306;</p>
+<p>&#20363;&#22914;&#65292;&#22914;&#26524;&#25105;&#20204;&#38656;&#35201;&#36801;&#31227;&#19968;&#20010; <code>forum</code> &#27169;&#22359;&#65292;
+&#32780;&#35813;&#36801;&#31227;&#25991;&#20214;&#25918;&#22312;&#35813;&#27169;&#22359;&#19979;&#30340; <code>migrations</code> &#30446;&#24405;&#24403;&#20013;&#65292;
+&#37027;&#20040;&#25105;&#20204;&#21487;&#20197;&#20351;&#29992;&#22914;&#19979;&#21629;&#20196;&#65306; </p>
+<pre><code class="hljs nginx"><span class="hljs-comment"># &#22312; forum &#27169;&#22359;&#20013;&#20197;&#38750;&#20132;&#20114;&#27169;&#24335;&#36827;&#34892;&#36801;&#31227;</span>
+<span class="hljs-attribute">yii</span> migrate --migrationPath=<span class="hljs-variable">@app</span>/modules/forum/migrations --interactive=<span class="hljs-number">0</span>
+</code></pre>
+<h3>&#20840;&#23616;&#37197;&#32622;&#21629;&#20196;  <span id="configuring-command-globally"></span><a href="#configuring-command-globally" class="hashlink">&para;</a></h3><p>&#20026;&#20102;&#36991;&#20813;&#36816;&#34892;&#36801;&#31227;&#21629;&#20196;&#30340;&#26102;&#20505;&#27599;&#27425;&#37117;&#35201;&#37325;&#22797;&#30340;&#36755;&#20837;&#19968;&#20123;&#21516;&#26679;&#30340;&#21442;&#25968;&#65292;
+&#20320;&#21487;&#20197;&#36873;&#25321;&#22312;&#24212;&#29992;&#31243;&#24207;&#37197;&#32622;&#24403;&#20013;&#36827;&#34892;&#20840;&#23616;&#37197;&#32622;&#65292;&#19968;&#21171;&#27704;&#36920;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-string">'migrate'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationTable'</span> =&gt; <span class="hljs-string">'backend_migration'</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>&#22914;&#19978;&#25152;&#31034;&#37197;&#32622;&#65292;&#22312;&#27599;&#27425;&#36816;&#34892;&#36801;&#31227;&#21629;&#20196;&#30340;&#26102;&#20505;&#65292;
+<code>backend_migration</code> &#34920;&#23558;&#20250;&#34987;&#29992;&#26469;&#35760;&#24405;&#36801;&#31227;&#21382;&#21490;&#12290;
+&#20320;&#20877;&#20063;&#19981;&#38656;&#35201;&#36890;&#36807; <code>migrationTable</code> &#21629;&#20196;&#34892;&#21442;&#25968;&#26469;&#25351;&#23450;&#36825;&#24352;&#21382;&#21490;&#32426;&#24405;&#34920;&#20102;&#12290;</p>
+<h3>&#20351;&#29992;&#21629;&#21517;&#31354;&#38388;&#30340;&#36801;&#31227;  <span id="namespaced-migrations"></span><a href="#namespaced-migrations" class="hashlink">&para;</a></h3><p>&#33258;&#20174; 2.0.10 &#29256;&#26412;&#24320;&#22987;&#65292;&#20320;&#21487;&#20197;&#20026;&#36801;&#31227;&#31867;&#20351;&#29992;&#21629;&#21517;&#31354;&#38388;&#12290; 
+&#20320;&#21487;&#20197;&#36890;&#36807; <a href="./yii-console-controllers-basemigratecontroller.html#%24migrationNamespaces-detail">migrationNamespaces</a> &#26469;&#25351;&#23450;&#36801;&#31227;&#20250;&#29992;&#21040;&#30340;&#21629;&#21517;&#31354;&#38388;&#12290;
+&#20351;&#29992;&#21629;&#21517;&#31354;&#38388;&#23558;&#20801;&#35768;&#20320;&#21033;&#29992;&#22810;&#20010;&#28304;&#30340;&#20301;&#32622;&#36827;&#34892;&#36801;&#31227;&#12290;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-string">'migrate'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationPath'</span> =&gt; <span class="hljs-keyword">null</span>, <span class="hljs-comment">// disable non-namespaced migrations if app\migrations is listed below</span>
+            <span class="hljs-string">'migrationNamespaces'</span> =&gt; [
+                <span class="hljs-string">'app\migrations'</span>, <span class="hljs-comment">// Common migrations for the whole application</span>
+                <span class="hljs-string">'module\migrations'</span>, <span class="hljs-comment">// Migrations for the specific project's module</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-string">'some\extension\migrations'</span>, <span class="hljs-comment">// Migrations for the specific extension</span>
+            ],
+        ],
+    ],
+];
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#20174;&#19981;&#21516;&#21629;&#21517;&#31354;&#38388;&#25552;&#20132;&#30340;&#36801;&#31227;&#20250;&#21019;&#24314;&#20986;&#19968;&#20221;<strong>&#21333;&#19968;&#30340;</strong>&#36801;&#31227;&#21382;&#21490;&#65292;
+  &#27604;&#22914;&#20320;&#19981;&#33021;&#21482;&#20174;&#26576;&#20010;&#29305;&#23450;&#30340;&#21629;&#21517;&#31354;&#38388;&#21435;&#25552;&#20132;&#25110;&#32773;&#36824;&#21407;&#36801;&#31227;&#12290;</p>
+</blockquote>
+<p>&#24403;&#20320;&#27491;&#22312;&#25805;&#20316;&#20351;&#29992;&#21629;&#21517;&#31354;&#38388;&#30340;&#36801;&#31227;&#26102;&#65306;&#27604;&#22914;&#21019;&#24314;&#36801;&#31227;&#65292;&#36824;&#21407;&#36801;&#31227;&#31561;&#65292;&#20320;&#24212;&#24403;&#22312;&#36801;&#31227;&#21517;&#31216;&#21069;&#25351;&#26126;&#23436;&#25972;&#30340;&#21629;&#21517;&#31354;&#38388;&#12290;
+&#35201;&#27880;&#24847;&#21453;&#26012;&#32447;(<code>\</code>)&#22312; shell &#20013;&#20250;&#34987;&#24403;&#25104;&#29305;&#27530;&#23383;&#31526;&#65292;&#20320;&#24212;&#35813;&#23545;&#21453;&#26012;&#32447;&#36827;&#34892;&#32534;&#30721;&#65292;
+&#36991;&#20813; shell &#25253;&#38169;&#25110;&#32773;&#20135;&#29983;&#19981;&#27491;&#30830;&#30340;&#32467;&#26524;&#12290;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate/create <span class="hljs-string">'app\\migrations\\createUserTable'</span>
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#36890;&#36807; <a href="./yii-console-controllers-basemigratecontroller.html#%24migrationPath-detail">migrationPath</a> &#22768;&#26126;&#30340;&#36801;&#31227;&#19981;&#33021;&#21253;&#21547;&#21629;&#21517;&#31354;&#38388;&#65292;
+  &#20351;&#29992;&#21629;&#21517;&#31354;&#38388;&#30340;&#36801;&#31227;&#21482;&#33021;&#36890;&#36807; <a href="./yii-console-controllers-basemigratecontroller.html#%24migrationNamespaces-detail">yii\console\controllers\MigrateController::$migrationNamespaces</a> 
+  &#30340;&#23646;&#24615;&#26469;&#25552;&#20132;&#12290;</p>
+</blockquote>
+<p>&#20174;&#29256;&#26412; 2.0.12 &#24320;&#22987;&#65292;<a href="./yii-console-controllers-basemigratecontroller.html#%24migrationPath-detail">migrationPath</a> &#23646;&#24615;&#20063;&#25509;&#25910;&#19968;&#20010;&#25968;&#32452;&#20316;&#20026;&#21442;&#25968;,
+&#36825;&#20010;&#25968;&#32452;&#25351;&#26126;&#20102;&#27809;&#26377;&#20351;&#29992;&#21629;&#21517;&#31354;&#38388;&#30340;&#22810;&#20010;&#36801;&#31227;&#30340;&#30446;&#24405;&#12290;
+&#36825;&#20010;&#21442;&#25968;&#20027;&#35201;&#29992;&#20110;&#24050;&#32463;&#20174;&#22810;&#20010;&#20301;&#32622;&#36827;&#34892;&#20102;&#36801;&#31227;&#30340;&#29616;&#26377;&#39033;&#30446;&#12290;
+&#36825;&#20123;&#36801;&#31227;&#20027;&#35201;&#26469;&#33258;&#22806;&#37096;&#36164;&#28304;&#65292;&#27604;&#22914;&#20854;&#20182;&#24320;&#21457;&#20154;&#21592;&#24320;&#21457;&#30340; Yii &#25193;&#23637;&#65292;
+&#24403;&#20351;&#29992;&#26032;&#26041;&#27861;&#26102;&#65292;&#36825;&#20123;&#36801;&#31227;&#24456;&#38590;&#25913;&#25104;&#20351;&#29992;&#21629;&#21517;&#31354;&#38388;&#12290;</p>
+<h3>&#20998;&#31163;&#30340;&#36801;&#31227;  <span id="separated-migrations"></span><a href="#separated-migrations" class="hashlink">&para;</a></h3><p>&#26377;&#26102;&#20505;&#25105;&#20204;&#24182;&#19981;&#24819;&#25972;&#20010;&#39033;&#30446;&#25152;&#26377;&#30340;&#36801;&#31227;&#37117;&#35760;&#24405;&#21040;&#21516;&#19968;&#20221;&#36801;&#31227;&#21382;&#21490;&#20013;&#12290;
+&#20363;&#22914;&#65306;&#20320;&#21487;&#33021;&#23433;&#35013;&#20102; 'blog' &#25193;&#23637;&#65292;&#23427;&#26377;&#33258;&#24049;&#29420;&#31435;&#30340;&#21151;&#33021;&#21644;&#36801;&#31227;&#65292;
+&#19981;&#20250;&#24433;&#21709;&#21040;&#29992;&#20110;&#39033;&#30446;&#20027;&#35201;&#21151;&#33021;&#30340;&#20854;&#20182;&#25193;&#23637;&#12290;</p>
+<p>&#22914;&#26524;&#20320;&#24819;&#23436;&#20840;&#20998;&#24320;&#25552;&#20132;&#21644;&#36861;&#36394;&#22810;&#20010;&#36801;&#31227;&#65292;
+&#20320;&#21487;&#20197;&#21516;&#26102;&#37197;&#32622;&#20351;&#29992;&#19981;&#21516;&#21629;&#21517;&#31354;&#38388;&#21644;&#21382;&#21490;&#35760;&#24405;&#34920;&#30340;&#22810;&#26465;&#36801;&#31227;&#21629;&#20196;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-comment">// Common migrations for the whole application</span>
+        <span class="hljs-string">'migrate-app'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationNamespaces'</span> =&gt; [<span class="hljs-string">'app\migrations'</span>],
+            <span class="hljs-string">'migrationTable'</span> =&gt; <span class="hljs-string">'migration_app'</span>,
+            <span class="hljs-string">'migrationPath'</span> =&gt; <span class="hljs-keyword">null</span>,
+        ],
+        <span class="hljs-comment">// Migrations for the specific project's module</span>
+        <span class="hljs-string">'migrate-module'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationNamespaces'</span> =&gt; [<span class="hljs-string">'module\migrations'</span>],
+            <span class="hljs-string">'migrationTable'</span> =&gt; <span class="hljs-string">'migration_module'</span>,
+            <span class="hljs-string">'migrationPath'</span> =&gt; <span class="hljs-keyword">null</span>,
+        ],
+        <span class="hljs-comment">// Migrations for the specific extension</span>
+        <span class="hljs-string">'migrate-rbac'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\console\controllers\MigrateController'</span>,
+            <span class="hljs-string">'migrationPath'</span> =&gt; <span class="hljs-string">'@yii/rbac/migrations'</span>,
+            <span class="hljs-string">'migrationTable'</span> =&gt; <span class="hljs-string">'migration_rbac'</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>&#35831;&#27880;&#24847;&#65292;&#35201;&#21516;&#27493;&#25968;&#25454;&#24211;&#65292;&#24744;&#29616;&#22312;&#38656;&#35201;&#36816;&#34892;&#22810;&#20010;&#21629;&#20196;&#32780;&#19981;&#26159;&#19968;&#20010;&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate-app
+yii migrate-module
+yii migrate-rbac
+</code></pre>
+<h2>&#36801;&#31227;&#22810;&#20010;&#25968;&#25454;&#24211;  <span id="migrating-multiple-databases"></span><a href="#migrating-multiple-databases" class="hashlink">&para;</a></h2><p>&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#36801;&#31227;&#23558;&#20250;&#25552;&#20132;&#21040;&#30001; <code>db</code> <a href="guide-structure-application-components.html">application component</a> &#25152;&#23450;&#20041;&#30340;&#21516;&#19968;&#20010;&#25968;&#25454;&#24211;&#24403;&#20013;&#12290;
+&#22914;&#26524;&#20320;&#38656;&#35201;&#25552;&#20132;&#21040;&#19981;&#21516;&#30340;&#25968;&#25454;&#24211;&#65292;&#20320;&#21487;&#20197;&#20687;&#19979;&#38754;&#37027;&#26679;&#25351;&#23450; <code>db</code> &#21629;&#20196;&#34892;&#36873;&#39033;&#65292;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate --db=db2
+</code></pre>
+<p>&#19978;&#38754;&#30340;&#21629;&#20196;&#23558;&#20250;&#25226;&#36801;&#31227;&#25552;&#20132;&#21040; <code>db2</code> &#25968;&#25454;&#24211;&#24403;&#20013;&#12290;</p>
+<p>&#26377;&#20123;&#26102;&#20505;&#20320;&#38656;&#35201;&#25552;&#20132; <em>&#19968;&#20123;</em> &#36801;&#31227;&#21040;&#19968;&#20010;&#25968;&#25454;&#24211;&#65292;&#32780;&#21478;&#22806;&#19968;&#20123;&#21017;&#25552;&#20132;&#21040;&#21478;&#19968;&#20010;&#25968;&#25454;&#24211;&#12290;
+&#20026;&#20102;&#36798;&#21040;&#36825;&#20010;&#30446;&#30340;&#65292;&#20320;&#24212;&#35813;&#22312;&#23454;&#29616;&#19968;&#20010;&#36801;&#31227;&#31867;&#30340;&#26102;&#20505;&#25351;&#23450;&#38656;&#35201;&#29992;&#21040;&#30340;&#25968;&#25454;&#24211;&#32452;&#20214;&#30340; ID &#65292;
+&#22914;&#19979;&#25152;&#31034;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">m150101_185401_create_news_table</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;db = <span class="hljs-string">'db2'</span>;
+        <span class="hljs-keyword">parent</span>::init();
+    }
+}
+</code></pre>
+<p>&#21363;&#20351;&#20320;&#20351;&#29992; <code>db</code> &#21629;&#20196;&#34892;&#36873;&#39033;&#25351;&#23450;&#20102;&#21478;&#22806;&#19968;&#20010;&#19981;&#21516;&#30340;&#25968;&#25454;&#24211;&#65292;&#19978;&#38754;&#30340;&#36801;&#31227;&#36824;&#26159;&#20250;&#34987;&#25552;&#20132;&#21040; <code>db2</code> &#24403;&#20013;&#12290;
+&#38656;&#35201;&#27880;&#24847;&#30340;&#26159;&#36825;&#20010;&#26102;&#20505;&#36801;&#31227;&#30340;&#21382;&#21490;&#20449;&#24687;&#20381;&#28982;&#20250;&#34987;&#35760;&#24405;&#21040; <code>db</code> &#21629;&#20196;&#34892;&#36873;&#39033;&#25152;&#25351;&#23450;&#30340;&#25968;&#25454;&#24211;&#24403;&#20013;&#12290;</p>
+<p>&#22914;&#26524;&#26377;&#22810;&#20010;&#36801;&#31227;&#37117;&#20351;&#29992;&#21040;&#20102;&#21516;&#19968;&#20010;&#25968;&#25454;&#24211;&#65292;&#37027;&#20040;&#24314;&#35758;&#20320;&#21019;&#24314;&#19968;&#20010;&#36801;&#31227;&#30340;&#22522;&#31867;&#65292;&#37324;&#38754;&#21253;&#21547;&#19978;&#36848;&#30340; <code>init()</code> &#20195;&#30721;&#12290;
+&#28982;&#21518;&#27599;&#20010;&#36801;&#31227;&#31867;&#37117;&#32487;&#25215;&#36825;&#20010;&#22522;&#31867;&#23601;&#21487;&#20197;&#20102;&#12290;</p>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#38500;&#20102;&#22312; <a href="./yii-db-migration.html#%24db-detail">db</a> &#21442;&#25968;&#24403;&#20013;&#36827;&#34892;&#35774;&#32622;&#20197;&#22806;&#65292; 
+  &#20320;&#36824;&#21487;&#20197;&#36890;&#36807;&#22312;&#36801;&#31227;&#31867;&#20013;&#21019;&#24314;&#26032;&#30340;&#25968;&#25454;&#24211;&#36830;&#25509;&#26469;&#25805;&#20316;&#19981;&#21516;&#30340;&#25968;&#25454;&#24211;&#12290;
+  &#28982;&#21518;&#36890;&#36807;&#36825;&#20123;&#36830;&#25509;&#20877;&#20351;&#29992; <a href="guide-db-dao.html">DAO &#26041;&#27861;</a> &#26469;&#25805;&#20316;&#19981;&#21516;&#30340;&#25968;&#25454;&#24211;&#12290;</p>
+</blockquote>
+<p>&#21478;&#22806;&#19968;&#20010;&#21487;&#20197;&#35753;&#20320;&#36801;&#31227;&#22810;&#20010;&#25968;&#25454;&#24211;&#30340;&#31574;&#30053;&#26159;&#25226;&#36801;&#31227;&#23384;&#25918;&#21040;&#19981;&#21516;&#30340;&#30446;&#24405;&#19979;&#65292;
+&#28982;&#21518;&#20320;&#21487;&#20197;&#36890;&#36807;&#22914;&#19979;&#21629;&#20196;&#20998;&#21035;&#23545;&#19981;&#21516;&#30340;&#25968;&#25454;&#24211;&#36827;&#34892;&#36801;&#31227;&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> migrate --migrationPath=<span class="hljs-variable">@app</span>/migrations/db1 --db=db1
+yii migrate --migrationPath=<span class="hljs-variable">@app</span>/migrations/db2 --db=db2
+...
+</code></pre>
+<p>&#31532;&#19968;&#26465;&#21629;&#20196;&#23558;&#20250;&#25226; <code>@app/migrations/db1</code> &#30446;&#24405;&#19979;&#30340;&#36801;&#31227;&#25552;&#20132;&#21040; <code>db1</code> &#25968;&#25454;&#24211;&#24403;&#20013;&#65292;
+&#31532;&#20108;&#26465;&#21629;&#20196;&#21017;&#20250;&#25226; <code>@app/migrations/db2</code> &#19979;&#30340;&#36801;&#31227;&#25552;&#20132;&#21040; <code>db2</code> &#25968;&#25454;&#24211;&#24403;&#20013;&#65292;&#20197;&#27492;&#31867;&#25512;&#12290;</p>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:21 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>前端资源（Assets） - 应用结构（Application Structure） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w681" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w681-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w681-collapse" class="collapse navbar-collapse"><ul id="w682" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w683" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-665" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-665" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-666" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-666" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item active" href="#navigation-667" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-667" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item active" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-668" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-668" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-669" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-669" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-670" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-670" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-671" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-671" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-672" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-672" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-673" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-673" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-674" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-674" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-675" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-675" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-676" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-676" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-677" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-677" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-678" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-678" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-679" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-679" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-680" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-680" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>&#36164;&#28304; <span id="zi-yuan"></span><a href="#zi-yuan" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#asset-bundles">&#36164;&#28304;&#21253;</a></li>
+<li><a href="#defining-asset-bundles">&#23450;&#20041;&#36164;&#28304;&#21253;</a></li>
+<li><a href="#using-asset-bundles">&#20351;&#29992;&#36164;&#28304;&#21253;</a></li>
+<li><a href="#common-asset-bundles">&#24120;&#29992;&#36164;&#28304;&#21253;</a></li>
+<li><a href="#asset-conversion">&#36164;&#28304;&#36716;&#25442;</a></li>
+<li><a href="#combining-compressing-assets">&#21512;&#24182;&#21644;&#21387;&#32553;&#36164;&#28304;</a></li></ol></div>
+<p>Yii &#20013;&#30340;&#36164;&#28304;&#26159;&#21644; Web &#39029;&#38754;&#30456;&#20851;&#30340;&#25991;&#20214;&#65292;&#21487;&#20026; CSS &#25991;&#20214;&#65292;JavaScript &#25991;&#20214;&#65292;&#22270;&#29255;&#25110;&#35270;&#39057;&#31561;&#65292;
+&#36164;&#28304;&#25918;&#22312; Web &#21487;&#35775;&#38382;&#30340;&#30446;&#24405;&#19979;&#65292;&#30452;&#25509;&#34987; Web &#26381;&#21153;&#22120;&#35843;&#29992;&#12290;</p>
+<p>&#36890;&#36807;&#31243;&#24207;&#33258;&#21160;&#31649;&#29702;&#36164;&#28304;&#26356;&#22909;&#19968;&#28857;&#65292;&#20363;&#22914;&#65292;&#24403;&#20320;&#22312;&#39029;&#38754;&#20013;&#20351;&#29992; <a href="./yii-jui-datepicker.html">yii\jui\DatePicker</a> &#23567;&#37096;&#20214;&#26102;&#65292;
+&#23427;&#20250;&#33258;&#21160;&#21253;&#21547;&#38656;&#35201;&#30340; CSS &#21644; JavaScript &#25991;&#20214;&#65292;
+&#32780;&#19981;&#26159;&#35201;&#27714;&#20320;&#25163;&#24037;&#21435;&#25214;&#21040;&#36825;&#20123;&#25991;&#20214;&#24182;&#21253;&#21547;&#65292;
+&#24403;&#20320;&#21319;&#32423;&#23567;&#37096;&#20214;&#26102;&#65292;&#23427;&#20250;&#33258;&#21160;&#20351;&#29992;&#26032;&#29256;&#26412;&#30340;&#36164;&#28304;&#25991;&#20214;&#65292;
+&#22312;&#26412;&#25945;&#31243;&#20013;&#65292;&#25105;&#20204;&#20250;&#35814;&#36848; Yii &#25552;&#20379;&#30340;&#24378;&#22823;&#30340;&#36164;&#28304;&#31649;&#29702;&#21151;&#33021;&#12290;</p>
+<h2>&#36164;&#28304;&#21253;  <span id="asset-bundles"></span><a href="#asset-bundles" class="hashlink">&para;</a></h2><p>Yii &#22312;<em>&#36164;&#28304;&#21253;</em>&#20013;&#31649;&#29702;&#36164;&#28304;&#65292;&#36164;&#28304;&#21253;&#31616;&#21333;&#30340;&#35828;&#23601;&#26159;&#25918;&#22312;&#19968;&#20010;&#30446;&#24405;&#19979;&#30340;&#36164;&#28304;&#38598;&#21512;&#65292;
+&#24403;&#22312;<a href="guide-structure-views.html">&#35270;&#22270;</a>&#20013;&#27880;&#20876;&#19968;&#20010;&#36164;&#28304;&#21253;&#65292;
+&#22312;&#28210;&#26579; Web &#39029;&#38754;&#26102;&#20250;&#21253;&#21547;&#21253;&#20013;&#30340; CSS &#21644; JavaScript &#25991;&#20214;&#12290;</p>
+<h2>&#23450;&#20041;&#36164;&#28304;&#21253;  <span id="defining-asset-bundles"></span><a href="#defining-asset-bundles" class="hashlink">&para;</a></h2><p>&#36164;&#28304;&#21253;&#25351;&#23450;&#20026;&#32487;&#25215; <a href="./yii-web-assetbundle.html">yii\web\AssetBundle</a> &#30340; PHP &#31867;&#65292;
+&#21253;&#21517;&#20026;&#21487;<a href="guide-concept-autoloading.html">&#33258;&#21160;&#21152;&#36733;</a>&#30340; PHP &#31867;&#21517;&#65292;
+&#22312;&#36164;&#28304;&#21253;&#31867;&#20013;&#65292;&#35201;&#25351;&#23450;&#36164;&#28304;&#25152;&#22312;&#20301;&#32622;&#65292;
+&#21253;&#21547;&#21738;&#20123; CSS &#21644; JavaScript &#25991;&#20214;&#20197;&#21450;&#21644;&#20854;&#20182;&#21253;&#30340;&#20381;&#36182;&#20851;&#31995;&#12290;</p>
+<p>&#22914;&#19979;&#20195;&#30721;&#23450;&#20041;<a href="guide-start-installation.html">&#22522;&#30784;&#24212;&#29992;&#27169;&#26495;</a>&#20351;&#29992;&#30340;&#20027;&#35201;&#36164;&#28304;&#21253;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-keyword">public</span> $basePath = <span class="hljs-string">'@webroot'</span>;
+    <span class="hljs-keyword">public</span> $baseUrl = <span class="hljs-string">'@web'</span>;
+    <span class="hljs-keyword">public</span> $css = [
+        <span class="hljs-string">'css/site.css'</span>,
+        [<span class="hljs-string">'css/print.css'</span>, <span class="hljs-string">'media'</span> =&gt; <span class="hljs-string">'print'</span>],
+    ];
+    <span class="hljs-keyword">public</span> $js = [
+    ];
+    <span class="hljs-keyword">public</span> $depends = [
+        <span class="hljs-string">'yii\web\YiiAsset'</span>,
+        <span class="hljs-string">'yii\bootstrap\BootstrapAsset'</span>,
+    ];
+}
+</code></pre>
+<p>&#22914;&#19978; <code>AppAsset</code> &#31867;&#25351;&#23450;&#36164;&#28304;&#25991;&#20214;&#25918;&#22312; <code>@webroot</code> &#30446;&#24405;&#19979;&#65292;&#23545;&#24212;&#30340; URL &#20026;
+<code>@web</code>&#65292;&#36164;&#28304;&#21253;&#20013;&#21253;&#21547;&#19968;&#20010; CSS &#25991;&#20214; <code>css/site.css</code>&#65292;&#27809;&#26377; JavaScript &#25991;&#20214;&#65292;
+&#20381;&#36182;&#20854;&#20182;&#20004;&#20010;&#21253; <a href="./yii-web-yiiasset.html">yii\web\YiiAsset</a> &#21644; <a href="./yii-bootstrap-bootstrapasset.html">yii\bootstrap\BootstrapAsset</a>&#65292;
+&#20851;&#20110; <a href="./yii-web-assetbundle.html">yii\web\AssetBundle</a> &#30340;&#23646;&#24615;&#30340;&#26356;&#22810;&#35814;&#32454;&#22914;&#19979;&#25152;&#36848;&#65306;</p>
+<ul>
+<li><a href="./yii-web-assetbundle.html#%24sourcePath-detail">sourcePath</a>&#65306;&#25351;&#23450;&#21253;&#21253;&#21547;&#36164;&#28304;&#25991;&#20214;&#30340;&#26681;&#30446;&#24405;&#65292;
+&#24403;&#26681;&#30446;&#24405;&#19981;&#33021;&#34987; Web &#35775;&#38382;&#26102;&#35813;&#23646;&#24615;&#24212;&#35774;&#32622;&#65292;&#21542;&#21017;&#65292;&#24212;&#35774;&#32622;
+<a href="./yii-web-assetbundle.html#%24basePath-detail">basePath</a> &#23646;&#24615;&#21644; <a href="./yii-web-assetbundle.html#%24baseUrl-detail">baseUrl</a>&#12290;
+<a href="guide-concept-aliases.html">&#36335;&#24452;&#21035;&#21517;</a> &#21487;&#22312;&#27492;&#22788;&#20351;&#29992;&#65307;</li>
+<li><a href="./yii-web-assetbundle.html#%24basePath-detail">basePath</a>&#65306;&#25351;&#23450;&#21253;&#21547;&#36164;&#28304;&#21253;&#20013;&#36164;&#28304;&#25991;&#20214;&#24182;&#21487;Web&#35775;&#38382;&#30340;&#30446;&#24405;&#65292;
+&#24403;&#25351;&#23450; <a href="./yii-web-assetbundle.html#%24sourcePath-detail">sourcePath</a> &#23646;&#24615;&#65292;
+<a href="#asset-manager">&#36164;&#28304;&#31649;&#29702;&#22120;</a> &#20250;&#21457;&#24067;&#21253;&#30340;&#36164;&#28304;&#21040;&#19968;&#20010;&#21487; Web &#35775;&#38382;&#24182;&#35206;&#30422;&#35813;&#23646;&#24615;&#65292;
+&#22914;&#26524;&#20320;&#30340;&#36164;&#28304;&#25991;&#20214;&#22312;&#19968;&#20010; Web &#21487;&#35775;&#38382;&#30446;&#24405;&#19979;&#65292;&#24212;&#35774;&#32622;&#35813;&#23646;&#24615;&#65292;&#36825;&#26679;&#23601;&#19981;&#29992;&#20877;&#21457;&#24067;&#20102;&#12290;
+<a href="guide-concept-aliases.html">&#36335;&#24452;&#21035;&#21517;</a> &#21487;&#22312;&#27492;&#22788;&#20351;&#29992;&#12290;</li>
+<li><a href="./yii-web-assetbundle.html#%24baseUrl-detail">baseUrl</a>&#65306;&#25351;&#23450;&#23545;&#24212;&#21040; <a href="./yii-web-assetbundle.html#%24basePath-detail">basePath</a> &#30446;&#24405;&#30340; URL&#65292;
+&#21644; <a href="./yii-web-assetbundle.html#%24basePath-detail">basePath</a> &#31867;&#20284;&#65292;
+&#22914;&#26524;&#20320;&#25351;&#23450; <a href="./yii-web-assetbundle.html#%24sourcePath-detail">sourcePath</a> &#23646;&#24615;&#65292;
+<a href="#asset-manager">&#36164;&#28304;&#31649;&#29702;&#22120;</a> &#20250;&#21457;&#24067;&#36825;&#20123;&#36164;&#28304;&#24182;&#35206;&#30422;&#35813;&#23646;&#24615;&#65292;<a href="guide-concept-aliases.html">&#36335;&#24452;&#21035;&#21517;</a> &#21487;&#22312;&#27492;&#22788;&#20351;&#29992;&#12290;</li>
+<li><a href="./yii-web-assetbundle.html#%24css-detail">css</a>&#65306;&#21015;&#20986;&#27492;&#21253;&#20013;&#21253;&#21547;&#30340; CSS &#25991;&#20214;&#30340;&#25968;&#32452;&#12290;
+&#35831;&#27880;&#24847;&#65292;&#21482;&#24212;&#20351;&#29992;&#27491;&#26012;&#26464;&ldquo;/&rdquo;&#20316;&#20026;&#30446;&#24405;&#20998;&#38548;&#31526;&#12290;&#27599;&#20010;&#25991;&#20214;&#37117;&#21487;&#20197;&#21333;&#29420;&#25351;&#23450;&#20026;&#23383;&#31526;&#20018;&#65292;
+&#20063;&#21487;&#20197;&#19982;&#23646;&#24615;&#26631;&#35760;&#21450;&#20854;&#20540;&#19968;&#36215;&#25351;&#23450;&#22312;&#25968;&#32452;&#20013;&#12290;</li>
+<li><a href="./yii-web-assetbundle.html#%24js-detail">js</a>&#65306;&#21015;&#20986;&#27492;&#21253;&#20013;&#21253;&#21547;&#30340; JavaScript &#25991;&#20214;&#30340;&#25968;&#32452;&#12290;
+&#35831;&#27880;&#24847;&#65292;&#21482;&#24212;&#20351;&#29992;&#27491;&#26012;&#26464;&ldquo;/&rdquo;&#20316;&#20026;&#30446;&#24405;&#20998;&#38548;&#31526;&#12290;
+&#27599;&#20010; JavaScript &#25991;&#20214;&#21487;&#25351;&#23450;&#20026;&#20197;&#19979;&#20004;&#31181;&#26684;&#24335;&#20043;&#19968;&#65306;<ul>
+<li>&#30456;&#23545;&#36335;&#24452;&#34920;&#31034;&#20026;&#26412;&#22320; JavaScript &#25991;&#20214; (&#22914; <code>js/main.js</code>)&#65292;&#25991;&#20214;&#23454;&#38469;&#30340;&#36335;&#24452;&#22312;&#35813;&#30456;&#23545;&#36335;&#24452;&#21069;&#21152;&#19978;
+<a href="./yii-web-assetmanager.html#%24basePath-detail">yii\web\AssetManager::$basePath</a>&#65292;&#25991;&#20214;&#23454;&#38469;&#30340; URL
+&#22312;&#35813;&#36335;&#24452;&#21069;&#21152;&#19978; <a href="./yii-web-assetmanager.html#%24baseUrl-detail">yii\web\AssetManager::$baseUrl</a>&#12290;</li>
+<li>&#32477;&#23545; URL &#22320;&#22336;&#34920;&#31034;&#20026;&#22806;&#37096; JavaScript &#25991;&#20214;&#65292;&#22914;
+<code>https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js</code> &#25110; 
+<code>//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js</code>&#12290;</li>
+</ul>
+</li>
+<li><a href="./yii-web-assetbundle.html#%24depends-detail">depends</a>&#65306;&#19968;&#20010;&#21015;&#20986;&#35813;&#36164;&#28304;&#21253;&#20381;&#36182;&#30340;
+&#20854;&#20182;&#36164;&#28304;&#21253;&#65288;&#21518;&#20004;&#33410;&#26377;&#35814;&#32454;&#20171;&#32461;&#65289;&#12290;</li>
+<li><a href="./yii-web-assetbundle.html#%24jsOptions-detail">jsOptions</a>&#65306;&#24403;&#35843;&#29992; <a href="./yii-web-view.html#registerJsFile()-detail">yii\web\View::registerJsFile()</a> &#27880;&#20876;&#35813;&#21253; <em>&#27599;&#20010;</em> JavaScript &#25991;&#20214;&#26102;&#65292;
+&#25351;&#23450;&#20256;&#36882;&#21040;&#35813;&#26041;&#27861;&#30340;&#36873;&#39033;&#12290;</li>
+<li><a href="./yii-web-assetbundle.html#%24cssOptions-detail">cssOptions</a>&#65306;&#24403;&#35843;&#29992; <a href="./yii-web-view.html#registerCssFile()-detail">yii\web\View::registerCssFile()</a> &#27880;&#20876;&#35813;&#21253; <em>&#27599;&#20010;</em> CSS &#25991;&#20214;&#26102;&#65292;
+&#25351;&#23450;&#20256;&#36882;&#21040;&#35813;&#26041;&#27861;&#30340;&#36873;&#39033;&#12290;</li>
+<li><a href="./yii-web-assetbundle.html#%24publishOptions-detail">publishOptions</a>&#65306;&#24403;&#35843;&#29992; <a href="./yii-web-assetmanager.html#publish()-detail">yii\web\AssetManager::publish()</a> &#21457;&#24067;&#35813;&#21253;&#36164;&#28304;&#25991;&#20214;&#21040; Web &#30446;&#24405;&#26102;
+&#25351;&#23450;&#20256;&#36882;&#21040;&#35813;&#26041;&#27861;&#30340;&#36873;&#39033;&#65292;&#20165;&#22312;&#25351;&#23450;&#20102;
+<a href="./yii-web-assetbundle.html#%24sourcePath-detail">sourcePath</a> &#23646;&#24615;&#26102;&#20351;&#29992;&#12290;</li>
+</ul>
+<h3>&#36164;&#28304;&#20301;&#32622;  <span id="asset-locations"></span><a href="#asset-locations" class="hashlink">&para;</a></h3><p>&#36164;&#28304;&#26681;&#25454;&#23427;&#20204;&#30340;&#20301;&#32622;&#21487;&#20197;&#20998;&#20026;&#65306;</p>
+<ul>
+<li>&#28304;&#36164;&#28304;: &#36164;&#28304;&#25991;&#20214;&#21644; PHP &#28304;&#20195;&#30721;&#25918;&#22312;&#19968;&#36215;&#65292;&#19981;&#33021;&#34987; Web &#30452;&#25509;&#35775;&#38382;&#65292;&#20026;&#20102;&#20351;&#29992;&#36825;&#20123;&#28304;&#36164;&#28304;&#65292;
+&#23427;&#20204;&#35201;&#25335;&#36125;&#21040;&#19968;&#20010;&#21487; Web &#35775;&#38382;&#30340; Web &#30446;&#24405;&#20013;
+&#25104;&#20026;&#21457;&#24067;&#30340;&#36164;&#28304;&#65292;&#36825;&#20010;&#36807;&#31243;&#31216;&#20026;<em>&#21457;&#24067;&#36164;&#28304;</em>&#65292;&#38543;&#21518;&#20250;&#35814;&#32454;&#20171;&#32461;&#12290;</li>
+<li>&#21457;&#24067;&#36164;&#28304;: &#36164;&#28304;&#25991;&#20214;&#25918;&#22312;&#21487;&#36890;&#36807; Web &#30452;&#25509;&#35775;&#38382;&#30340; Web &#30446;&#24405;&#20013;&#65307;</li>
+<li>&#22806;&#37096;&#36164;&#28304;: &#36164;&#28304;&#25991;&#20214;&#25918;&#22312;&#19982;&#20320;&#30340; Web &#24212;&#29992;&#19981;&#21516;&#30340;
+Web &#26381;&#21153;&#22120;&#19978;&#65307;</li>
+</ul>
+<p>&#24403;&#23450;&#20041;&#36164;&#28304;&#21253;&#31867;&#26102;&#20505;&#65292;&#22914;&#26524;&#20320;&#25351;&#23450;&#20102;<a href="./yii-web-assetbundle.html#%24sourcePath-detail">sourcePath</a> &#23646;&#24615;&#65292;
+&#23601;&#34920;&#31034;&#20219;&#20309;&#20351;&#29992;&#30456;&#23545;&#36335;&#24452;&#30340;&#36164;&#28304;&#20250;&#34987;&#24403;&#20316;&#28304;&#36164;&#28304;&#65307;
+&#22914;&#26524;&#27809;&#26377;&#25351;&#23450;&#35813;&#23646;&#24615;&#65292;&#23601;&#34920;&#31034;&#36825;&#20123;&#36164;&#28304;&#20026;&#21457;&#24067;&#36164;&#28304;&#65288;&#22240;&#27492;&#24212;&#25351;&#23450;<a href="./yii-web-assetbundle.html#%24basePath-detail">basePath</a> &#21644;
+<a href="./yii-web-assetbundle.html#%24baseUrl-detail">baseUrl</a> &#35753; Yii &#30693;&#36947;&#23427;&#20204;&#30340;&#20301;&#32622;&#65289;&#12290;</p>
+<p>&#25512;&#33616;&#23558;&#36164;&#28304;&#25991;&#20214;&#25918;&#21040; Web &#30446;&#24405;&#20197;&#36991;&#20813;&#19981;&#24517;&#35201;&#30340;&#21457;&#24067;&#36164;&#28304;&#36807;&#31243;&#65292;&#36825;&#23601;&#26159;&#20043;&#21069;&#30340;&#20363;&#23376;&#65306;&#25351;&#23450;
+<a href="./yii-web-assetbundle.html#%24basePath-detail">basePath</a> 
+&#32780;&#19981;&#26159; <a href="./yii-web-assetbundle.html#%24sourcePath-detail">sourcePath</a>.</p>
+<p>&#23545;&#20110;<a href="guide-structure-extensions.html">&#25193;&#23637;</a>&#26469;&#35828;&#65292;
+&#30001;&#20110;&#23427;&#20204;&#30340;&#36164;&#28304;&#21644;&#28304;&#20195;&#30721;&#37117;&#22312;&#19981;&#33021;Web&#35775;&#38382;&#30340;&#30446;&#24405;&#19979;&#65292;
+&#22312;&#23450;&#20041;&#36164;&#28304;&#21253;&#31867;&#26102;&#24517;&#39035;&#25351;&#23450;<a href="./yii-web-assetbundle.html#%24sourcePath-detail">sourcePath</a>&#23646;&#24615;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong><a href="./yii-web-assetbundle.html#%24sourcePath-detail">source path</a> &#23646;&#24615;&#19981;&#35201;&#29992; <code>@webroot/assets</code>&#65292;&#35813;&#36335;&#24452;&#40664;&#35748;&#20026;
+  <a href="./yii-web-assetmanager.html">asset manager</a> &#36164;&#28304;&#31649;&#29702;&#22120;&#23558;&#28304;&#36164;&#28304;&#21457;&#24067;&#21518;&#23384;&#20648;&#36164;&#28304;&#30340;&#36335;&#24452;&#65292;
+  &#35813;&#36335;&#24452;&#30340;&#25152;&#26377;&#20869;&#23481;&#20250;&#35748;&#20026;&#26159;&#20020;&#26102;&#25991;&#20214;&#65292;
+  &#21487;&#33021;&#20250;&#34987;&#21024;&#38500;&#12290;</p>
+</blockquote>
+<h3>&#36164;&#28304;&#20381;&#36182;  <span id="asset-dependencies"></span><a href="#asset-dependencies" class="hashlink">&para;</a></h3><p>&#24403; Web &#39029;&#38754;&#21253;&#21547;&#22810;&#20010; CSS &#25110; JavaScript &#25991;&#20214;&#26102;&#65292;
+&#23427;&#20204;&#26377;&#19968;&#23450;&#30340;&#20808;&#21518;&#39034;&#24207;&#20197;&#36991;&#20813;&#23646;&#24615;&#35206;&#30422;&#65292;
+&#20363;&#22914;&#65292;Web &#39029;&#38754;&#22312;&#20351;&#29992; jQuery UI &#23567;&#37096;&#20214;&#21069;&#24517;&#39035;&#30830;&#20445; jQuery JavaScript &#25991;&#20214;&#24050;&#32463;&#34987;&#21253;&#21547;&#20102;&#65292;
+&#25105;&#20204;&#31216;&#36825;&#31181;&#36164;&#28304;&#20808;&#21518;&#27425;&#24207;&#31216;&#20026;&#36164;&#28304;&#20381;&#36182;&#12290;</p>
+<p>&#36164;&#28304;&#20381;&#36182;&#20027;&#35201;&#36890;&#36807; <a href="./yii-web-assetbundle.html#%24depends-detail">yii\web\AssetBundle::$depends</a> &#23646;&#24615;&#26469;&#25351;&#23450;&#65292;
+&#22312; <code>AppAsset</code> &#31034;&#20363;&#20013;&#65292;&#36164;&#28304;&#21253;&#20381;&#36182;&#20854;&#20182;&#20004;&#20010;&#36164;&#28304;&#21253;&#65306; 
+<a href="./yii-web-yiiasset.html">yii\web\YiiAsset</a> &#21644; <a href="./yii-bootstrap-bootstrapasset.html">yii\bootstrap\BootstrapAsset</a>
+&#20063;&#23601;&#26159;&#35813;&#36164;&#28304;&#21253;&#30340; CSS &#21644; JavaScript &#25991;&#20214;&#35201;&#22312;&#36825;&#20004;&#20010;&#20381;&#36182;&#21253;&#30340;&#25991;&#20214;&#21253;&#21547;<em>&#20043;&#21518;</em>&#25165;&#21253;&#21547;&#12290;</p>
+<p>&#36164;&#28304;&#20381;&#36182;&#20851;&#31995;&#26159;&#21487;&#20256;&#36882;&#65292;&#20063;&#23601;&#26159;&#35828; A &#20381;&#36182; B&#65292;B &#20381;&#36182; C&#65292;&#37027;&#20040; A &#20063;&#20381;&#36182; C&#12290;</p>
+<h3>&#36164;&#28304;&#36873;&#39033;  <span id="asset-options"></span><a href="#asset-options" class="hashlink">&para;</a></h3><p>&#21487;&#25351;&#23450; <a href="./yii-web-assetbundle.html#%24cssOptions-detail">cssOptions</a> &#21644; <a href="./yii-web-assetbundle.html#%24jsOptions-detail">jsOptions</a>
+&#23646;&#24615;&#26469;&#33258;&#23450;&#20041;&#39029;&#38754;&#21253;&#21547; CSS &#21644; JavaScript &#25991;&#20214;&#30340;&#26041;&#24335;&#65292;
+&#36825;&#20123;&#23646;&#24615;&#20540;&#20250;&#20998;&#21035;&#20256;&#36882;&#32473; <a href="./yii-web-view.html#registerCssFile()-detail">yii\web\View::registerCssFile()</a> &#21644; <a href="./yii-web-view.html#registerJsFile()-detail">yii\web\View::registerJsFile()</a> &#26041;&#27861;&#65292;
+&#22312;<a href="guide-structure-views.html">&#35270;&#22270;</a>&#35843;&#29992;&#36825;&#20123;&#26041;&#27861;&#21253;&#21547; CSS &#21644; JavaScript &#25991;&#20214;&#26102;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22312;&#36164;&#28304;&#21253;&#31867;&#20013;&#35774;&#32622;&#30340;&#36873;&#39033;&#20250;&#24212;&#29992;&#21040;&#35813;&#21253;&#20013; <em>&#27599;&#20010;</em> CSS/JavaScript &#25991;&#20214;&#65292;
+  &#22914;&#26524;&#24819;&#23545;&#27599;&#20010;&#25991;&#20214;&#20351;&#29992;&#19981;&#21516;&#30340;&#36873;&#39033;&#65292;
+  &#24212;&#21019;&#24314;&#19981;&#21516;&#30340;&#36164;&#28304;&#21253;&#24182;&#22312;&#27599;&#20010;&#21253;&#20013;&#20351;&#29992;&#19968;&#20010;&#36873;&#39033;&#38598;&#12290;</p>
+</blockquote>
+<p>&#20363;&#22914;&#65292;&#21482;&#24819; IE9 &#25110;&#26356;&#39640;&#30340;&#27983;&#35272;&#22120;&#21253;&#21547;&#19968;&#20010; CSS &#25991;&#20214;&#65292;&#21487;&#20197;&#20351;&#29992;&#22914;&#19979;&#36873;&#39033;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> $cssOptions = [<span class="hljs-string">'condition'</span> =&gt; <span class="hljs-string">'lte IE9'</span>];
+</code></pre>
+<p>&#36825;&#20250;&#20351;&#21253;&#20013;&#30340; CSS &#25991;&#20214;&#20351;&#29992;&#20197;&#19979; HTML &#26631;&#31614;&#21253;&#21547;&#36827;&#26469;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="hljs-comment">&lt;!--[if lte IE9]&gt;
+&lt;link rel="stylesheet" href="path/to/foo.css"&gt;
+&lt;![endif]--&gt;</span>
+</code></pre>
+<p>&#20026;&#38142;&#25509;&#26631;&#31614;&#21253;&#21547; <code>&lt;noscript&gt;</code> &#21487;&#20351;&#29992;&#22914;&#19979;&#20195;&#30721;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> $cssOptions = [<span class="hljs-string">'noscript'</span> =&gt; <span class="hljs-keyword">true</span>];
+</code></pre>
+<p>&#20026;&#20351; JavaScript &#25991;&#20214;&#21253;&#21547;&#22312;&#39029;&#38754; head &#21306;&#22495;&#65288;JavaScript &#25991;&#20214;&#40664;&#35748;&#21253;&#21547;&#22312; body &#30340;&#32467;&#26463;&#22788;&#65289;
+&#20351;&#29992;&#20197;&#19979;&#36873;&#39033;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> $jsOptions = [<span class="hljs-string">'position'</span> =&gt; \yii\web\View::POS_HEAD];
+</code></pre>
+<p>&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#24403;&#21457;&#24067;&#36164;&#28304;&#21253;&#26102;&#65292;&#25152;&#26377;&#22312; <a href="./yii-web-assetbundle.html#%24sourcePath-detail">yii\web\AssetBundle::$sourcePath</a> &#30446;&#24405;&#37324;&#30340;&#20869;&#23481;&#37117;&#20250;&#21457;&#24067;&#12290;
+&#20320;&#21487;&#20197;&#36890;&#36807;&#37197;&#32622; <a href="./yii-web-assetbundle.html#%24publishOptions-detail">publishOptions</a> &#23646;&#24615;&#26469;&#33258;&#23450;&#20041;&#36825;&#31181;&#34892;&#20026;&#12290;
+&#27604;&#22914;&#65292;&#20026;&#20102;&#21482;&#21457;&#24067; <a href="./yii-web-assetbundle.html#%24sourcePath-detail">yii\web\AssetBundle::$sourcePath</a> &#20854;&#20013;&#30340;&#26576;&#20123;&#20869;&#23481;&#25110;&#23376;&#30446;&#24405;&#37324;&#30340;&#20869;&#23481;&#65292;
+&#21487;&#20197;&#22312;&#36164;&#28304;&#31867;&#20013;&#35797;&#35797;&#19979;&#38754;&#30340;&#20570;&#27861;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FontAwesomeAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span> 
+</span>{
+    <span class="hljs-keyword">public</span> $sourcePath = <span class="hljs-string">'@bower/font-awesome'</span>; 
+    <span class="hljs-keyword">public</span> $css = [ 
+        <span class="hljs-string">'css/font-awesome.min.css'</span>, 
+    ];
+    <span class="hljs-keyword">public</span> $publishOptions = [
+        <span class="hljs-string">'only'</span> =&gt; [
+            <span class="hljs-string">'fonts/'</span>,
+            <span class="hljs-string">'css/'</span>,
+        ]
+    ];
+}  
+</code></pre>
+<p>&#19978;&#36848;&#30340;&#20195;&#30721;&#20026; <a href="https://fontawesome.com/">"fontawesome" package</a> &#23450;&#20041;&#20102;&#36164;&#28304;&#21253;&#12290;
+&#36890;&#36807;&#37197;&#32622;&#21457;&#24067;&#36873;&#39033;&#30340; only &#19979;&#26631;&#65292;&#21482;&#26377; <code>fonts</code> &#21644; <code>css</code> &#23376;&#30446;&#24405;&#20250;&#21457;&#24067;&#12290;</p>
+<h3>Bower &#21644; NPM &#36164;&#28304;&#23433;&#35013;  <span id="bower-npm-assets"></span><a href="#bower-npm-assets" class="hashlink">&para;</a></h3><p>&#22823;&#22810;&#25968; JavaScript/CSS &#21253;&#20351;&#29992; <a href="https://bower.io/">Bower</a> &#25110; <a href="https://www.npmjs.com/">NPM</a> &#26469;&#31649;&#29702;&#12290;
+&#22312; PHP &#20013;&#65292;&#25105;&#20204;&#29992; Composer &#26469;&#31649;&#29702; PHP &#20381;&#36182;&#12290;&#20687; PHP &#21253;&#19968;&#26679;&#65292;
+&#20063;&#21487;&#20197;&#20351;&#29992; <code>composer.json</code> &#31649;&#29702; Bower &#21644; NPM &#21253;&#12290;</p>
+<p>&#35201;&#23454;&#29616;&#36825;&#19968;&#28857;&#65292;&#38656;&#35201;&#37197;&#32622;&#19968;&#19979; Composer &#12290;&#26377;&#20004;&#31181;&#26041;&#27861;&#65306;</p>
+<hr>
+<h4>&#20351;&#29992; asset-packagist &#24211; <span id="shi-yong-asset-packagist-ku"></span><a href="#shi-yong-asset-packagist-ku" class="hashlink">&para;</a></h4><p>&#36825;&#31181;&#26041;&#24335;&#23558;&#28385;&#36275;&#22823;&#22810;&#25968;&#38656;&#35201;&#20351;&#29992; NPM &#25110; Bower &#21253;&#39033;&#30446;&#30340;&#35201;&#27714;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#20174; 2.0.13 &#24320;&#22987;&#65292;&#22522;&#26412;&#21644;&#39640;&#32423;&#24212;&#29992;&#31243;&#24207;&#27169;&#26495;&#37117;&#40664;&#35748;&#37197;&#32622;&#20351;&#29992; asset-packagist &#65292;
+  &#22240;&#27492;&#20320;&#21487;&#20197;&#36339;&#36807;&#26412;&#33410;&#12290;</p>
+</blockquote>
+<p>&#22312;&#20320;&#39033;&#30446; <code>composer.json</code> &#25991;&#20214;&#20013;&#65292;&#28155;&#21152;&#19979;&#38754;&#20960;&#34892;&#20195;&#30721;&#65306;</p>
+<pre><code class="hljs json language-json"><span class="hljs-string">"repositories"</span>: [
+    {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"composer"</span>,
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://asset-packagist.org"</span>
+    }
+]
+</code></pre>
+<p>&#22312;&#20320;&#30340; <a href="guide-concept-configurations.html">&#37197;&#32622;&#25968;&#32452;</a> &#20013;&#35774;&#32622; <code>@npm</code> &#21644; <code>@bower</code> &#30340; <a href="guide-concept-aliases.html">&#21035;&#21517;</a>&#65306;</p>
+<pre><code class="hljs php language-php">$config = [
+    ...
+    <span class="hljs-string">'aliases'</span> =&gt; [
+        <span class="hljs-string">'@bower'</span> =&gt; <span class="hljs-string">'@vendor/bower-asset'</span>,
+        <span class="hljs-string">'@npm'</span>   =&gt; <span class="hljs-string">'@vendor/npm-asset'</span>,
+    ],
+    ...
+];
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#35775;&#38382; <a href="https://asset-packagist.org">asset-packagist.org</a> &#26469;&#20102;&#35299;&#23427;&#26159;&#22914;&#20309;&#24037;&#20316;&#30340;&#12290;</p>
+<h4>&#20351;&#29992; fxp/composer-asset-plugin <span id="shi-yong-fxpcomposer-asset-plugin"></span><a href="#shi-yong-fxpcomposer-asset-plugin" class="hashlink">&para;</a></h4><p>&#19982; asset-packagist &#30456;&#27604;&#65292;composer-asset-plugin &#19981;&#38656;&#35201;&#23545;&#24212;&#29992;&#31243;&#24207;&#37197;&#32622;&#36827;&#34892;&#20219;&#20309;&#26356;&#25913;&#12290; 
+&#32780;&#26159;&#38656;&#35201;&#36816;&#34892;&#20197;&#19979;&#21629;&#20196;&#26469;&#20840;&#23616;&#23433;&#35013;&#19968;&#20010;&#29305;&#27530;&#30340; Composer &#25554;&#20214;&#65306;</p>
+<pre><code class="hljs bash language-bash">composer global require <span class="hljs-string">"fxp/composer-asset-plugin:^1.4.1"</span>
+</code></pre>
+<p>&#36825;&#20010;&#21629;&#20196;&#20250;&#20840;&#23616;&#23433;&#35013; <a href="https://github.com/fxpio/composer-asset-plugin">composer asset plugin</a> &#25554;&#20214;&#65292;
+&#20197;&#20415;&#20351;&#29992; Composer &#26469;&#31649;&#29702;&#23545; Bower &#21644; NPM &#21253;&#30340;&#20381;&#36182;&#12290; &#22312;&#36825;&#20010;&#25554;&#20214;&#23433;&#35013;&#21518;&#65292;
+&#20320;&#35745;&#31639;&#26426;&#19978;&#30340;&#27599;&#20010;&#39033;&#30446;&#37117;&#21487;&#20197;&#36890;&#36807; <code>composer.json</code> &#26469;&#31649;&#29702; Bower &#21644; NPM &#21253;&#12290;</p>
+<p>&#22914;&#26524;&#20320;&#24819;&#35201;&#36890;&#36807; Yii &#26469;&#21457;&#24067;&#23427;&#20204;&#65292;&#23558;&#20197;&#19979;&#34892;&#28155;&#21152;&#21040;&#39033;&#30446;&#30340; <code>composer.json</code> &#25991;&#20214;&#20013;&#65292;
+&#26469;&#35843;&#25972; Bower &#21644; NPM &#23433;&#35013;&#21253;&#30340;&#25918;&#32622;&#30446;&#24405;&#65306;</p>
+<pre><code class="hljs json language-json"><span class="hljs-string">"config"</span>: {
+    <span class="hljs-attr">"asset-installer-paths"</span>: {
+        <span class="hljs-attr">"npm-asset-library"</span>: <span class="hljs-string">"vendor/npm"</span>,
+        <span class="hljs-attr">"bower-asset-library"</span>: <span class="hljs-string">"vendor/bower"</span>
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#19982; asset-packagist &#30456;&#27604;&#65292;&#20351;&#29992; <code>fxp/composer-asset-plugin</code> &#30340;&#26041;&#24335;&#65292;
+  &#20250;&#26174;&#33879;&#20943;&#24930; <code>composer update</code> &#21629;&#20196;&#30340;&#36895;&#24230;&#12290;</p>
+</blockquote>
+<hr>
+<p>&#22312;&#37197;&#32622;&#22909; Composer &#25903;&#25345;&#20351;&#29992; Bower &#21644; NPM &#20043;&#21518;&#65306;</p>
+<ol>
+<li>&#32534;&#36753;&#39033;&#30446;&#25110;&#25193;&#23637;&#20013;&#30340; <code>composer.json</code> &#25991;&#20214;&#65292;&#22312;&#35813;&#25991;&#20214;&#30340; <code>require</code> &#23383;&#27573;&#20013;&#21015;&#20030;&#20986;&#30456;&#20851;&#21253;&#12290; 
+&#20320;&#24212;&#35813;&#20351;&#29992; <code>bower-asset/PackageName</code>&#65288;&#23545;&#20110; Bower &#21253;&#65289;&#25110;&#32773;
+<code>npm-asset/PackageName</code> &#65288;&#23545;&#20110; NPM &#21253;&#65289;&#30340;&#26041;&#24335;&#26469;&#24341;&#20837;&#36825;&#20123;&#21253;&#12290;</li>
+<li>&#36816;&#34892; <code>composer update</code></li>
+<li>&#21019;&#24314;&#36164;&#28304;&#31867;&#24182;&#21015;&#20986;&#22312;&#24212;&#29992;&#31243;&#24207;&#25110;&#25193;&#23637;&#20013;&#25152;&#38656;&#20351;&#29992;&#30340; JavaScript/CSS &#25991;&#20214;&#12290;
+&#20320;&#36824;&#38656;&#35201;&#37197;&#32622; <a href="./yii-web-assetbundle.html#%24sourcePath-detail">sourcePath</a> &#23646;&#24615;&#20026; <code>@bower/PackageName</code> &#25110; <code>@npm/PackageName</code>&#12290;
+&#36825;&#26159;&#22240;&#20026; Composer &#20250;&#23558; Bower &#25110; NPM &#36719;&#20214;&#21253;&#23433;&#35013;&#22312;&#19982;&#27492;&#21035;&#21517;&#23545;&#24212;&#30340;&#30446;&#24405;&#20013;&#12290;</li>
+</ol>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#26576;&#20123;&#21253;&#21487;&#33021;&#20250;&#23558;&#20854;&#25152;&#26377;&#21457;&#24067;&#25991;&#20214;&#25918;&#22312;&#23376;&#30446;&#24405;&#20013;&#12290;&#22312;&#36825;&#31181;&#24773;&#20917;&#19979;&#65292;
+  &#20320;&#24212;&#35813;&#25226;&#23376;&#30446;&#24405;&#35774;&#20026; <a href="./yii-web-assetbundle.html#%24sourcePath-detail">sourcePath</a> &#30340;&#20540;&#12290;&#20363;&#22914;&#65292;
+  &#22312; <a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a> &#36825;&#20010;&#36164;&#28304;&#21253;&#20013;&#65292;&#20351;&#29992; <code>@bower/jquery/dist</code> &#32780;&#19981;&#26159; <code>@bower/jquery</code>&#12290;</p>
+</blockquote>
+<h2>&#20351;&#29992;&#36164;&#28304;&#21253;  <span id="using-asset-bundles"></span><a href="#using-asset-bundles" class="hashlink">&para;</a></h2><p>&#20026;&#20351;&#29992;&#36164;&#28304;&#21253;&#65292;&#20808;&#22312;<a href="guide-structure-views.html">&#35270;&#22270;</a>&#20013;&#35843;&#29992; <a href="./yii-web-assetbundle.html#register()-detail">yii\web\AssetBundle::register()</a> &#26041;&#27861;&#27880;&#20876;&#36164;&#28304;&#65292;
+&#20363;&#22914;&#65292;&#22312;&#35270;&#22270;&#27169;&#26495;&#21487;&#20351;&#29992;&#22914;&#19979;&#20195;&#30721;&#27880;&#20876;&#36164;&#28304;&#21253;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>\<span class="hljs-title">AppAsset</span>;
+AppAsset::register(<span class="hljs-keyword">$this</span>);  <span class="hljs-comment">// $this &#20195;&#34920;&#35270;&#22270;&#23545;&#35937;</span>
+</code></pre>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong><a href="./yii-web-assetbundle.html#register()-detail">yii\web\AssetBundle::register()</a> &#26041;&#27861;&#36820;&#22238;&#36164;&#28304;&#21253;&#23545;&#35937;&#65292;&#35813;&#23545;&#35937;&#21253;&#21547;&#20102;&#21457;&#24067;&#36164;&#28304;&#30340;&#20449;&#24687;&#27604;&#22914; 
+<a href="./yii-web-assetbundle.html#%24basePath-detail">basePath</a> &#25110; <a href="./yii-web-assetbundle.html#%24baseUrl-detail">baseUrl</a>&#12290;</p>
+</blockquote>
+<p>&#22914;&#26524;&#22312;&#20854;&#20182;&#22320;&#26041;&#27880;&#20876;&#36164;&#28304;&#21253;&#65292;&#24212;&#25552;&#20379;&#35270;&#22270;&#23545;&#35937;&#65292;&#22914;&#22312; <a href="guide-structure-widgets.html">&#23567;&#37096;&#20214;</a> &#31867;&#20013;&#27880;&#20876;&#36164;&#28304;&#21253;&#65292;
+&#21487;&#20197;&#36890;&#36807; <code>$this-&gt;view</code> &#33719;&#21462;&#35270;&#22270;&#23545;&#35937;&#12290;</p>
+<p>&#24403;&#22312;&#35270;&#22270;&#20013;&#27880;&#20876;&#19968;&#20010;&#36164;&#28304;&#21253;&#26102;&#65292;&#22312;&#32972;&#21518; Yii &#20250;&#27880;&#20876;&#23427;&#25152;&#20381;&#36182;&#30340;&#36164;&#28304;&#21253;&#65292;
+&#22914;&#26524;&#36164;&#28304;&#21253;&#26159;&#25918;&#22312; Web &#19981;&#21487;&#35775;&#38382;&#30340;&#30446;&#24405;&#19979;&#65292;&#20250;&#34987;&#21457;&#24067;&#21040;&#21487;&#35775;&#38382;&#30340;&#30446;&#24405;&#65292;
+&#21518;&#32493;&#24403;&#35270;&#22270;&#28210;&#26579;&#39029;&#38754;&#26102;&#65292;
+&#20250;&#29983;&#25104;&#36825;&#20123;&#27880;&#20876;&#21253;&#21253;&#21547;&#30340; CSS &#21644; JavaScript &#25991;&#20214;&#23545;&#24212;&#30340; <code>&lt;link&gt;</code> &#21644; <code>&lt;script&gt;</code> &#26631;&#31614;&#65292;
+&#36825;&#20123;&#26631;&#31614;&#30340;&#20808;&#21518;&#39034;&#24207;&#21462;&#20915;&#20110;&#36164;&#28304;&#21253;&#30340;&#20381;&#36182;&#20851;&#31995;&#20197;&#21450;&#22312;
+<a href="./yii-web-assetbundle.html#%24css-detail">yii\web\AssetBundle::$css</a> &#21644; <a href="./yii-web-assetbundle.html#%24js-detail">yii\web\AssetBundle::$js</a> &#30340;&#21015;&#20986;&#26469;&#30340;&#21069;&#21518;&#39034;&#24207;&#12290;</p>
+<h3>&#21160;&#24577;&#36164;&#28304;&#21253;  <span id="dynamic-asset-bundles"></span><a href="#dynamic-asset-bundles" class="hashlink">&para;</a></h3><p>&#20316;&#20026;&#24120;&#35268; PHP &#31867;&#65292;&#36164;&#28304;&#21253;&#21487;&#20197;&#25215;&#25285;&#19968;&#20123;&#19982;&#20043;&#30456;&#20851;&#30340;&#39069;&#22806;&#36923;&#36753;&#65292;&#24182;&#21487;&#20197;&#21160;&#24577;&#35843;&#25972;&#20854;&#20869;&#37096;&#21442;&#25968;&#12290;
+&#27604;&#22914;&#65306;&#20320;&#20063;&#35768;&#29992;&#21040;&#26576;&#20123;&#22797;&#26434;&#30340; JavaScript &#24211;&#65292;&#23427;&#25552;&#20379;&#19968;&#20123;&#29992;&#20110;&#22269;&#38469;&#21270;&#30340;&#21253;&#65292;&#24182;&#20998;&#25104;&#21333;&#29420;&#30340;&#28304;&#25991;&#20214;&#65306;&#27599;&#20010;&#25991;&#20214;&#23545;&#24212;&#20110;&#22269;&#38469;&#21270;&#20013;&#25152;&#25903;&#25345;&#30340;&#35821;&#35328;&#12290;
+&#20026;&#20102;&#35753;&#36825;&#20010; JavaScript &#24211;&#27491;&#24120;&#24037;&#20316;&#65292;&#20320;&#38656;&#35201;&#25226;&#36825;&#20123;&#21333;&#29420;&#30340;&#35821;&#35328;&#28304;&#25991;&#20214;&#21152;&#36733;&#21040;&#39029;&#38754;&#20013;&#12290;
+&#36825;&#21487;&#20197;&#36890;&#36807;&#35206;&#30422; <a href="./yii-web-assetbundle.html#init()-detail">yii\web\AssetBundle::init()</a> &#26041;&#27861;&#26469;&#23454;&#29616;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SophisticatedAssetBundle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-keyword">public</span> $sourcePath = <span class="hljs-string">'/path/to/sophisticated/src'</span>;
+    <span class="hljs-keyword">public</span> $js = [
+        <span class="hljs-string">'sophisticated.js'</span> <span class="hljs-comment">// file, which is always used</span>
+    ];
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-keyword">$this</span>-&gt;js[] = <span class="hljs-string">'i18n/'</span> . Yii::$app-&gt;language . <span class="hljs-string">'.js'</span>; <span class="hljs-comment">// dynamic file added</span>
+    }
+}
+</code></pre>
+<p>&#29305;&#23450;&#30340;&#36164;&#28304;&#21253;&#20063;&#21487;&#20197;&#36890;&#36807; <a href="./yii-web-assetbundle.html#register()-detail">yii\web\AssetBundle::register()</a> &#36820;&#22238;&#30340;&#23454;&#20363;&#36827;&#34892;&#35843;&#25972;&#12290;
+&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>\<span class="hljs-title">SophisticatedAssetBundle</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+$bundle = SophisticatedAssetBundle::register(Yii::$app-&gt;view);
+$bundle-&gt;js[] = <span class="hljs-string">'i18n/'</span> . Yii::$app-&gt;language . <span class="hljs-string">'.js'</span>; <span class="hljs-comment">// dynamic file added</span>
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#34429;&#28982;&#25903;&#25345;&#36164;&#28304;&#21253;&#30340;&#21160;&#24577;&#35843;&#25972;&#65292;&#20294;&#36825;&#26159;&#19968;&#31181;<strong>&#19981;&#22909;</strong>&#30340;&#20570;&#27861;&#65292;
+  &#21487;&#33021;&#23548;&#33268;&#24847;&#24819;&#19981;&#21040;&#30340;&#21103;&#20316;&#29992;&#65292;&#24212;&#23613;&#21487;&#33021;&#36991;&#20813;&#12290;</p>
+</blockquote>
+<h3>&#33258;&#23450;&#20041;&#36164;&#28304;&#21253;  <span id="customizing-asset-bundles"></span><a href="#customizing-asset-bundles" class="hashlink">&para;</a></h3><p>Yii &#36890;&#36807;&#37197;&#32622;&#21517;&#20026; <code>assetManager</code> &#30340;&#24212;&#29992;&#32452;&#20214;&#26469;&#20351;&#29992; <a href="./yii-web-assetmanager.html">yii\web\AssetManager</a>&#65292;
+&#36890;&#36807;&#37197;&#32622; <a href="./yii-web-assetmanager.html#%24bundles-detail">yii\web\AssetManager::$bundles</a> &#23646;&#24615;&#65292;&#21487;&#20197;&#33258;&#23450;&#20041;&#36164;&#28304;&#21253;&#30340;&#34892;&#20026;&#65292;
+&#20363;&#22914;&#65292;<a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a> &#36164;&#28304;&#21253;&#40664;&#35748;&#20174; jquery Bower &#21253;&#20013;&#20351;&#29992; <code>jquery.js</code> &#25991;&#20214;&#65292;
+&#20026;&#20102;&#25552;&#39640;&#21487;&#29992;&#24615;&#21644;&#24615;&#33021;&#65292;&#20320;&#21487;&#33021;&#38656;&#35201;&#20174; CDN &#26381;&#21153;&#22120;&#19978;&#33719;&#21462; jquery &#25991;&#20214;&#65292;
+&#21487;&#20197;&#22312;&#24212;&#29992;&#37197;&#32622;&#20013;&#37197;&#32622; <code>assetManager</code>&#65292;&#22914;&#19979;&#25152;&#31034;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'yii\web\JqueryAsset'</span> =&gt; [
+                    <span class="hljs-string">'sourcePath'</span> =&gt; <span class="hljs-keyword">null</span>,   <span class="hljs-comment">// &#19968;&#23450;&#19981;&#35201;&#21457;&#24067;&#35813;&#36164;&#28304;</span>
+                    <span class="hljs-string">'js'</span> =&gt; [
+                        <span class="hljs-string">'//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'</span>,
+                    ]
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>&#21487;&#36890;&#36807;&#31867;&#20284; <a href="./yii-web-assetmanager.html#%24bundles-detail">yii\web\AssetManager::$bundles</a> &#37197;&#32622;&#22810;&#20010;&#36164;&#28304;&#21253;&#65292;
+&#25968;&#32452;&#30340;&#38190;&#24212;&#20026;&#36164;&#28304;&#21253;&#30340;&#31867;&#21517;&#65288;&#26368;&#24320;&#22836;&#19981;&#35201;&#21453;&#26012;&#26464;&#65289;&#65292;
+&#25968;&#32452;&#30340;&#20540;&#20026;&#23545;&#24212;&#30340;<a href="guide-concept-configurations.html">&#37197;&#32622;&#25968;&#32452;</a>.</p>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#21487;&#20197;&#26681;&#25454;&#26465;&#20214;&#21028;&#26029;&#20351;&#29992;&#21738;&#20010;&#36164;&#28304;&#65292;&#22914;&#19979;&#31034;&#20363;&#20026;&#22914;&#20309;&#22312;&#24320;&#21457;&#29615;&#22659;&#29992; <code>jquery.js</code>&#65292;
+&#21542;&#21017;&#29992;<code>jquery.min.js</code>&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'yii\web\JqueryAsset'</span> =&gt; [
+    <span class="hljs-string">'js'</span> =&gt; [
+        YII_ENV_DEV ? <span class="hljs-string">'jquery.js'</span> : <span class="hljs-string">'jquery.min.js'</span>
+    ]
+],
+</code></pre>
+</blockquote>
+<p>&#21487;&#20197;&#23558;&#36164;&#28304;&#21253;&#21517;&#31216;&#35774;&#32622;&#20026; <code>false</code> &#26469;&#31105;&#29992;&#19968;&#20010;&#25110;&#22810;&#20010;&#36164;&#28304;&#21253;&#65292;
+&#24403;&#35270;&#22270;&#20013;&#27880;&#20876;&#19968;&#20010;&#31105;&#29992;&#36164;&#28304;&#21253;&#65292;
+&#35270;&#22270;&#19981;&#20250;&#21253;&#21547;&#20219;&#20309;&#35813;&#21253;&#30340;&#36164;&#28304;&#20197;&#21450;&#19981;&#20250;&#27880;&#20876;&#23427;&#25152;&#20381;&#36182;&#30340;&#21253;&#65292;
+&#20363;&#22914;&#65292;&#20026;&#31105;&#29992; <a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a>&#65292;&#21487;&#20197;&#20351;&#29992;&#22914;&#19979;&#37197;&#32622;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'yii\web\JqueryAsset'</span> =&gt; <span class="hljs-keyword">false</span>,
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>&#21487;&#20197;&#35774;&#32622; <a href="./yii-web-assetmanager.html#%24bundles-detail">yii\web\AssetManager::$bundles</a> &#20026; <code>false</code> &#26469;&#31105;&#29992; <em>&#25152;&#26377;</em> &#30340;&#36164;&#28304;&#21253;&#12290;</p>
+<p>&#38656;&#35201;&#35760;&#20303;&#65292;&#20351;&#29992; <a href="./yii-web-assetmanager.html#%24bundles-detail">yii\web\AssetManager::$bundles</a> &#36827;&#34892;&#33258;&#23450;&#20041;&#26102;&#65292;&#21482;&#22312;&#21019;&#24314;&#36164;&#28304;&#21253;&#26102;&#36215;&#20316;&#29992;&#65292;&#20363;&#22914;&#65292;&#22312;&#23545;&#35937;&#30340;&#26500;&#36896;&#20989;&#25968;&#38454;&#27573;&#12290;
+&#36825;&#24847;&#21619;&#30528;&#22312;&#27492;&#20043;&#21518;&#23545;&#35813;&#36164;&#28304;&#21253;&#23545;&#35937;&#25152;&#20570;&#30340;&#20219;&#20309;&#35843;&#25972;&#37117;&#23558;&#35206;&#30422;&#22312;&#37197;&#32622;&#25968;&#32452;&#20013; <a href="./yii-web-assetmanager.html#%24bundles-detail">yii\web\AssetManager::$bundles</a> &#30340;&#37197;&#32622;&#12290;
+&#29305;&#21035;&#26159;&#65306;&#22312; <a href="./yii-web-assetbundle.html#init()-detail">yii\web\AssetBundle::init()</a>
+&#26041;&#27861;&#20869;&#25110;&#22312;&#27880;&#20876;&#30340;&#36164;&#28304;&#21253;&#23545;&#35937;&#19978;&#36827;&#34892;&#30340;&#35843;&#25972;&#20248;&#20808;&#20110; <code>AssetManager</code> &#37197;&#32622;&#12290;
+&#19979;&#38754;&#32473;&#20010;&#20363;&#23376;&#26469;&#35828;&#26126;&#22312;&#37197;&#32622;&#25968;&#32452;&#20013;&#23545; <a href="./yii-web-assetmanager.html#%24bundles-detail">yii\web\AssetManager::$bundles</a> &#30340;&#37197;&#32622;&#26159;&#19981;&#36215;&#20316;&#29992;&#30340;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Program source code:</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LanguageAssetBundle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-keyword">$this</span>-&gt;baseUrl = <span class="hljs-string">'@web/i18n/'</span> . Yii::$app-&gt;language; <span class="hljs-comment">// &#23558;&#19981;&#33021;&#36890;&#36807; `AssetManager` &#26469;&#31649;&#29702;&#65281;</span>
+    }
+}
+<span class="hljs-comment">// ...</span>
+
+$bundle = \app\assets\LargeFileAssetBundle::register(Yii::$app-&gt;view);
+$bundle-&gt;baseUrl = YII_DEBUG ? <span class="hljs-string">'@web/large-files'</span>: <span class="hljs-string">'@web/large-files/minified'</span>; <span class="hljs-comment">// &#23558;&#19981;&#33021;&#36890;&#36807; `AssetManager` &#26469;&#31649;&#29702;&#65281;</span>
+
+
+<span class="hljs-comment">// Application config :</span>
+
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'app\assets\LanguageAssetBundle'</span> =&gt; [
+                    <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'https://some.cdn.com/files/i18n/en'</span> <span class="hljs-comment">// &#36825;&#34892;&#20195;&#30721;&#19981;&#36215;&#20316;&#29992;&#65281;</span>
+                ],
+                <span class="hljs-string">'app\assets\LargeFileAssetBundle'</span> =&gt; [
+                    <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'https://some.cdn.com/files/large-files'</span> <span class="hljs-comment">// &#36825;&#34892;&#20195;&#30721;&#19981;&#36215;&#20316;&#29992;&#65281;</span>
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<h3>&#36164;&#28304;&#26144;&#23556;  <span id="asset-mapping"></span><a href="#asset-mapping" class="hashlink">&para;</a></h3><p>&#26377;&#26102;&#20320;&#24819;&ldquo;&#20462;&#22797;&rdquo;&#22810;&#20010;&#36164;&#28304;&#21253;&#20013;&#36164;&#28304;&#25991;&#20214;&#30340;&#38169;&#35823;&#25110;&#32773;&#19981;&#20860;&#23481;&#65292;&#20363;&#22914;&#21253; A &#20351;&#29992; 1.11.1 &#29256;&#26412;&#30340; <code>jquery.min.js</code>&#65292;
+&#21253; B &#20351;&#29992; 2.1.1 &#29256;&#26412;&#30340; <code>jquery.js</code>&#65292;&#21487;&#33258;&#23450;&#20041;&#27599;&#20010;&#21253;&#26469;&#35299;&#20915;&#36825;&#20010;&#38382;&#39064;&#65292;
+&#20294;&#26356;&#22909;&#30340;&#26041;&#24335;&#26159;&#20351;&#29992;<em>&#36164;&#28304;&#37096;&#32626;</em>&#30340;&#29305;&#24615;&#26469;&#25226;&#19981;&#27491;&#30830;&#30340;&#36164;&#28304;&#37096;&#32626;&#20026;&#24819;&#35201;&#30340;&#65292;
+&#20026;&#27492;&#65292;&#37197;&#32622; <a href="./yii-web-assetmanager.html#%24assetMap-detail">yii\web\AssetManager::$assetMap</a> &#23646;&#24615;&#65292;&#22914;&#19979;&#25152;&#31034;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'assetMap'</span> =&gt; [
+                <span class="hljs-string">'jquery.js'</span> =&gt; <span class="hljs-string">'//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'</span>,
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p><a href="./yii-web-assetmanager.html#%24assetMap-detail">assetMap</a> &#30340;&#38190;&#20026;&#20320;&#24819;&#35201;&#20462;&#22797;&#30340;&#36164;&#28304;&#21517;&#65292;&#20540;&#20026;&#20320;&#24819;&#35201;&#20351;&#29992;&#30340;&#36164;&#28304;&#36335;&#24452;&#65292;
+&#24403;&#35270;&#22270;&#27880;&#20876;&#36164;&#28304;&#21253;&#65292;&#22312; <a href="./yii-web-assetbundle.html#%24css-detail">css</a> &#21644;
+<a href="./yii-web-assetbundle.html#%24js-detail">js</a> &#25968;&#32452;&#20013;&#27599;&#20010;&#30456;&#20851;&#36164;&#28304;&#25991;&#20214;&#20250;&#21644;&#35813;&#37096;&#32626;&#36827;&#34892;&#23545;&#27604;&#65292;
+&#22914;&#26524;&#25968;&#32452;&#20219;&#20309;&#38190;&#23545;&#27604;&#20026;&#36164;&#28304;&#25991;&#20214;&#30340;&#26368;&#21518;&#25991;&#20214;&#21517;
+&#65288;&#22914;&#26524;&#26377;&#30340;&#35805;&#21069;&#32512;&#20026; <a href="./yii-web-assetbundle.html#%24sourcePath-detail">yii\web\AssetBundle::$sourcePath</a>&#65289;&#65292;&#23545;&#24212;&#30340;&#20540;&#20026;&#26367;&#25442;&#21407;&#26469;&#30340;&#36164;&#28304;&#12290;
+&#20363;&#22914;&#65292;&#36164;&#28304;&#25991;&#20214; <code>my/path/to/jquery.js</code> &#21305;&#37197;&#38190; <code>jquery.js</code>.</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#21482;&#26377;&#30456;&#23545;&#36335;&#24452;&#25351;&#23450;&#30340;&#36164;&#28304;&#23545;&#24212;&#21040;&#36164;&#28304;&#37096;&#32626;&#65292;&#26367;&#25442;&#30340;&#36164;&#28304;&#36335;&#24452;&#21487;&#20197;&#20026;&#32477;&#23545;&#36335;&#24452;&#65292;
+  &#20063;&#21487;&#20026;&#21644; <a href="./yii-web-assetmanager.html#%24basePath-detail">yii\web\AssetManager::$basePath</a> &#30456;&#20851;&#30340;&#36335;&#24452;&#12290;</p>
+</blockquote>
+<h3>&#36164;&#28304;&#21457;&#24067;  <span id="asset-publishing"></span><a href="#asset-publishing" class="hashlink">&para;</a></h3><p>&#22914;&#21069;&#25152;&#36848;&#65292;&#22914;&#26524;&#36164;&#28304;&#21253;&#25918;&#22312; Web &#19981;&#33021;&#35775;&#38382;&#30340;&#30446;&#24405;&#65292;
+&#24403;&#35270;&#22270;&#27880;&#20876;&#36164;&#28304;&#26102;&#36164;&#28304;&#20250;&#34987;&#25335;&#36125;&#21040;&#19968;&#20010; Web &#21487;&#35775;&#38382;&#30340;&#30446;&#24405;&#20013;&#65292;
+&#36825;&#20010;&#36807;&#31243;&#31216;&#20026;<em>&#36164;&#28304;&#21457;&#24067;</em>&#65292;<a href="./yii-web-assetmanager.html">asset manager</a> &#20250;&#33258;&#21160;&#22788;&#29702;&#35813;&#36807;&#31243;&#12290;</p>
+<p>&#36164;&#28304;&#40664;&#35748;&#20250;&#21457;&#24067;&#21040; <code>@webroot/assets</code> &#30446;&#24405;&#65292;&#23545;&#24212;&#30340; URL &#20026; <code>@web/assets</code>&#65292;
+&#21487;&#37197;&#32622; <a href="./yii-web-assetmanager.html#%24basePath-detail">basePath</a> &#21644; 
+<a href="./yii-web-assetmanager.html#%24baseUrl-detail">baseUrl</a> &#23646;&#24615;&#33258;&#23450;&#20041;&#21457;&#24067;&#20301;&#32622;&#12290;</p>
+<p>&#38500;&#20102;&#25335;&#36125;&#25991;&#20214;&#26041;&#24335;&#21457;&#24067;&#36164;&#28304;&#65292;&#22914;&#26524;&#25805;&#20316;&#31995;&#32479;&#21644; Web &#26381;&#21153;&#22120;&#20801;&#35768;&#21487;&#20197;&#20351;&#29992;&#31526;&#21495;&#38142;&#25509;&#65292;&#35813;&#21151;&#33021;&#21487;&#20197;&#36890;&#36807;&#35774;&#32622;
+<a href="./yii-web-assetmanager.html#%24linkAssets-detail">linkAssets</a> &#20026; <code>true</code> &#26469;&#21551;&#29992;&#12290;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'linkAssets'</span> =&gt; <span class="hljs-keyword">true</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>&#20351;&#29992;&#20197;&#19978;&#37197;&#32622;&#65292;
+&#36164;&#28304;&#31649;&#29702;&#22120;&#20250;&#21019;&#24314;&#19968;&#20010;&#31526;&#21495;&#38142;&#25509;&#21040;&#35201;&#21457;&#24067;&#30340;&#36164;&#28304;&#21253;&#28304;&#36335;&#24452;&#65292;
+&#36825;&#27604;&#25335;&#36125;&#25991;&#20214;&#26041;&#24335;&#24555;&#24182;&#33021;&#30830;&#20445;&#21457;&#24067;&#30340;&#36164;&#28304;&#19968;&#30452;&#20026;&#26368;&#26032;&#30340;&#12290;</p>
+<h3>&#28165;&#38500;&#32531;&#23384;  <span id="cache-busting"></span><a href="#cache-busting" class="hashlink">&para;</a></h3><p>&#23545;&#20110;&#36816;&#34892;&#22312;&#29983;&#20135;&#27169;&#24335;&#30340; Web &#24212;&#29992;&#31243;&#24207;&#65292;&#36890;&#24120;&#20250;&#20026;&#36164;&#28304;&#21253;&#21644;&#20854;&#20182;&#38745;&#24577;&#36164;&#28304;&#24320;&#21551; HTTP &#32531;&#23384;&#12290;
+&#20294;&#36825;&#31181;&#20570;&#27861;&#26377;&#20010;&#19981;&#22909;&#30340;&#22320;&#26041;&#23601;&#26159;&#65292;&#24403;&#20320;&#26356;&#26032;&#26576;&#20010;&#36164;&#28304;&#24182;&#37096;&#32626;&#21040;&#29983;&#20135;&#29615;&#22659;&#26102;&#65292;
+&#23458;&#25143;&#31471;&#21487;&#33021;&#30001;&#20110; HTTP &#32531;&#23384;&#32780;&#20173;&#28982;&#20351;&#29992;&#26087;&#29256;&#26412;&#30340;&#36164;&#28304;&#12290;
+&#20026;&#20102;&#20811;&#26381;&#35813;&#19981;&#36275;&#65292;&#20320;&#21487;&#20197;&#35797;&#35797;&#28165;&#38500;&#32531;&#23384;&#29305;&#24615;&#65292;&#23427;&#30001; 2.0.3 &#29256;&#26412;&#24341;&#20837;&#65292;&#21482;&#38656;&#22914;&#19979;&#37197;&#32622; <a href="./yii-web-assetmanager.html">yii\web\AssetManager</a> &#21363;&#21487;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'appendTimestamp'</span> =&gt; <span class="hljs-keyword">true</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>&#36890;&#36807;&#19978;&#36848;&#37197;&#32622;&#21518;&#65292;&#27599;&#20010;&#24050;&#21457;&#24067;&#36164;&#28304;&#30340; URL &#37117;&#20250;&#38468;&#21152;&#19968;&#20010;&#26368;&#21518;&#26356;&#26032;&#26102;&#38388;&#25139;&#30340;&#20449;&#24687;&#12290;
+&#27604;&#22914;&#65292;<code>yii.js</code> &#30340; URL &#21487;&#33021;&#26159; <code>/assets/5515a87c/yii.js?v=1423448645"</code>&#65292;
+&#36825;&#37324;&#30340;&#21442;&#25968; v &#34920;&#31034; <code>yii.js</code> &#25991;&#20214;&#30340;&#26368;&#21518;&#26356;&#26032;&#26102;&#38388;&#25139;&#12290;
+&#29616;&#22312;&#19968;&#26086;&#20320;&#26356;&#26032;&#20102;&#26576;&#20010;&#36164;&#28304;&#65292;&#23427;&#30340; URL &#20063;&#20250;&#25913;&#21464;&#36827;&#32780;&#24378;&#21046;&#23458;&#25143;&#31471;&#33719;&#21462;&#35813;&#36164;&#28304;&#30340;&#26368;&#26032;&#29256;&#26412;&#12290;</p>
+<h2>&#24120;&#29992;&#36164;&#28304;&#21253;  <span id="common-asset-bundles"></span><a href="#common-asset-bundles" class="hashlink">&para;</a></h2><p>Yii&#26694;&#26550;&#23450;&#20041;&#35768;&#22810;&#36164;&#28304;&#21253;&#65292;&#22914;&#19979;&#36164;&#28304;&#21253;&#26159;&#26368;&#24120;&#29992;&#65292;
+&#21487;&#22312;&#20320;&#30340;&#24212;&#29992;&#25110;&#25193;&#23637;&#20195;&#30721;&#20013;&#24341;&#29992;&#23427;&#20204;&#12290;</p>
+<ul>
+<li><a href="./yii-web-yiiasset.html">yii\web\YiiAsset</a>&#65306;&#20027;&#35201;&#21253;&#21547; <code>yii.js</code> &#25991;&#20214;&#65292;&#35813;&#25991;&#20214;&#23436;&#25104;&#27169;&#22359; JavaScript &#20195;&#30721;&#32452;&#32455;&#21151;&#33021;&#65292;
+&#20063;&#20026; <code>data-method</code> &#21644; <code>data-confirm</code> &#23646;&#24615;&#25552;&#20379;&#29305;&#21035;&#25903;&#25345;&#21644;&#20854;&#20182;&#26377;&#29992;&#30340;&#21151;&#33021;&#12290;
+&#26377;&#20851; <code>yii.js</code> &#30340;&#26356;&#22810;&#20449;&#24687;&#21487;&#20197;&#22312; <a href="guide-output-client-scripts.html#yii.js">&#23458;&#25143;&#31471;&#33050;&#26412;&#37096;&#20998;</a> &#20013;&#25214;&#21040;&#12290;</li>
+<li><a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a>&#65306;&#21253;&#21547; jQuery Bower &#21253;&#30340; <code>jquery.js</code> &#25991;&#20214;&#12290; </li>
+<li><a href="./yii-bootstrap-bootstrapasset.html">yii\bootstrap\BootstrapAsset</a>&#65306;&#21253;&#21547; Twitter Bootstrap &#26694;&#26550;&#30340; CSS &#25991;&#20214;&#12290;</li>
+<li><a href="./yii-bootstrap-bootstrappluginasset.html">yii\bootstrap\BootstrapPluginAsset</a>&#65306;&#21253;&#21547; Twitter Bootstrap &#26694;&#26550;&#30340; JavaScript &#25991;&#20214;
+&#26469;&#25903;&#25345; Bootstrap JavaScript &#25554;&#20214;&#12290;</li>
+<li><a href="./yii-jui-juiasset.html">yii\jui\JuiAsset</a>&#65306;&#21253;&#21547; jQuery UI &#24211;&#30340; CSS &#21644; JavaScript &#25991;&#20214;&#12290;</li>
+</ul>
+<p>&#22914;&#26524;&#20320;&#30340;&#20195;&#30721;&#38656;&#35201; jQuery&#65292;jQuery UI &#25110; Bootstrap&#65292;&#24212;&#23613;&#37327;&#20351;&#29992;&#36825;&#20123;&#39044;&#23450;&#20041;&#36164;&#28304;&#21253;&#32780;&#38750;&#33258;&#24049;&#21019;&#24314;&#65292;
+&#22914;&#26524;&#36825;&#20123;&#21253;&#30340;&#40664;&#35748;&#37197;&#32622;&#19981;&#33021;&#28385;&#36275;&#20320;&#30340;&#38656;&#27714;&#65292;&#21487;&#20197;&#33258;&#23450;&#20041;&#37197;&#32622;&#65292;
+&#35814;&#24773;&#21442;&#32771;<a href="#customizing-asset-bundles">&#33258;&#23450;&#20041;&#36164;&#28304;&#21253;</a>&#12290;</p>
+<h2>&#36164;&#28304;&#36716;&#25442;  <span id="asset-conversion"></span><a href="#asset-conversion" class="hashlink">&para;</a></h2><p>&#38500;&#20102;&#30452;&#25509;&#32534;&#20889; CSS &#25110; JavaScript &#20195;&#30721;&#65292;&#24320;&#21457;&#20154;&#21592;&#32463;&#24120;&#20351;&#29992;&#25193;&#23637;&#35821;&#27861;&#26469;&#32534;&#20889;&#65292;&#20877;&#20351;&#29992;&#29305;&#27530;&#30340;&#24037;&#20855;&#23558;&#23427;&#20204;&#36716;&#25442;&#25104; CSS/JavaScript&#12290;
+&#20363;&#22914;&#65292;&#23545;&#20110; CSS &#20195;&#30721;&#21487;&#20351;&#29992; <a href="https://lesscss.org/">LESS</a> &#25110; <a href="https://sass-lang.com/">SCSS</a>&#65292;
+&#23545;&#20110; JavaScript &#21487;&#20351;&#29992; <a href="https://www.typescriptlang.org/">TypeScript</a>&#12290;</p>
+<p>&#21487;&#23558;&#20351;&#29992;&#25193;&#23637;&#35821;&#27861;&#30340;&#36164;&#28304;&#25991;&#20214;&#21015;&#21040;&#36164;&#28304;&#21253;&#30340; <a href="./yii-web-assetbundle.html#%24css-detail">css</a> &#21644; <a href="./yii-web-assetbundle.html#%24js-detail">js</a> &#20013;&#65292;&#22914;&#19979;&#25152;&#31034;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-keyword">public</span> $basePath = <span class="hljs-string">'@webroot'</span>;
+    <span class="hljs-keyword">public</span> $baseUrl = <span class="hljs-string">'@web'</span>;
+    <span class="hljs-keyword">public</span> $css = [
+        <span class="hljs-string">'css/site.less'</span>,
+    ];
+    <span class="hljs-keyword">public</span> $js = [
+        <span class="hljs-string">'js/site.ts'</span>,
+    ];
+    <span class="hljs-keyword">public</span> $depends = [
+        <span class="hljs-string">'yii\web\YiiAsset'</span>,
+        <span class="hljs-string">'yii\bootstrap\BootstrapAsset'</span>,
+    ];
+}
+</code></pre>
+<p>&#24403;&#22312;&#35270;&#22270;&#20013;&#27880;&#20876;&#19968;&#20010;&#36825;&#26679;&#30340;&#36164;&#28304;&#21253;&#65292;<a href="./yii-web-assetmanager.html">asset manager</a> &#36164;&#28304;&#31649;&#29702;&#22120;&#20250;&#33258;&#21160;&#36816;&#34892;&#39044;&#22788;&#29702;&#24037;&#20855;&#23558;&#20351;&#29992;&#25193;&#23637;&#35821;&#27861;
+&#30340;&#36164;&#28304;&#36716;&#25442;&#25104; CSS/JavaScript&#65292;&#24403;&#35270;&#22270;&#26368;&#32456;&#28210;&#26579;&#39029;&#38754;&#26102;&#65292;
+&#22312;&#39029;&#38754;&#20013;&#21253;&#21547;&#30340;&#26159; CSS/Javascipt &#25991;&#20214;&#65292;
+&#32780;&#19981;&#26159;&#21407;&#22987;&#30340;&#25193;&#23637;&#35821;&#27861;&#20195;&#30721;&#25991;&#20214;&#12290;</p>
+<p>Yii &#20351;&#29992;&#25991;&#20214;&#25193;&#23637;&#21517;&#26469;&#34920;&#31034;&#36164;&#28304;&#20351;&#29992;&#21738;&#31181;&#25193;&#23637;&#35821;&#27861;&#65292;
+&#40664;&#35748;&#21487;&#20197;&#35782;&#21035;&#22914;&#19979;&#35821;&#27861;&#21644;&#25991;&#20214;&#25193;&#23637;&#21517;&#65306;</p>
+<ul>
+<li><a href="https://lesscss.org/">LESS</a>&#65306;<code>.less</code></li>
+<li><a href="https://sass-lang.com/">SCSS</a>&#65306;<code>.scss</code></li>
+<li><a href="https://stylus-lang.com/">Stylus</a>&#65306;<code>.styl</code></li>
+<li><a href="https://coffeescript.org/">CoffeeScript</a>&#65306;<code>.coffee</code></li>
+<li><a href="https://www.typescriptlang.org/">TypeScript</a>&#65306;<code>.ts</code></li>
+</ul>
+<p>Yii &#20381;&#38752;&#23433;&#35013;&#30340;&#39044;&#22788;&#29702;&#24037;&#20855;&#26469;&#36716;&#25442;&#36164;&#28304;&#65292;&#20363;&#22914;&#65292;
+&#20026;&#20351;&#29992; <a href="https://lesscss.org/">LESS</a>&#65292;&#24212;&#23433;&#35013; <code>lessc</code> &#39044;&#22788;&#29702;&#21629;&#20196;&#12290;</p>
+<p>&#21487;&#37197;&#32622; <a href="./yii-web-assetmanager.html#%24converter-detail">yii\web\AssetManager::$converter</a> &#33258;&#23450;&#20041;&#39044;&#22788;&#29702;&#21629;&#20196;&#21644;&#25903;&#25345;&#30340;&#25193;&#23637;&#35821;&#27861;&#65292;
+&#22914;&#19979;&#25152;&#31034;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'converter'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\AssetConverter'</span>,
+                <span class="hljs-string">'commands'</span> =&gt; [
+                    <span class="hljs-string">'less'</span> =&gt; [<span class="hljs-string">'css'</span>, <span class="hljs-string">'lessc {from} {to} --no-color'</span>],
+                    <span class="hljs-string">'ts'</span> =&gt; [<span class="hljs-string">'js'</span>, <span class="hljs-string">'tsc --out {to} {from}'</span>],
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>&#22914;&#19978;&#25152;&#31034;&#65292;&#36890;&#36807; <a href="./yii-web-assetconverter.html#%24commands-detail">yii\web\AssetConverter::$commands</a> &#23646;&#24615;&#25351;&#23450;&#25903;&#25345;&#30340;&#25193;&#23637;&#35821;&#27861;&#65292;
+&#25968;&#32452;&#30340;&#38190;&#20026;&#25991;&#20214;&#25193;&#23637;&#21517;&#65288;&#21069;&#38754;&#19981;&#38656;&#35201;&#36825;&#26679;&#30340;&#19968;&#20010;&#23567;&#28857;&#65306;<code>.</code>&#65289;&#65292;
+&#25968;&#32452;&#30340;&#20540;&#20026;&#30446;&#26631;&#36164;&#28304;&#25991;&#20214;&#25193;&#23637;&#21517;&#21644;&#25191;&#34892;&#36164;&#28304;&#36716;&#25442;&#30340;&#21629;&#20196;&#65292;
+&#21629;&#20196;&#20013;&#30340;&#26631;&#35760; <code>{from}</code> &#21644; <code>{to}</code> &#20250;&#20998;&#21035;&#34987;&#28304;&#36164;&#28304;&#25991;&#20214;&#36335;&#24452;&#21644;&#30446;&#26631;&#36164;&#28304;&#25991;&#20214;&#36335;&#24452;&#26367;&#20195;&#12290;</p>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#38500;&#20102;&#20197;&#19978;&#26041;&#24335;&#65292;&#20063;&#26377;&#20854;&#20182;&#30340;&#26041;&#24335;&#26469;&#22788;&#29702;&#25193;&#23637;&#35821;&#27861;&#36164;&#28304;&#65292;
+  &#20363;&#22914;&#65292;&#21487;&#20351;&#29992;&#32534;&#35793;&#24037;&#20855;&#22914;<a href="https://gruntjs.com/">grunt</a>
+  &#26469;&#30417;&#25511;&#24182;&#33258;&#21160;&#36716;&#25442;&#25193;&#23637;&#35821;&#27861;&#36164;&#28304;&#65292;&#27492;&#26102;&#65292;
+  &#24212;&#20351;&#29992;&#36164;&#28304;&#21253;&#20013;&#32534;&#35793;&#21518;&#30340;CSS/JavaScript&#25991;&#20214;&#32780;&#19981;&#26159;&#21407;&#22987;&#25991;&#20214;&#12290;</p>
+</blockquote>
+<h2>&#21512;&#24182;&#21644;&#21387;&#32553;&#36164;&#28304;  <span id="combining-compressing-assets"></span><a href="#combining-compressing-assets" class="hashlink">&para;</a></h2><p>&#19968;&#20010; Web &#39029;&#38754;&#21487;&#20197;&#21253;&#21547;&#24456;&#22810; CSS &#21644; JavaScript &#25991;&#20214;&#65292;&#20026;&#20943;&#23569; HTTP &#35831;&#27714;&#21644;&#36825;&#20123;&#19979;&#36733;&#25991;&#20214;&#30340;&#22823;&#23567;&#65292;
+&#36890;&#24120;&#30340;&#26041;&#24335;&#26159;&#22312;&#39029;&#38754;&#20013;&#21512;&#24182;&#24182;&#21387;&#32553;&#22810;&#20010; CSS/JavaScript &#25991;&#20214;&#20026;&#19968;&#20010;&#25110;&#24456;&#23569;&#30340;&#20960;&#20010;&#25991;&#20214;&#65292;
+&#24182;&#20351;&#29992;&#21387;&#32553;&#21518;&#30340;&#25991;&#20214;&#32780;&#19981;&#26159;&#21407;&#22987;&#25991;&#20214;&#12290;</p>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#21512;&#24182;&#21644;&#21387;&#32553;&#36164;&#28304;&#36890;&#24120;&#24212;&#29992;&#22312;&#20135;&#21697;&#19978;&#32447;&#27169;&#24335;&#65292;
+  &#22312;&#24320;&#21457;&#27169;&#24335;&#19979;&#20351;&#29992;&#21407;&#22987;&#30340; CSS/JavaScript &#26356;&#26041;&#20415;&#35843;&#35797;&#12290;</p>
+</blockquote>
+<p>&#25509;&#19979;&#26469;&#20171;&#32461;&#19968;&#31181;&#21512;&#24182;&#21644;&#21387;&#32553;&#36164;&#28304;&#25991;&#20214;
+&#32780;&#19981;&#38656;&#35201;&#20462;&#25913;&#24050;&#26377;&#20195;&#30721;&#30340;&#26041;&#24335;&#65306;</p>
+<ol>
+<li>&#25214;&#20986;&#24212;&#29992;&#20013;&#25152;&#26377;&#20320;&#24819;&#35201;&#21512;&#24182;&#21644;&#21387;&#32553;&#30340;&#36164;&#28304;&#21253;&#65292;</li>
+<li>&#23558;&#36825;&#20123;&#21253;&#20998;&#25104;&#19968;&#20010;&#25110;&#20960;&#20010;&#32452;&#65292;&#27880;&#24847;&#27599;&#20010;&#21253;&#21482;&#33021;&#23646;&#20110;&#20854;&#20013;&#19968;&#20010;&#32452;&#65292;</li>
+<li>&#21512;&#24182;/&#21387;&#32553;&#27599;&#20010;&#32452;&#37324; CSS &#25991;&#20214;&#21040;&#19968;&#20010;&#25991;&#20214;&#65292;&#21516;&#26679;&#26041;&#24335;&#22788;&#29702; JavaScript &#25991;&#20214;&#65292;</li>
+<li>&#20026;&#27599;&#20010;&#32452;&#23450;&#20041;&#26032;&#30340;&#36164;&#28304;&#21253;&#65306;<ul>
+<li>&#35774;&#32622; <a href="./yii-web-assetbundle.html#%24css-detail">css</a> &#21644; <a href="./yii-web-assetbundle.html#%24js-detail">js</a> 
+&#23646;&#24615;&#20998;&#21035;&#20026;&#21387;&#32553;&#21518;&#30340; CSS &#21644; JavaScript &#25991;&#20214;&#65307;</li>
+<li>&#33258;&#23450;&#20041;&#35774;&#32622;&#27599;&#20010;&#32452;&#20869;&#30340;&#36164;&#28304;&#21253;&#65292;&#35774;&#32622;&#36164;&#28304;&#21253;&#30340; <a href="./yii-web-assetbundle.html#%24css-detail">css</a> 
+&#21644; <a href="./yii-web-assetbundle.html#%24js-detail">js</a> &#23646;&#24615;&#20026;&#31354;, 
+&#24182;&#35774;&#32622;&#23427;&#20204;&#30340; <a href="./yii-web-assetbundle.html#%24depends-detail">depends</a> &#23646;&#24615;&#20026;&#27599;&#20010;&#32452;&#26032;&#21019;&#24314;&#30340;&#36164;&#28304;&#21253;&#12290;</li>
+</ul>
+</li>
+</ol>
+<p>&#20351;&#29992;&#36825;&#31181;&#26041;&#24335;&#65292;&#24403;&#22312;&#35270;&#22270;&#20013;&#27880;&#20876;&#36164;&#28304;&#21253;&#26102;&#65292;&#20250;&#33258;&#21160;&#35302;&#21457;&#21407;&#22987;&#21253;&#25152;&#23646;&#30340;&#32452;&#36164;&#28304;&#21253;&#30340;&#27880;&#20876;&#65292;
+&#28982;&#21518;&#65292;&#39029;&#38754;&#23601;&#20250;&#21253;&#21547;&#20197;&#21512;&#24182;/&#21387;&#32553;&#30340;&#36164;&#28304;&#25991;&#20214;&#65292;
+&#32780;&#19981;&#26159;&#21407;&#22987;&#25991;&#20214;&#12290;</p>
+<h3>&#31034;&#20363;  <span id="example"></span><a href="#example" class="hashlink">&para;</a></h3><p>&#20351;&#29992;&#19968;&#20010;&#31034;&#20363;&#26469;&#35299;&#37322;&#20197;&#19978;&#36825;&#31181;&#26041;&#24335;&#65306;</p>
+<p>&#20551;&#23450;&#20320;&#30340;&#24212;&#29992;&#26377;&#20004;&#20010;&#39029;&#38754; X &#21644; Y&#65292;&#39029;&#38754; X &#20351;&#29992;&#36164;&#28304;&#21253; A&#65292;B &#21644; C&#65292;&#39029;&#38754; Y &#20351;&#29992;&#36164;&#28304;&#21253; B&#65292;C &#21644; D&#12290;</p>
+<p>&#26377;&#20004;&#31181;&#26041;&#24335;&#21010;&#20998;&#36825;&#20123;&#36164;&#28304;&#21253;&#65292;&#19968;&#31181;&#20351;&#29992;&#19968;&#20010;&#32452;&#21253;&#21547;&#25152;&#26377;&#36164;&#28304;&#21253;&#65292;
+&#21478;&#19968;&#31181;&#26159;&#23558;&#65288;A&#65292;B&#65292;C&#65289;&#25918;&#22312;&#32452; X&#65292;&#65288;B&#65292;C&#65292;D&#65289;&#25918;&#22312;&#32452; Y&#65292;
+&#21738;&#31181;&#26041;&#24335;&#26356;&#22909;&#65311;&#31532;&#19968;&#31181;&#26041;&#24335;&#20248;&#28857;&#26159;&#20004;&#20010;&#39029;&#38754;&#20351;&#29992;&#30456;&#21516;&#30340;&#24050;&#21512;&#24182; CSS &#21644; JavaScript &#25991;&#20214;&#65292;&#20174;&#32780;&#20351; HTTP &#32531;&#23384;&#26356;&#39640;&#25928;&#65292;
+&#21478;&#19968;&#26041;&#38754;&#65292;&#30001;&#20110;&#21333;&#20010;&#32452;&#21253;&#21547;&#25152;&#26377;&#25991;&#20214;&#65292;
+&#24050;&#21512;&#24182;&#30340; CSS &#21644; JavaScipt &#25991;&#20214;&#20250;&#26356;&#22823;&#65292;&#22240;&#27492;&#20250;&#22686;&#21152;&#25991;&#20214;&#20256;&#36755;&#26102;&#38388;&#65292;&#22312;&#36825;&#20010;&#31034;&#20363;&#20013;&#65292;
+&#25105;&#20204;&#20351;&#29992;&#31532;&#19968;&#31181;&#26041;&#24335;&#65292;&#20063;&#23601;&#26159;&#29992;&#19968;&#20010;&#32452;&#21253;&#21547;&#25152;&#26377;&#21253;&#12290;</p>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#23558;&#36164;&#28304;&#21253;&#20998;&#32452;&#24182;&#19981;&#26159;&#26080;&#24847;&#20041;&#30340;&#65292;&#36890;&#24120;&#35201;&#27714;&#20998;&#26512;&#29616;&#23454;&#20013;&#19981;&#21516;&#39029;&#38754;&#21508;&#31181;&#36164;&#28304;&#30340;&#25968;&#25454;&#37327;&#65292;
+  &#24320;&#22987;&#26102;&#20026;&#31616;&#20415;&#20351;&#29992;&#19968;&#20010;&#32452;&#12290;</p>
+</blockquote>
+<p>&#22312;&#25152;&#26377;&#21253;&#20013;&#20351;&#29992;&#24037;&#20855;(&#20363;&#22914; <a href="https://developers.google.com/closure/compiler/">Closure Compiler</a>&#65292;
+<a href="https://github.com/yui/yuicompressor/">YUI Compressor</a>) &#26469;&#21512;&#24182;&#21644;&#21387;&#32553; CSS &#21644; JavaScript &#25991;&#20214;&#65292;
+&#27880;&#24847;&#21512;&#24182;&#21518;&#30340;&#25991;&#20214;&#28385;&#36275;&#21253;&#38388;&#30340;&#20808;&#21518;&#20381;&#36182;&#20851;&#31995;&#65292;
+&#20363;&#22914;&#65292;&#22914;&#26524;&#21253; A &#20381;&#36182; B&#65292;B &#20381;&#36182; C &#21644; D&#65292;&#37027;&#20040;&#36164;&#28304;&#25991;&#20214;&#21015;&#34920;&#20197; C &#21644; D &#24320;&#22987;&#65292;
+&#28982;&#21518;&#20026; B &#26368;&#21518;&#20026; A&#12290;</p>
+<p>&#21512;&#24182;&#21644;&#21387;&#32553;&#20043;&#21518;&#65292;&#20250;&#24471;&#21040;&#19968;&#20010; CSS &#25991;&#20214;&#21644;&#19968;&#20010; JavaScript &#25991;&#20214;&#65292;
+&#20551;&#23450;&#23427;&#20204;&#30340;&#21517;&#31216;&#20026; <code>all-xyz.css</code> &#21644; <code>all-xyz.js</code>&#65292;
+<code>xyz</code> &#20026;&#20351;&#25991;&#20214;&#21517;&#21807;&#19968;&#20197;&#36991;&#20813;HTTP&#32531;&#23384;&#38382;&#39064;&#30340;&#26102;&#38388;&#25139;&#25110;&#21704;&#24076;&#20540;&#12290;</p>
+<p>&#29616;&#22312;&#21040;&#26368;&#21518;&#19968;&#27493;&#20102;&#65292;&#22312;&#24212;&#29992;&#37197;&#32622;&#20013;&#37197;&#32622; <a href="./yii-web-assetmanager.html">asset manager</a> 
+&#36164;&#28304;&#31649;&#29702;&#22120;&#22914;&#19979;&#25152;&#31034;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'all'</span> =&gt; [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\AssetBundle'</span>,
+                    <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@webroot/assets'</span>,
+                    <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'@web/assets'</span>,
+                    <span class="hljs-string">'css'</span> =&gt; [<span class="hljs-string">'all-xyz.css'</span>],
+                    <span class="hljs-string">'js'</span> =&gt; [<span class="hljs-string">'all-xyz.js'</span>],
+                ],
+                <span class="hljs-string">'A'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+                <span class="hljs-string">'B'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+                <span class="hljs-string">'C'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+                <span class="hljs-string">'D'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>&#22914; <a href="#customizing-asset-bundles">&#33258;&#23450;&#20041;&#36164;&#28304;&#21253;</a> &#23567;&#33410;&#20013;&#25152;&#36848;&#65292;&#22914;&#19978;&#37197;&#32622;&#25913;&#21464;&#27599;&#20010;&#21253;&#30340;&#40664;&#35748;&#34892;&#20026;&#65292;
+&#29305;&#21035;&#26159;&#21253; A&#12289;B&#12289;C &#21644; D &#19981;&#20877;&#21253;&#21547;&#20219;&#20309;&#36164;&#28304;&#25991;&#20214;&#65292;
+&#37117;&#20381;&#36182;&#21253;&#21547;&#21512;&#24182;&#21518;&#30340; <code>all-xyz.css</code> &#21644; <code>all-xyz.js</code> &#25991;&#20214;&#30340;&#21253; <code>all</code>&#65292;
+&#22240;&#27492;&#65292;&#23545;&#20110;&#39029;&#38754;X&#20250;&#21253;&#21547;&#36825;&#20004;&#20010;&#21512;&#24182;&#21518;&#30340;&#25991;&#20214;&#32780;&#19981;&#26159;&#21253; A&#12289;B&#12289;C &#30340;&#21407;&#22987;&#25991;&#20214;&#65292;
+&#23545;&#20110;&#39029;&#38754; Y &#20063;&#26159;&#22914;&#27492;&#12290;</p>
+<p>&#26368;&#21518;&#26377;&#20010;&#26041;&#27861;&#26356;&#22909;&#22320;&#22788;&#29702;&#19978;&#36848;&#26041;&#24335;&#65292;&#38500;&#20102;&#30452;&#25509;&#20462;&#25913;&#24212;&#29992;&#37197;&#32622;&#25991;&#20214;&#65292;
+&#21487;&#23558;&#33258;&#23450;&#20041;&#21253;&#25968;&#32452;&#25918;&#21040;&#19968;&#20010;&#25991;&#20214;&#65292;&#22312;&#24212;&#29992;&#37197;&#32622;&#20013;&#26681;&#25454;&#26465;&#20214;&#21253;&#21547;&#35813;&#25991;&#20214;&#65292;
+&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; <span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/'</span> . (YII_ENV_PROD ? <span class="hljs-string">'assets-prod.php'</span> : <span class="hljs-string">'assets-dev.php'</span>),  
+        ],
+    ],
+];
+</code></pre>
+<p>&#22914;&#19978;&#25152;&#31034;&#65292;&#22312;&#20135;&#21697;&#19978;&#32447;&#27169;&#24335;&#19979;&#36164;&#28304;&#21253;&#25968;&#32452;&#23384;&#20648;&#22312; <code>assets-prod.php</code> &#25991;&#20214;&#20013;&#65292;
+&#19981;&#26159;&#20135;&#21697;&#19978;&#32447;&#27169;&#24335;&#23384;&#20648;&#22312; <code>assets-dev.php</code> &#25991;&#20214;&#20013;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#36825;&#31181;&#36164;&#28304;&#21512;&#24182;&#30340;&#26426;&#21046;&#26159;&#22522;&#20110; <a href="./yii-web-assetmanager.html#%24bundles-detail">yii\web\AssetManager::$bundles</a> &#33021;&#22815;&#35206;&#30422;&#24050;&#32463;&#27880;&#20876;&#30340;&#36164;&#28304;&#21253;&#12290;
+  &#20294;&#26159;&#65292;&#27491;&#22914;&#21069;&#38754;&#25552;&#21040;&#30340;&#65292;
+  &#24182;&#19981;&#33021;&#35206;&#30422;&#21040;&#20351;&#29992; <a href="./yii-web-assetbundle.html#init()-detail">yii\web\AssetBundle::init()</a> &#26041;&#27861;&#25110;&#22312;&#36164;&#28304;&#21253;&#23545;&#35937;&#19978;&#36827;&#34892;&#35843;&#25972;&#30340;&#36164;&#28304;&#21253;&#12290;
+  &#20320;&#24212;&#35813;&#36991;&#20813;&#22312;&#36164;&#28304;&#21512;&#24182;&#26102;&#20351;&#29992;&#27492;&#31867;&#21160;&#24577;&#25414;&#32465;&#30340;&#36164;&#28304;&#21253;&#12290;</p>
+</blockquote>
+<h3>&#20351;&#29992; <code>asset</code> &#21629;&#20196;  <span id="using-asset-command"></span><a href="#using-asset-command" class="hashlink">&para;</a></h3><p>Yii &#25552;&#20379;&#19968;&#20010;&#21517;&#20026; <code>asset</code> &#25511;&#21046;&#21488;&#21629;&#20196;&#26469;&#20351;&#19978;&#36848;&#25805;&#20316;&#33258;&#21160;&#22788;&#29702;&#12290;</p>
+<p>&#20026;&#20351;&#29992;&#35813;&#21629;&#20196;&#65292;&#24212;&#20808;&#21019;&#24314;&#19968;&#20010;&#37197;&#32622;&#25991;&#20214;&#35774;&#32622;&#21738;&#20123;&#36164;&#28304;&#21253;&#35201;&#21512;&#24182;&#20197;&#21450;&#20998;&#32452;&#26041;&#24335;&#65292;
+&#21487;&#20351;&#29992; <code>asset/template</code> &#23376;&#21629;&#20196;&#26469;&#29983;&#25104;&#19968;&#20010;&#27169;&#26495;&#65292;
+&#28982;&#21518;&#20462;&#25913;&#25104;&#20320;&#24819;&#35201;&#30340;&#27169;&#26495;&#12290;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> asset/template assets.php
+</code></pre>
+<p>&#35813;&#21629;&#20196;&#22312;&#24403;&#21069;&#30446;&#24405;&#19979;&#29983;&#25104;&#19968;&#20010;&#21517;&#20026; <code>assets.php</code> &#30340;&#25991;&#20214;&#65292;&#25991;&#20214;&#30340;&#20869;&#23481;&#31867;&#20284;&#22914;&#19979;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">/**
+ * &#20026;&#25511;&#21046;&#21488;&#21629;&#20196;"yii asset"&#20351;&#29992;&#30340;&#37197;&#32622;&#25991;&#20214;
+ * &#27880;&#24847;&#22312;&#25511;&#21046;&#21488;&#29615;&#22659;&#19979;&#65292;&#19968;&#20123;&#36335;&#24452;&#21035;&#21517;&#22914; '<span class="hljs-doctag">@webroot</span>' &#21644; '<span class="hljs-doctag">@web</span>' &#19981;&#20250;&#23384;&#22312;
+ * &#35831;&#23450;&#20041;&#19981;&#23384;&#22312;&#30340;&#36335;&#24452;&#21035;&#21517;
+ */</span>
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// &#20026;JavaScript&#25991;&#20214;&#21387;&#32553;&#20462;&#25913; command/callback </span>
+    <span class="hljs-string">'jsCompressor'</span> =&gt; <span class="hljs-string">'java -jar compiler.jar --js {from} --js_output_file {to}'</span>,
+    <span class="hljs-comment">// &#20026;CSS&#25991;&#20214;&#21387;&#32553;&#20462;&#25913;command/callback </span>
+    <span class="hljs-string">'cssCompressor'</span> =&gt; <span class="hljs-string">'java -jar yuicompressor.jar --type css {from} -o {to}'</span>,
+    <span class="hljs-comment">// &#26159;&#21542;&#22312;&#21387;&#32553;&#21518;&#21024;&#38500;&#36164;&#28304;&#26469;&#28304;&#65306;</span>
+    <span class="hljs-string">'deleteSource'</span> =&gt; <span class="hljs-keyword">false</span>,
+    <span class="hljs-comment">// &#35201;&#21387;&#32553;&#30340;&#36164;&#28304;&#21253;&#21015;&#34920;</span>
+    <span class="hljs-string">'bundles'</span> =&gt; [
+        <span class="hljs-comment">// 'yii\web\YiiAsset',</span>
+        <span class="hljs-comment">// 'yii\web\JqueryAsset',</span>
+    ],
+    <span class="hljs-comment">// &#36164;&#28304;&#21253;&#21387;&#32553;&#21518;&#30340;&#36755;&#20986;</span>
+    <span class="hljs-string">'targets'</span> =&gt; [
+        <span class="hljs-string">'all'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\AssetBundle'</span>,
+            <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@webroot/assets'</span>,
+            <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'@web/assets'</span>,
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-{hash}.css'</span>,
+        ],
+    ],
+    <span class="hljs-comment">// &#36164;&#28304;&#31649;&#29702;&#22120;&#37197;&#32622;:</span>
+    <span class="hljs-string">'assetManager'</span> =&gt; [
+    ],
+];
+</code></pre>
+<p>&#24212;&#20462;&#25913;&#35813;&#25991;&#20214;&#30340; <code>bundles</code> &#30340;&#36873;&#39033;&#25351;&#23450;&#21738;&#20123;&#21253;&#20320;&#24819;&#35201;&#21512;&#24182;&#65292;
+&#22312; <code>targets</code> &#36873;&#39033;&#20013;&#24212;&#25351;&#23450;&#36825;&#20123;&#21253;&#22914;&#20309;&#20998;&#32452;&#65292;
+&#22914;&#21069;&#36848;&#30340;&#21487;&#20197;&#25351;&#23450;&#19968;&#20010;&#25110;&#22810;&#20010;&#32452;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#30001;&#20110;&#22312;&#25511;&#21046;&#21488;&#24212;&#29992;&#21035;&#21517; <code>@webroot</code> &#21644; <code>@web</code> &#19981;&#21487;&#29992;&#65292;
+  &#24212;&#22312;&#37197;&#32622;&#20013;&#26126;&#30830;&#25351;&#23450;&#23427;&#20204;&#12290;</p>
+</blockquote>
+<p>JavaScript &#25991;&#20214;&#20250;&#34987;&#21512;&#24182;&#21387;&#32553;&#21518;&#20889;&#20837;&#21040; <code>js/all-{hash}.js</code> &#25991;&#20214;&#65292;
+&#20854;&#20013; {hash} &#20250;&#34987;&#32467;&#26524;&#25991;&#20214;&#30340;&#21704;&#24076;&#20540;&#26367;&#25442;&#12290;</p>
+<p><code>jsCompressor</code> &#21644; <code>cssCompressor</code> &#36873;&#39033;&#25351;&#23450;&#25511;&#21046;&#21488;&#21629;&#20196;&#25110;PHP&#22238;&#35843;&#20989;&#25968;&#26469;&#25191;&#34892; JavaScript &#21644; CSS &#21512;&#24182;&#21644;&#21387;&#32553;&#65292;
+Yii &#40664;&#35748;&#20351;&#29992; <a href="https://developers.google.com/closure/compiler/">Closure Compiler</a> &#26469;&#21512;&#24182; JavaScript &#25991;&#20214;&#65292; 
+&#20351;&#29992; <a href="https://github.com/yui/yuicompressor/">YUI Compressor</a> &#26469;&#21512;&#24182; CSS &#25991;&#20214;&#65292;
+&#20320;&#24212;&#25163;&#24037;&#23433;&#35013;&#36825;&#20123;&#24037;&#20855;&#25110;&#20462;&#25913;&#36873;&#39033;&#20351;&#29992;&#20320;&#21916;&#27426;&#30340;&#24037;&#20855;&#12290;</p>
+<p>&#26681;&#25454;&#37197;&#32622;&#25991;&#20214;&#65292;&#21487;&#25191;&#34892; <code>asset</code> &#21629;&#20196;&#26469;&#21512;&#24182;&#21644;&#21387;&#32553;&#36164;&#28304;&#25991;&#20214;
+&#24182;&#29983;&#25104;&#19968;&#20010;&#26032;&#30340;&#36164;&#28304;&#21253;&#37197;&#32622;&#25991;&#20214; <code>assets-prod.php</code>&#65306;</p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">yii</span> asset assets.php config/assets-prod.php
+</code></pre>
+<p>&#29983;&#25104;&#30340;&#37197;&#32622;&#25991;&#20214;&#21487;&#20197;&#22312;&#24212;&#29992;&#37197;&#32622;&#20013;&#21253;&#21547;&#65292;
+&#22914;&#26368;&#21518;&#19968;&#23567;&#33410;&#25152;&#25551;&#36848;&#30340;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22914;&#26524;&#20320;&#20351;&#29992; <a href="./yii-web-assetmanager.html#%24bundles-detail">yii\web\AssetManager::$bundles</a> &#25110; <a href="./yii-web-assetmanager.html#%24assetMap-detail">yii\web\AssetManager::$assetMap</a>
+  &#26469;&#33258;&#23450;&#20041;&#24212;&#29992;&#31243;&#24207;&#30340;&#36164;&#28304;&#21253;&#65292;&#24182;&#24076;&#26395;&#23558;&#27492;&#33258;&#23450;&#20041;&#24212;&#29992;&#20110;&#21387;&#32553;&#30340;&#28304;&#25991;&#20214;&#20013;&#65292;
+  &#20320;&#24212;&#35813;&#22312; asset &#21629;&#20196;&#37197;&#32622;&#25991;&#20214;&#20013;&#30340; <code>assetManager</code> &#37096;&#20998;&#21253;&#21547;&#36825;&#20123;&#33258;&#23450;&#20041;&#30340;&#20869;&#23481;&#12290;</p>
+</blockquote>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22312;&#25351;&#23450;&#21387;&#32553;&#28304;&#26102;&#65292;&#24212;&#36991;&#20813;&#20351;&#29992;&#37027;&#20123;&#26681;&#25454;&#21442;&#25968;&#21160;&#24577;&#35843;&#25972;&#30340;&#36164;&#28304;&#21253;&#65288;&#21363;&#22312; <code>init()</code> &#26041;&#27861;&#25110;&#27880;&#20876;&#21518;&#26681;&#25454;&#21442;&#25968;&#36827;&#34892;&#21160;&#24577;&#35843;&#25972;&#30340;&#21253;&#65289;&#65292;
+  &#22240;&#20026;&#22312;&#21387;&#32553;&#21518;&#23427;&#20204;&#21487;&#33021;&#26080;&#27861;&#27491;&#24120;&#24037;&#20316;&#12290;</p>
+</blockquote>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#20351;&#29992; <code>asset</code> &#21629;&#20196;&#24182;&#19981;&#26159;&#21512;&#24182;&#21644;&#21387;&#32553;&#36164;&#28304;&#30340;&#21807;&#19968;&#26041;&#27861;&#12290;
+  &#20320;&#20063;&#21487;&#20197;&#20351;&#29992;&#33021;&#22815;&#33258;&#21160;&#36816;&#34892;&#35774;&#23450;&#20219;&#21153;&#30340;&#39033;&#30446;&#26500;&#24314;&#24037;&#20855; <a href="https://gruntjs.com/">grunt</a> &#26469;&#23454;&#29616;&#21516;&#26679;&#30340;&#30446;&#30340;&#12290;</p>
+</blockquote>
+<h3>&#36164;&#28304;&#21253;&#20998;&#32452;  <span id="grouping-asset-bundles"></span><a href="#grouping-asset-bundles" class="hashlink">&para;</a></h3><p>&#19978;&#19968;&#23567;&#33410;&#65292;&#20171;&#32461;&#20102;&#22914;&#20309;&#21387;&#32553;&#25152;&#26377;&#30340;&#36164;&#28304;&#21253;&#21040;&#19968;&#20010;&#25991;&#20214;&#65292;
+&#20943;&#23569;&#23545;&#24212;&#29992;&#20013;&#24341;&#29992;&#36164;&#28304;&#25991;&#20214;&#30340; HTTP &#35831;&#27714;&#25968;&#65292;&#20294;&#26159;&#22312;&#23454;&#36341;&#20013;&#24456;&#23569;&#36825;&#26679;&#20570;&#12290;
+&#27604;&#22914;&#65292;&#24212;&#29992;&#26377;&#19968;&#20010;&ldquo;&#21069;&#31471;&rdquo;&#21644;&#19968;&#20010;&ldquo;&#21518;&#31471;&rdquo;&#65292;
+&#27599;&#19968;&#20010;&#37117;&#29992;&#20102;&#19968;&#20010;&#19981;&#21516; JavaScript &#21644; CSS &#25991;&#20214;&#38598;&#21512;&#12290;
+&#22312;&#36825;&#31181;&#24773;&#20917;&#19979;&#65292;&#25226;&#25152;&#26377;&#30340;&#36164;&#28304;&#21253;&#21387;&#32553;&#21040;&#19968;&#20010;&#25991;&#20214;&#27627;&#26080;&#24847;&#20041;&#65292;&ldquo;&#21069;&#31471;&rdquo;&#19981;&#20250;&#29992;&#21040;&ldquo;&#21518;&#31471;&rdquo;&#30340;&#36164;&#28304;&#25991;&#20214;&#65292;
+&#24403;&#35831;&#27714;&ldquo;&#21069;&#31471;&rdquo;&#39029;&#38754;&#26102;&#65292;&ldquo;&#21518;&#31471;&rdquo;&#30340;&#36164;&#28304;&#25991;&#20214;&#20063;&#20250;&#34987;&#21457;&#36865;&#36807;&#26469;&#65292;&#28010;&#36153;&#32593;&#32476;&#24102;&#23485;&#12290;</p>
+<p>&#20026;&#20102;&#35299;&#20915;&#36825;&#20010;&#38382;&#39064;&#65292;&#21487;&#20197;&#21543;&#36164;&#28304;&#21253;&#20998;&#25104;&#33509;&#24178;&#32452;&#65292;&#27599;&#20010;&#32452;&#37324;&#38754;&#26377;&#33509;&#24178;&#20010;&#36164;&#28304;&#21253;&#12290;
+&#19979;&#38754;&#30340;&#37197;&#32622;&#23637;&#31034;&#20102;&#22914;&#20309;&#23545;&#36164;&#28304;&#21253;&#20998;&#32452;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    ...
+    <span class="hljs-comment">// Specify output bundles with groups:</span>
+    <span class="hljs-string">'targets'</span> =&gt; [
+        <span class="hljs-string">'allShared'</span> =&gt; [
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-shared-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-shared-{hash}.css'</span>,
+            <span class="hljs-string">'depends'</span> =&gt; [
+                <span class="hljs-comment">// &#21253;&#21547;&#30001;'backend' &#21644; 'frontend' &#20849;&#20139;&#30340;&#36164;&#28304;&#21253;</span>
+                <span class="hljs-string">'yii\web\YiiAsset'</span>,
+                <span class="hljs-string">'app\assets\SharedAsset'</span>,
+            ],
+        ],
+        <span class="hljs-string">'allBackEnd'</span> =&gt; [
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-{hash}.css'</span>,
+            <span class="hljs-string">'depends'</span> =&gt; [
+                <span class="hljs-comment">// &#21482;&#21253;&#21547; 'backend' &#36164;&#28304;:</span>
+                <span class="hljs-string">'app\assets\AdminAsset'</span>
+            ],
+        ],
+        <span class="hljs-string">'allFrontEnd'</span> =&gt; [
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-{hash}.css'</span>,
+            <span class="hljs-string">'depends'</span> =&gt; [], <span class="hljs-comment">// &#21253;&#21547;&#25152;&#26377;&#30340;&#21097;&#20313;&#36164;&#28304;</span>
+        ],
+    ],
+    ...
+];
+</code></pre>
+<p>&#22914;&#19978;&#25152;&#31034;&#65292;&#36164;&#28304;&#21253;&#20998;&#25104;&#20102;&#19977;&#20010;&#32452;&#65306;<code>allShared</code>&#65292;<code>allBackEnd</code> &#21644; <code>allFrontEnd</code>
+&#23427;&#20204;&#27599;&#20010;&#37117;&#20381;&#36182;&#21508;&#33258;&#30340;&#36164;&#28304;&#21253;&#38598;&#21512;&#12290; &#27604;&#22914;&#65292; <code>allBackEnd</code> &#20381;&#36182; <code>app\assets\AdminAsset</code>&#12290;
+&#24403;&#23545;&#35813;&#37197;&#32622;&#36816;&#34892; <code>asset</code> &#21629;&#20196;&#26102;&#65292;&#23558;&#20250;&#26681;&#25454;&#21508;&#33258;&#20381;&#36182;&#21512;&#24182;&#36164;&#28304;&#21253;&#12290;</p>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#20320;&#20063;&#21487;&#20197;&#25226;&#26576;&#20010;&#20998;&#32452;&#30340; <code>depends</code> &#37197;&#32622;&#30041;&#31354;&#12290; &#36825;&#26679;&#20570;&#24471;&#35805;&#65292;
+  &#36825;&#20010;&#20998;&#32452;&#23558;&#20250;&#20381;&#36182;&#21097;&#20313;&#30340;&#36164;&#28304;&#21253;&#65292;&#21097;&#20313;&#36164;&#28304;&#21253;&#26159;&#25351;&#19981;&#34987;&#20854;&#20182;&#20998;&#32452;&#20381;&#36182;&#30340;&#37027;&#20123;&#36164;&#28304;&#21253;&#12290;</p>
+</blockquote>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:20 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

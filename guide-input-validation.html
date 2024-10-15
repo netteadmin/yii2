@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>输入验证（Validating Input） - 接收用户数据（Getting Data from Users） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1308" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1308-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1308-collapse" class="collapse navbar-collapse"><ul id="w1309" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1310" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1292" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1292" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1293" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1293" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1294" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1294" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1295" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1295" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1296" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1296" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1297" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1297" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item active" href="#navigation-1298" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1298" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item active" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1299" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1299" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1300" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1300" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1301" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1301" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1302" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1302" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1303" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1303" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1304" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1304" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1305" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1305" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1306" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1306" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1307" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1307" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>&#36755;&#20837;&#39564;&#35777; <span id="shu-ru-yan-zheng"></span><a href="#shu-ru-yan-zheng" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#declaring-rules">&#22768;&#26126;&#35268;&#21017;&#65288;Rules&#65289;</a></li>
+<li><a href="#ad-hoc-validation">&#20020;&#26102;&#39564;&#35777;</a></li>
+<li><a href="#creating-validators">&#21019;&#24314;&#39564;&#35777;&#22120;&#65288;Validators&#65289;</a></li>
+<li><a href="#multiple-attributes-validation">&#22810;&#23646;&#24615;&#39564;&#35777;</a></li>
+<li><a href="#client-side-validation">&#23458;&#25143;&#31471;&#39564;&#35777;</a></li>
+<li><a href="#ajax-validation">AJAX &#39564;&#35777;</a></li></ol></div>
+<p>&#26681;&#25454;&#32463;&#39564;&#65292;&#24744;&#27704;&#36828;&#19981;&#24212;&#35813;&#20449;&#20219;&#20174;&#26368;&#32456;&#29992;&#25143;&#25910;&#21040;&#30340;&#25968;&#25454;&#65292;
+&#24182;&#19988;&#24212;&#35813;&#22312;&#20805;&#20998;&#21033;&#29992;&#20043;&#21069;&#23545;&#20854;&#36827;&#34892;&#39564;&#35777;&#12290;</p>
+<p>&#35201;&#32473; <a href="guide-structure-models.html">model</a> &#22635;&#20805;&#20854;&#25152;&#38656;&#30340;&#29992;&#25143;&#36755;&#20837;&#25968;&#25454;&#65292;&#20320;&#21487;&#20197;&#35843;&#29992; <a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a> 
+&#26041;&#27861;&#39564;&#35777;&#23427;&#20204;&#12290;&#35813;&#26041;&#27861;&#20250;&#36820;&#22238;&#19968;&#20010;&#24067;&#23572;&#20540;&#65292;&#25351;&#26126;&#26159;&#21542;&#36890;&#36807;&#39564;&#35777;&#12290;&#33509;&#27809;&#26377;&#36890;&#36807;&#65292;&#20320;&#33021;&#36890;&#36807; <a href="./yii-base-model.html#%24errors-detail">yii\base\Model::$errors</a> 
+&#23646;&#24615;&#33719;&#21462;&#30456;&#24212;&#30340;&#25253;&#38169;&#20449;&#24687;&#12290;&#27604;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$model = <span class="hljs-keyword">new</span> \app\models\ContactForm();
+
+<span class="hljs-comment">// &#26681;&#25454;&#29992;&#25143;&#30340;&#36755;&#20837;&#22635;&#20805;&#21040;&#27169;&#22411;&#30340;&#23646;&#24615;&#20013;</span>
+$model-&gt;load(\Yii::$app-&gt;request-&gt;post());
+<span class="hljs-comment">// &#31561;&#25928;&#20110;&#19979;&#38754;&#36825;&#26679;&#65306;</span>
+<span class="hljs-comment">// $model-&gt;attributes = \Yii::$app-&gt;request-&gt;post('ContactForm');</span>
+
+<span class="hljs-keyword">if</span> ($model-&gt;validate()) {
+    <span class="hljs-comment">// &#25152;&#26377;&#36755;&#20837;&#36890;&#36807;&#39564;&#35777;</span>
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// &#39564;&#35777;&#22833;&#36133;: $errors &#26159;&#19968;&#20010;&#21253;&#21547;&#38169;&#35823;&#20449;&#24687;&#30340;&#25968;&#32452;</span>
+    $errors = $model-&gt;errors;
+}
+</code></pre>
+<h2>&#22768;&#26126;&#35268;&#21017;&#65288;Rules&#65289;  <span id="declaring-rules"></span><a href="#declaring-rules" class="hashlink">&para;</a></h2><p>&#35201;&#35753; <code>validate()</code> &#26041;&#27861;&#36215;&#20316;&#29992;&#65292;&#20320;&#38656;&#35201;&#22768;&#26126;&#19982;&#38656;&#39564;&#35777;&#27169;&#22411;&#29305;&#24615;&#30456;&#20851;&#30340;&#39564;&#35777;&#35268;&#21017;&#12290;
+&#20026;&#27492;&#65292;&#38656;&#35201;&#37325;&#20889; <a href="./yii-base-model.html#rules()-detail">yii\base\Model::rules()</a> &#26041;&#27861;&#12290;&#19979;&#38754;&#30340;&#20363;&#23376;&#23637;&#31034;&#20102;&#22914;&#20309;
+&#22768;&#26126;&#29992;&#20110;&#39564;&#35777; <code>ContactForm</code> &#27169;&#22411;&#30340;&#30456;&#20851;&#39564;&#35777;&#35268;&#21017;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// name&#65292;email&#65292;subject &#21644; body &#29305;&#24615;&#26159; `require`&#65288;&#24517;&#22635;&#65289;&#30340;</span>
+        [[<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>, <span class="hljs-string">'subject'</span>, <span class="hljs-string">'body'</span>], <span class="hljs-string">'required'</span>],
+
+        <span class="hljs-comment">// email &#29305;&#24615;&#24517;&#39035;&#26159;&#19968;&#20010;&#26377;&#25928;&#30340; email &#22320;&#22336;</span>
+        [<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>],
+    ];
+}
+</code></pre>
+<p><a href="./yii-base-model.html#rules()-detail">rules()</a> &#26041;&#27861;&#24212;&#36820;&#22238;&#19968;&#20010;&#30001;&#35268;&#21017;&#25152;&#32452;&#25104;&#30340;&#25968;&#32452;&#65292;
+&#27599;&#19968;&#20010;&#35268;&#21017;&#37117;&#21576;&#29616;&#20026;&#20197;&#19979;&#36825;&#31867;&#26684;&#24335;&#30340;&#23567;&#25968;&#32452;&#65306;</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// &#24517;&#22635;&#65292;&#25351;&#20986;&#21738;&#20010;&#23646;&#24615;&#30001;&#36825;&#20010;&#35268;&#21017;&#39564;&#35777;&#12290;</span>
+    <span class="hljs-comment">// &#22914;&#26524;&#26159;&#19968;&#20010;&#23646;&#24615;&#65292;&#21487;&#20197;&#30452;&#25509;&#20889;&#23646;&#24615;&#30340;&#21517;&#23383;</span>
+    <span class="hljs-comment">// &#19981;&#24517;&#20889;&#22312;&#25968;&#32452;&#37324;&#12290;</span>
+    [<span class="hljs-string">'attribute1'</span>, <span class="hljs-string">'attribute2'</span>, ...],
+    
+    <span class="hljs-comment">// &#24517;&#22635;&#65292;&#25351;&#20986;&#35268;&#21017;&#30340;&#31867;&#22411;&#12290;</span>
+    <span class="hljs-comment">// &#21487;&#20197;&#26159;&#19968;&#20010;&#31867;&#21517;&#65292;&#39564;&#35777;&#22120;&#21035;&#21517;&#65292;&#25110;&#32773;&#26159;&#19968;&#20010;&#39564;&#35777;&#22120;&#26041;&#27861;&#21517;</span>
+    <span class="hljs-string">'validator'</span>,
+
+    <span class="hljs-comment">// &#21487;&#36873;&#65292;&#25351;&#20986;&#36825;&#20010;&#35268;&#21017;&#22312;&#21738;&#20010;&#65288;&#20123;&#65289;&#22330;&#26223;&#19979;&#29983;&#25928;</span>
+    <span class="hljs-comment">// &#22914;&#26524;&#27809;&#26377;&#32473;&#20986;&#65292;&#24847;&#21619;&#30528;&#36825;&#20010;&#35268;&#21017;&#22312;&#25152;&#26377;&#22330;&#26223;&#37117;&#29983;&#25928;</span>
+    <span class="hljs-comment">// &#22914;&#26524;&#20320;&#24076;&#26395;&#22312;&#25152;&#26377;&#22330;&#26223;&#19979;&#29983;&#25928;&#65292;&#20294;&#26159;&#22312;&#25490;&#38500;&#30340;&#22330;&#26223;&#37324;&#19981;&#29983;&#25928;&#12290;</span>
+    <span class="hljs-comment">// &#21487;&#20197;&#37197;&#32622; "except" &#36873;&#39033;</span>
+    <span class="hljs-string">'on'</span> =&gt; [<span class="hljs-string">'scenario1'</span>, <span class="hljs-string">'scenario2'</span>, ...],
+
+    <span class="hljs-comment">// &#21487;&#36873;&#65292;&#20026;&#39564;&#35777;&#22120;&#23545;&#35937;&#25351;&#23450;&#39069;&#22806;&#30340;&#37197;&#32622;</span>
+    <span class="hljs-string">'property1'</span> =&gt; <span class="hljs-string">'value1'</span>, <span class="hljs-string">'property2'</span> =&gt; <span class="hljs-string">'value2'</span>, ...
+]
+</code></pre>
+<p>&#23545;&#20110;&#27599;&#20010;&#35268;&#21017;&#65292;&#20320;&#33267;&#23569;&#38656;&#35201;&#25351;&#23450;&#35813;&#35268;&#21017;&#36866;&#29992;&#20110;&#21738;&#20123;&#29305;&#24615;&#65292;&#20197;&#21450;&#26412;&#35268;&#21017;&#30340;&#31867;&#22411;&#26159;&#20160;&#20040;&#12290;
+&#20320;&#21487;&#20197;&#25351;&#23450;&#20197;&#19979;&#30340;&#35268;&#21017;&#31867;&#22411;&#20043;&#19968;&#65306;</p>
+<ul>
+<li>&#26680;&#24515;&#39564;&#35777;&#22120;&#30340;&#26165;&#31216;&#65292;&#27604;&#22914; <code>required</code>&#12289;<code>in</code>&#12289;<code>date</code>&#65292;&#31561;&#31561;&#12290;&#35831;&#21442;&#32771;
+<a href="guide-tutorial-core-validators.html">&#26680;&#24515;&#39564;&#35777;&#22120;</a>&#31456;&#33410;&#26597;&#30475;&#23436;&#25972;&#30340;&#26680;&#24515;&#39564;&#35777;&#22120;&#21015;&#34920;&#12290;</li>
+<li>&#27169;&#22411;&#31867;&#20013;&#30340;&#26576;&#20010;&#39564;&#35777;&#26041;&#27861;&#30340;&#21517;&#31216;&#65292;&#25110;&#32773;&#19968;&#20010;&#21311;&#21517;&#26041;&#27861;&#12290;
+&#35831;&#21442;&#32771;<a href="#inline-validators">&#34892;&#20869;&#39564;&#35777;&#22120;</a>&#23567;&#33410;&#20102;&#35299;&#26356;&#22810;&#12290;</li>
+<li>&#39564;&#35777;&#22120;&#31867;&#30340;&#21517;&#31216;&#12290;
+&#35831;&#21442;&#32771;<a href="#standalone-validators">&#29420;&#31435;&#39564;&#35777;&#22120;</a>&#23567;&#33410;&#20102;&#35299;&#26356;&#22810;&#12290;</li>
+</ul>
+<p>&#19968;&#20010;&#35268;&#21017;&#21487;&#29992;&#20110;&#39564;&#35777;&#19968;&#20010;&#25110;&#22810;&#20010;&#27169;&#22411;&#29305;&#24615;&#65292;&#19988;&#19968;&#20010;&#29305;&#24615;&#21487;&#20197;&#34987;&#19968;&#20010;&#25110;&#22810;&#20010;&#35268;&#21017;&#25152;&#39564;&#35777;&#12290;
+&#19968;&#20010;&#35268;&#21017;&#21487;&#20197;&#26045;&#29992;&#20110;&#29305;&#23450;<a href="guide-structure-models.html#scenarios">&#22330;&#26223;&#65288;scenario&#65289;</a>&#65292;&#21482;
+&#35201;&#25351;&#23450; <code>on</code> &#36873;&#39033;&#12290;&#22914;&#26524;&#20320;&#19981;&#25351;&#23450; <code>on</code> &#36873;&#39033;&#65292;&#37027;&#20040;&#35813;&#35268;&#21017;&#20250;&#36866;&#37197;&#20110;&#25152;&#26377;&#22330;&#26223;&#12290;</p>
+<p>&#24403;&#35843;&#29992; <code>validate()</code> &#26041;&#27861;&#26102;&#65292;&#23427;&#23558;&#36816;&#34892;&#20197;&#19979;&#20960;&#20010;&#20855;&#20307;&#30340;&#39564;&#35777;&#27493;&#39588;&#65306;</p>
+<ol>
+<li>&#26816;&#26597;&#20174;&#22768;&#26126;&#33258; <a href="./yii-base-model.html#scenarios()-detail">yii\base\Model::scenarios()</a> &#26041;&#27861;&#30340;&#22330;&#26223;&#20013;&#25152;&#25361;&#36873;&#20986;&#30340;&#24403;&#21069;<a href="./yii-base-model.html#%24scenario-detail">&#22330;&#26223;</a>&#30340;&#20449;&#24687;&#65292;
+&#20174;&#32780;&#30830;&#23450;&#20986;&#37027;&#20123;&#29305;&#24615;&#38656;&#35201;&#34987;&#39564;&#35777;&#12290;&#36825;&#20123;&#29305;&#24615;&#34987;&#31216;&#20026;&#28608;&#27963;&#29305;&#24615;&#12290;</li>
+<li>&#26816;&#26597;&#20174;&#22768;&#26126;&#33258; <a href="./yii-base-model.html#rules()-detail">yii\base\Model::rules()</a> &#26041;&#27861;&#30340;&#20247;&#22810;&#35268;&#21017;&#20013;&#25152;&#25361;&#36873;&#20986;&#30340;&#36866;&#29992;&#20110;&#24403;&#21069;<a href="./yii-base-model.html#%24scenario-detail">&#22330;&#26223;</a>&#30340;&#35268;&#21017;&#65292;
+&#20174;&#32780;&#30830;&#23450;&#20986;&#38656;&#35201;&#39564;&#35777;&#21738;&#20123;&#35268;&#21017;&#12290;&#36825;&#20123;&#35268;&#21017;&#34987;&#31216;&#20026;&#28608;&#27963;&#35268;&#21017;&#12290;</li>
+<li>&#29992;&#27599;&#20010;&#28608;&#27963;&#35268;&#21017;&#21435;&#39564;&#35777;&#27599;&#20010;
+&#19982;&#20043;&#20851;&#32852;&#30340;&#28608;&#27963;&#29305;&#24615;&#12290;</li>
+</ol>
+<p>&#22522;&#20110;&#20197;&#19978;&#39564;&#35777;&#27493;&#39588;&#65292;&#26377;&#19988;&#20165;&#26377;&#22768;&#26126;&#22312; <code>scenarios()</code> 
+&#26041;&#27861;&#37324;&#30340;&#28608;&#27963;&#29305;&#24615;&#65292;&#19988;&#23427;&#36824;&#24517;&#39035;&#19982;&#19968;&#25110;&#22810;&#20010;&#22768;&#26126;&#33258;
+<code>rules()</code> &#37324;&#30340;&#28608;&#27963;&#35268;&#21017;&#30456;&#20851;&#32852;&#25165;&#20250;&#34987;&#39564;&#35777;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#21487;&#20197;&#26041;&#20415;&#22320;&#32473;&#35268;&#21017;&#21629;&#21517;&#27604;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-string">'password'</span> =&gt; [[<span class="hljs-string">'password'</span>], <span class="hljs-string">'string'</span>, <span class="hljs-string">'max'</span> =&gt; <span class="hljs-number">60</span>],
+    ];
+}
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#22312;&#23376;&#27169;&#22411;&#20013;&#20351;&#29992;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    $rules = <span class="hljs-keyword">parent</span>::rules();
+    <span class="hljs-keyword">unset</span>($rules[<span class="hljs-string">'password'</span>]);
+    <span class="hljs-keyword">return</span> $rules;
+}
+</code></pre>
+</blockquote>
+<h3>&#33258;&#23450;&#20041;&#38169;&#35823;&#20449;&#24687;  <span id="customizing-error-messages"></span><a href="#customizing-error-messages" class="hashlink">&para;</a></h3><p>&#22823;&#22810;&#25968;&#30340;&#39564;&#35777;&#22120;&#37117;&#26377;&#40664;&#35748;&#30340;&#38169;&#35823;&#20449;&#24687;&#65292;&#24403;&#27169;&#22411;&#30340;&#26576;&#20010;&#29305;&#24615;&#39564;&#35777;&#22833;&#36133;&#30340;&#26102;&#20505;&#65292;&#35813;&#38169;&#35823;&#20449;&#24687;&#20250;&#34987;&#36820;&#22238;&#32473;&#27169;&#22411;&#12290;
+&#27604;&#22914;&#65292;&#29992; <a href="./yii-validators-requiredvalidator.html">required</a> &#39564;&#35777;&#22120;&#30340;&#35268;&#21017;&#26816;&#39564; <code>username</code> 
+&#29305;&#24615;&#22833;&#36133;&#30340;&#35805;&#65292;&#20250;&#36820;&#36824;&#32473;&#27169;&#22411; "Username cannot be blank." &#20449;&#24687;&#12290;</p>
+<p>&#20320;&#21487;&#20197;&#36890;&#36807;&#22312;&#22768;&#26126;&#35268;&#21017;&#30340;&#26102;&#20505;&#21516;&#26102;&#25351;&#23450; <code>message</code> &#23646;&#24615;&#65292;
+&#26469;&#23450;&#21046;&#26576;&#20010;&#35268;&#21017;&#30340;&#38169;&#35823;&#20449;&#24687;&#65292;&#27604;&#22914;&#36825;&#26679;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        [<span class="hljs-string">'username'</span>, <span class="hljs-string">'required'</span>, <span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">'Please choose a username.'</span>],
+    ];
+}
+</code></pre>
+<p>&#19968;&#20123;&#39564;&#35777;&#22120;&#36824;&#25903;&#25345;&#29992;&#20110;&#38024;&#23545;&#19981;&#21516;&#21407;&#22240;&#30340;&#39564;&#35777;&#22833;&#36133;&#36820;&#22238;&#26356;&#21152;&#20934;&#30830;&#30340;&#39069;&#22806;&#38169;&#35823;&#20449;&#24687;&#12290;&#27604;&#22914;&#65292;<a href="./yii-validators-numbervalidator.html">number</a> 
+&#39564;&#35777;&#22120;&#23601;&#25903;&#25345; <a href="./yii-validators-numbervalidator.html#%24tooBig-detail">tooBig</a> &#21644; <a href="./yii-validators-numbervalidator.html#%24tooSmall-detail">tooSmall</a> 
+&#20004;&#31181;&#38169;&#35823;&#28040;&#24687;&#29992;&#20110;&#20998;&#21035;&#36820;&#22238;&#36755;&#20837;&#20540;&#26159;&#22826;&#22823;&#36824;&#26159;&#22826;&#23567;&#12290;&#20320;&#20063;&#21487;&#20197;&#20687;&#37197;&#32622;&#39564;&#35777;&#22120;&#30340;
+&#20854;&#20182;&#23646;&#24615;&#19968;&#26679;&#37197;&#32622;&#23427;&#20204;&#20457;&#21508;&#33258;&#30340;&#38169;&#35823;&#20449;&#24687;&#12290;</p>
+<h3>&#39564;&#35777;&#20107;&#20214;  <span id="validation-events"></span><a href="#validation-events" class="hashlink">&para;</a></h3><p>&#24403;&#35843;&#29992; <a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a> &#26041;&#27861;&#30340;&#36807;&#31243;&#37324;&#65292;&#23427;&#21516;&#26102;&#20250;&#35843;&#29992;&#20004;&#20010;&#29305;&#27530;&#30340;&#26041;&#27861;&#65292;
+&#25226;&#23427;&#20204;&#37325;&#20889;&#25481;&#21487;&#20197;&#23454;&#29616;&#33258;&#23450;&#20041;&#39564;&#35777;&#36807;&#31243;&#30340;&#30446;&#30340;&#65306;</p>
+<ul>
+<li><a href="./yii-base-model.html#beforeValidate()-detail">yii\base\Model::beforeValidate()</a>&#65306;&#22312;&#40664;&#35748;&#30340;&#23454;&#29616;&#20013;&#20250;&#35302;&#21457; <a href="./yii-base-model.html#EVENT_BEFORE_VALIDATE-detail">yii\base\Model::EVENT_BEFORE_VALIDATE</a> &#20107;&#20214;&#12290;
+&#20320;&#21487;&#20197;&#37325;&#20889;&#35813;&#26041;&#27861;&#25110;&#32773;&#21709;&#24212;&#27492;&#20107;&#20214;&#65292;&#26469;&#22312;&#39564;&#35777;&#24320;&#22987;&#20043;&#21069;&#65292;&#20808;&#36827;&#34892;&#19968;&#20123;&#39044;&#22788;&#29702;&#30340;&#24037;&#20316;&#12290;
+ &#65288;&#27604;&#22914;&#65292;&#26631;&#20934;&#21270;&#25968;&#25454;&#36755;&#20837;&#65289;&#35813;&#26041;&#27861;&#24212;&#35813;&#36820;&#22238;&#19968;&#20010;&#24067;&#23572;&#20540;&#65292;&#29992;&#20110;&#26631;&#26126;&#39564;&#35777;&#26159;&#21542;&#36890;&#36807;&#12290;</li>
+<li><a href="./yii-base-model.html#afterValidate()-detail">yii\base\Model::afterValidate()</a>&#65306;&#22312;&#40664;&#35748;&#30340;&#23454;&#29616;&#20013;&#20250;&#35302;&#21457; <a href="./yii-base-model.html#EVENT_AFTER_VALIDATE-detail">yii\base\Model::EVENT_AFTER_VALIDATE</a> &#20107;&#20214;&#12290;
+&#20320;&#21487;&#20197;&#37325;&#20889;&#35813;&#26041;&#27861;&#25110;&#32773;&#21709;&#24212;&#27492;&#20107;&#20214;&#65292;&#26469;&#22312;&#39564;&#35777;&#32467;&#26463;&#20043;&#21518;&#65292;
+&#20877;&#36827;&#34892;&#19968;&#20123;&#25910;&#23614;&#30340;&#24037;&#20316;&#12290;</li>
+</ul>
+<h3>&#26465;&#20214;&#24335;&#39564;&#35777;  <span id="conditional-validation"></span><a href="#conditional-validation" class="hashlink">&para;</a></h3><p>&#33509;&#35201;&#21482;&#22312;&#26576;&#20123;&#26465;&#20214;&#28385;&#36275;&#26102;&#65292;&#25165;&#39564;&#35777;&#30456;&#20851;&#29305;&#24615;&#65292;&#27604;&#22914;&#65306;&#26159;&#21542;&#39564;&#35777;&#26576;&#29305;&#24615;&#21462;&#20915;&#20110;&#21478;&#19968;&#29305;&#24615;&#30340;&#20540;&#65292;
+&#20320;&#21487;&#20197;&#36890;&#36807;<a href="./yii-validators-validator.html#%24when-detail">when</a> 
+&#23646;&#24615;&#26469;&#23450;&#20041;&#30456;&#20851;&#26465;&#20214;&#12290;&#20030;&#20363;&#32780;&#35328;&#65292;</p>
+<pre><code class="hljs php language-php">    [<span class="hljs-string">'state'</span>, <span class="hljs-string">'required'</span>, <span class="hljs-string">'when'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($model)</span> </span>{
+        <span class="hljs-keyword">return</span> $model-&gt;country == <span class="hljs-string">'USA'</span>;
+    }]
+</code></pre>
+<p><a href="./yii-validators-validator.html#%24when-detail">when</a> &#23646;&#24615;&#20250;&#35835;&#20837;&#19968;&#20010;&#22914;&#19979;&#25152;&#31034;&#32467;&#26500;&#30340; PHP callable &#20989;&#25968;&#23545;&#35937;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@param</span> Model $model &#35201;&#39564;&#35777;&#30340;&#27169;&#22411;&#23545;&#35937;
+ * <span class="hljs-doctag">@param</span> string $attribute &#24453;&#27979;&#29305;&#24615;&#21517;
+ * <span class="hljs-doctag">@return</span> bool &#36820;&#22238;&#26159;&#21542;&#21551;&#29992;&#35813;&#35268;&#21017;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($model, $attribute)</span>
+</span></code></pre>
+<p>&#33509;&#20320;&#38656;&#35201;&#25903;&#25345;&#23458;&#25143;&#31471;&#30340;&#26465;&#20214;&#39564;&#35777;&#65292;&#20320;&#24212;&#35813;&#37197;&#32622;<a href="./yii-validators-validator.html#%24whenClient-detail">whenClient</a> &#23646;&#24615;&#65292;
+&#23427;&#20250;&#35835;&#20837;&#19968;&#26465;&#21253;&#21547;&#26377; JavaScript &#20989;&#25968;&#30340;&#23383;&#31526;&#20018;&#12290;
+&#36825;&#20010;&#20989;&#25968;&#23558;&#34987;&#29992;&#20110;&#30830;&#23450;&#35813;&#23458;&#25143;&#31471;&#39564;&#35777;&#35268;&#21017;&#26159;&#21542;&#34987;&#21551;&#29992;&#12290;&#27604;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">    [<span class="hljs-string">'state'</span>, <span class="hljs-string">'required'</span>, <span class="hljs-string">'when'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($model)</span> </span>{
+        <span class="hljs-keyword">return</span> $model-&gt;country == <span class="hljs-string">'USA'</span>;
+    }, <span class="hljs-string">'whenClient'</span> =&gt; <span class="hljs-string">"function (attribute, value) {
+        return $('#country').value == 'USA';
+    }"</span>]
+</code></pre>
+<h3>&#25968;&#25454;&#39044;&#22788;&#29702;  <span id="data-filtering"></span><a href="#data-filtering" class="hashlink">&para;</a></h3><p>&#29992;&#25143;&#36755;&#20837;&#32463;&#24120;&#38656;&#35201;&#36827;&#34892;&#25968;&#25454;&#36807;&#28388;&#65292;&#25110;&#32773;&#21483;&#39044;&#22788;&#29702;&#12290;&#27604;&#22914;&#20320;&#21487;&#33021;&#20250;&#38656;&#35201;&#20808;&#21435;&#25481; <code>username</code> &#36755;&#20837;&#30340;&#25910;&#23614;&#31354;&#26684;&#12290;
+&#20320;&#21487;&#20197;&#36890;&#36807;&#20351;&#29992;&#39564;&#35777;&#35268;&#21017;&#26469;&#23454;&#29616;&#27492;&#30446;&#30340;&#12290;</p>
+<p>&#19979;&#38754;&#30340;&#20363;&#23376;&#23637;&#31034;&#20102;&#22914;&#20309;&#21435;&#25481;&#36755;&#20837;&#20449;&#24687;&#30340;&#39318;&#23614;&#31354;&#26684;&#65292;&#24182;&#23558;&#31354;&#36755;&#20837;&#36820;&#22238;&#20026; null&#12290;&#20855;&#20307;&#26041;&#27861;&#20026;&#36890;&#36807;&#35843;&#29992; 
+<a href="guide-tutorial-core-validators.html#trim">trim</a> &#21644; <a href="guide-tutorial-core-validators.html#default">default</a> &#26680;&#24515;&#39564;&#35777;&#22120;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'trim'</span>],
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'default'</span>],
+];
+</code></pre>
+<p>&#20063;&#36824;&#21487;&#20197;&#29992;&#26356;&#21152;&#36890;&#29992;&#30340; <a href="guide-tutorial-core-validators.html#filter">filter&#65288;&#28388;&#38236;&#65289;</a> 
+&#26680;&#24515;&#39564;&#35777;&#22120;&#26469;&#25191;&#34892;&#26356;&#21152;&#22797;&#26434;&#30340;&#25968;&#25454;&#36807;&#28388;&#12290;</p>
+<p>&#22914;&#20320;&#25152;&#35265;&#65292;&#36825;&#20123;&#39564;&#35777;&#35268;&#21017;&#24182;&#19981;&#30495;&#30340;&#23545;&#36755;&#20837;&#25968;&#25454;&#36827;&#34892;&#20219;&#20309;&#39564;&#35777;&#12290;&#32780;&#26159;&#65292;&#23545;&#36755;&#20837;&#25968;&#25454;&#36827;&#34892;&#19968;&#20123;&#22788;&#29702;&#65292;
+&#28982;&#21518;&#25226;&#23427;&#20204;&#23384;&#22238;&#24403;&#21069;&#34987;&#39564;&#35777;&#30340;&#27169;&#22411;&#29305;&#24615;&#12290;</p>
+<p>&#19979;&#38754;&#30340;&#20195;&#30721;&#31034;&#20363;&#23637;&#31034;&#20102;&#23545;&#29992;&#25143;&#36755;&#20837;&#30340;&#23436;&#25972;&#22788;&#29702;&#65292;
+&#36825;&#23558;&#30830;&#20445;&#21482;&#23558;&#25972;&#25968;&#20540;&#23384;&#20648;&#22312;&#19968;&#20010;&#23646;&#24615;&#20013;&#65306;</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string">'age'</span>, <span class="hljs-string">'trim'</span>],
+[<span class="hljs-string">'age'</span>, <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-keyword">null</span>],
+[<span class="hljs-string">'age'</span>, <span class="hljs-string">'integer'</span>, <span class="hljs-string">'integerOnly'</span> =&gt; <span class="hljs-keyword">true</span>, <span class="hljs-string">'min'</span> =&gt; <span class="hljs-number">0</span>],
+[<span class="hljs-string">'age'</span>, <span class="hljs-string">'filter'</span>, <span class="hljs-string">'filter'</span> =&gt; <span class="hljs-string">'intval'</span>, <span class="hljs-string">'skipOnEmpty'</span> =&gt; <span class="hljs-keyword">true</span>],
+</code></pre>
+<p>&#20197;&#19978;&#20195;&#30721;&#23558;&#23545;&#36755;&#20837;&#25191;&#34892;&#20197;&#19979;&#25805;&#20316;&#65306;</p>
+<ol>
+<li>&#20174;&#36755;&#20837;&#20540;&#20013;&#21435;&#38500;&#21069;&#21518;&#31354;&#30333;&#12290;</li>
+<li>&#30830;&#20445;&#31354;&#36755;&#20837;&#22312;&#25968;&#25454;&#24211;&#20013;&#23384;&#20648;&#20026; <code>null</code>&#65307;&#25105;&#20204;&#21306;&#20998; <code>&#26410;&#35774;&#32622;</code> &#20540;&#21644;&#23454;&#38469;&#20540;&#20026; <code>0</code> &#20043;&#38388;&#30340;&#21306;&#21035;&#12290;
+&#22914;&#26524;&#20540;&#19981;&#20801;&#35768;&#20026; <code>null</code>&#65292;&#21017;&#21487;&#20197;&#22312;&#27492;&#22788;&#35774;&#32622;&#21478;&#19968;&#20010;&#40664;&#35748;&#20540;&#12290;</li>
+<li>&#22914;&#26524;&#35813;&#20540;&#19981;&#20026;&#31354;&#65292;&#21017;&#39564;&#35777;&#35813;&#20540;&#26159;&#21542;&#20026;&#22823;&#20110;0&#30340;&#25972;&#25968;&#12290;&#22823;&#22810;&#25968;&#39564;&#35777;&#22120;&#30340;
+<a href="./yii-validators-validator.html#%24skipOnEmpty-detail">$skipOnEmpty</a> &#23646;&#24615;&#37117;&#34987;&#35774;&#32622;&#20026;<code>true</code>&#12290;</li>
+<li>&#30830;&#20445;&#35813;&#20540;&#20026;&#25972;&#25968;&#31867;&#22411;&#65292;&#20363;&#22914;&#23558;&#23383;&#31526;&#20018; <code>'42'</code> &#36716;&#25442;&#20026;&#25972;&#25968; <code>42</code>&#12290;&#22312;&#36825;&#37324;&#65292;&#25105;&#20204;&#23558; 
+<a href="./yii-validators-filtervalidator.html#%24skipOnEmpty-detail">$skipOnEmpty</a> &#35774;&#32622;&#20026; <code>true</code>&#65292;&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#22312; 
+<a href="./yii-validators-filtervalidator.html">filter</a> &#39564;&#35777;&#22120;&#37324;&#36825;&#20010;&#23646;&#24615;&#26159; <code>false</code>&#12290;</li>
+</ol>
+<h3>&#22788;&#29702;&#31354;&#36755;&#20837;  <span id="handling-empty-inputs"></span><a href="#handling-empty-inputs" class="hashlink">&para;</a></h3><p>&#24403;&#36755;&#20837;&#25968;&#25454;&#26159;&#36890;&#36807; HTML &#34920;&#21333;&#65292;&#20320;&#32463;&#24120;&#20250;&#38656;&#35201;&#32473;&#31354;&#30340;&#36755;&#20837;&#39033;&#36171;&#40664;&#35748;&#20540;&#12290;&#20320;&#21487;&#20197;&#36890;&#36807;&#35843;&#25972;
+<a href="guide-tutorial-core-validators.html#default">default</a> &#39564;&#35777;&#22120;&#26469;&#23454;&#29616;&#36825;&#19968;&#28857;&#12290;&#20030;&#20363;&#26469;&#35828;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// &#33509; "username" &#21644; "email" &#20026;&#31354;&#65292;&#21017;&#35774;&#20026; null</span>
+    [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'default'</span>],
+
+    <span class="hljs-comment">// &#33509; "level" &#20026;&#31354;&#65292;&#21017;&#35774;&#20854;&#20026; 1</span>
+    [<span class="hljs-string">'level'</span>, <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-number">1</span>],
+];
+</code></pre>
+<p>&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#24403;&#36755;&#20837;&#39033;&#20026;&#31354;&#23383;&#31526;&#20018;&#65292;&#31354;&#25968;&#32452;&#65292;&#25110; null &#26102;&#65292;&#20250;&#34987;&#35270;&#20026;&ldquo;&#31354;&#20540;&rdquo;&#12290;
+&#20320;&#20063;&#21487;&#20197;&#36890;&#36807;&#37197;&#32622;<a href="./yii-validators-validator.html#isEmpty()-detail">yii\validators\Validator::isEmpty()</a> 
+&#23646;&#24615;&#26469;&#33258;&#23450;&#20041;&#31354;&#20540;&#30340;&#21028;&#23450;&#35268;&#21017;&#12290;&#27604;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">    [<span class="hljs-string">'agree'</span>, <span class="hljs-string">'required'</span>, <span class="hljs-string">'isEmpty'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($value)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">empty</span>($value);
+    }]
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#23545;&#20110;&#32477;&#22823;&#22810;&#25968;&#39564;&#35777;&#22120;&#32780;&#35328;&#65292;&#33509;&#20854; <span class="broken-link">yii\base\Validator::skipOnEmpty</span> &#23646;&#24615;&#20026;&#40664;&#35748;&#20540;
+  true&#65292;&#21017;&#23427;&#20204;&#19981;&#20250;&#23545;&#31354;&#20540;&#36827;&#34892;&#20219;&#20309;&#22788;&#29702;&#12290;&#20063;&#23601;&#26159;&#24403;&#20182;&#20204;&#30340;&#20851;&#32852;&#29305;&#24615;&#25509;&#25910;&#21040;&#31354;&#20540;&#26102;&#65292;&#30456;&#20851;&#39564;&#35777;&#20250;&#34987;&#30452;&#25509;&#30053;&#36807;&#12290;&#22312;
+  <a href="guide-tutorial-core-validators.html">&#26680;&#24515;&#39564;&#35777;&#22120;</a> &#20043;&#20013;&#65292;&#21482;&#26377; <code>captcha</code>&#65288;&#39564;&#35777;&#30721;&#65289;&#65292;<code>default</code>&#65288;&#40664;&#35748;&#20540;&#65289;&#65292;
+ <code>filter</code>&#65288;&#28388;&#38236;&#65289;&#65292;<code>required</code>&#65288;&#24517;&#22635;&#65289;&#65292;&#20197;&#21450; <code>trim</code>&#65288;&#21435;&#39318;&#23614;&#31354;&#26684;&#65289;&#65292;&#36825;&#20960;&#20010;&#39564;&#35777;&#22120;&#20250;&#22788;&#29702;&#31354;&#36755;&#20837;&#12290;</p>
+</blockquote>
+<h2>&#20020;&#26102;&#39564;&#35777;  <span id="ad-hoc-validation"></span><a href="#ad-hoc-validation" class="hashlink">&para;</a></h2><p>&#26377;&#26102;&#65292;&#20320;&#38656;&#35201;&#23545;&#26576;&#20123;&#27809;&#26377;&#32465;&#23450;&#20219;&#20309;&#27169;&#22411;&#31867;&#30340;&#20540;&#36827;&#34892; <strong>&#20020;&#26102;&#39564;&#35777;</strong>&#12290;</p>
+<p>&#33509;&#20320;&#21482;&#38656;&#35201;&#36827;&#34892;&#19968;&#31181;&#31867;&#22411;&#30340;&#39564;&#35777; (e.g. &#39564;&#35777;&#37038;&#31665;&#22320;&#22336;)&#65292;&#20320;&#21487;&#20197;&#35843;&#29992;&#25152;&#38656;&#39564;&#35777;&#22120;&#30340;
+<a href="./yii-validators-validator.html#validate()-detail">validate()</a> &#26041;&#27861;&#12290;&#20687;&#36825;&#26679;&#65306;</p>
+<pre><code class="hljs php language-php">$email = <span class="hljs-string">'test@example.com'</span>;
+$validator = <span class="hljs-keyword">new</span> yii\validators\EmailValidator();
+
+<span class="hljs-keyword">if</span> ($validator-&gt;validate($email, $error)) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'&#26377;&#25928;&#30340; Email &#22320;&#22336;&#12290;'</span>;
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">echo</span> $error;
+}
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#19981;&#26159;&#25152;&#26377;&#30340;&#39564;&#35777;&#22120;&#37117;&#25903;&#25345;&#36825;&#31181;&#24418;&#24335;&#30340;&#39564;&#35777;&#12290;&#27604;&#22914; <a href="guide-tutorial-core-validators.html#unique">unique&#65288;&#21807;&#19968;&#24615;&#65289;</a> &#26680;&#24515;&#39564;&#35777;&#22120;&#23601;&#23601;&#26159;&#19968;&#20010;&#20363;&#23376;&#65292;
+  &#23427;&#30340;&#35774;&#35745;&#21021;&#34935;&#23601;&#26159;&#21482;&#20316;&#29992;&#20110;&#27169;&#22411;&#31867;&#20869;&#37096;&#30340;&#12290;</p>
+</blockquote>
+<p>&#33509;&#20320;&#38656;&#35201;&#38024;&#23545;&#19968;&#31995;&#21015;&#20540;&#25191;&#34892;&#22810;&#39033;&#39564;&#35777;&#65292;&#20320;&#21487;&#20197;&#20351;&#29992; <a href="./yii-base-dynamicmodel.html">yii\base\DynamicModel</a>
+&#12290;&#23427;&#25903;&#25345;&#21363;&#26102;&#28155;&#21152;&#29305;&#24615;&#21644;&#39564;&#35777;&#35268;&#21017;&#30340;&#23450;&#20041;&#12290;&#23427;&#30340;&#20351;&#29992;&#35268;&#21017;&#26159;&#36825;&#26679;&#30340;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionSearch</span><span class="hljs-params">($name, $email)</span>
+</span>{
+    $model = DynamicModel::validateData(compact(<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>), [
+        [[<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'string'</span>, <span class="hljs-string">'max'</span> =&gt; <span class="hljs-number">128</span>],
+        [<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>],
+    ]);
+
+    <span class="hljs-keyword">if</span> ($model-&gt;hasErrors()) {
+        <span class="hljs-comment">// &#39564;&#35777;&#22833;&#36133;</span>
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// &#39564;&#35777;&#25104;&#21151;</span>
+    }
+}
+</code></pre>
+<p><a href="./yii-base-dynamicmodel.html#validateData()-detail">yii\base\DynamicModel::validateData()</a> &#26041;&#27861;&#20250;&#21019;&#24314;&#19968;&#20010; <code>DynamicModel</code> &#30340;&#23454;&#20363;&#23545;&#35937;&#65292;
+&#24182;&#36890;&#36807;&#32473;&#23450;&#25968;&#25454;&#23450;&#20041;&#27169;&#22411;&#29305;&#24615;&#65288;&#20197; <code>name</code> &#21644; <code>email</code> &#20026;&#20363;&#65289;&#65292;
+&#20043;&#21518;&#29992;&#32473;&#23450;&#35268;&#21017;&#35843;&#29992; <a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a> &#26041;&#27861;&#12290;</p>
+<p>&#38500;&#27492;&#20043;&#22806;&#21602;&#65292;&#20320;&#20063;&#21487;&#20197;&#29992;&#22914;&#19979;&#30340;&#26356;&#21152;&ldquo;&#20256;&#32479;&rdquo;&#30340;&#35821;&#27861;&#26469;&#25191;&#34892;&#20020;&#26102;&#25968;&#25454;&#39564;&#35777;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionSearch</span><span class="hljs-params">($name, $email)</span>
+</span>{
+    $model = <span class="hljs-keyword">new</span> DynamicModel(compact(<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>));
+    $model-&gt;addRule([<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'string'</span>, [<span class="hljs-string">'max'</span> =&gt; <span class="hljs-number">128</span>])
+        -&gt;addRule(<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>)
+        -&gt;validate();
+
+    <span class="hljs-keyword">if</span> ($model-&gt;hasErrors()) {
+        <span class="hljs-comment">// &#39564;&#35777;&#22833;&#36133;</span>
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// &#39564;&#35777;&#25104;&#21151;</span>
+    }
+}
+</code></pre>
+<p>&#39564;&#35777;&#20043;&#21518;&#20320;&#21487;&#20197;&#36890;&#36807;&#35843;&#29992; <a href="./yii-base-model.html#hasErrors()-detail">hasErrors()</a>
+&#26041;&#27861;&#26469;&#26816;&#26597;&#39564;&#35777;&#36890;&#36807;&#19982;&#21542;&#65292;&#24182;&#36890;&#36807; <a href="./yii-base-model.html#%24errors-detail">errors</a>
+&#23646;&#24615;&#33719;&#24471;&#39564;&#35777;&#30340;&#38169;&#35823;&#20449;&#24687;&#65292;&#36807;&#31243;&#19982;&#26222;&#36890;&#27169;&#22411;&#31867;&#19968;&#33268;&#12290;
+&#20320;&#20063;&#21487;&#20197;&#35775;&#38382;&#27169;&#22411;&#23545;&#35937;&#20869;&#23450;&#20041;&#30340;&#21160;&#24577;&#29305;&#24615;&#65292;&#23601;&#20687;&#65306;
+<code>$model-&gt;name</code> &#21644; <code>$model-&gt;email</code>&#12290;</p>
+<h2>&#21019;&#24314;&#39564;&#35777;&#22120;&#65288;Validators&#65289;  <span id="creating-validators"></span><a href="#creating-validators" class="hashlink">&para;</a></h2><p>&#38500;&#20102;&#20351;&#29992; Yii &#30340;&#21457;&#24067;&#29256;&#37324;&#25152;&#21253;&#21547;&#30340;<a href="guide-tutorial-core-validators.html">&#26680;&#24515;&#39564;&#35777;&#22120;</a>&#20043;&#22806;&#65292;&#20320;&#20063;&#21487;&#20197;&#21019;&#24314;&#20320;&#33258;&#24049;&#30340;&#39564;&#35777;&#22120;&#12290;
+&#33258;&#23450;&#20041;&#30340;&#39564;&#35777;&#22120;&#21487;&#20197;&#26159;<strong>&#34892;&#20869;&#39564;&#35777;&#22120;</strong>&#65292;&#20063;&#21487;&#20197;&#26159;<strong>&#29420;&#31435;&#39564;&#35777;&#22120;</strong>&#12290;</p>
+<h3>&#34892;&#20869;&#39564;&#35777;&#22120;&#65288;Inline Validators&#65289;  <span id="inline-validators"></span><a href="#inline-validators" class="hashlink">&para;</a></h3><p>&#34892;&#20869;&#39564;&#35777;&#22120;&#26159;&#19968;&#31181;&#20197;&#27169;&#22411;&#26041;&#27861;&#25110;&#21311;&#21517;&#20989;&#25968;&#30340;&#24418;&#24335;&#23450;&#20041;&#30340;&#39564;&#35777;&#22120;&#12290;
+&#36825;&#20123;&#26041;&#27861;/&#20989;&#25968;&#30340;&#32467;&#26500;&#22914;&#19979;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@param</span> string $attribute &#24403;&#21069;&#34987;&#39564;&#35777;&#30340;&#29305;&#24615;
+ * <span class="hljs-doctag">@param</span> array $params &#20197;&#21517;-&#20540;&#23545;&#24418;&#24335;&#25552;&#20379;&#30340;&#39069;&#22806;&#21442;&#25968;
+ * <span class="hljs-doctag">@param</span> \yii\validators\InlineValidator $validator &#30456;&#20851;&#30340; InlineValidator &#23454;&#20363;&#12290;
+ * &#27492;&#21442;&#25968;&#33258;&#29256;&#26412; 2.0.11 &#36215;&#21487;&#29992;&#12290;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($attribute, $params)</span>
+</span></code></pre>
+<p>&#33509;&#26576;&#29305;&#24615;&#30340;&#39564;&#35777;&#22833;&#36133;&#20102;&#65292;&#35813;&#26041;&#27861;/&#20989;&#25968;&#24212;&#35813;&#35843;&#29992; <a href="./yii-base-model.html#addError()-detail">yii\base\Model::addError()</a> &#20445;&#23384;&#38169;&#35823;&#20449;&#24687;&#21040;&#27169;&#22411;&#20869;&#12290;
+&#36825;&#26679;&#36825;&#20123;&#38169;&#35823;&#23601;&#33021;&#22312;&#20043;&#21518;&#30340;&#25805;&#20316;&#20013;&#65292;&#34987;&#35835;&#21462;&#24182;&#23637;&#29616;&#32473;&#32456;&#31471;&#29992;&#25143;&#12290;</p>
+<p>&#19979;&#38754;&#26159;&#19968;&#20123;&#20363;&#23376;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyForm</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-keyword">public</span> $country;
+    <span class="hljs-keyword">public</span> $token;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-comment">// &#23450;&#20041;&#20026;&#27169;&#22411;&#26041;&#27861; validateCountry() &#30340;&#34892;&#20869;&#39564;&#35777;&#22120;</span>
+            [<span class="hljs-string">'country'</span>, <span class="hljs-string">'validateCountry'</span>],
+
+            <span class="hljs-comment">// &#23450;&#20041;&#20026;&#21311;&#21517;&#20989;&#25968;&#30340;&#34892;&#20869;&#39564;&#35777;&#22120;</span>
+            [<span class="hljs-string">'token'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($attribute, $params)</span> </span>{
+                <span class="hljs-keyword">if</span> (!ctype_alnum(<span class="hljs-keyword">$this</span>-&gt;$attribute)) {
+                    <span class="hljs-keyword">$this</span>-&gt;addError($attribute, <span class="hljs-string">'The token must contain letters or digits.'</span>);
+                }
+            }],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateCountry</span><span class="hljs-params">($attribute, $params)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (!in_array(<span class="hljs-keyword">$this</span>-&gt;$attribute, [<span class="hljs-string">'USA'</span>, <span class="hljs-string">'Web'</span>])) {
+            <span class="hljs-keyword">$this</span>-&gt;addError($attribute, <span class="hljs-string">'The country must be either "USA" or "Web".'</span>);
+        }
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#20174; 2.0.11 &#29256;&#26412;&#24320;&#22987;&#65292;&#20320;&#21487;&#20197;&#29992; <a href="./yii-validators-validator.html#addError()-detail">yii\validators\InlineValidator::addError()</a> &#26041;&#27861;&#28155;&#21152;&#38169;&#35823;&#20449;&#24687;&#21040;&#27169;&#22411;&#37324;&#12290;&#29992;&#36825;&#31181;&#26041;&#27861;
+&#30340;&#35805;&#65292;&#38169;&#35823;&#20449;&#24687;&#21487;&#20197;&#36890;&#36807; <a href="./yii-i18n-i18n.html#format()-detail">yii\i18n\I18N::format()</a> &#26684;&#24335;&#21270;&#12290; &#20320;&#36824;&#21487;&#20197;&#22312;&#38169;&#35823;&#20449;&#24687;&#37324;&#20998;&#21035;&#29992; <code>{attribute}</code> &#21644; <code>{value}</code> &#26469;&#24341;&#29992;
+&#23646;&#24615;&#30340;&#21517;&#23383;&#65288;&#19981;&#24517;&#25163;&#21160;&#21435;&#20889;&#65289;&#21644;&#23646;&#24615;&#30340;&#20540;&#65306;</p>
+</blockquote>
+<blockquote><pre><code class="hljs php language-php">$validator-&gt;addError(<span class="hljs-keyword">$this</span>, $attribute, <span class="hljs-string">'The value "{value}" is not acceptable for {attribute}.'</span>);
+</code></pre>
+</blockquote>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#32570;&#30465;&#29366;&#24577;&#19979;&#65292;&#34892;&#20869;&#39564;&#35777;&#22120;&#19981;&#20250;&#22312;&#20851;&#32852;&#29305;&#24615;&#30340;&#36755;&#20837;&#20540;&#20026;&#31354;&#25110;&#35813;&#29305;&#24615;&#24050;&#32463;&#22312;&#20854;&#20182;&#39564;&#35777;&#20013;&#22833;&#36133;&#30340;&#24773;&#20917;&#19979;&#36215;&#25928;&#12290;
+  &#33509;&#20320;&#24819;&#35201;&#30830;&#20445;&#35813;&#39564;&#35777;&#22120;&#22987;&#32456;&#21551;&#29992;&#30340;&#35805;&#65292;&#20320;&#21487;&#20197;&#22312;&#23450;&#20041;&#35268;&#21017;&#26102;&#65292;&#37196;&#24773;&#23558; 
+  <a href="./yii-validators-validator.html#%24skipOnEmpty-detail">skipOnEmpty</a> &#20197;&#21450;
+  <a href="./yii-validators-validator.html#%24skipOnError-detail">skipOnError</a>&#23646;&#24615;&#35774;&#20026; false&#65292;&#27604;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">[
+    [<span class="hljs-string">'country'</span>, <span class="hljs-string">'validateCountry'</span>, <span class="hljs-string">'skipOnEmpty'</span> =&gt; <span class="hljs-keyword">false</span>, <span class="hljs-string">'skipOnError'</span> =&gt; <span class="hljs-keyword">false</span>],
+]
+</code></pre>
+</blockquote>
+<h3>&#29420;&#31435;&#39564;&#35777;&#22120;&#65288;Standalone Validators&#65289;  <span id="standalone-validators"></span><a href="#standalone-validators" class="hashlink">&para;</a></h3><p>&#29420;&#31435;&#39564;&#35777;&#22120;&#26159;&#32487;&#25215;&#33258; <a href="./yii-validators-validator.html">yii\validators\Validator</a> &#25110;&#20854;&#23376;&#31867;&#30340;&#31867;&#12290;&#20320;&#21487;&#20197;&#36890;&#36807;&#37325;&#20889;
+<a href="./yii-validators-validator.html#validateAttribute()-detail">yii\validators\Validator::validateAttribute()</a> &#26469;&#23454;&#29616;&#23427;&#30340;&#39564;&#35777;&#35268;&#21017;&#12290;&#33509;&#29305;&#24615;&#39564;&#35777;&#22833;&#36133;&#65292;&#21487;&#20197;&#35843;&#29992;
+<a href="./yii-base-model.html#addError()-detail">yii\base\Model::addError()</a> &#20197;&#20445;&#23384;&#38169;&#35823;&#20449;&#24687;&#21040;&#27169;&#22411;&#20869;&#65292;
+&#25805;&#20316;&#19982; <a href="#inline-validators">inline validators</a> &#25152;&#38656;&#25805;&#20316;&#23436;&#20840;&#19968;&#26679;&#12290;&#27604;&#22914;&#65292;</p>
+<p>&#27604;&#22914;&#19978;&#36848;&#34892;&#20869;&#39564;&#35777;&#22120;&#20063;&#21487;&#20197;&#36716;&#31227;&#21040;&#26032;&#30340;&#39564;&#35777;&#31867; [[components/validators/CountryValidator]]&#12290;
+&#36825;&#31181;&#24773;&#20917;&#19979;&#65292;&#25105;&#20204;&#21487;&#20197;&#29992; <a href="./yii-validators-validator.html#addError()-detail">yii\validators\Validator::addError()</a> &#26469;&#32473;&#27169;&#22411;&#35774;&#32622;&#33258;&#23450;&#20041;&#30340;&#38169;&#35823;&#20449;&#24687;&#12290;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">validators</span>\<span class="hljs-title">Validator</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CountryValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Validator</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateAttribute</span><span class="hljs-params">($model, $attribute)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (!in_array($model-&gt;$attribute, [<span class="hljs-string">'USA'</span>, <span class="hljs-string">'Web'</span>])) {
+            <span class="hljs-keyword">$this</span>-&gt;addError($model, $attribute, <span class="hljs-string">'The country must be either "USA" or "Web".'</span>);
+        }
+    }
+}
+</code></pre>
+<p>&#33509;&#20320;&#24819;&#35201;&#39564;&#35777;&#22120;&#25903;&#25345;&#19981;&#20351;&#29992; model &#30340;&#25968;&#25454;&#39564;&#35777;&#65292;&#20320;&#36824;&#24212;&#35813;&#37325;&#20889;<a href="./yii-validators-validator.html#validate()-detail">yii\validators\Validator::validate()</a> &#26041;&#27861;&#12290;
+&#20320;&#20063;&#21487;&#20197;&#36890;&#36807;&#37325;&#20889;<a href="./yii-validators-validator.html#validateValue()-detail">yii\validators\Validator::validateValue()</a> &#26041;&#27861;&#26367;&#20195;
+<code>validateAttribute()</code> &#21644; <code>validate()</code>&#65292;&#22240;&#20026;&#40664;&#35748;&#29366;&#24577;&#19979;&#65292;
+&#21518;&#20004;&#32773;&#30340;&#23454;&#29616;&#26159;&#36890;&#36807;&#35843;&#29992; <code>validateValue()</code> &#23454;&#29616;&#30340;&#12290;</p>
+<p>&#19979;&#38754;&#23601;&#26159;&#19968;&#20010;&#24590;&#26679;&#25226;&#33258;&#23450;&#20041;&#39564;&#35777;&#22120;&#22312;&#27169;&#22411;&#20013;&#20351;&#29992;&#30340;&#20363;&#23376;&#12290;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>\<span class="hljs-title">validators</span>\<span class="hljs-title">CountryValidator</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EntryForm</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-keyword">public</span> $name;
+    <span class="hljs-keyword">public</span> $email;
+    <span class="hljs-keyword">public</span> $country;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            [[<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>], <span class="hljs-string">'required'</span>],
+            [<span class="hljs-string">'country'</span>, CountryValidator::class],
+            [<span class="hljs-string">'email'</span>, <span class="hljs-string">'email'</span>],
+        ];
+    }
+}
+</code></pre>
+<h2>&#22810;&#23646;&#24615;&#39564;&#35777;  <span id="multiple-attributes-validation"></span><a href="#multiple-attributes-validation" class="hashlink">&para;</a></h2><p>&#26576;&#20123;&#24773;&#20917;&#19979;&#39564;&#35777;&#22120;&#21487;&#20197;&#21253;&#21547;&#22810;&#20010;&#23646;&#24615;&#12290;&#32771;&#34385;&#19979;&#38754;&#30340;&#24773;&#20917;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MigrationForm</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-comment">/**
+     * &#19968;&#20010;&#25104;&#24180;&#20154;&#30340;&#26368;&#23569;&#33457;&#38144;
+     */</span>
+    <span class="hljs-keyword">const</span> MIN_ADULT_FUNDS = <span class="hljs-number">3000</span>;
+    <span class="hljs-comment">/**
+     * &#19968;&#20010;&#23401;&#23376;&#30340;&#26368;&#23567;&#33457;&#38144;
+     */</span>
+    <span class="hljs-keyword">const</span> MIN_CHILD_FUNDS = <span class="hljs-number">1500</span>;
+
+    <span class="hljs-keyword">public</span> $personalSalary;
+    <span class="hljs-keyword">public</span> $spouseSalary;
+    <span class="hljs-keyword">public</span> $childrenCount;
+    <span class="hljs-keyword">public</span> $description;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            [[<span class="hljs-string">'personalSalary'</span>, <span class="hljs-string">'description'</span>], <span class="hljs-string">'required'</span>],
+            [[<span class="hljs-string">'personalSalary'</span>, <span class="hljs-string">'spouseSalary'</span>], <span class="hljs-string">'integer'</span>, <span class="hljs-string">'min'</span> =&gt; <span class="hljs-keyword">self</span>::MIN_ADULT_FUNDS],
+            [<span class="hljs-string">'childrenCount'</span>, <span class="hljs-string">'integer'</span>, <span class="hljs-string">'min'</span> =&gt; <span class="hljs-number">0</span>, <span class="hljs-string">'max'</span> =&gt; <span class="hljs-number">5</span>],
+            [[<span class="hljs-string">'spouseSalary'</span>, <span class="hljs-string">'childrenCount'</span>], <span class="hljs-string">'default'</span>, <span class="hljs-string">'value'</span> =&gt; <span class="hljs-number">0</span>],
+            [<span class="hljs-string">'description'</span>, <span class="hljs-string">'string'</span>],
+        ];
+    }
+}
+</code></pre>
+<h3>&#21019;&#24314;&#39564;&#35777;&#22120;  <span id="multiple-attributes-validator"></span><a href="#multiple-attributes-validator" class="hashlink">&para;</a></h3><p>&#27604;&#22914;&#25105;&#20204;&#38656;&#35201;&#26816;&#26597;&#19979;&#23478;&#24237;&#25910;&#20837;&#26159;&#21542;&#36275;&#22815;&#32473;&#23401;&#23376;&#20204;&#33457;&#38144;&#12290;&#27492;&#26102;&#25105;&#20204;&#21487;&#20197;&#21019;&#24314;&#19968;&#20010;&#34892;&#20869;&#39564;&#35777;&#22120;
+<code>validateChildrenFunds</code> &#26469;&#35299;&#20915;&#36825;&#20010;&#38382;&#39064;&#65292;&#23427;&#20165;&#20165;&#22312; <code>childrenCount</code> &#22823;&#20110; 0 &#30340;&#26102;&#20505;&#25165;&#21435;&#26816;&#26597;&#12290;</p>
+<p>&#35831;&#27880;&#24847;&#65292;&#25105;&#20204;&#19981;&#35201;&#25226;&#25152;&#26377;&#38656;&#35201;&#39564;&#35777;&#30340;&#23646;&#24615; (<code>['personalSalary', 'spouseSalary', 'childrenCount']</code>) &#37117;&#38468;&#21152;&#21040;
+&#39564;&#35777;&#22120;&#19978;&#12290;&#22240;&#20026;&#36825;&#26679;&#20570;&#21516;&#19968;&#20010;&#39564;&#35777;&#22120;&#23558;&#20250;&#23545;&#27599;&#20010;&#23646;&#24615;&#37117;&#25191;&#34892;&#19968;&#36941;&#39564;&#35777;&#65288;&#24635;&#20849;&#19977;&#27425;&#65289;&#65292;&#20294;&#26159;&#23454;&#38469;&#19978;&#25105;&#20204;&#21482;&#38656;&#35201;&#23545;&#25972;&#20010;&#23646;&#24615;&#38598;
+&#25191;&#34892;&#19968;&#27425;&#39564;&#35777;&#32780;&#24050;&#12290;</p>
+<p>&#20320;&#21487;&#20197;&#20351;&#29992;&#23646;&#24615;&#38598;&#21512;&#37324;&#30340;&#20219;&#20309;&#19968;&#20010;&#65288;&#25110;&#32773;&#20351;&#29992;&#20320;&#35748;&#20026;&#26368;&#30456;&#20851;&#30340;&#37027;&#20010;&#23646;&#24615;&#65289;&#65306;</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string">'childrenCount'</span>, <span class="hljs-string">'validateChildrenFunds'</span>, <span class="hljs-string">'when'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($model)</span> </span>{
+    <span class="hljs-keyword">return</span> $model-&gt;childrenCount &gt; <span class="hljs-number">0</span>;
+}],
+</code></pre>
+<p><code>validateChildrenFunds</code> &#30340;&#23454;&#29616;&#21487;&#20197;&#26159;&#19979;&#38754;&#36825;&#26679;&#30340;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateChildrenFunds</span><span class="hljs-params">($attribute, $params)</span>
+</span>{
+    $totalSalary = <span class="hljs-keyword">$this</span>-&gt;personalSalary + <span class="hljs-keyword">$this</span>-&gt;spouseSalary;
+    <span class="hljs-comment">// Double the minimal adult funds if spouse salary is specified</span>
+    $minAdultFunds = <span class="hljs-keyword">$this</span>-&gt;spouseSalary ? <span class="hljs-keyword">self</span>::MIN_ADULT_FUNDS * <span class="hljs-number">2</span> : <span class="hljs-keyword">self</span>::MIN_ADULT_FUNDS;
+    $childFunds = $totalSalary - $minAdultFunds;
+    <span class="hljs-keyword">if</span> ($childFunds / <span class="hljs-keyword">$this</span>-&gt;childrenCount &lt; <span class="hljs-keyword">self</span>::MIN_CHILD_FUNDS) {
+        <span class="hljs-keyword">$this</span>-&gt;addError(<span class="hljs-string">'childrenCount'</span>, <span class="hljs-string">'Your salary is not enough for children.'</span>);
+    }
+}
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#24573;&#30053; <code>$attribute</code> &#21442;&#25968;&#65292;&#22240;&#20026;&#36825;&#20010;&#39564;&#35777;&#36807;&#31243;&#19981;&#20165;&#20165;&#20851;&#32852;&#19968;&#20010;&#23646;&#24615;&#12290;</p>
+<h3>&#28155;&#21152;&#38169;&#35823;&#20449;&#24687;  <span id="multiple-attributes-errors"></span><a href="#multiple-attributes-errors" class="hashlink">&para;</a></h3><p>&#22312;&#28155;&#21152;&#38169;&#35823;&#20449;&#24687;&#30340;&#26102;&#20505;&#65292;&#22914;&#26524;&#26159;&#22810;&#20010;&#23646;&#24615;&#65292;&#21487;&#20197;&#26681;&#25454;&#33258;&#24049;&#24819;&#35201;&#30340;&#26684;&#24335;&#20351;&#29992;&#22810;&#31181;&#24773;&#20917;&#65306;</p>
+<ul>
+<li>&#36873;&#25321;&#19968;&#20010;&#20320;&#35748;&#20026;&#26368;&#30456;&#20851;&#30340;&#23383;&#27573;&#25226;&#38169;&#35823;&#20449;&#24687;&#28155;&#21152;&#21040;&#23427;&#30340;&#23646;&#24615;&#37324;&#65306;</li>
+</ul>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">$this</span>-&gt;addError(<span class="hljs-string">'childrenCount'</span>, <span class="hljs-string">'Your salary is not enough for children.'</span>);
+</code></pre>
+<ul>
+<li>&#36873;&#25321;&#22810;&#20010;&#30456;&#20851;&#30340;&#23646;&#24615;&#20035;&#33267;&#25152;&#26377;&#23646;&#24615;&#32473;&#23427;&#20204;&#28155;&#21152;&#21516;&#26679;&#30340;&#38169;&#35823;&#20449;&#24687;&#12290;&#22312;&#20351;&#29992; <code>addError</code> &#20043;&#21069;&#25105;&#20204;&#21487;&#20197;&#20808;&#25226;&#38169;&#35823;&#20449;&#24687;&#23384;&#20648;&#21040;
+&#19968;&#20010;&#29420;&#31435;&#30340;&#21464;&#37327;&#37324;&#65292;&#36825;&#26679;&#21487;&#20197;&#20943;&#23569;&#20195;&#30721;&#37325;&#22797;&#24615;&#12290;</li>
+</ul>
+<pre><code class="hljs php language-php">$message = <span class="hljs-string">'Your salary is not enough for children.'</span>;
+<span class="hljs-keyword">$this</span>-&gt;addError(<span class="hljs-string">'personalSalary'</span>, $message);
+<span class="hljs-keyword">$this</span>-&gt;addError(<span class="hljs-string">'wifeSalary'</span>, $message);
+<span class="hljs-keyword">$this</span>-&gt;addError(<span class="hljs-string">'childrenCount'</span>, $message);
+</code></pre>
+<p>&#25110;&#32773;&#20351;&#29992;&#24490;&#29615;&#65306;</p>
+<pre><code class="hljs php language-php">$attributes = [<span class="hljs-string">'personalSalary'</span>, <span class="hljs-string">'wifeSalary'</span>, <span class="hljs-string">'childrenCount'</span>];
+<span class="hljs-keyword">foreach</span> ($attributes <span class="hljs-keyword">as</span> $attribute) {
+    <span class="hljs-keyword">$this</span>-&gt;addError($attribute, <span class="hljs-string">'Your salary is not enough for children.'</span>);
+}
+</code></pre>
+<ul>
+<li>&#28155;&#21152;&#36890;&#29992;&#38169;&#35823;&#20449;&#24687;&#65288;&#19981;&#30456;&#20851;&#20110;&#29305;&#23450;&#30340;&#23646;&#24615;&#65289;&#12290;&#25105;&#20204;&#21487;&#20197;&#29992;&#19968;&#20010;&#19981;&#23384;&#22312;&#30340;&#23646;&#24615;&#21517;&#28155;&#21152;&#38169;&#35823;&#20449;&#24687;
+&#27604;&#22914; <code>*</code>&#65292;&#22240;&#20026;&#36825;&#26102;&#26159;&#19981;&#26816;&#26597;&#23646;&#24615;&#30340;&#23384;&#22312;&#24615;&#30340;&#12290;</li>
+</ul>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">$this</span>-&gt;addError(<span class="hljs-string">'*'</span>, <span class="hljs-string">'Your salary is not enough for children.'</span>);
+</code></pre>
+<p>&#36825;&#31181;&#24773;&#20917;&#19979;&#65292;&#25105;&#20204;&#19981;&#20250;&#22312;&#34920;&#21333;&#22495;&#37324;&#30475;&#21040;&#38169;&#35823;&#20449;&#24687;&#12290;&#20026;&#20102;&#23637;&#31034;&#36825;&#20010;&#38169;&#35823;&#20449;&#24687;&#65292;&#25105;&#20204;&#21487;&#20197;&#22312;&#35270;&#22270;&#37324;&#20351;&#29992;&#38169;&#35823;&#27719;&#24635;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= $form-&gt;errorSummary($model) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#21019;&#24314;&#19968;&#27425;&#39564;&#35777;&#22810;&#20010;&#23646;&#24615;&#30340;&#39564;&#35777;&#22120;&#30340;&#21442;&#32771;&#35828;&#26126;&#22312;&#36825;&#37324; <a href="guide-https://github.com/samdark/yii2-cookbook/blob/master/book/forms-validator-multiple-attributes.html">community cookbook</a>.</p>
+</blockquote>
+<h2>&#23458;&#25143;&#31471;&#39564;&#35777;  <span id="client-side-validation"></span><a href="#client-side-validation" class="hashlink">&para;</a></h2><p>&#24403;&#32456;&#31471;&#29992;&#25143;&#36890;&#36807; HTML &#34920;&#21333;&#25552;&#20379;&#36755;&#20837;&#25968;&#25454;&#26102;&#65292;&#22522;&#20110; JavaScript &#30340;&#23458;&#25143;&#31471;&#39564;&#35777;&#26159;&#21487;&#21462;&#30340;&#65292;
+&#22240;&#20026;&#23427;&#20801;&#35768;&#29992;&#25143;&#26356;&#24555;&#22320;&#25214;&#20986;&#36755;&#20837;&#38169;&#35823;&#65292;&#20174;&#32780;&#25552;&#20379;&#26356;&#22909;&#30340;&#29992;&#25143;&#20307;&#39564;&#12290;&#20320;&#21487;&#20197;&#23581;&#35797;&#20351;&#29992;&#25110;&#32773;&#33258;&#24049;&#23454;&#29616;&#19968;&#20010; <em>&#38500;&#20102;&#25903;&#25345;&#26381;&#21153;&#31471;&#39564;&#35777;</em> &#20043;&#22806;
+&#36824;&#25903;&#25345;&#23458;&#25143;&#31471;&#39564;&#35777;&#30340;&#39564;&#35777;&#22120;&#12290;</p>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#23613;&#31649;&#23458;&#25143;&#31471;&#39564;&#35777;&#26159;&#20540;&#24471;&#30340;&#65292;&#20294;&#23427;&#19981;&#26159;&#24517;&#39035;&#30340;&#12290;&#23458;&#25143;&#31471;&#39564;&#35777;&#30340;&#20027;&#35201;&#30446;&#30340;&#26159;&#32473;&#32456;&#31471;&#29992;&#25143;&#25552;&#20379;
+  &#19968;&#20010;&#36739;&#22909;&#30340;&#20307;&#39564;&#12290;&#27491;&#22914; &ldquo;&#27704;&#36828;&#19981;&#29992;&#30456;&#20449;&#32456;&#31471;&#29992;&#25143;&#30340;&#36755;&#20837;&#25968;&#25454;&rdquo; &#19968;&#26679;&#65292;&#20320;&#20063;&#19981;&#33021;&#23436;&#20840;&#20449;&#20219;&#23458;&#25143;&#31471;&#39564;&#35777;&#12290;
+  &#22522;&#20110;&#36825;&#20010;&#32771;&#34385;&#30340;&#35805;&#65292;&#27491;&#22914;&#21069;&#25991;&#25551;&#36848;&#25152;&#35828;&#65292;&#20320;&#24212;&#35813;&#27704;&#36828;&#22312;&#26381;&#21153;&#31471;&#36890;&#36807;&#35843;&#29992; <a href="./yii-base-model.html#validate()-detail">yii\base\Model::validate()</a> &#26041;&#27861;
+  &#36827;&#34892;&#26381;&#21153;&#31471;&#39564;&#35777;&#12290;</p>
+</blockquote>
+<h3>&#20351;&#29992;&#23458;&#25143;&#31471;&#39564;&#35777;  <span id="using-client-side-validation"></span><a href="#using-client-side-validation" class="hashlink">&para;</a></h3><p>&#35768;&#22810; <a href="guide-tutorial-core-validators.html">&#26680;&#24515;&#39564;&#35777;&#22120;</a> &#25903;&#25345;&#24320;&#31665;&#21363;&#29992;&#30340;&#23458;&#25143;&#31471;&#39564;&#35777;&#12290;&#20320;&#38656;&#35201;&#20570;&#30340;
+&#23601;&#26159;&#20351;&#29992; <a href="./yii-widgets-activeform.html">yii\widgets\ActiveForm</a> &#26500;&#24314;&#20320;&#30340; HTML &#34920;&#21333;&#12290; &#27604;&#22914;&#65292;&#19979;&#38754;&#30340; <code>LoginForm</code> &#22768;&#26126;&#20102;&#20004;&#20010;
+&#35268;&#21017;&#65306;&#19968;&#20010;&#20351;&#29992; <a href="guide-tutorial-core-validators.html#required">required</a> &#26680;&#24515;&#39564;&#35777;&#22120;&#65292;&#23427;&#25903;&#25345;&#23458;&#25143;&#31471;&#30340;&#39564;&#35777;&#65292;&#20063;&#25903;&#25345;&#26381;&#21153;&#31471;&#30340; 
+&#39564;&#35777;&#65307;&#21478;&#19968;&#20010;&#20351;&#29992; <code>validatePassword</code> &#34892;&#20869;&#39564;&#35777;&#22120;&#65292;&#23427;&#21482;&#25903;&#25345;&#22312;&#26381;&#21153;&#31471;
+&#39564;&#35777;&#12290;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Model</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">User</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-keyword">public</span> $username;
+    <span class="hljs-keyword">public</span> $password;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-comment">// username &#21644; password &#37117;&#26159;&#24517;&#22635;&#39033;</span>
+            [[<span class="hljs-string">'username'</span>, <span class="hljs-string">'password'</span>], <span class="hljs-string">'required'</span>],
+
+            <span class="hljs-comment">// password &#29992; validatePassword() &#26041;&#27861;&#39564;&#35777;</span>
+            [<span class="hljs-string">'password'</span>, <span class="hljs-string">'validatePassword'</span>],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validatePassword</span><span class="hljs-params">()</span>
+    </span>{
+        $user = User::findByUsername(<span class="hljs-keyword">$this</span>-&gt;username);
+
+        <span class="hljs-keyword">if</span> (!$user || !$user-&gt;validatePassword(<span class="hljs-keyword">$this</span>-&gt;password)) {
+            <span class="hljs-keyword">$this</span>-&gt;addError(<span class="hljs-string">'password'</span>, <span class="hljs-string">'Incorrect username or password.'</span>);
+        }
+    }
+}
+</code></pre>
+<p>&#19979;&#38754;&#30340;&#20195;&#30721;&#26500;&#24314;&#20102;&#21253;&#21547; <code>username</code> &#21644; <code>password</code> &#20004;&#20010;&#34920;&#21333;&#39033;&#30340; HTML &#34920;&#21333;&#12290;
+&#22914;&#26524;&#19981;&#36755;&#20837;&#20219;&#20309;&#20869;&#23481;&#30452;&#25509;&#25552;&#20132;&#34920;&#21333;&#65292;&#20320;&#23601;&#20250;&#21457;&#29616;&#25552;&#31034;&#20320;&#36755;&#20837;&#20869;&#23481;&#30340;&#38169;&#35823;&#20449;&#24687;&#31435;&#21051;&#20986;&#29616;&#65292;
+&#32780;&#36825;&#24182;&#27809;&#26377;&#21644;&#26381;&#21153;&#31471;&#20132;&#20114;&#12290;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?php</span> $form = yii\widgets\ActiveForm::begin(); <span class="hljs-meta">?&gt;</span></span>
+    <span class="php"><span class="hljs-meta">&lt;?</span>= $form-&gt;field($model, <span class="hljs-string">'username'</span>) <span class="hljs-meta">?&gt;</span></span>
+    <span class="php"><span class="hljs-meta">&lt;?</span>= $form-&gt;field($model, <span class="hljs-string">'password'</span>)-&gt;passwordInput() <span class="hljs-meta">?&gt;</span></span>
+    <span class="php"><span class="hljs-meta">&lt;?</span>= Html::submitButton(<span class="hljs-string">'Login'</span>) <span class="hljs-meta">?&gt;</span></span>
+<span class="php"><span class="hljs-meta">&lt;?php</span> yii\widgets\ActiveForm::end(); <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<p>&#24149;&#21518;&#30340;&#36816;&#20316;&#36807;&#31243;&#26159;&#36825;&#26679;&#30340;&#65306; <a href="./yii-widgets-activeform.html">yii\widgets\ActiveForm</a> &#35835;&#21462;&#22312;&#27169;&#22411;&#20013;&#22768;&#26126;&#30340;&#35268;&#21017;&#65292;&#28982;&#21518;
+&#29983;&#25104;&#39564;&#35777;&#22120;&#25903;&#25345;&#23458;&#25143;&#31471;&#39564;&#35777;&#23545;&#24212;&#30340; JavaScript &#20195;&#30721;&#12290;&#24403;&#29992;&#25143;
+&#25913;&#21464;&#34920;&#21333;&#39033;&#25110;&#32773;&#25552;&#20132;&#25972;&#20010;&#34920;&#21333;&#30340;&#26102;&#20505;&#65292;&#23458;&#25143;&#31471;&#39564;&#35777;&#30340; JavaScript &#23601;&#20250;&#35302;&#21457;&#12290;</p>
+<p>&#22914;&#26524;&#20320;&#24819;&#23436;&#20840;&#20851;&#38381;&#23458;&#25143;&#31471;&#39564;&#35777;&#65292;&#20320;&#21487;&#20197;&#35774;&#32622;
+<a href="./yii-widgets-activeform.html#%24enableClientValidation-detail">yii\widgets\ActiveForm::$enableClientValidation</a> &#23646;&#24615;&#20026; <code>false</code> &#12290;&#20320;&#20063;&#21487;&#20197;&#36890;&#36807;&#35774;&#32622;&#23427;&#20204;&#30340;
+<a href="./yii-widgets-activefield.html#%24enableClientValidation-detail">yii\widgets\ActiveField::$enableClientValidation</a> &#23646;&#24615;&#20026; <code>false</code> &#26469;&#21333;&#29420;&#20851;&#38381;&#26576;&#19968;&#20010;&#34920;&#21333;&#39033;&#12290;
+&#24403;&#22312;&#34920;&#21333;&#39033;&#32423;&#21035;&#21644;&#34920;&#21333;&#32423;&#21035;&#37117;&#35774;&#32622;&#20102; <code>enableClientValidation</code> &#30340;&#26102;&#20505;&#65292;
+&#21069;&#32773;&#65288;&#34920;&#21333;&#39033;&#65289;&#30340;&#32423;&#21035;&#20248;&#20808;&#29983;&#25928;&#12290;</p>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#20174; 2.0.11 &#29256;&#26412;&#24320;&#22987;&#65292;&#25152;&#26377;&#32487;&#25215; <a href="./yii-validators-validator.html">yii\validators\Validator</a> &#30340;&#39564;&#35777;&#22120;&#37117;&#21487;&#20197;&#36890;&#36807;</p>
+<ul>
+<li><a href="./yii-validators-validator.html#getClientOptions()-detail">yii\validators\Validator::getClientOptions()</a> &#36825;&#20010;&#21333;&#29420;&#30340;&#26041;&#27861;&#25509;&#25910;&#23458;&#25143;&#31471;&#36873;&#39033;&#12290;&#21487;&#20197;&#36825;&#26679;&#20351;&#29992;&#65306;</li>
+</ul>
+</blockquote>
+<blockquote><ul>
+<li>&#22914;&#26524;&#20320;&#24819;&#33258;&#24049;&#23454;&#29616;&#33258;&#23450;&#20041;&#30340;&#23458;&#25143;&#31471;&#39564;&#35777;&#20294;&#26159;&#20445;&#30041;&#26381;&#21153;&#31471;&#30340;
+&#39564;&#35777;&#22120;&#36873;&#39033;&#65307;</li>
+<li>&#32487;&#25215;&#25110;&#32773;&#33258;&#23450;&#20041;&#31526;&#21512;&#20320;&#29305;&#27530;&#30340;&#38656;&#27714;&#65306;</li>
+</ul>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getClientOptions</span><span class="hljs-params">($model, $attribute)</span>
+</span>{
+    $options = <span class="hljs-keyword">parent</span>::getClientOptions($model, $attribute);
+    <span class="hljs-comment">// &#20462;&#25913; $options </span>
+
+    <span class="hljs-keyword">return</span> $options;
+}
+</code></pre>
+</blockquote>
+<h3>&#23454;&#29616;&#23458;&#25143;&#31471;&#39564;&#35777;  <span id="implementing-client-side-validation"></span><a href="#implementing-client-side-validation" class="hashlink">&para;</a></h3><p>&#20026;&#20102;&#21019;&#24314;&#19968;&#20010;&#25903;&#25345;&#23458;&#25143;&#31471;&#39564;&#35777;&#30340;&#39564;&#35777;&#22120;&#65292;&#20320;&#24212;&#35813;&#23454;&#29616;
+<a href="./yii-validators-validator.html#clientValidateAttribute()-detail">yii\validators\Validator::clientValidateAttribute()</a> &#26041;&#27861;&#65292;&#35813;&#26041;&#27861;&#36820;&#22238;&#19968;&#27573; JavaScript &#20195;&#30721;
+&#29992;&#26469;&#22312;&#23458;&#25143;&#31471;&#25191;&#34892;&#39564;&#35777;&#12290;&#22312;&#36825;&#27573; JavaScript &#20195;&#30721;&#37324;&#65292;&#20320;&#21487;&#20197;&#20351;&#29992;&#19979;&#38754;&#20960;&#20010;
+&#39044;&#23450;&#20041;&#30340;&#21464;&#37327;&#65306;</p>
+<ul>
+<li><code>attribute</code>&#65306;&#34987;&#39564;&#35777;&#30340;&#23646;&#24615;&#21517;&#12290;</li>
+<li><code>value</code>&#65306;&#34987;&#39564;&#35777;&#30340;&#20540;&#12290;</li>
+<li><code>messages</code>&#65306;&#19968;&#20010;&#32473;&#23646;&#24615;&#20445;&#23384;&#39564;&#35777;&#38169;&#35823;&#20449;&#24687;&#30340;&#25968;&#32452;&#12290;</li>
+<li><code>deferred</code>&#65306;&#19968;&#20010;&#25903;&#25345;&#28155;&#21152; deferred &#23545;&#35937;&#30340;&#25968;&#32452;&#65288;&#19979;&#19968;&#37096;&#20998;&#20877;&#35828;&#65289;&#12290;</li>
+</ul>
+<p>&#19979;&#38754;&#30340;&#20363;&#23376;&#65292;&#25105;&#20204;&#21019;&#24314;&#20102;&#19968;&#20010; <code>StatusValidator</code> &#39564;&#35777;&#22120;&#65292;&#23427;&#29992;&#26469;&#39564;&#35777;&#19968;&#20010;&#36755;&#20837;&#21644;&#23384;&#22312;&#30340;&#29366;&#24577;&#30456;&#27604;&#65292; 
+&#26159;&#21542;&#26159;&#26377;&#25928;&#30340;&#29366;&#24577;&#36755;&#20837;&#12290;&#36825;&#20010;&#39564;&#35777;&#22120;&#25903;&#25345;&#26381;&#21153;&#31471;&#39564;&#35777;&#20063;&#25903;&#25345;&#23458;&#25143;&#31471;&#39564;&#35777;&#12290;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">validators</span>\<span class="hljs-title">Validator</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Status</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StatusValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Validator</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-keyword">$this</span>-&gt;message = <span class="hljs-string">'Invalid status input.'</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateAttribute</span><span class="hljs-params">($model, $attribute)</span>
+    </span>{
+        $value = $model-&gt;$attribute;
+        <span class="hljs-keyword">if</span> (!Status::find()-&gt;where([<span class="hljs-string">'id'</span> =&gt; $value])-&gt;exists()) {
+            $model-&gt;addError($attribute, <span class="hljs-keyword">$this</span>-&gt;message);
+        }
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clientValidateAttribute</span><span class="hljs-params">($model, $attribute, $view)</span>
+    </span>{
+        $statuses = json_encode(Status::find()-&gt;select(<span class="hljs-string">'id'</span>)-&gt;asArray()-&gt;column());
+        $message = json_encode(<span class="hljs-keyword">$this</span>-&gt;message, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&lt;&lt;&lt;JS
+if ($.inArray(value, <span class="hljs-subst">$statuses</span>) === -1) {
+    messages.push(<span class="hljs-subst">$message</span>);
+}
+JS;</span>
+    }
+}
+</code></pre>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#19978;&#38754;&#32473;&#20986;&#30340;&#20195;&#30721;&#20027;&#35201;&#23637;&#31034;&#22914;&#20309;&#25903;&#25345;&#23458;&#25143;&#31471;&#39564;&#35777;&#12290;&#22312;&#23454;&#38469;&#20351;&#29992;&#20013;&#65292;
+&#20320;&#21487;&#20197;&#20351;&#29992; <a href="guide-tutorial-core-validators.html#in">in</a> &#26680;&#24515;&#39564;&#35777;&#22120;&#26469;&#23454;&#29616;&#21516;&#26679;&#30340;&#30446;&#26631;&#12290;&#20320;&#20063;&#21487;&#20197;
+&#20687;&#19979;&#38754;&#37027;&#26679;&#20889;&#39564;&#35777;&#35268;&#21017;&#65306;</p>
+<pre><code class="hljs php language-php">[
+    [<span class="hljs-string">'status'</span>, <span class="hljs-string">'in'</span>, <span class="hljs-string">'range'</span> =&gt; Status::find()-&gt;select(<span class="hljs-string">'id'</span>)-&gt;asArray()-&gt;column()],
+]
+</code></pre>
+</blockquote>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#22914;&#26524;&#20320;&#24819;&#25163;&#21160;&#35843;&#25972;&#23458;&#25143;&#31471;&#30340;&#39564;&#35777;&#65292;&#27604;&#22914;&#21160;&#24577;&#22320;&#28155;&#21152;&#34920;&#21333;&#39033;&#25110;&#32773;&#20570;&#19968;&#20123;&#33258;&#23450;&#20041;&#30340; UI &#36923;&#36753;&#65292;&#35831;&#21442;&#32771;
+<a href="guide-https://github.com/samdark/yii2-cookbook/blob/master/book/forms-activeform-js.html">Working with ActiveForm via JavaScript</a>
+&#22312; Yii 2.0 Cookbook&#12290;</p>
+</blockquote>
+<h3>Deferred &#39564;&#35777;  <span id="deferred-validation"></span><a href="#deferred-validation" class="hashlink">&para;</a></h3><p>&#22914;&#26524;&#20320;&#38656;&#35201;&#25191;&#34892;&#24322;&#27493;&#23458;&#25143;&#31471;&#39564;&#35777;&#65292;&#20320;&#21487;&#20197;&#21019;&#24314; <a href="https://api.jquery.com/category/deferred-object/">Deferred objects</a>&#12290; 
+&#27604;&#22914;&#35201;&#25191;&#34892;&#19968;&#27573;&#33258;&#23450;&#20041;&#30340; AJAX &#39564;&#35777;&#65292;&#21487;&#20197;&#20351;&#29992;&#19979;&#38754;&#30340;&#20195;&#30721;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clientValidateAttribute</span><span class="hljs-params">($model, $attribute, $view)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&lt;&lt;&lt;JS
+        deferred.push($.get("/check", {value: value}).done(function(data) {
+            if ('' !== data) {
+                messages.push(data);
+            }
+        }));
+JS;</span>
+}
+</code></pre>
+<p>&#19978;&#38754;&#36825;&#20010; <code>deferred</code> &#21464;&#37327;&#26159;&#30001; Yii &#25552;&#20379;&#30340;&#65292;&#23427;&#26159;&#19968;&#20010; Deferred &#23545;&#35937;&#30340;&#25968;&#32452;&#12290;&#36825;&#20010; <code>$.get()</code>
+jQuery &#26041;&#27861;&#29992;&#26469;&#20135;&#29983;&#19968;&#20010; Deferred &#23545;&#35937;&#28982;&#21518;&#25512;&#36865;&#21040; <code>deferred</code> &#25968;&#32452;&#37324;&#12290;</p>
+<p>&#20320;&#20063;&#21487;&#20197;&#26126;&#30830;&#22320;&#21019;&#24314;&#19968;&#20010; <code>deferred</code> &#23545;&#35937;&#65292;&#24403;&#24322;&#27493;&#22238;&#35843;&#35302;&#21457;&#30340;&#26102;&#20505;&#35843;&#29992;&#23427;&#30340; <code>resolve()</code> &#26041;&#27861;&#12290;
+&#19979;&#38754;&#30340;&#20363;&#23376;&#23637;&#31034;&#20102;&#22914;&#20309;&#22312;&#23458;&#25143;&#31471;&#39564;&#35777;&#19968;&#20010;&#19978;&#20256;&#22270;&#29255;&#30340;&#23610;&#23544;&#12290;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clientValidateAttribute</span><span class="hljs-params">($model, $attribute, $view)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&lt;&lt;&lt;JS
+        var def = $.Deferred();
+        var img = new Image();
+        img.onload = function() {
+            if (this.width &gt; 150) {
+                messages.push('Image too wide!!');
+            }
+            def.resolve();
+        }
+        var reader = new FileReader();
+        reader.onloadend = function() {
+            img.src = reader.result;
+        }
+        reader.readAsDataURL(file);
+
+        deferred.push(def);
+JS;</span>
+}
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong><code>resolve()</code> &#26041;&#27861;&#24517;&#39035;&#22312;&#25152;&#26377;&#23646;&#24615;&#37117;&#39564;&#35777;&#23436;&#20043;&#21518;&#35843;&#29992;&#12290;&#19981;&#28982;&#34920;&#21333;&#19981;&#20250;
+  &#23436;&#25104;&#25972;&#20307;&#30340;&#39564;&#35777;&#27969;&#31243;&#12290;</p>
+</blockquote>
+<p>&#20026;&#20102;&#31616;&#21333;&#36215;&#35265;&#65292;<code>deferred</code> &#25968;&#32452;&#23553;&#35013;&#20102;&#19968;&#20010;&#24555;&#25463;&#26041;&#27861; <code>add()</code>&#65292;&#23427;&#21487;&#20197;&#33258;&#21160;&#21019;&#24314; Deferred &#23545;&#35937;
+&#28982;&#21518;&#25226;&#23427;&#28155;&#21152;&#21040; <code>deferred</code> &#25968;&#32452;&#37324;&#12290;&#29992;&#36825;&#20010;&#26041;&#27861;&#65292;&#20320;&#21487;&#20197;&#31616;&#21270;&#19978;&#38754;&#30340;&#20363;&#23376;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clientValidateAttribute</span><span class="hljs-params">($model, $attribute, $view)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&lt;&lt;&lt;JS
+        deferred.add(function(def) {
+            var img = new Image();
+            img.onload = function() {
+                if (this.width &gt; 150) {
+                    messages.push('Image too wide!!');
+                }
+                def.resolve();
+            }
+            var reader = new FileReader();
+            reader.onloadend = function() {
+                img.src = reader.result;
+            }
+            reader.readAsDataURL(file);
+        });
+JS;</span>
+}
+</code></pre>
+<h2>AJAX &#39564;&#35777;  <span id="ajax-validation"></span><a href="#ajax-validation" class="hashlink">&para;</a></h2><p>&#19968;&#20123;&#39564;&#35777;&#22120;&#21482;&#33021;&#24037;&#20316;&#22312;&#26381;&#21153;&#31471;&#65292;&#22240;&#20026;&#21482;&#26377;&#26381;&#21153;&#31471;&#25165;&#26377;&#24517;&#35201;&#30340;&#20449;&#24687;&#12290;
+&#27604;&#22914;&#65292;&#39564;&#35777;&#19968;&#20010;&#29992;&#25143;&#21517;&#26159;&#21542;&#21807;&#19968;&#65292;&#38656;&#35201;&#22312;&#26381;&#21153;&#31471;&#26816;&#26597;&#29992;&#25143;&#34920;&#12290;
+&#36825;&#26102;&#20505;&#20320;&#21487;&#20197;&#20351;&#29992;&#22522;&#20110; AJAX &#30340;&#39564;&#35777;&#12290;&#23427;&#20250;&#22312;&#32972;&#21518;&#35302;&#21457;&#19968;&#20010; AJAX &#35831;&#27714;&#29992;&#26469;&#39564;&#35777;&#36755;&#20837;&#39033;&#32780;&#19988;&#36824;&#33021;
+&#20445;&#25345;&#21644;&#36890;&#24120;&#23458;&#25143;&#31471;&#39564;&#35777;&#19968;&#26679;&#30340;&#29992;&#25143;&#20307;&#39564;&#12290;</p>
+<p>&#32473;&#19968;&#20010;&#21333;&#29420;&#30340;&#34920;&#21333;&#39033;&#24320;&#21551; AJAX &#39564;&#35777;&#65292;&#20320;&#21482;&#38656;&#35201;&#35774;&#32622; <a href="./yii-widgets-activefield.html#%24enableAjaxValidation-detail">enableAjaxValidation</a>
+&#23646;&#24615;&#20026; <code>true</code>&#65292;&#28982;&#21518;&#25351;&#23450;&#19968;&#20010;&#21807;&#19968;&#30340;&#34920;&#21333; <code>id</code>&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">ActiveForm</span>;
+
+$form = ActiveForm::begin([
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'registration-form'</span>,
+]);
+
+<span class="hljs-keyword">echo</span> $form-&gt;field($model, <span class="hljs-string">'username'</span>, [<span class="hljs-string">'enableAjaxValidation'</span> =&gt; <span class="hljs-keyword">true</span>]);
+
+<span class="hljs-comment">// ...</span>
+
+ActiveForm::end();
+</code></pre>
+<p>&#22914;&#26524;&#35201;&#32473;&#25152;&#26377;&#30340;&#34920;&#21333;&#39033;&#24320;&#21551; AJAX &#39564;&#35777;&#65292;&#21487;&#20197;&#22312;&#34920;&#21333;&#32423;&#21035;&#35774;&#32622; <a href="./yii-widgets-activeform.html#%24enableAjaxValidation-detail">enableAjaxValidation</a>
+&#23646;&#24615;&#20026; <code>true</code> &#23601;&#34892;&#65306;</p>
+<pre><code class="hljs php language-php">$form = ActiveForm::begin([
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'contact-form'</span>,
+    <span class="hljs-string">'enableAjaxValidation'</span> =&gt; <span class="hljs-keyword">true</span>,
+]);
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#24403;&#22312;&#34920;&#21333;&#39033;&#32423;&#21035;&#21644;&#34920;&#21333;&#32423;&#21035;&#37117;&#35774;&#32622;&#20102; <code>enableAjaxValidation</code> &#23646;&#24615;&#30340;&#26102;&#20505;&#65292;
+  &#21069;&#32773;&#65288;&#34920;&#21333;&#39033;&#32423;&#21035;&#65289;&#20248;&#20808;&#29983;&#25928;&#12290;</p>
+</blockquote>
+<p>&#20320;&#20063;&#38656;&#35201;&#22312;&#26381;&#21153;&#31471;&#20934;&#22791;&#22788;&#29702;&#36825;&#26679;&#30340; AJAX &#35831;&#27714;&#12290;
+&#36825;&#20010;&#21487;&#20197;&#22312;&#25511;&#21046;&#22120;&#30340;&#21160;&#20316;&#37324;&#36890;&#36807;&#22914;&#19979;&#30340;&#20195;&#30721;&#29255;&#27573;&#26469;&#23454;&#29616;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (Yii::$app-&gt;request-&gt;isAjax &amp;&amp; $model-&gt;load(Yii::$app-&gt;request-&gt;post())) {
+    Yii::$app-&gt;response-&gt;format = Response::FORMAT_JSON;
+    <span class="hljs-keyword">return</span> ActiveForm::validate($model);
+}
+</code></pre>
+<p>&#19978;&#36848;&#20195;&#30721;&#23558;&#20250;&#26816;&#27979;&#24403;&#21069;&#30340;&#35831;&#27714;&#26159;&#21542;&#28304;&#33258; AJAX&#12290;&#22914;&#26524;&#26159;&#30340;&#35805;&#65292;&#23427;&#23558;&#36816;&#34892;&#39564;&#35777;&#36807;&#31243;, &#28982;&#21518;
+&#36820;&#22238;&#19968;&#27573; JSON &#26684;&#24335;&#30340;&#38169;&#35823;&#20449;&#24687;&#26469;&#21709;&#24212;&#36825;&#27425;&#35831;&#27714;&#12290;</p>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#20320;&#20063;&#21487;&#20197;&#29992; <a href="#deferred-validation">Deferred &#39564;&#35777;</a> &#25191;&#34892; AJAX &#39564;&#35777;&#12290; 
+  &#35805;&#35828;&#22238;&#26469;&#65292;&#36825;&#37324;&#25551;&#36848;&#30340; AJAX &#39564;&#35777;&#36824;&#26159;&#27604;&#36739;&#31995;&#32479;&#24182;&#19988;&#38656;&#35201;&#36739;&#23569;&#30340;&#20195;&#30721;&#24320;&#38144;&#12290;</p>
+</blockquote>
+<p>&#24403; <code>enableClientValidation</code> &#21644; <code>enableAjaxValidation</code> &#37117;&#35774;&#32622;&#20026; <code>true</code> &#26102;&#65292;&#21482;&#26377;&#23458;&#25143;&#31471;&#39564;&#35777;&#25104;&#21151;&#20043;&#21518;
+&#25165;&#20250;&#35302;&#21457; AJAX &#30340;&#39564;&#35777;&#35831;&#27714;&#12290;&#27880;&#24847;&#65292;&#22914;&#26524;&#39564;&#35777;&#26576;&#20010;&#34920;&#21333;&#39033;&#30340;&#26102;&#20505;&#20945;&#24039; <code>validateOnChange</code>&#65292;<code>validateOnBlur</code> &#25110;&#32773; <code>validateOnType</code>
+&#20854;&#20013;&#20043;&#19968;&#35774;&#32622;&#20102; <code>true</code>,&#37027;&#20040;&#36825;&#20010;&#34920;&#21333;&#39033;&#22312;&#21333;&#29420;&#36890;&#36807;&#36825;&#26679;&#30340;&#23458;&#25143;&#31471;&#39564;&#35777;&#26102;&#65292;
+&#20063;&#20250;&#21457;&#36215; AJAX &#35831;&#27714;&#12290;</p>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:20 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>ApiMarkdown, yii\apidoc\helpers\ApiMarkdown - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w17093" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w17093-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w17093-collapse" class="collapse navbar-collapse"><ul id="w17094" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w17095" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-17082" data-toggle="collapse" data-parent="#navigation">yii\apidoc\commands <b class="caret"></b></a><div id="navigation-17082" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-apidoc-commands-apicontroller.html">ApiController</a>
+<a class="list-group-item" href="./yii-apidoc-commands-guidecontroller.html">GuideController</a></div>
+<a class="list-group-item" href="#navigation-17083" data-toggle="collapse" data-parent="#navigation">yii\apidoc\components <b class="caret"></b></a><div id="navigation-17083" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-apidoc-components-basecontroller.html">BaseController</a></div>
+<a class="list-group-item active" href="#navigation-17084" data-toggle="collapse" data-parent="#navigation">yii\apidoc\helpers <b class="caret"></b></a><div id="navigation-17084" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./yii-apidoc-helpers-apiindexer.html">ApiIndexer</a>
+<a class="list-group-item active" href="./yii-apidoc-helpers-apimarkdown.html">ApiMarkdown</a>
+<a class="list-group-item" href="./yii-apidoc-helpers-apimarkdownlatex.html">ApiMarkdownLaTeX</a>
+<a class="list-group-item" href="./yii-apidoc-helpers-apimarkdowntrait.html">ApiMarkdownTrait</a>
+<a class="list-group-item" href="./yii-apidoc-helpers-brokenlinkexception.html">BrokenLinkException</a>
+<a class="list-group-item" href="./yii-apidoc-helpers-indexfileanalyzer.html">IndexFileAnalyzer</a>
+<a class="list-group-item" href="./yii-apidoc-helpers-markdownhighlighttrait.html">MarkdownHighlightTrait</a>
+<a class="list-group-item" href="./yii-apidoc-helpers-prettyprinter.html">PrettyPrinter</a></div>
+<a class="list-group-item" href="#navigation-17085" data-toggle="collapse" data-parent="#navigation">yii\apidoc\models <b class="caret"></b></a><div id="navigation-17085" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-apidoc-models-basedoc.html">BaseDoc</a>
+<a class="list-group-item" href="./yii-apidoc-models-classdoc.html">ClassDoc</a>
+<a class="list-group-item" href="./yii-apidoc-models-constdoc.html">ConstDoc</a>
+<a class="list-group-item" href="./yii-apidoc-models-context.html">Context</a>
+<a class="list-group-item" href="./yii-apidoc-models-eventdoc.html">EventDoc</a>
+<a class="list-group-item" href="./yii-apidoc-models-functiondoc.html">FunctionDoc</a>
+<a class="list-group-item" href="./yii-apidoc-models-interfacedoc.html">InterfaceDoc</a>
+<a class="list-group-item" href="./yii-apidoc-models-methoddoc.html">MethodDoc</a>
+<a class="list-group-item" href="./yii-apidoc-models-paramdoc.html">ParamDoc</a>
+<a class="list-group-item" href="./yii-apidoc-models-propertydoc.html">PropertyDoc</a>
+<a class="list-group-item" href="./yii-apidoc-models-traitdoc.html">TraitDoc</a>
+<a class="list-group-item" href="./yii-apidoc-models-typedoc.html">TypeDoc</a></div>
+<a class="list-group-item" href="#navigation-17086" data-toggle="collapse" data-parent="#navigation">yii\apidoc\renderers <b class="caret"></b></a><div id="navigation-17086" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-apidoc-renderers-apirenderer.html">ApiRenderer</a>
+<a class="list-group-item" href="./yii-apidoc-renderers-baserenderer.html">BaseRenderer</a>
+<a class="list-group-item" href="./yii-apidoc-renderers-guiderenderer.html">GuideRenderer</a></div>
+<a class="list-group-item" href="#navigation-17087" data-toggle="collapse" data-parent="#navigation">yii\apidoc\templates\bootstrap <b class="caret"></b></a><div id="navigation-17087" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-apidoc-templates-bootstrap-apirenderer.html">ApiRenderer</a>
+<a class="list-group-item" href="./yii-apidoc-templates-bootstrap-guiderenderer.html">GuideRenderer</a>
+<a class="list-group-item" href="./yii-apidoc-templates-bootstrap-renderertrait.html">RendererTrait</a>
+<a class="list-group-item" href="./yii-apidoc-templates-bootstrap-sidenavwidget.html">SideNavWidget</a></div>
+<a class="list-group-item" href="#navigation-17088" data-toggle="collapse" data-parent="#navigation">yii\apidoc\templates\bootstrap\assets <b class="caret"></b></a><div id="navigation-17088" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-apidoc-templates-bootstrap-assets-assetbundle.html">AssetBundle</a>
+<a class="list-group-item" href="./yii-apidoc-templates-bootstrap-assets-highlightbundle.html">HighlightBundle</a>
+<a class="list-group-item" href="./yii-apidoc-templates-bootstrap-assets-jssearchasset.html">JsSearchAsset</a></div>
+<a class="list-group-item" href="#navigation-17089" data-toggle="collapse" data-parent="#navigation">yii\apidoc\templates\html <b class="caret"></b></a><div id="navigation-17089" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-apidoc-templates-html-apirenderer.html">ApiRenderer</a>
+<a class="list-group-item" href="./yii-apidoc-templates-html-guiderenderer.html">GuideRenderer</a></div>
+<a class="list-group-item" href="#navigation-17090" data-toggle="collapse" data-parent="#navigation">yii\apidoc\templates\json <b class="caret"></b></a><div id="navigation-17090" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-apidoc-templates-json-apirenderer.html">ApiRenderer</a></div>
+<a class="list-group-item" href="#navigation-17091" data-toggle="collapse" data-parent="#navigation">yii\apidoc\templates\online <b class="caret"></b></a><div id="navigation-17091" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-apidoc-templates-online-apirenderer.html">ApiRenderer</a></div>
+<a class="list-group-item" href="#navigation-17092" data-toggle="collapse" data-parent="#navigation">yii\apidoc\templates\pdf <b class="caret"></b></a><div id="navigation-17092" class="submenu panel-collapse collapse"><a class="list-group-item" href="./yii-apidoc-templates-pdf-guiderenderer.html">GuideRenderer</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main"><h1>Class yii\apidoc\helpers\ApiMarkdown</h1>
+<div class="top-nav">
+    <a href="index">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a> &raquo;
+cebe\markdown\GithubMarkdown</td></tr>
+                        <tr><th>Uses Traits</th><td><a href="yii-apidoc-helpers-apimarkdowntrait.html">yii\apidoc\helpers\ApiMarkdownTrait</a>, <a href="yii-apidoc-helpers-markdownhighlighttrait.html">yii\apidoc\helpers\MarkdownHighlightTrait</a></td></tr>
+                            <tr><th>Available since version</th><td>2.0</td></tr>
+                    <tr>
+          <th>Source Code</th>
+          <td><a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php">https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php</a></td>
+        </tr>
+    </table>
+
+<div class="class-description">
+    <p><strong>A Markdown helper with support for class reference links.</strong></p>
+    
+    </div>
+
+
+
+<a id="properties"></a>
+
+<div class="doc-property summary toggle-target-container">
+    <h2>Public Properties</h2>
+
+    <p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+        <colgroup>
+            <col class="col-property" />
+            <col class="col-type" />
+            <col class="col-description" />
+            <col class="col-defined" />
+        </colgroup>
+        <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Defined By</th>
+        </tr>
+
+                                    <tr id="$blockTranslations" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#$blockTranslations-detail">$blockTranslations</a></td>
+                    <td><a href="https://www.php.net/language.types.array">array</a></td>
+                    <td>Translation for guide block types</td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                                                <tr id="$headings" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#$headings-detail">$headings</a></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                                                <tr id="$renderer" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#$renderer-detail">$renderer</a></td>
+                    <td><a href="yii-apidoc-renderers-baserenderer.html">yii\apidoc\renderers\BaseRenderer</a></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                                                <tr id="$renderingContext" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#$renderingContext-detail">$renderingContext</a></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                        </table>
+</div>
+
+<div class="doc-property summary toggle-target-container">
+    <h2>Protected Properties</h2>
+
+    <p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+        <colgroup>
+            <col class="col-property" />
+            <col class="col-type" />
+            <col class="col-description" />
+            <col class="col-defined" />
+        </colgroup>
+        <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Defined By</th>
+        </tr>
+
+                                                                                            </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="doc-method summary toggle-target-container">
+    <h2>Public Methods</h2>
+
+    <p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+        <colgroup>
+            <col class="col-method" />
+            <col class="col-description" />
+            <col class="col-defined" />
+        </colgroup>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+            <th>Defined By</th>
+        </tr>
+
+                                                                            <tr id="getHeadings()" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#getHeadings()-detail">getHeadings()</a></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                                                <tr id="highlight()" class="inherited">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#highlight()-detail">highlight()</a></td>
+                    <td>Highlights code</td>
+                    <td><a href="yii-apidoc-helpers-markdownhighlighttrait.html">yii\apidoc\helpers\MarkdownHighlightTrait</a></td>
+                </tr>
+                                                <tr id="parse()" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#parse()-detail">parse()</a></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                                                                                                            <tr id="process()" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#process()-detail">process()</a></td>
+                    <td>Converts markdown into HTML</td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                                                                                                                                                                                            <tr id="renderTable()" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#renderTable()-detail">renderTable()</a></td>
+                    <td>Add bootstrap classes to tables.</td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                                            </table>
+</div>
+
+<div class="doc-method summary toggle-target-container">
+    <h2>Protected Methods</h2>
+
+    <p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+    <table class="summary-table table table-striped table-bordered table-hover">
+        <colgroup>
+            <col class="col-method" />
+            <col class="col-description" />
+            <col class="col-defined" />
+        </colgroup>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+            <th>Defined By</th>
+        </tr>
+
+                                    <tr id="applyToc()" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#applyToc()-detail">applyToc()</a></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                                                <tr id="consumeQuote()" class="inherited">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#consumeQuote()-detail">consumeQuote()</a></td>
+                    <td>Consume lines for a blockquote element</td>
+                    <td><a href="yii-apidoc-helpers-apimarkdowntrait.html">yii\apidoc\helpers\ApiMarkdownTrait</a></td>
+                </tr>
+                                                                                                            <tr id="parseApiLinkForContext()" class="inherited">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#parseApiLinkForContext()-detail">parseApiLinkForContext()</a></td>
+                    <td>Attempts to parse an API link for the given context.</td>
+                    <td><a href="yii-apidoc-helpers-apimarkdowntrait.html">yii\apidoc\helpers\ApiMarkdownTrait</a></td>
+                </tr>
+                                                <tr id="parseApiLinks()" class="inherited">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#parseApiLinks()-detail">parseApiLinks()</a></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-apimarkdowntrait.html">yii\apidoc\helpers\ApiMarkdownTrait</a></td>
+                </tr>
+                                                <tr id="prepare()" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#prepare()-detail">prepare()</a></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                                                                    <tr id="renderApiLink()" class="inherited">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#renderApiLink()-detail">renderApiLink()</a></td>
+                    <td>Renders API link</td>
+                    <td><a href="yii-apidoc-helpers-apimarkdowntrait.html">yii\apidoc\helpers\ApiMarkdownTrait</a></td>
+                </tr>
+                                                <tr id="renderApiLinkText()" class="inherited">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#renderApiLinkText()-detail">renderApiLinkText()</a></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-apimarkdowntrait.html">yii\apidoc\helpers\ApiMarkdownTrait</a></td>
+                </tr>
+                                                <tr id="renderBrokenApiLink()" class="inherited">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#renderBrokenApiLink()-detail">renderBrokenApiLink()</a></td>
+                    <td>Renders API link that is broken i.e. points nowhere</td>
+                    <td><a href="yii-apidoc-helpers-apimarkdowntrait.html">yii\apidoc\helpers\ApiMarkdownTrait</a></td>
+                </tr>
+                                                <tr id="renderCode()" class="inherited">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#renderCode()-detail">renderCode()</a></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-markdownhighlighttrait.html">yii\apidoc\helpers\MarkdownHighlightTrait</a></td>
+                </tr>
+                                                <tr id="renderHeadline()" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#renderHeadline()-detail">renderHeadline()</a></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                                                <tr id="renderLink()" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#renderLink()-detail">renderLink()</a></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                                                <tr id="renderQuote()" class="inherited">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#renderQuote()-detail">renderQuote()</a></td>
+                    <td>Renders a blockquote</td>
+                    <td><a href="yii-apidoc-helpers-apimarkdowntrait.html">yii\apidoc\helpers\ApiMarkdownTrait</a></td>
+                </tr>
+                                                                    <tr id="translateBlockType()" class="">
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html#translateBlockType()-detail">translateBlockType()</a></td>
+                    <td></td>
+                    <td><a href="yii-apidoc-helpers-apimarkdown.html">yii\apidoc\helpers\ApiMarkdown</a></td>
+                </tr>
+                        </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+
+<h2>Property Details</h2>
+
+<div class="property-doc toggle-target-container">
+    <p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+            <div id="$blockTranslations-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#$blockTranslations-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L36" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L36" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $blockTranslations
+                <span class="detail-header-tag small">
+                    public                    static                                                            property
+                    (available since version 2.0.5)                </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p>Translation for guide block types</p>
+                            </div>
+
+            <div class="signature"><span class="signature-defs">public static</span> <span class="signature-type"><a href="https://www.php.net/language.types.array">array</a></span> <a href="yii-apidoc-helpers-apimarkdown.html#$blockTranslations-detail">$blockTranslations</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+            
+            
+        </div>
+            <div id="$headings-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#$headings-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L39" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L39" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $headings
+                <span class="detail-header-tag small">
+                    protected                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                                            </div>
+
+            <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type"></span> <a href="yii-apidoc-helpers-apimarkdown.html#$headings-detail">$headings</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+            
+            
+        </div>
+            <div id="$renderer-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#$renderer-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L31" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L31" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $renderer
+                <span class="detail-header-tag small">
+                    public                    static                                                            property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                                            </div>
+
+            <div class="signature"><span class="signature-defs">public static</span> <span class="signature-type"><a href="yii-apidoc-renderers-baserenderer.html">yii\apidoc\renderers\BaseRenderer</a></span> <a href="yii-apidoc-helpers-apimarkdown.html#$renderer-detail">$renderer</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+            
+            
+        </div>
+            <div id="$renderingContext-detail">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#$renderingContext-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L38" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L38" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                $renderingContext
+                <span class="detail-header-tag small">
+                    protected                                                                                property
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                                            </div>
+
+            <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type"></span> <a href="yii-apidoc-helpers-apimarkdown.html#$renderingContext-detail">$renderingContext</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+            
+            
+        </div>
+    </div>
+
+<h2>Method Details</h2>
+
+<div class="method-doc toggle-target-container">
+    <p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+            <div id="applyToc()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#applyToc()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L70" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L70" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                applyToc()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                    (available since version 2.0.5)                </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong></strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-apidoc-helpers-apimarkdown.html#applyToc()-detail">applyToc</a></strong> ( <span style="color: #0000BB">$content</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$content</span></td>
+                            <td class="param-type-col"></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseApplyToc" role="button"
+           aria-expanded="false" aria-controls="collapseApplyToc">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseApplyToc">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">applyToc</span><span class="hljs-params">($content)</span>
+</span>{
+    <span class="hljs-comment">// generate TOC if there is more than one headline</span>
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">empty</span>(<span class="hljs-keyword">$this</span>-&gt;headings) &amp;&amp; count(<span class="hljs-keyword">$this</span>-&gt;headings) &gt; <span class="hljs-number">1</span>) {
+        $toc = [];
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">$this</span>-&gt;headings <span class="hljs-keyword">as</span> $heading) {
+            $toc[] = <span class="hljs-string">'&lt;li&gt;'</span> . Html::a(strip_tags($heading[<span class="hljs-string">'title'</span>]), <span class="hljs-string">'#'</span> . $heading[<span class="hljs-string">'id'</span>]) . <span class="hljs-string">'&lt;/li&gt;'</span>;
+        }
+        $toc = <span class="hljs-string">'&lt;div class="toc"&gt;&lt;ol&gt;'</span> . implode(<span class="hljs-string">"\n"</span>, $toc) . <span class="hljs-string">"&lt;/ol&gt;&lt;/div&gt;\n"</span>;
+        $needle = <span class="hljs-string">'&lt;/h1&gt;'</span>;
+        $pos = strpos($content, $needle);
+        <span class="hljs-keyword">if</span> ($pos !== <span class="hljs-keyword">false</span>) {
+            $content = substr_replace($content, <span class="hljs-string">"$needle\n$toc"</span>, $pos, strlen($needle));
+        } <span class="hljs-keyword">else</span> {
+            $content = $toc . $content;
+        }
+    }
+    <span class="hljs-keyword">return</span> $content;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="consumeQuote()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#consumeQuote()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdownTrait.php#L225" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdownTrait.php#L225" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                consumeQuote()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-apidoc-helpers-apimarkdowntrait.html#consumeQuote()-detail">yii\apidoc\helpers\ApiMarkdownTrait::consumeQuote()</a>                    </p>
+                
+                <p><strong>Consume lines for a blockquote element</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-apidoc-helpers-apimarkdowntrait.html#consumeQuote()-detail">consumeQuote</a></strong> ( <span style="color: #0000BB">$lines</span>, <span style="color: #0000BB">$current</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$lines</span></td>
+                            <td class="param-type-col"></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$current</span></td>
+                            <td class="param-type-col"></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseConsumeQuote" role="button"
+           aria-expanded="false" aria-controls="collapseConsumeQuote">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseConsumeQuote">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">consumeQuote</span><span class="hljs-params">($lines, $current)</span>
+</span>{
+    $block = <span class="hljs-keyword">parent</span>::consumeQuote($lines, $current);
+    $blockTypes = [
+        <span class="hljs-string">'warning'</span>,
+        <span class="hljs-string">'note'</span>,
+        <span class="hljs-string">'info'</span>,
+        <span class="hljs-string">'tip'</span>,
+    ];
+    <span class="hljs-comment">// check whether this is a special Info, Note, Warning, Tip block</span>
+    $content = $block[<span class="hljs-number">0</span>][<span class="hljs-string">'content'</span>];
+    $first = reset($content);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($first[<span class="hljs-number">0</span>]) &amp;&amp; $first[<span class="hljs-number">0</span>] === <span class="hljs-string">'paragraph'</span>) {
+        $parfirst = reset($first[<span class="hljs-string">'content'</span>]);
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($parfirst[<span class="hljs-number">0</span>]) &amp;&amp; $parfirst[<span class="hljs-number">0</span>] === <span class="hljs-string">'text'</span>) {
+            <span class="hljs-keyword">foreach</span> ($blockTypes <span class="hljs-keyword">as</span> $type) {
+                <span class="hljs-keyword">if</span> (strncasecmp(<span class="hljs-string">"$type: "</span>, $parfirst[<span class="hljs-number">1</span>], $len = strlen($type) + <span class="hljs-number">2</span>) === <span class="hljs-number">0</span>) {
+                    <span class="hljs-comment">// remove block indicator</span>
+                    $block[<span class="hljs-number">0</span>][<span class="hljs-string">'content'</span>][<span class="hljs-number">0</span>][<span class="hljs-string">'content'</span>][<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] = substr($parfirst[<span class="hljs-number">1</span>], $len);
+                    <span class="hljs-comment">// add translated block indicator as bold text</span>
+                    array_unshift($block[<span class="hljs-number">0</span>][<span class="hljs-string">'content'</span>][<span class="hljs-number">0</span>][<span class="hljs-string">'content'</span>], [
+                        <span class="hljs-string">'strong'</span>,
+                        [
+                            [<span class="hljs-string">'text'</span>, <span class="hljs-keyword">$this</span>-&gt;translateBlockType($type)],
+                        ],
+                    ]);
+                    $block[<span class="hljs-number">0</span>][<span class="hljs-string">'blocktype'</span>] = $type;
+                    <span class="hljs-keyword">break</span>;
+                }
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> $block;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="getHeadings()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#getHeadings()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L46" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L46" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                getHeadings()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                    (available since version 2.0.5)                </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong></strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.array">array</a></span> <strong><a href="yii-apidoc-helpers-apimarkdown.html#getHeadings()-detail">getHeadings</a></strong> ( )</td></tr>
+
+                                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.array">array</a></td>
+                            <td class="param-desc-col">
+                                <p>The headlines of this document</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseGetHeadings" role="button"
+           aria-expanded="false" aria-controls="collapseGetHeadings">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseGetHeadings">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getHeadings</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;headings;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="highlight()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#highlight()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/MarkdownHighlightTrait.php#L66" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/MarkdownHighlightTrait.php#L66" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                highlight()
+
+                <span class="detail-header-tag small">
+                    public                                        static                    method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-apidoc-helpers-markdownhighlighttrait.html#highlight()-detail">yii\apidoc\helpers\MarkdownHighlightTrait::highlight()</a>                    </p>
+                
+                <p><strong>Highlights code</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a></span> <strong><a href="yii-apidoc-helpers-markdownhighlighttrait.html#highlight()-detail">highlight</a></strong> ( <span style="color: #0000BB">$code</span>, <span style="color: #0000BB">$language</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$code</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>Code to highlight</p>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$language</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                               <p>Language of the code to highlight</p>
+                            </td>
+                        </tr>
+                    
+                                            <tr>
+                            <th class="param-name-col">return</th>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                                <p>HTML of highlighted code</p>
+                            </td>
+                        </tr>
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseHighlight" role="button"
+           aria-expanded="false" aria-controls="collapseHighlight">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseHighlight">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">highlight</span><span class="hljs-params">($code, $language)</span>
+</span>{
+    <span class="hljs-keyword">if</span> ($language !== <span class="hljs-string">'php'</span>) {
+        <span class="hljs-keyword">return</span> htmlspecialchars($code, ENT_NOQUOTES | ENT_SUBSTITUTE);
+    }
+    <span class="hljs-keyword">if</span> (strncmp($code, <span class="hljs-string">'&lt;?php'</span>, <span class="hljs-number">5</span>) === <span class="hljs-number">0</span>) {
+        $text = @highlight_string(trim($code), <span class="hljs-keyword">true</span>);
+    } <span class="hljs-keyword">else</span> {
+        $text = highlight_string(<span class="hljs-string">"&lt;?php "</span> . trim($code), <span class="hljs-keyword">true</span>);
+        $text = str_replace(<span class="hljs-string">'&amp;lt;?php'</span>, <span class="hljs-string">''</span>, $text);
+        <span class="hljs-keyword">if</span> (($pos = strpos($text, <span class="hljs-string">'&amp;nbsp;'</span>)) !== <span class="hljs-keyword">false</span>) {
+            $text = substr($text, <span class="hljs-number">0</span>, $pos) . substr($text, $pos + <span class="hljs-number">6</span>);
+        }
+    }
+    <span class="hljs-comment">// remove &lt;code&gt;&lt;span style="color: #000000"&gt;\n and &lt;/span&gt;tags added by php</span>
+    $text = substr(trim($text), <span class="hljs-number">36</span>, <span class="hljs-number">-16</span>);
+    <span class="hljs-keyword">return</span> $text;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="parse()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#parse()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L60" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L60" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                parse()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong></strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-apidoc-helpers-apimarkdown.html#parse()-detail">parse</a></strong> ( <span style="color: #0000BB">$text</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$text</span></td>
+                            <td class="param-type-col"></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseParse" role="button"
+           aria-expanded="false" aria-controls="collapseParse">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseParse">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parse</span><span class="hljs-params">($text)</span>
+</span>{
+    $markup = <span class="hljs-keyword">parent</span>::parse($text);
+    $markup = <span class="hljs-keyword">$this</span>-&gt;applyToc($markup);
+    <span class="hljs-keyword">return</span> $markup;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="parseApiLinkForContext()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#parseApiLinkForContext()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdownTrait.php#L107" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdownTrait.php#L107" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                parseApiLinkForContext()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                    (available since version 2.1.3)                </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-apidoc-helpers-apimarkdowntrait.html#parseApiLinkForContext()-detail">yii\apidoc\helpers\ApiMarkdownTrait::parseApiLinkForContext()</a>                    </p>
+                
+                <p><strong>Attempts to parse an API link for the given context.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="https://www.php.net/language.types.array">array</a></span> <strong><a href="yii-apidoc-helpers-apimarkdowntrait.html#parseApiLinkForContext()-detail">parseApiLinkForContext</a></strong> ( <span style="color: #0000BB">$offset</span>, <span style="color: #0000BB">$object</span>, <span style="color: #0000BB">$title</span>, <span style="color: #0000BB">$context</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$offset</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.integer">integer</a></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$object</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$title</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a>|<a href="https://www.php.net/language.types.null">null</a></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$context</span></td>
+                            <td class="param-type-col"><a href="yii-apidoc-models-typedoc.html">yii\apidoc\models\TypeDoc</a>|<a href="https://www.php.net/language.types.null">null</a></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                            <tr>
+                            <th class="param-name-col">throws</th>
+                            <td class="param-type-col"><a href="yii-apidoc-helpers-brokenlinkexception.html">yii\apidoc\helpers\BrokenLinkException</a></td>
+                            <td class="param-desc-col">
+                                <p>if the object can't be resolved</p>
+                            </td>
+                        </tr>
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseParseApiLinkForContext" role="button"
+           aria-expanded="false" aria-controls="collapseParseApiLinkForContext">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseParseApiLinkForContext">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseApiLinkForContext</span><span class="hljs-params">($offset, $object, $title, $context)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (($pos = strpos($object, <span class="hljs-string">'::'</span>)) !== <span class="hljs-keyword">false</span>) {
+        $typeName = substr($object, <span class="hljs-number">0</span>, $pos);
+        $subjectName = substr($object, $pos + <span class="hljs-number">2</span>);
+        <span class="hljs-keyword">if</span> ($context !== <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">if</span> (!$context-&gt;phpDocContext) {
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> BrokenLinkException($object, $context);
+            }
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($context-&gt;phpDocContext-&gt;getNamespaceAliases()[$typeName])) {
+                $typeName = $context-&gt;phpDocContext-&gt;getNamespaceAliases()[$typeName];
+            } <span class="hljs-keyword">else</span> {
+                $typeName = $context-&gt;phpDocContext-&gt;getNamespace() . <span class="hljs-string">'\\'</span> . $typeName;
+            }
+        }
+        <span class="hljs-comment">/** <span class="hljs-doctag">@var</span> $type TypeDoc */</span>
+        $type = <span class="hljs-keyword">static</span>::$renderer-&gt;apiContext-&gt;getType($typeName);
+        <span class="hljs-keyword">if</span> ($type === <span class="hljs-keyword">null</span> || $subjectName === <span class="hljs-string">''</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> BrokenLinkException($typeName . <span class="hljs-string">'::'</span> . $subjectName, $context);
+        }
+        <span class="hljs-keyword">if</span> (($subject = $type-&gt;findSubject($subjectName)) === <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> BrokenLinkException($type-&gt;name . <span class="hljs-string">'::'</span> . $subjectName, $context);
+        }
+        <span class="hljs-keyword">if</span> ($title === <span class="hljs-keyword">null</span>) {
+            $title = $type-&gt;name . <span class="hljs-string">'::'</span> . $subject-&gt;name;
+            <span class="hljs-keyword">if</span> ($subject <span class="hljs-keyword">instanceof</span> MethodDoc) {
+                $title .= <span class="hljs-string">'()'</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> [
+            [<span class="hljs-string">'apiLink'</span>, <span class="hljs-keyword">static</span>::$renderer-&gt;createSubjectLink($subject, $title)],
+            $offset
+        ];
+    }
+    <span class="hljs-keyword">if</span> ($context !== <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">if</span> (($subject = $context-&gt;findSubject($object)) !== <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> [
+                [<span class="hljs-string">'apiLink'</span>, <span class="hljs-keyword">static</span>::$renderer-&gt;createSubjectLink($subject, $title)],
+                $offset
+            ];
+        }
+        <span class="hljs-keyword">if</span> (!$context-&gt;phpDocContext) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> BrokenLinkException($object, $context);
+        }
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($context-&gt;phpDocContext-&gt;getNamespaceAliases()[$object])) {
+            $object = $context-&gt;phpDocContext-&gt;getNamespaceAliases()[$object];
+        } <span class="hljs-keyword">else</span> {
+            $object = $context-&gt;phpDocContext-&gt;getNamespace() . <span class="hljs-string">'\\'</span> . $object;
+        }
+    }
+    <span class="hljs-keyword">if</span> (($type = <span class="hljs-keyword">static</span>::$renderer-&gt;apiContext-&gt;getType($object)) !== <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">return</span> [
+            [<span class="hljs-string">'apiLink'</span>, <span class="hljs-keyword">static</span>::$renderer-&gt;createTypeLink($type, <span class="hljs-keyword">null</span>, $title)],
+            $offset
+        ];
+    }
+    <span class="hljs-keyword">if</span> (strpos($typeLink = <span class="hljs-keyword">static</span>::$renderer-&gt;createTypeLink($object, <span class="hljs-keyword">null</span>, $title), <span class="hljs-string">'&lt;a href'</span>) !== <span class="hljs-keyword">false</span>) {
+        <span class="hljs-keyword">return</span> [
+            [<span class="hljs-string">'apiLink'</span>, $typeLink],
+            $offset
+        ];
+    }
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> BrokenLinkException($object, $context);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="parseApiLinks()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#parseApiLinks()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdownTrait.php#L27" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdownTrait.php#L27" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                parseApiLinks()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-apidoc-helpers-apimarkdowntrait.html#parseApiLinks()-detail">yii\apidoc\helpers\ApiMarkdownTrait::parseApiLinks()</a>                    </p>
+                
+                <p><strong></strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-apidoc-helpers-apimarkdowntrait.html#parseApiLinks()-detail">parseApiLinks</a></strong> ( <span style="color: #0000BB">$text</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$text</span></td>
+                            <td class="param-type-col"></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseParseApiLinks" role="button"
+           aria-expanded="false" aria-controls="collapseParseApiLinks">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseParseApiLinks">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseApiLinks</span><span class="hljs-params">($text)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (!preg_match(<span class="hljs-string">'/^\[\[([\w\d\\\\():$]+)(\|[^]]*)?]]/'</span>, $text, $matches)) {
+        <span class="hljs-keyword">return</span> [[<span class="hljs-string">'text'</span>, <span class="hljs-string">'[['</span>], <span class="hljs-number">2</span>];
+    }
+    $offset = strlen($matches[<span class="hljs-number">0</span>]);
+    $object = $matches[<span class="hljs-number">1</span>];
+    $title = (<span class="hljs-keyword">empty</span>($matches[<span class="hljs-number">2</span>]) || $matches[<span class="hljs-number">2</span>] === <span class="hljs-string">'|'</span>) ? <span class="hljs-keyword">null</span> : substr($matches[<span class="hljs-number">2</span>], <span class="hljs-number">1</span>);
+    $title = <span class="hljs-keyword">$this</span>-&gt;renderApiLinkText($title);
+    <span class="hljs-comment">/** <span class="hljs-doctag">@var</span> TypeDoc[] $contexts */</span>
+    $contexts = [];
+    <span class="hljs-keyword">$this</span>-&gt;_findContexts(<span class="hljs-keyword">$this</span>-&gt;renderingContext, $contexts);
+    $contexts = array_unique($contexts, SORT_REGULAR);
+    $contexts[] = <span class="hljs-keyword">null</span>;
+    $e = <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">foreach</span> ($contexts <span class="hljs-keyword">as</span> $context) {
+        <span class="hljs-comment">/** <span class="hljs-doctag">@var</span> TypeDoc|null $context */</span>
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;parseApiLinkForContext($offset, $object, $title, $context);
+        } <span class="hljs-keyword">catch</span> (BrokenLinkException $e) {
+            <span class="hljs-comment">// Keep going if there are more contexts to check</span>
+        }
+    }
+    <span class="hljs-comment">// If we made it this far, there was a broken link</span>
+    <span class="hljs-comment">/** <span class="hljs-doctag">@var</span> BrokenLinkException $e */</span>
+    <span class="hljs-keyword">static</span>::$renderer-&gt;apiContext-&gt;errors[] = [
+        <span class="hljs-string">'file'</span> =&gt; ($e-&gt;context !== <span class="hljs-keyword">null</span>) ? $e-&gt;context-&gt;sourceFile : <span class="hljs-keyword">null</span>,
+        <span class="hljs-string">'message'</span> =&gt; $e-&gt;getMessage(),
+    ];
+    <span class="hljs-keyword">return</span> [
+        [<span class="hljs-string">'brokenApiLink'</span>, <span class="hljs-string">'&lt;span class="broken-link"&gt;'</span> . $object . <span class="hljs-string">'&lt;/span&gt;'</span>],
+        $offset
+    ];
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="prepare()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#prepare()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L54" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L54" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                prepare()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong></strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-apidoc-helpers-apimarkdown.html#prepare()-detail">prepare</a></strong> ( )</td></tr>
+
+                            </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapsePrepare" role="button"
+           aria-expanded="false" aria-controls="collapsePrepare">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapsePrepare">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepare</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">parent</span>::prepare();
+    <span class="hljs-keyword">$this</span>-&gt;headings = [];
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="process()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#process()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L191" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L191" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                process()
+
+                <span class="detail-header-tag small">
+                    public                                        static                    method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Converts markdown into HTML</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a></span> <strong><a href="yii-apidoc-helpers-apimarkdown.html#process()-detail">process</a></strong> ( <span style="color: #0000BB">$content</span>, <span style="color: #0000BB">$context&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span>, <span style="color: #0000BB">$paragraph&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$content</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$context</span></td>
+                            <td class="param-type-col"><a href="yii-apidoc-models-typedoc.html">yii\apidoc\models\TypeDoc</a></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$paragraph</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseProcess" role="button"
+           aria-expanded="false" aria-controls="collapseProcess">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseProcess">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">process</span><span class="hljs-params">($content, $context = null, $paragraph = false)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">isset</span>(Markdown::$flavors[<span class="hljs-string">'api'</span>])) {
+        Markdown::$flavors[<span class="hljs-string">'api'</span>] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">static</span>;
+    }
+    <span class="hljs-keyword">if</span> (is_string($context)) {
+        $context = <span class="hljs-keyword">static</span>::$renderer-&gt;apiContext-&gt;getType($context);
+    }
+    Markdown::$flavors[<span class="hljs-string">'api'</span>]-&gt;renderingContext = $context;
+    <span class="hljs-keyword">if</span> ($paragraph) {
+        <span class="hljs-keyword">return</span> Markdown::processParagraph($content, <span class="hljs-string">'api'</span>);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> Markdown::process($content, <span class="hljs-string">'api'</span>);
+    }
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="renderApiLink()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#renderApiLink()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdownTrait.php#L189" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdownTrait.php#L189" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                renderApiLink()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-apidoc-helpers-apimarkdowntrait.html#renderApiLink()-detail">yii\apidoc\helpers\ApiMarkdownTrait::renderApiLink()</a>                    </p>
+                
+                <p><strong>Renders API link</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a></span> <strong><a href="yii-apidoc-helpers-apimarkdowntrait.html#renderApiLink()-detail">renderApiLink</a></strong> ( <span style="color: #0000BB">$block</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$block</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.array">array</a></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseRenderApiLink" role="button"
+           aria-expanded="false" aria-controls="collapseRenderApiLink">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseRenderApiLink">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderApiLink</span><span class="hljs-params">($block)</span>
+</span>{
+    <span class="hljs-keyword">return</span> $block[<span class="hljs-number">1</span>];
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="renderApiLinkText()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#renderApiLinkText()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdownTrait.php#L208" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdownTrait.php#L208" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                renderApiLinkText()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-apidoc-helpers-apimarkdowntrait.html#renderApiLinkText()-detail">yii\apidoc\helpers\ApiMarkdownTrait::renderApiLinkText()</a>                    </p>
+                
+                <p><strong></strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="https://www.php.net/language.types.null">null</a>|<a href="https://www.php.net/language.types.string">string</a></span> <strong><a href="yii-apidoc-helpers-apimarkdowntrait.html#renderApiLinkText()-detail">renderApiLinkText</a></strong> ( <span style="color: #0000BB">$title</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$title</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.null">null</a>|<a href="https://www.php.net/language.types.string">string</a></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseRenderApiLinkText" role="button"
+           aria-expanded="false" aria-controls="collapseRenderApiLinkText">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseRenderApiLinkText">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderApiLinkText</span><span class="hljs-params">($title)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (!$title) {
+        <span class="hljs-keyword">return</span> $title;
+    }
+    $title = Markdown::process($title);
+    $title = mb_convert_encoding($title, <span class="hljs-string">'HTML-ENTITIES'</span>, <span class="hljs-string">'UTF-8'</span>);
+    $doc = <span class="hljs-keyword">new</span> DOMDocument();
+    $doc-&gt;loadHTML($title);
+    <span class="hljs-keyword">return</span> $doc-&gt;getElementsByTagName(<span class="hljs-string">'p'</span>)[<span class="hljs-number">0</span>]-&gt;childNodes[<span class="hljs-number">0</span>]-&gt;c14n();
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="renderBrokenApiLink()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#renderBrokenApiLink()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdownTrait.php#L199" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdownTrait.php#L199" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                renderBrokenApiLink()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-apidoc-helpers-apimarkdowntrait.html#renderBrokenApiLink()-detail">yii\apidoc\helpers\ApiMarkdownTrait::renderBrokenApiLink()</a>                    </p>
+                
+                <p><strong>Renders API link that is broken i.e. points nowhere</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a></span> <strong><a href="yii-apidoc-helpers-apimarkdowntrait.html#renderBrokenApiLink()-detail">renderBrokenApiLink</a></strong> ( <span style="color: #0000BB">$block</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$block</span></td>
+                            <td class="param-type-col"><a href="https://www.php.net/language.types.array">array</a></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseRenderBrokenApiLink" role="button"
+           aria-expanded="false" aria-controls="collapseRenderBrokenApiLink">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseRenderBrokenApiLink">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderBrokenApiLink</span><span class="hljs-params">($block)</span>
+</span>{
+    <span class="hljs-keyword">return</span> $block[<span class="hljs-number">1</span>];
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="renderCode()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#renderCode()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/MarkdownHighlightTrait.php#L30" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/MarkdownHighlightTrait.php#L30" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                renderCode()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-apidoc-helpers-markdownhighlighttrait.html#renderCode()-detail">yii\apidoc\helpers\MarkdownHighlightTrait::renderCode()</a>                    </p>
+                
+                <p><strong></strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-apidoc-helpers-markdownhighlighttrait.html#renderCode()-detail">renderCode</a></strong> ( <span style="color: #0000BB">$block</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$block</span></td>
+                            <td class="param-type-col"></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseRenderCode" role="button"
+           aria-expanded="false" aria-controls="collapseRenderCode">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseRenderCode">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderCode</span><span class="hljs-params">($block)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>::$highlighter === <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">self</span>::$highlighter = <span class="hljs-keyword">new</span> Highlighter();
+        <span class="hljs-keyword">self</span>::$highlighter-&gt;setAutodetectLanguages([
+            <span class="hljs-string">'apache'</span>, <span class="hljs-string">'nginx'</span>,
+            <span class="hljs-string">'bash'</span>, <span class="hljs-string">'dockerfile'</span>, <span class="hljs-string">'http'</span>,
+            <span class="hljs-string">'css'</span>, <span class="hljs-string">'less'</span>, <span class="hljs-string">'scss'</span>,
+            <span class="hljs-string">'javascript'</span>, <span class="hljs-string">'json'</span>, <span class="hljs-string">'markdown'</span>,
+            <span class="hljs-string">'php'</span>, <span class="hljs-string">'sql'</span>, <span class="hljs-string">'twig'</span>, <span class="hljs-string">'xml'</span>,
+        ]);
+    }
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($block[<span class="hljs-string">'language'</span>])) {
+            <span class="hljs-keyword">if</span> ($block[<span class="hljs-string">'language'</span>] === <span class="hljs-string">'php'</span> &amp;&amp; strpos($block[<span class="hljs-string">'content'</span>], <span class="hljs-string">'&lt;?='</span>) !== <span class="hljs-keyword">false</span>) {
+                $block[<span class="hljs-string">'language'</span>] = <span class="hljs-string">'html'</span>;
+            }
+            $result = <span class="hljs-keyword">self</span>::$highlighter-&gt;highlight($block[<span class="hljs-string">'language'</span>], $block[<span class="hljs-string">'content'</span>] . <span class="hljs-string">"\n"</span>);
+            <span class="hljs-keyword">return</span> <span class="hljs-string">"&lt;pre&gt;&lt;code class=\"hljs {$result-&gt;language} language-{$block['language']}\"&gt;{$result-&gt;value}&lt;/code&gt;&lt;/pre&gt;\n"</span>;
+        } <span class="hljs-keyword">else</span> {
+            $result = <span class="hljs-keyword">self</span>::$highlighter-&gt;highlightAuto($block[<span class="hljs-string">'content'</span>] . <span class="hljs-string">"\n"</span>);
+            <span class="hljs-keyword">return</span> <span class="hljs-string">"&lt;pre&gt;&lt;code class=\"hljs {$result-&gt;language}\"&gt;{$result-&gt;value}&lt;/code&gt;&lt;/pre&gt;\n"</span>;
+        }
+    } <span class="hljs-keyword">catch</span> (DomainException $e) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">parent</span>::renderCode($block);
+    }
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="renderHeadline()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#renderHeadline()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L94" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L94" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                renderHeadline()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong></strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-apidoc-helpers-apimarkdown.html#renderHeadline()-detail">renderHeadline</a></strong> ( <span style="color: #0000BB">$block</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$block</span></td>
+                            <td class="param-type-col"></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseRenderHeadline" role="button"
+           aria-expanded="false" aria-controls="collapseRenderHeadline">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseRenderHeadline">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderHeadline</span><span class="hljs-params">($block)</span>
+</span>{
+    $content = <span class="hljs-keyword">$this</span>-&gt;renderAbsy($block[<span class="hljs-string">'content'</span>]);
+    <span class="hljs-keyword">if</span> (preg_match(<span class="hljs-string">'~&lt;span id="(.*?)"&gt;&lt;/span&gt;~'</span>, $content, $matches)) {
+        $hash = $matches[<span class="hljs-number">1</span>];
+        $content = preg_replace(<span class="hljs-string">'~&lt;span id=".*?"&gt;&lt;/span&gt;~'</span>, <span class="hljs-string">''</span>, $content);
+    } <span class="hljs-keyword">else</span> {
+        $hash = Inflector::slug(strip_tags($content));
+    }
+    $hashLink = <span class="hljs-string">"&lt;span id=\"$hash\"&gt;&lt;/span&gt;&lt;a href=\"#$hash\" class=\"hashlink\"&gt;&amp;para;&lt;/a&gt;"</span>;
+    <span class="hljs-keyword">if</span> ($block[<span class="hljs-string">'level'</span>] == <span class="hljs-number">2</span>) {
+        <span class="hljs-keyword">$this</span>-&gt;headings[] = [
+            <span class="hljs-string">'title'</span> =&gt; trim($content),
+            <span class="hljs-string">'id'</span> =&gt; $hash,
+        ];
+    } <span class="hljs-keyword">elseif</span> ($block[<span class="hljs-string">'level'</span>] &gt; <span class="hljs-number">2</span>) {
+        <span class="hljs-keyword">if</span> (end(<span class="hljs-keyword">$this</span>-&gt;headings)) {
+            <span class="hljs-keyword">$this</span>-&gt;headings[key(<span class="hljs-keyword">$this</span>-&gt;headings)][<span class="hljs-string">'sub'</span>][] = [
+                <span class="hljs-string">'title'</span> =&gt; trim($content),
+                <span class="hljs-string">'id'</span> =&gt; $hash,
+            ];
+        }
+    }
+    $tag = <span class="hljs-string">'h'</span> . $block[<span class="hljs-string">'level'</span>];
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"&lt;$tag&gt;$content $hashLink&lt;/$tag&gt;"</span>;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="renderLink()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#renderLink()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L126" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L126" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                renderLink()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong></strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-apidoc-helpers-apimarkdown.html#renderLink()-detail">renderLink</a></strong> ( <span style="color: #0000BB">$block</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$block</span></td>
+                            <td class="param-type-col"></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseRenderLink" role="button"
+           aria-expanded="false" aria-controls="collapseRenderLink">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseRenderLink">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderLink</span><span class="hljs-params">($block)</span>
+</span>{
+    $url = $block[<span class="hljs-string">'url'</span>];
+    <span class="hljs-keyword">if</span> (!$url) {
+        <span class="hljs-keyword">static</span>::$renderer-&gt;apiContext-&gt;errors[] = [
+            <span class="hljs-string">'line'</span> =&gt; <span class="hljs-keyword">null</span>,
+            <span class="hljs-string">'file'</span> =&gt; <span class="hljs-keyword">null</span>,
+            <span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">"Using empty link."</span>,
+        ];
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">parent</span>::renderLink($block);
+    }
+    $linkHtml = <span class="hljs-keyword">parent</span>::renderLink($block);
+    <span class="hljs-comment">// add special syntax for linking to the guide</span>
+    $guideLinkHtml = preg_replace_callback(<span class="hljs-string">'/href="guide:([A-z0-9-.#]+)"/i'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($matches)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'href="'</span> . <span class="hljs-keyword">static</span>::$renderer-&gt;generateGuideUrl($matches[<span class="hljs-number">1</span>]) . <span class="hljs-string">'"'</span>;
+    }, $linkHtml, <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">if</span> ($guideLinkHtml !== $linkHtml) {
+        <span class="hljs-keyword">return</span> $guideLinkHtml;
+    }
+    <span class="hljs-keyword">if</span> (!property_exists(<span class="hljs-keyword">static</span>::$renderer, <span class="hljs-string">'repoUrl'</span>)) {
+        <span class="hljs-keyword">return</span> $linkHtml;
+    }
+    $repoUrl = <span class="hljs-keyword">static</span>::$renderer-&gt;repoUrl;
+    <span class="hljs-keyword">if</span> (!$repoUrl) {
+        <span class="hljs-keyword">static</span>::$renderer-&gt;apiContext-&gt;errors[] = [
+            <span class="hljs-string">'line'</span> =&gt; <span class="hljs-keyword">null</span>,
+            <span class="hljs-string">'file'</span> =&gt; <span class="hljs-keyword">null</span>,
+            <span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">"Using relative link ($url) but repoUrl is not set."</span>,
+        ];
+        <span class="hljs-keyword">return</span> $linkHtml;
+    }
+    <span class="hljs-keyword">return</span> preg_replace_callback(<span class="hljs-string">'/href="(.+)"/i'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($matches)</span> <span class="hljs-title">use</span> <span class="hljs-params">($repoUrl)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'href="'</span> . $repoUrl . <span class="hljs-string">'/'</span> . $matches[<span class="hljs-number">1</span>] . <span class="hljs-string">'"'</span>;
+    }, $linkHtml, <span class="hljs-number">1</span>);
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="renderQuote()-detail"
+             class="inherited">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#renderQuote()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdownTrait.php#L270" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdownTrait.php#L270" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                renderQuote()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                                    <p>
+                        <strong>Defined in:</strong>
+                        <a href="yii-apidoc-helpers-apimarkdowntrait.html#renderQuote()-detail">yii\apidoc\helpers\ApiMarkdownTrait::renderQuote()</a>                    </p>
+                
+                <p><strong>Renders a blockquote</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-apidoc-helpers-apimarkdowntrait.html#renderQuote()-detail">renderQuote</a></strong> ( <span style="color: #0000BB">$block</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$block</span></td>
+                            <td class="param-type-col"></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseRenderQuote" role="button"
+           aria-expanded="false" aria-controls="collapseRenderQuote">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseRenderQuote">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderQuote</span><span class="hljs-params">($block)</span>
+</span>{
+    $class = <span class="hljs-string">''</span>;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($block[<span class="hljs-string">'blocktype'</span>])) {
+        $class = <span class="hljs-string">' class="'</span> . $block[<span class="hljs-string">'blocktype'</span>] . <span class="hljs-string">'"'</span>;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"&lt;blockquote{$class}&gt;"</span> . <span class="hljs-keyword">$this</span>-&gt;renderAbsy($block[<span class="hljs-string">'content'</span>]) . <span class="hljs-string">"&lt;/blockquote&gt;\n"</span>;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="renderTable()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#renderTable()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L213" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L213" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                renderTable()
+
+                <span class="detail-header-tag small">
+                    public                                                            method
+                                    </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong>Add bootstrap classes to tables.</strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="yii-apidoc-helpers-apimarkdown.html#renderTable()-detail">renderTable</a></strong> ( <span style="color: #0000BB">$block</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$block</span></td>
+                            <td class="param-type-col"></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseRenderTable" role="button"
+           aria-expanded="false" aria-controls="collapseRenderTable">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseRenderTable">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderTable</span><span class="hljs-params">($block)</span>
+</span>{
+    <span class="hljs-keyword">return</span> str_replace(<span class="hljs-string">'&lt;table&gt;'</span>, <span class="hljs-string">'&lt;table class="table table-bordered table-striped"&gt;'</span>, <span class="hljs-keyword">parent</span>::renderTable($block));
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+            <div id="translateBlockType()-detail"
+             class="">
+            <div class="detail-header h3">
+                <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                <a class="tool-link hash" href="yii-apidoc-helpers-apimarkdown.html#translateBlockType()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+                                    <a href="https://github.com/yiisoft/yii2-apidoc/edit/master/helpers/ApiMarkdown.php#L172" class="tool-link"
+                       title="edit on github">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="https://github.com/yiisoft/yii2-apidoc/blob/master/helpers/ApiMarkdown.php#L172" class="tool-link" title="view source on github">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                
+                translateBlockType()
+
+                <span class="detail-header-tag small">
+                    protected                                                            method
+                    (available since version 2.0.5)                </span>
+            </div>
+
+            
+            <div class="doc-description">
+                
+                <p><strong></strong></p>
+                                            </div>
+
+            <table class="detail-table table table-striped table-bordered table-hover">
+                <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="yii-apidoc-helpers-apimarkdown.html#translateBlockType()-detail">translateBlockType</a></strong> ( <span style="color: #0000BB">$type</span> )</td></tr>
+
+                                                            <tr>
+                            <td class="param-name-col"><span style="color: #0000BB">$type</span></td>
+                            <td class="param-type-col"></td>
+                            <td class="param-desc-col">
+                                                           </td>
+                        </tr>
+                    
+                    
+                                                </table>
+
+            
+            
+
+    <p>
+        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseTranslateBlockType" role="button"
+           aria-expanded="false" aria-controls="collapseTranslateBlockType">
+            Source code
+        </a>
+    </p>
+    <div class="collapse" id="collapseTranslateBlockType">
+        <div class="card card-body">
+            <pre>
+                <code class="hljs php language-php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">translateBlockType</span><span class="hljs-params">($type)</span>
+</span>{
+    $key = ucfirst($type) . <span class="hljs-string">':'</span>;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-keyword">static</span>::$blockTranslations[$key])) {
+        $translation = <span class="hljs-keyword">static</span>::$blockTranslations[$key];
+    } <span class="hljs-keyword">else</span> {
+        $translation = $key;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"$translation "</span>;
+}
+</code>
+            </pre>
+        </div>
+    </div>
+            
+        </div>
+    </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $('a.toggle').on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents('.toggle-target-container').find('.inherited').show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents('.toggle-target-container').find('.inherited').hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:46 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

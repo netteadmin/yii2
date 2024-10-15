@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>数据缓存（Data Caching） - 缓存（Caching） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w168" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w168-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w168-collapse" class="collapse navbar-collapse"><ul id="w169" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w170" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-152" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-152" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-153" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-153" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-154" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-154" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-155" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-155" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-156" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-156" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-157" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-157" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-158" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-158" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-159" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-159" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-160" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-160" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item active" href="#navigation-161" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-161" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item active" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-162" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-162" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-163" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-163" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-164" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-164" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-165" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-165" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-166" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-166" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-167" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-167" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>&#25968;&#25454;&#32531;&#23384; <span id="shu-ju-huan-cun"></span><a href="#shu-ju-huan-cun" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#cache-components">&#32531;&#23384;&#32452;&#20214;</a></li>
+<li><a href="#cache-apis">&#32531;&#23384; API</a></li>
+<li><a href="#query-caching">&#26597;&#35810;&#32531;&#23384;</a></li></ol></div>
+<p>&#25968;&#25454;&#32531;&#23384;&#26159;&#25351;&#23558;&#19968;&#20123; PHP &#21464;&#37327;&#23384;&#20648;&#21040;&#32531;&#23384;&#20013;&#65292;&#20351;&#29992;&#26102;&#20877;&#20174;&#32531;&#23384;&#20013;&#21462;&#22238;&#12290;
+&#23427;&#20063;&#26159;&#26356;&#39640;&#32423;&#32531;&#23384;&#29305;&#24615;&#30340;&#22522;&#30784;&#65292;&#20363;&#22914;<a href="#query-caching">&#26597;&#35810;&#32531;&#23384;</a>
+&#21644;<a href="guide-caching-content.html">&#20869;&#23481;&#32531;&#23384;</a>&#12290;</p>
+<p>&#22914;&#19979;&#20195;&#30721;&#26159;&#19968;&#20010;&#20856;&#22411;&#30340;&#25968;&#25454;&#32531;&#23384;&#20351;&#29992;&#27169;&#24335;&#12290;
+&#20854;&#20013; <code>$cache</code> &#25351;&#21521;<a href="#cache-components">&#32531;&#23384;&#32452;&#20214;</a>&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#23581;&#35797;&#20174;&#32531;&#23384;&#20013;&#21462;&#22238; $data </span>
+$data = $cache-&gt;get($key);
+
+<span class="hljs-keyword">if</span> ($data === <span class="hljs-keyword">false</span>) {
+
+    <span class="hljs-comment">// $data &#22312;&#32531;&#23384;&#20013;&#27809;&#26377;&#25214;&#21040;&#65292;&#21017;&#37325;&#26032;&#35745;&#31639;&#23427;&#30340;&#20540;</span>
+
+    <span class="hljs-comment">// &#23558; $data &#23384;&#25918;&#21040;&#32531;&#23384;&#20379;&#19979;&#27425;&#20351;&#29992;</span>
+    $cache-&gt;set($key, $data);
+}
+
+<span class="hljs-comment">// &#36825;&#20799; $data &#21487;&#20197;&#20351;&#29992;&#20102;&#12290;</span>
+</code></pre>
+<p>&#20174; 2.0.11 &#29256;&#26412;&#24320;&#22987;, <a href="#cache-components">&#32531;&#23384;&#32452;&#20214;</a> 
+&#25552;&#20379;&#20102; <a href="./yii-caching-cache.html#getOrSet()-detail">getOrSet()</a> &#26041;&#27861;&#26469;&#31616;&#21270;&#25968;&#25454;&#30340;&#21462;&#22238;&#12289;&#35745;&#31639;&#21644;&#23384;&#20648;&#12290;
+&#19979;&#38754;&#30340;&#20195;&#30721;&#36923;&#36753;&#21644;&#19978;&#19968;&#20010;&#20363;&#23376;&#26159;&#23436;&#20840;&#19968;&#26679;&#30340;&#65306;</p>
+<pre><code class="hljs php language-php">$data = $cache-&gt;getOrSet($key, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;calculateSomething();
+});
+</code></pre>
+<p>&#24403;&#32531;&#23384;&#20013;&#26377;&#20851;&#32852; $key &#30340;&#25968;&#25454;&#26102;&#65292;&#23558;&#36820;&#22238;&#36825;&#20010;&#32531;&#23384;&#30340;&#20540;&#12290;
+&#21542;&#21017;&#23601;&#25191;&#34892;&#21311;&#21517;&#20989;&#25968;&#26469;&#35745;&#31639;&#20986;&#23558;&#35201;&#32531;&#23384;&#30340;&#25968;&#25454;&#24182;&#36820;&#22238;&#23427;&#12290;</p>
+<p>&#22914;&#26524;&#21311;&#21517;&#20989;&#25968;&#38656;&#35201;&#20316;&#29992;&#22495;&#22806;&#30340;&#25968;&#25454;&#26102;&#65292;&#21487;&#20197;&#20351;&#29992; <code>use</code> &#35821;&#21477;&#25226;&#36825;&#20123;&#25968;&#25454;&#20256;&#36882;&#21040;&#21311;&#21517;&#20989;&#25968;&#20013;&#12290;
+&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php">$user_id = <span class="hljs-number">42</span>;
+$data = $cache-&gt;getOrSet($key, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> <span class="hljs-title">use</span> <span class="hljs-params">($user_id)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;calculateSomething($user_id);
+});
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong><a href="./yii-caching-cache.html#getOrSet()-detail">getOrSet()</a> &#26041;&#27861;&#20063;&#25903;&#25345;&#32531;&#23384;&#25345;&#32493;&#24615;&#21644;&#32531;&#23384;&#20381;&#36182;&#12290;
+  &#35831;&#30475;<a href="#cache-expiration">&#32531;&#23384;&#36807;&#26399;</a> &#21644; <a href="#cache-dependencies">&#32531;&#23384;&#20381;&#36182;</a> &#26469;&#20102;&#35299;&#35814;&#32454;&#20449;&#24687;&#12290;</p>
+</blockquote>
+<h2>&#32531;&#23384;&#32452;&#20214;  <span id="cache-components"></span><a href="#cache-components" class="hashlink">&para;</a></h2><p>&#25968;&#25454;&#32531;&#23384;&#38656;&#35201;<strong>&#32531;&#23384;&#32452;&#20214;</strong>&#25552;&#20379;&#25903;&#25345;&#65292;&#23427;&#20195;&#34920;&#21508;&#31181;&#32531;&#23384;&#23384;&#20648;&#22120;&#65292;
+&#20363;&#22914;&#20869;&#23384;&#65292;&#25991;&#20214;&#65292;&#25968;&#25454;&#24211;&#12290;</p>
+<p>&#32531;&#23384;&#32452;&#20214;&#36890;&#24120;&#27880;&#20876;&#20026;&#24212;&#29992;&#31243;&#24207;&#32452;&#20214;&#65292;&#36825;&#26679;&#23427;&#20204;&#23601;&#21487;&#20197;
+&#22312;&#20840;&#23616;&#36827;&#34892;&#37197;&#32622;&#19982;&#35775;&#38382;&#12290;&#22914;&#19979;&#20195;&#30721;&#28436;&#31034;&#20102;&#22914;&#20309;&#37197;&#32622;&#24212;&#29992;&#31243;&#24207;&#32452;&#20214;
+<code>cache</code> &#20351;&#29992;&#20004;&#20010; <a href="https://memcached.org/">memcached</a> 
+&#26381;&#21153;&#22120;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-string">'cache'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\MemCache'</span>,
+        <span class="hljs-string">'servers'</span> =&gt; [
+            [
+                <span class="hljs-string">'host'</span> =&gt; <span class="hljs-string">'server1'</span>,
+                <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">11211</span>,
+                <span class="hljs-string">'weight'</span> =&gt; <span class="hljs-number">100</span>,
+            ],
+            [
+                <span class="hljs-string">'host'</span> =&gt; <span class="hljs-string">'server2'</span>,
+                <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">11211</span>,
+                <span class="hljs-string">'weight'</span> =&gt; <span class="hljs-number">50</span>,
+            ],
+        ],
+    ],
+],
+</code></pre>
+<p>&#28982;&#21518;&#23601;&#21487;&#20197;&#36890;&#36807; <code>Yii::$app-&gt;cache</code> &#35775;&#38382;&#19978;&#38754;&#30340;&#32531;&#23384;&#32452;&#20214;&#20102;&#12290;</p>
+<p>&#30001;&#20110;&#25152;&#26377;&#32531;&#23384;&#32452;&#20214;&#37117;&#25903;&#25345;&#21516;&#26679;&#30340;&#19968;&#31995;&#21015; API &#65292;&#24182;&#19981;&#38656;&#35201;&#20462;&#25913;&#20351;&#29992;&#32531;&#23384;&#30340;&#19994;&#21153;&#20195;&#30721;
+&#23601;&#33021;&#30452;&#25509;&#26367;&#25442;&#20026;&#20854;&#20182;&#24213;&#23618;&#32531;&#23384;&#32452;&#20214;&#65292;&#21482;&#38656;&#22312;&#24212;&#29992;&#37197;&#32622;&#20013;&#37325;&#26032;&#37197;&#32622;&#19968;&#19979;&#23601;&#21487;&#20197;&#12290;
+&#20363;&#22914;&#65292;&#20320;&#21487;&#20197;&#23558;&#19978;&#36848;&#37197;&#32622;&#20462;&#25913;&#20026;&#20351;&#29992; <a href="./yii-caching-apccache.html">APC cache</a>&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-string">'cache'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\ApcCache'</span>,
+    ],
+],
+</code></pre>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#20320;&#21487;&#20197;&#27880;&#20876;&#22810;&#20010;&#32531;&#23384;&#32452;&#20214;&#65292;&#24456;&#22810;&#20381;&#36182;&#32531;&#23384;&#30340;&#31867;&#40664;&#35748;&#35843;&#29992;
+&#21517;&#20026; <code>cache</code> &#30340;&#32452;&#20214;&#65288;&#20363;&#22914; <a href="./yii-web-urlmanager.html">yii\web\UrlManager</a>&#65289;&#12290;</p>
+</blockquote>
+<h3>&#25903;&#25345;&#30340;&#32531;&#23384;&#23384;&#20648;&#22120;  <span id="supported-cache-storage"></span><a href="#supported-cache-storage" class="hashlink">&para;</a></h3><p>Yii &#25903;&#25345;&#19968;&#31995;&#21015;&#32531;&#23384;&#23384;&#20648;&#22120;&#65292;&#27010;&#20917;&#22914;&#19979;&#65306;</p>
+<ul>
+<li><a href="./yii-caching-apccache.html">yii\caching\ApcCache</a>&#65306;&#20351;&#29992; PHP <a href="https://www.php.net/manual/zh/book.apcu.php">APC</a> &#25193;&#23637;&#12290;
+&#36825;&#20010;&#36873;&#39033;&#21487;&#20197;&#35748;&#20026;&#26159;&#38598;&#20013;&#24335;&#24212;&#29992;&#31243;&#24207;&#29615;&#22659;&#20013;
+ &#65288;&#20363;&#22914;&#65306;&#21333;&#19968;&#26381;&#21153;&#22120;&#65292;&#27809;&#26377;&#29420;&#31435;&#30340;&#36127;&#36733;&#22343;&#34913;&#22120;&#31561;&#65289;&#26368;&#24555;&#30340;&#32531;&#23384;&#26041;&#26696;&#12290;</li>
+<li><a href="./yii-caching-dbcache.html">yii\caching\DbCache</a>&#65306;&#20351;&#29992;&#19968;&#20010;&#25968;&#25454;&#24211;&#30340;&#34920;&#23384;&#20648;&#32531;&#23384;&#25968;&#25454;&#12290;&#35201;&#20351;&#29992;&#36825;&#20010;&#32531;&#23384;&#65292;
+&#20320;&#24517;&#39035;&#21019;&#24314;&#19968;&#20010;&#19982; <a href="./yii-caching-dbcache.html#%24cacheTable-detail">yii\caching\DbCache::$cacheTable</a> &#23545;&#24212;&#30340;&#34920;&#12290;</li>
+<li><a href="./yii-caching-arraycache.html">yii\caching\ArrayCache</a>: &#20165;&#36890;&#36807;&#23558;&#20540;&#23384;&#20648;&#22312;&#25968;&#32452;&#20013;&#26469;&#20026;&#24403;&#21069;&#35831;&#27714;&#25552;&#20379;&#32531;&#23384;&#12290;
+&#20026;&#20102;&#22686;&#24378; ArrayCache &#30340;&#24615;&#33021;&#65292;&#24744;&#21487;&#20197;&#36890;&#36807;&#23558;
+<a href="./yii-caching-cache.html#%24serializer-detail">yii\caching\ArrayCache::$serializer</a> &#35774;&#32622;&#20026; <code>false</code> &#26469;&#31105;&#29992;&#24050;&#23384;&#20648;&#25968;&#25454;&#30340;&#24207;&#21015;&#21270;&#12290;</li>
+<li><a href="./yii-caching-dummycache.html">yii\caching\DummyCache</a>&#65306;&#20165;&#20316;&#20026;&#19968;&#20010;&#32531;&#23384;&#21344;&#20301;&#31526;&#65292;&#19981;&#23454;&#29616;&#20219;&#20309;&#30495;&#27491;&#30340;&#32531;&#23384;&#21151;&#33021;&#12290;
+&#36825;&#20010;&#32452;&#20214;&#30340;&#30446;&#30340;&#26159;&#20026;&#20102;&#31616;&#21270;&#37027;&#20123;&#38656;&#35201;&#26597;&#35810;&#32531;&#23384;&#26377;&#25928;&#24615;&#30340;&#20195;&#30721;&#12290;&#20363;&#22914;&#65292;
+&#22312;&#24320;&#21457;&#20013;&#22914;&#26524;&#26381;&#21153;&#22120;&#27809;&#26377;&#23454;&#38469;&#30340;&#32531;&#23384;&#25903;&#25345;&#65292;&#29992;&#23427;&#37197;&#32622;&#19968;&#20010;&#32531;&#23384;&#32452;&#20214;&#12290;
+&#19968;&#20010;&#30495;&#27491;&#30340;&#32531;&#23384;&#26381;&#21153;&#21551;&#29992;&#21518;&#65292;&#21487;&#20197;&#20877;&#20999;&#25442;&#20026;&#20351;&#29992;&#30456;&#24212;&#30340;&#32531;&#23384;&#32452;&#20214;&#12290;
+&#20004;&#31181;&#26465;&#20214;&#19979;&#20320;&#37117;&#21487;&#20197;&#20351;&#29992;&#21516;&#26679;&#30340;&#20195;&#30721; 
+<code>Yii::$app-&gt;cache-&gt;get($key)</code> &#23581;&#35797;&#20174;&#32531;&#23384;&#20013;&#21462;&#22238;&#25968;&#25454;&#32780;&#19981;&#29992;&#25285;&#24515; 
+<code>Yii::$app-&gt;cache</code> &#21487;&#33021;&#26159; <code>null</code>&#12290;</li>
+<li><a href="./yii-caching-filecache.html">yii\caching\FileCache</a>&#65306;&#20351;&#29992;&#26631;&#20934;&#25991;&#20214;&#23384;&#20648;&#32531;&#23384;&#25968;&#25454;&#12290;
+&#36825;&#20010;&#29305;&#21035;&#36866;&#29992;&#20110;&#32531;&#23384;&#22823;&#22359;&#25968;&#25454;&#65292;&#20363;&#22914;&#19968;&#20010;&#25972;&#39029;&#30340;&#20869;&#23481;&#12290;</li>
+<li><a href="./yii-caching-memcache.html">yii\caching\MemCache</a>&#65306;&#20351;&#29992; PHP <a href="https://www.php.net/manual/zh/book.memcache.php">memcache</a> 
+&#21644; <a href="https://www.php.net/manual/zh/book.memcached.php">memcached</a> &#25193;&#23637;&#12290;
+&#36825;&#20010;&#36873;&#39033;&#34987;&#30475;&#20316;&#20998;&#24067;&#24335;&#24212;&#29992;&#29615;&#22659;&#20013;&#65288;&#20363;&#22914;&#65306;&#22810;&#21488;&#26381;&#21153;&#22120;&#65292;&#26377;&#36127;&#36733;&#22343;&#34913;&#31561;&#65289;
+&#26368;&#24555;&#30340;&#32531;&#23384;&#26041;&#26696;&#12290;</li>
+<li><a href="./yii-redis-cache.html">yii\redis\Cache</a>&#65306;&#23454;&#29616;&#20102;&#19968;&#20010;&#22522;&#20110; <a href="https://redis.io/">Redis</a> &#38190;&#20540;&#23545;&#23384;&#20648;&#22120;&#30340;&#32531;&#23384;&#32452;&#20214;
+ &#65288;&#38656;&#35201; redis 2.6.12 &#21450;&#20197;&#19978;&#29256;&#26412;&#30340;&#25903;&#25345; &#65289;&#12290;</li>
+<li><a href="./yii-caching-wincache.html">yii\caching\WinCache</a>&#65306;&#20351;&#29992; PHP <a href="https://iis.net/downloads/microsoft/wincache-extension">WinCache</a>
+ &#65288;<a href="https://www.php.net/manual/zh/book.wincache.php">&#21478;&#21487;&#21442;&#32771;</a>&#65289;&#25193;&#23637;.</li>
+<li><a href="./yii-caching-xcache.html">yii\caching\XCache</a>&#65306;&#20351;&#29992; PHP <a href="https://en.wikipedia.org/wiki/List_of_PHP_accelerators#XCache">XCache</a>&#25193;&#23637;&#12290;</li>
+<li><a href="./yii-caching-zenddatacache.html">yii\caching\ZendDataCache</a>&#65306;&#20351;&#29992; 
+[Zend Data Cache](<a href="https://files.zend.com/help/Zend-Server-6/zend-">https://files.zend.com/help/Zend-Server-6/zend-</a> server.htm#data_cache_component.htm) 
+&#20316;&#20026;&#24213;&#23618;&#32531;&#23384;&#23186;&#20171;&#12290;</li>
+</ul>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#20320;&#21487;&#20197;&#22312;&#21516;&#19968;&#20010;&#24212;&#29992;&#31243;&#24207;&#20013;&#20351;&#29992;&#19981;&#21516;&#30340;&#32531;&#23384;&#23384;&#20648;&#22120;&#12290;&#19968;&#20010;&#24120;&#35265;&#30340;&#31574;&#30053;&#26159;&#20351;&#29992;&#22522;&#20110;&#20869;&#23384;&#30340;&#32531;&#23384;&#23384;&#20648;&#22120;
+  &#23384;&#20648;&#23567;&#32780;&#24120;&#29992;&#30340;&#25968;&#25454;&#65288;&#20363;&#22914;&#65306;&#32479;&#35745;&#25968;&#25454;&#65289;&#65292;&#20351;&#29992;&#22522;&#20110;&#25991;&#20214;&#25110;&#25968;&#25454;&#24211;&#30340;&#32531;&#23384;&#23384;&#20648;&#22120;
+  &#23384;&#20648;&#22823;&#32780;&#19981;&#22826;&#24120;&#29992;&#30340;&#25968;&#25454;&#65288;&#20363;&#22914;&#65306;&#32593;&#39029;&#20869;&#23481;&#65289;&#12290;</p>
+</blockquote>
+<h2>&#32531;&#23384; API  <span id="cache-apis"></span><a href="#cache-apis" class="hashlink">&para;</a></h2><p>&#25152;&#26377;&#32531;&#23384;&#32452;&#20214;&#37117;&#26377;&#21516;&#26679;&#30340;&#22522;&#31867; <a href="./yii-caching-cache.html">yii\caching\Cache</a> &#65292;&#22240;&#27492;&#37117;&#25903;&#25345;&#22914;&#19979; API&#65306;</p>
+<ul>
+<li><a href="./yii-caching-cache.html#get()-detail">get()</a>&#65306;&#36890;&#36807;&#19968;&#20010;&#25351;&#23450;&#30340;&#38190;&#65288;key&#65289;&#20174;&#32531;&#23384;&#20013;&#21462;&#22238;&#19968;&#39033;&#25968;&#25454;&#12290;
+&#22914;&#26524;&#35813;&#39033;&#25968;&#25454;&#19981;&#23384;&#22312;&#20110;&#32531;&#23384;&#20013;&#25110;&#32773;&#24050;&#32463;&#36807;&#26399;/&#22833;&#25928;&#65292;&#21017;&#36820;&#22238;&#20540; false&#12290;</li>
+<li><a href="./yii-caching-cache.html#set()-detail">set()</a>&#65306;&#23558;&#19968;&#20010;&#30001;&#38190;&#25351;&#23450;&#30340;&#25968;&#25454;&#39033;&#23384;&#25918;&#21040;&#32531;&#23384;&#20013;&#12290;</li>
+<li><a href="./yii-caching-cache.html#add()-detail">add()</a>&#65306;&#22914;&#26524;&#32531;&#23384;&#20013;&#26410;&#25214;&#21040;&#35813;&#38190;&#65292;&#21017;&#23558;&#25351;&#23450;&#25968;&#25454;&#23384;&#25918;&#21040;&#32531;&#23384;&#20013;&#12290;</li>
+<li><a href="./yii-caching-cache.html#getOrSet()-detail">getOrSet()</a>&#65306;&#36820;&#22238;&#30001;&#38190;&#25351;&#23450;&#30340;&#32531;&#23384;&#39033;&#65292;&#25110;&#32773;&#25191;&#34892;&#22238;&#35843;&#20989;&#25968;&#65292;&#25226;&#20989;&#25968;&#30340;&#36820;&#22238;&#20540;&#29992;&#38190;&#26469;&#20851;&#32852;&#23384;&#20648;&#21040;&#32531;&#23384;&#20013;&#65292;
+&#26368;&#21518;&#36820;&#22238;&#36825;&#20010;&#20989;&#25968;&#30340;&#36820;&#22238;&#20540;&#12290;  </li>
+<li><a href="./yii-caching-cache.html#multiGet()-detail">multiGet()</a>&#65306;&#30001;&#25351;&#23450;&#30340;&#38190;&#33719;&#21462;&#22810;&#20010;&#32531;&#23384;&#25968;&#25454;&#39033;&#12290;</li>
+<li><a href="./yii-caching-cache.html#multiSet()-detail">multiSet()</a>&#65306;&#19968;&#27425;&#23384;&#20648;&#22810;&#20010;&#25968;&#25454;&#39033;&#21040;&#32531;&#23384;&#20013;&#65292;&#27599;&#20010;&#25968;&#25454;&#37117;&#30001;&#19968;&#20010;&#38190;&#26469;&#25351;&#26126;&#12290;</li>
+<li><a href="./yii-caching-cache.html#multiAdd()-detail">multiAdd()</a>&#65306;&#19968;&#27425;&#23384;&#20648;&#22810;&#20010;&#25968;&#25454;&#39033;&#21040;&#32531;&#23384;&#20013;&#65292;&#27599;&#20010;&#25968;&#25454;&#37117;&#30001;&#19968;&#20010;&#38190;&#26469;&#25351;&#26126;&#12290;
+&#22914;&#26524;&#26576;&#20010;&#38190;&#24050;&#32463;&#23384;&#22312;&#65292;&#21017;&#30053;&#36807;&#35813;&#25968;&#25454;&#39033;&#19981;&#32531;&#23384;&#12290;</li>
+<li><a href="./yii-caching-cache.html#exists()-detail">exists()</a>&#65306;&#36820;&#22238;&#19968;&#20010;&#20540;&#65292;&#25351;&#26126;&#26576;&#20010;&#38190;&#26159;&#21542;&#23384;&#22312;&#20110;&#32531;&#23384;&#20013;&#12290;</li>
+<li><a href="./yii-caching-cache.html#delete()-detail">delete()</a>&#65306;&#36890;&#36807;&#19968;&#20010;&#38190;&#65292;&#21024;&#38500;&#32531;&#23384;&#20013;&#23545;&#24212;&#30340;&#20540;&#12290;</li>
+<li><a href="./yii-caching-cache.html#flush()-detail">flush()</a>&#65306;&#21024;&#38500;&#32531;&#23384;&#20013;&#30340;&#25152;&#26377;&#25968;&#25454;&#12290;</li>
+</ul>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#21315;&#19975;&#21035;&#30452;&#25509;&#29992; <code>false</code> &#24067;&#23572;&#20540;&#24403;&#20570;&#25968;&#25454;&#39033;&#32531;&#23384;&#65292;&#22240;&#20026; <a href="./yii-caching-cache.html#get()-detail">get()</a> &#26041;&#27861;&#29992;
+<code>false</code> &#20316;&#20026;&#36820;&#22238;&#20540;&#26469;&#34920;&#21517;&#23545;&#24212;&#30340;&#32531;&#23384;&#39033;&#19981;&#23384;&#22312;&#12290;
+&#20320;&#21487;&#20197;&#25226; <code>false</code> &#25918;&#21040;&#19968;&#20010;&#25968;&#32452;&#37324;&#28982;&#21518;&#32531;&#23384;&#36825;&#20010;&#25968;&#32452;&#26469;&#36991;&#20813;&#19978;&#36848;&#30340;&#28151;&#28102;&#38382;&#39064;&#12290; </p>
+</blockquote>
+<p>&#26377;&#20123;&#32531;&#23384;&#23384;&#20648;&#22120;&#22914; MemCache&#65292;APC &#25903;&#25345;&#20197;&#25209;&#37327;&#27169;&#24335;&#21462;&#22238;&#32531;&#23384;&#20540;&#65292;&#36825;&#26679;&#21487;&#20197;&#33410;&#30465;&#21462;&#22238;&#32531;&#23384;&#25968;&#25454;&#30340;&#24320;&#25903;&#12290; 
+<a href="./yii-caching-cache.html#multiGet()-detail">multiGet()</a>
+&#21644; <a href="./yii-caching-cache.html#multiAdd()-detail">multiAdd()</a> API&#25552;&#20379;&#23545;&#35813;&#29305;&#24615;&#30340;&#25903;&#25345;&#12290;
+&#22914;&#26524;&#24213;&#23618;&#32531;&#23384;&#23384;&#20648;&#22120;&#19981;&#25903;&#25345;&#35813;&#29305;&#24615;&#65292;Yii &#20063;&#20250;&#27169;&#25311;&#23454;&#29616;&#12290;</p>
+<p>&#30001;&#20110; <a href="./yii-caching-cache.html">yii\caching\Cache</a> &#23454;&#29616;&#20102; PHP <code>ArrayAccess</code> &#25509;&#21475;&#65292;
+&#32531;&#23384;&#32452;&#20214;&#20063;&#21487;&#20197;&#20687;&#25968;&#32452;&#37027;&#26679;&#20351;&#29992;&#65292;&#19979;&#38754;&#26159;&#20960;&#20010;&#20363;&#23376;&#65306;</p>
+<pre><code class="hljs php language-php">$cache[<span class="hljs-string">'var1'</span>] = $value1;  <span class="hljs-comment">// &#31561;&#20215;&#20110;&#65306; $cache-&gt;set('var1', $value1);</span>
+$value2 = $cache[<span class="hljs-string">'var2'</span>];  <span class="hljs-comment">// &#31561;&#20215;&#20110;&#65306; $value2 = $cache-&gt;get('var2');</span>
+</code></pre>
+<h3>&#32531;&#23384;&#38190;  <span id="cache-keys"></span><a href="#cache-keys" class="hashlink">&para;</a></h3><p>&#23384;&#20648;&#22312;&#32531;&#23384;&#20013;&#30340;&#27599;&#39033;&#25968;&#25454;&#37117;&#36890;&#36807;&#38190;&#20316;&#21807;&#19968;&#35782;&#21035;&#12290;
+&#24403;&#20320;&#22312;&#32531;&#23384;&#20013;&#23384;&#20648;&#19968;&#39033;&#25968;&#25454;&#26102;&#65292;&#24517;&#39035;&#20026;&#23427;&#25351;&#23450;&#19968;&#20010;&#38190;&#65292;
+&#31245;&#21518;&#20174;&#32531;&#23384;&#20013;&#21462;&#22238;&#25968;&#25454;&#26102;&#65292;&#20063;&#38656;&#35201;&#25552;&#20379;&#30456;&#24212;&#30340;&#38190;&#12290;</p>
+<p>&#20320;&#21487;&#20197;&#20351;&#29992;&#19968;&#20010;&#23383;&#31526;&#20018;&#25110;&#32773;&#20219;&#24847;&#20540;&#20316;&#20026;&#19968;&#20010;&#32531;&#23384;&#38190;&#12290;&#24403;&#38190;&#19981;&#26159;&#19968;&#20010;&#23383;&#31526;&#20018;&#26102;&#65292;
+&#23427;&#23558;&#20250;&#33258;&#21160;&#34987;&#24207;&#21015;&#21270;&#20026;&#19968;&#20010;&#23383;&#31526;&#20018;&#12290;</p>
+<p>&#23450;&#20041;&#19968;&#20010;&#32531;&#23384;&#38190;&#24120;&#35265;&#30340;&#19968;&#20010;&#31574;&#30053;&#23601;&#26159;&#22312;&#19968;&#20010;&#25968;&#32452;&#20013;&#21253;&#21547;&#25152;&#26377;&#30340;&#20915;&#23450;&#24615;&#22240;&#32032;&#12290;
+&#20363;&#22914;&#65292;<a href="./yii-db-schema.html">yii\db\Schema</a> &#20351;&#29992;&#22914;&#19979;&#38190;&#23384;&#20648;&#19968;&#20010;&#25968;&#25454;&#34920;&#30340;&#32467;&#26500;&#20449;&#24687;&#12290;</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-keyword">__CLASS__</span>,              <span class="hljs-comment">// &#32467;&#26500;&#31867;&#21517;</span>
+    <span class="hljs-keyword">$this</span>-&gt;db-&gt;dsn,         <span class="hljs-comment">// &#25968;&#25454;&#28304;&#21517;&#31216;</span>
+    <span class="hljs-keyword">$this</span>-&gt;db-&gt;username,    <span class="hljs-comment">// &#25968;&#25454;&#24211;&#30331;&#24405;&#29992;&#25143;&#21517;</span>
+    $name,                  <span class="hljs-comment">// &#34920;&#21517;</span>
+];
+</code></pre>
+<p>&#22914;&#20320;&#25152;&#35265;&#65292;&#35813;&#38190;&#21253;&#21547;&#20102;&#21487;&#21807;&#19968;&#25351;&#23450;&#19968;&#20010;&#25968;&#25454;&#24211;&#34920;&#25152;&#38656;&#30340;&#25152;&#26377;&#24517;&#35201;&#20449;&#24687;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#36890;&#36807; <a href="./yii-caching-cache.html#multiSet()-detail">multiSet()</a> &#25110;&#32773; <a href="./yii-caching-cache.html#multiAdd()-detail">multiAdd()</a> &#26041;&#27861;&#32531;&#23384;&#30340;&#25968;&#25454;&#39033;&#30340;&#38190;&#65292;&#23427;&#30340;&#31867;&#22411;&#21482;&#33021;&#26159;&#23383;&#31526;&#20018;&#25110;&#25972;&#22411;&#65292;
+&#22914;&#26524;&#20320;&#24819;&#20351;&#29992;&#36739;&#20026;&#22797;&#26434;&#30340;&#38190;&#65292;&#21487;&#20197;&#36890;&#36807;
+<a href="./yii-caching-cache.html#set()-detail">set()</a> &#25110;&#32773; <a href="./yii-caching-cache.html#add()-detail">add()</a> &#26041;&#27861;&#26469;&#23384;&#20648;&#12290;</p>
+</blockquote>
+<p>&#24403;&#21516;&#19968;&#20010;&#32531;&#23384;&#23384;&#20648;&#22120;&#34987;&#29992;&#20110;&#22810;&#20010;&#19981;&#21516;&#30340;&#24212;&#29992;&#26102;&#65292;&#24212;&#35813;&#20026;&#27599;&#20010;&#24212;&#29992;&#25351;&#23450;&#19968;&#20010;&#21807;&#19968;&#30340;&#32531;&#23384;&#38190;&#21069;&#32512;&#20197;&#36991;&#20813;&#32531;&#23384;&#38190;&#20914;&#31361;&#12290;
+&#21487;&#20197;&#36890;&#36807;&#37197;&#32622; <a href="./yii-caching-cache.html#%24keyPrefix-detail">yii\caching\Cache::$keyPrefix</a> &#23646;&#24615;&#23454;&#29616;&#12290;
+&#20363;&#22914;&#65292;&#22312;&#24212;&#29992;&#37197;&#32622;&#20013;&#21487;&#20197;&#32534;&#20889;&#22914;&#19979;&#20195;&#30721;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-string">'cache'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\ApcCache'</span>,
+        <span class="hljs-string">'keyPrefix'</span> =&gt; <span class="hljs-string">'myapp'</span>,       <span class="hljs-comment">// &#21807;&#19968;&#38190;&#21069;&#32512;</span>
+    ],
+],
+</code></pre>
+<p>&#20026;&#20102;&#30830;&#20445;&#20114;&#36890;&#24615;&#65292;&#27492;&#22788;&#21482;&#33021;&#20351;&#29992;&#23383;&#27597;&#21644;&#25968;&#23383;&#12290;</p>
+<h3>&#32531;&#23384;&#36807;&#26399;  <span id="cache-expiration"></span><a href="#cache-expiration" class="hashlink">&para;</a></h3><p>&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#32531;&#23384;&#20013;&#30340;&#25968;&#25454;&#20250;&#27704;&#20037;&#23384;&#30041;&#65292;&#38500;&#38750;&#23427;&#34987;&#26576;&#20123;&#32531;&#23384;&#31574;&#30053;&#24378;&#21046;&#31227;&#38500;&#65288;&#20363;&#22914;&#65306;&#32531;&#23384;&#31354;&#38388;&#24050;&#28385;&#65292;&#26368;&#32769;&#30340;&#25968;&#25454;&#20250;&#34987;&#31227;&#38500;&#65289;&#12290;
+&#35201;&#25913;&#21464;&#27492;&#29305;&#24615;&#65292;&#20320;&#21487;&#20197;&#22312;&#35843;&#29992; <a href="./yii-caching-cache.html#set()-detail">set()</a> &#23384;&#20648;&#19968;&#39033;&#25968;&#25454;&#26102;&#25552;&#20379;&#19968;&#20010;&#36807;&#26399;&#26102;&#38388;&#21442;&#25968;&#12290;
+&#35813;&#21442;&#25968;&#20195;&#34920;&#36825;&#39033;&#25968;&#25454;&#22312;&#32531;&#23384;&#20013;&#21487;&#20445;&#25345;&#26377;&#25928;&#22810;&#23569;&#31186;&#12290;
+&#24403;&#20320;&#35843;&#29992; <a href="./yii-caching-cache.html#get()-detail">get()</a> &#21462;&#22238;&#25968;&#25454;&#26102;&#65292;
+&#22914;&#26524;&#23427;&#24050;&#32463;&#36807;&#20102;&#36229;&#26102;&#26102;&#38388;&#65292;&#35813;&#26041;&#27861;&#23558;&#36820;&#22238; false&#65292;&#34920;&#26126;&#22312;&#32531;&#23384;&#20013;&#25214;&#19981;&#21040;&#36825;&#39033;&#25968;&#25454;&#12290;
+&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#23558;&#25968;&#25454;&#22312;&#32531;&#23384;&#20013;&#20445;&#30041; 45 &#31186;</span>
+$cache-&gt;set($key, $data, <span class="hljs-number">45</span>);
+
+sleep(<span class="hljs-number">50</span>);
+
+$data = $cache-&gt;get($key);
+<span class="hljs-keyword">if</span> ($data === <span class="hljs-keyword">false</span>) {
+    <span class="hljs-comment">// $data &#24050;&#36807;&#26399;&#65292;&#25110;&#32773;&#22312;&#32531;&#23384;&#20013;&#25214;&#19981;&#21040;</span>
+}
+</code></pre>
+<p>&#20174; 2.0.11 &#24320;&#22987;&#65292;&#22914;&#26524;&#24819;&#33258;&#23450;&#20041;&#32531;&#23384;&#30340;&#25345;&#32493;&#26102;&#38388;&#65292;&#20320;&#21487;&#20197;&#22312;&#32531;&#23384;&#32452;&#20214;&#37197;&#32622;&#20013;&#35774;&#32622; <a href="./yii-caching-cache.html#%24defaultDuration-detail">defaultDuration</a> &#25104;&#21592;&#23646;&#24615;&#30340;&#20540;&#12290;
+&#36825;&#26679;&#35774;&#32622;&#20250;&#35206;&#30422;&#40664;&#35748;&#30340;&#32531;&#23384;&#25345;&#32493;&#26102;&#38388;&#65292;&#19988;&#22312;&#20351;&#29992; <a href="./yii-caching-cache.html#set()-detail">set()</a> 
+&#26041;&#27861;&#26102;&#19981;&#24517;&#27599;&#27425;&#37117;&#20256;&#36882; <code>$duration</code> &#21442;&#25968;&#12290;</p>
+<h3>&#32531;&#23384;&#20381;&#36182;  <span id="cache-dependencies"></span><a href="#cache-dependencies" class="hashlink">&para;</a></h3><p>&#38500;&#20102;&#36229;&#26102;&#35774;&#32622;&#65292;&#32531;&#23384;&#25968;&#25454;&#36824;&#21487;&#33021;&#21463;&#21040;<strong>&#32531;&#23384;&#20381;&#36182;</strong>&#30340;&#24433;&#21709;&#32780;&#22833;&#25928;&#12290;
+&#20363;&#22914;&#65292;<a href="./yii-caching-filedependency.html">yii\caching\FileDependency</a> &#20195;&#34920;&#23545;&#19968;&#20010;&#25991;&#20214;&#20462;&#25913;&#26102;&#38388;&#30340;&#20381;&#36182;&#12290;
+&#36825;&#20010;&#20381;&#36182;&#26465;&#20214;&#21457;&#29983;&#21464;&#21270;&#20063;&#23601;&#24847;&#21619;&#30528;&#30456;&#24212;&#30340;&#25991;&#20214;&#24050;&#32463;&#34987;&#20462;&#25913;&#12290;
+&#22240;&#27492;&#65292;&#32531;&#23384;&#20013;&#20219;&#20309;&#36807;&#26399;&#30340;&#25991;&#20214;&#20869;&#23481;&#37117;&#24212;&#35813;&#34987;&#32622;&#20026;&#22833;&#25928;&#29366;&#24577;&#65292;
+&#23545; <a href="./yii-caching-cache.html#get()-detail">get()</a> &#30340;&#35843;&#29992;&#37117;&#24212;&#35813;&#36820;&#22238; false&#12290;</p>
+<p>&#32531;&#23384;&#20381;&#36182;&#29992; <a href="./yii-caching-dependency.html">yii\caching\Dependency</a> &#30340;&#27966;&#29983;&#31867;&#25152;&#34920;&#31034;&#12290;
+&#24403;&#35843;&#29992; <a href="./yii-caching-cache.html#set()-detail">set()</a> &#22312;&#32531;&#23384;&#20013;&#23384;&#20648;&#19968;&#39033;&#25968;&#25454;&#26102;&#65292;
+&#21487;&#20197;&#21516;&#26102;&#20256;&#36882;&#19968;&#20010;&#20851;&#32852;&#30340;&#32531;&#23384;&#20381;&#36182;&#23545;&#35937;&#12290;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#21019;&#24314;&#19968;&#20010;&#23545; example.txt &#25991;&#20214;&#20462;&#25913;&#26102;&#38388;&#30340;&#32531;&#23384;&#20381;&#36182;</span>
+$dependency = <span class="hljs-keyword">new</span> \yii\caching\FileDependency([<span class="hljs-string">'fileName'</span> =&gt; <span class="hljs-string">'example.txt'</span>]);
+
+<span class="hljs-comment">// &#32531;&#23384;&#25968;&#25454;&#23558;&#22312;30&#31186;&#21518;&#36229;&#26102;</span>
+<span class="hljs-comment">// &#22914;&#26524; example.txt &#34987;&#20462;&#25913;&#65292;&#23427;&#20063;&#21487;&#33021;&#34987;&#26356;&#26089;&#22320;&#32622;&#20026;&#22833;&#25928;&#29366;&#24577;&#12290;</span>
+$cache-&gt;set($key, $data, <span class="hljs-number">30</span>, $dependency);
+
+<span class="hljs-comment">// &#32531;&#23384;&#20250;&#26816;&#26597;&#25968;&#25454;&#26159;&#21542;&#24050;&#36229;&#26102;&#12290;</span>
+<span class="hljs-comment">// &#23427;&#36824;&#20250;&#26816;&#26597;&#20851;&#32852;&#30340;&#20381;&#36182;&#26159;&#21542;&#24050;&#21464;&#21270;&#12290;</span>
+<span class="hljs-comment">// &#31526;&#21512;&#20219;&#20309;&#19968;&#20010;&#26465;&#20214;&#26102;&#37117;&#20250;&#36820;&#22238; false&#12290;</span>
+$data = $cache-&gt;get($key);
+</code></pre>
+<p>&#19979;&#38754;&#26159;&#21487;&#29992;&#30340;&#32531;&#23384;&#20381;&#36182;&#30340;&#27010;&#20917;&#65306;</p>
+<ul>
+<li><a href="./yii-caching-chaineddependency.html">yii\caching\ChainedDependency</a>&#65306;&#22914;&#26524;&#20381;&#36182;&#38142;&#19978;&#20219;&#20309;&#19968;&#20010;&#20381;&#36182;&#20135;&#29983;&#21464;&#21270;&#65292;&#21017;&#20381;&#36182;&#25913;&#21464;&#12290;</li>
+<li><a href="./yii-caching-dbdependency.html">yii\caching\DbDependency</a>&#65306;&#22914;&#26524;&#25351;&#23450; SQL &#35821;&#21477;&#30340;&#26597;&#35810;&#32467;&#26524;&#21457;&#29983;&#20102;&#21464;&#21270;&#65292;&#21017;&#20381;&#36182;&#25913;&#21464;&#12290;</li>
+<li><a href="./yii-caching-expressiondependency.html">yii\caching\ExpressionDependency</a>&#65306;&#22914;&#26524;&#25351;&#23450;&#30340; PHP &#34920;&#36798;&#24335;&#25191;&#34892;&#32467;&#26524;&#21457;&#29983;&#21464;&#21270;&#65292;&#21017;&#20381;&#36182;&#25913;&#21464;&#12290;</li>
+<li><a href="./yii-caching-filedependency.html">yii\caching\FileDependency</a>&#65306;&#22914;&#26524;&#25991;&#20214;&#30340;&#26368;&#21518;&#20462;&#25913;&#26102;&#38388;&#21457;&#29983;&#21464;&#21270;&#65292;&#21017;&#20381;&#36182;&#25913;&#21464;&#12290;</li>
+<li><a href="./yii-caching-tagdependency.html">yii\caching\TagDependency</a>&#65306;&#23558;&#32531;&#23384;&#30340;&#25968;&#25454;&#39033;&#19982;&#19968;&#20010;&#25110;&#22810;&#20010;&#26631;&#31614;&#30456;&#20851;&#32852;&#12290; &#24744;&#21487;&#20197;&#36890;&#36807;&#35843;&#29992;
+ &nbsp;<a href="./yii-caching-tagdependency.html#invalidate()-detail">yii\caching\TagDependency::invalidate()</a> &#26469;&#26816;&#26597;&#25351;&#23450;&#26631;&#31614;&#30340;&#32531;&#23384;&#25968;&#25454;&#39033;&#26159;&#21542;&#26377;&#25928;&#12290;</li>
+</ul>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#36991;&#20813;&#23545;&#24102;&#26377;&#32531;&#23384;&#20381;&#36182;&#30340;&#32531;&#23384;&#39033;&#20351;&#29992; <a href="./yii-caching-cache.html#exists()-detail">exists()</a> &#26041;&#27861;&#65292;
+&#22240;&#20026;&#23427;&#19981;&#26816;&#27979;&#32531;&#23384;&#20381;&#36182;&#65288;&#22914;&#26524;&#26377;&#30340;&#35805;&#65289;&#26159;&#21542;&#26377;&#25928;&#65292;&#25152;&#20197;&#35843;&#29992; <a href="./yii-caching-cache.html#get()-detail">get()</a>
+&#21487;&#33021;&#36820;&#22238; <code>false</code> &#32780;&#35843;&#29992; <a href="./yii-caching-cache.html#exists()-detail">exists()</a> &#21364;&#36820;&#22238; <code>true</code>&#12290;</p>
+</blockquote>
+<h2>&#26597;&#35810;&#32531;&#23384;  <span id="query-caching"></span><a href="#query-caching" class="hashlink">&para;</a></h2><p>&#26597;&#35810;&#32531;&#23384;&#26159;&#19968;&#20010;&#24314;&#31435;&#22312;&#25968;&#25454;&#32531;&#23384;&#20043;&#19978;&#30340;&#29305;&#27530;&#32531;&#23384;&#29305;&#24615;&#12290;
+&#23427;&#29992;&#20110;&#32531;&#23384;&#25968;&#25454;&#24211;&#26597;&#35810;&#30340;&#32467;&#26524;&#12290;</p>
+<p>&#26597;&#35810;&#32531;&#23384;&#38656;&#35201;&#19968;&#20010; <a href="./yii-db-connection.html">&#25968;&#25454;&#24211;&#36830;&#25509;</a> &#21644;&#19968;&#20010;&#26377;&#25928;&#30340; <code>cache</code> &#24212;&#29992;&#32452;&#20214;&#12290;
+&#26597;&#35810;&#32531;&#23384;&#30340;&#22522;&#26412;&#29992;&#27861;&#22914;&#19979;&#65292;&#20551;&#35774; <code>$db</code> &#26159;&#19968;&#20010; <a href="./yii-db-connection.html">yii\db\Connection</a> &#23454;&#20363;&#65306;</p>
+<pre><code class="hljs php language-php">$result = $db-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($db)</span> </span>{
+
+    <span class="hljs-comment">// SQL &#26597;&#35810;&#30340;&#32467;&#26524;&#23558;&#20174;&#32531;&#23384;&#20013;&#25552;&#20379;</span>
+    <span class="hljs-comment">// &#22914;&#26524;&#21551;&#29992;&#26597;&#35810;&#32531;&#23384;&#24182;&#19988;&#22312;&#32531;&#23384;&#20013;&#25214;&#21040;&#26597;&#35810;&#32467;&#26524;</span>
+    <span class="hljs-keyword">return</span> $db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM customer WHERE id=1'</span>)-&gt;queryOne();
+
+});
+</code></pre>
+<p>&#26597;&#35810;&#32531;&#23384;&#21487;&#20197;&#29992;&#22312;<a href="guide-db-dao.html">DAO</a>&#21644;<a href="guide-db-active-record.html">ActiveRecord</a>&#19978;:</p>
+<pre><code class="hljs php language-php">$result = Customer::getDb()-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($db)</span> </span>{
+    <span class="hljs-keyword">return</span> Customer::find()-&gt;where([<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>])-&gt;one();
+});
+</code></pre>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#26377;&#20123; DBMS &#65288;&#20363;&#22914;&#65306;<a href="https://dev.mysql.com/doc/refman/5.6/en/query-cache.html">MySQL</a>&#65289;
+&#20063;&#25903;&#25345;&#25968;&#25454;&#24211;&#26381;&#21153;&#22120;&#31471;&#30340;&#26597;&#35810;&#32531;&#23384;&#12290;
+&#20320;&#21487;&#20197;&#36873;&#25321;&#20351;&#29992;&#20219;&#19968;&#26597;&#35810;&#32531;&#23384;&#26426;&#21046;&#12290;
+&#19978;&#25991;&#25152;&#36848;&#30340;&#26597;&#35810;&#32531;&#23384;&#30340;&#22909;&#22788;&#22312;&#20110;&#20320;&#21487;&#20197;&#25351;&#23450;&#26356;&#28789;&#27963;&#30340;&#32531;&#23384;&#20381;&#36182;&#22240;&#27492;&#21487;&#33021;&#26356;&#21152;&#39640;&#25928;&#12290;</p>
+</blockquote>
+<p>&#33258; 2.0.14 &#20197;&#21518;&#65292;&#24744;&#21487;&#20197;&#20351;&#29992;&#20197;&#19979;&#24555;&#25463;&#26041;&#27861;&#65306;</p>
+<pre><code class="hljs php language-php">(<span class="hljs-keyword">new</span> Query())-&gt;cache(<span class="hljs-number">7200</span>)-&gt;all();
+<span class="hljs-comment">// and</span>
+User::find()-&gt;cache(<span class="hljs-number">7200</span>)-&gt;all();
+</code></pre>
+<h3>&#37197;&#32622;  <span id="query-caching-configs"></span><a href="#query-caching-configs" class="hashlink">&para;</a></h3><p>&#26597;&#35810;&#32531;&#23384;&#36890;&#36807; <a href="./yii-db-connection.html">yii\db\Connection</a> &#26377;&#19977;&#20010;&#20840;&#23616;&#21487;&#37197;&#32622;&#36873;&#39033;&#65306;</p>
+<ul>
+<li><a href="./yii-db-connection.html#%24enableQueryCache-detail">enableQueryCache</a>&#65306;&#26159;&#21542;&#25171;&#24320;&#25110;&#20851;&#38381;&#26597;&#35810;&#32531;&#23384;&#12290;
+&#23427;&#40664;&#35748;&#20026; <code>true</code>&#12290; &#35831;&#27880;&#24847;&#65292;&#35201;&#26377;&#25928;&#25171;&#24320;&#26597;&#35810;&#32531;&#23384;&#65292;
+ &nbsp;&#24744;&#36824;&#38656;&#35201;&#26377;&#19968;&#20010;&#30001; <a href="./yii-db-connection.html#%24queryCache-detail">queryCache</a> &#25152;&#25351;&#23450;&#30340;&#26377;&#25928;&#32531;&#23384;&#12290;</li>
+<li><a href="./yii-db-connection.html#%24queryCacheDuration-detail">queryCacheDuration</a>&#65306;&#36825;&#34920;&#31034;&#26597;&#35810;&#32467;&#26524;&#22312;&#32531;&#23384;&#20013;&#20445;&#25345;&#26377;&#25928;&#30340;&#31186;&#25968;&#12290; 
+ &nbsp;&#24744;&#21487;&#20197;&#20351;&#29992; 0 &#26469;&#34920;&#31034;&#26597;&#35810;&#32467;&#26524;&#27704;&#20037;&#20445;&#30041;&#22312;&#32531;&#23384;&#20013;&#12290;
+&#35813;&#23646;&#24615;&#26159;&#22312;&#26410;&#25351;&#23450;&#25345;&#32493;&#26102;&#38388;&#30340;&#24773;&#20917;&#19979;&#35843;&#29992; <a href="./yii-db-connection.html#cache()-detail">yii\db\Connection::cache()</a>
+&#20351;&#29992;&#30340;&#40664;&#35748;&#20540;&#12290;</li>
+<li><a href="./yii-db-connection.html#%24queryCache-detail">queryCache</a>&#65306;&#32531;&#23384;&#24212;&#29992;&#32452;&#20214;&#30340; ID&#12290;&#40664;&#35748;&#20026; <code>'cache'</code>&#12290;
+&#21482;&#26377;&#22312;&#35774;&#32622;&#20102;&#19968;&#20010;&#26377;&#25928;&#30340;&#32531;&#23384;&#24212;&#29992;&#32452;&#20214;&#26102;&#65292;&#26597;&#35810;&#32531;&#23384;&#25165;&#20250;&#26377;&#25928;&#12290;</li>
+</ul>
+<h3>&#20351;&#29992;  <span id="query-caching-usages"></span><a href="#query-caching-usages" class="hashlink">&para;</a></h3><p>&#22914;&#26524;&#24744;&#26377;&#22810;&#20010;&#38656;&#35201;&#21033;&#29992;&#26597;&#35810;&#32531;&#23384;&#30340; SQL &#26597;&#35810;&#65292;&#21017;&#21487;&#20197;&#20351;&#29992; <a href="./yii-db-connection.html#cache()-detail">yii\db\Connection::cache()</a>&#12290;
+&#29992;&#27861;&#22914;&#19979;&#65292;</p>
+<pre><code class="hljs php language-php">$duration = <span class="hljs-number">60</span>;     <span class="hljs-comment">// &#32531;&#23384;&#26597;&#35810;&#32467;&#26524; 60 &#31186;&#12290;</span>
+$dependency = ...;  <span class="hljs-comment">// &#21487;&#36873;&#30340;&#20381;&#36182;&#20851;&#31995;</span>
+
+$result = $db-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($db)</span> </span>{
+
+    <span class="hljs-comment">// ... &#22312;&#36825;&#37324;&#25191;&#34892; SQL &#26597;&#35810; ...</span>
+
+    <span class="hljs-keyword">return</span> $result;
+
+}, $duration, $dependency);
+</code></pre>
+<p>&#22312;&#21311;&#21517;&#20989;&#25968;&#37324;&#30340;&#20219;&#20309;&#19968;&#20010; SQL &#26597;&#35810;&#37117;&#23558;&#20351;&#29992;&#25351;&#23450;&#30340;&#20381;&#36182;&#39033;&#32531;&#23384;&#25351;&#23450;&#30340;&#25345;&#32493;&#26102;&#38388;
+&#22914;&#26524;&#19968;&#20010; SQL &#26597;&#35810;&#30340;&#32467;&#26524;&#22312;&#32531;&#23384;&#20013;&#26377;&#25928;&#65292;&#37027;&#20040;&#36825;&#20010; SQl &#35821;&#21477;&#23558;&#20250;&#34987;&#36339;&#36807;&#32780;&#23427;&#30340;&#26597;&#35810;&#32467;&#26524;&#20250;&#30452;&#25509;&#20174;&#32531;&#23384;&#20013;&#35835;&#21462;&#12290;
+&#22914;&#26524;&#20320;&#27809;&#26377;&#25351;&#26126; <code>$duration</code> &#21442;&#25968;&#65292;
+&#37027;&#20040;&#20351;&#29992; <a href="./yii-db-connection.html#%24queryCacheDuration-detail">queryCacheDuration</a> &#23646;&#24615;&#12290;</p>
+<p>&#26377;&#26102;&#22312;<code>cache()</code>&#37324;&#65292;&#20320;&#21487;&#33021;&#19981;&#24819;&#32531;&#23384;&#26576;&#20123;&#29305;&#27530;&#30340;&#26597;&#35810;&#65292;
+&#36825;&#26102;&#20320;&#21487;&#20197;&#29992;<a href="./yii-db-connection.html#noCache()-detail">yii\db\Connection::noCache()</a>&#12290;</p>
+<pre><code class="hljs php language-php">$result = $db-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($db)</span> </span>{
+
+    <span class="hljs-comment">// &#20351;&#29992;&#26597;&#35810;&#32531;&#23384;&#30340; SQL &#26597;&#35810;</span>
+
+    $db-&gt;noCache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($db)</span> </span>{
+
+        <span class="hljs-comment">// &#19981;&#20351;&#29992;&#26597;&#35810;&#32531;&#23384;&#30340; SQL &#26597;&#35810;</span>
+
+    });
+
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">return</span> $result;
+});
+</code></pre>
+<p>&#22914;&#26524;&#24744;&#21482;&#24819;&#20026;&#21333;&#20010;&#26597;&#35810;&#20351;&#29992;&#26597;&#35810;&#32531;&#23384;&#65292;&#21017;&#21487;&#20197;&#22312;&#26500;&#24314;&#21629;&#20196;&#26102;&#35843;&#29992; <a href="./yii-db-command.html#cache()-detail">yii\db\Command::cache()</a>&#12290;
+&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#20351;&#29992;&#26597;&#35810;&#32531;&#23384;&#24182;&#23558;&#26597;&#35810;&#32531;&#23384;&#25345;&#32493;&#26102;&#38388;&#35774;&#32622;&#20026; 60 &#31186;</span>
+$customer = $db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM customer WHERE id=1'</span>)-&gt;cache(<span class="hljs-number">60</span>)-&gt;queryOne();
+</code></pre>
+<p>&#24744;&#36824;&#21487;&#20197;&#20351;&#29992; <a href="./yii-db-command.html#noCache()-detail">yii\db\Command::noCache()</a> &#31105;&#29992;&#21333;&#20010;&#21629;&#20196;&#30340;&#26597;&#35810;&#32531;&#23384;&#12290;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$result = $db-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($db)</span> </span>{
+
+    <span class="hljs-comment">// &#20351;&#29992;&#26597;&#35810;&#32531;&#23384;&#30340; SQL &#26597;&#35810;</span>
+
+ &nbsp; &nbsp;<span class="hljs-comment">// &#23545;&#27492;&#21629;&#20196;&#19981;&#20351;&#29992;&#26597;&#35810;&#32531;&#23384;</span>
+    $customer = $db-&gt;createCommand(<span class="hljs-string">'SELECT * FROM customer WHERE id=1'</span>)-&gt;noCache()-&gt;queryOne();
+
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">return</span> $result;
+});
+</code></pre>
+<h3>&#38480;&#21046;&#26465;&#20214;  <span id="query-caching-limitations"></span><a href="#query-caching-limitations" class="hashlink">&para;</a></h3><p>&#24403;&#26597;&#35810;&#32467;&#26524;&#20013;&#21547;&#26377;&#36164;&#28304;&#21477;&#26564;&#26102;&#65292;&#26597;&#35810;&#32531;&#23384;&#26080;&#27861;&#20351;&#29992;&#12290;
+&#20363;&#22914;&#65292;&#22312;&#26377;&#20123; DBMS &#20013;&#20351;&#29992;&#20102; <code>BLOB</code> &#21015;&#30340;&#26102;&#20505;&#65292;
+&#32531;&#23384;&#32467;&#26524;&#20250;&#20026;&#35813;&#25968;&#25454;&#21015;&#36820;&#22238;&#19968;&#20010;&#36164;&#28304;&#21477;&#26564;&#12290;</p>
+<p>&#26377;&#20123;&#32531;&#23384;&#23384;&#20648;&#22120;&#26377;&#22823;&#23567;&#38480;&#21046;&#12290;&#20363;&#22914;&#65292;memcache &#38480;&#21046;&#27599;&#26465;&#25968;&#25454;&#26368;&#22823;&#20026; 1MB&#12290;
+&#22240;&#27492;&#65292;&#22914;&#26524;&#26597;&#35810;&#32467;&#26524;&#30340;&#22823;&#23567;&#36229;&#20986;&#20102;&#35813;&#38480;&#21046;&#65292;
+&#21017;&#20250;&#23548;&#33268;&#32531;&#23384;&#22833;&#36133;&#12290;</p>
+<h3>&#32531;&#23384;&#20914;&#21047;  <span id="cache-flushing"></span><a href="#cache-flushing" class="hashlink">&para;</a></h3><p>&#24403;&#20320;&#24819;&#35753;&#25152;&#26377;&#30340;&#32531;&#23384;&#25968;&#25454;&#22833;&#25928;&#26102;&#65292;&#21487;&#20197;&#35843;&#29992; <a href="./yii-caching-cache.html#flush()-detail">yii\caching\Cache::flush()</a>&#12290;</p>
+<p>&#20914;&#21047;&#32531;&#23384;&#25968;&#25454;&#65292;&#20320;&#36824;&#21487;&#20197;&#20174;&#25511;&#21046;&#21488;&#35843;&#29992; <code>yii cache/flush</code>&#12290;</p>
+<ul>
+<li><code>yii cache</code>&#65306;&#21015;&#20986;&#24212;&#29992;&#20013;&#21487;&#29992;&#30340;&#32531;&#23384;&#32452;&#20214;</li>
+<li><code>yii cache/flush cache1 cache2</code>&#65306;&#21047;&#26032;&#32531;&#23384;&#32452;&#20214;<code>cache1</code>&#65292;<code>cache2</code> 
+ (&#21487;&#20197;&#20256;&#36882;&#22810;&#20010;&#29992;&#31354;&#26684;&#20998;&#24320;&#30340;&#32531;&#23384;&#32452;&#20214;&#65289;</li>
+<li><code>yii cache/flush-all</code>&#65306;&#21047;&#26032;&#24212;&#29992;&#20013;&#25152;&#26377;&#30340;&#32531;&#23384;&#32452;&#20214;</li>
+<li><code>yii cache/flush-schema db</code>&#65306;&#28165;&#38500;&#32473;&#23450;&#36830;&#25509;&#32452;&#20214;&#30340;&#25968;&#25454;&#24211;&#34920;&#32467;&#26500;&#32531;&#23384;</li>
+</ul>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#25511;&#21046;&#21488;&#24212;&#29992;&#20351;&#29992;&#29420;&#31435;&#30340;&#37197;&#32622;&#25991;&#20214;&#12290;
+&#25152;&#20197;&#65292;&#20026;&#20102;&#19978;&#36848;&#21629;&#20196;&#21457;&#25381;&#20316;&#29992;&#65292;&#35831;&#30830;&#20445; Web &#24212;&#29992;&#21644;&#25511;&#21046;&#21488;&#24212;&#29992;&#37197;&#32622;&#30456;&#21516;&#30340;&#32531;&#23384;&#32452;&#20214;&#12290;</p>
+</blockquote>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:20 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

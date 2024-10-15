@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>操作客户端脚本（Working with Client Scripts） - 显示数据（Displaying Data） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1327" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1327-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1327-collapse" class="collapse navbar-collapse"><ul id="w1328" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1329" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1311" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1311" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1312" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1312" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1313" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1313" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1314" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1314" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1315" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1315" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1316" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1316" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1317" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1317" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item active" href="#navigation-1318" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1318" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item active" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1319" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1319" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1320" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1320" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1321" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1321" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1322" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1322" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1323" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1323" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1324" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1324" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1325" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1325" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1326" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1326" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>&#23458;&#25143;&#31471;&#33050;&#26412;&#20351;&#29992; <span id="ke-hu-duan-jiao-ben-shi-yong"></span><a href="#ke-hu-duan-jiao-ben-shi-yong" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#register-scripts">&#27880;&#20876;&#33050;&#26412;</a></li>
+<li><a href="#register-css">&#27880;&#20876; CSS</a></li>
+<li><a href="#asset-bundles">&#27880;&#20876;&#36164;&#28304;&#21253;</a></li>
+<li><a href="#dynamic-js">&#29983;&#25104;&#21160;&#24577; Javascript</a></li>
+<li><a href="#yii.js">yii.js &#33050;&#26412;</a></li></ol></div>
+<p>&#29616;&#20195; Web &#24212;&#29992;&#31243;&#24207;&#65292;
+&#38500;&#20102;&#21576;&#29616;&#24182;&#21457;&#36865;&#21040;&#27983;&#35272;&#22120;&#30340;&#38745;&#24577; HTML &#39029;&#38754;&#22806;&#65292;
+&#36824;&#21253;&#21547; JavaScript&#65292;
+&#29992;&#20110;&#36890;&#36807;&#25805;&#32437;&#29616;&#26377;&#20803;&#32032;&#25110;&#36890;&#36807; AJAX &#21152;&#36733;&#26032;&#20869;&#23481;&#26469;&#20462;&#25913;&#27983;&#35272;&#22120;&#20013;&#30340;&#39029;&#38754;&#12290;
+&#26412;&#33410;&#20171;&#32461; Yii &#25552;&#20379;&#30340;&#29992;&#20110;&#21521;&#32593;&#31449;&#28155;&#21152; JavaScript &#21644; CSS &#20197;&#21450;&#21160;&#24577;&#35843;&#25972;&#23427;&#20204;&#30340;&#26041;&#27861;&#12290;</p>
+<h2>&#27880;&#20876;&#33050;&#26412;  <span id="register-scripts"></span><a href="#register-scripts" class="hashlink">&para;</a></h2><p>&#20351;&#29992; <a href="./yii-web-view.html">yii\web\View</a> &#23545;&#35937;&#26102;&#65292;&#21487;&#20197;&#21160;&#24577;&#27880;&#20876;&#21069;&#31471;&#33050;&#26412;&#12290;
+&#36825;&#37324;&#26377;&#20004;&#20010;&#19987;&#38376;&#30340;&#26041;&#27861;&#65306;</p>
+<ul>
+<li><a href="./yii-web-view.html#registerJs()-detail">registerJs()</a> &#29992;&#20110;&#20869;&#32852;&#33050;&#26412;&#12290;</li>
+<li><a href="./yii-web-view.html#registerJsFile()-detail">registerJsFile()</a> &#29992;&#20110;&#27880;&#20876;&#24341;&#20837;&#22806;&#37096;&#33050;&#26412;&#25991;&#20214;&#12290;</li>
+</ul>
+<h3>&#27880;&#20876;&#20869;&#32852;&#33050;&#26412;  <span id="inline-scripts"></span><a href="#inline-scripts" class="hashlink">&para;</a></h3><p>&#20869;&#32852;&#33050;&#26412;&#23545;&#20110;&#37197;&#32622;&#65292;&#21160;&#24577;&#29983;&#25104;&#30340;&#20195;&#30721;&#20197;&#21450;&#30001; <a href="guide-structure-widgets.html">widgets</a> &#20013;&#21253;&#21547;&#30340;&#21487;&#37325;&#29992;&#21069;&#31471;&#20195;&#30721;&#21019;&#24314;&#30340;&#23567;&#29255;&#27573;&#38750;&#24120;&#26377;&#29992;&#12290;
+<a href="./yii-web-view.html#registerJs()-detail">registerJs()</a> &#28155;&#21152;&#36825;&#20123;&#26041;&#27861;&#21487;&#20197;&#20687;&#22914;&#19979;&#20351;&#29992;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">$this</span>-&gt;registerJs(
+    <span class="hljs-string">"$('#myButton').on('click', function() { alert('Button clicked!'); });"</span>,
+    View::POS_READY,
+    <span class="hljs-string">'my-button-handler'</span>
+);
+</code></pre>
+<p>&#31532;&#19968;&#20010;&#21442;&#25968;&#26159;&#25105;&#20204;&#24819;&#25554;&#20837;&#30340;&#23454;&#38469; JS &#20195;&#30721;&#12290;
+&#23427;&#23558;&#34987;&#21253;&#21547;&#21040; <code>&lt;script&gt;</code> &#26631;&#31614;&#20013;&#12290;&#31532;&#20108;&#20010;&#21442;&#25968;&#30830;&#23450;&#33050;&#26412;&#24212;&#25554;&#20837;&#39029;&#38754;&#30340;&#20301;&#32622;&#12290;
+&#21487;&#33021;&#30340;&#20540;&#26159;&#65306;</p>
+<ul>
+<li><a href="./yii-web-view.html#POS_HEAD-detail">View::POS_HEAD</a> &#29992;&#22312; HEAD &#37096;&#20998;&#12290;</li>
+<li><a href="./yii-web-view.html#POS_BEGIN-detail">View::POS_BEGIN</a> &#29992;&#22312; <code>&lt;body&gt;</code> &#26631;&#31614;&#30340;&#21491;&#36793;&#12290;</li>
+<li><a href="./yii-web-view.html#POS_END-detail">View::POS_END</a> &#29992;&#22312; <code>&lt;/body&gt;</code> &#26631;&#31614;&#30340;&#24038;&#36793;&#12290;</li>
+<li><a href="./yii-web-view.html#POS_READY-detail">View::POS_READY</a> &#20026;&#20102;&#22312; <a href="https://learn.jquery.com/using-jquery-core/document-ready/"><code>ready</code> &#20107;&#20214;</a> &#20013;&#25191;&#34892;&#20195;&#30721;&#12290;
+&#36825;&#37324;&#23558;&#33258;&#21160;&#27880;&#20876; <a href="./yii-web-jqueryasset.html">jQuery</a> &#24182;&#23558;&#20195;&#30721;&#21253;&#35013;&#21040;&#36866;&#24403;&#30340; jQuery &#20195;&#30721;&#20013;&#12290;&#36825;&#26159;&#40664;&#35748;&#20301;&#32622;&#12290;</li>
+<li><a href="./yii-web-view.html#POS_LOAD-detail">View::POS_LOAD</a> &#20026;&#20102;&#22312; <a href="https://learn.jquery.com/using-jquery-core/document-ready/"><code>load</code> &#20107;&#20214;</a> &#20013;&#25191;&#34892;&#20195;&#30721;&#12290;
+&#19982;&#19978;&#38754;&#30456;&#21516;&#65292;&#36825;&#20063;&#23558;&#33258;&#21160;&#27880;&#20876; <a href="./yii-web-jqueryasset.html">jQuery</a>&#12290;</li>
+</ul>
+<p>&#26368;&#21518;&#19968;&#20010;&#21442;&#25968;&#26159;&#19968;&#20010;&#21807;&#19968;&#30340;&#33050;&#26412; ID&#65292;&#20027;&#35201;&#26159;&#29992;&#20110;&#26631;&#35782;&#19968;&#27573;&#20195;&#30721;&#22359;&#65292;&#22312;&#28155;&#21152;&#19968;&#27573;&#26032;&#30340;&#20195;&#30721;&#22359;&#26102;&#65292;&#22914;&#26524;&#24403;&#21069;&#39029;&#38754;&#24050;&#32463;&#23384;&#22312;&#21516;&#26679; ID &#20195;&#30721;&#22359;&#26102;&#65292;&#37027;&#20040;&#23558;&#20250;&#34987;&#26032;&#30340;&#26367;&#25442;&#12290;
+&#22914;&#26524;&#20320;&#19981;&#20256;&#36825;&#20010;&#21442;&#25968;&#65292;JS &#20195;&#30721;&#26412;&#36523;&#23558;&#20250;&#20316;&#20026; ID &#26469;&#20351;&#29992;&#12290;</p>
+<h3>&#27880;&#20876;&#33050;&#26412;&#25991;&#20214;  <span id="script-files"></span><a href="#script-files" class="hashlink">&para;</a></h3><p><a href="./yii-web-view.html#registerJsFile()-detail">registerJsFile()</a> &#30340;&#21442;&#25968;&#31867;&#20284;&#20110;
+<a href="./yii-web-view.html#registerCssFile()-detail">registerCssFile()</a>&#12290;&#22312;&#20197;&#19979;&#31034;&#20363;&#20013;&#65292;
+&#25105;&#20204;&#27880;&#20876; <code>main.js</code> &#25991;&#20214;&#65292;&#20381;&#36182;&#20110; <a href="./yii-web-jqueryasset.html">yii\web\JqueryAsset</a>&#12290;&#36825;&#24847;&#21619;&#30528; <code>main.js</code>
+&#25991;&#20214;&#23558;&#22312; <code>jquery.js</code> &#20043;&#21518;&#28155;&#21152;&#12290;&#27809;&#26377;&#36825;&#26679;&#30340;&#20381;&#36182;&#35268;&#33539;&#65292;
+<code>main.js</code> &#21644; <code>jquery.js</code> &#20043;&#38388;&#30340;&#30456;&#23545;&#39034;&#24207;&#23558;&#26159;&#26410;&#23450;&#20041;&#30340;&#65292;&#20195;&#30721;&#23558;&#19981;&#36215;&#20316;&#29992;&#12290;</p>
+<p>&#22806;&#37096;&#33050;&#26412;&#30340;&#24341;&#20837;&#20351;&#29992;&#20687;&#19979;&#38754;&#36825;&#26679;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">$this</span>-&gt;registerJsFile(
+    <span class="hljs-string">'@web/js/main.js'</span>,
+    [<span class="hljs-string">'depends'</span> =&gt; [\yii\web\JqueryAsset::class]]
+);
+</code></pre>
+<p>&#36825;&#23558;&#20026; <a href="guide-concept-aliases.html#predefined-aliases">base URL</a> &#19979;&#30340; <code>/js/main.js</code> &#33050;&#26412;&#28155;&#21152;&#19968;&#20010;&#26631;&#35760;&#12290;</p>
+<p>&#25105;&#20204;&#24378;&#28872;&#24314;&#35758;&#20351;&#29992; <a href="guide-structure-assets.html">asset bundles</a> &#26469;&#27880;&#20876;&#22806;&#37096; JS &#25991;&#20214;&#32780;&#38750;&#20351;&#29992; <a href="./yii-web-view.html#registerJsFile()-detail">registerJsFile()</a> &#26469;&#27880;&#20876;&#12290; &#22240;&#20026;&#36825;&#20123;&#20801;&#35768;&#26356;&#22909;&#30340;&#28789;&#27963;&#24615;&#21644;&#26356;&#31934;&#32454;&#30340;&#20381;&#36182;&#37197;&#32622;&#12290;
+&#27492;&#22806;&#65292;&#20351;&#29992;&#36164;&#28304;&#21253;&#20801;&#35768;&#24744;&#32452;&#21512;&#21644;&#21387;&#32553;&#22810;&#20010; JS &#25991;&#20214;&#65292;&#36825;&#23545;&#20110;&#39640;&#27969;&#37327;&#32593;&#31449;&#26469;&#35828;&#26159;&#27604;&#36739;&#29702;&#24819;&#30340;&#26041;&#24335;&#12290;</p>
+<h2>&#27880;&#20876; CSS  <span id="register-css"></span><a href="#register-css" class="hashlink">&para;</a></h2><p>&#19982; JavaScript &#31867;&#20284;&#65292;&#24744;&#21487;&#20197;&#20351;&#29992;&#27880;&#20876; CSS &#20351;&#29992;
+<a href="./yii-web-view.html#registerCss()-detail">registerCss()</a> &#25110;
+<a href="./yii-web-view.html#registerCssFile()-detail">registerCssFile()</a>&#12290;
+&#21069;&#32773;&#27880;&#20876;&#19968;&#20010; CSS &#20195;&#30721;&#22359;&#65292;&#32780;&#21518;&#32773;&#27880;&#20876;&#19968;&#20010;&#22806;&#37096; CSS &#25991;&#20214;&#12290;</p>
+<h3>&#27880;&#20876;&#20869;&#32852; CSS  <span id="inline-css"></span><a href="#inline-css" class="hashlink">&para;</a></h3><pre><code class="hljs php language-php"><span class="hljs-keyword">$this</span>-&gt;registerCss(<span class="hljs-string">"body { background: #f00; }"</span>);
+</code></pre>
+<p>&#19978;&#38754;&#30340;&#20195;&#30721;&#23558;&#23548;&#33268;&#23558;&#20197;&#19979;&#20869;&#23481;&#28155;&#21152;&#21040;&#39029;&#38754;&#30340; <code>&lt;head&gt;</code> &#37096;&#20998;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+<span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">background</span>: <span class="hljs-number">#f00</span>; }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>&#22914;&#26524;&#35201;&#25351;&#23450;&#26679;&#24335;&#26631;&#35760;&#30340;&#20854;&#20182;&#23646;&#24615;&#65292;&#35831;&#23558; name-values &#25968;&#32452;&#20256;&#36882;&#32473;&#31532;&#20108;&#20010;&#21442;&#25968;&#12290;
+&#26368;&#21518;&#19968;&#20010;&#21442;&#25968;&#26159;&#19968;&#20010;&#21807;&#19968;&#30340; ID&#65292;&#29992;&#20110;&#26631;&#35782;&#26679;&#24335;&#22359;&#65292;&#24182;&#30830;&#20445;&#20165;&#22312;&#20195;&#30721;&#20013;&#30340;&#19981;&#21516;&#20301;&#32622;&#27880;&#20876;&#30456;&#21516;&#26679;&#24335;&#26102;&#20165;&#28155;&#21152;&#19968;&#27425;&#12290;</p>
+<h3>&#27880;&#20876; CSS &#25991;&#20214;  <span id="css-files"></span><a href="#css-files" class="hashlink">&para;</a></h3><p>&#21487;&#20197;&#20351;&#29992;&#20197;&#19979;&#26041;&#27861;&#27880;&#20876; CSS &#25991;&#20214;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">$this</span>-&gt;registerCssFile(<span class="hljs-string">"@web/css/themes/black-and-white.css"</span>, [
+    <span class="hljs-string">'depends'</span> =&gt; [\yii\bootstrap\BootstrapAsset::class],
+    <span class="hljs-string">'media'</span> =&gt; <span class="hljs-string">'print'</span>,
+], <span class="hljs-string">'css-print-theme'</span>);
+</code></pre>
+<p>&#19978;&#38754;&#30340;&#20195;&#30721;&#23558;&#25226; <code>/css/themes/black-and-white.css</code> &#25991;&#20214;&#30340;&#38142;&#25509;&#28155;&#21152;&#21040;&#39029;&#38754;&#30340; <code>&lt;head&gt;</code> &#37096;&#20998;&#12290;</p>
+<ul>
+<li>&#31532;&#19968;&#20010;&#21442;&#25968;&#25351;&#26126;&#34987;&#27880;&#20876;&#30340; CSS &#25991;&#20214;&#12290;</li>
+<li>&#31532;&#20108;&#20010;&#21442;&#25968;&#25351;&#26126; <code>&lt;link&gt;</code> &#26631;&#31614;&#30340; HTML &#23646;&#24615;&#65292;&#36873;&#39033; <code>depends</code> &#26159;&#19987;&#38376;&#22788;&#29702;
+&#25351;&#26126; CSS &#25991;&#20214;&#20381;&#36182;&#20110;&#21738;&#20010;&#36164;&#28304;&#21253;&#12290;&#22312;&#36825;&#31181;&#24773;&#20917;&#19979;&#65292;&#20381;&#36182;&#36164;&#28304;&#21253;&#23601;&#26159;
+<a href="./yii-bootstrap-bootstrapasset.html">BootstrapAsset</a>&#12290;&#36825;&#24847;&#21619;&#30528; CSS &#25991;&#20214;&#23558;
+&#34987;&#28155;&#21152;&#22312; <a href="./yii-bootstrap-bootstrapasset.html">BootstrapAsset</a> <em>&#20043;&#21518;</em>&#12290;</li>
+<li>&#26368;&#21518;&#19968;&#20010;&#21442;&#25968;&#25351;&#26126;&#19968;&#20010; ID &#26469;&#26631;&#35782;&#36825;&#20010; CSS &#25991;&#20214;&#12290;
+&#22914;&#26524;&#21442;&#25968;&#26410;&#25552;&#20379;&#65292;&#21017;&#23558;&#20351;&#29992; CSS &#25991;&#20214;&#30340; URL&#12290;</li>
+</ul>
+<p>&#25105;&#20204;&#24378;&#28872;&#24314;&#35758;&#20351;&#29992; <a href="guide-structure-assets.html">asset bundles</a> &#26469;&#27880;&#20876;&#22806;&#37096; CSS &#25991;&#20214;&#65292;
+&#32780;&#38750;&#20351;&#29992; <a href="./yii-web-view.html#registerCssFile()-detail">registerCssFile()</a> &#26469;&#27880;&#20876;&#12290;
+&#20351;&#29992;&#36164;&#28304;&#21253;&#20801;&#35768;&#20320;&#21512;&#24182;&#24182;&#19988;&#21387;&#32553;&#22810;&#20010; CSS &#25991;&#20214;&#65292;&#23545;&#20110;&#39640;&#27969;&#37327;&#30340;&#32593;&#31449;&#26469;&#35828;&#65292;&#36825;&#26159;&#27604;&#36739;&#29702;&#24819;&#30340;&#26041;&#24335;&#12290;
+&#23427;&#36824;&#25552;&#20379;&#20102;&#26356;&#22823;&#30340;&#28789;&#27963;&#24615;&#65292;&#22240;&#20026;&#24212;&#29992;&#31243;&#24207;&#30340;&#25152;&#26377;&#36164;&#28304;&#20381;&#36182;&#24615;&#37117;&#22312;&#19968;&#20010;&#20301;&#32622;&#37197;&#32622;&#12290;</p>
+<h2>&#27880;&#20876;&#36164;&#28304;&#21253;  <span id="asset-bundles"></span><a href="#asset-bundles" class="hashlink">&para;</a></h2><p>&#22914;&#21069;&#25152;&#36848;&#65292;&#24314;&#35758;&#20351;&#29992;&#36164;&#28304;&#21253;&#32780;&#19981;&#26159;&#30452;&#25509;&#27880;&#20876; CSS &#21644; JavaScript &#25991;&#20214;&#12290;
+&#24744;&#21487;&#20197;&#33719;&#21462;&#26377;&#20851;&#22914;&#20309;&#23450;&#20041;&#36164;&#28304;&#21253;&#30340;&#35814;&#32454;&#20449;&#24687;&#22312;
+<a href="guide-structure-assets.html">"Assets" &#37096;&#20998;</a>.
+&#33267;&#20110;&#20351;&#29992;&#24050;&#23450;&#20041;&#30340;&#36164;&#28304;&#21253;&#65292;&#23427;&#38750;&#24120;&#31616;&#21333;&#65306;</p>
+<pre><code class="hljs php language-php">\frontend\assets\AppAsset::register(<span class="hljs-keyword">$this</span>);
+</code></pre>
+<p>&#22312;&#19978;&#38754;&#30340;&#20195;&#30721;&#20013;&#65292;&#22312;&#35270;&#22270;&#25991;&#20214;&#30340;&#19978;&#19979;&#25991;&#20013;&#65292;<code>AppAsset</code> &#21253;&#22312;&#24403;&#21069;&#35270;&#22270;&#19978;&#27880;&#20876;&#65288;&#30001; <code>$this</code> &#34920;&#31034;&#65289;&#12290;
+&#20174;&#23567;&#37096;&#20214;&#20013;&#27880;&#20876;&#36164;&#20135;&#21253;&#26102;&#65292;&#24744;&#23558;&#20256;&#36882;&#23567;&#37096;&#20214;&#30340;
+<a href="./yii-base-widget.html#%24view-detail">$view</a> &#26469;&#26367;&#20195;&#65288;<code>$this-&gt;view</code>&#65289;&#12290;</p>
+<h2>&#29983;&#25104;&#21160;&#24577; Javascript  <span id="dynamic-js"></span><a href="#dynamic-js" class="hashlink">&para;</a></h2><p>&#22312;&#35270;&#22270;&#25991;&#20214;&#20013;&#65292;HTML &#20195;&#30721;&#36890;&#24120;&#19981;&#30452;&#25509;&#20889;&#20986;&#65292;
+&#32780;&#26159;&#30001;&#26576;&#20123;&#20381;&#36182;&#20110;&#35270;&#22270;&#21464;&#37327;&#30340; PHP &#20195;&#30721;&#29983;&#25104;&#12290;
+&#20026;&#20102;&#20351;&#29992; Javascript &#25805;&#20316;&#29983;&#25104;&#30340; HTML&#65292;JS &#20195;&#30721;&#20063;&#24517;&#39035;&#21253;&#21547;&#21160;&#24577;&#37096;&#20998;&#65292;&#20363;&#22914; jQuery &#36873;&#25321;&#22120;&#30340; ID&#12290;</p>
+<p>&#35201;&#23558;PHP&#21464;&#37327;&#25554;&#20837; JS &#20195;&#30721;&#65292;
+&#24517;&#39035;&#27491;&#30830;&#36716;&#20041;&#23427;&#20204;&#30340;&#20540;&#12290;
+&#29305;&#21035;&#26159;&#24403; JS &#20195;&#30721;&#25554;&#20837; HTML &#32780;&#19981;&#26159;&#39547;&#30041;&#22312;&#19987;&#29992;&#30340; JS &#25991;&#20214;&#20013;&#26102;&#12290;
+&#20026;&#27492;&#65292;Yii &#25552;&#20379;&#20102; <a href="./yii-helpers-json.html">Json</a> &#21161;&#25163;&#31867;&#30340; <a href="./yii-helpers-basejson.html#htmlEncode()-detail">htmlEncode()</a> &#26041;&#27861;&#65292;&#20854;&#29992;&#27861;&#23558;&#22312;&#20197;&#19979;&#31034;&#20363;&#20013;&#26174;&#31034;&#12290;</p>
+<h3>&#27880;&#20876;&#20840;&#23616; JavaScript &#37197;&#32622;  <span id="js-configuration"></span><a href="#js-configuration" class="hashlink">&para;</a></h3><p>&#22312;&#36825;&#20010;&#20363;&#23376;&#20013;&#65292;
+&#25105;&#20204;&#20351;&#29992;&#19968;&#20010;&#25968;&#32452;&#23558;&#20840;&#23616;&#37197;&#32622;&#21442;&#25968;&#20174;&#24212;&#29992;&#31243;&#24207;&#30340; PHP &#37096;&#20998;&#20256;&#36882;&#32473; JS &#21069;&#31471;&#20195;&#30721;&#12290;</p>
+<pre><code class="hljs php language-php">$options = [
+    <span class="hljs-string">'appName'</span> =&gt; Yii::$app-&gt;name,
+    <span class="hljs-string">'baseUrl'</span> =&gt; Yii::$app-&gt;request-&gt;baseUrl,
+    <span class="hljs-string">'language'</span> =&gt; Yii::$app-&gt;language,
+    <span class="hljs-comment">// ...</span>
+];
+<span class="hljs-keyword">$this</span>-&gt;registerJs(
+    <span class="hljs-string">"var yiiOptions = "</span>.\yii\helpers\Json::htmlEncode($options).<span class="hljs-string">";"</span>,
+    View::POS_HEAD,
+    <span class="hljs-string">'yiiOptions'</span>
+);
+</code></pre>
+<p>&#19978;&#38754;&#30340;&#20195;&#30721;&#23558;&#27880;&#20876;&#19968;&#20010;&#21253;&#21547; JavaScript &#30340; <code>&lt;script&gt;</code> &#26631;&#31614;&#23450;&#20041;&#65292;
+&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs javascript language-javascript"><span class="hljs-keyword">var</span> yiiOptions = {<span class="hljs-string">"appName"</span>:<span class="hljs-string">"My Yii Application"</span>,<span class="hljs-string">"baseUrl"</span>:<span class="hljs-string">"/basic/web"</span>,<span class="hljs-string">"language"</span>:<span class="hljs-string">"en"</span>};
+</code></pre>
+<p>&#22312;&#24744;&#30340; JavaScript &#20195;&#30721;&#20013;&#65292;&#24744;&#29616;&#22312;&#21487;&#20197;&#20687; <code>yiiOptions.baseUrl</code> &#25110; <code>yiiOptions.language</code> &#19968;&#26679;&#35775;&#38382;&#23427;&#20204;&#12290;</p>
+<h3>&#20256;&#36882;&#32763;&#35793;&#30340;&#28040;&#24687;  <span id="translated-messages"></span><a href="#translated-messages" class="hashlink">&para;</a></h3><p>&#24744;&#21487;&#33021;&#20250;&#36935;&#21040; JavaScript &#38656;&#35201;&#25171;&#21360;&#28040;&#24687;&#20197;&#21709;&#24212;&#26576;&#20123;&#20107;&#20214;&#30340;&#24773;&#20917;&#12290;&#22312;&#20351;&#29992;&#22810;&#31181;&#35821;&#35328;&#30340;&#24212;&#29992;&#31243;&#24207;&#20013;&#65292;&#27492;&#23383;&#31526;&#20018;&#24517;&#39035;&#36716;&#25442;&#20026;&#24403;&#21069;&#30340;&#24212;&#29992;&#31243;&#24207;&#35821;&#35328;&#12290;
+&#23454;&#29616;&#27492;&#30446;&#30340;&#30340;&#19968;&#31181;&#26041;&#27861;&#26159;&#20351;&#29992; Yii &#25552;&#20379;&#30340;
+<a href="guide-tutorial-i18n.html#message-translation">&#28040;&#24687;&#36716;&#25442;&#21151;&#33021;</a> &#24182;&#23558;&#32467;&#26524;&#20256;&#36882;&#32473; JavaScript &#20195;&#30721;&#12290;</p>
+<pre><code class="hljs php language-php">$message = \yii\helpers\Json::htmlEncode(
+    \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Button clicked!'</span>)
+);
+<span class="hljs-keyword">$this</span>-&gt;registerJs(<span class="hljs-string">&lt;&lt;&lt;JS
+    $('#myButton').on('click', function() { alert( <span class="hljs-subst">$message</span> ); });
+JS</span>
+);
+</code></pre>
+<p>&#19978;&#38754;&#30340;&#31034;&#20363;&#20195;&#30721;&#20351;&#29992; PHP
+<a href="https://www.php.net/manual/zh/language.types.string.php#language.types.string.syntax.heredoc">Heredoc &#35821;&#27861;</a> &#20197;&#33719;&#24471;&#26356;&#22909;&#30340;&#21487;&#35835;&#24615;&#12290;
+&#36825;&#20063;&#21487;&#20197;&#22312;&#22823;&#22810;&#25968; IDE &#20013;&#23454;&#29616;&#26356;&#22909;&#30340;&#35821;&#27861;&#31361;&#20986;&#26174;&#31034;&#65292;&#22240;&#27492;&#23427;&#26159;&#32534;&#20889;&#20869;&#32852; JavaScript &#30340;&#39318;&#36873;&#26041;&#24335;&#65292;&#23545;&#20110;&#38271;&#20110;&#21333;&#34892;&#30340;&#20195;&#30721;&#23588;&#20854;&#26377;&#29992;&#12290;&#21464;&#37327; <code>$message</code> &#26159;&#22312; PHP
+&#20013;&#21019;&#24314;&#30340;&#65292;&#24863;&#35874; <a href="./yii-helpers-basejson.html#htmlEncode()-detail">Json::htmlEncode</a>
+&#23427;&#21253;&#21547;&#26377;&#25928; JS &#35821;&#27861;&#20013;&#30340;&#23383;&#31526;&#20018;&#65292;&#21487;&#20197;&#23558;&#20854;&#25554;&#20837;&#21040; JavaScript &#20195;&#30721;&#20013;&#20197;&#25918;&#32622; &#20989;&#25968;&#20013;&#30340;&#21160;&#24577;&#23383;&#31526;&#20018;&#35843;&#29992; <code>alert()</code>&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#20351;&#29992; Heredoc &#26102;&#65292;&#35831;&#27880;&#24847; JS &#20195;&#30721;&#20013;&#30340;&#21464;&#37327;&#21629;&#21517;&#65292;
+&#22240;&#20026;&#20197; <code>$</code> &#24320;&#22836;&#30340;&#21464;&#37327;&#21487;&#33021;&#20250;&#34987;&#35299;&#37322;&#20026; PHP &#21464;&#37327;&#65292;
+&#36825;&#20123;&#21464;&#37327;&#23558;&#34987;&#20854;&#20869;&#23481;&#26367;&#25442;&#12290;
+jQuery &#20989;&#25968;&#20197; <code>$(</code> &#25110; <code>$.</code> &#30340;&#24418;&#24335;&#19981;&#34987;&#35299;&#37322;&#20026; PHP &#21464;&#37327;&#65292;
+&#21487;&#20197;&#23433;&#20840;&#22320;&#20351;&#29992;&#12290;</p>
+</blockquote>
+<h2><code>yii.js</code> &#33050;&#26412;  <span id="yii.js"></span><a href="#yii.js" class="hashlink">&para;</a></h2><blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#26412;&#33410;&#23578;&#26410;&#32534;&#20889;&#12290; &#23427;&#24212;&#35813;&#21253;&#21547; <code>yii.js</code> &#25552;&#20379;&#30340;&#21151;&#33021;&#30340;&#35828;&#26126;&#65306;</p>
+<ul>
+<li>Yii JavaScript &#27169;&#22359;</li>
+<li>CSRF &#21442;&#25968;&#22788;&#29702;</li>
+<li><code>data-confirm</code> &#22788;&#29702;</li>
+<li><code>data-method</code> &#22788;&#29702;</li>
+<li>&#33050;&#26412;&#36807;&#28388;</li>
+<li>&#37325;&#23450;&#21521;&#22788;&#29702;</li>
+</ul>
+</blockquote>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:20 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

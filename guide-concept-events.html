@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>事件（Events） - 关键概念（Key Concepts） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1023" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1023-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1023-collapse" class="collapse navbar-collapse"><ul id="w1024" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1025" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1007" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1007" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1008" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1008" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1009" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1009" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1010" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1010" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item active" href="#navigation-1011" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1011" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item active" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1012" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1012" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1013" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1013" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1014" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1014" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1015" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1015" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1016" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1016" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1017" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1017" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1018" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1018" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1019" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1019" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1020" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1020" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1021" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1021" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1022" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1022" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>&#20107;&#20214;&#65288;Events&#65289; <span id="shi-jian-events"></span><a href="#shi-jian-events" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#event-handlers">&#20107;&#20214;&#22788;&#29702;&#22120;&#65288;Event Handlers&#65289;</a></li>
+<li><a href="#attaching-event-handlers">&#38468;&#21152;&#20107;&#20214;&#22788;&#29702;&#22120;&#65288;Attaching Event Handlers&#65289;</a></li>
+<li><a href="#shi-jian-chu-li-qi-shun-xu-event-handler-order">&#20107;&#20214;&#22788;&#29702;&#22120;&#39034;&#24207;&#65288;Event Handler Order&#65289;</a></li>
+<li><a href="#triggering-events">&#35302;&#21457;&#20107;&#20214;&#65288;Triggering Events&#65289;</a></li>
+<li><a href="#detaching-event-handlers">&#31227;&#38500;&#20107;&#20214;&#22788;&#29702;&#22120;&#65288;Detaching Event Handlers&#65289;</a></li>
+<li><a href="#class-level-event-handlers">&#31867;&#32423;&#21035;&#30340;&#20107;&#20214;&#22788;&#29702;&#22120;&#65288;Class-Level Event Handlers&#65289;</a></li>
+<li><a href="#interface-level-event-handlers">&#20351;&#29992;&#25509;&#21475;&#20107;&#20214;&#65288;Events using interfaces&#65289;</a></li>
+<li><a href="#global-events">&#20840;&#23616;&#20107;&#20214;&#65288;Global Events&#65289;</a></li>
+<li><a href="#wildcard-events">&#36890;&#37197;&#31526;&#20107;&#20214;&#65288;Wildcard Events&#65289;</a></li></ol></div>
+<p>&#20107;&#20214;&#21487;&#20197;&#23558;&#33258;&#23450;&#20041;&#20195;&#30721;&ldquo;&#27880;&#20837;&rdquo;&#21040;&#29616;&#26377;&#20195;&#30721;&#20013;&#30340;&#29305;&#23450;&#25191;&#34892;&#28857;&#12290;
+&#38468;&#21152;&#33258;&#23450;&#20041;&#20195;&#30721;&#21040;&#26576;&#20010;&#20107;&#20214;&#65292;&#24403;&#36825;&#20010;&#20107;&#20214;&#34987;&#35302;&#21457;&#26102;&#65292;&#36825;&#20123;&#20195;&#30721;&#23601;&#20250;&#33258;&#21160;&#25191;&#34892;&#12290;
+&#20363;&#22914;&#65292;&#37038;&#20214;&#31243;&#24207;&#23545;&#35937;&#25104;&#21151;&#21457;&#20986;&#28040;&#24687;&#26102;&#21487;&#35302;&#21457; <code>messageSent</code> &#20107;&#20214;&#12290;
+&#22914;&#24819;&#36861;&#36394;&#25104;&#21151;&#21457;&#36865;&#30340;&#28040;&#24687;&#65292;&#21487;&#20197;&#38468;&#21152;&#30456;&#24212;&#36861;&#36394;&#20195;&#30721;&#21040; <code>messageSent</code> &#20107;&#20214;&#12290;</p>
+<p>Yii &#24341;&#20837;&#20102;&#21517;&#20026; <a href="./yii-base-component.html">yii\base\Component</a> &#30340;&#22522;&#31867;&#20197;&#25903;&#25345;&#20107;&#20214;&#12290;
+&#22914;&#26524;&#19968;&#20010;&#31867;&#38656;&#35201;&#35302;&#21457;&#20107;&#20214;&#23601;&#24212;&#35813;&#32487;&#25215; <a href="./yii-base-component.html">yii\base\Component</a> &#25110;&#20854;&#23376;&#31867;&#12290;</p>
+<h2>&#20107;&#20214;&#22788;&#29702;&#22120;&#65288;Event Handlers&#65289;  <span id="event-handlers"></span><a href="#event-handlers" class="hashlink">&para;</a></h2><p>&#20107;&#20214;&#22788;&#29702;&#22120;&#26159;&#19968;&#20010;<a href="https://www.php.net/manual/zh/language.types.callable.php">PHP &#22238;&#35843;&#20989;&#25968;</a>&#65292;
+&#24403;&#23427;&#25152;&#38468;&#21152;&#21040;&#30340;&#20107;&#20214;&#34987;&#35302;&#21457;&#26102;&#23427;&#23601;&#20250;&#25191;&#34892;&#12290;&#21487;&#20197;&#20351;&#29992;&#20197;&#19979;&#22238;&#35843;&#20989;&#25968;&#20043;&#19968;&#65306;</p>
+<ul>
+<li>&#23383;&#31526;&#20018;&#24418;&#24335;&#25351;&#23450;&#30340; PHP &#20840;&#23616;&#20989;&#25968;&#65292;&#22914; <code>'trim'</code> &#65307;</li>
+<li>&#23545;&#35937;&#21517;&#21644;&#26041;&#27861;&#21517;&#25968;&#32452;&#24418;&#24335;&#25351;&#23450;&#30340;&#23545;&#35937;&#26041;&#27861;&#65292;&#22914; <code>[$object, $method]</code> &#65307;</li>
+<li>&#31867;&#21517;&#21644;&#26041;&#27861;&#21517;&#25968;&#32452;&#24418;&#24335;&#25351;&#23450;&#30340;&#38745;&#24577;&#31867;&#26041;&#27861;&#65292;&#22914; <code>[$class, $method]</code> &#65307;</li>
+<li>&#21311;&#21517;&#20989;&#25968;&#65292;&#22914; <code>function ($event) { ... }</code> &#12290;</li>
+</ul>
+<p>&#20107;&#20214;&#22788;&#29702;&#22120;&#30340;&#26684;&#24335;&#26159;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    <span class="hljs-comment">// $event &#26159; yii\base\Event &#25110;&#20854;&#23376;&#31867;&#30340;&#23545;&#35937;</span>
+}
+</code></pre>
+<p>&#36890;&#36807; <code>$event</code> &#21442;&#25968;&#65292;&#20107;&#20214;&#22788;&#29702;&#22120;&#23601;&#33719;&#24471;&#20102;&#20197;&#19979;&#26377;&#20851;&#20107;&#20214;&#30340;&#20449;&#24687;&#65306;</p>
+<ul>
+<li><a href="./yii-base-event.html#%24name-detail">event name</a>&#65306;&#20107;&#20214;&#21517;</li>
+<li><a href="./yii-base-event.html#%24sender-detail">event sender</a>&#65306;&#35843;&#29992; <code>trigger()</code> &#26041;&#27861;&#30340;&#23545;&#35937;</li>
+<li><a href="./yii-base-event.html#%24data-detail">custom data</a>&#65306;&#38468;&#21152;&#20107;&#20214;&#22788;&#29702;&#22120;&#26102;&#20256;&#20837;&#30340;&#25968;&#25454;&#65292;&#40664;&#35748;&#20026;&#31354;&#65292;&#21518;&#25991;&#35814;&#36848;</li>
+</ul>
+<h2>&#38468;&#21152;&#20107;&#20214;&#22788;&#29702;&#22120;&#65288;Attaching Event Handlers&#65289;  <span id="attaching-event-handlers"></span><a href="#attaching-event-handlers" class="hashlink">&para;</a></h2><p>&#35843;&#29992; <a href="./yii-base-component.html#on()-detail">yii\base\Component::on()</a> &#26041;&#27861;&#26469;&#38468;&#21152;&#22788;&#29702;&#22120;&#21040;&#20107;&#20214;&#19978;&#12290;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php">$foo = <span class="hljs-keyword">new</span> Foo;
+
+<span class="hljs-comment">// &#22788;&#29702;&#22120;&#26159;&#20840;&#23616;&#20989;&#25968;</span>
+$foo-&gt;on(Foo::EVENT_HELLO, <span class="hljs-string">'function_name'</span>);
+
+<span class="hljs-comment">// &#22788;&#29702;&#22120;&#26159;&#23545;&#35937;&#26041;&#27861;</span>
+$foo-&gt;on(Foo::EVENT_HELLO, [$object, <span class="hljs-string">'methodName'</span>]);
+
+<span class="hljs-comment">// &#22788;&#29702;&#22120;&#26159;&#38745;&#24577;&#31867;&#26041;&#27861;</span>
+$foo-&gt;on(Foo::EVENT_HELLO, [<span class="hljs-string">'app\components\Bar'</span>, <span class="hljs-string">'methodName'</span>]);
+
+<span class="hljs-comment">// &#22788;&#29702;&#22120;&#26159;&#21311;&#21517;&#20989;&#25968;</span>
+$foo-&gt;on(Foo::EVENT_HELLO, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    <span class="hljs-comment">//&#20107;&#20214;&#22788;&#29702;&#36923;&#36753;</span>
+});
+</code></pre>
+<p>&#20320;&#20063;&#21487;&#20197;&#36890;&#36807; <a href="guide-concept-configurations.html">&#37197;&#32622;</a> &#38468;&#21152;&#20107;&#20214;&#22788;&#29702;&#22120;&#12290; &#35831;
+&#21442;&#32771; <a href="guide-concept-configurations.html#configuration-format">&#37197;&#32622;&#30340;&#26684;&#24335;</a> &#23567;&#33410;&#20102;&#35299;&#26356;&#22810;.</p>
+<p>&#38468;&#21152;&#20107;&#20214;&#22788;&#29702;&#22120;&#26102;&#21487;&#20197;&#25552;&#20379;&#39069;&#22806;&#25968;&#25454;&#20316;&#20026; <a href="./yii-base-component.html#on()-detail">yii\base\Component::on()</a> &#26041;&#27861;&#30340;&#31532;&#19977;&#20010;&#21442;&#25968;&#12290;
+&#25968;&#25454;&#22312;&#20107;&#20214;&#34987;&#35302;&#21457;&#21644;&#22788;&#29702;&#22120;&#34987;&#35843;&#29992;&#26102;&#33021;&#34987;&#22788;&#29702;&#22120;&#20351;&#29992;&#12290;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#24403;&#20107;&#20214;&#34987;&#35302;&#21457;&#26102;&#20197;&#19979;&#20195;&#30721;&#26174;&#31034; "abc"</span>
+<span class="hljs-comment">// &#22240;&#20026; $event-&gt;data &#21253;&#25324;&#34987;&#20256;&#36882;&#21040; "on" &#26041;&#27861;&#30340;&#25968;&#25454;</span>
+$foo-&gt;on(Foo::EVENT_HELLO, <span class="hljs-string">'function_name'</span>, <span class="hljs-string">'abc'</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">function_name</span><span class="hljs-params">($event)</span> </span>{
+    <span class="hljs-keyword">echo</span> $event-&gt;data;
+}
+</code></pre>
+<h2>&#20107;&#20214;&#22788;&#29702;&#22120;&#39034;&#24207;&#65288;Event Handler Order&#65289; <span id="shi-jian-chu-li-qi-shun-xu-event-handler-order"></span><a href="#shi-jian-chu-li-qi-shun-xu-event-handler-order" class="hashlink">&para;</a></h2><p>&#21487;&#20197;&#38468;&#21152;&#19968;&#20010;&#25110;&#22810;&#20010;&#22788;&#29702;&#22120;&#21040;&#19968;&#20010;&#20107;&#20214;&#12290;&#24403;&#20107;&#20214;&#34987;&#35302;&#21457;&#65292;&#24050;&#38468;&#21152;&#30340;&#22788;&#29702;&#22120;&#23558;&#25353;&#38468;&#21152;&#27425;&#24207;&#20381;&#27425;&#35843;&#29992;&#12290;
+&#22914;&#26524;&#26576;&#20010;&#22788;&#29702;&#22120;&#38656;&#35201;&#20572;&#27490;&#20854;&#21518;&#30340;&#22788;&#29702;&#22120;&#35843;&#29992;&#65292;&#21487;&#20197;&#35774;&#32622; <code>$event</code> &#21442;&#25968;&#30340; <a href="./yii-base-event.html#%24handled-detail">yii\base\Event::$handled</a> &#23646;&#24615;&#20026;&#30495;&#65292;
+&#22914;&#19979;&#65306;</p>
+<pre><code class="hljs php language-php">$foo-&gt;on(Foo::EVENT_HELLO, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    $event-&gt;handled = <span class="hljs-keyword">true</span>;
+});
+</code></pre>
+<p>&#40664;&#35748;&#26032;&#38468;&#21152;&#30340;&#20107;&#20214;&#22788;&#29702;&#22120;&#25490;&#22312;&#24050;&#23384;&#22312;&#22788;&#29702;&#22120;&#38431;&#21015;&#30340;&#26368;&#21518;&#12290;
+&#22240;&#27492;&#65292;&#36825;&#20010;&#22788;&#29702;&#22120;&#23558;&#22312;&#20107;&#20214;&#34987;&#35302;&#21457;&#26102;&#26368;&#21518;&#19968;&#20010;&#35843;&#29992;&#12290;
+&#22312;&#22788;&#29702;&#22120;&#38431;&#21015;&#26368;&#21069;&#38754;&#25554;&#20837;&#26032;&#22788;&#29702;&#22120;&#23558;&#20351;&#35813;&#22788;&#29702;&#22120;&#26368;&#20808;&#35843;&#29992;&#65292;&#21487;&#20197;&#20256;&#36882;&#31532;&#22235;&#20010;&#21442;&#25968; <code>$append</code> &#20026;&#20551;&#24182;&#35843;&#29992; <a href="./yii-base-component.html#on()-detail">yii\base\Component::on()</a> &#26041;&#27861;&#23454;&#29616;&#65306;</p>
+<pre><code class="hljs php language-php">$foo-&gt;on(Foo::EVENT_HELLO, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    <span class="hljs-comment">// &#36825;&#20010;&#22788;&#29702;&#22120;&#23558;&#34987;&#25554;&#20837;&#21040;&#22788;&#29702;&#22120;&#38431;&#21015;&#30340;&#31532;&#19968;&#20301;...</span>
+}, $data, <span class="hljs-keyword">false</span>);
+</code></pre>
+<h2>&#35302;&#21457;&#20107;&#20214;&#65288;Triggering Events&#65289;  <span id="triggering-events"></span><a href="#triggering-events" class="hashlink">&para;</a></h2><p>&#20107;&#20214;&#36890;&#36807;&#35843;&#29992; <a href="./yii-base-component.html#trigger()-detail">yii\base\Component::trigger()</a> &#26041;&#27861;&#35302;&#21457;&#65292;&#27492;&#26041;&#27861;&#39035;&#20256;&#36882;<em>&#20107;&#20214;&#21517;</em>&#65292;
+&#36824;&#21487;&#20197;&#20256;&#36882;&#19968;&#20010;&#20107;&#20214;&#23545;&#35937;&#65292;&#29992;&#26469;&#20256;&#36882;&#21442;&#25968;&#21040;&#20107;&#20214;&#22788;&#29702;&#22120;&#12290;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Component</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span>
+</span>{
+    <span class="hljs-keyword">const</span> EVENT_HELLO = <span class="hljs-string">'hello'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;trigger(<span class="hljs-keyword">self</span>::EVENT_HELLO);
+    }
+}
+</code></pre>
+<p>&#20197;&#19978;&#20195;&#30721;&#24403;&#35843;&#29992; <code>bar()</code> &#65292;&#23427;&#23558;&#35302;&#21457;&#21517;&#20026; <code>hello</code> &#30340;&#20107;&#20214;&#12290;</p>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#25512;&#33616;&#20351;&#29992;&#31867;&#24120;&#37327;&#26469;&#34920;&#31034;&#20107;&#20214;&#21517;&#12290;&#19978;&#20363;&#20013;&#65292;&#24120;&#37327; <code>EVENT_HELLO</code> &#29992;&#26469;&#34920;&#31034; <code>hello</code> &#12290;
+  &#36825;&#26377;&#20004;&#20010;&#22909;&#22788;&#12290;&#31532;&#19968;&#65292;&#23427;&#21487;&#20197;&#38450;&#27490;&#25340;&#20889;&#38169;&#35823;&#24182;&#25903;&#25345; IDE &#30340;&#33258;&#21160;&#23436;&#25104;&#12290;
+  &#31532;&#20108;&#65292;&#21482;&#35201;&#31616;&#21333;&#26816;&#26597;&#24120;&#37327;&#22768;&#26126;&#23601;&#33021;&#20102;&#35299;&#19968;&#20010;&#31867;&#25903;&#25345;&#21738;&#20123;&#20107;&#20214;&#12290;</p>
+</blockquote>
+<p>&#26377;&#26102;&#24819;&#35201;&#22312;&#35302;&#21457;&#20107;&#20214;&#26102;&#21516;&#26102;&#20256;&#36882;&#19968;&#20123;&#39069;&#22806;&#20449;&#24687;&#21040;&#20107;&#20214;&#22788;&#29702;&#22120;&#12290;
+&#20363;&#22914;&#65292;&#37038;&#20214;&#31243;&#24207;&#35201;&#20256;&#36882;&#28040;&#24687;&#20449;&#24687;&#21040; <code>messageSent</code> &#20107;&#20214;&#30340;&#22788;&#29702;&#22120;&#20197;&#20415;&#22788;&#29702;&#22120;&#20102;&#35299;&#21738;&#20123;&#28040;&#24687;&#34987;&#21457;&#36865;&#20102;&#12290;
+&#20026;&#27492;&#65292;&#21487;&#20197;&#25552;&#20379;&#19968;&#20010;&#20107;&#20214;&#23545;&#35937;&#20316;&#20026; <a href="./yii-base-component.html#trigger()-detail">yii\base\Component::trigger()</a> &#26041;&#27861;&#30340;&#31532;&#20108;&#20010;&#21442;&#25968;&#12290;
+&#36825;&#20010;&#20107;&#20214;&#23545;&#35937;&#24517;&#39035;&#26159; <a href="./yii-base-event.html">yii\base\Event</a> &#31867;&#25110;&#20854;&#23376;&#31867;&#30340;&#23454;&#20363;&#12290;
+&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Component</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MessageEvent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span>
+</span>{
+    <span class="hljs-keyword">public</span> $message;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mailer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span>
+</span>{
+    <span class="hljs-keyword">const</span> EVENT_MESSAGE_SENT = <span class="hljs-string">'messageSent'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">send</span><span class="hljs-params">($message)</span>
+    </span>{
+        <span class="hljs-comment">// ...&#21457;&#36865; $message &#30340;&#36923;&#36753;...</span>
+
+        $event = <span class="hljs-keyword">new</span> MessageEvent;
+        $event-&gt;message = $message;
+        <span class="hljs-keyword">$this</span>-&gt;trigger(<span class="hljs-keyword">self</span>::EVENT_MESSAGE_SENT, $event);
+    }
+}
+</code></pre>
+<p>&#24403; <a href="./yii-base-component.html#trigger()-detail">yii\base\Component::trigger()</a> &#26041;&#27861;&#34987;&#35843;&#29992;&#26102;&#65292;
+&#23427;&#23558;&#35843;&#29992;&#25152;&#26377;&#38468;&#21152;&#21040;&#21629;&#21517;&#20107;&#20214;&#65288;trigger &#26041;&#27861;&#31532;&#19968;&#20010;&#21442;&#25968;&#65289;&#30340;&#20107;&#20214;&#22788;&#29702;&#22120;&#12290;</p>
+<h2>&#31227;&#38500;&#20107;&#20214;&#22788;&#29702;&#22120;&#65288;Detaching Event Handlers&#65289;  <span id="detaching-event-handlers"></span><a href="#detaching-event-handlers" class="hashlink">&para;</a></h2><p>&#20174;&#20107;&#20214;&#31227;&#38500;&#22788;&#29702;&#22120;&#65292;&#35843;&#29992; <a href="./yii-base-component.html#off()-detail">yii\base\Component::off()</a> &#26041;&#27861;&#12290;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#22788;&#29702;&#22120;&#26159;&#20840;&#23616;&#20989;&#25968;</span>
+$foo-&gt;off(Foo::EVENT_HELLO, <span class="hljs-string">'function_name'</span>);
+
+<span class="hljs-comment">// &#22788;&#29702;&#22120;&#26159;&#23545;&#35937;&#26041;&#27861;</span>
+$foo-&gt;off(Foo::EVENT_HELLO, [$object, <span class="hljs-string">'methodName'</span>]);
+
+<span class="hljs-comment">// &#22788;&#29702;&#22120;&#26159;&#38745;&#24577;&#31867;&#26041;&#27861;</span>
+$foo-&gt;off(Foo::EVENT_HELLO, [<span class="hljs-string">'app\components\Bar'</span>, <span class="hljs-string">'methodName'</span>]);
+
+<span class="hljs-comment">// &#22788;&#29702;&#22120;&#26159;&#21311;&#21517;&#20989;&#25968;</span>
+$foo-&gt;off(Foo::EVENT_HELLO, $anonymousFunction);
+</code></pre>
+<p>&#27880;&#24847;&#24403;&#21311;&#21517;&#20989;&#25968;&#38468;&#21152;&#21040;&#20107;&#20214;&#21518;&#19968;&#33324;&#19981;&#35201;&#23581;&#35797;&#31227;&#38500;&#21311;&#21517;&#20989;&#25968;&#65292;
+&#38500;&#38750;&#20320;&#22312;&#26576;&#22788;&#23384;&#20648;&#20102;&#23427;&#12290;&#20197;&#19978;&#31034;&#20363;&#20013;&#65292;
+&#20551;&#35774;&#21311;&#21517;&#20989;&#25968;&#23384;&#20648;&#20026;&#21464;&#37327; <code>$anonymousFunction</code> &#12290;</p>
+<p>&#31227;&#38500;&#20107;&#20214;&#30340;&#20840;&#37096;&#22788;&#29702;&#22120;&#65292;&#31616;&#21333;&#35843;&#29992; <a href="./yii-base-component.html#off()-detail">yii\base\Component::off()</a> &#21363;&#21487;&#65292;&#19981;&#38656;&#35201;&#31532;&#20108;&#20010;&#21442;&#25968;&#65306;</p>
+<pre><code class="hljs php language-php">$foo-&gt;off(Foo::EVENT_HELLO);
+</code></pre>
+<h2>&#31867;&#32423;&#21035;&#30340;&#20107;&#20214;&#22788;&#29702;&#22120;&#65288;Class-Level Event Handlers&#65289;  <span id="class-level-event-handlers"></span><a href="#class-level-event-handlers" class="hashlink">&para;</a></h2><p>&#20197;&#19978;&#37096;&#20998;&#65292;&#25105;&#20204;&#21465;&#36848;&#20102;&#22312;<em>&#23454;&#20363;&#32423;&#21035;</em>&#22914;&#20309;&#38468;&#21152;&#22788;&#29702;&#22120;&#21040;&#20107;&#20214;&#12290;
+&#26377;&#26102;&#24819;&#35201;&#19968;&#20010;&#31867;&#30340;<em>&#25152;&#26377;</em>&#23454;&#20363;&#32780;&#19981;&#26159;&#19968;&#20010;&#25351;&#23450;&#30340;&#23454;&#20363;&#37117;&#21709;&#24212;&#19968;&#20010;&#34987;&#35302;&#21457;&#30340;&#20107;&#20214;&#65292;
+&#24182;&#19981;&#26159;&#19968;&#20010;&#20010;&#38468;&#21152;&#20107;&#20214;&#22788;&#29702;&#22120;&#21040;&#27599;&#20010;&#23454;&#20363;&#65292;
+&#32780;&#26159;&#36890;&#36807;&#35843;&#29992;&#38745;&#24577;&#26041;&#27861; <a href="./yii-base-event.html#on()-detail">yii\base\Event::on()</a> &#22312;<em>&#31867;&#32423;&#21035;</em>&#38468;&#21152;&#22788;&#29702;&#22120;&#12290;</p>
+<p>&#20363;&#22914;&#65292;<a href="guide-db-active-record.html">&#27963;&#21160;&#35760;&#24405;</a>&#23545;&#35937;&#35201;&#22312;&#27599;&#27425;&#24448;&#25968;&#25454;&#24211;&#26032;&#22686;&#19968;&#26465;&#26032;&#35760;&#24405;&#26102;&#35302;&#21457;&#19968;&#20010; 
+<a href="./yii-db-baseactiverecord.html#EVENT_AFTER_INSERT-detail">EVENT_AFTER_INSERT</a> &#20107;&#20214;&#12290;
+&#35201;&#36861;&#36394;&#27599;&#20010;<a href="guide-db-active-record.html">&#27963;&#21160;&#35760;&#24405;</a>&#23545;&#35937;&#30340;&#26032;&#22686;&#35760;&#24405;&#23436;&#25104;&#24773;&#20917;&#65292;&#24212;&#22914;&#19979;&#20889;&#20195;&#30721;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+
+Event::on(ActiveRecord::class, ActiveRecord::EVENT_AFTER_INSERT, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    Yii::debug(get_class($event-&gt;sender) . <span class="hljs-string">' is inserted'</span>);
+});
+</code></pre>
+<p>&#27599;&#24403; <a href="./yii-db-baseactiverecord.html">ActiveRecord</a> &#25110;&#20854;&#23376;&#31867;&#30340;&#23454;&#20363;&#35302;&#21457; 
+<a href="./yii-db-baseactiverecord.html#EVENT_AFTER_INSERT-detail">EVENT_AFTER_INSERT</a> &#20107;&#20214;&#26102;&#65292;
+&#36825;&#20010;&#20107;&#20214;&#22788;&#29702;&#22120;&#37117;&#20250;&#25191;&#34892;&#12290;&#22312;&#36825;&#20010;&#22788;&#29702;&#22120;&#20013;&#65292;&#21487;&#20197;&#36890;&#36807; <code>$event-&gt;sender</code> &#33719;&#21462;&#35302;&#21457;&#20107;&#20214;&#30340;&#23545;&#35937;&#12290;</p>
+<p>&#24403;&#23545;&#35937;&#35302;&#21457;&#20107;&#20214;&#26102;&#65292;&#23427;&#39318;&#20808;&#35843;&#29992;&#23454;&#20363;&#32423;&#21035;&#30340;&#22788;&#29702;&#22120;&#65292;&#28982;&#21518;&#25165;&#20250;&#35843;&#29992;&#31867;&#32423;&#21035;&#22788;&#29702;&#22120;&#12290;</p>
+<p>&#21487;&#35843;&#29992;&#38745;&#24577;&#26041;&#27861;<a href="./yii-base-event.html#trigger()-detail">yii\base\Event::trigger()</a>&#26469;&#35302;&#21457;&#19968;&#20010;<em>&#31867;&#32423;&#21035;</em>&#20107;&#20214;&#12290;
+&#31867;&#32423;&#21035;&#20107;&#20214;&#19981;&#19982;&#29305;&#23450;&#23545;&#35937;&#30456;&#20851;&#32852;&#12290;&#22240;&#27492;&#65292;&#23427;&#21482;&#20250;&#24341;&#36215;&#31867;&#32423;&#21035;&#20107;&#20214;&#22788;&#29702;&#22120;&#30340;&#35843;&#29992;&#12290;
+&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+
+Event::on(Foo::class, Foo::EVENT_HELLO, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    var_dump($event-&gt;sender);  <span class="hljs-comment">// &#26174;&#31034; "null"</span>
+});
+
+Event::trigger(Foo::class, Foo::EVENT_HELLO);
+</code></pre>
+<p>&#27880;&#24847;&#36825;&#31181;&#24773;&#20917;&#19979; <code>$event-&gt;sender</code> &#25351;&#21521;&#35302;&#21457;&#20107;&#20214;&#30340;&#31867;&#21517;&#32780;&#19981;&#26159;&#23545;&#35937;&#23454;&#20363;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22240;&#20026;&#31867;&#32423;&#21035;&#30340;&#22788;&#29702;&#22120;&#21709;&#24212;&#31867;&#21644;&#20854;&#23376;&#31867;&#30340;&#25152;&#26377;&#23454;&#20363;&#35302;&#21457;&#30340;&#20107;&#20214;&#65292;
+  &#24517;&#39035;&#35880;&#24910;&#20351;&#29992;&#65292;&#23588;&#20854;&#26159;&#24213;&#23618;&#30340;&#22522;&#31867;&#65292;&#22914; <a href="./yii-base-object.html">yii\base\Object</a>&#12290;</p>
+</blockquote>
+<p>&#31227;&#38500;&#31867;&#32423;&#21035;&#30340;&#20107;&#20214;&#22788;&#29702;&#22120;&#21482;&#38656;&#35843;&#29992;<a href="./yii-base-event.html#off()-detail">yii\base\Event::off()</a>&#65292;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#31227;&#38500; $handler</span>
+Event::off(Foo::class, Foo::EVENT_HELLO, $handler);
+
+<span class="hljs-comment">// &#31227;&#38500; Foo::EVENT_HELLO &#20107;&#20214;&#30340;&#20840;&#37096;&#22788;&#29702;&#22120;</span>
+Event::off(Foo::class, Foo::EVENT_HELLO);
+</code></pre>
+<h2>&#20351;&#29992;&#25509;&#21475;&#20107;&#20214;&#65288;Events using interfaces&#65289;  <span id="interface-level-event-handlers"></span><a href="#interface-level-event-handlers" class="hashlink">&para;</a></h2><p>&#26377;&#26356;&#22810;&#30340;&#25277;&#35937;&#26041;&#24335;&#26469;&#22788;&#29702;&#20107;&#20214;&#12290;&#20320;&#21487;&#20197;&#20026;&#29305;&#27530;&#30340;&#20107;&#20214;&#21019;&#24314;&#19968;&#20010;&#29420;&#31435;&#30340;&#25509;&#21475;&#65292;
+&#28982;&#21518;&#22312;&#20320;&#38656;&#35201;&#30340;&#31867;&#20013;&#23454;&#29616;&#23427;&#12290;</p>
+<p>&#20363;&#22914;&#65292;&#25105;&#20204;&#21487;&#20197;&#20808;&#21019;&#24314;&#19979;&#38754;&#36825;&#20010;&#25509;&#21475;:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">interfaces</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DanceEventInterface</span>
+</span>{
+    <span class="hljs-keyword">const</span> EVENT_DANCE = <span class="hljs-string">'dance'</span>;
+}
+</code></pre>
+<p>&#28982;&#21518;&#22312;&#20004;&#20010;&#31867;&#20013;&#23454;&#29616;:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DanceEventInterface</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">meetBuddy</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"Woof!"</span>;
+        <span class="hljs-keyword">$this</span>-&gt;trigger(DanceEventInterface::EVENT_DANCE);
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Developer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DanceEventInterface</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testsPassed</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"Yay!"</span>;
+        <span class="hljs-keyword">$this</span>-&gt;trigger(DanceEventInterface::EVENT_DANCE);
+    }
+}
+</code></pre>
+<p>&#35201;&#22788;&#29702;&#30001;&#36825;&#20123;&#31867;&#35302;&#21457;&#30340; <code>EVENT_DANCE</code> &#65292;&#35843;&#29992; <a href="./yii-base-event.html#on()-detail">Event::on()</a> 
+&#24182;&#23558;&#25509;&#21475;&#31867;&#21517;&#20316;&#20026;&#31532;&#19968;&#20010;&#21442;&#25968;:</p>
+<pre><code class="hljs php language-php">Event::on(<span class="hljs-string">'app\interfaces\DanceEventInterface'</span>, DanceEventInterface::EVENT_DANCE, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    Yii::trace(get_class($event-&gt;sender) . <span class="hljs-string">' just danced'</span>); <span class="hljs-comment">// Will log that Dog or Developer danced</span>
+});
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#22312;&#36825;&#20123;&#31867;&#20013;&#35302;&#21457;&#36825;&#20010;&#20107;&#20214;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// trigger event for Dog class</span>
+Event::trigger(Dog::class, DanceEventInterface::EVENT_DANCE);
+
+<span class="hljs-comment">// trigger event for Developer class</span>
+Event::trigger(Developer::class, DanceEventInterface::EVENT_DANCE);
+</code></pre>
+<p>&#20294;&#26159;&#35831;&#27880;&#24847;, &#20320;&#19981;&#33021;&#35753;&#25152;&#26377;&#23454;&#29616;&#36825;&#20010;&#25509;&#21475;&#30340;&#31867;&#37117;&#35302;&#21457;&#20107;&#20214;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#19981;&#20250;&#29983;&#25928;&#12290;&#23454;&#29616;&#27492;&#25509;&#21475;&#30340;&#31867;&#19981;&#20250;&#35302;&#21457;&#20107;&#20214;&#12290;</span>
+Event::trigger(<span class="hljs-string">'app\interfaces\DanceEventInterface'</span>, DanceEventInterface::EVENT_DANCE);
+</code></pre>
+<p>&#35843;&#29992; <a href="./yii-base-event.html#off()-detail">Event::off()</a> &#31227;&#38500;&#20107;&#20214;&#22788;&#29702;&#22120;&#12290;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#31227;&#38500; $handler</span>
+Event::off(<span class="hljs-string">'app\interfaces\DanceEventInterface'</span>, DanceEventInterface::EVENT_DANCE, $handler);
+
+<span class="hljs-comment">// &#31227;&#38500;&#25152;&#26377; `DanceEventInterface::EVENT_DANCE` &#30340;&#22788;&#29702;&#22120;</span>
+Event::off(<span class="hljs-string">'app\interfaces\DanceEventInterface'</span>, DanceEventInterface::EVENT_DANCE);
+</code></pre>
+<h2>&#20840;&#23616;&#20107;&#20214;&#65288;Global Events&#65289;  <span id="global-events"></span><a href="#global-events" class="hashlink">&para;</a></h2><p>&#25152;&#35859;<em>&#20840;&#23616;&#20107;&#20214;</em>&#23454;&#38469;&#19978;&#26159;&#19968;&#20010;&#22522;&#20110;&#20197;&#19978;&#21465;&#36848;&#30340;&#20107;&#20214;&#26426;&#21046;&#30340;&#25103;&#27861;&#12290;&#23427;&#38656;&#35201;&#19968;&#20010;&#20840;&#23616;&#21487;&#35775;&#38382;&#30340;&#21333;&#20363;&#65292;
+&#22914;<a href="guide-structure-applications.html">&#24212;&#29992;</a>&#23454;&#20363;&#12290;</p>
+<p>&#20107;&#20214;&#35302;&#21457;&#32773;&#19981;&#35843;&#29992;&#20854;&#33258;&#36523;&#30340; <code>trigger()</code> &#26041;&#27861;&#65292;&#32780;&#26159;&#35843;&#29992;&#21333;&#20363;&#30340; <code>trigger()</code> &#26041;&#27861;&#26469;&#35302;&#21457;&#20840;&#23616;&#20107;&#20214;&#12290;
+&#31867;&#20284;&#22320;&#65292;&#20107;&#20214;&#22788;&#29702;&#22120;&#34987;&#38468;&#21152;&#21040;&#21333;&#20363;&#30340;&#20107;&#20214;&#12290;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>\<span class="hljs-title">Foo</span>;
+
+Yii::$app-&gt;on(<span class="hljs-string">'bar'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    <span class="hljs-keyword">echo</span> get_class($event-&gt;sender);  <span class="hljs-comment">// &#26174;&#31034; "app\components\Foo"</span>
+});
+
+Yii::$app-&gt;trigger(<span class="hljs-string">'bar'</span>, <span class="hljs-keyword">new</span> Event([<span class="hljs-string">'sender'</span> =&gt; <span class="hljs-keyword">new</span> Foo]));
+</code></pre>
+<p>&#20840;&#23616;&#20107;&#20214;&#30340;&#19968;&#20010;&#22909;&#22788;&#26159;&#24403;&#38468;&#21152;&#22788;&#29702;&#22120;&#21040;&#19968;&#20010;&#23545;&#35937;&#35201;&#35302;&#21457;&#30340;&#20107;&#20214;&#26102;&#65292;
+&#19981;&#38656;&#35201;&#20135;&#29983;&#35813;&#23545;&#35937;&#12290;&#30456;&#21453;&#65292;&#22788;&#29702;&#22120;&#38468;&#21152;&#21644;&#20107;&#20214;&#35302;&#21457;&#37117;&#36890;&#36807;&#21333;&#20363;
+&#65288;&#22914;&#24212;&#29992;&#23454;&#20363;&#65289;&#23436;&#25104;&#12290;</p>
+<p>&#28982;&#32780;&#65292;&#22240;&#20026;&#20840;&#23616;&#20107;&#20214;&#30340;&#21629;&#21517;&#31354;&#38388;&#30001;&#21508;&#26041;&#20849;&#20139;&#65292;&#24212;&#21512;&#29702;&#21629;&#21517;&#20840;&#23616;&#20107;&#20214;&#65292;
+&#22914;&#24341;&#20837;&#19968;&#20123;&#21629;&#21517;&#31354;&#38388;&#65288;&#20363;&#65306;"frontend.mail.sent", "backend.mail.sent"&#65289;&#12290;</p>
+<h2>&#36890;&#37197;&#31526;&#20107;&#20214;&#65288;Wildcard Events&#65289;  <span id="wildcard-events"></span><a href="#wildcard-events" class="hashlink">&para;</a></h2><p>&#33258; 2.0.14 &#20197;&#26469;&#65292;&#24744;&#21487;&#20197;&#20026;&#22810;&#20010;&#21305;&#37197;&#36890;&#37197;&#31526;&#27169;&#24335;&#30340;&#20107;&#20214;&#35774;&#32622;&#20107;&#20214;&#22788;&#29702;&#31243;&#24207;&#12290;
+&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+$foo = <span class="hljs-keyword">new</span> Foo();
+
+$foo-&gt;on(<span class="hljs-string">'foo.event.*'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+ &nbsp; &nbsp;<span class="hljs-comment">// &#35302;&#21457;&#20219;&#20309;&#20107;&#20214;&#65292;&#35813;&#21517;&#31216;&#20197; 'foo.event.' &#24320;&#22836;</span>
+ &nbsp; &nbsp;Yii::debug(<span class="hljs-string">'trigger event: '</span> . $event-&gt;name);
+});
+</code></pre>
+<p>&#36890;&#37197;&#31526;&#27169;&#24335;&#20063;&#21487;&#20197;&#29992;&#20110;&#31867;&#32423;&#21035;&#30340;&#20107;&#20214;&#12290; &#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+Event::on(<span class="hljs-string">'app\models\*'</span>, <span class="hljs-string">'before*'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+ &nbsp; &nbsp;<span class="hljs-comment">// &#35302;&#21457;&#21629;&#21517;&#31354;&#38388; 'app\models' &#20013;&#30340;&#20219;&#20309;&#31867;&#30340;&#20219;&#20309;&#20107;&#20214;&#65292;&#21517;&#31216;&#20197; 'before' &#24320;&#22836;&#12290;</span>
+ &nbsp; &nbsp;Yii::debug(<span class="hljs-string">'trigger event: '</span> . $event-&gt;name . <span class="hljs-string">' for class: '</span> . get_class($event-&gt;sender));
+});
+</code></pre>
+<p>&#36825;&#20801;&#35768;&#24744;&#20351;&#29992;&#20197;&#19979;&#20195;&#30721;&#36890;&#36807;&#21333;&#20010;&#22788;&#29702;&#31243;&#24207;&#25429;&#33719;&#25152;&#26377;&#24212;&#29992;&#31243;&#24207;&#20107;&#20214;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Event</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+Event::on(<span class="hljs-string">'*'</span>, <span class="hljs-string">'*'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+ &nbsp; &nbsp;<span class="hljs-comment">// &#35302;&#21457;&#20219;&#20309;&#31867;&#30340;&#20219;&#20309;&#20107;&#20214;</span>
+ &nbsp; &nbsp;Yii::debug(<span class="hljs-string">'trigger event: '</span> . $event-&gt;name);
+});
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#20107;&#20214;&#22788;&#29702;&#31243;&#24207;&#35774;&#32622;&#30340;&#20351;&#29992;&#36890;&#37197;&#31526;&#21487;&#33021;&#20250;&#38477;&#20302;&#24212;&#29992;&#31243;&#24207;&#30340;&#24615;&#33021;&#12290;
+  &#22914;&#26524;&#21487;&#33021;&#65292;&#26368;&#22909;&#36991;&#20813;&#12290;</p>
+</blockquote>
+<p>&#20026;&#20102;&#31227;&#38500;&#30001;&#36890;&#37197;&#31526;&#27169;&#24335;&#25351;&#23450;&#30340;&#20107;&#20214;&#22788;&#29702;&#31243;&#24207;&#65292;&#24744;&#24212;&#35813;&#22312;
+<a href="./yii-base-component.html#off()-detail">yii\base\Component::off()</a> &#25110;&nbsp;<a href="./yii-base-event.html#off()-detail">yii\base\Event::off()</a> &#35843;&#29992;&#20013;&#37325;&#22797;&#30456;&#21516;&#30340;&#27169;&#24335;&#12290;
+&#35831;&#35760;&#20303;&#65292;&#22312;&#31227;&#38500;&#20107;&#20214;&#22788;&#29702;&#31243;&#24207;&#26399;&#38388;&#20256;&#36882;&#36890;&#37197;&#31526;&#23558;&#31227;&#38500;&#20026;&#27492;&#36890;&#37197;&#31526;&#25351;&#23450;&#30340;&#22788;&#29702;&#31243;&#24207;&#65292;
+&#32780;&#20026;&#24120;&#35268;&#20107;&#20214;&#21517;&#31216;&#38468;&#21152;&#30340;&#22788;&#29702;&#31243;&#24207;&#23558;&#20445;&#30041;&#65292;&#21363;&#20351;&#23427;&#20204;&#19982;&#27169;&#24335;&#21305;&#37197;&#12290; &#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+$foo = <span class="hljs-keyword">new</span> Foo();
+
+<span class="hljs-comment">// &#38468;&#21152;&#24120;&#35268;&#22788;&#29702;</span>
+$foo-&gt;on(<span class="hljs-string">'event.hello'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'direct-handler'</span>
+});
+
+<span class="hljs-comment">// &#38468;&#21152;&#36890;&#37197;&#31526;&#22788;&#29702;&#31243;&#24207;</span>
+$foo-&gt;on(<span class="hljs-string">'*'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($event)</span> </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'wildcard-handler'</span>
+});
+
+<span class="hljs-comment">// &#20165;&#31227;&#38500;&#36890;&#37197;&#31526;&#22788;&#29702;&#31243;&#24207;&#65281;</span>
+$foo-&gt;off(<span class="hljs-string">'*'</span>);
+
+$foo-&gt;trigger(<span class="hljs-string">'event.hello'</span>); <span class="hljs-comment">// &#36755;&#20986;&#65306;'direct-handler'</span>
+</code></pre>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:20 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

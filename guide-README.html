@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w453" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w453-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w453-collapse" class="collapse navbar-collapse"><ul id="w454" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w455" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-437" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-437" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-438" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-438" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-439" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-439" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-440" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-440" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-441" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-441" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-442" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-442" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-443" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-443" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-444" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-444" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-445" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-445" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-446" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-446" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-447" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-447" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-448" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-448" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-449" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-449" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-450" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-450" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-451" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-451" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-452" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-452" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>Yii 2.0 &#26435;&#23041;&#25351;&#21335; <span id="yii-20-quan-wei-zhi-nan"></span><a href="#yii-20-quan-wei-zhi-nan" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#jie-shao-introduction">&#20171;&#32461;&#65288;Introduction&#65289;</a></li>
+<li><a href="#ru-men-getting-started">&#20837;&#38376;&#65288;Getting Started&#65289;</a></li>
+<li><a href="#ying-yong-jie-gou-application-structure">&#24212;&#29992;&#32467;&#26500;&#65288;Application Structure&#65289;</a></li>
+<li><a href="#qing-qiu-chu-li-handling-requests">&#35831;&#27714;&#22788;&#29702;&#65288;Handling Requests&#65289;</a></li>
+<li><a href="#guan-jian-gai-nian-key-concepts">&#20851;&#38190;&#27010;&#24565;&#65288;Key Concepts&#65289;</a></li>
+<li><a href="#pei-he-shu-ju-ku-gong-zuo-working-with-databases">&#37197;&#21512;&#25968;&#25454;&#24211;&#24037;&#20316;&#65288;Working with Databases&#65289;</a></li>
+<li><a href="#jie-shou-yong-hu-shu-ju-getting-data-from-users">&#25509;&#25910;&#29992;&#25143;&#25968;&#25454;&#65288;Getting Data from Users&#65289;</a></li>
+<li><a href="#xian-shi-shu-ju-displaying-data">&#26174;&#31034;&#25968;&#25454;&#65288;Displaying Data&#65289;</a></li>
+<li><a href="#an-quan-security">&#23433;&#20840;&#65288;Security&#65289;</a></li>
+<li><a href="#huan-cun-caching">&#32531;&#23384;&#65288;Caching&#65289;</a></li>
+<li><a href="#restful-web-fu-wu-restful-web-services">RESTful Web &#26381;&#21153;&#65288;RESTful Web Services&#65289;</a></li>
+<li><a href="#kai-fa-gong-ju-development-tools">&#24320;&#21457;&#24037;&#20855;&#65288;Development Tools&#65289;</a></li>
+<li><a href="#ce-shi-testing">&#27979;&#35797;&#65288;Testing&#65289;</a></li>
+<li><a href="#gao-ji-zhuan-ti-special-topics">&#39640;&#32423;&#19987;&#39064;&#65288;Special Topics&#65289;</a></li>
+<li><a href="#xiao-bu-jian-widgets">&#23567;&#37096;&#20214;&#65288;Widgets&#65289;</a></li>
+<li><a href="#zhu-shou-lei-helpers">&#21161;&#25163;&#31867;&#65288;Helpers&#65289;</a></li></ol></div>
+<p>&#26412;&#25945;&#31243;&#30340;&#21457;&#24067;&#36981;&#24490; <a href="https://www.yiiframework.com/doc/terms/">Yii &#25991;&#26723;&#20351;&#29992;&#35768;&#21487;</a>&#12290;</p>
+<p>&#29256;&#26435;&#25152;&#26377;&#12290;</p>
+<p>2014 (c) Yii Software LLC&#12290;</p>
+<h2>&#20171;&#32461;&#65288;Introduction&#65289; <span id="jie-shao-introduction"></span><a href="#jie-shao-introduction" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-intro-yii.html">&#20851;&#20110; Yii&#65288;About Yii&#65289;</a></li>
+<li><a href="guide-intro-upgrade-from-v1.html">&#20174; Yii 1.1 &#21319;&#32423;&#65288;Upgrading from Version 1.1&#65289;</a></li>
+</ul>
+<h2>&#20837;&#38376;&#65288;Getting Started&#65289; <span id="ru-men-getting-started"></span><a href="#ru-men-getting-started" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-start-prerequisites.html">&#20320;&#38656;&#35201;&#20102;&#35299;&#20160;&#20040;&#65288;What do you need to know&#65289;</a></li>
+<li><a href="guide-start-installation.html">&#23433;&#35013; Yii&#65288;Installing Yii&#65289;</a></li>
+<li><a href="guide-start-workflow.html">&#36816;&#34892;&#24212;&#29992;&#65288;Running Applications&#65289;</a></li>
+<li><a href="guide-start-hello.html">&#31532;&#19968;&#27425;&#38382;&#20505;&#65288;Saying Hello&#65289;</a></li>
+<li><a href="guide-start-forms.html">&#20351;&#29992; Forms&#65288;Working with Forms&#65289;</a></li>
+<li><a href="guide-start-databases.html">&#29609;&#36716; Databases&#65288;Working with Databases&#65289;</a></li>
+<li><a href="guide-start-gii.html">&#29992; Gii &#29983;&#25104;&#20195;&#30721;&#65288;Generating Code with Gii&#65289;</a></li>
+<li><a href="guide-start-looking-ahead.html">&#26356;&#19978;&#19968;&#23618;&#27004;&#65288;Looking Ahead&#65289;</a></li>
+</ul>
+<h2>&#24212;&#29992;&#32467;&#26500;&#65288;Application Structure&#65289; <span id="ying-yong-jie-gou-application-structure"></span><a href="#ying-yong-jie-gou-application-structure" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-structure-overview.html">&#32467;&#26500;&#27010;&#36848;&#65288;Overview&#65289;</a></li>
+<li><a href="guide-structure-entry-scripts.html">&#20837;&#21475;&#33050;&#26412;&#65288;Entry Scripts&#65289;</a></li>
+<li><a href="guide-structure-applications.html">&#24212;&#29992;&#65288;Applications&#65289;</a></li>
+<li><a href="guide-structure-application-components.html">&#24212;&#29992;&#32452;&#20214;&#65288;Application Components&#65289;</a></li>
+<li><a href="guide-structure-controllers.html">&#25511;&#21046;&#22120;&#65288;Controllers&#65289;</a></li>
+<li><a href="guide-structure-models.html">&#27169;&#22411;&#65288;Models&#65289;</a></li>
+<li><a href="guide-structure-views.html">&#35270;&#22270;&#65288;Views&#65289;</a></li>
+<li><a href="guide-structure-modules.html">&#27169;&#22359;&#65288;Modules&#65289;</a></li>
+<li><a href="guide-structure-filters.html">&#36807;&#28388;&#22120;&#65288;Filters&#65289;</a></li>
+<li><a href="guide-structure-widgets.html">&#23567;&#37096;&#20214;&#65288;Widgets&#65289;</a></li>
+<li><a href="guide-structure-assets.html">&#21069;&#31471;&#36164;&#28304;&#65288;Assets&#65289;</a></li>
+<li><a href="guide-structure-extensions.html">&#25193;&#23637;&#65288;Extensions&#65289;</a></li>
+</ul>
+<h2>&#35831;&#27714;&#22788;&#29702;&#65288;Handling Requests&#65289; <span id="qing-qiu-chu-li-handling-requests"></span><a href="#qing-qiu-chu-li-handling-requests" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-runtime-overview.html">&#36816;&#34892;&#27010;&#36848;&#65288;Overview&#65289;</a></li>
+<li><a href="guide-runtime-bootstrapping.html">&#24341;&#23548;&#65288;Bootstrapping&#65289;</a></li>
+<li><a href="guide-runtime-routing.html">&#36335;&#30001;&#24341;&#23548;&#19982;&#21019;&#24314; URL&#65288;Routing and URL Creation&#65289;</a></li>
+<li><a href="guide-runtime-requests.html">&#35831;&#27714;&#65288;Requests&#65289;</a></li>
+<li><a href="guide-runtime-responses.html">&#21709;&#24212;&#65288;Responses&#65289;</a></li>
+<li><a href="guide-runtime-sessions-cookies.html">Sessions and Cookies</a></li>
+<li><a href="guide-runtime-handling-errors.html">&#38169;&#35823;&#22788;&#29702;&#65288;Handling Errors&#65289;</a></li>
+<li><a href="guide-runtime-logging.html">&#26085;&#24535;&#65288;Logging&#65289;</a></li>
+</ul>
+<h2>&#20851;&#38190;&#27010;&#24565;&#65288;Key Concepts&#65289; <span id="guan-jian-gai-nian-key-concepts"></span><a href="#guan-jian-gai-nian-key-concepts" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-concept-components.html">&#32452;&#20214;&#65288;Components&#65289;</a></li>
+<li><a href="guide-concept-properties.html">&#23646;&#24615;&#65288;Properties&#65289;</a></li>
+<li><a href="guide-concept-events.html">&#20107;&#20214;&#65288;Events&#65289;</a></li>
+<li><a href="guide-concept-behaviors.html">&#34892;&#20026;&#65288;Behaviors&#65289;</a></li>
+<li><a href="guide-concept-configurations.html">&#37197;&#32622;&#65288;Configurations&#65289;</a></li>
+<li><a href="guide-concept-aliases.html">&#21035;&#21517;&#65288;Aliases&#65289;</a></li>
+<li><a href="guide-concept-autoloading.html">&#31867;&#33258;&#21160;&#21152;&#36733;&#65288;Class Autoloading&#65289;</a></li>
+<li><a href="guide-concept-service-locator.html">&#26381;&#21153;&#23450;&#20301;&#22120;&#65288;Service Locator&#65289;</a></li>
+<li><a href="guide-concept-di-container.html">&#20381;&#36182;&#27880;&#20837;&#23481;&#22120;&#65288;Dependency Injection Container&#65289;</a></li>
+</ul>
+<h2>&#37197;&#21512;&#25968;&#25454;&#24211;&#24037;&#20316;&#65288;Working with Databases&#65289; <span id="pei-he-shu-ju-ku-gong-zuo-working-with-databases"></span><a href="#pei-he-shu-ju-ku-gong-zuo-working-with-databases" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-db-dao.html">&#25968;&#25454;&#24211;&#35775;&#38382;&#65288;Data Access Objects&#65289;</a>: &#25968;&#25454;&#24211;&#36830;&#25509;&#12289;&#22522;&#26412;&#26597;&#35810;&#12289;&#20107;&#21153;&#21644;&#27169;&#24335;&#25805;&#20316;</li>
+<li><a href="guide-db-query-builder.html">&#26597;&#35810;&#29983;&#25104;&#22120;&#65288;Query Builder&#65289;</a>: &#20351;&#29992;&#31616;&#21333;&#25277;&#35937;&#23618;&#26597;&#35810;&#25968;&#25454;&#24211;</li>
+<li><a href="guide-db-active-record.html">&#27963;&#21160;&#35760;&#24405;&#65288;Active Record&#65289;</a>: &#27963;&#21160;&#35760;&#24405;&#23545;&#35937;&#20851;&#31995;&#26144;&#23556;&#65288;ORM&#65289;&#65292;&#26816;&#32034;&#21644;&#25805;&#20316;&#35760;&#24405;&#12289;&#23450;&#20041;&#20851;&#32852;&#20851;&#31995;</li>
+<li><a href="guide-db-migrations.html">&#25968;&#25454;&#24211;&#36801;&#31227;&#65288;Migrations&#65289;</a>: &#22312;&#22242;&#20307;&#24320;&#21457;&#20013;&#23545;&#20320;&#30340;&#25968;&#25454;&#24211;&#20351;&#29992;&#29256;&#26412;&#25511;&#21046;</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a></li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis&#65288;yii2-redis&#65289;</a>: yii2-redis &#25193;&#23637;&#35814;&#35299;</li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a></li>
+<li><a href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></li>
+</ul>
+<h2>&#25509;&#25910;&#29992;&#25143;&#25968;&#25454;&#65288;Getting Data from Users&#65289; <span id="jie-shou-yong-hu-shu-ju-getting-data-from-users"></span><a href="#jie-shou-yong-hu-shu-ju-getting-data-from-users" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-input-forms.html">&#21019;&#24314;&#34920;&#21333;&#65288;Creating Forms&#65289;</a></li>
+<li><a href="guide-input-validation.html">&#36755;&#20837;&#39564;&#35777;&#65288;Validating Input&#65289;</a></li>
+<li><a href="guide-input-file-upload.html">&#25991;&#20214;&#19978;&#20256;&#65288;Uploading Files&#65289;</a></li>
+<li><a href="guide-input-tabular-input.html">&#25910;&#38598;&#21015;&#34920;&#36755;&#20837;&#65288;Collecting Tabular Input&#65289;</a></li>
+<li><a href="guide-input-multiple-models.html">&#22810;&#27169;&#22411;&#21516;&#26102;&#36755;&#20837;&#65288;Getting Data for Multiple Models&#65289;</a></li>
+<li><a href="guide-input-form-javascript.html">&#22312;&#23458;&#25143;&#31471;&#25193;&#23637; ActiveForm&#65288;Extending ActiveForm on the Client Side&#65289;</a></li>
+</ul>
+<h2>&#26174;&#31034;&#25968;&#25454;&#65288;Displaying Data&#65289; <span id="xian-shi-shu-ju-displaying-data"></span><a href="#xian-shi-shu-ju-displaying-data" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-output-formatting.html">&#26684;&#24335;&#21270;&#36755;&#20986;&#25968;&#25454;&#65288;Data Formatting&#65289;</a></li>
+<li><a href="guide-output-pagination.html">&#20998;&#39029;&#65288;Pagination&#65289;</a></li>
+<li><a href="guide-output-sorting.html">&#25490;&#24207;&#65288;Sorting&#65289;</a></li>
+<li><a href="guide-output-data-providers.html">&#25968;&#25454;&#25552;&#20379;&#22120;&#65288;Data Providers&#65289;</a></li>
+<li><a href="guide-output-data-widgets.html">&#25968;&#25454;&#23567;&#37096;&#20214;&#65288;Data Widgets&#65289;</a></li>
+<li><a href="guide-output-client-scripts.html">&#25805;&#20316;&#23458;&#25143;&#31471;&#33050;&#26412;&#65288;Working with Client Scripts&#65289;</a></li>
+<li><a href="guide-output-theming.html">&#20027;&#39064;&#65288;Theming&#65289;</a></li>
+</ul>
+<h2>&#23433;&#20840;&#65288;Security&#65289; <span id="an-quan-security"></span><a href="#an-quan-security" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-security-overview.html">&#27010;&#36848;&#65288;Overview&#65289;</a></li>
+<li><a href="guide-security-authentication.html">&#35748;&#35777;&#65288;Authentication&#65289;</a></li>
+<li><a href="guide-security-authorization.html">&#25480;&#26435;&#65288;Authorization&#65289;</a></li>
+<li><a href="guide-security-passwords.html">&#22788;&#29702;&#23494;&#30721;&#65288;Working with Passwords&#65289;</a></li>
+<li><a href="guide-security-cryptography.html">&#21152;&#23494;&#65288;Cryptography&#65289;</a></li>
+<li><a href="guide-https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.html">&#23458;&#25143;&#31471;&#35748;&#35777;&#65288;Auth Clients&#65289;</a></li>
+<li><a href="guide-security-best-practices.html">&#23433;&#20840;&#39046;&#22495;&#30340;&#26368;&#20339;&#23454;&#36341;&#65288;Best Practices&#65289;</a></li>
+</ul>
+<h2>&#32531;&#23384;&#65288;Caching&#65289; <span id="huan-cun-caching"></span><a href="#huan-cun-caching" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-caching-overview.html">&#27010;&#36848;&#65288;Overview&#65289;</a></li>
+<li><a href="guide-caching-data.html">&#25968;&#25454;&#32531;&#23384;&#65288;Data Caching&#65289;</a></li>
+<li><a href="guide-caching-fragment.html">&#29255;&#27573;&#32531;&#23384;&#65288;Fragment Caching&#65289;</a></li>
+<li><a href="guide-caching-page.html">&#39029;&#38754;&#32531;&#23384;&#65288;Page Caching&#65289;</a></li>
+<li><a href="guide-caching-http.html">HTTP &#32531;&#23384;&#65288;HTTP Caching&#65289;</a></li>
+</ul>
+<h2>RESTful Web &#26381;&#21153;&#65288;RESTful Web Services&#65289; <span id="restful-web-fu-wu-restful-web-services"></span><a href="#restful-web-fu-wu-restful-web-services" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-rest-quick-start.html">&#24555;&#36895;&#20837;&#38376;&#65288;Quick Start&#65289;</a></li>
+<li><a href="guide-rest-resources.html">&#36164;&#28304;&#65288;Resources&#65289;</a></li>
+<li><a href="guide-rest-controllers.html">&#25511;&#21046;&#22120;&#65288;Controllers&#65289;</a></li>
+<li><a href="guide-rest-routing.html">&#36335;&#30001;&#65288;Routing&#65289;</a></li>
+<li><a href="guide-rest-response-formatting.html">&#26684;&#24335;&#21270;&#21709;&#24212;&#65288;Response Formatting&#65289;</a></li>
+<li><a href="guide-rest-authentication.html">&#25480;&#26435;&#39564;&#35777;&#65288;Authentication&#65289;</a></li>
+<li><a href="guide-rest-rate-limiting.html">&#36895;&#29575;&#38480;&#21046;&#65288;Rate Limiting&#65289;</a></li>
+<li><a href="guide-rest-versioning.html">&#29256;&#26412;&#21270;&#65288;Versioning&#65289;</a></li>
+<li><a href="guide-rest-error-handling.html">&#38169;&#35823;&#22788;&#29702;&#65288;Error Handling&#65289;</a></li>
+</ul>
+<h2>&#24320;&#21457;&#24037;&#20855;&#65288;Development Tools&#65289; <span id="kai-fa-gong-ju-development-tools"></span><a href="#kai-fa-gong-ju-development-tools" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.html">&#35843;&#35797;&#24037;&#20855;&#26639;&#21644;&#35843;&#35797;&#22120;&#65288;Debug Toolbar and Debugger&#65289;</a></li>
+<li><a href="guide-https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.html">&#20351;&#29992; Gii &#29983;&#25104;&#20195;&#30721;&#65288;Generating Code using Gii&#65289;</a></li>
+<li><a href="https://github.com/yiisoft/yii2-apidoc">&#29983;&#25104; API &#25991;&#26723;&#65288;Generating API Documentation&#65289;</a></li>
+</ul>
+<h2>&#27979;&#35797;&#65288;Testing&#65289; <span id="ce-shi-testing"></span><a href="#ce-shi-testing" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-test-overview.html">&#27010;&#36848;&#65288;Overview&#65289;</a></li>
+<li><a href="guide-test-environment-setup.html">&#25645;&#24314;&#27979;&#35797;&#29615;&#22659;&#65288;Testing environment setup&#65289;</a></li>
+<li><a href="guide-test-unit.html">&#21333;&#20803;&#27979;&#35797;&#65288;Unit Tests&#65289;</a></li>
+<li><a href="guide-test-functional.html">&#21151;&#33021;&#27979;&#35797;&#65288;Functional Tests&#65289;</a></li>
+<li><a href="guide-test-acceptance.html">&#39564;&#25910;&#27979;&#35797;&#65288;Acceptance Tests&#65289;</a></li>
+<li><a href="guide-test-fixtures.html">&#27979;&#35797;&#22841;&#20855;&#65288;Fixtures&#65289;</a></li>
+</ul>
+<h2>&#39640;&#32423;&#19987;&#39064;&#65288;Special Topics&#65289; <span id="gao-ji-zhuan-ti-special-topics"></span><a href="#gao-ji-zhuan-ti-special-topics" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.html">&#39640;&#32423;&#24212;&#29992;&#27169;&#29256;&#65288;Advanced Project Template&#65289;</a></li>
+<li><a href="guide-tutorial-start-from-scratch.html">&#20174;&#22836;&#26500;&#24314;&#33258;&#23450;&#20041;&#27169;&#29256;&#65288;Building Application from Scratch&#65289;</a></li>
+<li><a href="guide-tutorial-console.html">&#25511;&#21046;&#21488;&#21629;&#20196;&#65288;Console Commands&#65289;</a></li>
+<li><a href="guide-tutorial-core-validators.html">&#26680;&#24515;&#39564;&#35777;&#22120;&#65288;Core Validators&#65289;</a></li>
+<li><a href="guide-tutorial-docker.html">Docker</a></li>
+<li><a href="guide-tutorial-i18n.html">&#22269;&#38469;&#21270;&#65288;Internationalization&#65289;</a></li>
+<li><a href="guide-tutorial-mailing.html">&#25910;&#21457;&#37038;&#20214;&#65288;Mailing&#65289;</a></li>
+<li><a href="guide-tutorial-performance-tuning.html">&#24615;&#33021;&#20248;&#21270;&#65288;Performance Tuning&#65289;</a></li>
+<li><a href="guide-tutorial-shared-hosting.html">&#20849;&#20139;&#20027;&#26426;&#29615;&#22659;&#65288;Shared Hosting Environment&#65289;</a></li>
+<li><a href="guide-tutorial-template-engines.html">&#27169;&#26495;&#24341;&#25806;&#65288;Template Engines&#65289;</a></li>
+<li><a href="guide-tutorial-yii-integration.html">&#38598;&#25104;&#31532;&#19977;&#26041;&#20195;&#30721;&#65288;Working with Third-Party Code&#65289;</a></li>
+<li><a href="guide-tutorial-yii-as-micro-framework.html">&#20351;&#29992; Yii &#20316;&#20026;&#24494;&#26694;&#26550;&#65288;Using Yii as a micro framework&#65289;</a></li>
+</ul>
+<h2>&#23567;&#37096;&#20214;&#65288;Widgets&#65289; <span id="xiao-bu-jian-widgets"></span><a href="#xiao-bu-jian-widgets" class="hashlink">&para;</a></h2><ul>
+<li><a href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a></li>
+<li><a href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a></li>
+<li><a href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a></li>
+<li><a href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a></li>
+<li><a href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a></li>
+<li><a href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a></li>
+<li><a href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a></li>
+<li><a href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a></li>
+<li><a href="guide-https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.html">Bootstrap Widgets</a></li>
+<li><a href="guide-https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.html">jQuery UI Widgets</a></li>
+</ul>
+<h2>&#21161;&#25163;&#31867;&#65288;Helpers&#65289; <span id="zhu-shou-lei-helpers"></span><a href="#zhu-shou-lei-helpers" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-helper-overview.html">&#21161;&#25163;&#19968;&#35272;&#65288;Overview&#65289;</a></li>
+<li><a href="guide-helper-array.html">Array &#21161;&#25163;&#65288;ArrayHelper&#65289;</a></li>
+<li><a href="guide-helper-html.html">Html &#21161;&#25163;&#65288;Html&#65289;</a></li>
+<li><a href="guide-helper-url.html">Url &#21161;&#25163;&#65288;Url&#65289;</a></li>
+</ul>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:20 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

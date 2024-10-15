@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>格式化输出数据（Data Formatting） - 显示数据（Displaying Data） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1346" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1346-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1346-collapse" class="collapse navbar-collapse"><ul id="w1347" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1348" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1330" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1330" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1331" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1331" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1332" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1332" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1333" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1333" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1334" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1334" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1335" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1335" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1336" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1336" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item active" href="#navigation-1337" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1337" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1338" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1338" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1339" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1339" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1340" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1340" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1341" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1341" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1342" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1342" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-1343" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1343" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1344" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1344" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1345" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1345" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>&#25968;&#25454;&#26684;&#24335;&#22120;&#65288;Data Formatting&#65289; <span id="shu-ju-ge-shi-qi-data-formatting"></span><a href="#shu-ju-ge-shi-qi-data-formatting" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#configuring-formatter">&#37197;&#32622; Formatter&#65288;Configuring Formatter&#65289;</a></li>
+<li><a href="#date-and-time">&#26684;&#24335;&#21270;&#26102;&#38388;/&#26085;&#26399;&#25968;&#25454;&#65288;Formatting Date and Time Values&#65289;</a></li>
+<li><a href="#numbers">&#26684;&#24335;&#21270;&#25968;&#23383;&#65288;Formatting Numbers&#65289;</a></li>
+<li><a href="#other">&#20854;&#20182;&#30340;&#26684;&#24335;&#21270;&#65288;Other Formats&#65289;</a></li>
+<li><a href="#null-values">&#31354;&#20540;&#65288;Null Values&#65289;</a></li>
+<li><a href="#localizing-data-format">&#26412;&#22320;&#26085;&#26399;&#26684;&#24335;&#21270;&#65288;Localizing Data Format&#65289;</a></li></ol></div>
+<p>&#20320;&#21487;&#20197;&#20351;&#29992; <code>formatter</code> <a href="guide-structure-application-components.html">application component</a> &#26469;&#26684;&#24335;&#21270;&#25968;&#25454;&#12290;
+&#40664;&#35748; <code>fomatter</code> &#30001; <a href="./yii-i18n-formatter.html">yii\i18n\Formatter</a> &#26469;&#23454;&#29616;&#65292;&#36825;&#20010;&#32452;&#20214;&#25552;&#20379;&#20102;&#19968;&#31995;&#21015;&#20851;&#20110;&#26085;&#26399;/&#26102;&#38388;&#65292;&#25968;&#23383;&#65292;&#36135;&#24065;&#31561;&#30340;&#26684;&#24335;&#21270;&#26041;&#27861;&#12290;
+&#20351;&#29992;&#26041;&#27861;&#22914;&#19979;&#65306;</p>
+<pre><code class="hljs php language-php">$formatter = \Yii::$app-&gt;formatter;
+
+<span class="hljs-comment">// output: January 1, 2014</span>
+<span class="hljs-keyword">echo</span> $formatter-&gt;asDate(<span class="hljs-string">'2014-01-01'</span>, <span class="hljs-string">'long'</span>);
+ 
+<span class="hljs-comment">// output: 12.50%</span>
+<span class="hljs-keyword">echo</span> $formatter-&gt;asPercent(<span class="hljs-number">0.125</span>, <span class="hljs-number">2</span>);
+ 
+<span class="hljs-comment">// output: &lt;a href="mailto:cebe@example.com"&gt;cebe@example.com&lt;/a&gt;</span>
+<span class="hljs-keyword">echo</span> $formatter-&gt;asEmail(<span class="hljs-string">'cebe@example.com'</span>); 
+
+<span class="hljs-comment">// output: Yes</span>
+<span class="hljs-keyword">echo</span> $formatter-&gt;asBoolean(<span class="hljs-keyword">true</span>); 
+<span class="hljs-comment">// it also handles display of null values:</span>
+
+<span class="hljs-comment">// output: (Not set)</span>
+<span class="hljs-keyword">echo</span> $formatter-&gt;asDate(<span class="hljs-keyword">null</span>); 
+</code></pre>
+<p>&#25105;&#20204;&#21487;&#20197;&#30475;&#21040;&#65292;&#25152;&#26377;&#30340;&#26041;&#27861;&#37117;&#24418;&#20284; <code>asXyz()</code>&#65292;&#36825;&#20010; <code>Xzy</code> &#23601;&#26159;&#25152;&#25903;&#25345;&#30340;&#26684;&#24335;&#21270;&#31867;&#22411;&#12290;
+&#24403;&#28982;&#20320;&#20063;&#21487;&#20197;&#20351;&#29992;&#31867;&#26041;&#27861; <a href="./yii-i18n-formatter.html#format()-detail">format()</a> &#26469;&#36827;&#34892;&#26684;&#24335;&#21270;&#65292;&#36890;&#36807;&#36825;&#20010;&#31867;&#26041;&#27861;&#65292;&#20320;&#21487;&#20197;&#26356;&#33258;&#30001;&#22320;&#25511;&#21046;&#26684;&#24335;&#21270;&#30340;&#25968;&#25454;&#65292;&#36825;&#26102;&#20505;&#65292;&#31867;&#26041;&#27861;&#36890;&#24120;&#37197;&#21512; <a href="./yii-grid-gridview.html">yii\grid\GridView</a> &#25110;&#32773; <a href="./yii-widgets-detailview.html">yii\widgets\DetailView</a> &#26469;&#20351;&#29992;&#12290;</p>
+<p>&#20030;&#20010;&#20363;&#23376;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// output: January 1, 2014</span>
+<span class="hljs-keyword">echo</span> Yii::$app-&gt;formatter-&gt;format(<span class="hljs-string">'2014-01-01'</span>, <span class="hljs-string">'date'</span>); 
+
+<span class="hljs-comment">// &#20320;&#21487;&#20197;&#22312;&#31532;&#20108;&#20010;&#21442;&#25968;&#25351;&#23450;&#19968;&#20010;&#25968;&#32452;&#65292;&#36825;&#20010;&#25968;&#32452;&#25552;&#20379;&#20102;&#19968;&#20123;&#37197;&#32622;&#30340;&#21442;&#25968;</span>
+<span class="hljs-comment">// &#20363;&#22914;&#36825;&#20010; 2 &#23601;&#26159; asPercent() &#26041;&#27861;&#30340; $decimals &#21442;&#25968;</span>
+<span class="hljs-comment">// output: 12.50%</span>
+<span class="hljs-keyword">echo</span> Yii::$app-&gt;formatter-&gt;format(<span class="hljs-number">0.125</span>, [<span class="hljs-string">'percent'</span>, <span class="hljs-number">2</span>]); 
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong><code>formatter</code> &#32452;&#20214;&#29992;&#26469;&#26684;&#24335;&#21270;&#26368;&#32456;&#23637;&#31034;&#32473;&#29992;&#25143;&#30340;&#25968;&#25454;&#12290; 
+&#22914;&#26524;&#20320;&#24819;&#35201;&#23558;&#29992;&#25143;&#30340;&#36755;&#20837;&#36827;&#34892;&#26684;&#24335;&#21270;&#25110;&#32773;&#21482;&#26159;&#23558;&#19968;&#20123;&#21035;&#30340;&#26085;&#26399;&#25968;&#25454;&#36827;&#34892;&#26684;&#24335;&#21270;&#65288;&#36825;&#37324;&#30340;&#26684;&#24335;&#21270;&#35828;&#30340;&#26159;&#26426;&#22120;&#21487;&#35835;&#30340;&#26684;&#24335;&#21270;&#65289;&#65292;
+&#19981;&#35201;&#20351;&#29992;&#36825;&#20010;&#32452;&#20214;&#65292;
+&#32780;&#24212;&#35813;&#20351;&#29992; <a href="./yii-validators-datevalidator.html">yii\validators\DateValidator</a> &#21644; <a href="./yii-validators-numbervalidator.html">yii\validators\NumberValidator</a> &#36827;&#34892;&#29992;&#25143;&#36755;&#20837;&#26684;&#24335;&#21270;
+&#23545;&#20110;&#26426;&#22120;&#21487;&#35835;&#30340;&#26085;&#26399;&#21644;&#26102;&#38388;&#26684;&#24335;&#20043;&#38388;&#30340;&#31616;&#21333;&#36716;&#25442;&#65292;
+PHP &#26041;&#27861; <a href="https://www.php.net/manual/zh/function.date.php">date()</a> &#23601;&#36275;&#22815;&#20102;&#12290;</p>
+</blockquote>
+<h2>&#37197;&#32622; Formatter&#65288;Configuring Formatter&#65289;  <span id="configuring-formatter"></span><a href="#configuring-formatter" class="hashlink">&para;</a></h2><p>&#21487;&#20197;&#23545; <code>formatter</code> &#32452;&#20214;&#22312; <a href="guide-concept-configurations.html#application-configurations">application configuration</a> &#20013;&#36827;&#34892;&#37197;&#32622;&#12290;
+&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'formatter'</span> =&gt; [
+            <span class="hljs-string">'dateFormat'</span> =&gt; <span class="hljs-string">'dd.MM.yyyy'</span>,
+            <span class="hljs-string">'decimalSeparator'</span> =&gt; <span class="hljs-string">','</span>,
+            <span class="hljs-string">'thousandSeparator'</span> =&gt; <span class="hljs-string">' '</span>,
+            <span class="hljs-string">'currencyCode'</span> =&gt; <span class="hljs-string">'EUR'</span>,
+       ],
+    ],
+];
+</code></pre>
+<p>&#21487;&#20197;&#21442;&#32771; <a href="./yii-i18n-formatter.html">yii\i18n\Formatter</a> &#30340;&#37197;&#32622;</p>
+<h2>&#26684;&#24335;&#21270;&#26102;&#38388;/&#26085;&#26399;&#25968;&#25454;&#65288;Formatting Date and Time Values&#65289;  <span id="date-and-time"></span><a href="#date-and-time" class="hashlink">&para;</a></h2><p>&#40664;&#35748;&#25903;&#25345;&#19968;&#19979;&#20960;&#31181;&#26684;&#24335;&#21270;&#26684;&#24335;</p>
+<ul>
+<li><a href="./yii-i18n-formatter.html#asDate()-detail">date</a>&#65306;&#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026;&#26085;&#26399; <code>January 01, 2014</code>&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asTime()-detail">time</a>&#65306;&#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026;&#26102;&#38388; <code>14:23</code>&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asDatetime()-detail">datetime</a>&#65306;&#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026;&#26085;&#26399;+&#26102;&#38388; <code>January 01, 2014 14:23</code>&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asTimestamp()-detail">timestamp</a>&#65306;&#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026; UNIX &#26102;&#38388;&#25139; <a href="https://zh.wikipedia.org/wiki/UNIX%E6%97%B6%E9%97%B4">unix timestamp</a>&#65292;&#20363;&#22914; <code>1412609982</code>&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asRelativeTime()-detail">relativeTime</a>&#65306;&#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026;&#20154;&#31867;&#21487;&#35835;&#30340;
+&#24403;&#21069;&#30456;&#23545;&#26102;&#38388; <code>1 hour ago</code>&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asDuration()-detail">duration</a>&#65306;&#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026;&#20154;&#31867;&#21487;&#35835;&#30340;&#26102;&#38271; <code>1 day, 2 minutes</code>&#12290;</li>
+</ul>
+<p>&#26102;&#38388;/&#26085;&#26399;&#25968;&#25454;&#40664;&#35748;&#20351;&#29992; <a href="./yii-i18n-formatter.html#asDate()-detail">date</a>, <a href="./yii-i18n-formatter.html#asTime()-detail">time</a>&#65292; 
+<a href="./yii-i18n-formatter.html#asDatetime()-detail">datetime</a> &#26041;&#27861;&#36827;&#34892;&#26684;&#24335;&#21270;,
+&#20320;&#21487;&#20197;&#23545;&#20182;&#20204;&#36827;&#34892;&#19968;&#20123;&#33258;&#24049;&#30340;&#37197;&#32622;&#65292;&#21482;&#38656;&#22312;&#37197;&#32622;&#25991;&#20214;&#37324;&#37197;&#32622; <a href="./yii-i18n-formatter.html#%24dateFormat-detail">dateFormat</a>, 
+<a href="./yii-i18n-formatter.html#%24timeFormat-detail">timeFormat</a>, &#21644; <a href="./yii-i18n-formatter.html#%24datetimeFormat-detail">datetimeFormat</a> &#21363;&#21487;&#12290;</p>
+<p>&#21516;&#26102;&#65292;&#20320;&#36824;&#21487;&#20197;&#37197;&#32622;&#23427;&#20351;&#29992; <a href="https://unicode-org.github.io/icu/userguide/format_parse/datetime/">ICU syntax</a>&#65292;
+&#21516;&#26102;&#20320;&#20063;&#21487;&#20197;&#37197;&#32622;&#23427;&#20351;&#29992; <a href="https://www.php.net/manual/zh/function.date.php">PHP date() &#35821;&#27861;</a>&#65292;&#21482;&#38656;&#35201;&#21152;&#19978; <code>php:</code> &#21069;&#32512;&#21363;&#21487;&#12290;
+&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ICU format</span>
+<span class="hljs-keyword">echo</span> Yii::$app-&gt;formatter-&gt;asDate(<span class="hljs-string">'now'</span>, <span class="hljs-string">'yyyy-MM-dd'</span>); <span class="hljs-comment">// 2014-10-06</span>
+
+<span class="hljs-comment">// PHP date()-format</span>
+<span class="hljs-keyword">echo</span> Yii::$app-&gt;formatter-&gt;asDate(<span class="hljs-string">'now'</span>, <span class="hljs-string">'php:Y-m-d'</span>); <span class="hljs-comment">// 2014-10-06</span>
+</code></pre>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>ICU &#19981;&#25903;&#25345; PHP &#26684;&#24335;&#35821;&#27861;&#30340;&#26576;&#20123;&#23383;&#27597;&#65292;&#24182;&#19988;&#36825;&#20123; PHP intl &#25193;&#23637;&#21517;&#19981;&#33021;&#22312; Yii &#26684;&#24335;&#21270;&#31243;&#24207;&#20013;&#20351;&#29992;&#12290;
+&#22823;&#22810;&#25968;&#65288;<code>w</code>&#65292;<code>t</code>&#65292;<code>L</code>&#65292;<code>B</code>&#65292;<code>u</code>&#65292;<code>I</code>&#65292;<code>Z</code>&#65289;&#23545;&#20110;&#26684;&#24335;&#21270;&#26085;&#26399;&#24182;&#19981;&#26159;&#30495;&#30340;&#26377;&#29992;&#65292;&#32780;&#26159;&#22312;&#36827;&#34892;&#25968;&#23398;&#35745;&#31639;&#26102;&#26377;&#29992;&#12290;
+&#28982;&#32780; <code>S</code> &#21644; <code>U</code> &#21487;&#33021;&#26159;&#26377;&#29992;&#30340;&#12290;&#20182;&#20204;&#30340;&#34892;&#20026;&#21487;&#20197;&#36890;&#36807;&#20197;&#19979;&#26041;&#24335;&#23454;&#29616;&#65306;</p>
+<ul>
+<li><p>&#27604;&#22914; <code>S</code>&#65292;&#36825;&#26159;&#24403;&#26376;&#30340;&#33521;&#25991;&#24207;&#25968;&#21518;&#32512;&#65288;&#20363;&#22914;&#65306;st&#65292;nd&#65292;rd &#25110; th&#12290;&#65289;&#65292;&#21487;&#20197;&#20351;&#29992;&#20197;&#19979;&#20195;&#30721;&#26469;&#26367;&#25442;&#65306;</p>
+<pre><code class="hljs php language-php">$f = Yii::$app-&gt;formatter;
+$d = $f-&gt;asOrdinal($f-&gt;asDate(<span class="hljs-string">'2017-05-15'</span>, <span class="hljs-string">'php:j'</span>));
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"On the $d day of the month."</span>;  <span class="hljs-comment">// &#25171;&#21360; "On the 15th day of the month."</span>
+</code></pre>
+</li>
+<li><p>&#27604;&#22914; <code>U</code>&#65292;Unix &#32426;&#20803;&#65292;&#20320;&#33021;&#22815;&#20351;&#29992; <a href="./yii-i18n-formatter.html#asTimestamp()-detail">timestamp</a> &#26469;&#26684;&#24335;&#21270;&#12290;</p>
+</li>
+</ul>
+</blockquote>
+<p>&#24403;&#20351;&#29992;&#38656;&#35201;&#25903;&#25345;&#22810;&#31181;&#35821;&#35328;&#30340;&#24212;&#29992;&#31243;&#24207;&#26102;&#65292;&#24744;&#32463;&#24120;&#38656;&#35201;&#20026;&#19981;&#21516;&#30340;&#21306;&#22495;&#35774;&#32622;&#25351;&#23450;&#19981;&#21516;&#30340;&#26085;&#26399;&#21644;&#26102;&#38388;&#26684;&#24335;&#12290;
+&#20026;&#20102;&#31616;&#21270;&#36825;&#39033;&#25805;&#20316;&#65292;&#20320;&#21487;&#20197;&#20351;&#29992;&#26684;&#24335;&#24555;&#25463;&#38190;&#65288;&#20363;&#22914;&#65306;<code>long</code>&#65292;<code>short</code>&#65289;&#26469;&#20195;&#26367;&#12290;
+&#26684;&#24335;&#21270;&#31243;&#24207;&#23558;&#26681;&#25454;&#24403;&#21069;&#26377;&#25928;&#30340;&#22320;&#21306;&#30340; <a href="./yii-i18n-formatter.html#%24locale-detail">locale</a> &#23558;&#26684;&#24335;&#24555;&#25463;&#26041;&#24335;&#36716;&#25442;&#20026;&#36866;&#24403;&#30340;&#31243;&#24207;&#12290;
+&#25903;&#25345;&#20197;&#19979;&#26684;&#24335;&#30340;&#24555;&#25463;&#26041;&#24335;&#65288;&#31034;&#20363;&#26159;&#20551;&#35774;&#35774;&#32622; locale &#20026; <code>en_GB</code> &#65289;&#65306;</p>
+<ul>
+<li><code>short</code>&#65306;&#23558;&#36755;&#20986;&#26085;&#26399; <code>06/10/2014</code> &#21644;&#26102;&#38388; <code>15:58</code>&#65307;</li>
+<li><code>medium</code>&#65306;&#23558;&#36755;&#20986; <code>6 Oct 2014</code> &#21644; <code>15:58:42</code>&#65307;</li>
+<li><code>long</code>&#65306;&#23558;&#36755;&#20986; <code>6 October 2014</code> &#21644; <code>15:58:42 GMT</code>&#65307;</li>
+<li><code>full</code>&#65306;&#23558;&#36755;&#20986; <code>Monday, 6 October 2014</code> &#21644; <code>15:58:42 GMT</code>&#12290;</li>
+</ul>
+<p>&#29256;&#26412; 2.0.7 &#36215;&#65292;&#25903;&#25345;&#26684;&#24335;&#21270;&#26085;&#26399;&#20026;&#19981;&#21516;&#30340;&#31995;&#32479;&#26102;&#38047;&#65292;
+&#35831;&#21442;&#38405;&#26684;&#24335;&#21270;&#31243;&#24207; <a href="./yii-i18n-formatter.html#%24calendar-detail">$calendar</a> &#30340; API &#25991;&#26723; - &#26377;&#20851;&#22914;&#20309;&#35774;&#32622;&#20854;&#20182;&#26085;&#21382;&#30340;&#23646;&#24615;&#12290;</p>
+<h3>&#26102;&#21306;&#65288;Time Zones&#65289;  <span id="time-zones"></span><a href="#time-zones" class="hashlink">&para;</a></h3><p>&#26684;&#24335;&#21270;&#26102;&#38388;/&#26085;&#26399;&#25968;&#25454;&#26102;&#65292;&#20320;&#20250;&#23558;&#20182;&#20204;&#36716;&#25442;&#25104; <a href="./yii-i18n-formatter.html#%24timeZone-detail">time zone</a>
+&#36825;&#20010;&#26102;&#20505;&#65292;&#40664;&#35748;&#30340;&#26102;&#21306;&#20026; UTC&#65292;&#38500;&#38750;&#20320;&#21478;&#22806;&#25351;&#23450;
+<a href="./yii-i18n-formatter.html#%24defaultTimeZone-detail">yii\i18n\Formatter::$defaultTimeZone</a>&#12290;</p>
+<p>&#19979;&#38754;&#20351;&#29992; <code>Europe/Berlin</code> &#20316;&#20026;&#40664;&#35748; <a href="./yii-i18n-formatter.html#%24timeZone-detail">time zone</a> </p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// formatting a UNIX timestamp as a time</span>
+<span class="hljs-keyword">echo</span> Yii::$app-&gt;formatter-&gt;asTime(<span class="hljs-number">1412599260</span>); <span class="hljs-comment">// 14:41:00</span>
+
+<span class="hljs-comment">// formatting a datetime string (in UTC) as a time </span>
+<span class="hljs-keyword">echo</span> Yii::$app-&gt;formatter-&gt;asTime(<span class="hljs-string">'2014-10-06 12:41:00'</span>); <span class="hljs-comment">// 14:41:00</span>
+
+<span class="hljs-comment">// formatting a datetime string (in CEST) as a time</span>
+<span class="hljs-keyword">echo</span> Yii::$app-&gt;formatter-&gt;asTime(<span class="hljs-string">'2014-10-06 14:41:00 CEST'</span>); <span class="hljs-comment">// 14:41:00</span>
+</code></pre>
+<p>&#22914;&#26524; <a href="./yii-i18n-formatter.html#%24timeZone-detail">time zone</a> &#26410;&#22312;&#26684;&#24335;&#21270;&#32452;&#20214;&#19978;&#26126;&#30830;&#35774;&#32622;&#65292;
+<a href="./yii-base-application.html#%24timeZone-detail">time zone configured in the application</a> &#23558;&#20250;&#34987;&#20351;&#29992;&#65292;
+&#36825;&#19982; PHP &#37197;&#32622;&#20013;&#35774;&#32622;&#30340;&#26102;&#21306;&#30456;&#21516;&#12290;</p>
+<blockquote><p>&#19981;&#21516;&#30340;&#25919;&#24220;&#21644;&#22320;&#21306;&#25919;&#31574;&#20915;&#23450;&#19981;&#21516;&#30340;&#26102;&#21306;&#65292;
+&#20320;&#22312;&#20320;&#30340;&#26102;&#21306;&#25968;&#25454;&#24211;&#20013;&#21487;&#33021;&#25343;&#19981;&#21040;&#26368;&#26032;&#30340;&#25968;&#25454;&#12290;
+&#36825;&#26102;&#20320;&#21487;&#20197;&#25139; <a href="https://unicode-org.github.io/icu/userguide/datetime/timezone/#updating-the-time-zone-data">ICU manual</a> &#26469;&#26597;&#30475;&#22914;&#20309;&#26356;&#26032;&#26102;&#21306;&#12290;
+&#21516;&#26102;&#65292;&#36825;&#31687;&#20063;&#21487;&#20197;&#20316;&#20026;&#21442;&#32771; <a href="guide-tutorial-i18n.html#setup-environment">Setting up your PHP environment for internationalization</a>&#12290;</p>
+</blockquote>
+<h2>&#26684;&#24335;&#21270;&#25968;&#23383;&#65288;Formatting Numbers&#65289;  <span id="numbers"></span><a href="#numbers" class="hashlink">&para;</a></h2><p><code>formatter</code> &#25903;&#25345;&#22914;&#19979;&#30340;&#26041;&#27861;</p>
+<ul>
+<li><a href="./yii-i18n-formatter.html#asInteger()-detail">integer</a>: &#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026;&#25972;&#24418; e.g. <code>42</code>.</li>
+<li><a href="./yii-i18n-formatter.html#asDecimal()-detail">decimal</a>: &#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026;&#24102;&#30528;&#36887;&#21495;&#30340;&#25351;&#23450;&#31934;&#24230;&#30340;&#28014;&#28857;&#22411;&#65292;
+ &nbsp;&#20363;&#22914;&#65306;<code>2,542.123</code> &#25110;&nbsp;<code>2.542,123</code>&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asPercent()-detail">percent</a>: &#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026;&#30334;&#20998;&#27604; e.g. <code>42%</code>.</li>
+<li><a href="./yii-i18n-formatter.html#asScientific()-detail">scientific</a>: &#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026;&#31185;&#23398;&#35745;&#25968;&#27861; e.g. <code>4.2E4</code>.</li>
+<li><a href="./yii-i18n-formatter.html#asCurrency()-detail">currency</a>: &#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026;&#36135;&#24065;&#65292;
+ &nbsp;&#20363;&#22914;&#65306;<code>&pound;420.00</code>&#12290;
+&#20351;&#29992;&#36825;&#20010;&#26041;&#27861;&#21069;&#35831;&#30830;&#35748;&#26159;&#21542;&#24050;&#32463;&#27491;&#30830;&#37197;&#32622; <a href="./yii-i18n-formatter.html#%24locale-detail">locale</a></li>
+<li><a href="./yii-i18n-formatter.html#asSize()-detail">size</a>: &#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026;&#20154;&#31867;&#21487;&#35835;&#30340;&#23383;&#33410;&#25968; e.g. <code>410 kibibytes</code>.</li>
+<li><a href="./yii-i18n-formatter.html#asShortSize()-detail">shortSize</a>: &#36825;&#20010;&#21464;&#37327;&#23558;&#34987;&#26684;&#24335;&#21270;&#20026;&#20154;&#31867;&#21487;&#35835;&#30340;&#23383;&#33410;&#25968;&#65288;&#32553;&#20889;&#65289; <a href="./yii-i18n-formatter.html#asSize()-detail">size</a>&#65292;&#20363;&#22914;&#65306;<code>410 KiB</code>&#12290;</li>
+</ul>
+<p>&#20320;&#21487;&#20197;&#20351;&#29992; <a href="./yii-i18n-formatter.html#%24decimalSeparator-detail">decimalSeparator</a> &#21644; 
+<a href="./yii-i18n-formatter.html#%24thousandSeparator-detail">thousandSeparator</a> &#26469;&#36827;&#34892;&#35843;&#25972;&#12290;
+&#20182;&#20204;&#37117;&#20250;&#26681;&#25454;&#24403;&#21069;&#30340; <a href="./yii-i18n-formatter.html#%24locale-detail">locale</a> &#26469;&#36827;&#34892;&#26684;&#24335;&#21270;.</p>
+<p>&#22914;&#26524;&#20320;&#24819;&#35201;&#36827;&#34892;&#26356;&#39640;&#32423;&#30340;&#37197;&#32622;, &#21487;&#20197;&#20351;&#29992; <a href="./yii-i18n-formatter.html#%24numberFormatterOptions-detail">yii\i18n\Formatter::$numberFormatterOptions</a> &#21644; 
+<a href="./yii-i18n-formatter.html#%24numberFormatterTextOptions-detail">yii\i18n\Formatter::$numberFormatterTextOptions</a>&#65292;
+<a href="https://www.php.net/manual/zh/class.numberformatter.php">NumberFormatter class</a> &#26469;&#36827;&#34892;&#26684;&#24335;&#21270;&#12290;
+&#20363;&#22914;&#65292;&#20026;&#20102;&#35843;&#25972;&#23567;&#25968;&#37096;&#20998;&#30340;&#26368;&#22823;&#20540;&#21644;&#26368;&#23567;&#20540;&#65292;&#20320;&#21487;&#20197;&#37197;&#32622; <a href="./yii-i18n-formatter.html#%24numberFormatterOptions-detail">yii\i18n\Formatter::$numberFormatterOptions</a> &#22914;&#19979;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'numberFormatterOptions'</span> =&gt; [
+    NumberFormatter::MIN_FRACTION_DIGITS =&gt; <span class="hljs-number">0</span>,
+    NumberFormatter::MAX_FRACTION_DIGITS =&gt; <span class="hljs-number">2</span>,
+]
+</code></pre>
+<h2>&#20854;&#20182;&#30340;&#26684;&#24335;&#21270;&#65288;Other Formats&#65289;  <span id="other"></span><a href="#other" class="hashlink">&para;</a></h2><p>&#38500;&#20102;&#26102;&#38388;/&#26085;&#26399;&#21644;&#25968;&#23383;&#30340;&#26684;&#24335;&#21270;&#65292;Yii &#36824;&#25903;&#25345;&#22914;&#19979;&#30340;&#24120;&#29992;&#26684;&#24335;&#21270;</p>
+<ul>
+<li><a href="./yii-i18n-formatter.html#asRaw()-detail">raw</a>&#65306;&#36825;&#20010;&#20540;&#20250;&#34987;&#21407;&#26679;&#36755;&#20986;&#65292;&#36825;&#26159;&#19968;&#20010;&#26080;&#25928;&#30340;&#20266;&#26684;&#24335;&#21270;&#31243;&#24207;&#65292;
+&#38500;&#20102;<code>null</code> &#23558;&#20351;&#29992; <span class="broken-link">nullDisplay</span> &#26469;&#26684;&#24335;&#21270;&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asText()-detail">text</a>&#65306;&#36825;&#20010;&#20540;&#26159; HTML &#26469;&#32534;&#30721;&#30340;&#12290;
+&#36825;&#26159; <a href="guide-output-data-widgets.html#data-column">GridView DataColumn</a> &#20351;&#29992;&#30340;&#40664;&#35748;&#26684;&#24335;&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asNtext()-detail">ntext</a>&#65306;&#36825;&#20010;&#20540;&#23558;&#20250;&#34987;&#26684;&#24335;&#21270;&#29992; HTML &#32534;&#30721;&#30340;&#32431;&#25991;&#26412;&#65292;
+&#20854;&#20013;&#26032;&#30340;&#19968;&#34892;&#23558;&#29992;&#25442;&#34892;&#31526;&#26469;&#38548;&#24320;&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asParagraphs()-detail">paragraphs</a>&#65306;&#36825;&#20010;&#20540;&#34987;&#26684;&#24335;&#21270;&#20026;&#21253;&#21547;&#22312;
+ <code>&lt;p&gt;</code> &#26631;&#31614;&#20013;&#30340; HTML &#32534;&#30721;&#30340;&#25991;&#26412;&#27573;&#33853;&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asHtml()-detail">html</a>&#65306;&#36825;&#20010;&#20540;&#20351;&#29992; <span class="broken-link">HtmlPurifier</span> &#26469;&#26684;&#24335;&#21270;&#20197;&#36991;&#20813;&#36973;&#21463; XSS &#25915;&#20987;&#12290;
+&#20320;&#33021;&#22815;&#35774;&#32622;&#19968;&#20999;&#20854;&#20182;&#36873;&#39033;&#27604;&#22914; <code>['html', ['Attr.AllowedFrameTargets' =&gt; ['_blank']]]</code>&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asEmail()-detail">email</a>&#65306;&#36825;&#20010;&#20540;&#34987;&#26684;&#24335;&#21270;&#20026; <code>mailto</code>-&#38142;&#25509;&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asImage()-detail">image</a>&#65306;&#36825;&#20010;&#20540;&#34987;&#26684;&#24335;&#21270;&#20026;&#22270;&#20687;&#26631;&#31614;&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asUrl()-detail">url</a>&#65306;&#36825;&#20010;&#20540;&#34987;&#26684;&#24335;&#21270;&#20026;&#36229;&#38142;&#25509;&#12290;</li>
+<li><a href="./yii-i18n-formatter.html#asBoolean()-detail">boolean</a>&#65306;&#36825;&#20010;&#20540;&#34987;&#26684;&#24335;&#21270;&#20026;&#24067;&#23572;&#20540;&#12290;
+&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#36716;&#21270;&#20026;&#24403;&#21069;&#30340;&#24341;&#29992;&#31243;&#24207;&#35821;&#35328;&#65292;<code>true</code> &#34920;&#29616;&#20026; <code>Yes</code> &#24182;&#19988; <code>false</code> &#34920;&#29616;&#20026; <code>No</code>&#12290;
+&#24744;&#21487;&#20197;&#36890;&#36807;&#37197;&#32622; <a href="./yii-i18n-formatter.html#%24booleanFormat-detail">yii\i18n\Formatter::$booleanFormat</a> &#30340;&#23646;&#24615;&#26469;&#35843;&#25972;&#23427;&#12290;</li>
+</ul>
+<h2>&#31354;&#20540;&#65288;Null Values&#65289;  <span id="null-values"></span><a href="#null-values" class="hashlink">&para;</a></h2><p>&#31354;&#20540;&#65288;<code>null</code>&#65289;&#20250;&#34987;&#29305;&#27530;&#26684;&#24335;&#21270;&#12290;<code>fommater</code> &#40664;&#35748;&#20250;&#23558;&#31354;&#20540;&#26684;&#24335;&#21270;&#20026; <code>(not set)</code> &#23545;&#24212;&#30340;&#24403;&#21069;&#30340;&#35821;&#35328;&#12290;
+&#20320;&#21487;&#20197;&#37197;&#32622; <a href="./yii-i18n-formatter.html#%24nullDisplay-detail">nullDisplay</a>
+&#23646;&#24615;&#26469;&#36827;&#34892;&#20010;&#24615;&#21270;&#12290;</p>
+<h2>&#26412;&#22320;&#26085;&#26399;&#26684;&#24335;&#21270;&#65288;Localizing Data Format&#65289;  <span id="localizing-data-format"></span><a href="#localizing-data-format" class="hashlink">&para;</a></h2><p>&#22914;&#19978;&#25152;&#36848;&#65292;&#26684;&#24335;&#21270;&#24212;&#29992;&#31243;&#24207;&#21487;&#20197;&#20351;&#29992;&#24403;&#21069;&#26377;&#25928;&#30340; <a href="./yii-i18n-formatter.html#%24locale-detail">locale</a> &#26469;&#30830;&#23450;
+&#22914;&#20309;&#26684;&#24335;&#21270;&#36866;&#29992;&#20110;&#30446;&#26631;&#22269;&#23478;/&#22320;&#21306;&#30340;&#20540;&#12290;
+&#20363;&#22914;&#65292;&#23545;&#20110;&#19981;&#21516;&#30340;&#21306;&#22495;&#35774;&#32622;&#65292;&#30456;&#21516;&#30340;&#26085;&#26399;&#21487;&#33021;&#20250;&#26377;&#19981;&#21516;&#30340;&#26684;&#24335;&#65306;</p>
+<pre><code class="hljs php language-php">Yii::$app-&gt;formatter-&gt;locale = <span class="hljs-string">'en-US'</span>;
+<span class="hljs-keyword">echo</span> Yii::$app-&gt;formatter-&gt;asDate(<span class="hljs-string">'2014-01-01'</span>); <span class="hljs-comment">// output: January 1, 2014</span>
+
+Yii::$app-&gt;formatter-&gt;locale = <span class="hljs-string">'de-DE'</span>;
+<span class="hljs-keyword">echo</span> Yii::$app-&gt;formatter-&gt;asDate(<span class="hljs-string">'2014-01-01'</span>); <span class="hljs-comment">// output: 1. Januar 2014</span>
+
+Yii::$app-&gt;formatter-&gt;locale = <span class="hljs-string">'ru-RU'</span>;
+<span class="hljs-keyword">echo</span> Yii::$app-&gt;formatter-&gt;asDate(<span class="hljs-string">'2014-01-01'</span>); <span class="hljs-comment">// output: 1 &#1103;&#1085;&#1074;&#1072;&#1088;&#1103; 2014 &#1075;.</span>
+</code></pre>
+<p>&#40664;&#35748;&#37197;&#32622;&#19979;&#65292;&#24403;&#21069; <a href="./yii-i18n-formatter.html#%24locale-detail">locale</a> &#20915;&#23450;&#20110; <a href="./yii-base-application.html#%24language-detail">yii\base\Application::$language</a>.
+&#20320;&#21487;&#20197;&#35206;&#30422; <a href="./yii-i18n-formatter.html#%24locale-detail">yii\i18n\Formatter::$locale</a> &#23646;&#24615;&#26469;&#28385;&#36275;&#19981;&#21516;&#30340;&#38656;&#35201;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>Yii formatter &#20381;&#36182; <a href="https://www.php.net/manual/zh/book.intl.php">PHP intl extension</a> 
+&#26469;&#36827;&#34892;&#26412;&#22320;&#25968;&#25454;&#26684;&#24335;&#21270;
+&#22240;&#20026;&#19981;&#21516;&#30340; ICU &#24211;&#21487;&#33021;&#20250;&#23548;&#33268;&#19981;&#21516;&#30340;&#36755;&#20986;&#65292;&#25152;&#20197;&#35831;&#22312;&#20320;&#30340;&#25152;&#26377;&#26426;&#22120;&#19978;&#20445;&#25345; ICU &#24211;&#30340;&#19968;&#33268;&#24615;&#12290;
+&#35831;&#21442;&#38405; <a href="guide-tutorial-i18n.html#setup-environment">Setting up your PHP environment for internationalization</a>&#12290;</p>
+<p>&#22914;&#26524; <code>intl</code> &#25193;&#23637;&#27809;&#26377;&#34987;&#23433;&#35013;&#65292;&#25968;&#25454;&#26684;&#24335;&#21270;&#19981;&#20250;&#32771;&#34385;&#26412;&#22320;&#21270;&#12290; </p>
+<p>&#22312; 32 &#20301;&#31995;&#32479;&#20013;&#65292;1901 &#24180;&#21069;&#25110;&#32773; 2038 &#24180;&#21518;&#30340;&#26085;&#26399;&#25968;&#25454;&#23558;&#19981;&#20250;&#34987;&#26412;&#22320;&#21270;&#65292;
+&#22240;&#20026; ICU &#20351;&#29992;&#30340;&#26159; 32 &#20301;&#30340; UNIX &#26102;&#38388;&#25139;&#12290;</p>
+</blockquote>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:20 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

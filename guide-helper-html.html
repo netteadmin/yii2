@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>Html 助手（Html） - 助手类（Helpers） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w586" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w586-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w586-collapse" class="collapse navbar-collapse"><ul id="w587" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w588" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-570" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-570" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-571" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-571" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-572" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-572" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-573" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-573" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-574" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-574" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-575" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-575" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-576" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-576" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-577" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-577" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-578" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-578" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-579" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-579" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-580" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-580" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-581" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-581" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-582" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-582" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item" href="#navigation-583" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-583" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-584" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-584" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item active" href="#navigation-585" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-585" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item active" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>Html &#24110;&#21161;&#31867;&#65288;Html helper&#65289; <span id="html-bang-zhu-lei-html-helper"></span><a href="#html-bang-zhu-lei-html-helper" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#basics">&#22522;&#30784;&#65288;Basics&#65289;</a></li>
+<li><a href="#forms">&#34920;&#21333;&#65288;Forms&#65289;</a></li>
+<li><a href="#styles-and-scripts">&#26679;&#24335;&#34920;&#21644;&#33050;&#26412;&#65288;Styles and Scripts&#65289;</a></li>
+<li><a href="#hyperlinks">&#36229;&#38142;&#25509;&#65288;Hyperlinks&#65289;</a></li>
+<li><a href="#images">&#22270;&#29255;&#65288;Images&#65289;</a></li>
+<li><a href="#lists">&#21015;&#34920;&#65288;Lists&#65289;</a></li></ol></div>
+<p>&#20219;&#20309;&#19968;&#20010; web &#24212;&#29992;&#31243;&#24207;&#20250;&#29983;&#25104;&#24456;&#22810; HTMl &#36229;&#25991;&#26412;&#26631;&#35760;&#12290;&#22914;&#26524;&#36229;&#25991;&#26412;&#26631;&#35760;&#26159;&#38745;&#24577;&#30340;&#65292;
+&#37027;&#20040;<a href="https://www.php.net/manual/zh/language.basic-syntax.phpmode.php">&#23558; PHP &#21644; HTML &#28151;&#21512;&#22312;&#19968;&#20010;&#25991;&#20214;&#37324;</a>
+&#36825;&#31181;&#20570;&#27861;&#26159;&#38750;&#24120;&#39640;&#25928;&#30340;&#12290;&#20294;&#26159;&#65292;&#22914;&#26524;&#36825;&#20123;&#36229;&#25991;&#26412;&#26631;&#35760;&#26159;&#21160;&#24577;&#29983;&#25104;&#30340;&#65292;&#37027;&#20040;&#22914;&#26524;&#27809;&#26377;&#39069;&#22806;&#30340;&#36741;&#21161;&#24037;&#20855;&#65292;&#36825;&#20010;&#36807;&#31243;&#23558;&#20250;&#21464;&#24471;&#22797;&#26434;&#12290;
+Yii &#36890;&#36807; HTML  &#24110;&#21161;&#31867;&#26469;&#25552;&#20379;&#29983;&#25104;&#36229;&#25991;&#26412;&#26631;&#35760;&#30340;&#26041;&#27861;&#12290;&#36825;&#20010;&#24110;&#21161;&#31867;&#21253;&#21547;&#26377;&#19968;&#31995;&#21015;&#30340;&#29992;&#20110;&#22788;&#29702;&#36890;&#29992;&#30340; HTML &#26631;&#31614;&#21644;&#20854;&#23646;&#24615;&#20197;&#21450;&#20869;&#23481;&#30340;&#38745;&#24577;&#26041;&#27861;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22914;&#26524;&#20320;&#30340;&#36229;&#25991;&#26412;&#26631;&#35760;&#25509;&#36817;&#38745;&#24577;&#30340;&#65292;&#37027;&#20040;&#26368;&#22909;&#26159;&#30452;&#25509;&#20351;&#29992; HTML&#12290;
+&#27809;&#26377;&#24517;&#35201;&#25226;&#25152;&#26377;&#30340;&#36229;&#25991;&#26412;&#26631;&#35760;&#37117;&#29992; HTML &#36741;&#21161;&#31867;&#26469;&#29983;&#25104;&#12290;</p>
+</blockquote>
+<h2>&#22522;&#30784;&#65288;Basics&#65289;  <span id="basics"></span><a href="#basics" class="hashlink">&para;</a></h2><p>&#30001;&#20110;&#36890;&#36807;&#23383;&#31526;&#20018;&#36830;&#25509;&#26469;&#29983;&#25104;&#21160;&#24577;&#30340; HTML &#20250;&#24456;&#23481;&#26131;&#21464;&#24471;&#20940;&#20081;&#65292;
+Yii &#25552;&#20379;&#20102;&#19968;&#31995;&#21015;&#30340;&#38745;&#24577;&#26041;&#27861;&#26469;&#25805;&#20316;&#26631;&#31614;&#37197;&#32622;&#24182;&#22522;&#20110;&#36825;&#20123;&#37197;&#32622;&#26469;&#21019;&#24314;&#23545;&#24212;&#30340;&#26631;&#31614;&#12290;</p>
+<h3>&#29983;&#25104;&#26631;&#31614;&#65288;Generating Tags&#65289;  <span id="generating-tags"></span><a href="#generating-tags" class="hashlink">&para;</a></h3><p>&#29983;&#25104;&#19968;&#20010;&#26631;&#31614;&#30340;&#20195;&#30721;&#31867;&#20284;&#22914;&#19979;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::tag(<span class="hljs-string">'p'</span>, Html::encode($user-&gt;name), [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'username'</span>]) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<p>&#36825;&#20010;&#26041;&#27861;&#30340;&#31532;&#19968;&#20010;&#21442;&#25968;&#26159;&#26631;&#31614;&#21517;&#31216;&#12290;&#31532;&#20108;&#20010;&#26159;&#35201;&#35013;&#20837;&#21040;&#24320;&#22987;&#21644;&#32467;&#26463;&#26631;&#31614;&#38388;&#30340;&#20869;&#23481;&#12290;
+&#27880;&#24847;&#21040;&#25105;&#20204;&#20351;&#29992; <code>Html::encode</code> &#12290;&#37027;&#26159;&#22240;&#20026;&#20869;&#23481;&#19981;&#20250;&#34987;&#33258;&#21160;&#30340;&#36716;&#30721;&#20197;&#20801;&#35768;&#22312;&#26377;&#38656;&#35201;&#30340;&#26102;&#20505;&#23884;&#22871; HTML&#12290;
+&#31532;&#19977;&#20010;&#21442;&#25968;&#26159;&#19968;&#20010; HTML &#37197;&#32622;&#25968;&#32452;&#65292;&#25110;&#32773;&#25442;&#35328;&#20043;&#65292;&#26631;&#31614;&#23646;&#24615;&#12290;&#22312;&#36825;&#20010;&#25968;&#32452;&#20013;&#65292;&#25968;&#32452;&#30340;&#19979;&#26631;&#26159;&#23646;&#24615;&#21517;&#31216;&#65292;
+&#27604;&#22914; <code>class</code>&#65292;<code>href</code> &#25110;&#32773; <code>target</code>&#65292;&#32780;&#20540;&#21017;&#26159;&#23545;&#24212;&#23646;&#24615;&#30340;&#20540;&#12290;</p>
+<p>&#20197;&#19978;&#20195;&#30721;&#20250;&#29983;&#25104;&#22914;&#19979; HTML &#65306;</p>
+<pre><code class="hljs xml language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"username"</span>&gt;</span>samdark<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p>&#22914;&#26524;&#20320;&#21482;&#38656;&#35201;&#24320;&#21551;&#19968;&#20010;&#26631;&#31614;&#25110;&#32773;&#20851;&#38381;&#19968;&#20010;&#26631;&#31614;&#65292;&#20320;&#21487;&#20197;&#20351;&#29992; <code>Html::beginTag()</code> &#21644; <code>Html::endTag()</code> &#26041;&#27861;&#12290;</p>
+<p>&#26631;&#31614;&#23646;&#24615;&#65288; Options &#65289;&#22312; Html &#24110;&#21161;&#31867;&#24456;&#22810;&#26041;&#27861;&#21644;&#22823;&#37327;&#30340;&#23567;&#37096;&#20214;&#20013;&#37117;&#26377;&#20351;&#29992;&#12290;&#22312;&#36825;&#20123;&#24773;&#20917;&#19979;&#65292;
+&#26377;&#19968;&#20123;&#39069;&#22806;&#30340;&#22788;&#29702;&#25105;&#20204;&#38656;&#35201;&#30693;&#36947;&#65306;</p>
+<ul>
+<li>&#22914;&#26524;&#19968;&#20010;&#20540;&#20026; null &#65292;&#37027;&#20040;&#23545;&#24212;&#30340;&#23646;&#24615;&#23558;&#19981;&#20250;&#34987;&#28210;&#26579;&#12290;</li>
+<li>&#22914;&#26524;&#26159;&#24067;&#23572;&#31867;&#22411;&#30340;&#20540;&#30340;&#23646;&#24615;&#65292;&#23558;&#20250;&#34987;&#24403;&#20570; 
+<a href="https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes">&#24067;&#23572;&#23646;&#24615;</a> &#26469;&#22788;&#29702;&#12290;</li>
+<li>&#23646;&#24615;&#30340;&#20540;&#23558;&#20250;&#29992; <a href="./yii-helpers-basehtml.html#encode()-detail">Html::encode()</a> &#26041;&#27861;&#36827;&#34892; HTML &#36716;&#30721;&#22788;&#29702;&#12290;</li>
+<li><p>&#22914;&#26524;&#19968;&#20010;&#23646;&#24615;&#30340;&#20540;&#26159;&#19968;&#20010;&#25968;&#32452;&#65292;&#37027;&#20040;&#23427;&#23558;&#20250;&#34987;&#22914;&#19979;&#22788;&#29702;&#65306;</p>
+<ul>
+<li>&#22914;&#26524;&#36825;&#20010;&#23646;&#24615;&#26159;&#19968;&#20010;&#22914; <a href="./yii-helpers-basehtml.html#%24dataAttributes-detail">yii\helpers\Html::$dataAttributes</a> &#25152;&#21015;&#30340;&#25968;&#25454;&#23646;&#24615;&#65292;
+&#27604;&#22914; <code>data</code> &#25110;&#32773; <code>ng</code>&#65292;&#19968;&#31995;&#21015;&#30340;&#23646;&#24615;&#21015;&#34920;&#23558;&#20250;&#34987;&#28210;&#26579;&#65292;&#27599;&#20010;&#20195;&#34920;&#20540;&#25968;&#32452;&#20013;&#30340;&#20803;&#32032;&#12290;
+&#27604;&#22914;&#65306; <code>'data' =&gt; ['id' =&gt; 1, 'name' =&gt; 'yii']</code> &#23558;&#20250;&#29983;&#25104;  <code>data-id="1" data-name="yii"</code>&#65307;
+<code>'data' =&gt; ['params' =&gt; ['id' =&gt; 1, 'name' =&gt; 'yii'], 'status' =&gt; 'ok']</code> &#29983;&#25104;
+<code>data-params='{"id":1,"name":"yii"}' data-status="ok"</code>&#12290;
+&#27880;&#24847;&#21518;&#32773; &#20013;&#65292;&#19968;&#20010;&#23376;&#25968;&#32452;&#34987;&#36755;&#20986;&#20026; JSON &#12290;</li>
+<li>&#22914;&#26524;&#36825;&#20010;&#23646;&#24615;&#19981;&#26159;&#19968;&#20010;&#25968;&#25454;&#23646;&#24615;&#65292;&#37027;&#20040;&#20540;&#23558;&#20250;&#34987; JSON-encoded&#12290;&#27604;&#22914;&#65306;<code>['params' =&gt; ['id' =&gt; 1, 'name' =&gt; 'yii']</code> 
+&#29983;&#25104; <code>params='{"id":1,"name":"yii"}'</code>&#12290;</li>
+</ul>
+</li>
+</ul>
+<h3>&#29983;&#25104; CSS &#31867;&#21644;&#26679;&#24335;&#65288;Forming CSS Classes and Styles&#65289;  <span id="forming-css"></span><a href="#forming-css" class="hashlink">&para;</a></h3><p>&#24403;&#24320;&#22987;&#26500;&#36896;&#19968;&#20010; HTML &#26631;&#31614;&#30340;&#23646;&#24615;&#26102;&#65292;&#25105;&#20204;&#32463;&#24120;&#38656;&#35201;&#23545;&#40664;&#35748;&#30340;&#23646;&#24615;&#36827;&#34892;&#20462;&#25913;&#12290;
+&#20026;&#20102;&#28155;&#21152;&#25110;&#32773;&#21024;&#38500; CSS &#31867;&#65292;&#20320;&#21487;&#20197;&#20351;&#29992;&#22914;&#19979;&#20195;&#30721;&#65306;</p>
+<pre><code class="hljs php language-php">$options = [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'btn btn-default'</span>];
+
+<span class="hljs-keyword">if</span> ($type === <span class="hljs-string">'success'</span>) {
+    Html::removeCssClass($options, <span class="hljs-string">'btn-default'</span>);
+    Html::addCssClass($options, <span class="hljs-string">'btn-success'</span>);
+}
+
+<span class="hljs-keyword">echo</span> Html::tag(<span class="hljs-string">'div'</span>, <span class="hljs-string">'Pwede na'</span>, $options);
+
+<span class="hljs-comment">// in case of $type of 'success' it will render</span>
+<span class="hljs-comment">// &lt;div class="btn btn-success"&gt;Pwede na&lt;/div&gt;</span>
+</code></pre>
+<p>&#22522;&#20110;&#21516;&#26679;&#30340;&#30446;&#30340;&#65292;&#38024;&#23545; <code>style</code> &#23646;&#24615;&#65306;</p>
+<pre><code class="hljs php language-php">$options = [<span class="hljs-string">'class'</span> =&gt; [<span class="hljs-string">'btn'</span>, <span class="hljs-string">'btn-default'</span>]];
+
+<span class="hljs-keyword">echo</span> Html::tag(<span class="hljs-string">'div'</span>, <span class="hljs-string">'Save'</span>, $options);
+<span class="hljs-comment">// renders '&lt;div class="btn btn-default"&gt;Save&lt;/div&gt;'</span>
+</code></pre>
+<p>&#22312;&#28155;&#21152;&#25110;&#21024;&#38500;&#31867;&#26102;&#65292;&#24744;&#20063;&#21487;&#20197;&#20351;&#29992;&#25968;&#32452;&#26684;&#24335;&#65306;</p>
+<pre><code class="hljs php language-php">$options = [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'btn'</span>];
+
+<span class="hljs-keyword">if</span> ($type === <span class="hljs-string">'success'</span>) {
+    Html::addCssClass($options, [<span class="hljs-string">'btn-success'</span>, <span class="hljs-string">'btn-lg'</span>]);
+}
+
+<span class="hljs-keyword">echo</span> Html::tag(<span class="hljs-string">'div'</span>, <span class="hljs-string">'Save'</span>, $options);
+<span class="hljs-comment">// renders '&lt;div class="btn btn-success btn-lg"&gt;Save&lt;/div&gt;'</span>
+</code></pre>
+<p><code>Html::addCssClass()</code> &#38450;&#27490;&#37325;&#22797;&#31867;&#65292;&#25152;&#20197;&#20320;&#19981;&#24517;&#25285;&#24515;&#21516;&#19968;&#20010;&#31867;&#21487;&#33021;&#20250;&#20986;&#29616;&#20004;&#27425;&#65306;</p>
+<pre><code class="hljs php language-php">$options = [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'btn btn-default'</span>];
+
+Html::addCssClass($options, <span class="hljs-string">'btn-default'</span>); <span class="hljs-comment">// class 'btn-default' is already present</span>
+
+<span class="hljs-keyword">echo</span> Html::tag(<span class="hljs-string">'div'</span>, <span class="hljs-string">'Save'</span>, $options);
+<span class="hljs-comment">// renders '&lt;div class="btn btn-default"&gt;Save&lt;/div&gt;'</span>
+</code></pre>
+<p>&#22914;&#26524;&#36890;&#36807;&#25968;&#32452;&#26684;&#24335;&#25351;&#23450; CSS &#31867;&#36873;&#39033;&#65292;&#21017;&#21487;&#20197;&#20351;&#29992;&#21629;&#21517;&#38190;&#26469;&#26631;&#35760;&#35813;&#31867;&#30340;&#36923;&#36753;&#29992;&#36884;&#12290;
+&#22312;&#36825;&#31181;&#24773;&#20917;&#19979;&#65292;&#22312; <code>Html::addCssClass()</code> &#31867;&#20013;&#20250;&#24573;&#30053;&#25968;&#32452;&#26684;&#24335;&#20013;&#20855;&#26377;&#30456;&#21516;&#38190;&#65306;</p>
+<pre><code class="hljs php language-php">$options = [
+    <span class="hljs-string">'class'</span> =&gt; [
+        <span class="hljs-string">'btn'</span>,
+        <span class="hljs-string">'theme'</span> =&gt; <span class="hljs-string">'btn-default'</span>,
+    ]
+];
+
+Html::addCssClass($options, [<span class="hljs-string">'theme'</span> =&gt; <span class="hljs-string">'btn-success'</span>]); <span class="hljs-comment">// 'theme' &#38190;&#24050;&#34987;&#20351;&#29992;</span>
+
+<span class="hljs-keyword">echo</span> Html::tag(<span class="hljs-string">'div'</span>, <span class="hljs-string">'Save'</span>, $options);
+<span class="hljs-comment">// renders '&lt;div class="btn btn-default"&gt;Save&lt;/div&gt;'</span>
+</code></pre>
+<p>&#21487;&#20197;&#20351;&#29992; <code>style</code> &#23646;&#24615;&#20197;&#31867;&#20284;&#30340;&#26041;&#24335;&#35774;&#32622; CSS &#26679;&#24335;&#65306;</p>
+<pre><code class="hljs php language-php">$options = [<span class="hljs-string">'style'</span> =&gt; [<span class="hljs-string">'width'</span> =&gt; <span class="hljs-string">'100px'</span>, <span class="hljs-string">'height'</span> =&gt; <span class="hljs-string">'100px'</span>]];
+
+<span class="hljs-comment">// gives style="width: 100px; height: 200px; position: absolute;"</span>
+Html::addCssStyle($options, <span class="hljs-string">'height: 200px; position: absolute;'</span>);
+
+<span class="hljs-comment">// gives style="position: absolute;"</span>
+Html::removeCssStyle($options, [<span class="hljs-string">'width'</span>, <span class="hljs-string">'height'</span>]);
+</code></pre>
+<p>&#24403;&#20351;&#29992; <a href="./yii-helpers-basehtml.html#addCssStyle()-detail">addCssStyle()</a> &#26041;&#27861;&#26102;&#65292;&#20320;&#21487;&#20197;&#25351;&#23450;&#19968;&#20010;&#21644; CSS &#23646;&#24615;&#30456;&#20851;&#30340;&#21517;&#20540;&#23545;&#30340;&#25968;&#32452;&#65292;
+&#20063;&#21487;&#20197;&#30452;&#25509;&#26159;&#19968;&#20010;&#31867;&#20284; <code>width: 100px; height: 200px;</code> &#30340;&#23383;&#31526;&#20018;&#12290;&#36825;&#20123;&#26684;&#24335;&#23558;&#20250;&#33258;&#21160;&#30340;&#34987; 
+<a href="./yii-helpers-basehtml.html#cssStyleFromArray()-detail">cssStyleFromArray()</a> &#21644;<a href="./yii-helpers-basehtml.html#cssStyleToArray()-detail">cssStyleToArray()</a> 
+&#26041;&#27861;&#36827;&#34892;&#36716;&#25442;&#12290;&#26041;&#27861; <a href="./yii-helpers-basehtml.html#removeCssStyle()-detail">removeCssStyle()</a> &#25509;&#25910;&#19968;&#20010;&#21253;&#21547;&#35201;&#34987;&#31227;&#38500;&#30340;&#23646;&#24615;&#25968;&#32452;&#20316;&#20026;&#21442;&#25968;&#12290;
+&#22914;&#26524;&#21482;&#24819;&#31227;&#38500;&#19968;&#20010;&#23646;&#24615;&#65292;&#20320;&#21487;&#20197;&#30452;&#25509;&#20256;&#36882;&#19968;&#20010;&#23383;&#31526;&#20018;&#12290;</p>
+<h3>&#26631;&#31614;&#20869;&#23481;&#30340;&#36716;&#30721;&#21644;&#35299;&#30721;&#65288;Encoding and Decoding Content&#65289;  <span id="encoding-and-decoding-content"></span><a href="#encoding-and-decoding-content" class="hashlink">&para;</a></h3><p>&#20026;&#20102;&#35753;&#20869;&#23481;&#33021;&#22815;&#27491;&#30830;&#23433;&#20840;&#30340;&#26174;&#31034;&#65292;&#19968;&#20123; HTML &#29305;&#27530;&#23383;&#31526;&#24212;&#35813;&#34987;&#36716;&#30721;&#12290;&#22312; PHP &#20013;&#65292;
+&#36825;&#20010;&#25805;&#20316;&#30001; <a href="https://www.php.net/manual/zh/function.htmlspecialchars.php">htmlspecialchars</a> &#21644;
+<a href="https://www.php.net/manual/zh/function.htmlspecialchars-decode.php">htmlspecialchars_decode</a> &#23436;&#25104;&#12290;
+&#30452;&#25509;&#20351;&#29992;&#36825;&#20123;&#26041;&#27861;&#30340;&#38382;&#39064;&#26159;&#65292;&#20320;&#24635;&#26159;&#38656;&#35201;&#25351;&#23450;&#36716;&#30721;&#25152;&#38656;&#30340;&#39069;&#22806;&#26631;&#24535;&#12290;&#30001;&#20110;&#26631;&#24535;&#19968;&#33324;&#24635;&#26159;&#19981;&#21464;&#30340;&#65292;&#32780;&#20869;&#23481;&#36716;&#30721;&#30340;&#36807;&#31243;&#20026;&#20102;&#36991;&#20813;&#19968;&#20123;&#23433;&#20840;&#38382;&#39064;&#65292;
+&#38656;&#35201;&#21644;&#24212;&#29992;&#30340;&#40664;&#35748;&#36807;&#31243;&#21305;&#37197;&#65292;
+Yii &#25552;&#20379;&#20102;&#20004;&#20010;&#31616;&#21333;&#21487;&#29992;&#30340;&#23545; PHP &#21407;&#29983;&#26041;&#27861;&#30340;&#23553;&#35013;&#65306;</p>
+<pre><code class="hljs php language-php">$userName = Html::encode($user-&gt;name);
+<span class="hljs-keyword">echo</span> $userName;
+
+$decodedUserName = Html::decode($userName);
+</code></pre>
+<h2>&#34920;&#21333;&#65288;Forms&#65289;  <span id="forms"></span><a href="#forms" class="hashlink">&para;</a></h2><p>&#22788;&#29702;&#34920;&#21333;&#26631;&#31614;&#26159;&#22823;&#37327;&#30340;&#37325;&#22797;&#24615;&#21171;&#21160;&#24182;&#19988;&#26131;&#38169;&#12290;&#22240;&#27492;&#65292;
+Yii &#20063;&#25552;&#20379;&#20102;&#19968;&#31995;&#21015;&#30340;&#26041;&#27861;&#26469;&#36741;&#21161;&#22788;&#29702;&#34920;&#21333;&#26631;&#31614;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#32771;&#34385;&#22312;&#22788;&#29702; models &#20197;&#21450;&#38656;&#35201;&#39564;&#35777;&#30340;&#24773;&#24418;&#19979;&#65292;&#20351;&#29992; <a href="./yii-widgets-activeform.html">ActiveForm</a> &#32452;&#20214;&#12290;</p>
+</blockquote>
+<h3>&#21019;&#24314;&#34920;&#21333;&#65288;Creating Forms&#65289;  <span id="creating-forms"></span><a href="#creating-forms" class="hashlink">&para;</a></h3><p>&#34920;&#21333;&#21487;&#20197;&#29992;&#31867;&#20284;&#22914;&#19979;&#20195;&#30721;&#65292;&#20351;&#29992; <a href="./yii-helpers-basehtml.html#beginForm()-detail">beginForm()</a> &#26041;&#27861;&#24320;&#21551;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::beginForm([<span class="hljs-string">'order/update'</span>, <span class="hljs-string">'id'</span> =&gt; $id], <span class="hljs-string">'post'</span>, [<span class="hljs-string">'enctype'</span> =&gt; <span class="hljs-string">'multipart/form-data'</span>]) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<p>&#26041;&#27861;&#30340;&#31532;&#19968;&#20010;&#21442;&#25968;&#20026;&#34920;&#21333;&#23558;&#35201;&#34987;&#25552;&#20132;&#30340; URL &#22320;&#22336;&#12290;&#23427;&#21487;&#20197;&#20197; Yii &#36335;&#30001;&#30340;&#24418;&#24335;&#34987;&#25351;&#23450;&#65292;&#24182;&#30001; <a href="./yii-helpers-baseurl.html#to()-detail">Url::to()</a> &#26469;&#25509;&#25910;&#22788;&#29702;&#12290;
+&#31532;&#20108;&#20010;&#21442;&#25968;&#26159;&#20351;&#29992;&#30340;&#26041;&#27861;&#65292;&#40664;&#35748;&#20026; <code>post</code> &#26041;&#27861;&#12290;&#31532;&#19977;&#20010;&#21442;&#25968;&#20026;&#34920;&#21333;&#26631;&#31614;&#30340;&#23646;&#24615;&#25968;&#32452;&#12290;&#22312;&#19978;&#38754;&#30340;&#20363;&#23376;&#20013;&#65292;
+&#25105;&#20204;&#25226;&#32534;&#30721; POST &#35831;&#27714;&#20013;&#30340;&#34920;&#21333;&#25968;&#25454;&#30340;&#26041;&#24335;&#25913;&#20026; <code>multipart/form-data</code>&#12290;
+&#22914;&#26524;&#26159;&#19978;&#20256;&#25991;&#20214;&#65292;&#36825;&#20010;&#35843;&#25972;&#26159;&#24517;&#39035;&#30340;&#12290;</p>
+<p>&#20851;&#38381;&#34920;&#21333;&#26631;&#31614;&#38750;&#24120;&#31616;&#21333;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::endForm() <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<h3>&#25353;&#38062;&#65288;Buttons&#65289;  <span id="buttons"></span><a href="#buttons" class="hashlink">&para;</a></h3><p>&#20320;&#21487;&#20197;&#29992;&#22914;&#19979;&#20195;&#30721;&#29983;&#25104;&#25353;&#38062;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::button(<span class="hljs-string">'Press me!'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'teaser'</span>]) <span class="hljs-meta">?&gt;</span></span>
+<span class="php"><span class="hljs-meta">&lt;?</span>= Html::submitButton(<span class="hljs-string">'Submit'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'submit'</span>]) <span class="hljs-meta">?&gt;</span></span>
+<span class="php"><span class="hljs-meta">&lt;?</span>= Html::resetButton(<span class="hljs-string">'Reset'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'reset'</span>]) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<p>&#19978;&#36848;&#19977;&#20010;&#26041;&#27861;&#30340;&#31532;&#19968;&#20010;&#21442;&#25968;&#20026;&#25353;&#38062;&#30340;&#26631;&#39064;&#65292;&#31532;&#20108;&#20010;&#26159;&#26631;&#31614;&#23646;&#24615;&#12290;&#26631;&#39064;&#40664;&#35748;&#27809;&#26377;&#36827;&#34892;&#36716;&#30721;&#65292;&#22914;&#26524;&#26631;&#39064;&#26159;&#30001;&#32456;&#31471;&#29992;&#36755;&#20837;&#30340;&#65292;
+&#37027;&#20040;&#35831;&#33258;&#34892;&#29992; <a href="./yii-helpers-basehtml.html#encode()-detail">Html::encode()</a> &#26041;&#27861;&#36827;&#34892;&#36716;&#30721;&#12290;</p>
+<h3>&#36755;&#20837;&#26639;&#65288;Input Fields&#65289;  <span id="input-fields"></span><a href="#input-fields" class="hashlink">&para;</a></h3><p>input &#30456;&#20851;&#30340;&#26041;&#27861;&#26377;&#20004;&#32452;&#65306;&#20197; <code>active</code> &#24320;&#22836;&#30340;&#34987;&#31216;&#20026; active inputs&#65292;
+&#21478;&#19968;&#32452;&#21017;&#19981;&#20197;&#20854;&#24320;&#22836;&#12290;active inputs &#20381;&#25454;&#25351;&#23450;&#30340;&#27169;&#22411;&#21644;&#23646;&#24615;&#33719;&#21462;&#25968;&#25454;&#65292;
+&#32780;&#26222;&#36890; input &#21017;&#26159;&#30452;&#25509;&#25351;&#23450;&#25968;&#25454;&#12290;</p>
+<p>&#19968;&#33324;&#29992;&#27861;&#22914;&#19979;&#65306;</p>
+<pre><code class="hljs xml language-html">type, input name, input value, options
+<span class="php"><span class="hljs-meta">&lt;?</span>= Html::input(<span class="hljs-string">'text'</span>, <span class="hljs-string">'username'</span>, $user-&gt;name, [<span class="hljs-string">'class'</span> =&gt; $username]) <span class="hljs-meta">?&gt;</span></span>
+
+type, model, model attribute name, options
+<span class="php"><span class="hljs-meta">&lt;?</span>= Html::activeInput(<span class="hljs-string">'text'</span>, $user, <span class="hljs-string">'name'</span>, [<span class="hljs-string">'class'</span> =&gt; $username]) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<p>&#22914;&#26524;&#20320;&#30693;&#36947; input &#31867;&#22411;&#65292;&#26356;&#26041;&#20415;&#30340;&#20570;&#27861;&#26159;&#20351;&#29992;&#20197;&#19979;&#24555;&#25463;&#26041;&#27861;&#65306;</p>
+<ul>
+<li><a href="./yii-helpers-basehtml.html#buttonInput()-detail">yii\helpers\Html::buttonInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#submitInput()-detail">yii\helpers\Html::submitInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#resetInput()-detail">yii\helpers\Html::resetInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#textInput()-detail">yii\helpers\Html::textInput()</a>, <a href="./yii-helpers-basehtml.html#activeTextInput()-detail">yii\helpers\Html::activeTextInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#hiddenInput()-detail">yii\helpers\Html::hiddenInput()</a>, <a href="./yii-helpers-basehtml.html#activeHiddenInput()-detail">yii\helpers\Html::activeHiddenInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#passwordInput()-detail">yii\helpers\Html::passwordInput()</a> / <a href="./yii-helpers-basehtml.html#activePasswordInput()-detail">yii\helpers\Html::activePasswordInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#fileInput()-detail">yii\helpers\Html::fileInput()</a>, <a href="./yii-helpers-basehtml.html#activeFileInput()-detail">yii\helpers\Html::activeFileInput()</a></li>
+<li><a href="./yii-helpers-basehtml.html#textarea()-detail">yii\helpers\Html::textarea()</a>, <a href="./yii-helpers-basehtml.html#activeTextarea()-detail">yii\helpers\Html::activeTextarea()</a></li>
+</ul>
+<p>Radios &#21644; checkboxes &#22312;&#26041;&#27861;&#30340;&#22768;&#26126;&#19978;&#26377;&#19968;&#28857;&#28857;&#19981;&#21516;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::radio(<span class="hljs-string">'agree'</span>, <span class="hljs-keyword">true</span>, [<span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'I agree'</span>]);
+<span class="hljs-meta">&lt;?</span>= Html::activeRadio($model, <span class="hljs-string">'agree'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'agreement'</span>])
+
+<span class="hljs-meta">&lt;?</span>= Html::checkbox(<span class="hljs-string">'agree'</span>, <span class="hljs-keyword">true</span>, [<span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'I agree'</span>]);
+<span class="hljs-meta">&lt;?</span>= Html::activeCheckbox($model, <span class="hljs-string">'agree'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'agreement'</span>])
+</span></code></pre>
+<p>Dropdown list &#21644; list box &#23558;&#20250;&#22914;&#19979;&#28210;&#26579;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::dropDownList(<span class="hljs-string">'list'</span>, $currentUserId, ArrayHelper::map($userModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span></span>
+<span class="php"><span class="hljs-meta">&lt;?</span>= Html::activeDropDownList($users, <span class="hljs-string">'id'</span>, ArrayHelper::map($userModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span></span>
+
+<span class="php"><span class="hljs-meta">&lt;?</span>= Html::listBox(<span class="hljs-string">'list'</span>, $currentUserId, ArrayHelper::map($userModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span></span>
+<span class="php"><span class="hljs-meta">&lt;?</span>= Html::activeListBox($users, <span class="hljs-string">'id'</span>, ArrayHelper::map($userModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<p>&#31532;&#19968;&#20010;&#21442;&#25968;&#26159; input &#30340;&#21517;&#31216;&#65292;&#31532;&#20108;&#20010;&#26159;&#24403;&#21069;&#36873;&#20013;&#30340;&#20540;&#65292;&#31532;&#19977;&#20010;&#21017;&#26159;&#19968;&#20010;&#19979;&#26631;&#20026;&#21015;&#34920;&#20540;&#65292;&#20540;&#20026;&#21015;&#34920;&#26631;&#31614;&#30340;&#21517;&#20540;&#23545;&#25968;&#32452;&#12290;</p>
+<p>&#22914;&#26524;&#20320;&#38656;&#35201;&#20351;&#29992;&#22810;&#39033;&#36873;&#25321;&#65292; checkbox list &#24212;&#35813;&#33021;&#22815;&#31526;&#21512;&#20320;&#30340;&#38656;&#27714;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::checkboxList(<span class="hljs-string">'roles'</span>, [<span class="hljs-number">16</span>, <span class="hljs-number">42</span>], ArrayHelper::map($roleModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span></span>
+<span class="php"><span class="hljs-meta">&lt;?</span>= Html::activeCheckboxList($user, <span class="hljs-string">'role'</span>, ArrayHelper::map($roleModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<p>&#21542;&#21017;&#65292;&#29992; radio list &#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::radioList(<span class="hljs-string">'roles'</span>, [<span class="hljs-number">16</span>, <span class="hljs-number">42</span>], ArrayHelper::map($roleModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span></span>
+<span class="php"><span class="hljs-meta">&lt;?</span>= Html::activeRadioList($user, <span class="hljs-string">'role'</span>, ArrayHelper::map($roleModels, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<h3>Labels &#21644; Errors&#65288;Labels and Errors&#65289;  <span id="labels-and-errors"></span><a href="#labels-and-errors" class="hashlink">&para;</a></h3><p>&#22914;&#21516; inputs &#19968;&#26679;&#65292;Yii &#20063;&#25552;&#20379;&#20102;&#20004;&#20010;&#26041;&#27861;&#29992;&#20110;&#29983;&#25104;&#34920;&#21333; label&#12290;&#24102; ative  &#26041;&#27861;&#29992;&#20110;&#20174; model &#20013;&#21462;&#25968;&#25454;&#65292;&#21478;&#22806;&#19968;&#20010;&#21017;&#26159;&#30452;&#25509;&#25509;&#25910;&#25968;&#25454;&#12290;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::label(<span class="hljs-string">'User name'</span>, <span class="hljs-string">'username'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'label username'</span>]) <span class="hljs-meta">?&gt;</span></span>
+<span class="php"><span class="hljs-meta">&lt;?</span>= Html::activeLabel($user, <span class="hljs-string">'username'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'label username'</span>])
+</span></code></pre>
+<p>&#20026;&#20102;&#20174;&#19968;&#20010;&#25110;&#32773;&#19968;&#32452; model &#20013;&#26174;&#31034;&#34920;&#21333;&#30340;&#27010;&#35201;&#38169;&#35823;&#65292;&#20320;&#21487;&#20197;&#20351;&#29992;&#22914;&#19979;&#26041;&#27861;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::errorSummary($posts, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'errors'</span>]) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<p>&#20026;&#20102;&#26174;&#31034;&#21333;&#20010;&#38169;&#35823;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::error($post, <span class="hljs-string">'title'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'error'</span>]) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<h3>Input &#30340;&#21517;&#21644;&#20540;&#65288;Input Names and Values&#65289;  <span id="input-names-and-values"></span><a href="#input-names-and-values" class="hashlink">&para;</a></h3><p>Yii &#25552;&#20379;&#20102;&#26041;&#27861;&#29992;&#20110;&#20174; model &#20013;&#33719;&#21462; input &#30340;&#21517;&#31216;&#65292;ids&#65292;&#20540;&#12290;&#36825;&#20123;&#20027;&#35201;&#29992;&#20110;&#20869;&#37096;&#35843;&#29992;&#65292;
+&#20294;&#26159;&#26377;&#26102;&#20505;&#20320;&#20063;&#38656;&#35201;&#20351;&#29992;&#23427;&#20204;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Post[title]</span>
+<span class="hljs-keyword">echo</span> Html::getInputName($post, <span class="hljs-string">'title'</span>);
+
+<span class="hljs-comment">// post-title</span>
+<span class="hljs-keyword">echo</span> Html::getInputId($post, <span class="hljs-string">'title'</span>);
+
+<span class="hljs-comment">// my first post</span>
+<span class="hljs-keyword">echo</span> Html::getAttributeValue($post, <span class="hljs-string">'title'</span>);
+
+<span class="hljs-comment">// $post-&gt;authors[0]</span>
+<span class="hljs-keyword">echo</span> Html::getAttributeValue($post, <span class="hljs-string">'[0]authors[0]'</span>);
+</code></pre>
+<p>&#22312;&#19978;&#38754;&#30340;&#20363;&#23376;&#20013;&#65292;&#31532;&#19968;&#20010;&#21442;&#25968;&#20026;&#27169;&#22411;&#65292;&#32780;&#31532;&#20108;&#20010;&#21442;&#25968;&#26159;&#23646;&#24615;&#34920;&#36798;&#24335;&#12290;&#22312;&#26368;&#31616;&#21333;&#30340;&#34920;&#21333;&#20013;&#65292;&#36825;&#20010;&#23646;&#24615;&#34920;&#36798;&#24335;&#23601;&#26159;&#23646;&#24615;&#21517;&#31216;&#65292;&#20294;&#26159;&#22312;&#19968;&#20123;&#22810;&#34892;&#36755;&#20837;&#30340;&#26102;&#20505;&#65292;&#23427;&#20063;&#21487;&#20197;&#26159;&#23646;&#24615;&#21517;&#20197;&#25968;&#32452;&#19979;&#26631;&#21069;&#32512;&#25110;&#32773;&#21518;&#32512;&#65288;&#20063;&#21487;&#33021;&#26159;&#21516;&#26102;&#65289;&#12290;</p>
+<ul>
+<li><code>[0]content</code> &#20195;&#34920;&#22810;&#34892;&#36755;&#20837;&#26102;&#31532;&#19968;&#20010; model &#30340; content &#23646;&#24615;&#30340;&#25968;&#25454;&#20540;&#12290;</li>
+<li><code>dates[0]</code> &#20195;&#34920; dates &#23646;&#24615;&#30340;&#31532;&#19968;&#20010;&#25968;&#32452;&#20803;&#32032;&#12290;</li>
+<li><code>[0]dates[0]</code> &#20195;&#34920;&#22810;&#34892;&#36755;&#20837;&#26102;&#31532;&#19968;&#20010; model &#30340; dates &#23646;&#24615;&#30340;&#31532;&#19968;&#20010;&#25968;&#32452;&#20803;&#32032;&#12290;</li>
+</ul>
+<p>&#20026;&#20102;&#33719;&#21462;&#19968;&#20010;&#27809;&#26377;&#21069;&#32512;&#25110;&#32773;&#21518;&#32512;&#30340;&#23646;&#24615;&#21517;&#31216;&#65292;&#25105;&#20204;&#21487;&#20197;&#22914;&#19979;&#20570;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// dates</span>
+<span class="hljs-keyword">echo</span> Html::getAttributeName(<span class="hljs-string">'dates[0]'</span>);
+</code></pre>
+<h2>&#26679;&#24335;&#34920;&#21644;&#33050;&#26412;&#65288;Styles and Scripts&#65289;  <span id="styles-and-scripts"></span><a href="#styles-and-scripts" class="hashlink">&para;</a></h2><p>Yii &#25552;&#20379;&#20004;&#20010;&#26041;&#27861;&#29992;&#20110;&#29983;&#25104;&#21253;&#21547;&#20869;&#32852;&#26679;&#24335;&#21644;&#33050;&#26412;&#20195;&#30721;&#30340;&#26631;&#31614;&#12290;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::style(<span class="hljs-string">'.danger { color: #f00; }'</span>) <span class="hljs-meta">?&gt;</span></span>
+
+Gives you
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-selector-class">.danger</span> { <span class="hljs-attribute">color</span>: <span class="hljs-number">#f00</span>; }</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+
+<span class="php"><span class="hljs-meta">&lt;?</span>= Html::script(<span class="hljs-string">'alert("Hello!");'</span>, [<span class="hljs-string">'defer'</span> =&gt; <span class="hljs-keyword">true</span>]);
+
+Gives you
+
+&lt;script defer&gt;alert(<span class="hljs-string">"Hello!"</span>);&lt;/script&gt;
+</span></code></pre>
+<p>&#22914;&#26524;&#20320;&#24819;&#35201;&#22806;&#32852; css &#26679;&#24335;&#25991;&#20214;&#65292;&#21487;&#20197;&#22914;&#19979;&#20570;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::cssFile(<span class="hljs-string">'@web/css/ie5.css'</span>, [<span class="hljs-string">'condition'</span> =&gt; <span class="hljs-string">'IE 5'</span>]) <span class="hljs-meta">?&gt;</span></span>
+
+generates
+
+<span class="hljs-comment">&lt;!--[if IE 5]&gt;
+    &lt;link href="https://example.com/css/ie5.css" /&gt;
+&lt;![endif]--&gt;</span>
+</code></pre>
+<p>&#31532;&#19968;&#20010;&#21442;&#25968;&#26159; URL&#12290;&#31532;&#20108;&#20010;&#21442;&#25968;&#26159;&#26631;&#31614;&#23646;&#24615;&#25968;&#32452;&#12290;&#27604;&#26222;&#36890;&#30340;&#26631;&#31614;&#37197;&#32622;&#39033;&#39069;&#22806;&#22810;&#20986;&#30340;&#26159;&#65292;&#20320;&#21487;&#20197;&#25351;&#23450;&#65306;</p>
+<ul>
+<li><code>condition</code> &#26469;&#35753; <code>&lt;link</code> &#34987;&#26465;&#20214;&#25511;&#21046;&#27880;&#37322;&#21253;&#35065;&#65288; IE hacker &#65289;&#12290;
+&#24076;&#26395;&#20320;&#22312;&#26410;&#26469;&#19981;&#20877;&#38656;&#35201;&#26465;&#20214;&#25511;&#21046;&#27880;&#37322;&#12290;</li>
+<li><code>noscript</code> &#21487;&#20197;&#34987;&#35774;&#32622;&#20026; <code>true</code> &#65292;&#36825;&#26679; <code>&lt;link</code>&#23601;&#20250;&#34987; <code>&lt;noscript&gt;</code>&#21253;&#35065;&#65292;&#22914;&#27492;&#37027;&#20040;&#36825;&#27573;&#20195;&#30721;&#21482;&#26377;&#22312;&#27983;&#35272;&#22120;&#19981;&#25903;&#25345; 
+JavaScript &#25110;&#32773;&#34987;&#29992;&#25143;&#31105;&#29992;&#30340;&#26102;&#20505;&#25165;&#20250;&#34987;&#24341;&#20837;&#36827;&#26469;&#12290;</li>
+</ul>
+<p>&#20026;&#20102;&#22806;&#32852; JavaScript &#25991;&#20214;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::jsFile(<span class="hljs-string">'@web/js/main.js'</span>) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<p>&#36825;&#20010;&#26041;&#27861;&#30340;&#31532;&#19968;&#20010;&#21442;&#25968;&#21516; CSS &#19968;&#26679;&#29992;&#20110;&#25351;&#23450;&#22806;&#32852;&#38142;&#25509;&#12290;&#31532;&#20108;&#20010;&#21442;&#25968;&#26159;&#19968;&#20010;&#26631;&#31614;&#23646;&#24615;&#25968;&#32452;&#12290;
+&#21516; <code>cssFile</code> &#19968;&#26679;&#65292;&#20320;&#21487;&#20197;&#25351;&#23450; <code>condtion</code> &#37197;&#32622;&#39033;&#12290;</p>
+<h2>&#36229;&#38142;&#25509;&#65288;Hyperlinks&#65289;  <span id="hyperlinks"></span><a href="#hyperlinks" class="hashlink">&para;</a></h2><p>&#26377;&#19968;&#20010;&#26041;&#27861;&#21487;&#20197;&#29992;&#20110;&#20415;&#25463;&#30340;&#29983;&#25104;&#36229;&#38142;&#25509;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::a(<span class="hljs-string">'Profile'</span>, [<span class="hljs-string">'user/view'</span>, <span class="hljs-string">'id'</span> =&gt; $id], [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'profile-link'</span>]) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<p>&#31532;&#19968;&#20010;&#21442;&#25968;&#26159;&#36229;&#38142;&#25509;&#30340;&#26631;&#39064;&#12290;&#23427;&#19981;&#20250;&#34987;&#36716;&#30721;&#65292;&#25152;&#20197;&#22914;&#26524;&#26159;&#29992;&#25143;&#36755;&#20837;&#25968;&#25454;&#65292;
+&#20320;&#38656;&#35201;&#20351;&#29992; <code>Html::encode()</code> &#26041;&#27861;&#36827;&#34892;&#36716;&#30721;&#12290;&#31532;&#20108;&#20010;&#21442;&#25968;&#26159; <code>&lt;a</code> &#26631;&#31614;&#30340; <code>href</code> &#23646;&#24615;&#30340;&#20540;&#12290;
+&#20851;&#20110;&#35813;&#21442;&#25968;&#33021;&#22815;&#25509;&#21463;&#30340;&#26356;&#35814;&#32454;&#30340;&#25968;&#25454;&#20540;&#65292;&#35831;&#21442;&#38405; <a href="guide-helper-url.html">Url::to()</a>&#12290;
+&#31532;&#19977;&#20010;&#21442;&#25968;&#26159;&#26631;&#31614;&#30340;&#23646;&#24615;&#25968;&#32452;&#12290;</p>
+<p>&#22312;&#38656;&#35201;&#30340;&#26102;&#20505;&#65292;&#20320;&#21487;&#20197;&#29992;&#22914;&#19979;&#20195;&#30721;&#29983;&#25104; <code>mailto</code> &#38142;&#25509;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::mailto(<span class="hljs-string">'Contact us'</span>, <span class="hljs-string">'admin@example.com'</span>) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<h2>&#22270;&#29255;&#65288;Images&#65289;  <span id="images"></span><a href="#images" class="hashlink">&para;</a></h2><p>&#20026;&#20102;&#29983;&#25104;&#22270;&#29255;&#26631;&#31614;&#65292;&#20320;&#21487;&#20197;&#22914;&#19979;&#20570;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::img(<span class="hljs-string">'@web/images/logo.png'</span>, [<span class="hljs-string">'alt'</span> =&gt; <span class="hljs-string">'My logo'</span>]) <span class="hljs-meta">?&gt;</span></span>
+
+generates
+
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://example.com/images/logo.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"My logo"</span> /&gt;</span>
+</code></pre>
+<p>&#38500;&#20102; <a href="guide-concept-aliases.html">aliases</a> &#20043;&#22806;&#65292;&#31532;&#19968;&#20010;&#21442;&#25968;&#21487;&#20197;&#25509;&#21463; &#36335;&#30001;&#65292;&#26597;&#35810;&#65292;URLs&#12290;&#21516; <a href="guide-helper-url.html">Url::to()</a> &#19968;&#26679;&#12290;</p>
+<h2>&#21015;&#34920;&#65288;Lists&#65289;  <span id="lists"></span><a href="#lists" class="hashlink">&para;</a></h2><p>&#26080;&#24207;&#21015;&#34920;&#21487;&#20197;&#22914;&#19979;&#29983;&#25104;&#65306;</p>
+<pre><code class="hljs xml language-html"><span class="php"><span class="hljs-meta">&lt;?</span>= Html::ul($posts, [<span class="hljs-string">'item'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($item, $index)</span> </span>{
+    <span class="hljs-keyword">return</span> Html::tag(
+        <span class="hljs-string">'li'</span>,
+        <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'post'</span>, [<span class="hljs-string">'item'</span> =&gt; $item]),
+        [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'post'</span>]
+    );
+}]) <span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+<p>&#26377;&#24207;&#21015;&#34920;&#35831;&#20351;&#29992; <code>Html::ol()</code> &#26041;&#27861;&#12290;</p>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:20 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

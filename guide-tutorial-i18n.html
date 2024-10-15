@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        
+<link href="./assets/95ffbc2e/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/6ee26e89/solarized-light.css" rel="stylesheet">
+<link href="./assets/da0a60fc/style.css" rel="stylesheet">
+<script src="./assets/392f4030/jquery.js"></script>
+<script src="./assets/95ffbc2e/js/bootstrap.js"></script>
+<script src="./assets/c312f280/jssearch.js"></script>    <title>国际化（Internationalization） - 高级专题（Special Topics） - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1517" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1517-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1517-collapse" class="collapse navbar-collapse"><ul id="w1518" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <span class="caret"></span></a><ul id="w1519" class="dropdown-menu"><li><a href="./ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="./ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="./ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="./ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="./ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="./ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="./ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="./ext-httpclient-index.html" tabindex="-1">httpclient</a></li>
+<li><a href="./ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="./ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="./ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="./ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="./ext-shell-index.html" tabindex="-1">shell</a></li>
+<li><a href="./ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="./ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="./ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="./ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1501" data-toggle="collapse" data-parent="#navigation">介绍（Introduction） <b class="caret"></b></a><div id="navigation-1501" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">关于 Yii（About Yii）</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">从 Yii 1.1 升级（Upgrading from Version 1.1）</a></div>
+<a class="list-group-item" href="#navigation-1502" data-toggle="collapse" data-parent="#navigation">入门（Getting Started） <b class="caret"></b></a><div id="navigation-1502" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-prerequisites.html">你需要了解什么（What do you need to know）</a>
+<a class="list-group-item" href="./guide-start-installation.html">安装 Yii（Installing Yii）</a>
+<a class="list-group-item" href="./guide-start-workflow.html">运行应用（Running Applications）</a>
+<a class="list-group-item" href="./guide-start-hello.html">第一次问候（Saying Hello）</a>
+<a class="list-group-item" href="./guide-start-forms.html">使用 Forms（Working with Forms）</a>
+<a class="list-group-item" href="./guide-start-databases.html">玩转 Databases（Working with Databases）</a>
+<a class="list-group-item" href="./guide-start-gii.html">用 Gii 生成代码（Generating Code with Gii）</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">更上一层楼（Looking Ahead）</a></div>
+<a class="list-group-item" href="#navigation-1503" data-toggle="collapse" data-parent="#navigation">应用结构（Application Structure） <b class="caret"></b></a><div id="navigation-1503" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">结构概述（Overview）</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">入口脚本（Entry Scripts）</a>
+<a class="list-group-item" href="./guide-structure-applications.html">应用（Applications）</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">应用组件（Application Components）</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-structure-models.html">模型（Models）</a>
+<a class="list-group-item" href="./guide-structure-views.html">视图（Views）</a>
+<a class="list-group-item" href="./guide-structure-modules.html">模块（Modules）</a>
+<a class="list-group-item" href="./guide-structure-filters.html">过滤器（Filters）</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">小部件（Widgets）</a>
+<a class="list-group-item" href="./guide-structure-assets.html">前端资源（Assets）</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">扩展（Extensions）</a></div>
+<a class="list-group-item" href="#navigation-1504" data-toggle="collapse" data-parent="#navigation">请求处理（Handling Requests） <b class="caret"></b></a><div id="navigation-1504" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">运行概述（Overview）</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">引导（Bootstrapping）</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">路由引导与创建 URL（Routing and URL Creation）</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">请求（Requests）</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">响应（Responses）</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">错误处理（Handling Errors）</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">日志（Logging）</a></div>
+<a class="list-group-item" href="#navigation-1505" data-toggle="collapse" data-parent="#navigation">关键概念（Key Concepts） <b class="caret"></b></a><div id="navigation-1505" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">组件（Components）</a>
+<a class="list-group-item" href="./guide-concept-properties.html">属性（Properties）</a>
+<a class="list-group-item" href="./guide-concept-events.html">事件（Events）</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">行为（Behaviors）</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">配置（Configurations）</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">别名（Aliases）</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">类自动加载（Class Autoloading）</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">服务定位器（Service Locator）</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">依赖注入容器（Dependency Injection Container）</a></div>
+<a class="list-group-item" href="#navigation-1506" data-toggle="collapse" data-parent="#navigation">配合数据库工作（Working with Databases） <b class="caret"></b></a><div id="navigation-1506" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">数据库访问（Data Access Objects）</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">查询生成器（Query Builder）</a>
+<a class="list-group-item" href="./guide-db-active-record.html">活动记录（Active Record）</a>
+<a class="list-group-item" href="./guide-db-migrations.html">数据库迁移（Migrations）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-sphinx/doc/guide">Sphinx</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-redis/doc/guide/2.0/zh-cn">Redis（yii2-redis）</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-mongodb/doc/guide">MongoDB</a>
+<a class="list-group-item" href="https://www.yiiframework.com/extension/yiisoft/yii2-elasticsearch/doc/guide">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1507" data-toggle="collapse" data-parent="#navigation">接收用户数据（Getting Data from Users） <b class="caret"></b></a><div id="navigation-1507" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">创建表单（Creating Forms）</a>
+<a class="list-group-item" href="./guide-input-validation.html">输入验证（Validating Input）</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">文件上传（Uploading Files）</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">收集列表输入（Collecting Tabular Input）</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">多模型同时输入（Getting Data for Multiple Models）</a>
+<a class="list-group-item" href="./guide-input-form-javascript.html">在客户端扩展 ActiveForm（Extending ActiveForm on the Client Side）</a></div>
+<a class="list-group-item" href="#navigation-1508" data-toggle="collapse" data-parent="#navigation">显示数据（Displaying Data） <b class="caret"></b></a><div id="navigation-1508" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">格式化输出数据（Data Formatting）</a>
+<a class="list-group-item" href="./guide-output-pagination.html">分页（Pagination）</a>
+<a class="list-group-item" href="./guide-output-sorting.html">排序（Sorting）</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">数据提供器（Data Providers）</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">数据小部件（Data Widgets）</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">操作客户端脚本（Working with Client Scripts）</a>
+<a class="list-group-item" href="./guide-output-theming.html">主题（Theming）</a></div>
+<a class="list-group-item" href="#navigation-1509" data-toggle="collapse" data-parent="#navigation">安全（Security） <b class="caret"></b></a><div id="navigation-1509" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-security-authentication.html">认证（Authentication）</a>
+<a class="list-group-item" href="./guide-security-authorization.html">授权（Authorization）</a>
+<a class="list-group-item" href="./guide-security-passwords.html">处理密码（Working with Passwords）</a>
+<a class="list-group-item" href="./guide-security-cryptography.html">加密（Cryptography）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-authclient/blob/master/docs/guide-zh-CN/README.md">客户端认证（Auth Clients）</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">安全领域的最佳实践（Best Practices）</a></div>
+<a class="list-group-item" href="#navigation-1510" data-toggle="collapse" data-parent="#navigation">缓存（Caching） <b class="caret"></b></a><div id="navigation-1510" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-caching-data.html">数据缓存（Data Caching）</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">片段缓存（Fragment Caching）</a>
+<a class="list-group-item" href="./guide-caching-page.html">页面缓存（Page Caching）</a>
+<a class="list-group-item" href="./guide-caching-http.html">HTTP 缓存（HTTP Caching）</a></div>
+<a class="list-group-item" href="#navigation-1511" data-toggle="collapse" data-parent="#navigation">RESTful Web 服务（RESTful Web Services） <b class="caret"></b></a><div id="navigation-1511" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">快速入门（Quick Start）</a>
+<a class="list-group-item" href="./guide-rest-resources.html">资源（Resources）</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">控制器（Controllers）</a>
+<a class="list-group-item" href="./guide-rest-routing.html">路由（Routing）</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">格式化响应（Response Formatting）</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">授权验证（Authentication）</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">速率限制（Rate Limiting）</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">版本化（Versioning）</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">错误处理（Error Handling）</a></div>
+<a class="list-group-item" href="#navigation-1512" data-toggle="collapse" data-parent="#navigation">开发工具（Development Tools） <b class="caret"></b></a><div id="navigation-1512" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-zh-CN/README.md">调试工具栏和调试器（Debug Toolbar and Debugger）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-zh-CN/README.md">使用 Gii 生成代码（Generating Code using Gii）</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-apidoc">生成 API 文档（Generating API Documentation）</a></div>
+<a class="list-group-item" href="#navigation-1513" data-toggle="collapse" data-parent="#navigation">测试（Testing） <b class="caret"></b></a><div id="navigation-1513" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">概述（Overview）</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">搭建测试环境（Testing environment setup）</a>
+<a class="list-group-item" href="./guide-test-unit.html">单元测试（Unit Tests）</a>
+<a class="list-group-item" href="./guide-test-functional.html">功能测试（Functional Tests）</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">验收测试（Acceptance Tests）</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">测试夹具（Fixtures）</a></div>
+<a class="list-group-item active" href="#navigation-1514" data-toggle="collapse" data-parent="#navigation">高级专题（Special Topics） <b class="caret"></b></a><div id="navigation-1514" class="submenu panel-collapse collapse in"><a class="list-group-item" href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-zh-CN/README.md">高级应用模版（Advanced Project Template）</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">从头构建自定义模版（Building Application from Scratch）</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">控制台命令（Console Commands）</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">核心验证器（Core Validators）</a>
+<a class="list-group-item" href="./guide-tutorial-docker.html">Docker</a>
+<a class="list-group-item active" href="./guide-tutorial-i18n.html">国际化（Internationalization）</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">收发邮件（Mailing）</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">性能优化（Performance Tuning）</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">共享主机环境（Shared Hosting Environment）</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">模板引擎（Template Engines）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">集成第三方代码（Working with Third-Party Code）</a>
+<a class="list-group-item" href="./guide-tutorial-yii-as-micro-framework.html">使用 Yii 作为微框架（Using Yii as a micro framework）</a></div>
+<a class="list-group-item" href="#navigation-1515" data-toggle="collapse" data-parent="#navigation">小部件（Widgets） <b class="caret"></b></a><div id="navigation-1515" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html">GridView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-listview.html">ListView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html">DetailView</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/guide-input-forms.html#activerecord-based-forms-activeform">ActiveForm</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-pjax.html">Pjax</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-menu.html">Menu</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linkpager.html">LinkPager</a>
+<a class="list-group-item" href="https://www.yiiframework.com/doc-2.0/yii-widgets-linksorter.html">LinkSorter</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-zh-CN/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-zh-CN/README.md">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1516" data-toggle="collapse" data-parent="#navigation">助手类（Helpers） <b class="caret"></b></a><div id="navigation-1516" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">助手一览（Overview）</a>
+<a class="list-group-item" href="./guide-helper-array.html">Array 助手（ArrayHelper）</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html 助手（Html）</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url 助手（Url）</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><h1>&#22269;&#38469;&#21270;&#65288;Internationalization&#65289; <span id="guo-ji-hua-internationalization"></span><a href="#guo-ji-hua-internationalization" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#locale-language">&#21306;&#22495;&#21644;&#35821;&#35328;&#65288;Locale and Language&#65289;</a></li>
+<li><a href="#message-translation">&#28040;&#24687;&#32763;&#35793;&#65288;Message Translation&#65289;</a></li>
+<li><a href="#message-formatting">&#28040;&#24687;&#26684;&#24335;&#21270;&#65288;Message Formatting&#65289;</a></li>
+<li><a href="#view-translation">&#35270;&#22270;&#30340;&#32763;&#35793;&#65288;View Translation&#65289;</a></li>
+<li><a href="#date-number">&#26684;&#24335;&#21270;&#26085;&#26399;&#21644;&#25968;&#23383;&#20540;&#65288;Formatting Date and Number Values&#65289;</a></li>
+<li><a href="#setup-environment">&#35774;&#32622; PHP &#29615;&#22659;&#65288;Setting Up PHP Environment&#65289;</a></li></ol></div>
+<p>&#22269;&#38469;&#21270;&#65288;I18N&#65289;&#26159;&#25351;&#22312;&#35774;&#35745;&#36719;&#20214;&#26102;&#65292;&#20351;&#23427;&#21487;&#20197;&#26080;&#38656;&#20570;&#22823;&#30340;&#25913;&#21464;&#23601;&#33021;&#22815;&#36866;&#24212;&#19981;&#21516;&#30340;&#35821;&#35328;&#21644;&#22320;&#21306;&#30340;&#38656;&#35201;&#12290;&#23545;&#20110; Web &#24212;&#29992;&#31243;&#24207;&#65292;
+&#36825;&#26377;&#30528;&#29305;&#21035;&#37325;&#35201;&#30340;&#24847;&#20041;&#65292;&#22240;&#20026;&#28508;&#22312;&#30340;&#29992;&#25143;&#21487;&#33021;&#20250;&#22312;&#20840;&#29699;&#33539;&#22260;&#20869;&#12290;
+Yii &#25552;&#20379;&#30340;&#22269;&#38469;&#21270;&#21151;&#33021;&#25903;&#25345;&#20840;&#26041;&#20301;&#20449;&#24687;&#32763;&#35793;&#65292;
+&#35270;&#22270;&#32763;&#35793;&#65292;&#26085;&#26399;&#21644;&#25968;&#23383;&#26684;&#24335;&#21270;&#12290;</p>
+<h2>&#21306;&#22495;&#21644;&#35821;&#35328;&#65288;Locale and Language&#65289;  <span id="locale-language"></span><a href="#locale-language" class="hashlink">&para;</a></h2><h3>&#21306;&#22495;&#65288;Locale&#65289; <span id="qu-yu-locale"></span><a href="#qu-yu-locale" class="hashlink">&para;</a></h3><p>&#21306;&#22495;&#35774;&#32622;&#26159;&#19968;&#32452;&#21442;&#25968;&#20197;&#23450;&#20041;&#29992;&#25143;&#24076;&#26395;&#33021;&#22312;&#20182;&#20204;&#30340;&#29992;&#25143;&#30028;&#38754;&#25152;&#30475;&#21040;&#29992;&#25143;&#30340;&#35821;&#35328;&#65292;
+&#22269;&#23478;&#21644;&#20219;&#20309;&#29305;&#27530;&#30340;&#20559;&#22909;&#12290;
+&#23427;&#36890;&#24120;&#26159;&#30001;&#35821;&#35328; ID &#21644;&#21306;&#22495; ID &#32452;&#25104;&#12290;</p>
+<p>&#20363;&#22914;&#65292;ID &ldquo;en-US&rdquo; &#20195;&#34920;&#33521;&#35821;&#21644;&#32654;&#22269;&#30340;&#35821;&#35328;&#29615;&#22659;&#12290;&#20026;&#20102;&#20445;&#25345;&#19968;&#33268;&#24615;&#65292;</p>
+<p>&#22312; Yii &#24212;&#29992;&#31243;&#24207;&#20013;&#20351;&#29992;&#30340;&#25152;&#26377;&#21306;&#22495; ID &#24212;&#35813;&#35268;&#33539;&#21270;&#20026; <code>ll-CC</code>&#65292;
+&#20854;&#20013; <code>ll</code> &#26159;&#26681;&#25454;&#20004;&#20010;&#25110;&#19977;&#20010;&#23383;&#27597;&#30340;&#23567;&#20889;&#23383;&#27597;&#35821;&#35328;&#20195;&#30721;
+<a href="https://www.loc.gov/standards/iso639-2/">ISO-639</a> &#21644; <code>CC</code> &#26159;&#20004;&#20010;&#23383;&#27597;&#30340;&#22269;&#21035;&#20195;&#30721;
+<a href="https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes">ISO-3166</a>&#12290;
+&#26377;&#20851;&#21306;&#22495;&#35774;&#32622;&#30340;&#26356;&#22810;&#32454;&#33410;&#21487;&#20197;&#30475;
+<a href="https://unicode-org.github.io/icu/userguide/locale/#the-locale-concept">ICU &#39033;&#30446;&#25991;&#26723;</a>&#12290;</p>
+<h3>&#35821;&#35328;&#65288;Language&#65289; <span id="yu-yan-language"></span><a href="#yu-yan-language" class="hashlink">&para;</a></h3><p>&#22312; Yii&#20013;&#65292;&#25105;&#20204;&#32463;&#24120;&#29992; &ldquo;language&rdquo; &#26469;&#20195;&#34920;&#19968;&#20010;&#21306;&#22495;&#12290;</p>
+<p>Yii &#24212;&#29992;&#31243;&#24207;&#20351;&#29992;&#20004;&#31181;&#35821;&#35328;&#65306;</p>
+<ul>
+<li><a href="./yii-base-application.html#%24sourceLanguage-detail">&#28304;&#35821;&#35328;</a>&#65306;&#21069;&#32773;&#25351;&#30340;&#26159;&#20889;&#22312;&#20195;&#30721;&#20013;&#30340;&#35821;&#35328;&#65292;&#21518;&#32773;&#26159;&#21521;&#26368;&#32456;&#29992;&#25143;&#26174;&#31034;&#20869;&#23481;&#30340;&#35821;&#35328;&#12290;</li>
+<li><a href="./yii-base-application.html#%24language-detail">&#30446;&#26631;&#35821;&#35328;</a>&#65306;&#32780;&#20449;&#24687;&#32763;&#35793;&#26381;&#21153;&#20027;&#35201;&#26159;&#23558;&#25991;&#26412;&#28040;&#24687;&#20174;&#21407;&#35821;&#35328;&#32763;&#35793;&#21040;&#30446;&#26631;&#35821;&#35328;&#12290;</li>
+</ul>
+<p>&#25152;&#35859;&#30340;&#28040;&#24687;&#32763;&#35793;&#26381;&#21153;&#20027;&#35201;&#23558;&#25991;&#26412;&#28040;&#24687;&#20174;&#28304;&#35821;&#35328;&#36716;&#25442;&#20026;&#30446;&#26631;&#35821;&#35328;&#12290;</p>
+<h3>&#37197;&#32622;&#65288;Configuration&#65289; <span id="pei-zhi-configuration"></span><a href="#pei-zhi-configuration" class="hashlink">&para;</a></h3><p>&#21487;&#20197;&#29992;&#31867;&#20284;&#19979;&#38754;&#30340;&#24212;&#29992;&#31243;&#24207;&#37197;&#32622;&#26469;&#37197;&#32622;&#24212;&#29992;&#31243;&#24207;&#35821;&#35328;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// &#35774;&#32622;&#30446;&#26631;&#35821;&#35328;&#20026;&#20420;&#35821;</span>
+    <span class="hljs-string">'language'</span> =&gt; <span class="hljs-string">'ru-RU'</span>,
+    
+    <span class="hljs-comment">// &#35774;&#32622;&#28304;&#35821;&#35328;&#20026;&#33521;&#35821;</span>
+    <span class="hljs-string">'sourceLanguage'</span> =&gt; <span class="hljs-string">'en-US'</span>,
+    
+    ......
+];
+</code></pre>
+<p>&#40664;&#35748;&#30340; <a href="./yii-base-application.html#%24sourceLanguage-detail">&#28304;&#35821;&#35328;</a> &#20540;&#26159; <code>en-US</code>&#65292;&#21363;&#32654;&#22269;&#33521;&#35821;&#12290;
+&#24314;&#35758;&#20320;&#20445;&#30041;&#27492;&#40664;&#35748;&#20540;&#19981;&#21464;&#65292;
+&#22240;&#20026;&#36890;&#24120;&#35753;&#20154;&#23558;&#33521;&#35821;&#32763;&#35793;&#25104;&#20854;&#23427;&#35821;&#35328;&#35201;&#27604;&#23558;&#20854;&#23427;&#35821;&#35328;&#32763;&#35793;&#25104;&#20854;&#23427;&#35821;&#35328;&#23481;&#26131;&#24471;&#22810;&#12290;</p>
+<p>&#20320;&#32463;&#24120;&#38656;&#35201;&#26681;&#25454;&#19981;&#21516;&#30340;&#22240;&#32032;&#26469;&#21160;&#24577;&#22320;&#35774;&#32622; <a href="./yii-base-application.html#%24language-detail">&#30446;&#26631;&#35821;&#35328;</a> &#65292;
+&#22914;&#26368;&#32456;&#29992;&#25143;&#30340;&#35821;&#35328;&#39318;&#36873;&#39033;&#12290;&#35201;&#22312;&#24212;&#29992;&#31243;&#24207;&#37197;&#32622;&#20013;&#37197;&#32622;&#23427;&#65292;
+&#20320;&#21487;&#20197;&#20351;&#29992;&#19979;&#38754;&#30340;&#35821;&#21477;&#26469;&#26356;&#25913;&#30446;&#26631;&#35821;&#35328;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#25913;&#21464;&#30446;&#26631;&#35821;&#35328;&#20026;&#20013;&#25991;</span>
+\Yii::$app-&gt;language = <span class="hljs-string">'zh-CN'</span>;
+</code></pre>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#22914;&#26524;&#24744;&#30340;&#28304;&#35821;&#35328;&#22312;&#20195;&#30721;&#30340;&#19981;&#21516;&#37096;&#20998;&#20013;&#26377;&#25152;&#19981;&#21516;&#65292;&#37027;&#20040;&#24744;&#21487;&#20197;&#35206;&#30422;&#19981;&#21516;&#28040;&#24687;&#28304;&#30340;&#28304;&#35821;&#35328;&#65292;
+&#36825;&#23558;&#22312;&#19979;&#19968;&#33410;&#20013;&#20171;&#32461;&#12290;</p>
+</blockquote>
+<h2>&#28040;&#24687;&#32763;&#35793;&#65288;Message Translation&#65289;  <span id="message-translation"></span><a href="#message-translation" class="hashlink">&para;</a></h2><h3>&#20174;&#28304;&#35821;&#35328;&#21040;&#30446;&#26631;&#35821;&#35328;&#65288;From source language to target language&#65289; <span id="cong-yuan-yu-yan-dao-mu-biao-yu-yan-from-source-language-to-target-language"></span><a href="#cong-yuan-yu-yan-dao-mu-biao-yu-yan-from-source-language-to-target-language" class="hashlink">&para;</a></h3><p>&#28040;&#24687;&#32763;&#35793;&#26381;&#21153;&#29992;&#20110;&#23558;&#19968;&#26465;&#25991;&#26412;&#20449;&#24687;&#20174;&#19968;&#31181;&#35821;&#35328;&#65288;&#36890;&#24120;&#26159; <a href="./yii-base-application.html#%24sourceLanguage-detail">&#28304;&#35821;&#35328;</a> &#65289;
+&#32763;&#35793;&#25104;&#21478;&#19968;&#31181;&#35821;&#35328;&#65288;&#36890;&#24120;&#26159; <a href="./yii-base-application.html#%24language-detail">&#30446;&#26631;&#35821;&#35328;</a>&#65289;&#12290;</p>
+<p>&#23427;&#30340;&#32763;&#35793;&#21407;&#29702;&#26159;&#36890;&#36807;&#22312;&#35821;&#35328;&#25991;&#20214;&#20013;&#26597;&#25214;&#35201;&#32763;&#35793;&#30340;&#20449;&#24687;&#20197;&#21450;&#32763;&#35793;&#30340;&#32467;&#26524;&#12290;&#22914;&#26524;&#35201;&#32763;&#35793;&#30340;&#20449;&#24687;&#21487;&#20197;&#22312;&#35821;&#35328;&#25991;&#20214;&#20013;&#25214;&#21040;&#65292;&#20250;&#36820;&#22238;&#30456;&#24212;&#30340;&#32763;&#35793;&#32467;&#26524;&#65307;
+&#21542;&#21017;&#20250;&#36820;&#22238;&#21407;&#22987;&#26410;&#32763;&#35793;&#30340;&#20449;&#24687;&#12290;</p>
+<h3>&#22914;&#20309;&#23454;&#29616;&#65288;How to implement&#65289; <span id="ru-he-shi-xian-how-to-implement"></span><a href="#ru-he-shi-xian-how-to-implement" class="hashlink">&para;</a></h3><p>&#20026;&#20102;&#20351;&#29992;&#28040;&#24687;&#32763;&#35793;&#26381;&#21153;&#65292;&#38656;&#35201;&#20570;&#22914;&#19979;&#24037;&#20316;&#65306;</p>
+<ol>
+<li>&#35843;&#29992; <a href="./yii-baseyii.html#t()-detail">Yii::t()</a> &#26041;&#27861;&#19988;&#22312;&#20854;&#20013;&#21253;&#21547;&#27599;&#19968;&#26465;&#35201;&#32763;&#35793;&#30340;&#28040;&#24687;&#65307;</li>
+<li>&#37197;&#32622;&#19968;&#20010;&#25110;&#22810;&#20010;&#28040;&#24687;&#26469;&#28304;&#65292;&#33021;&#22312;&#20854;&#20013;&#25214;&#24471;&#21040;&#35201;&#32763;&#35793;&#30340;&#28040;&#24687;&#21644;&#32763;&#35793;&#32467;&#26524;&#65307;</li>
+<li>&#35753;&#35793;&#32773;&#32763;&#35793;&#20449;&#24687;&#24182;&#23558;&#23427;&#20204;&#23384;&#20648;&#22312;&#28040;&#24687;&#26469;&#28304;&#12290;</li>
+</ol>
+<h4>1. &#21253;&#35065;&#19968;&#26465;&#28040;&#24687;&#65288;Wrap a text message&#65289; <span id="1-bao-guo-yi-tiao-xiao-xi-wrap-a-text-message"></span><a href="#1-bao-guo-yi-tiao-xiao-xi-wrap-a-text-message" class="hashlink">&para;</a></h4><p>&#36825;&#20010; <a href="./yii-baseyii.html#t()-detail">Yii::t()</a> &#26041;&#27861;&#30340;&#29992;&#27861;&#22914;&#19979;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'This is a string to translate!'</span>);
+</code></pre>
+<p>&#31532;&#19968;&#20010;&#21442;&#25968;&#25351;&#20648;&#23384;&#28040;&#24687;&#26469;&#28304;&#30340;&#31867;&#21035;&#21517;&#31216;&#65292;
+&#31532;&#20108;&#20010;&#21442;&#25968;&#25351;&#38656;&#35201;&#34987;&#32763;&#35793;&#30340;&#28040;&#24687;&#12290;</p>
+<h4>2. &#37197;&#32622;&#19968;&#20010;&#25110;&#22810;&#20010;&#28040;&#24687;&#28304;&#65288;Configure one or multiple message sources&#65289; <span id="2-pei-zhi-yi-ge-huo-duo-ge-xiao-xi-yuan-configure-one-or-multiple-message-sources"></span><a href="#2-pei-zhi-yi-ge-huo-duo-ge-xiao-xi-yuan-configure-one-or-multiple-message-sources" class="hashlink">&para;</a></h4><p>&#36825;&#20010; <a href="./yii-baseyii.html#t()-detail">Yii::t()</a> &#26041;&#27861;&#20250;&#35843;&#29992; <code>i18n</code> <a href="guide-structure-application-components.html">&#24212;&#29992;&#32452;&#20214;</a> 
+&#26469;&#23454;&#29616;&#32763;&#35793;&#24037;&#20316;&#12290;&#36825;&#20010;&#32452;&#20214;&#21487;&#20197;&#22312;&#24212;&#29992;&#31243;&#24207;&#20013;&#25353;&#19979;&#38754;&#30340;&#20195;&#30721;&#26469;&#37197;&#32622;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'i18n'</span> =&gt; [
+        <span class="hljs-string">'translations'</span> =&gt; [
+            <span class="hljs-string">'app*'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+                <span class="hljs-comment">//'basePath' =&gt; '@app/messages',</span>
+                <span class="hljs-comment">//'sourceLanguage' =&gt; 'en-US',</span>
+                <span class="hljs-string">'fileMap'</span> =&gt; [
+                    <span class="hljs-string">'app'</span> =&gt; <span class="hljs-string">'app.php'</span>,
+                    <span class="hljs-string">'app/error'</span> =&gt; <span class="hljs-string">'error.php'</span>,
+                ],
+            ],
+        ],
+    ],
+],
+</code></pre>
+<p>&#22312;&#19978;&#38754;&#30340;&#20195;&#30721;&#20013;&#65292;&#27491;&#22312;&#37197;&#32622; <a href="./yii-i18n-phpmessagesource.html">yii\i18n\PhpMessageSource</a> &#25903;&#25345;&#30340;&#28040;&#24687;&#28304;&#12290;</p>
+<h5>&#24102; <code>*</code> &#31526;&#21495;&#30340;&#31867;&#21035;&#36890;&#37197;&#31526;&#65288;Category wildcards with <code>*</code> symbol&#65289; <span id="dai-fu-hao-de-lei-bie-tong-pei-fu-category-wildcards-with-symbol"></span><a href="#dai-fu-hao-de-lei-bie-tong-pei-fu-category-wildcards-with-symbol" class="hashlink">&para;</a></h5><p>&#22312;&#19978;&#38754;&#30340;&#20195;&#30721;&#20013;&#65292;&#37197;&#32622;&#20102;&#30001; <a href="./yii-i18n-phpmessagesource.html">yii\i18n\PhpMessageSource</a> &#25152;&#25903;&#25345;&#30340;&#28040;&#24687;&#26469;&#28304;&#12290;&#27169;&#24335; <code>app*</code> &#34920;&#31034;&#25152;&#26377;&#20197; <code>app</code>
+&#24320;&#22836;&#30340;&#28040;&#24687;&#31867;&#21035;&#21517;&#31216;&#37117;&#20351;&#29992;&#36825;&#20010;&#32763;&#35793;&#30340;&#28040;&#24687;&#26469;&#28304;&#12290;</p>
+<h4>3. &#35753;&#35793;&#21592;&#32763;&#35793;&#28040;&#24687;&#24182;&#23558;&#23427;&#20204;&#23384;&#20648;&#22312;&#28040;&#24687;&#28304;&#20013;&#65288;Let the translators translate messages and store them in the message source(s)&#65289; <span id="3-rang-yi-yuan-fan-yi-xiao-xi-bing-jiang-ta-men-cun-chu-zai-xiao-xi-yuan-zhong-let-the-translators-translate-messages-and-store-them-in-the-message-sources"></span><a href="#3-rang-yi-yuan-fan-yi-xiao-xi-bing-jiang-ta-men-cun-chu-zai-xiao-xi-yuan-zhong-let-the-translators-translate-messages-and-store-them-in-the-message-sources" class="hashlink">&para;</a></h4><p><a href="./yii-i18n-phpmessagesource.html">yii\i18n\PhpMessageSource</a> &#31867;&#20351;&#29992;PHP&#25991;&#20214;&#21644;&#19968;&#20010;&#31616;&#21333;&#30340; PHP &#25968;&#32452;&#26469;&#23384;&#20648;&#28040;&#24687;&#36716;&#25442;&#12290;
+&#36825;&#20123;&#25991;&#20214;&#21253;&#21547; <code>&#28304;&#35821;&#35328;</code> &#20013;&#30340;&#28040;&#24687;&#21040; <code>&#30446;&#26631;&#35821;&#35328;</code> &#20013;&#30340;&#32763;&#35793;&#30340;&#26144;&#23556;&#12290;</p>
+<blockquote class="info"><p><strong>&#20449;&#24687;&#65306; </strong>&#24744;&#21487;&#20197;&#20351;&#29992; <a href="#message-command"><code>message</code> &#21629;&#20196;</a> &#33258;&#21160;&#29983;&#25104;&#36825;&#20123; PHP &#25991;&#20214;&#65292;
+&#36825;&#23558;&#22312;&#26412;&#31456;&#21518;&#38754;&#20171;&#32461;&#12290;</p>
+</blockquote>
+<p>&#27599;&#20010;PHP&#25991;&#20214;&#23545;&#24212;&#20110;&#21333;&#20010;&#31867;&#21035;&#30340;&#28040;&#24687;&#12290; &#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#25991;&#20214;&#21517;&#24212;&#19982;&#31867;&#21035;&#21517;&#31216;&#30456;&#21516;&#12290;
+<code>app/messages/nl-NL/main.php</code> &#30340;&#20363;&#23376;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">/**
+* Translation map for nl-NL
+*/</span>
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'welcome'</span> =&gt; <span class="hljs-string">'welkom'</span>
+];
+
+</code></pre>
+<h5>&#25991;&#20214;&#26144;&#23556;&#65288;File mapping&#65289; <span id="wen-jian-ying-she-file-mapping"></span><a href="#wen-jian-ying-she-file-mapping" class="hashlink">&para;</a></h5><p><a href="./yii-i18n-phpmessagesource.html#%24fileMap-detail">fileMap</a> &#26469;&#26144;&#23556;&#19968;&#20010;&#31867;&#21035;&#21040;&#19981;&#21516;&#21517;&#31216;&#30340; PHP &#25991;&#20214;&#12290; </p>
+<p>&#22312;&#19978;&#38754;&#30340;&#20363;&#23376;&#20013;&#65292;&#31867;&#21035; <code>app/error</code> &#34987;&#26144;&#23556;&#21040;PHP&#25991;&#20214; <code>@app/messages/ru-RU/error.php</code>&#65288;&#20551;&#35774; <code>ru-RU</code> &#20026;&#30446;&#26631;&#35821;&#35328;&#65289;&#12290;
+&#22914;&#26524;&#27809;&#26377;&#27492;&#37197;&#32622;&#65292;
+&#35813;&#31867;&#21035;&#23558;&#34987;&#26144;&#23556;&#21040; <code>@app/messages/ru-RU/app/error.php</code> &#12290;</p>
+<h5>&#20854;&#20182;&#23384;&#20648;&#31867;&#22411;&#65288;Other storage types&#65289; <span id="qi-ta-cun-chu-lei-xing-other-storage-types"></span><a href="#qi-ta-cun-chu-lei-xing-other-storage-types" class="hashlink">&para;</a></h5><p>&#38500;&#20102;&#22312;PHP&#25991;&#20214;&#20013;&#23384;&#20648;&#28040;&#24687;&#26469;&#28304;&#65292;
+&#20063;&#21487;&#20197;&#20351;&#29992;&#19979;&#38754;&#30340;&#28040;&#24687;&#26469;&#28304;&#22312;&#19981;&#21516;&#30340;&#23384;&#20648;&#26469;&#23384;&#20648;&#32763;&#35793;&#30340;&#28040;&#24687;&#65306;</p>
+<ul>
+<li><a href="./yii-i18n-gettextmessagesource.html">yii\i18n\GettextMessageSource</a> &#20351;&#29992; GNU Gettext &#30340; MO &#25110; PO &#25991;&#20214;&#20445;&#23384;&#32763;&#35793;&#30340;&#28040;&#24687;&#12290;</li>
+<li><a href="./yii-i18n-dbmessagesource.html">yii\i18n\DbMessageSource</a> &#20351;&#29992;&#19968;&#20010;&#25968;&#25454;&#24211;&#34920;&#26469;&#23384;&#20648;&#32763;&#35793;&#30340;&#28040;&#24687;&#12290;</li>
+</ul>
+<h2>&#28040;&#24687;&#26684;&#24335;&#21270;&#65288;Message Formatting&#65289;  <span id="message-formatting"></span><a href="#message-formatting" class="hashlink">&para;</a></h2><p>&#22312;&#35201;&#32763;&#35793;&#30340;&#28040;&#24687;&#37324;&#65292;&#20320;&#21487;&#20197;&#23884;&#20837;&#19968;&#20123;&#21344;&#20301;&#31526;&#65292;&#24182;&#35753;&#23427;&#20204;&#36890;&#36807;&#21160;&#24577;&#30340;&#21442;&#25968;&#20540;&#26469;&#20195;&#26367;&#12290;
+&#20320;&#29978;&#33267;&#21487;&#20197;&#26681;&#25454;&#30446;&#26631;&#35821;&#35328;&#26684;&#24335;&#30340;&#21442;&#25968;&#20540;&#26469;&#20351;&#29992;&#29305;&#27530;&#30340;&#21344;&#20301;&#31526;&#12290;
+&#22312;&#26412;&#33410;&#20013;&#65292;&#25105;&#20204;&#23558;&#20171;&#32461;&#22914;&#20309;&#29992;&#19981;&#21516;&#30340;&#26041;&#24335;&#26469;&#26684;&#24335;&#21270;&#28040;&#24687;&#12290;</p>
+<h3>&#28040;&#24687;&#21442;&#25968;&#65288;Message Parameters&#65289;  <span id="message-parameters"></span><a href="#message-parameters" class="hashlink">&para;</a></h3><p>&#22312;&#24453;&#32763;&#35793;&#30340;&#28040;&#24687;&#65292;&#21487;&#20197;&#23884;&#20837;&#19968;&#20010;&#25110;&#22810;&#20010;&#21344;&#20301;&#31526;&#65292;&#20197;&#20415;&#23427;&#20204;&#21487;&#20197;&#30001;&#32473;&#23450;&#30340;&#21442;&#25968;&#20540;&#21462;&#20195;&#12290;
+&#36890;&#36807;&#32473;&#19981;&#21516;&#30340;&#21442;&#25968;&#20540;&#65292;&#21487;&#20197;&#21160;&#24577;&#22320;&#25913;&#21464;&#32763;&#35793;&#20869;&#23481;&#30340;&#28040;&#24687;&#12290;
+&#22312;&#19979;&#38754;&#30340;&#20363;&#23376;&#20013;&#65292;
+&#21344;&#20301;&#31526; <code>{username}</code> &#22312; <code>&ldquo;Hello, {username}&#65281;&rdquo;</code> &#20013;&#23558;&#20998;&#21035;&#34987; <code>'Alexander'</code>&#21644;<code>'Qiang'</code> &#25152;&#26367;&#25442;&#12290;</p>
+<pre><code class="hljs php language-php">$username = <span class="hljs-string">'Alexander'</span>;
+<span class="hljs-comment">// &#36755;&#20986;&#65306;&ldquo;Hello, Alexander&rdquo;</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Hello, {username}!'</span>, [
+    <span class="hljs-string">'username'</span> =&gt; $username,
+]);
+
+$username = <span class="hljs-string">'Qiang'</span>;
+<span class="hljs-comment">// &#36755;&#20986;&#65306;&ldquo;Hello, Qiang&rdquo;</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Hello, {username}!'</span>, [
+    <span class="hljs-string">'username'</span> =&gt; $username,
+]);
+</code></pre>
+<p>&#24403;&#32763;&#35793;&#30340;&#28040;&#24687;&#21253;&#21547;&#21344;&#20301;&#31526;&#26102;&#65292;&#24212;&#35813;&#35753;&#21344;&#20301;&#31526;&#20445;&#30041;&#21407;&#26679;&#12290;
+&#36825;&#26159;&#22240;&#20026;&#35843;&#29992; <code>Yii::t()</code> &#26102;&#65292;&#21344;&#20301;&#31526;&#23558;&#34987;&#23454;&#38469;&#21442;&#25968;&#20540;&#20195;&#26367;&#12290;</p>
+<p>&#20320;&#21487;&#20197;&#20351;&#29992; <em>&#21517;&#31216;&#21344;&#20301;&#31526;</em> &#25110;&#32773; <em>&#20301;&#32622;&#21344;&#20301;&#31526;</em>&#65292;&#20294;&#19981;&#33021;&#20004;&#32773;&#37117;&#29992;&#22312;&#21516;&#19968;&#20010;&#28040;&#24687;&#37324;&#12290;</p>
+<p>&#21069;&#38754;&#30340;&#20363;&#23376;&#35828;&#26126;&#20102;&#22914;&#20309;&#20351;&#29992;&#21517;&#31216;&#21344;&#20301;&#31526;&#12290;&#21363;&#27599;&#20010;&#21344;&#20301;&#31526;&#30340;&#26684;&#24335;&#20026; <code>{&#21442;&#25968;&#21517;&#31216;}</code> &#65292;&#20320;&#25152;&#25552;&#20379;&#30340;&#21442;&#25968;&#20316;&#20026;&#20851;&#32852;&#25968;&#32452;&#65292;
+&#20854;&#20013;&#25968;&#32452;&#30340;&#38190;&#26159;&#21442;&#25968;&#21517;&#31216;&#65288;&#27809;&#26377;&#22823;&#25324;&#21495;&#65289;&#65292;
+&#25968;&#32452;&#30340;&#20540;&#26159;&#23545;&#24212;&#30340;&#21442;&#25968;&#20540;&#12290;</p>
+<p>&#20301;&#32622;&#21344;&#20301;&#31526;&#26159;&#20351;&#29992;&#22522;&#20110;&#38646;&#30340;&#25972;&#25968;&#24207;&#21015;&#65292;&#22312;&#35843;&#29992; <code>Yii::t()</code> &#26102;&#20250;&#21442;&#25968;&#20540;&#26681;&#25454;&#23427;&#20204;&#20986;&#29616;&#20301;&#32622;&#30340;&#39034;&#24207;&#20998;&#21035;&#36827;&#34892;&#26367;&#25442;&#12290;
+&#22312;&#19979;&#38754;&#30340;&#20363;&#23376;&#20013;&#65292;&#20301;&#32622;&#21344;&#20301;&#31526; <code>{0}</code>&#65292;<code>{1}</code> &#21644; <code>{2}</code> 
+&#23558;&#20998;&#21035;&#34987; <code>$price</code>&#65292;<code>$count</code> &#21644; <code>$subtotal</code> &#25152;&#26367;&#25442;&#12290;</p>
+<pre><code class="hljs php language-php">$price = <span class="hljs-number">100</span>;
+$count = <span class="hljs-number">2</span>;
+$subtotal = <span class="hljs-number">200</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Price: {0}, Count: {1}, Subtotal: {2}'</span>, $price, $count, $subtotal);
+</code></pre>
+<p>&#22312;&#21333;&#20010;&#20301;&#32622;&#21442;&#25968;&#30340;&#24773;&#20917;&#19979;&#65292;&#23427;&#30340;&#20540;&#21487;&#20197;&#34987;&#25351;&#23450;&#32780;&#19981;&#21253;&#21547;&#22312;&#25968;&#32452;&#20013;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Price: {0}'</span>, $price);
+</code></pre>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#22823;&#22810;&#25968;&#24773;&#20917;&#19979;&#20320;&#24212;&#35813;&#20351;&#29992;&#21517;&#31216;&#21344;&#20301;&#31526;&#12290;
+&#36825;&#26159;&#22240;&#20026;&#21442;&#25968;&#21517;&#31216;&#21487;&#20197;&#35753;&#32763;&#35793;&#32773;&#26356;&#22909;&#30340;&#29702;&#35299;&#35201;&#34987;&#32763;&#35793;&#30340;&#28040;&#24687;&#12290;</p>
+</blockquote>
+<h3>&#26684;&#24335;&#21270;&#21442;&#25968;  <span id="parameter-formatting"></span><a href="#parameter-formatting" class="hashlink">&para;</a></h3><p>&#20320;&#21487;&#20197;&#22312;&#28040;&#24687;&#30340;&#21344;&#20301;&#31526;&#25351;&#23450;&#38468;&#21152;&#26684;&#24335;&#30340;&#35268;&#21017;&#65292;
+&#36825;&#26679;&#30340;&#21442;&#25968;&#20540;&#21487;&#22312;&#26367;&#25442;&#21344;&#20301;&#31526;&#20043;&#21069;&#26684;&#24335;&#21270;&#23427;&#20204;&#12290;&#22312;&#19979;&#38754;&#30340;&#20363;&#23376;&#20013;&#65292;
+&#20215;&#26684;&#21442;&#25968;&#20540;&#23558;&#35270;&#20026;&#19968;&#20010;&#25968;&#24182;&#26684;&#24335;&#21270;&#20026;&#36135;&#24065;&#20540;&#65306;</p>
+<pre><code class="hljs php language-php">$price = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Price: {0, number, currency}'</span>, $price);
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#21442;&#25968;&#30340;&#26684;&#24335;&#21270;&#38656;&#35201;&#23433;&#35013; <a href="https://www.php.net/manual/zh/intro.intl.php">intl PHP &#25193;&#23637;</a>&#12290;</p>
+</blockquote>
+<p>&#21487;&#20197;&#20351;&#29992;&#32553;&#20889;&#30340;&#24418;&#24335;&#25110;&#23436;&#25972;&#30340;&#24418;&#24335;&#26469;&#26684;&#24335;&#21270;&#21344;&#20301;&#31526;&#65306;</p>
+<pre><code class="hljs ">short form: {PlaceholderName, ParameterType}
+full form: {PlaceholderName, ParameterType, ParameterStyle}
+</code></pre>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22914;&#26524;&#24744;&#38656;&#35201;&#20351;&#29992;&#29305;&#27530;&#23383;&#31526;&#65288;&#22914; <code>{</code>&#65292;<code>}</code>&#65292;<code>'</code>&#65292;<code>#</code>&#65292;&#35831;&#20351;&#29992; <code>'</code>&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">"Example of string with ''-escaped characters'': '{' '}' '{test}' {count,plural,other{''count'' value is # '#{}'}}"</span>, [<span class="hljs-string">'count'</span> =&gt; <span class="hljs-number">3</span>]);
+</code></pre>
+</blockquote>
+<p>&#35831;&#21442;&#38405; <a href="https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/classMessageFormat.html">ICU &#25991;&#26723;</a>
+&#20851;&#20110;&#22914;&#20309;&#25351;&#23450;&#36825;&#26679;&#30340;&#21344;&#20301;&#31526;&#30340;&#35828;&#26126;&#12290;&#25509;&#19979;&#26469;&#25105;&#20204;&#20250;&#23637;&#31034;&#19968;&#20123;&#24120;&#29992;&#30340;&#20351;&#29992;&#26041;&#27861;&#12290;</p>
+<h4>&#25968;&#23383;&#65288;Number&#65289;  <span id="number"></span><a href="#number" class="hashlink">&para;</a></h4><p>&#21442;&#25968;&#20540;&#24212;&#35813;&#34987;&#26684;&#24335;&#21270;&#20026;&#19968;&#20010;&#25968;&#12290;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$sum = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Balance: {0, number}'</span>, $sum);
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#25351;&#23450;&#21442;&#25968;&#30340;&#26684;&#24335;&#20026; <code>integer</code>&#65288;&#25972;&#22411;&#65289;&#65292;<code>currency</code> &#65288;&#36135;&#24065;&#65289;&#65292;&#25110;&#32773; <code>percent</code> &#65288;&#30334;&#20998;&#25968;&#65289;&#65306;</p>
+<pre><code class="hljs php language-php">$sum = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Balance: {0, number, currency}'</span>, $sum);
+</code></pre>
+<p>&#20320;&#20063;&#21487;&#20197;&#25351;&#23450;&#19968;&#20010;&#33258;&#23450;&#20041;&#27169;&#24335;&#26469;&#26684;&#24335;&#21270;&#25968;&#23383;&#12290; &#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php">$sum = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Balance: {0, number, ,000,000000}'</span>, $sum);
+</code></pre>
+<p>&#33258;&#23450;&#20041;&#26684;&#24335;&#20013;&#20351;&#29992;&#30340;&#23383;&#31526;&#21487;&#20197;&#22312;&ldquo;&#29305;&#27530;&#27169;&#24335;&#23383;&#31526;&rdquo;&#19968;&#33410;&#30340;
+<a href="https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/classDecimalFormat.html">ICU API &#21442;&#32771;</a>
+&#20013;&#25214;&#21040;&#12290;</p>
+<p>&#35813;&#20540;&#22987;&#32456;&#26681;&#25454;&#24744;&#32763;&#35793;&#30340;&#21306;&#22495;&#35774;&#32622;&#36827;&#34892;&#26684;&#24335;&#35774;&#32622;&#65292;&#21363;&#26080;&#38656;&#26356;&#25913;&#32763;&#35793;&#21306;&#22495;&#35774;&#32622;&#21363;&#21487;&#26356;&#25913;&#23567;&#25968;&#25110;&#21315;&#20301;&#20998;&#38548;&#31526;&#65292;&#36135;&#24065;&#31526;&#21495;&#31561;&#12290; 
+&#22914;&#26524;&#20320;&#38656;&#35201;&#23450;&#21046;&#36825;&#20123;&#65292;&#20320;&#21487;&#20197;&#20351;&#29992;
+<a href="./yii-i18n-formatter.html#asDecimal()-detail">yii\i18n\Formatter::asDecimal()</a> &#21644; <a href="./yii-i18n-formatter.html#asCurrency()-detail">yii\i18n\Formatter::asCurrency()</a>&#12290;</p>
+<h4>&#26085;&#26399;&#65288;Date&#65289;  <span id="date"></span><a href="#date" class="hashlink">&para;</a></h4><p>&#35813;&#21442;&#25968;&#20540;&#24212;&#35813;&#34987;&#26684;&#24335;&#21270;&#20026;&#19968;&#20010;&#26085;&#26399;&#12290; &#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Today is {0, date}'</span>, time());
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#25351;&#23450;&#19968;&#20010;&#21487;&#36873;&#30340;&#21442;&#25968;&#26684;&#24335; <code>short</code> &#65292;<code>medium</code> &#65292;<code>long</code> &#65292;&#25110; <code>full</code> &#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Today is {0, date, short}'</span>, time());
+</code></pre>
+<p>&#20320;&#36824;&#21487;&#20197;&#25351;&#23450;&#19968;&#20010;&#33258;&#23450;&#20041;&#27169;&#24335;&#26469;&#26684;&#24335;&#21270;&#26085;&#26399;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'Today is {0, date, yyyy-MM-dd}'</span>, time());
+</code></pre>
+<p><a href="https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/classicu_1_1SimpleDateFormat.html#details">&#26684;&#24335;&#21270;&#21442;&#32771;</a>&#12290;</p>
+<h4>&#26102;&#38388;&#65288;Time&#65289;  <span id="time"></span><a href="#time" class="hashlink">&para;</a></h4><p>&#21442;&#25968;&#20540;&#24212;&#35813;&#34987;&#26684;&#24335;&#21270;&#20026;&#19968;&#20010;&#26102;&#38388;&#12290; &#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'It is {0, time}'</span>, time());
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#25351;&#23450;&#19968;&#20010;&#21487;&#36873;&#30340;&#21442;&#25968;&#26684;&#24335; <code>short</code> &#65292;<code>medium</code> &#65292;<code>long</code> &#65292;&#25110; <code>full</code> &#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'It is {0, time, short}'</span>, time());
+</code></pre>
+<p>&#20320;&#36824;&#21487;&#20197;&#25351;&#23450;&#19968;&#20010;&#33258;&#23450;&#20041;&#27169;&#24335;&#26469;&#26684;&#24335;&#21270;&#26102;&#38388;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'It is {0, date, HH:mm}'</span>, time());
+</code></pre>
+<p><a href="https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/classicu_1_1SimpleDateFormat.html#details">&#26684;&#24335;&#21270;&#21442;&#32771;</a>&#12290;</p>
+<h4>&#25340;&#20889;&#65288;Spellout&#65289;  <span id="spellout"></span><a href="#spellout" class="hashlink">&para;</a></h4><p>&#21442;&#25968;&#20540;&#20026;&#19968;&#20010;&#25968;&#24182;&#34987;&#26684;&#24335;&#21270;&#20026;&#23427;&#30340;&#23383;&#27597;&#25340;&#20889;&#24418;&#24335;&#12290; &#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#36755;&#20986;&#65306;"42 is spelled as forty-two"</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'{n,number} is spelled as {n, spellout}'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">42</span>]);
+</code></pre>
+<p>&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#35813;&#25968;&#23383;&#25340;&#20889;&#20026;&#22522;&#25968;&#12290; &#23427;&#21487;&#20197;&#25913;&#21464;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// may produce "I am forty-seventh agent"</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'I am {n,spellout,%spellout-ordinal} agent'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">47</span>]);
+</code></pre>
+<p>&#35831;&#27880;&#24847;&#65292;&#22312; <code>spellout,</code> &#20043;&#21518;&#21644; <code>%</code> &#20043;&#21069;&#19981;&#24212;&#35813;&#26377;&#31354;&#26684;&#12290;</p>
+<p>&#35201;&#33719;&#21462;&#21487;&#29992;&#20110;&#24744;&#27491;&#22312;&#20351;&#29992;&#30340;&#35821;&#35328;&#29615;&#22659;&#30340;&#36873;&#39033;&#21015;&#34920;&#65292;&#35831;&#26597;&#30475;
+<a href="https://intl.rmcreative.ru/">https://intl.rmcreative.ru/</a> &#19978;&#30340;&ldquo;&#32534;&#21495;&#27169;&#24335;&#65292;&#25340;&#20889;&rdquo;&#12290;</p>
+<h4>&#24207;&#25968;&#35789;&#65288;Ordinal&#65289;  <span id="ordinal"></span><a href="#ordinal" class="hashlink">&para;</a></h4><p>&#21442;&#25968;&#20540;&#20026;&#19968;&#20010;&#25968;&#24182;&#34987;&#26684;&#24335;&#21270;&#20026;&#19968;&#20010;&#24207;&#25968;&#35789;&#12290; &#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#36755;&#20986;&#65306;"You are the 42nd visitor here!"</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'You are the {n, ordinal} visitor here!'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">42</span>]);
+</code></pre>
+<p>Ordinal &#25903;&#25345;&#26356;&#22810;&#26684;&#24335;&#21270;&#35199;&#29677;&#29273;&#35821;&#31561;&#35821;&#35328;&#30340;&#26041;&#24335;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// may produce 471&ordf;</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'{n,ordinal,%digits-ordinal-feminine}'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">471</span>]);
+</code></pre>
+<p>&#35831;&#27880;&#24847;&#65292;&#22312; <code>ordinal,</code> &#20043;&#21518;&#21644; <code>%</code> &#20043;&#21069;&#19981;&#24212;&#35813;&#26377;&#31354;&#26684;&#12290;</p>
+<p>&#35201;&#33719;&#21462;&#21487;&#29992;&#20110;&#24744;&#27491;&#22312;&#20351;&#29992;&#30340;&#35821;&#35328;&#29615;&#22659;&#30340;&#36873;&#39033;&#21015;&#34920;&#65292;&#35831;&#26597;&#30475;
+<a href="https://intl.rmcreative.ru/">https://intl.rmcreative.ru/</a> &#19978;&#30340;&ldquo;&#32534;&#21495;&#27169;&#24335;&#65292;&#24207;&#21495;&rdquo;&#12290;</p>
+<h4>&#25345;&#32493;&#26102;&#38388;&#65288;Duration&#65289;  <span id="duration"></span><a href="#duration" class="hashlink">&para;</a></h4><p>&#21442;&#25968;&#20540;&#20026;&#31186;&#25968;&#24182;&#34987;&#26684;&#24335;&#21270;&#20026;&#25345;&#32493;&#30340;&#26102;&#38388;&#27573;&#12290; &#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#36755;&#20986;&#65306;"You are here for 47 sec. already!"</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'You are here for {n, duration} already!'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">47</span>]);
+</code></pre>
+<p>&#25345;&#32493;&#26102;&#38388;&#25903;&#25345;&#26356;&#22810;&#26684;&#24335;&#21270;&#26041;&#27861;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// may produce 130:53:47</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'{n,duration,%in-numerals}'</span>, [<span class="hljs-string">'n'</span> =&gt; <span class="hljs-number">471227</span>]);
+</code></pre>
+<p>&#35831;&#27880;&#24847;&#65292;&#22312; <code>duration,</code> &#20043;&#21518;&#21644; <code>%</code> &#20043;&#21069;&#19981;&#24212;&#35813;&#26377;&#31354;&#26684;&#12290;</p>
+<p>&#35201;&#33719;&#21462;&#24744;&#27491;&#22312;&#20351;&#29992;&#30340;&#21306;&#22495;&#35774;&#32622;&#30340;&#21487;&#29992;&#36873;&#39033;&#21015;&#34920;&#65292;&#35831;&#26597;&#30475;
+<a href="https://intl.rmcreative.ru/">https://intl.rmcreative.ru/</a> &#19978;&#30340;&ldquo;&#32534;&#21495;&#27169;&#24335;&#65292;&#25345;&#32493;&#26102;&#38388;&rdquo;&#12290;</p>
+<h4>&#22797;&#25968;&#65288;Plural&#65289;  <span id="plural"></span><a href="#plural" class="hashlink">&para;</a></h4><p>&#19981;&#21516;&#30340;&#35821;&#35328;&#26377;&#19981;&#21516;&#30340;&#26041;&#24335;&#26469;&#34920;&#31034;&#22797;&#25968;&#12290; Yii &#25552;&#20379;&#19968;&#20010;&#20415;&#25463;&#30340;&#36884;&#24452;&#65292;
+&#21363;&#20351;&#26159;&#38750;&#24120;&#22797;&#26434;&#30340;&#35268;&#21017;&#20063;&#20351;&#32763;&#35793;&#28040;&#24687;&#26102;&#19981;&#21516;&#30340;&#22797;&#25968;&#24418;&#24335;&#34892;&#20043;&#26377;&#25928;&#12290;
+&#21462;&#20043;&#20197;&#30452;&#25509;&#22788;&#29702;&#35789;&#24418;&#21464;&#21270;&#35268;&#21017;&#65292;&#23427;&#26159;&#36275;&#20197;&#38754;&#23545;&#26576;&#20123;&#35789;&#24418;&#21464;&#21270;&#35821;&#35328;&#30340;&#32763;&#35793;&#12290; &#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#24403; $n = 0 &#26102;&#65292;&#36755;&#20986;&#65306;"There are no cats!"</span>
+<span class="hljs-comment">// &#24403; $n = 1 &#26102;&#65292;&#36755;&#20986;&#65306;"There is one cat!"</span>
+<span class="hljs-comment">// &#24403; $n = 42 &#26102;&#65292;&#36755;&#20986;&#65306;"There are 42 cats!"</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'There {n, plural, =0{are no cats} =1{is one cat} other{are # cats}}!'</span>, [<span class="hljs-string">'n'</span> =&gt; $n]);
+</code></pre>
+<p>&#22312;&#19978;&#38754;&#30340;&#22810;&#20010;&#35268;&#21017;&#30340;&#21442;&#25968;&#20013;&#65292; <code>=0</code> &#24847;&#21619;&#30528; <code>n</code> &#30340;&#20540;&#26159; 0 &#65292;<code>=1</code> &#24847;&#21619;&#30528; <code>n</code> &#30340;&#20540;&#26159; 1 &#65292; &#32780; <code>other</code> &#21017;&#26159;&#23545;&#20110;&#20854;&#23427;&#20540;&#65292;
+<code>#</code> &#20250;&#34987; <code>n</code> &#20013;&#30340;&#20540;&#32473;&#26367;&#20195;&#12290; </p>
+<p>&#22797;&#25968;&#24418;&#24335;&#21487;&#20197;&#26159;&#26576;&#20123;&#38750;&#24120;&#22797;&#26434;&#30340;&#35821;&#35328;&#12290;&#19979;&#38754;&#20197;&#20420;&#32599;&#26031;&#20026;&#20363;&#65292;<code>=1</code> &#23436;&#20840;&#21305;&#37197; <code>n = 1</code>&#65292;
+&#32780; <code>one</code> &#21305;&#37197; <code>21</code> &#25110; <code>101</code>&#65306;</p>
+<pre><code class="hljs bash">&#1047;&#1076;&#1077;&#1089;&#1100; {n, plural, =0{&#1082;&#1086;&#1090;&#1086;&#1074; &#1085;&#1077;&#1090;} =1{&#1077;&#1089;&#1090;&#1100; &#1086;&#1076;&#1080;&#1085; &#1082;&#1086;&#1090;} one{<span class="hljs-comment"># &#1082;&#1086;&#1090;} few{# &#1082;&#1086;&#1090;&#1072;} many{# &#1082;&#1086;&#1090;&#1086;&#1074;} other{# &#1082;&#1086;&#1090;&#1072;}}!</span>
+</code></pre>
+<p>&#27880;&#24847;&#65292;&#19978;&#36848;&#20449;&#24687;&#20027;&#35201;&#26159;&#20316;&#20026;&#19968;&#20010;&#32763;&#35793;&#30340;&#20449;&#24687;&#65292;
+&#32780;&#19981;&#26159;&#19968;&#20010;&#21407;&#22987;&#28040;&#24687;&#65292;&#38500;&#38750;&#35774;&#32622;&#24212;&#29992;&#31243;&#24207;&#30340;
+<a href="./yii-base-application.html#%24sourceLanguage-detail">&#28304;&#35821;&#35328;</a> &#20026; <code>ru-RU</code>&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#38500;&#38750;&#24744;&#23558;&#24212;&#29992;&#31243;&#24207;&#30340; <a href="./yii-base-application.html#%24sourceLanguage-detail">&#28304;&#35821;&#35328;</a> 
+&#35774;&#32622;&#20026;&ldquo;RU-RU&rdquo;&#65292;&#24182;&#19988;&#20174;&#20197;&#19979;&#35821;&#35328;&#36716;&#25442;&#32780;&#26469;&#65292;&#19978;&#38754;&#30340;&#31034;&#20363;&#20420;&#35821;&#28040;&#24687;&#20027;&#35201;&#29992;&#20316;&#32763;&#35793;&#30340;&#28040;&#24687;&#65292;&#32780;&#19981;&#26159;&#21407;&#22987;&#28040;&#24687;&#20420;&#35821;&#12290;</p>
+<p>&#24403;&#22312; <code>Yii::t()</code> &#35843;&#29992;&#20013;&#25351;&#23450;&#30340;&#21407;&#22987;&#28040;&#24687;&#26410;&#25214;&#21040;&#32763;&#35793;&#26102;&#65292;
+<a href="./yii-base-application.html#%24sourceLanguage-detail">&#28304;&#35821;&#35328;</a> &#22797;&#25968;&#35268;&#21017;&#23558;&#24212;&#29992;&#20110;&#21407;&#22987;&#28040;&#24687;&#12290;</p>
+</blockquote>
+<p>&#23545;&#20110;&#23383;&#31526;&#20018;&#22914;&#19979;&#25152;&#31034;&#30340;&#24773;&#20917;&#65292;&#26377;&#19968;&#20010; <code>offset</code> &#21442;&#25968;&#65306;</p>
+<pre><code class="hljs php language-php">$likeCount = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">echo</span> Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'You {likeCount,plural,
+    offset: 1
+    =0{did not like this}
+    =1{liked this}
+    one{and one other person liked this}
+    other{and # others liked this}
+}'</span>, [
+    <span class="hljs-string">'likeCount'</span> =&gt; $likeCount
+]);
+
+<span class="hljs-comment">// You and one other person liked this</span>
+</code></pre>
+<h4>&#24207;&#25968;&#36873;&#25321;&#65288;Ordinal selection&#65289;  <span id="ordinal-selection"></span><a href="#ordinal-selection" class="hashlink">&para;</a></h4><p><code>selectordinal</code> &#30340;&#21442;&#25968;&#31867;&#22411;&#26088;&#22312;&#20026;&#24744;&#25152;&#32763;&#35793;&#30340;&#35821;&#35328;&#29615;&#22659;&#36873;&#25321;&#19968;&#20010;&#22522;&#20110;&#35821;&#24207;&#35268;&#21017;&#30340;&#23383;&#31526;&#20018;&#65306;
+&#19968;&#20010;&#22522;&#20110;&#35821;&#24207;&#35268;&#21017;&#30340;&#23383;&#31526;&#20018;&#65306;</p>
+<pre><code class="hljs php language-php">$n = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">echo</span> Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'You are the {n,selectordinal,one{#st} two{#nd} few{#rd} other{#th}} visitor'</span>, [<span class="hljs-string">'n'</span> =&gt; $n]);
+<span class="hljs-comment">// For English it outputs:</span>
+<span class="hljs-comment">// You are the 3rd visitor</span>
+
+<span class="hljs-comment">// Translation</span>
+<span class="hljs-string">'You are the {n,selectordinal,one{#st} two{#nd} few{#rd} other{#th}} visitor'</span> =&gt; <span class="hljs-string">'&#1042;&#1099; {n,selectordinal,other{#-&#1081;}} &#1087;&#1086;&#1089;&#1077;&#1090;&#1080;&#1090;&#1077;&#1083;&#1100;'</span>,
+
+<span class="hljs-comment">// For Russian translation it outputs:</span>
+<span class="hljs-comment">// &#1042;&#1099; 3-&#1081; &#1087;&#1086;&#1089;&#1077;&#1090;&#1080;&#1090;&#1077;&#1083;&#1100;</span>
+</code></pre>
+<p>&#26684;&#24335;&#19982;&#22797;&#25968;&#20351;&#29992;&#30340;&#26684;&#24335;&#38750;&#24120;&#25509;&#36817;&#12290; &#35201;&#20102;&#35299;&#24744;&#24212;&#20026;&#29305;&#23450;&#35821;&#35328;&#29615;&#22659;&#25351;&#23450;&#21738;&#20123;&#21442;&#25968;&#65292;&#35831;&#21442;&#38405;
+<a href="https://intl.rmcreative.ru/">https://intl.rmcreative.ru/</a> &#19978;&#30340;&ldquo;&#22797;&#25968;&#35268;&#21017;&#65292;&#24207;&#25968;&rdquo;&#12290;
+&#25110;&#32773;&#65292;&#24744;&#21487;&#20197;&#21442;&#32771; <a href="https://unicode-org.github.io/cldr-staging/charts/37/supplemental/language_plural_rules.html">unicode.org&#19978;&#30340;&#35268;&#21017;&#21442;&#32771;</a>&#12290;</p>
+<h4>&#36873;&#25321;&#65288;Selection&#65289;  <span id="selection"></span><a href="#selection" class="hashlink">&para;</a></h4><p>&#21487;&#20197;&#20351;&#29992; <code>select</code> &#21442;&#25968;&#31867;&#22411;&#26469;&#36873;&#25321;&#22522;&#20110;&#21442;&#25968;&#20540;&#30340;&#30701;&#35821;&#12290;&#20363;&#22914;&#65292;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// &#36755;&#20986;&#65306;"Snoopy is a dog and it loves Yii!"</span>
+<span class="hljs-keyword">echo</span> \Yii::t(<span class="hljs-string">'app'</span>, <span class="hljs-string">'{name} is a {gender} and {gender, select, female{she} male{he} other{it}} loves Yii!'</span>, [
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Snoopy'</span>,
+    <span class="hljs-string">'gender'</span> =&gt; <span class="hljs-string">'dog'</span>,
+]);
+</code></pre>
+<p>&#22312;&#19978;&#38754;&#30340;&#34920;&#36798;&#20013;&#65292; <code>female</code> &#21644; <code>male</code> &#26159;&#21487;&#33021;&#30340;&#21442;&#25968;&#20540;&#65292;
+&#32780; <code>other</code> &#29992;&#20110;&#22788;&#29702;&#19981;&#19982;&#23427;&#20204;&#20013;&#20219;&#20309;&#19968;&#20010;&#30456;&#21305;&#37197;&#30340;&#20540;&#12290;&#23545;&#20110;&#27599;&#19968;&#20010;&#21487;&#33021;&#30340;&#21442;&#25968;&#20540;&#65292;
+&#24212;&#25351;&#23450;&#19968;&#20010;&#30701;&#35821;&#24182;&#25226;&#23427;&#25918;&#22312;&#22312;&#19968;&#23545;&#22823;&#25324;&#21495;&#20013;&#12290;</p>
+<h3>&#25351;&#23450;&#40664;&#35748;&#32763;&#35793;&#65288;Specifying default message source&#65289;  <span id="default-message-source"></span><a href="#default-message-source" class="hashlink">&para;</a></h3><p>&#20320;&#21487;&#20197;&#25351;&#23450;&#20351;&#29992;&#40664;&#35748;&#30340;&#32763;&#35793;&#65292;&#35813;&#32763;&#35793;&#23558;&#20316;&#20026;&#19968;&#20010;&#31867;&#21035;&#65292;&#29992;&#20110;&#19981;&#21305;&#37197;&#20219;&#20309;&#20854;&#20182;&#32763;&#35793;&#30340;&#21518;&#22791;&#12290;
+&#36825;&#31181;&#32763;&#35793;&#24212;&#26631;&#26377; <code>*</code> &#12290;
+&#20026;&#20102;&#20570;&#21040;&#36825;&#19968;&#28857;&#20197;&#19979;&#20869;&#23481;&#38656;&#35201;&#28155;&#21152;&#21040;&#24212;&#29992;&#31243;&#24207;&#30340;&#37197;&#32622;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">//&#37197;&#32622; i18n &#32452;&#20214;</span>
+
+<span class="hljs-string">'i18n'</span> =&gt; [
+    <span class="hljs-string">'translations'</span> =&gt; [
+        <span class="hljs-string">'*'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>
+        ],
+    ],
+],
+</code></pre>
+<p>&#29616;&#22312;&#65292;&#20320;&#21487;&#20197;&#20351;&#29992;&#27599;&#19968;&#20010;&#36824;&#27809;&#26377;&#37197;&#32622;&#30340;&#31867;&#21035;&#65292;&#36825;&#36319; Yii 1.1 &#30340;&#34892;&#20026;&#26377;&#28857;&#31867;&#20284;&#12290;&#35813;&#31867;&#21035;&#30340;&#28040;&#24687;&#23558;&#26469;&#33258;&#22312;&#40664;&#35748;&#32763;&#35793; <code>basePath</code> &#20013;&#30340;&#19968;&#20010;&#25991;&#20214;&#65292;
+&#35813;&#25991;&#20214;&#22312; <code>@app/messages</code> &#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> Yii::t(<span class="hljs-string">'not_specified_category'</span>, <span class="hljs-string">'message from unspecified category'</span>);
+</code></pre>
+<p>&#35813;&#28040;&#24687;&#23558;&#26469;&#33258; <code>@app/messages/&lt;LanguageCode&gt;/not_specified_category.php</code> &#12290;</p>
+<h3>&#32763;&#35793;&#27169;&#22359;&#28040;&#24687;&#65288;Translating module messages&#65289;  <span id="module-translation"></span><a href="#module-translation" class="hashlink">&para;</a></h3><p>&#22914;&#26524;&#20320;&#24819;&#32763;&#35793;&#19968;&#20010;&#27169;&#22359;&#30340;&#28040;&#24687;&#65292;&#24182;&#36991;&#20813;&#20351;&#29992;&#21333;&#19968;&#32763;&#35793;&#25991;&#20214;&#30340;&#25152;&#26377;&#20449;&#24687;&#65292;&#20320;&#21487;&#20197;&#25353;&#29031;&#19979;&#38754;&#30340;&#26041;&#24335;&#26469;&#32763;&#35793;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">modules</span>\<span class="hljs-title">users</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Module</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Module</span>
+</span>{
+    <span class="hljs-keyword">public</span> $controllerNamespace = <span class="hljs-string">'app\modules\users\controllers'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-keyword">$this</span>-&gt;registerTranslations();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">registerTranslations</span><span class="hljs-params">()</span>
+    </span>{
+        Yii::$app-&gt;i18n-&gt;translations[<span class="hljs-string">'modules/users/*'</span>] = [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+            <span class="hljs-string">'sourceLanguage'</span> =&gt; <span class="hljs-string">'en-US'</span>,
+            <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@app/modules/users/messages'</span>,
+            <span class="hljs-string">'fileMap'</span> =&gt; [
+                <span class="hljs-string">'modules/users/validation'</span> =&gt; <span class="hljs-string">'validation.php'</span>,
+                <span class="hljs-string">'modules/users/form'</span> =&gt; <span class="hljs-string">'form.php'</span>,
+                ...
+            ],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">t</span><span class="hljs-params">($category, $message, $params = [], $language = null)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> Yii::t(<span class="hljs-string">'modules/users/'</span> . $category, $message, $params, $language);
+    }
+
+}
+</code></pre>
+<p>&#22312;&#19978;&#38754;&#30340;&#20363;&#23376;&#20013;&#65292;&#25105;&#20204;&#20351;&#29992;&#36890;&#37197;&#31526;&#21305;&#37197;&#65292;&#28982;&#21518;&#36807;&#28388;&#20102;&#25152;&#38656;&#30340;&#25991;&#20214;&#20013;&#30340;&#27599;&#20010;&#31867;&#21035;&#12290;&#21462;&#20043;&#20351;&#29992; <code>fileMap</code> &#65292;&#20320;&#21487;&#20197;&#31616;&#21333;&#22320;&#20351;&#29992;&#31867;&#26144;&#23556;&#30340;&#21516;&#21517;&#25991;&#20214;&#12290;
+&#29616;&#22312;&#20320;&#21487;&#20197;&#30452;&#25509;&#20351;&#29992; <code>Module::t('validation', 'your custom validation message')</code> 
+&#25110; <code>Module::t('form', 'some form label')</code>&#12290;</p>
+<h3>&#32763;&#35793;&#23567;&#37096;&#20214;&#28040;&#24687;&#65288;Translating widgets messages&#65289;  <span id="widget-translation"></span><a href="#widget-translation" class="hashlink">&para;</a></h3><p>&#19978;&#36848;&#27169;&#22359;&#30340;&#32763;&#35793;&#35268;&#21017;&#20063;&#21516;&#26679;&#36866;&#29992;&#20110;&#23567;&#37096;&#20214;&#30340;&#32763;&#35793;&#35268;&#21017;&#65292;&#20363;&#22914;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">menu</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Widget</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Menu</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Widget</span>
+</span>{
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-keyword">$this</span>-&gt;registerTranslations();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">registerTranslations</span><span class="hljs-params">()</span>
+    </span>{
+        $i18n = Yii::$app-&gt;i18n;
+        $i18n-&gt;translations[<span class="hljs-string">'widgets/menu/*'</span>] = [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+            <span class="hljs-string">'sourceLanguage'</span> =&gt; <span class="hljs-string">'en-US'</span>,
+            <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@app/widgets/menu/messages'</span>,
+            <span class="hljs-string">'fileMap'</span> =&gt; [
+                <span class="hljs-string">'widgets/menu/messages'</span> =&gt; <span class="hljs-string">'messages.php'</span>,
+            ],
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'index'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">t</span><span class="hljs-params">($category, $message, $params = [], $language = null)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> Yii::t(<span class="hljs-string">'widgets/menu/'</span> . $category, $message, $params, $language);
+    }
+
+}
+</code></pre>
+<p>&#20320;&#21487;&#20197;&#31616;&#21333;&#22320;&#20351;&#29992;&#31867;&#26144;&#23556;&#30340;&#21516;&#21517;&#25991;&#20214;&#32780;&#19981;&#26159;&#20351;&#29992; <code>fileMap</code> &#12290;
+&#29616;&#22312;&#20320;&#30452;&#25509;&#21487;&#20197;&#20351;&#29992; <code>Menu::t('messages', 'new messages {messages}', ['{messages}' =&gt; 10])</code> &#12290;</p>
+<blockquote class="tip"><p><strong>&#25552;&#31034;&#65306; </strong>&#23545;&#20110;&#23567;&#37096;&#20214;&#20063;&#21487;&#20197;&#20351;&#29992; i18n &#35270;&#22270;&#65292;&#24182;&#19968;&#26679;&#20197;&#25511;&#21046;&#22120;&#30340;&#35268;&#21017;&#26469;&#24212;&#29992;&#23427;&#20204;&#12290;</p>
+</blockquote>
+<h3>&#32763;&#35793;&#26694;&#26550;&#20449;&#24687;&#65288;Translating framework messages&#65289;  <span id="framework-translation"></span><a href="#framework-translation" class="hashlink">&para;</a></h3><p>Yii &#33258;&#24102;&#20102;&#19968;&#20123;&#40664;&#35748;&#30340;&#20449;&#24687;&#39564;&#35777;&#38169;&#35823;&#21644;&#20854;&#20182;&#19968;&#20123;&#23383;&#31526;&#20018;&#30340;&#32763;&#35793;&#12290;
+&#36825;&#20123;&#20449;&#24687;&#37117;&#26159;&#22312; <code>yii</code> &#31867;&#21035;&#20013;&#12290;&#26377;&#26102;&#20505;&#20320;&#24819;&#32416;&#27491;&#24212;&#29992;&#31243;&#24207;&#30340;&#40664;&#35748;&#20449;&#24687;&#32763;&#35793;&#12290;
+&#20026;&#20102;&#20570;&#21040;&#36825;&#19968;&#28857;&#65292;&#38656;&#37197;&#32622; <code>i18n</code> <a href="guide-structure-application-components.html">&#24212;&#29992;&#32452;&#20214;</a> &#22914;&#19979;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'i18n'</span> =&gt; [
+    <span class="hljs-string">'translations'</span> =&gt; [
+        <span class="hljs-string">'yii'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+            <span class="hljs-string">'sourceLanguage'</span> =&gt; <span class="hljs-string">'en-US'</span>,
+            <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@app/messages'</span>
+        ],
+    ],
+],
+</code></pre>
+<p>&#29616;&#22312;&#21487;&#20197;&#25226;&#20320;&#20462;&#25913;&#36807;&#30340;&#32763;&#35793;&#25918;&#22312; <code>@app/messages/&lt;language&gt;/yii.php</code>&#12290;</p>
+<h3>&#22788;&#29702;&#32570;&#23569;&#30340;&#32763;&#35793;&#65288;Handling missing translations&#65289;  <span id="missing-translations"></span><a href="#missing-translations" class="hashlink">&para;</a></h3><p>&#22914;&#26524;&#32763;&#35793;&#30340;&#28040;&#24687;&#22312;&#28040;&#24687;&#28304;&#25991;&#20214;&#37324;&#25214;&#19981;&#21040;&#65292;Yii &#23558;&#30452;&#25509;&#26174;&#31034;&#35813;&#28040;&#24687;&#20869;&#23481;&#12290;&#36825;&#26679;&#19968;&#26469;&#24403;&#20320;&#30340;&#21407;&#22987;&#28040;&#24687;&#26159;&#19968;&#20010;&#26377;&#25928;&#30340;&#20887;&#38271;&#30340;&#25991;&#23383;&#26102;&#20250;&#24456;&#26041;&#20415;&#12290;
+&#28982;&#32780;&#65292;&#26377;&#26102;&#23427;&#26159;&#19981;&#33021;&#23454;&#29616;&#25105;&#20204;&#30340;&#38656;&#27714;&#12290;&#20320;&#21487;&#33021;&#38656;&#35201;&#25191;&#34892;&#19968;&#20123;&#33258;&#23450;&#20041;&#22788;&#29702;&#30340;&#24773;&#20917;&#65292;
+&#36825;&#26102;&#35831;&#27714;&#30340;&#32763;&#35793;&#21487;&#33021;&#22312;&#28040;&#24687;&#32763;&#35793;&#28304;&#25991;&#20214;&#25214;&#19981;&#21040;&#12290;
+&#36825;&#21487;&#36890;&#36807;&#20351;&#29992; <a href="./yii-i18n-messagesource.html#EVENT_MISSING_TRANSLATION-detail">missingTranslation</a> - <a href="./yii-i18n-messagesource.html">yii\i18n\MessageSource</a> &#30340;&#20107;&#20214;&#26469;&#23436;&#25104;&#12290;</p>
+<p>&#20363;&#22914;&#65292;&#20320;&#21487;&#33021;&#24819;&#35201;&#23558;&#25152;&#26377;&#32570;&#22833;&#30340;&#32763;&#35793;&#20570;&#19968;&#20010;&#26126;&#26174;&#30340;&#26631;&#35760;&#65292;&#36825;&#26679;&#23427;&#20204;&#23601;&#21487;&#20197;&#24456;&#23481;&#26131;&#22320;&#22312;&#39029;&#38754;&#20013;&#25214;&#21040;&#12290;
+&#20026;&#27492;&#65292;&#20320;&#38656;&#35201;&#20808;&#35774;&#32622;&#19968;&#20010;&#20107;&#20214;&#22788;&#29702;&#31243;&#24207;&#12290;&#36825;&#21487;&#20197;&#22312;&#24212;&#29992;&#31243;&#24207;&#37197;&#32622;&#20013;&#36827;&#34892;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'i18n'</span> =&gt; [
+        <span class="hljs-string">'translations'</span> =&gt; [
+            <span class="hljs-string">'app*'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\i18n\PhpMessageSource'</span>,
+                <span class="hljs-string">'fileMap'</span> =&gt; [
+                    <span class="hljs-string">'app'</span> =&gt; <span class="hljs-string">'app.php'</span>,
+                    <span class="hljs-string">'app/error'</span> =&gt; <span class="hljs-string">'error.php'</span>,
+                ],
+                <span class="hljs-string">'on missingTranslation'</span> =&gt; [<span class="hljs-string">'app\components\TranslationEventHandler'</span>, <span class="hljs-string">'handleMissingTranslation'</span>]
+            ],
+        ],
+    ],
+],
+</code></pre>
+<p>&#29616;&#22312;&#65292;&#20320;&#38656;&#35201;&#23454;&#29616;&#33258;&#24049;&#30340;&#20107;&#20214;&#22788;&#29702;&#31243;&#24207;&#65306;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">i18n</span>\<span class="hljs-title">MissingTranslationEvent</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TranslationEventHandler</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleMissingTranslation</span><span class="hljs-params">(MissingTranslationEvent $event)</span>
+    </span>{
+        $event-&gt;translatedMessage = <span class="hljs-string">"@MISSING: {$event-&gt;category}.{$event-&gt;message} FOR LANGUAGE {$event-&gt;language} @"</span>;
+    }
+}
+</code></pre>
+<p>&#22914;&#26524; <a href="./yii-i18n-missingtranslationevent.html#%24translatedMessage-detail">yii\i18n\MissingTranslationEvent::$translatedMessage</a> &#26159;&#30001;&#20107;&#20214;&#22788;&#29702;&#31243;&#24207;&#35774;&#32622;&#65292;&#23427;&#23558;&#26174;&#31034;&#32763;&#35793;&#32467;&#26524;&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#27599;&#20010;&#28040;&#24687;&#28304;&#20250;&#21333;&#29420;&#22788;&#29702;&#23427;&#32570;&#23569;&#30340;&#32763;&#35793;&#12290;&#22914;&#26524;&#26159;&#20351;&#29992;&#22810;&#20010;&#28040;&#24687;&#28304;&#65292;&#24182;&#24076;&#26395;&#20182;&#20204;&#25226;&#32570;&#23569;&#30340;&#32763;&#35793;&#20197;&#21516;&#26679;&#30340;&#26041;&#24335;&#26469;&#22788;&#29702;&#65292;
+&#20320;&#24212;&#35813;&#32473;&#23427;&#20204;&#27599;&#19968;&#20010;&#28040;&#24687;&#28304;&#25351;&#23450;&#30456;&#24212;&#30340;&#20107;&#20214;&#22788;&#29702;&#31243;&#24207;&#12290;</p>
+</blockquote>
+<h3>&#20351;&#29992; <code>message</code> &#21629;&#20196;&#65288;Using the <code>message</code> command&#65289;  <span id="message-command"></span><a href="#message-command" class="hashlink">&para;</a></h3><p>&#32763;&#35793;&#20648;&#23384;&#22312; <a href="./yii-i18n-phpmessagesource.html">php &#25991;&#20214;</a>&#65292;[[yii\i18n\GettextMessageSource|.po &#25991;&#20214;] &#25110;&#32773; <a href="./yii-i18n-dbmessagesource.html">&#25968;&#25454;&#24211;</a>&#12290;&#20855;&#20307;&#35265;&#31867;&#30340;&#38468;&#21152;&#36873;&#39033;&#12290;</p>
+<p>&#39318;&#20808;&#65292;&#20320;&#38656;&#35201;&#21019;&#24314;&#19968;&#20010;&#37197;&#32622;&#25991;&#20214;&#12290;&#30830;&#23450;&#24212;&#35813;&#20445;&#23384;&#22312;&#21738;&#37324;&#65292;&#28982;&#21518;&#25191;&#34892;&#21629;&#20196;</p>
+<pre><code class="hljs bash language-bash">./yii message/config path/to/config.php
+</code></pre>
+<p>&#25171;&#24320;&#21019;&#24314;&#30340;&#25991;&#20214;&#65292;&#24182;&#25353;&#29031;&#38656;&#27714;&#26469;&#35843;&#25972;&#21442;&#25968;&#12290;&#29305;&#21035;&#27880;&#24847;&#65306;</p>
+<ul>
+<li><code>languages</code>: &#20195;&#34920;&#20320;&#30340;&#24212;&#29992;&#31243;&#24207;&#24212;&#35813;&#34987;&#32763;&#35793;&#25104;&#20160;&#20040;&#35821;&#35328;&#30340;&#19968;&#20010;&#25968;&#32452;;</li>
+<li><code>messagePath</code>: &#23384;&#20648;&#28040;&#24687;&#25991;&#20214;&#30340;&#36335;&#24452;&#65292;&#36825;&#24212;&#19982;&#37197;&#32622;&#20013; <code>i18n</code> &#30340; <code>basePath</code> &#21442;&#25968;&#19968;&#33268;&#12290;</li>
+</ul>
+<p>&#24744;&#20063;&#21487;&#20197;&#20351;&#29992; './yii message/config' &#21629;&#20196;&#36890;&#36807; cli &#21160;&#24577;&#29983;&#25104;&#24102;&#26377;&#25351;&#23450;&#36873;&#39033;&#30340;&#37197;&#32622;&#25991;&#20214;&#12290;
+&#20363;&#22914;&#65292;&#20320;&#21487;&#20197;&#20687;&#19979;&#38754;&#36825;&#26679;&#35774;&#32622; <code>languages</code> &#21644;&nbsp;<code>messagePath</code> &#21442;&#25968;&#65306;</p>
+<pre><code class="hljs bash language-bash">./yii message/config --languages=de,ja --messagePath=messages path/to/config.php
+</code></pre>
+<p>&#35201;&#33719;&#21462;&#21487;&#29992;&#36873;&#39033;&#21015;&#34920;&#65292;&#35831;&#25191;&#34892;&#19979;&#19968;&#20010;&#21629;&#20196;&#65306;</p>
+<pre><code class="hljs bash language-bash">./yii <span class="hljs-built_in">help</span> message/config
+</code></pre>
+<p>&#19968;&#26086;&#20320;&#23436;&#25104;&#20102;&#37197;&#32622;&#25991;&#20214;&#65292;&#20320;&#26368;&#32456;&#21487;&#20197;&#29992;&#21629;&#20196;&#25552;&#21462;&#20320;&#30340;&#28040;&#24687;&#65306;</p>
+<pre><code class="hljs bash language-bash">./yii message path/to/config.php
+</code></pre>
+<p>&#21478;&#22806;&#65292;&#24744;&#21487;&#20197;&#20351;&#29992;&#36873;&#39033;&#26469;&#21160;&#24577;&#26356;&#25913;&#25552;&#21462;&#21442;&#25968;&#12290;</p>
+<p>&#28982;&#21518;&#20320;&#20250;&#21457;&#29616;&#20320;&#30340;&#25991;&#20214;&#65288;&#22914;&#26524;&#20320;&#24050;&#32463;&#36873;&#25321;&#22522;&#20110;&#25991;&#20214;&#30340;&#32763;&#35793;&#65289;&#22312; <code>messagePath</code> &#30446;&#24405;&#12290;</p>
+<h2>&#35270;&#22270;&#30340;&#32763;&#35793;&#65288;View Translation&#65289;  <span id="view-translation"></span><a href="#view-translation" class="hashlink">&para;</a></h2><p>&#26377;&#26102;&#20320;&#21487;&#33021;&#24819;&#35201;&#32763;&#35793;&#19968;&#20010;&#23436;&#25972;&#30340;&#35270;&#22270;&#25991;&#20214;&#65292;&#32780;&#19981;&#26159;&#32763;&#35793;&#21333;&#26465;&#25991;&#26412;&#28040;&#24687;&#12290;&#20026;&#20102;&#36798;&#21040;&#36825;&#19968;&#30446;&#30340;&#65292;
+&#21482;&#38656;&#31616;&#21333;&#30340;&#32763;&#35793;&#35270;&#22270;&#24182;&#22312;&#23427;&#23376;&#30446;&#24405;&#19979;&#20445;&#23384;&#19968;&#20010;&#21517;&#31216;&#19968;&#26679;&#30340;&#30446;&#26631;&#35821;&#35328;&#25991;&#20214;&#12290;
+&#20363;&#22914;&#65292;&#22914;&#26524;&#20320;&#24819;&#35201;&#32763;&#35793;&#30340;&#35270;&#22270;&#25991;&#20214;&#20026; <code>views/site/index.php</code> &#19988;&#30446;&#26631;&#35821;&#35328;&#26159; <code>ru-RU</code>&#65292;
+&#20320;&#21487;&#20197;&#23558;&#35270;&#22270;&#32763;&#35793;&#24182;&#20445;&#23384;&#20026; <code>views/site/ru-RU/index.php</code>&#12290;&#29616;&#22312;
+&#27599;&#24403;&#20320;&#35843;&#29992; <a href="./yii-base-view.html#renderFile()-detail">yii\base\View::renderFile()</a> &#25110;&#20219;&#20309;&#20854;&#23427;&#26041;&#27861; (&#22914; <a href="./yii-base-controller.html#render()-detail">yii\base\Controller::render()</a>) &#26469;&#28210;&#26579; <code>views/site/index.php</code> &#35270;&#22270;&#65292;
+&#23427;&#26368;&#32456;&#20250;&#20351;&#29992;&#25152;&#32763;&#35793;&#30340; <code>views/site/ru-RU/index.php</code>&#12290;</p>
+<blockquote class="note"><p><strong>&#27880;&#24847;&#65306; </strong>&#22914;&#26524; <a href="./yii-base-application.html#%24language-detail">&#30446;&#26631;&#35821;&#35328;</a> &#36319; <a href="./yii-base-application.html#%24sourceLanguage-detail">&#28304;&#35821;&#35328;</a> &#30456;&#21516;&#65292;
+&#22312;&#32763;&#35793;&#35270;&#22270;&#30340;&#23384;&#22312;&#19979;&#65292;&#23558;&#21576;&#29616;&#21407;&#22987;&#35270;&#22270;&#12290;</p>
+</blockquote>
+<h2>&#26684;&#24335;&#21270;&#26085;&#26399;&#21644;&#25968;&#23383;&#20540;&#65288;Formatting Date and Number Values&#65289;  <span id="date-number"></span><a href="#date-number" class="hashlink">&para;</a></h2><p>&#22312; <a href="guide-output-formatting.html">&#26684;&#24335;&#21270;&#36755;&#20986;&#25968;&#25454;</a> &#19968;&#33410;&#21487;&#33719;&#21462;&#35814;&#32454;&#20449;&#24687;&#12290;</p>
+<h2>&#35774;&#32622; PHP &#29615;&#22659;&#65288;Setting Up PHP Environment&#65289;  <span id="setup-environment"></span><a href="#setup-environment" class="hashlink">&para;</a></h2><p>Yii &#20351;&#29992; <a href="https://www.php.net/manual/zh/book.intl.php">PHP intl &#25193;&#23637;</a> &#26469;&#25552;&#20379;&#22823;&#22810;&#25968; I18N &#30340;&#21151;&#33021;&#65292;
+&#22914;&#26085;&#26399;&#21644;&#25968;&#23383;&#26684;&#24335;&#30340; <a href="./yii-i18n-formatter.html">yii\i18n\Formatter</a> &#31867;&#21644;&#28040;&#24687;&#26684;&#24335;&#30340; <a href="./yii-i18n-messageformatter.html">yii\i18n\MessageFormatter</a> &#31867;&#12290;
+&#24403; <code>intl</code> &#25193;&#23637;&#27809;&#26377;&#23433;&#35013;&#26102;&#65292;&#20004;&#32773;&#20250;&#25552;&#20379;&#19968;&#20010;&#22238;&#35843;&#26426;&#21046;&#12290;&#28982;&#32780;&#65292;&#35813;&#22238;&#35843;&#26426;&#21046;&#21482;&#36866;&#29992;&#20110;&#30446;&#26631;&#35821;&#35328;&#26159;&#33521;&#35821;&#30340;&#24773;&#20917;&#19979;&#12290;
+&#22240;&#27492;&#65292;&#24403; I18N &#23545;&#20320;&#26469;&#35828;&#24517;&#19981;&#21487;&#23569;&#26102;&#65292;&#24378;&#28872;&#24314;&#35758;&#20320;&#23433;&#35013; <code>intl</code>&#12290;</p>
+<p><a href="https://www.php.net/manual/zh/book.intl.php">PHP intl &#25193;&#23637;</a> &#26159;&#22522;&#20110;&#23545;&#20110;&#25152;&#26377;&#19981;&#21516;&#30340;&#35821;&#35328;&#29615;&#22659;
+&#25552;&#20379;&#26684;&#24335;&#21270;&#35268;&#21017;&#30340; <a href="https://icu.unicode.org/">ICU&#24211;</a>&#12290;
+&#19981;&#21516;&#29256;&#26412;&#30340; ICU &#20013;&#21487;&#33021;&#20250;&#20135;&#29983;&#19981;&#21516;&#26085;&#26399;&#21644;&#25968;&#20540;&#26684;&#24335;&#30340;&#32467;&#26524;&#12290;
+&#20026;&#20102;&#30830;&#20445;&#20320;&#30340;&#32593;&#31449;&#22312;&#25152;&#26377;&#29615;&#22659;&#20135;&#29983;&#30456;&#21516;&#30340;&#32467;&#26524;&#65292;
+&#24314;&#35758;&#20320;&#23433;&#35013;&#19982; <code>intl</code> &#25193;&#23637;&#30456;&#21516;&#30340;&#29256;&#26412;&#65288;&#21644; ICU &#21516;&#19968;&#29256;&#26412;&#65289;&#12290;</p>
+<p>&#35201;&#25214;&#20986;&#25152;&#20351;&#29992;&#30340; PHP &#26159;&#21738;&#20010;&#29256;&#26412;&#30340; ICU &#65292;&#20320;&#21487;&#20197;&#36816;&#34892;&#19979;&#38754;&#30340;&#33050;&#26412;&#65292;&#23427;&#20250;&#32473;&#20986;&#20320;&#25152;&#20351;&#29992;&#30340; PHP &#21644; ICU &#30340;&#29256;&#26412;&#12290;</p>
+<pre><code class="hljs php language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"PHP: "</span> . PHP_VERSION . <span class="hljs-string">"\n"</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"ICU: "</span> . INTL_ICU_VERSION . <span class="hljs-string">"\n"</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"ICU Data: "</span> . INTL_ICU_DATA_VERSION . <span class="hljs-string">"\n"</span>;
+</code></pre>
+<p>&#27492;&#22806;&#65292;&#36824;&#24314;&#35758;&#20320;&#25152;&#20351;&#29992;&#30340; ICU &#29256;&#26412;&#24212;&#31561;&#20110;&#25110;&#22823;&#20110; 49 &#30340;&#29256;&#26412;&#12290;&#36825;&#30830;&#20445;&#20102;&#21487;&#20197;&#20351;&#29992;&#26412;&#25991;&#26723;&#25551;&#36848;&#30340;&#25152;&#26377;&#21151;&#33021;&#12290;&#20363;&#22914;&#65292;
+&#20302;&#20110; 49 &#29256;&#26412;&#30340; ICU &#19981;&#25903;&#25345;&#20351;&#29992; <code>#</code> &#21344;&#20301;&#31526;&#26469;&#23454;&#29616;&#22797;&#25968;&#35268;&#21017;&#12290;
+&#35831;&#21442;&#38405; <a href="https://icu.unicode.org/download">https://icu.unicode.org/download</a> &#33719;&#21462;&#21487;&#29992; ICU &#29256;&#26412;&#30340;&#23436;&#25972;&#21015;&#34920;&#12290;
+&#27880;&#24847;&#65292;&#29256;&#26412;&#32534;&#21495;&#22312; 4.8 &#20043;&#21518;&#21457;&#29983;&#20102;&#21464;&#21270;&#65288;&#22914; ICU4.8&#65292;ICU49&#65292;50 ICU &#31561;&#65289;&#12290;</p>
+<p>&#21478;&#22806;&#65292;ICU &#24211;&#20013;&#26102;&#21306;&#25968;&#25454;&#24211;&#30340;&#20449;&#24687;&#21487;&#33021;&#36807;&#26102;&#12290;&#35201;&#26356;&#26032;&#26102;&#21306;&#25968;&#25454;&#24211;&#26102;&#35814;&#24773;&#35831;&#21442;&#38405;
+<a href="https://unicode-org.github.io/icu/userguide/datetime/timezone/#updating-the-time-zone-data">ICU &#25163;&#20876;</a> &#12290;
+&#32780;&#23545;&#20110; ICU &#36755;&#20986;&#26684;&#24335;&#20351;&#29992;&#30340;&#26102;&#21306;&#25968;&#25454;&#24211;&#65292;PHP &#29992;&#30340;&#26102;&#21306;&#25968;&#25454;&#24211;&#21487;&#33021;&#36319;&#23427;&#26377;&#20851;&#12290;
+&#20320;&#21487;&#20197;&#36890;&#36807;&#23433;&#35013; <a href="https://pecl.php.net/package/timezonedb">pecl package <code>timezonedb</code></a> &#30340;&#26368;&#26032;&#29256;&#26412;&#26469;&#26356;&#26032;&#23427;&#12290;</p>
+</body></html>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 25 Mar 2024 04:16:21 +0000</small></p>
+    Powered by <a href="https://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>
